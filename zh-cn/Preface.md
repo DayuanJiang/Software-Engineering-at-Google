@@ -27,20 +27,26 @@ One key insight we share in this book is that software engineering can be though
 我们在本书中分享的一个关键观点是，软件工程可以被认为是 "随着时间推移而整合的编程"。我们可以在我们的代码中引入哪些实践，使其*可持续*——能够对必要的变化做出反应——在其生命周期中，从设计到引入到维护到废弃？
 
 The book emphasizes three fundamental principles that we feel software organizations should keep in mind when designing, architecting, and writing their code:  
-*Time* *and* *Change*
-	How code will need to adapt over the length of its life
-*Scale* *and Growth*
-	How an organization will need to adapt as it evolves
-*Trade-offs and Costs*
-	How an organization makes decisions, based on the lessons of Time and Change and Scale and Growth
+
+*Time and Change*  
+&nbsp;&nbsp;&nbsp;&nbsp; How code will need to adapt over the length of its life
+
+*Scale and Growth*  
+&nbsp;&nbsp;&nbsp;&nbsp; How an organization will need to adapt as it evolves
+
+*Trade-offs and Costs*  
+&nbsp;&nbsp;&nbsp;&nbsp; How an organization makes decisions, based on the lessons of Time and Change and Scale and Growth
 
 本书强调了三个基本原则，我们认为软件组织在设计、架构和编写代码时应该牢记这些原则：
-*时间和变化*
-	​代码如何在其生命周期内进行适配。
-*规模和增长*
-	​一个组织如何适应它的发展过程。
-*权衡和成本*
-	​一个组织如何根据时间和变化以及规模和增长的经验教训做出决策。
+
+*时间和变化*  
+&nbsp;&nbsp;&nbsp;&nbsp; ​代码如何在其生命周期内进行适配。
+
+*规模和增长*  
+&nbsp;&nbsp;&nbsp;&nbsp; ​一个组织如何适应它的发展过程。
+
+*权衡和成本*  
+&nbsp;&nbsp;&nbsp;&nbsp; ​一个组织如何根据时间和变化以及规模和增长的经验教训做出决策。
 
 Throughout the chapters, we have tried to tie back to these themes and point out ways in which such principles affect engineering practices and allow them to be sustainable. (See [Chapter 1 ](#_bookmark3)for a full discussion.)
 
