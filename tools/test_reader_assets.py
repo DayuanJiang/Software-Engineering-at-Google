@@ -19,12 +19,10 @@ class ReaderAssetsTests(unittest.TestCase):
                 reader.check_svg(reader.ROOT / guide[field], number, mobile)
 
     def test_existing_book_text_is_byte_identical_to_translation_commit(self):
-        renamed = {"zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md":
-                   "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md"}
         for path in (reader.ROOT / "zh-cn").rglob("*.md"):
             relative = path.relative_to(reader.ROOT).as_posix()
             # The translation-polish tag marks the latest approved book text; move it when the text changes deliberately.
-            before = subprocess.check_output(["git", "-C", str(reader.ROOT), "show", "translation-polish:" + renamed.get(relative, relative)])
+            before = subprocess.check_output(["git", "-C", str(reader.ROOT), "show", "translation-polish:" + relative])
             self.assertEqual(path.read_bytes(), before, relative)
 
     def test_lucide_sprite_contains_required_controls(self):
