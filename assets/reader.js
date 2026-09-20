@@ -462,6 +462,28 @@
     });
   }
 
+  // The translation sometimes repeats a code block after both the English and the Chinese paragraph.
+  // Keep the copy that follows the Chinese text, hide the earlier copy, and hide list items left empty.
+  function hideRepeatedCode(main) {
+    const pres = [...main.querySelectorAll("pre")];
+    // Compare without shell prompts, whitespace, or a trailing period so a "$ cmd" copy matches "cmd".
+    const body = (pre) => (pre.querySelector("code") || pre).textContent.split("\n")
+      .map((line) => line.replace(/^\s*\$\s*/, "")).join("").replace(/\s+/g, "").replace(/[.。;]$/, "");
+    pres.forEach((pre, i) => {
+      if (pres.slice(i + 1).some((other) => body(other) === body(pre))) pre.classList.add("repeated-source");
+    });
+    main.querySelectorAll("li").forEach((item) => {
+      const remaining = [...item.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE
+        ? node.textContent.trim() : !node.matches(".translated-source,.repeated-source") && node.textContent.trim());
+      if (!remaining.length) item.classList.add("translated-source");
+    });
+    main.querySelectorAll("ul,ol").forEach((list) => {
+      if (list.children.length && [...list.children].every((child) => child.classList.contains("translated-source"))) {
+        list.classList.add("translated-source");
+      }
+    });
+  }
+
   function replaceText(root, text, replacement) {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     let node;
@@ -1342,6 +1364,7 @@
       reviewedContent(main, currentPage);
       classifyCaptions(main);
       classifyProse(main, currentPage);
+      hideRepeatedCode(main);
       highlightOriginals(main);
       await applyCodeVariants(main, currentPage, version);
       if (version !== routeVersion) return;

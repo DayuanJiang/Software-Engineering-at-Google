@@ -174,6 +174,7 @@ body.close .content { margin-left: 0; }
 .markdown-section .reader-subheading { margin-top: 30px; font-weight: 600; }
 .reader-heading-alias { display: block; height: 0; }
 body[data-reading-mode="chinese"] .translated-source { display: none !important; }
+.markdown-section .repeated-source { display: none !important; }
 .credit-chinese { display: none; }
 body[data-reading-mode="chinese"] .reader-original-title,
 body[data-reading-mode="chinese"] .heading-original,
