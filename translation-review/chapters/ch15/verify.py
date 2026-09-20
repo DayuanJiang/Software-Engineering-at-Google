@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import translation_audit as audit
 
 SOURCE = "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 SHA256 = "114e9618b455fd7906c8d93c0a69bd98706e4c785a348d927103ff5d88427278"
 UNCHANGED = [5, 118, 132, 186, 232, 252, 266, 286, 296]
 HELD = {}

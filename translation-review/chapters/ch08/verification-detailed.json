@@ -2,7 +2,7 @@
   "validation_status": "pass",
   "review_status": "complete_except_held",
   "source": "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md",
-  "baseline_commit": "679725c08143c724598a2b89b94b8c8e4fa47688",
+  "baseline_commit": "110720f031b43e18708fdc38af03269b65b3cc41",
   "baseline_sha256": "babdd17289bcca33924b92cf820b211f1e3e3f47baf2c2b4e46f115fe0680a49",
   "current_sha256": "696ccd131465663a64b02f9ccb5ef141b5e2fc778a73321ff405321392efe8a3",
   "physical_lines": 630,

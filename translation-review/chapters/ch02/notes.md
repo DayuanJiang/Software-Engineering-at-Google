@@ -36,7 +36,7 @@
 
 ## 验证
 
-原始Git快照：`679725c08143c724598a2b89b94b8c8e4fa47688`。
+原始Git快照：`110720f031b43e18708fdc38af03269b65b3cc41`。
 
 原章SHA-256：`ff00c2e601b59c855c8467da7571f83b726d7faa6c221c84b3b68610d9d8620f`，与 `translation-review/baseline.json` 一致。
 

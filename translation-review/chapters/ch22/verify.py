@@ -16,7 +16,7 @@ import translation_audit as audit
 
 OUT = Path(__file__).resolve().parent
 SOURCE = "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [
     6, 66, 96, 116, 122, 134, 136, 168, 182, 218, 229, 268, 304,
     310, 358, 364, 374, 394, 410, 421, 422, 423, 424, 430, 452,

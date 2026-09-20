@@ -16,7 +16,7 @@ SOURCE = (
     "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/"
     "Chapter-18_Build_Systems_and_Build_Philosophy.md"
 )
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [
     24, 38, 65, 139, 191, 239, 397, 411,
     421, 485, 503, 527, 537, 573, 643, 661,

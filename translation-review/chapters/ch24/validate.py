@@ -15,7 +15,7 @@ import translation_audit as audit
 
 DIRECTORY = Path(__file__).resolve().parent
 SOURCE = "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [6, 58, 61, 62, 64, 67, 70, 130, 184, 244, 254]
 HOLDS = {
     "27": "Chinese quotation is inside the original indented code block. "

@@ -2,7 +2,7 @@
   "status": "passed",
   "scope": "chapter_only",
   "source": "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
-  "baseline_commit": "679725c08143c724598a2b89b94b8c8e4fa47688",
+  "baseline_commit": "110720f031b43e18708fdc38af03269b65b3cc41",
   "baseline_sha256": "114e9618b455fd7906c8d93c0a69bd98706e4c785a348d927103ff5d88427278",
   "current_sha256": "08efb0ca0c6eab012bdd93c95454f7a5b1c912687d919b4d58453f28eea69bc6",
   "physical_lines": 306,

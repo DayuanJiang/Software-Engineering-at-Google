@@ -16,7 +16,7 @@ import translation_audit as audit
 
 DIRECTORY = Path(__file__).resolve().parent
 SOURCE = "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [
     6, 34, 44, 82, 124, 134, 159, 196, 212, 256, 270, 278, 284, 294,
     300, 348, 361, 371, 381, 391, 436, 450, 468, 495, 524, 580, 586,

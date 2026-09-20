@@ -33,7 +33,7 @@
 
 ## 验证
 
-- 对照指定 Git 快照 `679725c08143c724598a2b89b94b8c8e4fa47688`，并确认原文件与 `translation-review/baseline.json` 中的记录完全一致。
+- 对照指定 Git 快照 `110720f031b43e18708fdc38af03269b65b3cc41`，并确认原文件与 `translation-review/baseline.json` 中的记录完全一致。
 - 原始 SHA-256：`ec89033bc1ca95e9d141de9837e698db568360868a29e3a471d097ac11d65754`。
 - 27项校验全部通过：501行的数量、顺序及换行形式不变，所有非中文行逐字节不变，英文标题前缀、强调标记、链接原文、脚注位置及结构保持一致。
 - 123个英文源行哈希、144个英文片段哈希、7条解析链接、90个结构项、18个脚注标记全部一致；代码项及 HTML 项均为0，未新增或删除。
@@ -46,7 +46,7 @@
 
 ```sh
 env PYTHONDONTWRITEBYTECODE=1 uv run --offline --locked --project tools --cache-dir .cache/uv python translation-review/chapters/ch09/verify.py
-git -c core.whitespace=-blank-at-eol diff --check 679725c08143c724598a2b89b94b8c8e4fa47688 -- zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md
+git -c core.whitespace=-blank-at-eol diff --check 110720f031b43e18708fdc38af03269b65b3cc41 -- zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md
 ```
 
 `verify.py --write-artifacts` 仅在所有校验通过后，依据实际逐行差异重建本目录的 `edits.json` 和 `verification.json`；默认命令只读并核对已保存结果。未修改共享工具或原基线。

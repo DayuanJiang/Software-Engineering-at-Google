@@ -38,7 +38,7 @@
 
 ## 验证
 
-原始提交：`679725c08143c724598a2b89b94b8c8e4fa47688`。
+原始提交：`110720f031b43e18708fdc38af03269b65b3cc41`。
 基线 SHA-256：`1273f240c113872669165e6cdf4ebb2b0cdcf99f798dac14d7aed6670e455052`。
 
 - 第三章原始 Git 字节与 `translation-review/baseline.json` 的本章快照一致。

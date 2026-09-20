@@ -12,7 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 OUT = Path(__file__).resolve().parent
 SOURCE = "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 REVIEWED_UNCHANGED = [
     28, 51, 102, 103, 107, 120, 156, 172, 186, 200, 275, 294, 297, 298,
     300, 310, 320, 328, 334, 352, 374, 403, 423, 425, 426, 429, 431, 497,

@@ -39,7 +39,7 @@
 
 ## 验证
 
-基线提交：`679725c08143c724598a2b89b94b8c8e4fa47688`。原 SHA-256：`257c329173220d33fb737da082d43073442cc8e8b6e42745f5290cc5e0d58c97`，与 `translation-review/baseline.json` 一致。
+基线提交：`110720f031b43e18708fdc38af03269b65b3cc41`。原 SHA-256：`257c329173220d33fb737da082d43073442cc8e8b6e42745f5290cc5e0d58c97`，与 `translation-review/baseline.json` 一致。
 
 `verification.json` 结果为 PASS：133 个英文源行、159 个英文片段、5 个受保护代码项、3 条解析链接、27 个脚注标记和 67 个结构项全部不变。额外比对 Markdown token 形状及位置、标题英文前缀、强调分隔符、缩进、行尾和硬换行，均通过。对 166 个已完成中文行执行机械标点归一检查，残留为 0。
 

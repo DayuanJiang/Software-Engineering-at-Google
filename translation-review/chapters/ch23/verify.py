@@ -14,7 +14,7 @@ from urllib.parse import unquote
 REVIEW = Path(__file__).resolve().parent
 ROOT = REVIEW.parents[2]
 SOURCE = "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [5, 62, 68, 138, 212, 291, 297, 405, 445, 493, 549, 583, 731, 737]
 HELD = {
     "30": "Chinese CI definition is parsed as an indented code block; preserve verbatim pending parent review.",

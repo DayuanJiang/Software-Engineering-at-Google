@@ -46,7 +46,7 @@
 
 ## 校验
 
-对照快照：`679725c08143c724598a2b89b94b8c8e4fa47688`。
+对照快照：`110720f031b43e18708fdc38af03269b65b3cc41`。
 原始章节 SHA-256：`a784a29a6898b38c7e4dcf5d5f1a18f2a89d5e755a9a3263be400c7506c2b035`。
 
 - `translation_audit.parse_document` 与 `protected` 的原始结果和基线完全一致；编辑后所有保护字段完全一致，文件整体 SHA-256 除外。

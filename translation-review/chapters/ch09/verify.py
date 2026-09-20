@@ -12,7 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 OUT = Path(__file__).resolve().parent
 SOURCE = "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md"
-SNAPSHOT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+SNAPSHOT = "110720f031b43e18708fdc38af03269b65b3cc41"
 sys.path.insert(0, str(ROOT / "tools"))
 import translation_audit as audit
 

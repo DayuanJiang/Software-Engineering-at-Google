@@ -16,7 +16,7 @@ import book_review
 import translation_audit as audit
 
 SOURCE = "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 OUT = Path(__file__).resolve().parent
 UNCHANGED = [
     6, 44, 62, 88, 141, 160, 161, 163, 164, 165, 178, 180, 181,

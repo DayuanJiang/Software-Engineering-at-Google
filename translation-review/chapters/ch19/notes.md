@@ -41,7 +41,7 @@
 ## 校验
 
 - 使用 `uv run --offline --locked --project tools --cache-dir .cache/uv python -B ...`，仅验证本章；直接使用现有 `translation_audit.py` 和 `book_review.py` 的解析、保护、重建与覆盖检查，未放宽断言或添加代码例外。
-- 基准提交：`679725c08143c724598a2b89b94b8c8e4fa47688`。
+- 基准提交：`110720f031b43e18708fdc38af03269b65b3cc41`。
 - 基准 SHA-256：`8c5d62997bf278ad197f7117d5a806a445a56bfcc3dbd43c0725319469dd601a`，与 `translation-review/baseline.json` 一致。
 - 结果：126个英文源行哈希、131个英文片段、1项行内代码、13个链接记录、111个结构项、4个脚注标记均一致；HTML 项为0。13个链接记录包括8条图片引用、3条 Markdown 链接和2条解析出的裸 URL，不代表13个独立目标。
 - 318个不含中文的行逐字节不变；逐行核验缩进、行尾空白、换行形式、脚注位置和英文标题前缀。完整 Markdown token 结构、强调、列表、软换行及硬换行均一致。

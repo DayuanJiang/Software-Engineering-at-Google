@@ -49,7 +49,7 @@ Correct chapter titles when needed, but parent handles navigation labels.
    - `held_lines`: any Chinese lines deliberately left pending, with reasons (do not call them completed)
 3. Add concise `notes.md`: terminology choices, material fixes, source issues and any held content.
 4. Validate only this chapter against the original Git snapshot
-   `679725c08143c724598a2b89b94b8c8e4fa47688`.
+   `110720f031b43e18708fdc38af03269b65b3cc41`.
    Use `tools/translation_audit.py` parsing/protection helpers if useful; do not weaken their assertions.
    English, code, links, structures and footnote markers must match. Report any mismatches honestly.
 5. Final response: changed file paths, Chinese line review/edit counts, validation result and holds.

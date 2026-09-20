@@ -14,7 +14,7 @@ import sys
 REVIEW = Path(__file__).resolve().parent
 ROOT = REVIEW.parents[2]
 SOURCE = "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [
     5, 21, 37, 43, 67, 85, 109, 136, 137, 138, 142,
     157, 161, 191, 205, 215, 243, 275, 281,

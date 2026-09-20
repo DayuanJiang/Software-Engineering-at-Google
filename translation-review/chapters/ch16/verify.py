@@ -15,7 +15,7 @@ SOURCE = (
     "zh-cn/Chapter-16_Version_Control_and_Branch_Management/"
     "Chapter-16_Version_Control_and_Branch_Management.md"
 )
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(ROOT / "tools"))
 import translation_audit as audit

@@ -6,7 +6,7 @@
 - 已完整阅读本章659行双语内容，包括图注、列表、19条双语脚注、案例及行内代码上下文。
 - 已阅读 `translation-review/subagent-brief.md`、翻译技能 `en-zh-translation-polish/SKILL.md` 及其全部三份 `reference/` 文件、共享术语表、第1章 `terminology.md`、`README.md` 和批准后的正文样例。
 - 只修改指定章节和本目录；未修改共享工具、术语表、导航或其他章节，未创建代理、调用外部模型、提交或推送。
-- 原始快照：`679725c08143c724598a2b89b94b8c8e4fa47688`。基线 SHA-256：`3711a199b5d98e8c8da604a6f5395e3dda47913be746fdc0d9ce79e1a7e740e6`。
+- 原始快照：`110720f031b43e18708fdc38af03269b65b3cc41`。基线 SHA-256：`3711a199b5d98e8c8da604a6f5395e3dda47913be746fdc0d9ce79e1a7e740e6`。
 
 ## 全覆盖
 

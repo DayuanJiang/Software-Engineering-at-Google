@@ -14,7 +14,7 @@ sys.dont_write_bytecode = True
 REVIEW = Path(__file__).resolve().parent
 ROOT = REVIEW.parents[2]
 SOURCE = "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 sys.path.insert(0, str(ROOT / "tools"))
 import translation_audit as audit
 

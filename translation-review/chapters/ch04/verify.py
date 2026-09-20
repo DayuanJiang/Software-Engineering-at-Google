@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import translation_audit as audit
 
 SOURCE = "zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md"
-SNAPSHOT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+SNAPSHOT = "110720f031b43e18708fdc38af03269b65b3cc41"
 RETAINED = [40, 75, 86, 149, 175, 227, 245, 251]
 HOLDS = {
     "112": (

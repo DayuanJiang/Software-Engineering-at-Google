@@ -62,7 +62,7 @@
 
 ## 验证
 
-对照 `679725c08143c724598a2b89b94b8c8e4fa47688` 中的本章及 `translation-review/baseline.json`：
+对照 `110720f031b43e18708fdc38af03269b65b3cc41` 中的本章及 `translation-review/baseline.json`：
 
 - 原始 SHA-256：`4e6540edaf161f91196d7b5df87cafca844c495b5ff77b75df642faca78b5eec`。
 - 741行、全部非中文行、英文标题前缀、缩进、行结束符和硬换行保持不变；`edits.json` 可逐字节重建当前章节。

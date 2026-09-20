@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import translation_audit as audit
 
 SOURCE = "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md"
-COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
+COMMIT = "110720f031b43e18708fdc38af03269b65b3cc41"
 HOLDS = {
     87: "Existing translator explanation in a fenced code block; preserved verbatim under the code-protection rule, not counted as completed prose.",
     433: "Chinese footnote continuation parsed as an indented code block; preserved verbatim pending parent review of the markup, not counted as completed prose.",
