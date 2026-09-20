@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tests compare the book text against a recorded commit
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --project tools --locked
+
+      - name: Run tests
+        run: uv run --project tools --with pytest pytest -q tools
+
+      - name: Check generated reader files are up to date
+        run: |
+          uv run --project tools python tools/build_reader_manifest.py
+          uv run --project tools python tools/build_search_index.py
+          git diff --exit-code -- assets/reader-manifest.json assets/reader-review assets/search-index.json
