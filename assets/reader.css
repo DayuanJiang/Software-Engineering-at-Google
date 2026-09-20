@@ -238,15 +238,19 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 /* Language tabs in the corner of translated examples replace the theme's plain language label. */
 .markdown-section pre.has-lang-tabs { padding-top: 34px; }
 .markdown-section pre.has-lang-tabs::after { display: none; }
-.code-lang-tabs { position: absolute; top: 6px; right: 6px; display: flex; gap: 2px; font-family: var(--ui-font); user-select: none; }
+.code-lang-tabs {
+  position: absolute; top: 6px; right: 6px; display: flex; gap: 2px; padding: 2px; font-family: var(--ui-font);
+  background: var(--page); border: 1px solid var(--line); border-radius: 6px; user-select: none;
+}
 .code-lang-tabs button {
-  border: 0; border-radius: 4px; padding: 2px 9px; font-size: 11px; line-height: 16px; font-weight: 500;
+  border: 0; border-radius: 4px; padding: 2px 10px; font-size: 11px; line-height: 16px; font-weight: 500;
   background: transparent; color: var(--muted); cursor: pointer;
 }
-.code-lang-tabs button:hover { color: var(--accent); }
-.code-lang-tabs button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.code-lang-tabs button[aria-disabled="true"] { opacity: .4; cursor: help; }
-.code-lang-tabs button[aria-disabled="true"]:hover { color: var(--muted); }
+.code-lang-tabs button:hover { color: var(--accent); background: var(--accent-soft); }
+.code-lang-tabs button[aria-pressed="true"] { background: var(--accent); color: #fff; font-weight: 600; }
+.code-lang-tabs button[aria-pressed="true"]:hover { color: #fff; }
+.code-lang-tabs button[aria-disabled="true"] { opacity: .45; cursor: help; }
+.code-lang-tabs button[aria-disabled="true"]:hover { color: var(--muted); background: transparent; }
 .reader-settings .mode-switch button { min-height: 30px; padding: 4px 12px; font-size: 13px; }
 /* Syntax highlighting: one palette for light, one for dark, applied to every language. */
 .markdown-section .token.comment, .markdown-section .token.prolog, .markdown-section .token.doctype,

@@ -36,7 +36,8 @@ class ReaderAssetsTests(unittest.TestCase):
     def test_reader_core_dependencies_are_local(self):
         index = (reader.ROOT / "index.html").read_text()
         self.assertIn('src="assets/vendor/docsify.min.js"', index)
-        self.assertIn('href="assets/reader.css"', index)
+        self.assertRegex(index, r'href="assets/reader\.css\?v=[0-9a-f]{8}"')
+        self.assertRegex(index, r'src="assets/reader\.js\?v=[0-9a-f]{8}"')
         self.assertNotIn('src="//cdn.jsdelivr.net/npm/docsify', index)
         self.assertNotIn("NewGitalk().render", index)
 

@@ -1118,9 +1118,10 @@
     const tabs = document.createElement("div");
     tabs.className = "code-lang-tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", "代码示例语言");
     const label = LANGUAGE_LABELS[variant.language] || variant.language;
-    [["original", label], ["python", "Python"]].forEach(([value, text]) => {
+    [["python", "Python"], ["original", "原文"]].forEach(([value, text]) => {
       const tab = document.createElement("button");
       tab.type = "button"; tab.dataset.code = value; tab.textContent = text;
+      if (value === "original") tab.title = "原书示例：" + label;
       if (value === "python" && !variant.python) {
         tab.setAttribute("aria-disabled", "true"); tab.title = variant.note;
       } else {

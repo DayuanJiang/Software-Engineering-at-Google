@@ -1,6 +1,7 @@
 """Build and validate the static reader's chapter/SVG manifest without modifying book text."""
 
 import ast
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -87,6 +88,17 @@ def compile_code_variants(folder, text):
             raise ValueError(f"Code example needs a Python rewrite or a skip note with a reason: {source_path}")
         entries.append(entry)
     return entries or None
+
+
+def stamp_index():
+    """Append a content hash to the reader's script and stylesheet URLs so browsers never serve stale copies."""
+    index = ROOT / "index.html"
+    html = index.read_text()
+    for name in ("assets/reader.css", "assets/reader.js"):
+        digest = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()[:8]
+        html = re.sub(re.escape(name) + r'(\?v=[0-9a-f]+)?"', f'{name}?v={digest}"', html)
+    if html != index.read_text():
+        index.write_text(html)
 
 
 def compiled_review(chapter):
@@ -196,6 +208,7 @@ def main():
     (ROOT / "assets" / "reader-manifest.json").write_text(
         json.dumps({"chapters": chapters, "guides": guides}, ensure_ascii=False, indent=2) + "\n"
     )
+    stamp_index()
     layouts = 2 * (len(guides) + sum(len(c.get("sectionGuides", [])) for c in chapters))
     print(f"Validated {len(chapters)} chapters and {layouts} SVG layouts.")
 
