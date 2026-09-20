@@ -1059,9 +1059,6 @@
       nav.append(link);
     });
     const links = document.createElement("div"); links.className = "reader-links";
-    const source = document.createElement("a");
-    source.textContent = "查看源文"; source.target = "_blank"; source.rel = "noopener noreferrer";
-    source.href = "https://github.com/qiangmzsx/Software-Engineering-at-Google/blob/main/" + (page?.file || "README.md");
     const discussions = document.createElement("button");
     discussions.type = "button"; discussions.textContent = "讨论";
     const comments = document.createElement("div"); comments.className = "reader-comments";
@@ -1079,7 +1076,7 @@
         discussions.disabled = false;
       }
     });
-    links.append(source, discussions);
+    links.append(discussions);
     main.append(nav, links, comments);
   }
   let discussionPromise;
