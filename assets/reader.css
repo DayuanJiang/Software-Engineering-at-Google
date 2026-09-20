@@ -114,7 +114,7 @@ body .sidebar {
 .sidebar .search input::-webkit-search-cancel-button { display: none; }
 .sidebar .search .clear-button { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); display: none; }
 .sidebar.searching .search .clear-button { display: inline-flex; }
-.sidebar.searching .sidebar-nav, .sidebar.searching .sidebar-repo { display: none; }
+.sidebar.searching .sidebar-nav { display: none; }
 .sidebar .search .results-panel { display: none; }
 .sidebar.searching .search .results-panel { display: block; margin-top: 12px; }
 .sidebar .search .matching-post {
@@ -125,11 +125,6 @@ body .sidebar {
 .sidebar .search .matching-post p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.6; word-break: break-word; }
 .sidebar .search mark { background: none; color: var(--accent); font-weight: 600; }
 .sidebar .search .search-message { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
-.sidebar-repo {
-  display: flex; align-items: center; gap: 8px; margin: 28px 12px 0; font-family: var(--ui-font);
-  font-size: 12px; color: var(--muted); text-decoration: none;
-}
-.sidebar-repo:hover { color: var(--accent); }
 .sidebar-nav { padding: 0; }
 .sidebar-nav ul { padding: 0; margin: 0; }
 .sidebar-nav li { margin: 2px 0; }

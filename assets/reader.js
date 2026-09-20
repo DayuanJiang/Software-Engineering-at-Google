@@ -208,7 +208,12 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && !settings.hidden) closeSettings(true);
     });
-    actions.append(appearance, toc);
+    const repo = document.createElement("a");
+    repo.className = "icon-button"; repo.href = "https://github.com/DayuanJiang/Software-Engineering-at-Google";
+    repo.target = "_blank"; repo.rel = "noopener noreferrer";
+    repo.title = "GitHub 仓库"; repo.setAttribute("aria-label", "GitHub 仓库");
+    repo.innerHTML = icon("github");
+    actions.append(appearance, toc, repo);
     const progress = document.createElement("div");
     progress.className = "reader-progress";
     progress.setAttribute("role", "progressbar");
@@ -255,11 +260,6 @@
       new MutationObserver(updateSidebar).observe(sidebarRoot, { childList: true, subtree: true });
       updateSidebar();
       mountSearch(sidebarRoot);
-      const repo = document.createElement("a");
-      repo.className = "sidebar-repo"; repo.href = "https://github.com/DayuanJiang/Software-Engineering-at-Google";
-      repo.target = "_blank"; repo.rel = "noopener noreferrer";
-      repo.innerHTML = icon("github") + "<span>GitHub 仓库</span>";
-      sidebarRoot.append(repo);
     }
     document.addEventListener("click", (event) => {
       if (event.target.closest(".sidebar-nav a") && matchMedia("(max-width: 900px)").matches) {
@@ -917,6 +917,7 @@
     const isSection = Boolean(guide.afterParagraph);
     const figure = document.createElement(isSection ? "figure" : "details");
     figure.className = isSection ? "section-visual" : "chapter-visual";
+    if (!isSection) figure.open = true;
     figure.dataset.chapter = String(guide.chapter);
     figure.dataset.guide = guide.id || "ch" + String(guide.chapter).padStart(2, "0");
     const caption = document.createElement(isSection ? "figcaption" : "summary");

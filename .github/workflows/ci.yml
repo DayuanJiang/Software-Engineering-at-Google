@@ -11,7 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # tests compare the book text against a recorded commit
+          fetch-depth: 0 # tests compare the book text against the translation-polish tag
+          fetch-tags: true
 
       - uses: astral-sh/setup-uv@v5
         with:
