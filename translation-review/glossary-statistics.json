@@ -23,7 +23,7 @@
     "frequency": 134,
     "documents": {
       "zh-cn/Afterword.md": 6,
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 4,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 4,
       "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 2,
       "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 2,
       "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 3,
@@ -469,7 +469,7 @@
     "frequency": 313,
     "documents": {
       "zh-cn/Afterword.md": 2,
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 7,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 7,
       "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 15,
       "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 2,
       "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 10,
@@ -1477,7 +1477,7 @@
     ],
     "frequency": 244,
     "documents": {
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 6,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 6,
       "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 2,
       "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
       "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 1,
@@ -2600,7 +2600,7 @@
     ],
     "frequency": 107,
     "documents": {
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 2,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 2,
       "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 13,
       "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 14,
       "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 10,
@@ -3793,7 +3793,7 @@
     ],
     "frequency": 75,
     "documents": {
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 2,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 2,
       "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
       "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 54,
       "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 3,
@@ -4048,7 +4048,7 @@
     ],
     "frequency": 31,
     "documents": {
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 7,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 7,
       "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 3,
       "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 6,
       "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 14,
@@ -4388,7 +4388,7 @@
     ],
     "frequency": 34,
     "documents": {
-      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 1,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": 1,
       "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 32,
       "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 1
     },

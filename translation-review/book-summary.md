@@ -20,7 +20,7 @@
 | [ch07](../zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md) | 137 | 122 | [审校说明](chapters/ch07/notes.md) | [完整对照](chapters/ch07/all-changes.md) |
 | [ch08](../zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md) | 165 | 138 | [审校说明](chapters/ch08/notes.md) | [完整对照](chapters/ch08/all-changes.md) |
 | [ch09](../zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md) | 143 | 122 | [审校说明](chapters/ch09/notes.md) | [完整对照](chapters/ch09/all-changes.md) |
-| [ch10](../zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md) | 174 | 147 | [审校说明](chapters/ch10/notes.md) | [完整对照](chapters/ch10/all-changes.md) |
+| [ch10](../zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md) | 174 | 147 | [审校说明](chapters/ch10/notes.md) | [完整对照](chapters/ch10/all-changes.md) |
 | [ch11](../zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md) | 173 | 147 | [审校说明](chapters/ch11/notes.md) | [完整对照](chapters/ch11/all-changes.md) |
 | [ch12](../zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md) | 168 | 131 | [审校说明](chapters/ch12/notes.md) | [完整对照](chapters/ch12/all-changes.md) |
 | [ch13](../zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md) | 179 | 154 | [审校说明](chapters/ch13/notes.md) | [完整对照](chapters/ch13/all-changes.md) |

@@ -1,5 +1,5 @@
---- before/zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md
-+++ after/zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md
+--- before/zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md
++++ after/zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md
 @@ -11,27 +11,27 @@
  
  Of the complaints most engineers have about writing, using, and maintaining code, a singular common frustration is the lack of quality documentation. “What are the side effects of this method?” “I got an error after step 3.” “What does this acronym mean?” “Is this document up to date?” Every software engineer has voiced complaints about the quality, quantity, or sheer lack of documentation throughout their career, and the software engineers at Google are no different.

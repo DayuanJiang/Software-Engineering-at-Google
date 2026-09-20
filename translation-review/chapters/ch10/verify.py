@@ -11,7 +11,7 @@ import sys
 
 REVIEW = Path(__file__).resolve().parent
 ROOT = REVIEW.parents[2]
-SOURCE = "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md"
+SOURCE = "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md"
 COMMIT = "679725c08143c724598a2b89b94b8c8e4fa47688"
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(ROOT / "tools"))

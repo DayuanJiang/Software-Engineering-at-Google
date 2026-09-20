@@ -5,7 +5,7 @@
 - 按已批准的第一章风格处理：信息型、偏硬技术文本，自由度约 3/10，准确优先，不摘要化，不更新原著历史判断。
 - 已通读完整双语章节，包括标题、列表、三个脚注、两组教程、全部代码与文档样例；已读审校说明、翻译技能及三份参考材料、共享术语表、第一章术语补充、README 和样稿。
 - 全章656个物理行，174个原始含中文行全部检查。146行修改，26行确认保留，2行挂起；已完成中文172行，挂起行不计入完成数。
-- 保留原文件名 `Chapter-10_Documentatio.md`，没有增删或移动行。只写本章及本目录，没有修改共享文件、启动代理、调用外部模型 API、提交或推送。
+- 保留原文件名 `Chapter-10_Documentation.md`，没有增删或移动行。只写本章及本目录，没有修改共享文件、启动代理、调用外部模型 API、提交或推送。
 
 ## 术语与实质修正
 
@@ -51,7 +51,7 @@
 
 ```sh
 uv run --offline --locked --project tools --cache-dir .cache/uv python -B translation-review/chapters/ch10/verify.py
-git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md
+git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md
 ```
 
 `verify.py` 默认只读。`--write-report` 仅更新本目录的 `verification.json`；`--write-manifest` 根据已人工审定的逐行改动及固定保留／挂起清单生成本目录的 `edits.json`，写入前同样执行全部保护校验。未运行全站浏览器测试或外链可达性检查。

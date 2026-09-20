@@ -1,6 +1,6 @@
 # 中文修改对照
 
-文件：`zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md`
+文件：`zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md`
 
 ## 原第14行
 
