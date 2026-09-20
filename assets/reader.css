@@ -146,6 +146,13 @@ body.close .content { margin-left: 0; }
 .markdown-section ul, .markdown-section ol { padding-left: 1.5em; }
 .markdown-section li { margin: .3em 0; }
 .markdown-section strong { color: var(--ink); font-weight: 600; }
+/* Emphasis: Chinese never slants; terms are set in the sans face at a heavier weight, as printed
+   Chinese books do. English keeps the conventional italic. Both stay in the ink color. */
+.markdown-section em { color: var(--ink); font-style: normal; font-family: var(--ui-font); font-weight: 600; }
+.markdown-section em:lang(en) { font-style: italic; font-family: inherit; font-weight: inherit; }
+/* Links keep the text color and show a thin accent underline; the term itself stays readable. */
+.markdown-section a { color: inherit; font-weight: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.markdown-section a:hover { color: var(--accent); }
 .markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4 {
   color: var(--ink); font-weight: 600; line-height: 1.55; letter-spacing: 0; text-wrap: balance;
   scroll-margin-top: 0;
@@ -224,24 +231,39 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 }
 .markdown-section pre, .markdown-section code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .markdown-section code { color: var(--accent); background: var(--code-bg); font-size: .86em; padding: 2px 5px; border-radius: 3px; }
-.markdown-section pre > code { padding: 0; border-radius: 0; color: var(--ink); font-size: 14px; line-height: 1.7; background: none; }
+.markdown-section pre > code {
+  padding: 0; border-radius: 0; color: var(--ink); font-size: 14px; line-height: 1.7; background: none;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
 .markdown-section .code-variant-note { margin: -10px 0 22px; font-family: var(--ui-font); font-size: 12px; line-height: 1.6; color: var(--muted); }
 .reader-settings .mode-switch button { min-height: 30px; padding: 4px 12px; font-size: 13px; }
-:root[data-theme="dark"] .token.comment,
-:root[data-theme="dark"] .token.prolog { color: #a6b7aa; }
-:root[data-theme="dark"] .token.keyword,
-:root[data-theme="dark"] .token.atrule,
-:root[data-theme="dark"] .token.property { color: #a8cfff; }
-:root[data-theme="dark"] .token.string,
-:root[data-theme="dark"] .token.attr-value { color: #a8ddbb; }
-:root[data-theme="dark"] .token.boolean,
-:root[data-theme="dark"] .token.number,
-:root[data-theme="dark"] .token.constant,
-:root[data-theme="dark"] .token.symbol { color: #eeb390; }
-:root[data-theme="dark"] .token.operator,
-:root[data-theme="dark"] .token.punctuation { color: #c2d3c8; }
-:root[data-theme="dark"] .token.function,
-:root[data-theme="dark"] .token.class-name { color: #f1d398; }
+/* Syntax highlighting: one palette for light, one for dark, applied to every language. */
+.markdown-section .token.comment, .markdown-section .token.prolog, .markdown-section .token.doctype,
+.markdown-section .token.cdata { color: #74807a; font-style: italic; }
+.markdown-section .token.punctuation { color: #5e6a62; }
+.markdown-section .token.operator { color: #0a7ea4; }
+.markdown-section .token.keyword { color: #a626a4; }
+.markdown-section .token.boolean, .markdown-section .token.number { color: #986801; }
+.markdown-section .token.string, .markdown-section .token.char, .markdown-section .token.attr-value,
+.markdown-section .token.triple-quoted-string { color: #3f8f3e; }
+.markdown-section .token.function { color: #3b6fd6; }
+.markdown-section .token.class-name { color: #a86b00; }
+.markdown-section .token.builtin { color: #0a7ea4; }
+.markdown-section .token.decorator, .markdown-section .token.annotation { color: #986801; }
+.markdown-section .token.string-interpolation .token.interpolation { color: var(--ink); }
+.markdown-section .token.namespace { opacity: .8; }
+:root[data-theme="dark"] .markdown-section .token.comment, :root[data-theme="dark"] .markdown-section .token.prolog,
+:root[data-theme="dark"] .markdown-section .token.doctype, :root[data-theme="dark"] .markdown-section .token.cdata { color: #8b968e; }
+:root[data-theme="dark"] .markdown-section .token.punctuation { color: #b8c0ba; }
+:root[data-theme="dark"] .markdown-section .token.operator { color: #56b6c2; }
+:root[data-theme="dark"] .markdown-section .token.keyword { color: #c678dd; }
+:root[data-theme="dark"] .markdown-section .token.boolean, :root[data-theme="dark"] .markdown-section .token.number { color: #d19a66; }
+:root[data-theme="dark"] .markdown-section .token.string, :root[data-theme="dark"] .markdown-section .token.char,
+:root[data-theme="dark"] .markdown-section .token.attr-value, :root[data-theme="dark"] .markdown-section .token.triple-quoted-string { color: #98c379; }
+:root[data-theme="dark"] .markdown-section .token.function { color: #61afef; }
+:root[data-theme="dark"] .markdown-section .token.class-name { color: #e5c07b; }
+:root[data-theme="dark"] .markdown-section .token.builtin { color: #56b6c2; }
+:root[data-theme="dark"] .markdown-section .token.decorator, :root[data-theme="dark"] .markdown-section .token.annotation { color: #d19a66; }
 .markdown-section table { width: 100%; display: block; overflow-x: auto; font-family: var(--ui-font); font-size: 14px; border-collapse: collapse; }
 .markdown-section th { background: var(--rail); font-weight: 600; }
 .markdown-section td, .markdown-section th { border-color: var(--line); padding: 10px 14px; }
