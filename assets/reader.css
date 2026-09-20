@@ -235,7 +235,18 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
   padding: 0; border-radius: 0; color: var(--ink); font-size: 14px; line-height: 1.7; background: none;
   white-space: pre-wrap; overflow-wrap: anywhere;
 }
-.markdown-section .code-variant-note { margin: -10px 0 22px; font-family: var(--ui-font); font-size: 12px; line-height: 1.6; color: var(--muted); }
+/* Language tabs in the corner of translated examples replace the theme's plain language label. */
+.markdown-section pre.has-lang-tabs { padding-top: 34px; }
+.markdown-section pre.has-lang-tabs::after { display: none; }
+.code-lang-tabs { position: absolute; top: 6px; right: 6px; display: flex; gap: 2px; font-family: var(--ui-font); user-select: none; }
+.code-lang-tabs button {
+  border: 0; border-radius: 4px; padding: 2px 9px; font-size: 11px; line-height: 16px; font-weight: 500;
+  background: transparent; color: var(--muted); cursor: pointer;
+}
+.code-lang-tabs button:hover { color: var(--accent); }
+.code-lang-tabs button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.code-lang-tabs button[aria-disabled="true"] { opacity: .4; cursor: help; }
+.code-lang-tabs button[aria-disabled="true"]:hover { color: var(--muted); }
 .reader-settings .mode-switch button { min-height: 30px; padding: 4px 12px; font-size: 13px; }
 /* Syntax highlighting: one palette for light, one for dark, applied to every language. */
 .markdown-section .token.comment, .markdown-section .token.prolog, .markdown-section .token.doctype,

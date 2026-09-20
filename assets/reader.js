@@ -1111,36 +1111,53 @@
     }
     return page.variantsPromise;
   }
-  const originalCode = new WeakMap();
+  // Each translated example carries a small language tab group in its corner. The tabs switch the
+  // global preference, so choosing Python on one block switches every block in the book.
+  const variantState = new WeakMap();
+  function languageTabs(variant) {
+    const tabs = document.createElement("div");
+    tabs.className = "code-lang-tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", "代码示例语言");
+    const label = LANGUAGE_LABELS[variant.language] || variant.language;
+    [["original", label], ["python", "Python"]].forEach(([value, text]) => {
+      const tab = document.createElement("button");
+      tab.type = "button"; tab.dataset.code = value; tab.textContent = text;
+      if (value === "python" && !variant.python) {
+        tab.setAttribute("aria-disabled", "true"); tab.title = variant.note;
+      } else {
+        tab.addEventListener("click", () => {
+          if (preferences.code === value) return;
+          preferences.code = value; applyPreferences(); persist();
+          const main = document.getElementById("main");
+          if (main && currentPage) applyCodeVariants(main, currentPage, routeVersion);
+        });
+      }
+      tabs.append(tab);
+    });
+    return tabs;
+  }
   async function applyCodeVariants(main, page, version) {
-    for (const pre of main.querySelectorAll("pre")) {
-      const original = originalCode.get(pre);
-      if (!original) continue;
-      const code = pre.querySelector("code");
-      code.innerHTML = original.html; code.className = original.className;
-      pre.dataset.lang = original.lang;
-      if (pre.nextElementSibling?.classList.contains("code-variant-note")) pre.nextElementSibling.remove();
-      originalCode.delete(pre);
-    }
-    if (preferences.code !== "python") return;
     let variants;
     try { variants = await loadCodeVariants(page); } catch (error) { console.error(error); return; }
     if (version !== routeVersion) return;
     for (const variant of variants) {
       for (const pre of main.querySelectorAll("pre")) {
         const code = pre.querySelector("code");
-        if (!code || originalCode.has(pre) || pre.textContent.trim() !== variant.source) continue;
-        originalCode.set(pre, { html: code.innerHTML, className: code.className, lang: pre.dataset.lang || "" });
-        const note = document.createElement("p"); note.className = "code-variant-note";
-        const label = LANGUAGE_LABELS[variant.language] || variant.language;
-        if (variant.python) {
-          code.innerHTML = highlightCode(variant.python, "python");
-          code.className = "lang-python"; pre.dataset.lang = "python";
-          note.textContent = "Python 改写，原书示例为 " + label + "。";
-        } else {
-          note.textContent = "保留 " + label + " 原文：" + variant.note;
-        }
-        pre.after(note);
+        if (!code) continue;
+        let state = variantState.get(pre);
+        if (!state) {
+          if (pre.textContent.trim() !== variant.source) continue;
+          state = { variant, html: code.innerHTML, className: code.className, lang: pre.dataset.lang || "" };
+          variantState.set(pre, state);
+          pre.classList.add("has-lang-tabs");
+          pre.prepend(languageTabs(variant));
+        } else if (state.variant !== variant) continue;
+        const python = preferences.code === "python" && variant.python;
+        code.innerHTML = python ? highlightCode(variant.python, "python") : state.html;
+        code.className = python ? "lang-python" : state.className;
+        pre.dataset.lang = python ? "python" : state.lang;
+        pre.querySelectorAll(".code-lang-tabs button").forEach((tab) => {
+          tab.setAttribute("aria-pressed", String(tab.dataset.code === (python ? "python" : "original")));
+        });
       }
     }
   }
