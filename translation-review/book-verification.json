@@ -3,7 +3,7 @@
   "held_chinese_lines": 0,
   "reviewed_chinese_lines": 3990,
   "total_documents": 28,
-  "changed_chinese_lines": 3400,
+  "changed_chinese_lines": 3401,
   "asset_errors": [],
   "site_errors": [],
   "documents": [
@@ -23,7 +23,8 @@
       "holds": [],
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "preface",
@@ -41,7 +42,8 @@
       "holds": [],
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch01",
@@ -84,7 +86,8 @@
       "holds": [],
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch03",
@@ -102,7 +105,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch04",
@@ -120,7 +124,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch05",
@@ -157,7 +162,8 @@
           "reason": "Parent reviewed natural-language quotation, not executable code."
         }
       ],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch06",
@@ -186,7 +192,8 @@
           "reason": "Parent reviewed natural-language quotation, not executable code."
         }
       ],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch07",
@@ -204,7 +211,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch08",
@@ -222,7 +230,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch09",
@@ -240,7 +249,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch10",
@@ -258,7 +268,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch11",
@@ -276,7 +287,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch12",
@@ -294,15 +306,16 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch13",
       "file": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
       "status": "verified",
-      "after_sha256": "7a23ed78ce176468ca1aaa876f563fc7f1cc24cc81ae9dac5d12bf586e0f73dd",
+      "after_sha256": "55725ed0fa5e7c12697f4dc6830e4b06d279b902880b0fa1783e7b426e56699c",
       "reviewed_chinese_lines": 179,
-      "changed_lines": 154,
+      "changed_lines": 155,
       "english_lines": 161,
       "english_segments": 192,
       "code_items": 28,
@@ -312,7 +325,17 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": [
+        {
+          "lines": [
+            836
+          ],
+          "before": "1bffb9589e7994b558532eed08f88627742c7c2b8259bff8dd2a755973dac5c4",
+          "after": "eb99f23c3233362169370385d5bba2b9ed4d0c7ba6b8dd1114fc5e0a3ce29471",
+          "reason": "第 836 行“改变状态”由普通段落改为列表项，与第 843 行“不改变状态”一致；英文原文两项均为列表项。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch14",
@@ -330,7 +353,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch15",
@@ -348,7 +372,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch16",
@@ -376,7 +401,8 @@
           "reason": "Parent reviewed natural-language quotation, not executable code."
         }
       ],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch17",
@@ -394,7 +420,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch18",
@@ -412,7 +439,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch19",
@@ -430,7 +458,8 @@
       "holds": [],
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch20",
@@ -448,7 +477,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch21",
@@ -479,7 +509,8 @@
           },
           "reason": "Repair full-width Markdown brackets; intended visible URL unchanged."
         }
-      ]
+      ],
+      "structure_exceptions": []
     },
     {
       "id": "ch22",
@@ -497,7 +528,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch23",
@@ -543,7 +575,8 @@
           "reason": "Parent reviewed natural-language quotation, not executable code."
         }
       ],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch24",
@@ -571,7 +604,8 @@
           "reason": "Parent reviewed natural-language quotation, not executable code."
         }
       ],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "ch25",
@@ -589,7 +623,8 @@
       "holds": {},
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     },
     {
       "id": "afterword",
@@ -607,7 +642,8 @@
       "holds": [],
       "held_line_count": 0,
       "prose_code_exceptions": [],
-      "link_syntax_exceptions": []
+      "link_syntax_exceptions": [],
+      "structure_exceptions": []
     }
   ],
   "workflow": "chapter-scoped Codex subagents and parent editing; offline verification"

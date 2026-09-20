@@ -1,7 +1,7 @@
 # 全书中文润色结果
 
 已复核28篇文档中的全部现有中文：第1至25章及序言、前言、后记。
-共复核3990个含中文的原始物理行，修改3400行。
+共复核3990个含中文的原始物理行，修改3401行。
 行数不是段落数或句子数，也不是语义准确率。原先没有译文的英文段落、图注和题记未擅自增译。
 
 第1章采用用户已批准的样稿；第2至25章由按章节隔离的子代理处理；父任务完成卷首卷尾、保留项复核、跨章检查和全书验收。
@@ -23,7 +23,7 @@
 | [ch10](../zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md) | 174 | 147 | [审校说明](chapters/ch10/notes.md) | [完整对照](chapters/ch10/all-changes.md) |
 | [ch11](../zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md) | 173 | 147 | [审校说明](chapters/ch11/notes.md) | [完整对照](chapters/ch11/all-changes.md) |
 | [ch12](../zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md) | 168 | 131 | [审校说明](chapters/ch12/notes.md) | [完整对照](chapters/ch12/all-changes.md) |
-| [ch13](../zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md) | 179 | 154 | [审校说明](chapters/ch13/notes.md) | [完整对照](chapters/ch13/all-changes.md) |
+| [ch13](../zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md) | 179 | 155 | [审校说明](chapters/ch13/notes.md) | [完整对照](chapters/ch13/all-changes.md) |
 | [ch14](../zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md) | 316 | 270 | [审校说明](chapters/ch14/notes.md) | [完整对照](chapters/ch14/all-changes.md) |
 | [ch15](../zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md) | 84 | 75 | [审校说明](chapters/ch15/notes.md) | [完整对照](chapters/ch15/all-changes.md) |
 | [ch16](../zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md) | 147 | 129 | [审校说明](chapters/ch16/notes.md) | [完整对照](chapters/ch16/all-changes.md) |
@@ -43,7 +43,8 @@
 - 逐章清单可从固定 Git 快照精确重建当前文件；所有现有中文行均有修改或审阅保留记录。
 - 英文源文、程序代码块及行内代码、图片、脚注标记和章节结构保持；自然语言代码块例外单独登记。
 - 已有有效链接的目标保持不变。第21章一处全角括号损坏的链接语法已单独修复，原可见目标网址未变；解析差异记录于 `link-syntax-exceptions.json`。
-- 42个图片资源逐字节保持不变。README 和侧栏仅同步章节链接文字，其他内容及目标路径不变。
+- 42个图片资源逐字节保持不变。侧栏仅同步章节链接文字；第10章文件更名后链接目标随之更新。README 已于 2026 年 9 月 21 日改写为项目说明，不再作为导航文件校验。
+- 第13章第836行“改变状态”由普通段落改为列表项，与英文原文及后一项结构一致；此结构修正登记于 `structure-exceptions.json`。
 - 结构检查不能证明语义正确；各章完成逐段语义审阅，父任务另做交叉复核和保留项处理。
 - 原文缺损、未译英文、错误章号、损坏链接、代码样例的既有缺陷和不明确措辞，见各章说明；未把这些问题冒称为已修复。
 - 第18章原第337行、第23章原第673行有既有英文缺译，本轮未添加新段落。第4章原文逻辑歧义、第25章延迟方向疑点已明确加译注。第一章缺句的中文已按官方版校正，但本地英文未补写。

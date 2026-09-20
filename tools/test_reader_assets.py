@@ -23,7 +23,7 @@ class ReaderAssetsTests(unittest.TestCase):
                    "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md"}
         for path in (reader.ROOT / "zh-cn").rglob("*.md"):
             relative = path.relative_to(reader.ROOT).as_posix()
-            # The translation-polish tag marks the commit whose book text the reader must not alter.
+            # The translation-polish tag marks the latest approved book text; move it when the text changes deliberately.
             before = subprocess.check_output(["git", "-C", str(reader.ROOT), "show", "translation-polish:" + renamed.get(relative, relative)])
             self.assertEqual(path.read_bytes(), before, relative)
 

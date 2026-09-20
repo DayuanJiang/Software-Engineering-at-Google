@@ -1,0 +1,12 @@
+{
+  "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": [
+    {
+      "lines": [
+        836
+      ],
+      "before": "1bffb9589e7994b558532eed08f88627742c7c2b8259bff8dd2a755973dac5c4",
+      "after": "eb99f23c3233362169370385d5bba2b9ed4d0c7ba6b8dd1114fc5e0a3ce29471",
+      "reason": "第 836 行“改变状态”由普通段落改为列表项，与第 843 行“不改变状态”一致；英文原文两项均为列表项。2026-09-21 排版修正。"
+    }
+  ]
+}

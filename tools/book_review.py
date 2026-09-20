@@ -25,9 +25,15 @@ def identifier(file):
     return f"ch{int(match[1]):02d}" if match else Path(file).stem.lower()
 
 
+# Files renamed after the baseline commit keep their old path inside that commit.
+RENAMED_SOURCES = {
+    "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md": "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md",
+}
+
+
 def original(file, baseline):
     raw = subprocess.check_output(
-        ["git", "-C", str(audit.ROOT), "show", f"{baseline['git_commit']}:{file}"]
+        ["git", "-C", str(audit.ROOT), "show", f"{baseline['git_commit']}:{RENAMED_SOURCES.get(file, file)}"]
     )
     if audit.digest(raw) != baseline["files"][file]["sha256"]:
         raise ValueError(f"Original snapshot mismatch: {file}")
@@ -57,7 +63,15 @@ def validate(file, before, after, manifest):
     exceptions = json.loads(exceptions_path.read_text()).get(file, []) if exceptions_path.exists() else []
     link_path = audit.DEFAULT_OUT / "link-syntax-exceptions.json"
     link_exceptions = json.loads(link_path.read_text()).get(file, []) if link_path.exists() else []
+    structure_path = audit.DEFAULT_OUT / "structure-exceptions.json"
+    structure_exceptions = json.loads(structure_path.read_text()).get(file, []) if structure_path.exists() else []
     for key in a:
+        if key == "structures" and a[key] != b[key] and structure_exceptions:
+            # An approved structural edit pins the exact block layout before and after the change.
+            before_hash, after_hash = audit.digest(json.dumps(a[key])), audit.digest(json.dumps(b[key]))
+            if not any(e["before"] == before_hash and e["after"] == after_hash for e in structure_exceptions):
+                raise ValueError(f"{file}: unapproved structure change")
+            continue
         if key == "links" and a[key] != b[key] and link_exceptions:
             if len(a[key]) != len(b[key]):
                 raise ValueError(f"{file}: link count changed")
@@ -101,7 +115,7 @@ def validate(file, before, after, manifest):
         "code_items": len(a["code_hashes"]), "links": len(a["links"]),
         "footnote_markers": len(a["footnotes"]), "structural_items": len(a["structures"]),
         "holds": holds, "held_line_count": len(held), "prose_code_exceptions": exceptions,
-        "link_syntax_exceptions": link_exceptions,
+        "link_syntax_exceptions": link_exceptions, "structure_exceptions": structure_exceptions,
     }
 
 
@@ -150,16 +164,20 @@ def verify_all(final=False, check_reader_config=True, write_artifacts=True):
     nav_record = audit.DEFAULT_OUT / "navigation-edits.json"
     navigation = json.loads(nav_record.read_text()) if nav_record.exists() else {}
     site_errors = []
-    for file in ("README.md", "_sidebar.md", "_coverpage.md", "index.html"):
+    # README.md became the project's own introduction after the polish and is no longer checked here.
+    for file in ("_sidebar.md", "_coverpage.md", "index.html"):
         if not check_reader_config and file in {"index.html", "_coverpage.md"}:
             continue
         expected = navigation[file]["after_sha256"] if file in navigation else baseline["files"][file]["sha256"]
         if audit.digest((audit.ROOT / file).read_bytes()) != expected:
             site_errors.append(file)
         if file in navigation:
-            if file not in {"README.md", "_sidebar.md"}:
+            before = original(file, baseline).decode()
+            for new_path, old_path in RENAMED_SOURCES.items():
+                before = before.replace(old_path, new_path)
+            if file != "_sidebar.md":
                 site_errors.append(file + ": not an allowed navigation file")
-            elif without_nav_labels(original(file, baseline).decode()) != without_nav_labels((audit.ROOT / file).read_text()):
+            elif without_nav_labels(before) != without_nav_labels((audit.ROOT / file).read_text()):
                 site_errors.append(file + ": edits outside chapter labels")
     result = {
         "verified_documents": sum(r["status"] in {"verified", "verified_with_holds"} for r in rows),
@@ -349,7 +367,8 @@ def sync_navigation():
 
 
 def summary():
-    result = verify_all(final=True)
+    # The reader's index.html and coverpage diverged from the polish baseline on purpose; check content only.
+    result = verify_all(final=True, check_reader_config=False)
     reports()
     lines = [
         "# 全书中文润色结果", "",
@@ -374,7 +393,8 @@ def summary():
         "- 逐章清单可从固定 Git 快照精确重建当前文件；所有现有中文行均有修改或审阅保留记录。",
         "- 英文源文、程序代码块及行内代码、图片、脚注标记和章节结构保持；自然语言代码块例外单独登记。",
         "- 已有有效链接的目标保持不变。第21章一处全角括号损坏的链接语法已单独修复，原可见目标网址未变；解析差异记录于 `link-syntax-exceptions.json`。",
-        "- 42个图片资源逐字节保持不变。README 和侧栏仅同步章节链接文字，其他内容及目标路径不变。",
+        "- 42个图片资源逐字节保持不变。侧栏仅同步章节链接文字；第10章文件更名后链接目标随之更新。README 已于 2026 年 9 月 21 日改写为项目说明，不再作为导航文件校验。",
+        "- 第13章第836行“改变状态”由普通段落改为列表项，与英文原文及后一项结构一致；此结构修正登记于 `structure-exceptions.json`。",
         "- 结构检查不能证明语义正确；各章完成逐段语义审阅，父任务另做交叉复核和保留项处理。",
         "- 原文缺损、未译英文、错误章号、损坏链接、代码样例的既有缺陷和不明确措辞，见各章说明；未把这些问题冒称为已修复。",
         "- 第18章原第337行、第23章原第673行有既有英文缺译，本轮未添加新段落。第4章原文逻辑歧义、第25章延迟方向疑点已明确加译注。第一章缺句的中文已按官方版校正，但本地英文未补写。",

@@ -24,5 +24,6 @@
       "reason": "Parent reviewed natural-language quotation, not executable code."
     }
   ],
-  "link_syntax_exceptions": []
+  "link_syntax_exceptions": [],
+  "structure_exceptions": []
 }

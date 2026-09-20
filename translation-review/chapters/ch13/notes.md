@@ -73,3 +73,7 @@
 env PYTHONDONTWRITEBYTECODE=1 UV_NO_CACHE=1 UV_NO_SYNC=1 uv run --offline --locked --project tools --cache-dir .cache/uv python translation-review/chapters/ch13/verify.py
 git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md
 ```
+
+## 2026-09-21 结构修正
+
+- 第 836 行 `*改变状态*` 改为 `- *改变状态*`，与其后的 `- *不改变状态*` 一致，使两类函数在译文中同为列表项，与英文原文结构对应。阅读器随后按列表渲染，不再出现一段为普通段落、一段为项目符号的情况。

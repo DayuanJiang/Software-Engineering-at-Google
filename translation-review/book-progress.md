@@ -19,7 +19,7 @@
 | ch10 | verified | 147 |
 | ch11 | verified | 147 |
 | ch12 | verified | 131 |
-| ch13 | verified | 154 |
+| ch13 | verified | 155 |
 | ch14 | verified | 270 |
 | ch15 | verified | 75 |
 | ch16 | verified | 129 |

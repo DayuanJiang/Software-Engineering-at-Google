@@ -52,7 +52,7 @@
   },
   "_sidebar.md": {
     "before_sha256": "9e36686ea5f2b44b10b9bca529b3559a773add919c38d3ec58f71ca1cd67d2f9",
-    "after_sha256": "7a6efa531962f321d372a41b3172b310b57340679edc6e19cb76c38be86de7ea",
+    "after_sha256": "2086beb903fb42adcd240831970341c008fdbb57290d4dea69f88897db46a0d3",
     "changes": [
       {
         "target": "zh-cn/Foreword.md",
@@ -109,6 +109,7 @@
         "before": "第十九章 体验：谷歌的代码审查工具",
         "after": "第十九章 Critique：谷歌的代码审查工具"
       }
-    ]
+    ],
+    "note": "2026-09-21：第十章文件由 Chapter-10_Documentatio.md 更名为 Chapter-10_Documentation.md，侧栏链接目标随之更新；README.md 已改写为项目说明，不再作为导航文件校验。"
   }
 }

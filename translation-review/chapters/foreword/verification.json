@@ -14,5 +14,6 @@
   "holds": [],
   "held_line_count": 0,
   "prose_code_exceptions": [],
-  "link_syntax_exceptions": []
+  "link_syntax_exceptions": [],
+  "structure_exceptions": []
 }
