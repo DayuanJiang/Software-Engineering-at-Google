@@ -58,9 +58,9 @@ log(1 + 英文频次) * (1 + log(1 + 文档数)) + 2 * log(1 + 标题频次)
 | 文件 | 用途 |
 | --- | --- |
 | `baseline.json` | 修改前的 Git 提交、文件及图片哈希、英文、代码、链接、脚注和结构基线 |
-| `segments.jsonl` | 可回查的语言片段、短 ID、文件和行号；表格位置可能是所在行的位置 |
+| `segments.jsonl` | 可回查的语言片段、短 ID、文件和行号；表格位置可能是所在行的位置。体积较大，未纳入版本库，可按下文命令重新生成 |
 | `alignments.json` | 候选中英配对及歧义状态 |
-| `candidates.json` | 全部保留候选、逐文档与文本类型计数、实际表面形式、每次命中的片段和字符偏移 |
+| `candidates.json` | 全部保留候选、逐文档与文本类型计数、实际表面形式、每次命中的片段和字符偏移。体积较大，未纳入版本库，可按下文命令重新生成 |
 | `chinese-frequency.json` | 中文候选词及短语的实际抽取次数 |
 | `glossary-decisions.json` | 人工维护的首选译法、适用范围、别名和原文证据，是术语审定的唯一编辑入口 |
 | `glossary-statistics.json` | 根据审定文件生成的计数、异译位置和自动核对过的证据位置 |
@@ -81,6 +81,8 @@ uv sync --project tools --locked --python 3.12 --cache-dir .cache/uv
 uv run --offline --locked --project tools --cache-dir .cache/uv python tools/book_review.py verify --final
 uv run --offline --locked --project tools --cache-dir .cache/uv python -m unittest discover -s tools -p 'test_*.py' -v
 ```
+
+`segments.jsonl` 和 `candidates.json` 合计约 20 MB，不再随仓库分发。需要时先检出 `baseline.json` 记录的提交，运行下面的 `analyze` 命令即可得到与准备阶段一致的快照。
 
 如需重新统计当前内容，使用新目录保留准备阶段快照：
 

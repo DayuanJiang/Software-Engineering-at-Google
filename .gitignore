@@ -3,3 +3,8 @@ node_modules
 .cache
 .idea
 .DS_Store
+__pycache__
+
+# Regenerable analysis snapshots (see translation-review/README.md)
+translation-review/candidates.json
+translation-review/segments.jsonl
