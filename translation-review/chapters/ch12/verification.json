@@ -1,0 +1,18 @@
+{
+  "id": "ch12",
+  "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+  "status": "verified",
+  "after_sha256": "f38e63c2cee62c61e6a3d1a6a7672cf5457e2f84976cf0a22d2480f41c7b4d95",
+  "reviewed_chinese_lines": 168,
+  "changed_lines": 131,
+  "english_lines": 129,
+  "english_segments": 142,
+  "code_items": 37,
+  "links": 11,
+  "footnote_markers": 13,
+  "structural_items": 98,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

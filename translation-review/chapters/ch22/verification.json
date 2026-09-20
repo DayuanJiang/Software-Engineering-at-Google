@@ -1,0 +1,18 @@
+{
+  "id": "ch22",
+  "file": "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md",
+  "status": "verified",
+  "after_sha256": "6e5dc79fd989a1c4451d2466e107b0e0dd83e86bd6ce3dedd26823e0b94f95f7",
+  "reviewed_chinese_lines": 164,
+  "changed_lines": 132,
+  "english_lines": 136,
+  "english_segments": 167,
+  "code_items": 1,
+  "links": 19,
+  "footnote_markers": 32,
+  "structural_items": 88,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

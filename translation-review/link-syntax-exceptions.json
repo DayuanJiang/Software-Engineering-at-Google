@@ -1,0 +1,16 @@
+{
+  "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": [
+    {
+      "link_index": 10,
+      "before": {
+        "kind": "bare_url",
+        "target": "https://research.swtch.com/deps）。我们无法给出一个完美的公式来决定从长远来看，什么时候引入和重新实施更划算；我们自己在这方面经常失败。"
+      },
+      "after": {
+        "kind": "link",
+        "target": "https://research.swtch.com/deps"
+      },
+      "reason": "Repair full-width Markdown brackets; intended visible URL unchanged."
+    }
+  ]
+}

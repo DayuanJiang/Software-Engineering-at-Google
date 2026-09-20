@@ -1,0 +1,18 @@
+{
+  "id": "foreword",
+  "file": "zh-cn/Foreword.md",
+  "status": "verified",
+  "after_sha256": "b6616df21c59578ea0d741306dc0f46ef7a87721d8be6351c2d8eb85ee18874d",
+  "reviewed_chinese_lines": 7,
+  "changed_lines": 6,
+  "english_lines": 7,
+  "english_segments": 8,
+  "code_items": 0,
+  "links": 0,
+  "footnote_markers": 0,
+  "structural_items": 1,
+  "holds": [],
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

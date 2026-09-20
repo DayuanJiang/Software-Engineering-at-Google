@@ -1,0 +1,18 @@
+{
+  "id": "ch03",
+  "file": "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
+  "status": "verified",
+  "after_sha256": "a47f4fd18b1967b0c0bcee9706a26fb3f3bc1d91db24f75ea8f8316962c12934",
+  "reviewed_chinese_lines": 218,
+  "changed_lines": 181,
+  "english_lines": 182,
+  "english_segments": 209,
+  "code_items": 5,
+  "links": 23,
+  "footnote_markers": 66,
+  "structural_items": 160,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

@@ -1,0 +1,52 @@
+{
+  "source": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
+  "baseline_sha256": "4eb5bb46155111e62dcfd23cb256a73f19a8ae9a1fc8fa27bb08c313c29b6bb8",
+  "current_sha256": "9b95b492a2296b5d8600c7f49385e78ff45c6813976554ead04f62193abccfc7",
+  "reviewed_chinese_lines": 159,
+  "edited_chinese_lines": 135,
+  "unchanged_reviewed_lines": [
+    6,
+    71,
+    122,
+    218,
+    288,
+    329,
+    331,
+    333,
+    337,
+    352,
+    368,
+    385,
+    388,
+    389,
+    390,
+    400,
+    421,
+    456,
+    493,
+    494,
+    519,
+    533,
+    539,
+    558
+  ],
+  "other_source_files_unchanged": 31,
+  "images_unchanged": 42,
+  "punctuation_residuals": 0,
+  "english_lines": 145,
+  "english_segments": 155,
+  "protected_code_items": 3,
+  "links": 3,
+  "footnote_markers": 35,
+  "structural_items": 107,
+  "prose_code_exceptions": [
+    {
+      "line": 130,
+      "reason": "Indented Chinese quotation, not executable code.",
+      "before_sha256": "efef7b099898c9d20330c27eb587729fdabe1cc01d98a4c89fffa77f4ba3ad66",
+      "after_sha256": "cefdfb50e78e3cccb0618264797aee2487cf8cf49aa85758c2fe4b3749877eb7",
+      "before": "*当一个 API 有足够多的用户的时候，在约定中你承诺的什么都无所谓，所有在你系统里面被观察到的行为都会被一些用户直接依赖。*\n",
+      "after": "*只要 API 的用户足够多，不论你在契约中作了什么承诺，系统的每一种可观察行为都会被某些用户依赖。*\n"
+    }
+  ]
+}

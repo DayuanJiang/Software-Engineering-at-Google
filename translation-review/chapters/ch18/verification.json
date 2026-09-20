@@ -1,0 +1,18 @@
+{
+  "id": "ch18",
+  "file": "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
+  "status": "verified",
+  "after_sha256": "39a197e05eac1fa2d189062ae699de9d89e31af83a50e4bcc1832c490abfe022",
+  "reviewed_chinese_lines": 168,
+  "changed_lines": 152,
+  "english_lines": 157,
+  "english_segments": 172,
+  "code_items": 11,
+  "links": 20,
+  "footnote_markers": 12,
+  "structural_items": 100,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "ch17",
+  "file": "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md",
+  "status": "verified",
+  "after_sha256": "261fc83c95ce5757e3395c5972daf2ee6dba6b5aa9807a887a58789533d81179",
+  "reviewed_chinese_lines": 140,
+  "changed_lines": 118,
+  "english_lines": 121,
+  "english_segments": 143,
+  "code_items": 4,
+  "links": 10,
+  "footnote_markers": 36,
+  "structural_items": 70,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

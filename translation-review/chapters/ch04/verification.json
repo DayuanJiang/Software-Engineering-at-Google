@@ -1,0 +1,18 @@
+{
+  "id": "ch04",
+  "file": "zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md",
+  "status": "verified",
+  "after_sha256": "64af48678908988c4cf9621092fad72f4fb95f4b3e99a6f68f9b48cd9dce0d44",
+  "reviewed_chinese_lines": 76,
+  "changed_lines": 67,
+  "english_lines": 67,
+  "english_segments": 78,
+  "code_items": 0,
+  "links": 3,
+  "footnote_markers": 10,
+  "structural_items": 52,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "ch07",
+  "file": "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
+  "status": "verified",
+  "after_sha256": "35076cfa13a4f7d76d1739a5e3206e33e4db01f9aa960ab951a17b2eb5998675",
+  "reviewed_chinese_lines": 137,
+  "changed_lines": 122,
+  "english_lines": 128,
+  "english_segments": 151,
+  "code_items": 0,
+  "links": 0,
+  "footnote_markers": 18,
+  "structural_items": 301,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

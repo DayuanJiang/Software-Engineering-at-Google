@@ -1,0 +1,18 @@
+{
+  "id": "ch20",
+  "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
+  "status": "verified",
+  "after_sha256": "6ad7f2ef15fce33f467b1c8c13e525d7ccc5385975d9da3661168566930a7238",
+  "reviewed_chinese_lines": 83,
+  "changed_lines": 64,
+  "english_lines": 69,
+  "english_segments": 78,
+  "code_items": 10,
+  "links": 12,
+  "footnote_markers": 16,
+  "structural_items": 49,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

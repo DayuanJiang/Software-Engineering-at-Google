@@ -1,0 +1,18 @@
+{
+  "id": "afterword",
+  "file": "zh-cn/Afterword.md",
+  "status": "verified",
+  "after_sha256": "e9324a5225df209296a4676e17d6a032aae6598b2eb1fb03e45b08da7841f832",
+  "reviewed_chinese_lines": 8,
+  "changed_lines": 7,
+  "english_lines": 9,
+  "english_segments": 9,
+  "code_items": 0,
+  "links": 0,
+  "footnote_markers": 0,
+  "structural_items": 1,
+  "holds": [],
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

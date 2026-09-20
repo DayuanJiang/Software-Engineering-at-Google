@@ -1,0 +1,18 @@
+{
+  "id": "ch15",
+  "file": "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
+  "status": "verified",
+  "after_sha256": "08efb0ca0c6eab012bdd93c95454f7a5b1c912687d919b4d58453f28eea69bc6",
+  "reviewed_chinese_lines": 84,
+  "changed_lines": 75,
+  "english_lines": 70,
+  "english_segments": 83,
+  "code_items": 2,
+  "links": 2,
+  "footnote_markers": 4,
+  "structural_items": 35,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

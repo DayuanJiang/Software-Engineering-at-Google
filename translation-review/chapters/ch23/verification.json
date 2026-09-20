@@ -1,0 +1,46 @@
+{
+  "id": "ch23",
+  "file": "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md",
+  "status": "verified",
+  "after_sha256": "e2b22ec3217a0a4e5cb87ab892f8b3b6f5e54aa4361a26ccb75db5761e27dc5a",
+  "reviewed_chinese_lines": 204,
+  "changed_lines": 190,
+  "english_lines": 185,
+  "english_segments": 196,
+  "code_items": 6,
+  "links": 15,
+  "footnote_markers": 17,
+  "structural_items": 107,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [
+    {
+      "code_index": 1,
+      "lines": [
+        30
+      ],
+      "before": "持续集成：对我们整个复杂和快速发展的生态系统进行持续的组装和测试。\n",
+      "after": "持续集成（2）：持续组装和测试我们整个复杂且快速演进的生态系统。\n",
+      "reason": "Parent reviewed natural-language quotation, not executable code."
+    },
+    {
+      "code_index": 3,
+      "lines": [
+        182
+      ],
+      "before": "*持续交付（CD）*：持续集合候选版本，然后在一系列环境中推广和测试这些候选版本--有时达到生产阶段，有时不达到生产阶段。\n",
+      "after": "*持续交付（CD）*：持续生成发布候选版本，再在一系列环境中逐步推进并测试它们；有些最终进入生产环境，有些不会。\n",
+      "reason": "Parent reviewed natural-language quotation, not executable code."
+    },
+    {
+      "code_index": 5,
+      "lines": [
+        413
+      ],
+      "before": "*封闭测试*：针对测试环境（即应用服务器和资源）运行的测试，是完全自成一体的（即没有像生产后端那样的外部依赖）。\n",
+      "after": "*封闭测试*：在完全自包含的测试环境（即应用服务器及其资源）中运行的测试；该环境没有生产后端之类的外部依赖。\n",
+      "reason": "Parent reviewed natural-language quotation, not executable code."
+    }
+  ],
+  "link_syntax_exceptions": []
+}

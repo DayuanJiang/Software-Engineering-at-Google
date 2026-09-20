@@ -1,0 +1,19 @@
+{
+  "scope": "Chapter 1 ambiguous groups from the preparation snapshot; reviewed against the original bilingual Markdown.",
+  "baseline_sha256": "4eb5bb46155111e62dcfd23cb256a73f19a8ae9a1fc8fa27bb08c313c29b6bb8",
+  "reviews": [
+    {"group": "ch01:s0006", "english_lines": [12, 15], "chinese_lines": [17], "resolution": "Line 12 is an untranslated epigraph; line 15 pairs with line 17. Preserve epigraph without inventing a translation."},
+    {"group": "ch01:s0033", "english_lines": [67], "chinese_lines": [69], "resolution": "Bibliographic footnote pair; different marker formatting."},
+    {"group": "ch01:s0045", "english_lines": [88], "chinese_lines": [90], "resolution": "Footnote source and existing Chinese title translation; not a missing main-text paragraph."},
+    {"group": "ch01:s0071", "english_lines": [140], "chinese_lines": [142], "resolution": "Footnote 8 pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0073", "english_lines": [144], "chinese_lines": [146], "resolution": "Footnote 9 pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0091", "english_lines": [184], "chinese_lines": [186], "resolution": "Footnote 10 definition pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0121", "english_lines": [240], "chinese_lines": [242], "resolution": "Footnote 11 bibliography pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0123", "english_lines": [244], "chinese_lines": [246], "resolution": "Footnote 12 definition pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0145", "english_lines": [284], "chinese_lines": [286], "resolution": "Footnote 13 song-reference pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0159", "english_lines": [310], "chinese_lines": [312], "resolution": "Footnote 14 compiler-detail pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0175", "english_lines": [344], "chinese_lines": [346], "resolution": "Footnote 15 bibliography pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0177", "english_lines": [348], "chinese_lines": [350], "resolution": "Footnote 16 explanation pair; Chinese omits the explicit marker."},
+    {"group": "ch01:s0225", "english_lines": [428], "chinese_lines": [430], "resolution": "Footnote 17 explanation pair; Chinese omits the explicit marker."}
+  ]
+}

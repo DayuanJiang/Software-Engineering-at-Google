@@ -1,0 +1,28 @@
+{
+  "id": "ch24",
+  "file": "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md",
+  "status": "verified",
+  "after_sha256": "f63d55c62cfb90337f11bd2149f3d789026479c43da7bec9f9b8d28a67112539",
+  "reviewed_chinese_lines": 78,
+  "changed_lines": 66,
+  "english_lines": 68,
+  "english_segments": 73,
+  "code_items": 1,
+  "links": 0,
+  "footnote_markers": 4,
+  "structural_items": 50,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [
+    {
+      "code_index": 0,
+      "lines": [
+        27
+      ],
+      "before": "You get extraordinary outcomes by realizing that the launch *never lands* but that it begins a learning cycle where you then fix the next most important thing, measure how it went, fix the next thing, etc.—and it is *never complete*.\n—David Weekly, Former Google product manager\n\n当你意识到发射从未着陆，但它开始了一个学习周期，然后你修复下一个最重要的事情，衡量它如何进行，修复下一个事情，等等——而且它永远不会完成。\n-David Weekly，前谷歌产品经理\n",
+      "after": "You get extraordinary outcomes by realizing that the launch *never lands* but that it begins a learning cycle where you then fix the next most important thing, measure how it went, fix the next thing, etc.—and it is *never complete*.\n—David Weekly, Former Google product manager\n\n要取得非凡成果，就要认识到：上线从来不是终点，而是学习循环的开始。你接着解决下一个最重要的问题，衡量效果，再解决下一个问题，如此反复，这个过程永远不会结束。\n-David Weekly，前谷歌产品经理\n",
+      "reason": "Parent reviewed natural-language quotation, not executable code."
+    }
+  ],
+  "link_syntax_exceptions": []
+}

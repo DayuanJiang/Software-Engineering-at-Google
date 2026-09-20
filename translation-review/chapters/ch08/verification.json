@@ -1,0 +1,18 @@
+{
+  "id": "ch08",
+  "file": "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md",
+  "status": "verified",
+  "after_sha256": "ceaa20d7075b29afcf52f508756fef8d93768de1b24f6cbdcf92fe77bb67a663",
+  "reviewed_chinese_lines": 165,
+  "changed_lines": 138,
+  "english_lines": 138,
+  "english_segments": 166,
+  "code_items": 11,
+  "links": 20,
+  "footnote_markers": 31,
+  "structural_items": 91,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

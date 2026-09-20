@@ -1,0 +1,18 @@
+{
+  "id": "ch10",
+  "file": "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md",
+  "status": "verified",
+  "after_sha256": "c858e9094bc7fca551b6c9572008a4f8e48866b4cf77549764bb1e7b4f2ddd5c",
+  "reviewed_chinese_lines": 174,
+  "changed_lines": 147,
+  "english_lines": 151,
+  "english_segments": 171,
+  "code_items": 13,
+  "links": 8,
+  "footnote_markers": 6,
+  "structural_items": 155,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

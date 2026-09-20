@@ -1,0 +1,18 @@
+{
+  "id": "ch11",
+  "file": "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md",
+  "status": "verified",
+  "after_sha256": "933abdca0aa319a72a2d0d83466a74e0e3c0197b569bea4fcb89a6a112125159",
+  "reviewed_chinese_lines": 173,
+  "changed_lines": 147,
+  "english_lines": 150,
+  "english_segments": 165,
+  "code_items": 3,
+  "links": 21,
+  "footnote_markers": 17,
+  "structural_items": 72,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

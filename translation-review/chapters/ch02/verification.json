@@ -1,0 +1,18 @@
+{
+  "id": "ch02",
+  "file": "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md",
+  "status": "verified",
+  "after_sha256": "7cfdcdca320b006d4bf6ec1aa1aa824f33375ff6f92a94c9693697aad2520f07",
+  "reviewed_chinese_lines": 157,
+  "changed_lines": 125,
+  "english_lines": 142,
+  "english_segments": 143,
+  "code_items": 0,
+  "links": 0,
+  "footnote_markers": 14,
+  "structural_items": 86,
+  "holds": [],
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

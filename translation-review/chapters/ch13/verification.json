@@ -1,0 +1,18 @@
+{
+  "id": "ch13",
+  "file": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
+  "status": "verified",
+  "after_sha256": "7a23ed78ce176468ca1aaa876f563fc7f1cc24cc81ae9dac5d12bf586e0f73dd",
+  "reviewed_chinese_lines": 179,
+  "changed_lines": 154,
+  "english_lines": 161,
+  "english_segments": 192,
+  "code_items": 28,
+  "links": 54,
+  "footnote_markers": 0,
+  "structural_items": 60,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}

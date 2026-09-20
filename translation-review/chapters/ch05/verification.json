@@ -1,0 +1,37 @@
+{
+  "id": "ch05",
+  "file": "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md",
+  "status": "verified",
+  "after_sha256": "a7afbe07ae471a5b59edf85e645c85d08365d25b213a18f64efc5914c3acfd36",
+  "reviewed_chinese_lines": 168,
+  "changed_lines": 141,
+  "english_lines": 133,
+  "english_segments": 159,
+  "code_items": 5,
+  "links": 3,
+  "footnote_markers": 27,
+  "structural_items": 67,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [
+    {
+      "code_index": 1,
+      "lines": [
+        407
+      ],
+      "before": "你是团队中一个可靠的成员，是我们最聪明的工程师之一。虽然如此，你的代码很复杂，团队中的其他人几乎不可能理解。但是，你有很大的潜力，而且有一件很酷的T恤衫收藏。\n",
+      "after": "你是团队可靠的一员，也是我们最聪明的工程师之一。话虽如此，你的代码很绕，团队里其他人几乎都看不懂。不过，你很有潜力，而且收藏的 T 恤也酷极了。\n",
+      "reason": "Parent reviewed natural-language quotation, not executable code."
+    },
+    {
+      "code_index": 4,
+      "lines": [
+        430
+      ],
+      "before": "每次做出决定时，就像一列火车驶过小镇——当你跳到火车前面去阻止它时，你就会使火车减速，并有可能惹恼驾驶火车的工程师。每15分钟就会有一列新的火车经过，如果你在每一列火车前跳车，你不仅要花很多时间来阻止火车，而且最终驾驶火车的工程师众人会生气到直接从你身上碾过。因此，尽管跳到一些火车前面是可以的，但要挑选你想停的火车，以确保你只停真正重要的火车。\n",
+      "after": "每作出一个决定，就像有一列火车驶过小镇。你跳到车前拦住它，就会让列车减速，还可能惹恼司机。每15分钟就有一列新火车经过；如果每列都拦，你不仅要花大量时间拦车，最后还会有某个司机气得直接从你身上碾过去。所以，拦下某些列车没有问题，但要有所选择，只拦那些真正重要的。\n",
+      "reason": "Parent reviewed natural-language quotation, not executable code."
+    }
+  ],
+  "link_syntax_exceptions": []
+}

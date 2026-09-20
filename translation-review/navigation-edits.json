@@ -1,0 +1,114 @@
+{
+  "README.md": {
+    "before_sha256": "f2b1e23c30e3ab78609de18d46eb0003dcb1546581ac025c1e32ec2ca9d51bc1",
+    "after_sha256": "dbdaa37863dcd928d5448b5d8c4ccdf5789ed10263f03f3591c6acd45588a6e1",
+    "changes": [
+      {
+        "target": "./zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md",
+        "before": "第二章：如何融入团队",
+        "after": "第二章：如何在团队中有效协作"
+      },
+      {
+        "target": "./zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md",
+        "before": "第四章：公平工程",
+        "after": "第四章：面向公平的工程实践"
+      },
+      {
+        "target": "./zh-cn/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale.md",
+        "before": "第六章：规模优先",
+        "after": "第六章：领导大规模团队"
+      },
+      {
+        "target": "./zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
+        "before": "第七章：测量工程效率",
+        "after": "第七章：度量工程生产力"
+      },
+      {
+        "target": "./zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
+        "before": "第十三章：测试替代",
+        "after": "第十三章：测试替身"
+      },
+      {
+        "target": "./zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
+        "before": "第十四章：大型测试",
+        "after": "第十四章：较大规模测试"
+      },
+      {
+        "target": "./zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
+        "before": "第十五章：废弃",
+        "after": "第十五章：弃用"
+      },
+      {
+        "target": "./zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
+        "before": "第十八章：构建系统，构建理念",
+        "after": "第十八章：构建系统与构建理念"
+      },
+      {
+        "target": "./zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md",
+        "before": "第十九章：体验：谷歌的代码审查工具",
+        "after": "第十九章：Critique：谷歌的代码审查工具"
+      }
+    ]
+  },
+  "_sidebar.md": {
+    "before_sha256": "9e36686ea5f2b44b10b9bca529b3559a773add919c38d3ec58f71ca1cd67d2f9",
+    "after_sha256": "7a6efa531962f321d372a41b3172b310b57340679edc6e19cb76c38be86de7ea",
+    "changes": [
+      {
+        "target": "zh-cn/Foreword.md",
+        "before": "前言",
+        "after": "序言"
+      },
+      {
+        "target": "zh-cn/Preface.md",
+        "before": "序言",
+        "after": "前言"
+      },
+      {
+        "target": "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md",
+        "before": "第二章 如何融入团队",
+        "after": "第二章 如何在团队中有效协作"
+      },
+      {
+        "target": "zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md",
+        "before": "第四章 公平工程",
+        "after": "第四章 面向公平的工程实践"
+      },
+      {
+        "target": "zh-cn/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale.md",
+        "before": "第六章 规模优先",
+        "after": "第六章 领导大规模团队"
+      },
+      {
+        "target": "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
+        "before": "第七章 测量工程效率",
+        "after": "第七章 度量工程生产力"
+      },
+      {
+        "target": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
+        "before": "第十三章 测试替代",
+        "after": "第十三章 测试替身"
+      },
+      {
+        "target": "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
+        "before": "第十四章 大型测试",
+        "after": "第十四章 较大规模测试"
+      },
+      {
+        "target": "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
+        "before": "第十五章 废弃",
+        "after": "第十五章 弃用"
+      },
+      {
+        "target": "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
+        "before": "第十八章 构建系统，构建理念",
+        "after": "第十八章 构建系统与构建理念"
+      },
+      {
+        "target": "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md",
+        "before": "第十九章 体验：谷歌的代码审查工具",
+        "after": "第十九章 Critique：谷歌的代码审查工具"
+      }
+    ]
+  }
+}

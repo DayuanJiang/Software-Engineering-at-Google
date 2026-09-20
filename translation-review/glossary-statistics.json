@@ -1,0 +1,6023 @@
+[
+  {
+    "term": "software engineering",
+    "keys": [
+      "software engineering"
+    ],
+    "preferred": "软件工程",
+    "observed_aliases": [
+      "软件工程"
+    ],
+    "definition": "本书强调软件随时间演进时的开发、修改与维护，以及规模和权衡；不能缩减为编程。",
+    "scope": "学科及工程实践。",
+    "exceptions": "programming 单独译为编程；不要把两者统一成同一个词。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 1,
+        "quote": "Software engineering isn’t programming.",
+        "file": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
+        "line": 19
+      }
+    ],
+    "frequency": 134,
+    "documents": {
+      "zh-cn/Afterword.md": 6,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 4,
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 2,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 2,
+      "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 3,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 17,
+      "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 1,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 1,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 36,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 2,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 9,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 2,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 2,
+      "zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md": 2,
+      "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md": 5,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 8,
+      "zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md": 4,
+      "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md": 3,
+      "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md": 5,
+      "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md": 2,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 2,
+      "zh-cn/Foreword.md": 4,
+      "zh-cn/Preface.md": 12
+    },
+    "document_frequency": 23,
+    "source_segment_count": 106,
+    "usable_target_segment_count": 101,
+    "observed_alias_counts_in_aligned_context": {
+      "软件工程": 132
+    },
+    "alias_locations": {
+      "软件工程": [
+        {
+          "segment": "Afterword:s0003",
+          "count": 1
+        },
+        {
+          "segment": "Afterword:s0005",
+          "count": 3
+        },
+        {
+          "segment": "Afterword:s0007",
+          "count": 2
+        },
+        {
+          "segment": "Afterword:s0009",
+          "count": 1
+        },
+        {
+          "segment": "Foreword:s0008",
+          "count": 2
+        },
+        {
+          "segment": "Foreword:s0012",
+          "count": 1
+        },
+        {
+          "segment": "Foreword:s0014",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0004",
+          "count": 4
+        },
+        {
+          "segment": "Preface:s0006",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0008",
+          "count": 2
+        },
+        {
+          "segment": "Preface:s0010",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0014",
+          "count": 2
+        },
+        {
+          "segment": "Preface:s0016",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0035",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0056",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0010",
+          "count": 4
+        },
+        {
+          "segment": "ch01:s0012",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0018",
+          "count": 4
+        },
+        {
+          "segment": "ch01:s0024",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0026",
+          "count": 2
+        },
+        {
+          "segment": "ch01:s0028",
+          "count": 4
+        },
+        {
+          "segment": "ch01:s0030",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0090",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0096",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0190",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0264",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0274",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0276",
+          "count": 2
+        },
+        {
+          "segment": "ch01:s0278",
+          "count": 2
+        },
+        {
+          "segment": "ch01:s0280",
+          "count": 2
+        },
+        {
+          "segment": "ch01:s0297",
+          "count": 2
+        },
+        {
+          "segment": "ch02:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch02:s0102",
+          "count": 2
+        },
+        {
+          "segment": "ch02:s0142",
+          "count": 1
+        },
+        {
+          "segment": "ch02:s0194",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0037",
+          "count": 2
+        },
+        {
+          "segment": "ch03:s0259",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0271",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0297",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0403",
+          "count": 1
+        },
+        {
+          "segment": "ch04:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch04:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch04:s0039",
+          "count": 1
+        },
+        {
+          "segment": "ch04:s0081",
+          "count": 2
+        },
+        {
+          "segment": "ch05:s0021",
+          "count": 4
+        },
+        {
+          "segment": "ch05:s0308",
+          "count": 3
+        },
+        {
+          "segment": "ch07:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0017",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0019",
+          "count": 2
+        },
+        {
+          "segment": "ch07:s0025",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0287",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0185",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0292",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0125",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0034",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0321",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0325",
+          "count": 2
+        },
+        {
+          "segment": "ch10:s0331",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0246",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0316",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0102",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0012",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0049",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0017",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0031",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0035",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0037",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0039",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0041",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0047",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0049",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0274",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0276",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0240",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0081",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0017",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0019",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0052",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0068",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0070",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0076",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0365",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0179",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0321",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0186",
+          "count": 1
+        },
+        {
+          "segment": "ch25:s0179",
+          "count": 1
+        },
+        {
+          "segment": "ch25:s0301",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "codebase / code base",
+    "keys": [
+      "codebase",
+      "code base"
+    ],
+    "preferred": "代码库",
+    "observed_aliases": [
+      "代码库",
+      "代码基础",
+      "代码基地"
+    ],
+    "definition": "某个项目或组织维护的代码整体。它与承载代码及其历史的版本控制仓库有关，但不是所有语境下都等同。",
+    "scope": "代码整体及其维护。",
+    "exceptions": "repository 涉及具体版本控制存储或仓库时，优先译为代码仓库。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 1,
+        "quote": "Your organization’s codebase is sustainable when you are able to change all of the things that you ought to change, safely, and can do so for the life of your codebase.",
+        "file": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
+        "line": 224
+      }
+    ],
+    "frequency": 313,
+    "documents": {
+      "zh-cn/Afterword.md": 2,
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 7,
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 15,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 2,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 10,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
+      "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 5,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 11,
+      "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 35,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 15,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 10,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 14,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 18,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 6,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 48,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 5,
+      "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md": 7,
+      "zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md": 1,
+      "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md": 1,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 5,
+      "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md": 2,
+      "zh-cn/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale.md": 1,
+      "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md": 3,
+      "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md": 37,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 49,
+      "zh-cn/Preface.md": 3
+    },
+    "document_frequency": 26,
+    "source_segment_count": 252,
+    "usable_target_segment_count": 242,
+    "observed_alias_counts_in_aligned_context": {
+      "代码库": 300
+    },
+    "alias_locations": {
+      "代码库": [
+        {
+          "segment": "Afterword:s0003",
+          "count": 1
+        },
+        {
+          "segment": "Afterword:s0009",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0014",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0042",
+          "count": 1
+        },
+        {
+          "segment": "Preface:s0044",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0114",
+          "count": 3
+        },
+        {
+          "segment": "ch01:s0118",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0128",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0150",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0152",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0154",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0158",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0167",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0174",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0246",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0284",
+          "count": 1
+        },
+        {
+          "segment": "ch02:s0192",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0129",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0351",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0371",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0375",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0389",
+          "count": 2
+        },
+        {
+          "segment": "ch05:s0084",
+          "count": 1
+        },
+        {
+          "segment": "ch05:s0208",
+          "count": 1
+        },
+        {
+          "segment": "ch06:s0098",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0111",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0133",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0007",
+          "count": 2
+        },
+        {
+          "segment": "ch08:s0015",
+          "count": 2
+        },
+        {
+          "segment": "ch08:s0031",
+          "count": 2
+        },
+        {
+          "segment": "ch08:s0033",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0071",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0073",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0084",
+          "count": 2
+        },
+        {
+          "segment": "ch08:s0085",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0097",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0099",
+          "count": 2
+        },
+        {
+          "segment": "ch08:s0101",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0103",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0133",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0137",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0163",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0173",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0175",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0185",
+          "count": 2
+        },
+        {
+          "segment": "ch08:s0197",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0199",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0201",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0223",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0235",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0237",
+          "count": 3
+        },
+        {
+          "segment": "ch08:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0244",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0277",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0318",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0019",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0028",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0033",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0041",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0043",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0056",
+          "count": 4
+        },
+        {
+          "segment": "ch09:s0059",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0061",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0075",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0087",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0089",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0100",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0111",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0115",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0121",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0137",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0141",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0143",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0145",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0161",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0165",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0169",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0183",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0187",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0195",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0197",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0199",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0208",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0247",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0249",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0255",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0259",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0265",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0282",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0019",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0106",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0152",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0154",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0167",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0271",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0035",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0103",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0168",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0194",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0212",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0214",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0216",
+          "count": 3
+        },
+        {
+          "segment": "ch11:s0224",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0226",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0228",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0260",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0266",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0035",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0037",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0023",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0024",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0029",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0033",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0067",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0078",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0144",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0550",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0028",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0120",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0075",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0077",
+          "count": 3
+        },
+        {
+          "segment": "ch16:s0186",
+          "count": 4
+        },
+        {
+          "segment": "ch16:s0190",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0208",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0212",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0252",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0039",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0043",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0059",
+          "count": 2
+        },
+        {
+          "segment": "ch17:s0073",
+          "count": 2
+        },
+        {
+          "segment": "ch17:s0075",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0077",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0079",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0085",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0093",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0105",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0121",
+          "count": 2
+        },
+        {
+          "segment": "ch17:s0139",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0143",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0161",
+          "count": 3
+        },
+        {
+          "segment": "ch17:s0173",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0175",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0191",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0203",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0207",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0211",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0219",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0231",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0237",
+          "count": 2
+        },
+        {
+          "segment": "ch17:s0257",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0267",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0281",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0027",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0031",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0048",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0078",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0119",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0203",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0258",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0270",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0281",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0283",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0297",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0305",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0309",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0331",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0108",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0193",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0238",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0022",
+          "count": 3
+        },
+        {
+          "segment": "ch20:s0058",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0091",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0093",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0114",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0133",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0138",
+          "count": 3
+        },
+        {
+          "segment": "ch20:s0140",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0146",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0150",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0157",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0122",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0126",
+          "count": 3
+        },
+        {
+          "segment": "ch21:s0322",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0007",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0009",
+          "count": 3
+        },
+        {
+          "segment": "ch22:s0011",
+          "count": 4
+        },
+        {
+          "segment": "ch22:s0022",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0031",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0055",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0059",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0061",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0087",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0089",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0091",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0095",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0097",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0099",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0107",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0155",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0157",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0165",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0175",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0187",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0189",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0191",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0193",
+          "count": 3
+        },
+        {
+          "segment": "ch22:s0213",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0241",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0257",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0271",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0273",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0283",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0295",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0297",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0311",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0321",
+          "count": 2
+        },
+        {
+          "segment": "ch23:s0008",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0256",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0258",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0386",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0035",
+          "count": 2
+        },
+        {
+          "segment": "ch24:s0037",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0053",
+          "count": 2
+        },
+        {
+          "segment": "ch24:s0081",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0117",
+          "count": 1
+        },
+        {
+          "segment": "ch25:s0229",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "code review",
+    "keys": [
+      "code review"
+    ],
+    "preferred": "代码审查",
+    "observed_aliases": [
+      "代码审查",
+      "代码评审",
+      "代码审核",
+      "代码审阅"
+    ],
+    "definition": "由代码作者以外的人审查代码的过程，通常发生在代码进入代码库之前。",
+    "scope": "代码变更的同行审查。",
+    "exceptions": "review 用于文档或绩效时按上下文翻译；不要全局替换为代码审查。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 9,
+        "quote": "Code review is a process in which code is reviewed by someone other than the author, often before the introduction of that code into a codebase.",
+        "file": "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md",
+        "line": 12
+      }
+    ],
+    "frequency": 244,
+    "documents": {
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 6,
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 2,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
+      "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 1,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 1,
+      "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 2,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 1,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 41,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 2,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 12,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 4,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 2,
+      "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md": 3,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 10,
+      "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md": 6,
+      "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md": 6,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 144
+    },
+    "document_frequency": 17,
+    "source_segment_count": 148,
+    "usable_target_segment_count": 138,
+    "observed_alias_counts_in_aligned_context": {
+      "代码审查": 195,
+      "代码评审": 32,
+      "代码审阅": 2
+    },
+    "alias_locations": {
+      "代码审查": [
+        {
+          "segment": "ch01:s0070",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0186",
+          "count": 1
+        },
+        {
+          "segment": "ch02:s0192",
+          "count": 2
+        },
+        {
+          "segment": "ch03:s0239",
+          "count": 2
+        },
+        {
+          "segment": "ch03:s0297",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0347",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0357",
+          "count": 2
+        },
+        {
+          "segment": "ch03:s0361",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0384",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0385",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0395",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0089",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0251",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0267",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0275",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0292",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0009",
+          "count": 4
+        },
+        {
+          "segment": "ch09:s0011",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0017",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0027",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0028",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0045",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0047",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0049",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0061",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0065",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0085",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0087",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0089",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0097",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0103",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0107",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0111",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0113",
+          "count": 4
+        },
+        {
+          "segment": "ch09:s0115",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0119",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0121",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0129",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0133",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0137",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0139",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0145",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0149",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0151",
+          "count": 4
+        },
+        {
+          "segment": "ch09:s0153",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0155",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0157",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0161",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0163",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0165",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0167",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0169",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0173",
+          "count": 5
+        },
+        {
+          "segment": "ch09:s0177",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0181",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0185",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0187",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0191",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0193",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0197",
+          "count": 4
+        },
+        {
+          "segment": "ch09:s0206",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0210",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0214",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0223",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0225",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0227",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0233",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0239",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0241",
+          "count": 4
+        },
+        {
+          "segment": "ch09:s0255",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0267",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0273",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0282",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0285",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0287",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0092",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0185",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0258",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0317",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0097",
+          "count": 2
+        },
+        {
+          "segment": "ch11:s0292",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0491",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0132",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0140",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0043",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0007",
+          "count": 4
+        },
+        {
+          "segment": "ch19:s0009",
+          "count": 3
+        },
+        {
+          "segment": "ch19:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0017",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0018",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0019",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0020",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0025",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0027",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0050",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0054",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0058",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0066",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0119",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0170",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0197",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0217",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0222",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0224",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0234",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0244",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0250",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0251",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0050",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0067",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0124",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0140",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0144",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0116",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0149",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0243",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0301",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0097",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0264",
+          "count": 1
+        }
+      ],
+      "代码评审": [
+        {
+          "segment": "ch02:s0192",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0235",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0251",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0019",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0137",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0143",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0155",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0163",
+          "count": 3
+        },
+        {
+          "segment": "ch09:s0167",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0169",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0171",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0173",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0181",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0223",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0273",
+          "count": 3
+        },
+        {
+          "segment": "ch10:s0252",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0009",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0226",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0234",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0050",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0156",
+          "count": 1
+        }
+      ],
+      "代码审阅": [
+        {
+          "segment": "ch09:s0030",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0216",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "Critique",
+    "keys": [
+      "critique"
+    ],
+    "preferred": "Critique",
+    "observed_aliases": [
+      "Critique",
+      "体验",
+      "评论"
+    ],
+    "definition": "Google 内部代码审查工具的专名。",
+    "scope": "工具名称，保留英文及大小写。",
+    "exceptions": "同段中的普通 comment 仍可译为评论或审查意见；因此本条的评论命中数不等于专名误译次数。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 9,
+        "quote": "At Google, we use a custom code review tool, Critique, to support our process.",
+        "file": "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md",
+        "line": 16
+      }
+    ],
+    "frequency": 97,
+    "documents": {
+      "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 1,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 85,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 7,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 4
+    },
+    "document_frequency": 4,
+    "source_segment_count": 56,
+    "usable_target_segment_count": 48,
+    "observed_alias_counts_in_aligned_context": {
+      "Critique": 75,
+      "体验": 5,
+      "评论": 34
+    },
+    "alias_locations": {
+      "Critique": [
+        {
+          "segment": "ch09:s0009",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0013",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0027",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0009",
+          "count": 4
+        },
+        {
+          "segment": "ch19:s0017",
+          "count": 3
+        },
+        {
+          "segment": "ch19:s0018",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0020",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0021",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0025",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0050",
+          "count": 3
+        },
+        {
+          "segment": "ch19:s0054",
+          "count": 5
+        },
+        {
+          "segment": "ch19:s0058",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0060",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0073",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0083",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0087",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0091",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0093",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0113",
+          "count": 4
+        },
+        {
+          "segment": "ch19:s0115",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0140",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0148",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0155",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0162",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0168",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0174",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0179",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0193",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0195",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0213",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0217",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0222",
+          "count": 3
+        },
+        {
+          "segment": "ch19:s0226",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0234",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0238",
+          "count": 4
+        },
+        {
+          "segment": "ch19:s0240",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0244",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0067",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0110",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0120",
+          "count": 3
+        }
+      ],
+      "体验": [
+        {
+          "segment": "ch19:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0166",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0179",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0244",
+          "count": 1
+        }
+      ],
+      "评论": [
+        {
+          "segment": "ch19:s0009",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0020",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0054",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0060",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0062",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0087",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0093",
+          "count": 2
+        },
+        {
+          "segment": "ch19:s0148",
+          "count": 4
+        },
+        {
+          "segment": "ch19:s0150",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0155",
+          "count": 8
+        },
+        {
+          "segment": "ch19:s0162",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0166",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0168",
+          "count": 3
+        },
+        {
+          "segment": "ch19:s0193",
+          "count": 3
+        },
+        {
+          "segment": "ch19:s0217",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "test size",
+    "keys": [
+      "test size"
+    ],
+    "preferred": "测试规模",
+    "observed_aliases": [
+      "测试规模",
+      "测试大小",
+      "大小",
+      "规模"
+    ],
+    "definition": "测试消耗的资源及允许执行的操作，属于运行约束维度。",
+    "scope": "测试分类中的 size 维度。",
+    "exceptions": "不是测试用例数量，也不是被验证代码的范围。small/medium/large 按这一维度译为小型/中型/大型测试。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 12,
+        "quote": "size refers to the resources consumed by a test and what it is allowed to do",
+        "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+        "line": 12
+      }
+    ],
+    "frequency": 12,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 9,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 2,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1
+    },
+    "document_frequency": 3,
+    "source_segment_count": 11,
+    "usable_target_segment_count": 11,
+    "observed_alias_counts_in_aligned_context": {
+      "测试规模": 11,
+      "规模": 2,
+      "大小": 2
+    },
+    "alias_locations": {
+      "测试规模": [
+        {
+          "segment": "ch11:s0109",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0114",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0120",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0134",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0156",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0164",
+          "count": 2
+        },
+        {
+          "segment": "ch11:s0168",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0015",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0011",
+          "count": 1
+        }
+      ],
+      "规模": [
+        {
+          "segment": "ch11:s0186",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0007",
+          "count": 1
+        }
+      ],
+      "大小": [
+        {
+          "segment": "ch12:s0007",
+          "count": 2
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "test scope",
+    "keys": [
+      "test scope"
+    ],
+    "preferred": "测试范围",
+    "observed_aliases": [
+      "测试范围",
+      "范围",
+      "作用域"
+    ],
+    "definition": "测试打算验证多少代码，是与资源消耗不同的分类维度。",
+    "scope": "测试分类中的 scope 维度。",
+    "exceptions": "不能因为单元测试通常是小型测试，就把范围和规模混为一谈；代码中的词法 scope 可译为作用域。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 12,
+        "quote": "scope refers to how much code a test is intended to validate.",
+        "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+        "line": 12
+      }
+    ],
+    "frequency": 4,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 3,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1
+    },
+    "document_frequency": 2,
+    "source_segment_count": 3,
+    "usable_target_segment_count": 3,
+    "observed_alias_counts_in_aligned_context": {
+      "测试范围": 3,
+      "范围": 7
+    },
+    "alias_locations": {
+      "测试范围": [
+        {
+          "segment": "ch11:s0166",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0168",
+          "count": 2
+        }
+      ],
+      "范围": [
+        {
+          "segment": "ch11:s0168",
+          "count": 3
+        },
+        {
+          "segment": "ch14:s0011",
+          "count": 4
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "unit test",
+    "keys": [
+      "unit test"
+    ],
+    "preferred": "单元测试",
+    "observed_aliases": [
+      "单元测试",
+      "单位测试"
+    ],
+    "definition": "验证范围较窄的测试，例如针对单个类或方法；不以运行资源规模作为定义。",
+    "scope": "测试类型。",
+    "exceptions": "不要直接改成小型测试，原文明确两者并不总是相同。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 12,
+        "quote": "Unit tests are usually small in size, but this isn’t always the case.",
+        "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+        "line": 12
+      }
+    ],
+    "frequency": 107,
+    "documents": {
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 2,
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 13,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 14,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 10,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 55,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 1,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 3,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 5,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 3
+    },
+    "document_frequency": 10,
+    "source_segment_count": 84,
+    "usable_target_segment_count": 79,
+    "observed_alias_counts_in_aligned_context": {
+      "单元测试": 107
+    },
+    "alias_locations": {
+      "单元测试": [
+        {
+          "segment": "ch09:s0157",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0243",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0257",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0331",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0107",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0128",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0168",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0170",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0177",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0179",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0184",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0186",
+          "count": 2
+        },
+        {
+          "segment": "ch11:s0198",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0318",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0007",
+          "count": 2
+        },
+        {
+          "segment": "ch12:s0014",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0021",
+          "count": 6
+        },
+        {
+          "segment": "ch12:s0112",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0144",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0173",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0274",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0281",
+          "count": 2
+        },
+        {
+          "segment": "ch12:s0283",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0007",
+          "count": 3
+        },
+        {
+          "segment": "ch13:s0025",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0053",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0129",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0154",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0156",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0316",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0355",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0021",
+          "count": 2
+        },
+        {
+          "segment": "ch14:s0023",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0025",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0034",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0036",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0038",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0042",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0044",
+          "count": 3
+        },
+        {
+          "segment": "ch14:s0046",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0052",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0054",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0062",
+          "count": 2
+        },
+        {
+          "segment": "ch14:s0066",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0068",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0072",
+          "count": 3
+        },
+        {
+          "segment": "ch14:s0084",
+          "count": 2
+        },
+        {
+          "segment": "ch14:s0086",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0088",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0098",
+          "count": 4
+        },
+        {
+          "segment": "ch14:s0104",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0113",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0115",
+          "count": 3
+        },
+        {
+          "segment": "ch14:s0119",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0152",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0227",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0247",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0290",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0296",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0362",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0391",
+          "count": 3
+        },
+        {
+          "segment": "ch14:s0471",
+          "count": 2
+        },
+        {
+          "segment": "ch14:s0481",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0515",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0525",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0555",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0562",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0268",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0184",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0232",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0298",
+          "count": 2
+        },
+        {
+          "segment": "ch23:s0138",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0172",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0176",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0264",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0310",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "test double",
+    "keys": [
+      "test double"
+    ],
+    "preferred": "测试替身",
+    "observed_aliases": [
+      "测试替代品",
+      "测试替代",
+      "测试替换",
+      "测试替身"
+    ],
+    "definition": "测试中代替真实实现的对象或函数，原文以电影中的替身作类比。",
+    "scope": "替代真实依赖的上位概念。",
+    "exceptions": "不统一改为 mock；fake、stub 和 mock 的具体区别需要在各自语境下保留。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 13,
+        "quote": "A test double is an object or function that can stand in for a real implementation in a test",
+        "file": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
+        "line": 20
+      }
+    ],
+    "frequency": 92,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 4,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 3,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 79,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 6
+    },
+    "document_frequency": 4,
+    "source_segment_count": 65,
+    "usable_target_segment_count": 54,
+    "observed_alias_counts_in_aligned_context": {
+      "测试替代": 75,
+      "测试替换": 2,
+      "测试替身": 2
+    },
+    "alias_locations": {
+      "测试替代": [
+        {
+          "segment": "ch11:s0122",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0144",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0170",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0318",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0011",
+          "count": 4
+        },
+        {
+          "segment": "ch13:s0013",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0015",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0017",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0022",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0023",
+          "count": 4
+        },
+        {
+          "segment": "ch13:s0024",
+          "count": 3
+        },
+        {
+          "segment": "ch13:s0025",
+          "count": 7
+        },
+        {
+          "segment": "ch13:s0027",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0029",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0031",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0037",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0039",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0053",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0071",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0078",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0080",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0082",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0084",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0119",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0127",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0129",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0131",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0144",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0150",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0154",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0158",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0168",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0170",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0172",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0174",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0178",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0182",
+          "count": 3
+        },
+        {
+          "segment": "ch13:s0184",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0186",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0190",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0199",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0237",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0351",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0353",
+          "count": 2
+        },
+        {
+          "segment": "ch13:s0355",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0362",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0042",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0072",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0206",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0208",
+          "count": 1
+        }
+      ],
+      "测试替换": [
+        {
+          "segment": "ch12:s0106",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0255",
+          "count": 1
+        }
+      ],
+      "测试替身": [
+        {
+          "segment": "ch13:s0184",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0011",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "brittle test",
+    "keys": [
+      "brittle test"
+    ],
+    "preferred": "脆弱测试",
+    "observed_aliases": [
+      "脆性测试",
+      "脆弱测试",
+      "脆弱的测试"
+    ],
+    "definition": "生产代码发生无关且没有引入实际缺陷的变动时，也会失败的测试。",
+    "scope": "对无害代码变动敏感。",
+    "exceptions": "与 flaky test 区分，不笼统合并为不稳定测试。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 12,
+        "quote": "a brittle test is one that fails in the face of an unrelated change to production code that does not introduce any real bugs.",
+        "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+        "line": 56
+      }
+    ],
+    "frequency": 16,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 4,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 6,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 1,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 4
+    },
+    "document_frequency": 5,
+    "source_segment_count": 14,
+    "usable_target_segment_count": 14,
+    "observed_alias_counts_in_aligned_context": {
+      "脆性测试": 11,
+      "脆弱测试": 2,
+      "脆弱的测试": 1
+    },
+    "alias_locations": {
+      "脆性测试": [
+        {
+          "segment": "ch11:s0224",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0226",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0228",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0230",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0033",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0035",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0043",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0114",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0115",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0174",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0176",
+          "count": 1
+        }
+      ],
+      "脆弱测试": [
+        {
+          "segment": "ch12:s0035",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0037",
+          "count": 1
+        }
+      ],
+      "脆弱的测试": [
+        {
+          "segment": "ch23:s0176",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "flaky test",
+    "keys": [
+      "flaky test"
+    ],
+    "preferred": "不稳定测试",
+    "observed_aliases": [
+      "不稳定测试",
+      "不稳定的测试",
+      "松散测试",
+      "片状测试"
+    ],
+    "definition": "生产代码没有变化，仍会非确定性地失败的测试。",
+    "scope": "测试结果非确定。",
+    "exceptions": "不是对代码变更脆弱，也不是测试组织松散；首次出现可保留 flaky 英文。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 12,
+        "quote": "a flaky test, which fails nondeterministically without any change to production code.",
+        "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+        "line": 64
+      }
+    ],
+    "frequency": 17,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 4,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 1,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 1,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 5,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 5
+    },
+    "document_frequency": 6,
+    "source_segment_count": 14,
+    "usable_target_segment_count": 13,
+    "observed_alias_counts_in_aligned_context": {
+      "松散测试": 2,
+      "不稳定测试": 7,
+      "不稳定的测试": 4
+    },
+    "alias_locations": {
+      "松散测试": [
+        {
+          "segment": "ch11:s0126",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0150",
+          "count": 1
+        }
+      ],
+      "不稳定测试": [
+        {
+          "segment": "ch12:s0039",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0287",
+          "count": 2
+        },
+        {
+          "segment": "ch23:s0203",
+          "count": 2
+        },
+        {
+          "segment": "ch23:s0268",
+          "count": 1
+        }
+      ],
+      "不稳定的测试": [
+        {
+          "segment": "ch14:s0519",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0287",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0203",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0359",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "technical debt",
+    "keys": [
+      "technical debt"
+    ],
+    "preferred": "技术债务",
+    "observed_aliases": [
+      "技术债务",
+      "技术债"
+    ],
+    "definition": "本书用尚未完成但应该完成的事项，以及代码现状与期望状态之间的差距来概括这一概念。",
+    "scope": "工程维护语境。",
+    "exceptions": "原文将这一解释称为粗略定义，不把它润色成唯一或严格定义。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 1,
+        "quote": "This is perhaps a reasonable hand-wavy definition of technical debt",
+        "file": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
+        "line": 39
+      }
+    ],
+    "frequency": 6,
+    "documents": {
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 1,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 1,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 1,
+      "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md": 1,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 1
+    },
+    "document_frequency": 6,
+    "source_segment_count": 6,
+    "usable_target_segment_count": 6,
+    "observed_alias_counts_in_aligned_context": {
+      "技术债务": 5,
+      "技术债": 1
+    },
+    "alias_locations": {
+      "技术债务": [
+        {
+          "segment": "ch01:s0020",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0049",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0292",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0364",
+          "count": 1
+        }
+      ],
+      "技术债": [
+        {
+          "segment": "ch20:s0007",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "knowledge sharing",
+    "keys": [
+      "knowledge sharing"
+    ],
+    "preferred": "知识共享",
+    "observed_aliases": [
+      "知识共享",
+      "知识分享"
+    ],
+    "definition": "通过提问、记录、教程和课程等机制在组织内传播知识。",
+    "scope": "组织学习及知识传播。",
+    "exceptions": "普通动词 share 可以按句意使用分享，不机械替换。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 3,
+        "quote": "you need both experts who know the answers to those questions and mechanisms to distribute their knowledge",
+        "file": "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
+        "line": 12
+      }
+    ],
+    "frequency": 16,
+    "documents": {
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 8,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 7,
+      "zh-cn/Foreword.md": 1
+    },
+    "document_frequency": 3,
+    "source_segment_count": 15,
+    "usable_target_segment_count": 15,
+    "observed_alias_counts_in_aligned_context": {
+      "知识共享": 15,
+      "知识分享": 1
+    },
+    "alias_locations": {
+      "知识共享": [
+        {
+          "segment": "Foreword:s0012",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0107",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0181",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0235",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0265",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0403",
+          "count": 2
+        },
+        {
+          "segment": "ch09:s0102",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0155",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0159",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0161",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0163",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0165",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0285",
+          "count": 1
+        }
+      ],
+      "知识分享": [
+        {
+          "segment": "ch03:s0259",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "psychological safety",
+    "keys": [
+      "psychological safety"
+    ],
+    "preferred": "心理安全感",
+    "observed_aliases": [
+      "心理安全感",
+      "心理安全",
+      "心理上的安全感"
+    ],
+    "definition": "团队成员能够坦然提问、承认不知道、尝试和犯错的环境感受。",
+    "scope": "团队学习与协作。",
+    "exceptions": "不是信息安全，也不是避免一切困难或批评。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 3,
+        "quote": "In a healthy environment, people feel comfortable asking questions, being wrong, and learning new things.",
+        "file": "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
+        "line": 111
+      }
+    ],
+    "frequency": 13,
+    "documents": {
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 11,
+      "zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md": 1,
+      "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md": 1
+    },
+    "document_frequency": 3,
+    "source_segment_count": 13,
+    "usable_target_segment_count": 13,
+    "observed_alias_counts_in_aligned_context": {
+      "心理上的安全感": 1,
+      "心理安全": 10,
+      "心理安全感": 1
+    },
+    "alias_locations": {
+      "心理上的安全感": [
+        {
+          "segment": "ch03:s0007",
+          "count": 1
+        }
+      ],
+      "心理安全": [
+        {
+          "segment": "ch03:s0051",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0053",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0057",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0061",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0067",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0069",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0100",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0411",
+          "count": 1
+        },
+        {
+          "segment": "ch04:s0091",
+          "count": 1
+        },
+        {
+          "segment": "ch05:s0098",
+          "count": 1
+        }
+      ],
+      "心理安全感": [
+        {
+          "segment": "ch03:s0259",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "engineering productivity",
+    "keys": [
+      "engineering productivity"
+    ],
+    "preferred": "工程生产力",
+    "observed_aliases": [
+      "工程生产效率",
+      "工程生产力",
+      "工程效率",
+      "工程效能"
+    ],
+    "definition": "工程组织和工程师取得产出的能力；原文另外讨论如何高效地改善这种能力。",
+    "scope": "作为被衡量和改进的工程产出能力。",
+    "exceptions": "普通行文可按上下文使用工作效率；遇到 productivity 与 efficiency 对比时，保留生产力与效率的区别。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 7,
+        "quote": "Therefore, our goal is to not only improve software engineering productivity, but to do so efficiently.",
+        "file": "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
+        "line": 30
+      }
+    ],
+    "frequency": 13,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 2,
+      "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 1,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 1,
+      "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md": 9
+    },
+    "document_frequency": 4,
+    "source_segment_count": 12,
+    "usable_target_segment_count": 12,
+    "observed_alias_counts_in_aligned_context": {
+      "工程生产力": 4,
+      "工程效率": 2,
+      "工程生产效率": 6
+    },
+    "alias_locations": {
+      "工程生产力": [
+        {
+          "segment": "ch03:s0391",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0110",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0294",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0279",
+          "count": 1
+        }
+      ],
+      "工程效率": [
+        {
+          "segment": "ch07:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0009",
+          "count": 1
+        }
+      ],
+      "工程生产效率": [
+        {
+          "segment": "ch07:s0007",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0019",
+          "count": 2
+        },
+        {
+          "segment": "ch07:s0061",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0287",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0184",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "version control",
+    "keys": [
+      "version control"
+    ],
+    "preferred": "版本控制",
+    "observed_aliases": [
+      "版本控制",
+      "版本管理"
+    ],
+    "definition": "跟踪版本及变更历史、支持协作的机制，系统缩写为 VCS。",
+    "scope": "版本与变更管理。",
+    "exceptions": "dependency management 不并入版本控制；VCS 保留原缩写。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 16,
+        "quote": "without any understanding of version control",
+        "file": "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md",
+        "line": 34
+      }
+    ],
+    "frequency": 75,
+    "documents": {
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 2,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 54,
+      "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": 3,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 1,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 1,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 3,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 1,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 3,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 2,
+      "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md": 1,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 1,
+      "zh-cn/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale.md": 2
+    },
+    "document_frequency": 13,
+    "source_segment_count": 50,
+    "usable_target_segment_count": 49,
+    "observed_alias_counts_in_aligned_context": {
+      "版本控制": 76,
+      "版本管理": 1
+    },
+    "alias_locations": {
+      "版本控制": [
+        {
+          "segment": "ch01:s0026",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0118",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0184",
+          "count": 1
+        },
+        {
+          "segment": "ch06:s0128",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0292",
+          "count": 2
+        },
+        {
+          "segment": "ch14:s0054",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0007",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0009",
+          "count": 4
+        },
+        {
+          "segment": "ch16:s0013",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0019",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0023",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0027",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0029",
+          "count": 4
+        },
+        {
+          "segment": "ch16:s0031",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0035",
+          "count": 3
+        },
+        {
+          "segment": "ch16:s0039",
+          "count": 5
+        },
+        {
+          "segment": "ch16:s0043",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0045",
+          "count": 4
+        },
+        {
+          "segment": "ch16:s0047",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0049",
+          "count": 3
+        },
+        {
+          "segment": "ch16:s0057",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0067",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0109",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0111",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0113",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0115",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0119",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0142",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0164",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0168",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0174",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0254",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0270",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0274",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0276",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0289",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0294",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0063",
+          "count": 1
+        },
+        {
+          "segment": "ch17:s0229",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0065",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0224",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0192",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0069",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0077",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0253",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0097",
+          "count": 2
+        },
+        {
+          "segment": "ch24:s0129",
+          "count": 1
+        }
+      ],
+      "版本管理": [
+        {
+          "segment": "ch06:s0128",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "source control",
+    "keys": [
+      "source control"
+    ],
+    "preferred": "源代码版本控制",
+    "observed_aliases": [
+      "源代码版本控制",
+      "源代码控制",
+      "源码控制",
+      "版本控制"
+    ],
+    "definition": "源代码的版本及变更管理。第二十一章将它与跨组织的依赖管理加以区分。",
+    "scope": "需要明确管理对象为源代码时。",
+    "exceptions": "上下文已明确时可简称版本控制；不把 source 译成来源。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 21,
+        "quote": "Source control and dependency management are related issues separated by the question:",
+        "file": "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md",
+        "line": 28
+      }
+    ],
+    "frequency": 31,
+    "documents": {
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 7,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 3,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 6,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 14,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 1
+    },
+    "document_frequency": 5,
+    "source_segment_count": 23,
+    "usable_target_segment_count": 23,
+    "observed_alias_counts_in_aligned_context": {
+      "源代码控制": 11,
+      "源码控制": 13
+    },
+    "alias_locations": {
+      "源代码控制": [
+        {
+          "segment": "ch09:s0223",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0065",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0076",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0092",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0271",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0317",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0170",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0194",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0197",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0295",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0178",
+          "count": 1
+        }
+      ],
+      "源码控制": [
+        {
+          "segment": "ch10:s0094",
+          "count": 1
+        },
+        {
+          "segment": "ch10:s0273",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0073",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0321",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0009",
+          "count": 3
+        },
+        {
+          "segment": "ch21:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0015",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0112",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0348",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "monorepo",
+    "keys": [
+      "monorepo"
+    ],
+    "preferred": "单体代码仓库",
+    "observed_aliases": [
+      "单体代码仓库",
+      "单体代码库",
+      "单一代码库",
+      "单片库",
+      "单版本版本库",
+      "单版本库",
+      "语法库",
+      "monorepo"
+    ],
+    "definition": "以单一仓库组织多个项目的代码；原文也讨论虚拟的单一仓库。",
+    "scope": "代码仓库组织方式。",
+    "exceptions": "不等于单版本规则，也不意味着代码没有历史版本。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 21,
+        "quote": "a large organization with a (virtual?) single repository (monorepo)",
+        "file": "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md",
+        "line": 28
+      }
+    ],
+    "frequency": 53,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 3,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 4,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 28,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 2,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 8,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 2,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 5
+    },
+    "document_frequency": 8,
+    "source_segment_count": 41,
+    "usable_target_segment_count": 39,
+    "observed_alias_counts_in_aligned_context": {
+      "monorepo": 20,
+      "语法库": 2,
+      "单版本版本库": 1,
+      "单一代码库": 1,
+      "Monorepo": 1,
+      "单版本库": 18
+    },
+    "alias_locations": {
+      "monorepo": [
+        {
+          "segment": "ch03:s0371",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0212",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0214",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0220",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0475",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0511",
+          "count": 2
+        },
+        {
+          "segment": "ch14:s0550",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0166",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0232",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0321",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0015",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0114",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0326",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0328",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0334",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0346",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0348",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0173",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0256",
+          "count": 1
+        }
+      ],
+      "语法库": [
+        {
+          "segment": "ch03:s0375",
+          "count": 2
+        }
+      ],
+      "单版本版本库": [
+        {
+          "segment": "ch11:s0212",
+          "count": 1
+        }
+      ],
+      "单一代码库": [
+        {
+          "segment": "ch11:s0220",
+          "count": 1
+        }
+      ],
+      "Monorepo": [
+        {
+          "segment": "ch16:s0083",
+          "count": 1
+        }
+      ],
+      "单版本库": [
+        {
+          "segment": "ch16:s0168",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0170",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0176",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0216",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0232",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0234",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0238",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0240",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0242",
+          "count": 5
+        },
+        {
+          "segment": "ch16:s0244",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0256",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0264",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "source of truth",
+    "keys": [
+      "source of truth"
+    ],
+    "preferred": "权威来源",
+    "observed_aliases": [
+      "唯一权威来源",
+      "权威的标准来源",
+      "权威来源",
+      "统一的信息来源",
+      "信息来源",
+      "单信息源",
+      "信息源"
+    ],
+    "definition": "协作各方认可并据以确定当前状态的来源。",
+    "scope": "版本控制、配置和数据的一致性依据。",
+    "exceptions": "single source of truth 译为唯一权威来源；不是字面意义的真理。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 16,
+        "quote": "when there isn’t a single agreed-upon source of truth, collaboration becomes high friction and error prone.",
+        "file": "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md",
+        "line": 34
+      }
+    ],
+    "frequency": 34,
+    "documents": {
+      "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md": 1,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 32,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 1
+    },
+    "document_frequency": 3,
+    "source_segment_count": 22,
+    "usable_target_segment_count": 21,
+    "observed_alias_counts_in_aligned_context": {
+      "权威的标准来源": 1,
+      "统一的信息来源": 1,
+      "信息源": 27,
+      "单信息源": 4
+    },
+    "alias_locations": {
+      "权威的标准来源": [
+        {
+          "segment": "ch10:s0065",
+          "count": 1
+        }
+      ],
+      "统一的信息来源": [
+        {
+          "segment": "ch16:s0019",
+          "count": 1
+        }
+      ],
+      "信息源": [
+        {
+          "segment": "ch16:s0071",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0085",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0091",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0093",
+          "count": 3
+        },
+        {
+          "segment": "ch16:s0095",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0097",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0101",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0105",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0107",
+          "count": 7
+        },
+        {
+          "segment": "ch16:s0130",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0131",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0132",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0150",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0174",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0176",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0276",
+          "count": 1
+        }
+      ],
+      "单信息源": [
+        {
+          "segment": "ch16:s0089",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0174",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0176",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0194",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "trunk-based development",
+    "keys": [
+      "trunk-based development"
+    ],
+    "preferred": "主干开发",
+    "observed_aliases": [
+      "基于主干的开发",
+      "主干开发",
+      "主干式开发"
+    ],
+    "definition": "围绕共同主干同步并提交变更，依靠测试和持续集成保持主干可用的开发方式。",
+    "scope": "分支与协作策略。",
+    "exceptions": "不把所有 trunk 单独出现的位置替换成主干开发。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 16,
+        "quote": "The alternative requires a different paradigm: trunk-based development, rely heavily on testing and CI, keep the build green",
+        "file": "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md",
+        "line": 276
+      }
+    ],
+    "frequency": 16,
+    "documents": {
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 10,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 5,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 1
+    },
+    "document_frequency": 3,
+    "source_segment_count": 15,
+    "usable_target_segment_count": 14,
+    "observed_alias_counts_in_aligned_context": {
+      "基于主干的开发": 14
+    },
+    "alias_locations": {
+      "基于主干的开发": [
+        {
+          "segment": "ch16:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0011",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0144",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0150",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0162",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0204",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0210",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0212",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0278",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0178",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0192",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0304",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "build system",
+    "keys": [
+      "build system"
+    ],
+    "preferred": "构建系统",
+    "observed_aliases": [
+      "构建系统",
+      "构筑系统",
+      "构造系统"
+    ],
+    "definition": "将工程师编写的源代码转化为机器可执行二进制文件的系统。",
+    "scope": "自动化软件构建。",
+    "exceptions": "build 作动词时译为构建；作为一次运行或产物时需要按上下文区分，不全部译成构建系统。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 18,
+        "quote": "they transform the source code written by engineers into executable binaries that can be read by machines.",
+        "file": "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
+        "line": 26
+      }
+    ],
+    "frequency": 135,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 1,
+      "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": 1,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 1,
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 2,
+      "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 1,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 4,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 117,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 6,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 1,
+      "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md": 1
+    },
+    "document_frequency": 10,
+    "source_segment_count": 91,
+    "usable_target_segment_count": 87,
+    "observed_alias_counts_in_aligned_context": {
+      "构建系统": 127
+    },
+    "alias_locations": {
+      "构建系统": [
+        {
+          "segment": "ch01:s0118",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0246",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0248",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0250",
+          "count": 2
+        },
+        {
+          "segment": "ch01:s0252",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0304",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0071",
+          "count": 1
+        },
+        {
+          "segment": "ch12:s0076",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0162",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0098",
+          "count": 1
+        },
+        {
+          "segment": "ch14:s0511",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0152",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0077",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0266",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0294",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0007",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0013",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0020",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0027",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0034",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0036",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0038",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0042",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0050",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0061",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0067",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0070",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0072",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0074",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0078",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0080",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0082",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0084",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0109",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0113",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0115",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0119",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0121",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0128",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0132",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0137",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0139",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0141",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0145",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0147",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0149",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0165",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0169",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0177",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0179",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0185",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0189",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0191",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0199",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0203",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0205",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0214",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0216",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0227",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0229",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0240",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0242",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0244",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0246",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0250",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0256",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0258",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0260",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0264",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0289",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0291",
+          "count": 2
+        },
+        {
+          "segment": "ch18:s0297",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0315",
+          "count": 3
+        },
+        {
+          "segment": "ch18:s0319",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0325",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0327",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0329",
+          "count": 5
+        },
+        {
+          "segment": "ch18:s0331",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0336",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0337",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0116",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "dependency management",
+    "keys": [
+      "dependency management"
+    ],
+    "preferred": "依赖管理",
+    "observed_aliases": [
+      "依赖关系管理",
+      "依赖性管理",
+      "依赖管理"
+    ],
+    "definition": "管理项目所依赖的其他代码或子项目及其演进，尤其涉及本组织不能直接控制的开发与更新。",
+    "scope": "软件依赖及其版本、更新和兼容性。",
+    "exceptions": "不把 dependency 的所有出现一概替换为依赖项；关系和具体对象要区分。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 21,
+        "quote": "interdependencies between unknown and not-necessarily-collaborating projects are a dependency management problem.",
+        "file": "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md",
+        "line": 28
+      }
+    ],
+    "frequency": 41,
+    "documents": {
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 4,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 2,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 1,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 33,
+      "zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md": 1
+    },
+    "document_frequency": 5,
+    "source_segment_count": 33,
+    "usable_target_segment_count": 33,
+    "observed_alias_counts_in_aligned_context": {
+      "依赖性管理": 5,
+      "依赖管理": 40,
+      "依赖关系管理": 2
+    },
+    "alias_locations": {
+      "依赖性管理": [
+        {
+          "segment": "ch01:s0278",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0136",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0192",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0238",
+          "count": 1
+        },
+        {
+          "segment": "ch25:s0225",
+          "count": 1
+        }
+      ],
+      "依赖管理": [
+        {
+          "segment": "ch16:s0113",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0115",
+          "count": 2
+        },
+        {
+          "segment": "ch16:s0270",
+          "count": 1
+        },
+        {
+          "segment": "ch18:s0291",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0007",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0011",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0015",
+          "count": 5
+        },
+        {
+          "segment": "ch21:s0017",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0019",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0023",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0029",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0040",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0070",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0112",
+          "count": 4
+        },
+        {
+          "segment": "ch21:s0130",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0132",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0134",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0158",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0180",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0216",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0264",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0269",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0304",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0348",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0354",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0364",
+          "count": 1
+        }
+      ],
+      "依赖关系管理": [
+        {
+          "segment": "ch18:s0309",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0070",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "static analysis",
+    "keys": [
+      "static analysis"
+    ],
+    "preferred": "静态分析",
+    "observed_aliases": [
+      "静态分析",
+      "静态检查"
+    ],
+    "definition": "不运行被分析程序，而通过分析源代码发现问题的方法。",
+    "scope": "程序分析方法。",
+    "exceptions": "具体 analysis check 可以译为分析检查项；与 dynamic analysis 区分。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 20,
+        "quote": "The “static” part specifically refers to analyzing the source code instead of a running program",
+        "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
+        "line": 11
+      }
+    ],
+    "frequency": 78,
+    "documents": {
+      "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 2,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 1,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 1,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 1,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 58,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 1,
+      "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": 7,
+      "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md": 3,
+      "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md": 1,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 3
+    },
+    "document_frequency": 10,
+    "source_segment_count": 47,
+    "usable_target_segment_count": 46,
+    "observed_alias_counts_in_aligned_context": {
+      "静态分析": 70
+    },
+    "alias_locations": {
+      "静态分析": [
+        {
+          "segment": "ch01:s0186",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0327",
+          "count": 1
+        },
+        {
+          "segment": "ch03:s0329",
+          "count": 2
+        },
+        {
+          "segment": "ch03:s0331",
+          "count": 2
+        },
+        {
+          "segment": "ch03:s0389",
+          "count": 2
+        },
+        {
+          "segment": "ch07:s0038",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0040",
+          "count": 1
+        },
+        {
+          "segment": "ch07:s0057",
+          "count": 1
+        },
+        {
+          "segment": "ch08:s0267",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0117",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0225",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0273",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0094",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0150",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0043",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0109",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0007",
+          "count": 5
+        },
+        {
+          "segment": "ch20:s0009",
+          "count": 3
+        },
+        {
+          "segment": "ch20:s0015",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0018",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0022",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0026",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0030",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0032",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0034",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0036",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0040",
+          "count": 4
+        },
+        {
+          "segment": "ch20:s0042",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0044",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0048",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0050",
+          "count": 4
+        },
+        {
+          "segment": "ch20:s0056",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0058",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0062",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0087",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0110",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0124",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0133",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0138",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0144",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0146",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0150",
+          "count": 3
+        },
+        {
+          "segment": "ch20:s0156",
+          "count": 2
+        },
+        {
+          "segment": "ch22:s0211",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "false positive",
+    "keys": [
+      "false positive"
+    ],
+    "preferred": "误报",
+    "observed_aliases": [
+      "误报",
+      "假阳性",
+      "假正例"
+    ],
+    "definition": "工具把实际上没有目标问题的代码错误地标记为有问题。",
+    "scope": "静态分析和测试告警。",
+    "exceptions": "effective false positive 是另有定义的用户感知指标，不直接等同于技术上的误报。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 20,
+        "quote": "A “false positive” occurs when a tool incorrectly flags code as having the issue.",
+        "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
+        "line": 73
+      }
+    ],
+    "frequency": 10,
+    "documents": {
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 7,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 2
+    },
+    "document_frequency": 3,
+    "source_segment_count": 9,
+    "usable_target_segment_count": 9,
+    "observed_alias_counts_in_aligned_context": {
+      "误报": 15,
+      "假阳性": 2
+    },
+    "alias_locations": {
+      "误报": [
+        {
+          "segment": "ch20:s0044",
+          "count": 8
+        },
+        {
+          "segment": "ch20:s0076",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0120",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0133",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0135",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0155",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0262",
+          "count": 1
+        }
+      ],
+      "假阳性": [
+        {
+          "segment": "ch23:s0198",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0226",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "false negative",
+    "keys": [
+      "false negative"
+    ],
+    "preferred": "漏报",
+    "observed_aliases": [
+      "漏报",
+      "假阴性",
+      "假负例"
+    ],
+    "definition": "代码确实存在分析工具旨在发现的问题，但工具没有发现。",
+    "scope": "静态分析和测试告警。",
+    "exceptions": "不能与 false positive 的误报方向颠倒。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 20,
+        "quote": "a “false negative” is when a piece of code contains an issue that the analysis tool was designed to find, but the tool misses it.",
+        "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
+        "line": 73
+      }
+    ],
+    "frequency": 4,
+    "documents": {
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 2,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 1
+    },
+    "document_frequency": 3,
+    "source_segment_count": 3,
+    "usable_target_segment_count": 3,
+    "observed_alias_counts_in_aligned_context": {
+      "漏报": 3
+    },
+    "alias_locations": {
+      "漏报": [
+        {
+          "segment": "ch20:s0042",
+          "count": 2
+        },
+        {
+          "segment": "ch21:s0262",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "deprecation",
+    "keys": [
+      "deprecation"
+    ],
+    "preferred": "弃用",
+    "observed_aliases": [
+      "弃用",
+      "废弃",
+      "废除"
+    ],
+    "definition": "本章指有序地从过时系统迁出，并最终移除这些系统的过程。",
+    "scope": "API、组件和系统的退役过程。",
+    "exceptions": "已标记 deprecated 不一定已经被删除；标记弃用、迁移和移除是不同阶段。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 15,
+        "quote": "We refer to the process of orderly migration away from and eventual removal of obsolete systems as deprecation.",
+        "file": "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
+        "line": 17
+      }
+    ],
+    "frequency": 98,
+    "documents": {
+      "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md": 90,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 4,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 1,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 1,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 1,
+      "zh-cn/Preface.md": 1
+    },
+    "document_frequency": 6,
+    "source_segment_count": 56,
+    "usable_target_segment_count": 56,
+    "observed_alias_counts_in_aligned_context": {
+      "废弃": 4,
+      "弃用": 109
+    },
+    "alias_locations": {
+      "废弃": [
+        {
+          "segment": "Preface:s0016",
+          "count": 1
+        },
+        {
+          "segment": "ch01:s0132",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0315",
+          "count": 2
+        }
+      ],
+      "弃用": [
+        {
+          "segment": "ch01:s0130",
+          "count": 3
+        },
+        {
+          "segment": "ch15:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0010",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0012",
+          "count": 7
+        },
+        {
+          "segment": "ch15:s0020",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0022",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0024",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0028",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0030",
+          "count": 4
+        },
+        {
+          "segment": "ch15:s0035",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0039",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0041",
+          "count": 4
+        },
+        {
+          "segment": "ch15:s0043",
+          "count": 3
+        },
+        {
+          "segment": "ch15:s0045",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0047",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0051",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0067",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0069",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0072",
+          "count": 3
+        },
+        {
+          "segment": "ch15:s0074",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0076",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0078",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0080",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0082",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0084",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0086",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0090",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0094",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0096",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0098",
+          "count": 4
+        },
+        {
+          "segment": "ch15:s0102",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0104",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0106",
+          "count": 5
+        },
+        {
+          "segment": "ch15:s0110",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0112",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0116",
+          "count": 8
+        },
+        {
+          "segment": "ch15:s0120",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0126",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0128",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0132",
+          "count": 3
+        },
+        {
+          "segment": "ch15:s0136",
+          "count": 3
+        },
+        {
+          "segment": "ch15:s0140",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0144",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0148",
+          "count": 4
+        },
+        {
+          "segment": "ch15:s0150",
+          "count": 4
+        },
+        {
+          "segment": "ch15:s0156",
+          "count": 1
+        },
+        {
+          "segment": "ch15:s0157",
+          "count": 2
+        },
+        {
+          "segment": "ch15:s0167",
+          "count": 2
+        },
+        {
+          "segment": "ch20:s0007",
+          "count": 3
+        },
+        {
+          "segment": "ch21:s0042",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "continuous integration",
+    "keys": [
+      "continuous integration"
+    ],
+    "preferred": "持续集成",
+    "observed_aliases": [
+      "持续集成",
+      "连续集成"
+    ],
+    "definition": "频繁集成变更并通过自动构建和测试尽早发现集成问题；本章还讨论更广的系统集成。",
+    "scope": "CI 的完整术语。",
+    "exceptions": "本条英文计数不包含缩写 CI，避免全称加缩写重复计数；不与持续交付混同。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 23,
+        "quote": "the fundamental goal of CI is to automatically catch problematic changes as early as possible.",
+        "file": "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md",
+        "line": 10
+      }
+    ],
+    "frequency": 15,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 1,
+      "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": 1,
+      "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md": 1,
+      "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": 1,
+      "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md": 1,
+      "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": 1,
+      "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": 1,
+      "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md": 1,
+      "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 2,
+      "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md": 2,
+      "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md": 2
+    },
+    "document_frequency": 12,
+    "source_segment_count": 15,
+    "usable_target_segment_count": 14,
+    "observed_alias_counts_in_aligned_context": {
+      "持续集成": 13
+    },
+    "alias_locations": {
+      "持续集成": [
+        {
+          "segment": "ch01:s0142",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0243",
+          "count": 1
+        },
+        {
+          "segment": "ch09:s0251",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0075",
+          "count": 1
+        },
+        {
+          "segment": "ch13:s0133",
+          "count": 1
+        },
+        {
+          "segment": "ch16:s0140",
+          "count": 1
+        },
+        {
+          "segment": "ch19:s0236",
+          "count": 1
+        },
+        {
+          "segment": "ch20:s0138",
+          "count": 1
+        },
+        {
+          "segment": "ch21:s0112",
+          "count": 1
+        },
+        {
+          "segment": "ch22:s0095",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0006",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0023",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "continuous delivery",
+    "keys": [
+      "continuous delivery"
+    ],
+    "preferred": "持续交付",
+    "observed_aliases": [
+      "持续交付",
+      "连续交付"
+    ],
+    "definition": "围绕持续向用户交付可用软件、尽早获得反馈的工程实践。",
+    "scope": "CD 的完整术语。",
+    "exceptions": "不自动改为持续部署；本条计数不包含缩写 CD。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 24,
+        "quote": "The earlier and more frequently you get working software in front of real users, the quicker you get feedback to find out how valuable it really is.",
+        "file": "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md",
+        "line": 16
+      }
+    ],
+    "frequency": 9,
+    "documents": {
+      "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": 1,
+      "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": 4,
+      "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md": 4
+    },
+    "document_frequency": 3,
+    "source_segment_count": 9,
+    "usable_target_segment_count": 9,
+    "observed_alias_counts_in_aligned_context": {
+      "连续交付": 2,
+      "持续交付": 7
+    },
+    "alias_locations": {
+      "连续交付": [
+        {
+          "segment": "ch14:s0058",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0089",
+          "count": 1
+        }
+      ],
+      "持续交付": [
+        {
+          "segment": "ch23:s0065",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0081",
+          "count": 1
+        },
+        {
+          "segment": "ch23:s0091",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0003",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0009",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0015",
+          "count": 1
+        },
+        {
+          "segment": "ch24:s0023",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  },
+  {
+    "term": "code coverage",
+    "keys": [
+      "code coverage"
+    ],
+    "preferred": "代码覆盖率",
+    "observed_aliases": [
+      "代码覆盖率",
+      "代码覆盖"
+    ],
+    "definition": "代码被测试执行的覆盖程度。本书示例以行覆盖率说明，同时提醒还有路径和分支等覆盖维度。",
+    "scope": "代码执行覆盖指标。",
+    "exceptions": "不是测试质量的充分证明；不要把执行过改写成验证正确。",
+    "status": "reviewed_against_local_source",
+    "evidence": [
+      {
+        "chapter": 11,
+        "quote": "Code coverage is a measure of which lines of feature code are exercised by which tests.",
+        "file": "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md",
+        "line": 406
+      }
+    ],
+    "frequency": 9,
+    "documents": {
+      "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md": 9
+    },
+    "document_frequency": 1,
+    "source_segment_count": 5,
+    "usable_target_segment_count": 5,
+    "observed_alias_counts_in_aligned_context": {
+      "代码覆盖率": 9
+    },
+    "alias_locations": {
+      "代码覆盖率": [
+        {
+          "segment": "ch11:s0200",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0202",
+          "count": 4
+        },
+        {
+          "segment": "ch11:s0204",
+          "count": 2
+        },
+        {
+          "segment": "ch11:s0206",
+          "count": 1
+        },
+        {
+          "segment": "ch11:s0270",
+          "count": 1
+        }
+      ]
+    },
+    "count_limit": "Counts are exact substring matches in heuristic aligned context, not verified token-level translations."
+  }
+]

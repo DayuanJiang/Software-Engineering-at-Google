@@ -1,0 +1,100 @@
+{
+  "status": "passed",
+  "scope": "chapter_only",
+  "source": "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
+  "baseline_commit": "679725c08143c724598a2b89b94b8c8e4fa47688",
+  "baseline_sha256": "114e9618b455fd7906c8d93c0a69bd98706e4c785a348d927103ff5d88427278",
+  "current_sha256": "08efb0ca0c6eab012bdd93c95454f7a5b1c912687d919b4d58453f28eea69bc6",
+  "physical_lines": 306,
+  "reviewed_chinese_lines": 84,
+  "edited_chinese_lines": 75,
+  "reviewed_unchanged_lines": [
+    5,
+    118,
+    132,
+    186,
+    232,
+    252,
+    266,
+    286,
+    296
+  ],
+  "held_lines": {},
+  "completed_chinese_lines": 84,
+  "english_lines": 70,
+  "english_segments": 83,
+  "protected_code_items": 2,
+  "code_kinds": {
+    "inline": 2
+  },
+  "links": 2,
+  "footnote_markers": 4,
+  "structural_items": 35,
+  "html_items": 0,
+  "image_references": 0,
+  "indented_chinese_code_holds": [],
+  "protected_mismatches": [],
+  "protection_exceptions": [],
+  "punctuation_residuals": 0,
+  "punctuation_normalization": "idempotent_on_all_reviewed_chinese_text_nodes",
+  "manifest_replay_exact": true,
+  "line_endings_and_hard_breaks_unchanged": true,
+  "block_skeleton_unchanged": true,
+  "english_heading_prefixes_and_suffixes_unchanged": true,
+  "source_issues": [
+    {
+      "lines": [
+        47,
+        49
+      ],
+      "status": "parent_review_pending",
+      "issue": "English starts with a truncated duplicate; Chinese renders the complete content once."
+    },
+    {
+      "lines": [
+        52,
+        78
+      ],
+      "status": "parent_review_pending",
+      "issue": "Existing English sentence joins and missing spaces are retained."
+    },
+    {
+      "lines": [
+        116,
+        118,
+        258,
+        260
+      ],
+      "status": "parent_review_pending",
+      "issue": "Chapter 16 and Chapter 23 cross-references are retained, not reassigned."
+    },
+    {
+      "lines": [
+        98,
+        100,
+        128,
+        130,
+        196,
+        198,
+        208,
+        210
+      ],
+      "status": "parent_review_pending",
+      "issue": "Chinese lacks mirrored footnote markers; English footnote 2 lacks a definition colon. Original markers and layout retained."
+    },
+    {
+      "lines": [
+        228,
+        230
+      ],
+      "status": "parent_review_pending",
+      "issue": "Source recommends both primary-team ownership and 20% time; both claims retained without inventing a reconciliation."
+    }
+  ],
+  "limitations": [
+    "Semantic coverage is the editor's bilingual review, not a machine translation-quality proof.",
+    "No other chapter, asset directory, shared report or shared test suite is validated or rewritten.",
+    "No official-source, external-link-reachability or browser-render check was performed.",
+    "Source issues are preserved pending parent review, not counted as repaired."
+  ]
+}

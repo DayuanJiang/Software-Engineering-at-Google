@@ -1,0 +1,18 @@
+{
+  "id": "ch14",
+  "file": "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
+  "status": "verified",
+  "after_sha256": "074911f350c72c649b47493e39cab7d1103574b1078878983f0f7ae343041324",
+  "reviewed_chinese_lines": 316,
+  "changed_lines": 270,
+  "english_lines": 287,
+  "english_segments": 286,
+  "code_items": 4,
+  "links": 31,
+  "footnote_markers": 6,
+  "structural_items": 280,
+  "holds": {},
+  "held_line_count": 0,
+  "prose_code_exceptions": [],
+  "link_syntax_exceptions": []
+}
