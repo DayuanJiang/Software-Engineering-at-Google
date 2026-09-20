@@ -225,6 +225,8 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 .markdown-section pre, .markdown-section code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .markdown-section code { color: var(--accent); background: var(--code-bg); font-size: .86em; padding: 2px 5px; border-radius: 3px; }
 .markdown-section pre > code { padding: 0; border-radius: 0; color: var(--ink); font-size: 14px; line-height: 1.7; background: none; }
+.markdown-section .code-variant-note { margin: -10px 0 22px; font-family: var(--ui-font); font-size: 12px; line-height: 1.6; color: var(--muted); }
+.reader-settings .mode-switch button { min-height: 30px; padding: 4px 12px; font-size: 13px; }
 :root[data-theme="dark"] .token.comment,
 :root[data-theme="dark"] .token.prolog { color: #a6b7aa; }
 :root[data-theme="dark"] .token.keyword,

@@ -1,0 +1,7 @@
+[
+  {
+    "language": "cpp",
+    "source": "result = 31 * result + (int) (f ^ (f >>> 32));",
+    "python": "# Python integers have no fixed width, so there is no unsigned shift `>>>`;\n# a plain right shift of the (non-negative) value gives the same result.\nresult = 31 * result + (f ^ (f >> 32))"
+  }
+]

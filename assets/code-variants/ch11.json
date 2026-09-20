@@ -1,0 +1,7 @@
+[
+  {
+    "language": "java",
+    "source": "// Verifies a Calculator class can handle negative results.\npublic void main(String[] args) {\n    Calculator calculator = new Calculator();\n    int expectedResult = -3;\n    int actualResult = calculator.subtract(2, 5); // Given 2, Subtracts 5.\n    assert(expectedResult == actualResult);\n}",
+    "python": "# Verifies a Calculator class can handle negative results.\ndef main():\n    calculator = Calculator()\n    expected_result = -3\n    actual_result = calculator.subtract(2, 5)  # Given 2, Subtracts 5.\n    assert expected_result == actual_result"
+  }
+]

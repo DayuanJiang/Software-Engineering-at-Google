@@ -1,0 +1,12 @@
+[
+  {
+    "language": "cpp",
+    "source": "// Function that takes a Foo* and may or may not assume ownership of \n// the passed pointer.\nvoid TakeFoo(Foo* arg);\n// Calls to the function don’t tell the reader anything about what to \n// expect with regard to ownership after the function returns.\nFoo* my_foo(NewFoo());\nTakeFoo(my_foo);",
+    "note": "Python 依靠垃圾回收管理对象生命周期，没有裸指针与所有权转移的区分，这段 C++ 示例没有对应写法。"
+  },
+  {
+    "language": "cpp",
+    "source": "// Function that takes a std::unique_ptr<Foo>.\nvoid TakeFoo(std::unique_ptr<Foo> arg);\n// Any call to the function explicitly shows that ownership is \n// yielded and the unique_ptr cannot be used after the function \n// returns.\nstd::unique_ptr<Foo> my_foo(FooFactory()); TakeFoo(std::move(my_foo));",
+    "note": "Python 依靠垃圾回收管理对象生命周期，没有 unique_ptr 这类所有权类型，这段 C++ 示例没有对应写法。"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "language": "java",
+    "source": "class PaymentProcessor {\n  private CreditCardService creditCardService;\n  ...\n  boolean makePayment(CreditCard creditCard, Money amount) {\n    if (creditCard.isExpired()) { return false; }\n    boolean success = creditCardService.chargeCreditCard(creditCard,  amount);\n    return success;\n  }\n}",
+    "python": "class PaymentProcessor:\n    _credit_card_service: CreditCardService\n    ...\n    def make_payment(self, credit_card, amount):\n        if credit_card.is_expired():\n            return False\n        success = self._credit_card_service.charge_credit_card(credit_card, amount)\n        return success"
+  },
+  {
+    "language": "java",
+    "source": "class TestDoubleCreditCardService implements CreditCardService {\n  @Override\n  public boolean chargeCreditCard(CreditCard creditCard, Money amount) {\n    return true;\n  }\n}",
+    "python": "class TestDoubleCreditCardService(CreditCardService):\n    def charge_credit_card(self, credit_card, amount):\n        return True"
+  },
+  {
+    "language": "java",
+    "source": "@Test public void cardIsExpired_returnFalse() {\n    boolean success = paymentProcessor.makePayment(EXPIRED_CARD, AMOUNT);\n    assertThat(success).isFalse();\n}",
+    "python": "def test_card_is_expired_return_false():\n    success = payment_processor.make_payment(EXPIRED_CARD, AMOUNT)\n    assert not success"
+  },
+  {
+    "language": "java",
+    "source": "class PaymentProcessor {\n  private CreditCardService creditCardService;\n\n  PaymentProcessor(CreditCardService creditCardService) {\n    this.creditCardService = creditCardService;\n  }\n  ...\n}",
+    "python": "class PaymentProcessor:\n    _credit_card_service: CreditCardService\n\n    def __init__(self, credit_card_service):\n        self._credit_card_service = credit_card_service\n    ..."
+  },
+  {
+    "language": "java",
+    "source": "PaymentProcessor paymentProcessor =\n    new PaymentProcessor(new TestDoubleCreditCardService());",
+    "python": "payment_processor = PaymentProcessor(TestDoubleCreditCardService())"
+  },
+  {
+    "language": "java",
+    "source": "class PaymentProcessorTest {\n...\nPaymentProcessor paymentProcessor;\n\n// Create a test double of CreditCardService with just one line of code.\n@Mock CreditCardService mockCreditCardService;\n\n@Before public void setUp() {\n    // Pass in the test double to the system under test.\n    paymentProcessor = new PaymentProcessor(mockCreditCardService);\n}\n\n@Test public void chargeCreditCardFails_returnFalse() {\n    // Give some behavior to the test double: it will return false\n    // anytime the chargeCreditCard() method is called. The usage of\n    // “any()” for the method’s arguments tells the test double to\n    // return false regardless of which arguments are passed.\n    when(mockCreditCardService.chargeCreditCard(any(), any())\n        .thenReturn(false);\n    boolean success = paymentProcessor.makePayment(CREDIT_CARD, AMOUNT);\n    assertThat(success).isFalse();\n  }\n}",
+    "python": "class PaymentProcessorTest(unittest.TestCase):\n    ...\n    def setUp(self):\n        # Create a test double of CreditCardService with just one line of code.\n        self.mock_credit_card_service = Mock(spec=CreditCardService)\n        # Pass in the test double to the system under test.\n        self.payment_processor = PaymentProcessor(self.mock_credit_card_service)\n\n    def test_charge_credit_card_fails_return_false(self):\n        # Give some behavior to the test double: it will return False\n        # anytime the charge_credit_card() method is called, regardless of\n        # which arguments are passed.\n        self.mock_credit_card_service.charge_credit_card.return_value = False\n        success = self.payment_processor.make_payment(CREDIT_CARD, AMOUNT)\n        self.assertFalse(success)"
+  },
+  {
+    "language": "java",
+    "source": "// Creating the fake is fast and easy.\nAuthorizationService fakeAuthorizationService = new FakeAuthorizationService();\nAccessManager accessManager = new AccessManager(fakeAuthorizationService):\n\n// Unknown user IDs shouldn’t have access.\nassertFalse(accessManager.userHasAccess(USER_ID));\n\n// The user ID should have access after it is added to\n// the authorization service. \nfakeAuthorizationService.addAuthorizedUser(new User(USER_ID));\nassertThat(accessManager.userHasAccess(USER_ID)).isTrue();",
+    "python": "# Creating the fake is fast and easy.\nfake_authorization_service = FakeAuthorizationService()\naccess_manager = AccessManager(fake_authorization_service)\n\n# Unknown user IDs shouldn't have access.\nassert not access_manager.user_has_access(USER_ID)\n\n# The user ID should have access after it is added to\n# the authorization service.\nfake_authorization_service.add_authorized_user(User(USER_ID))\nassert access_manager.user_has_access(USER_ID)"
+  },
+  {
+    "language": "java",
+    "source": "// Pass in a test double that was created by a mocking framework.\nAccessManager accessManager = new AccessManager(mockAuthorizationService):\n\n// The user ID shouldn’t have access if null is returned. \nwhen(mockAuthorizationService.lookupUser(USER_ID)).thenReturn(null);\nassertThat(accessManager.userHasAccess(USER_ID)).isFalse();\n\n// The user ID should have access if a non-null value is returned.   \nwhen(mockAuthorizationService.lookupUser(USER_ID)).thenReturn(USER);\nassertThat(accessManager.userHasAccess(USER_ID)).isTrue();",
+    "python": "# Pass in a test double that was created by a mocking framework.\naccess_manager = AccessManager(mock_authorization_service)\n\n# The user ID shouldn't have access if None is returned.\nmock_authorization_service.lookup_user.return_value = None\nassert not access_manager.user_has_access(USER_ID)\n\n# The user ID should have access if a non-None value is returned.\nmock_authorization_service.lookup_user.return_value = USER\nassert access_manager.user_has_access(USER_ID)"
+  },
+  {
+    "language": "java",
+    "source": "// Pass in a test double that was created by a mocking framework.\nAccessManager accessManager = new AccessManager(mockAuthorizationService);\naccessManager.userHasAccess(USER_ID);\n\n// The test will fail if accessManager.userHasAccess(USER_ID) didn’t call\n// mockAuthorizationService.lookupUser(USER_ID).\nverify(mockAuthorizationService).lookupUser(USER_ID);",
+    "python": "# Pass in a test double that was created by a mocking framework.\naccess_manager = AccessManager(mock_authorization_service)\naccess_manager.user_has_access(USER_ID)\n\n# The test will fail if access_manager.user_has_access(USER_ID) didn't call\n# mock_authorization_service.lookup_user(USER_ID).\nmock_authorization_service.lookup_user.assert_called_with(USER_ID)"
+  },
+  {
+    "language": "java",
+    "source": "@DoNotMock(\"Use SimpleQuery.create() instead of mocking.\")\npublic abstract class Query {\n  public abstract String getQueryValue();\n}",
+    "python": "# Python has no @DoNotMock annotation; state the preferred alternative in the\n# docstring and provide a real, easy-to-construct implementation instead.\nclass Query(ABC):\n    \"\"\"Use SimpleQuery.create() instead of mocking.\"\"\"\n\n    @abstractmethod\n    def get_query_value(self) -> str: ..."
+  },
+  {
+    "language": "java",
+    "source": "Foo foo = new Foo(new A(new B(new C()), new D()), new E(), ..., new Z());",
+    "python": "foo = Foo(A(B(C()), D()), E(), ..., Z())"
+  },
+  {
+    "language": "java",
+    "source": "@Mock \nFoo mockFoo;",
+    "python": "mock_foo = Mock(spec=Foo)"
+  },
+  {
+    "language": "java",
+    "source": "// This fake implements the FileSystem interface. This interface is also\n// used by the real implementation.\npublic class FakeFileSystem implements FileSystem {\n    // Stores a map of file name to file contents. The files are stored in\n    // memory instead of on disk since tests shouldn’t need to do disk I/O.\n    private Map < String, String > files = new HashMap< > ();\n    \n    @Override\n    public void writeFile(String fileName, String contents) {\n        // Add the file name and contents to the map.\n        files.add(fileName, contents);\n    }\n  \n    @Override\n    public String readFile(String fileName) {\n        String contents = files.get(fileName);\n        // The real implementation will throw this exception if the\n        // file isn’t found, so the fake must throw it too.\n        if(contents == null) {\n            throw new FileNotFoundException(fileName);\n        }\n        return contents;\n    }\n}",
+    "python": "# This fake implements the FileSystem interface. This interface is also\n# used by the real implementation.\nclass FakeFileSystem(FileSystem):\n    def __init__(self):\n        # Stores a map of file name to file contents. The files are stored in\n        # memory instead of on disk since tests shouldn't need to do disk I/O.\n        self._files = {}\n\n    def write_file(self, file_name, contents):\n        # Add the file name and contents to the map.\n        self._files[file_name] = contents\n\n    def read_file(self, file_name):\n        contents = self._files.get(file_name)\n        # The real implementation will raise this exception if the\n        # file isn't found, so the fake must raise it too.\n        if contents is None:\n            raise FileNotFoundError(file_name)\n        return contents"
+  },
+  {
+    "language": "java",
+    "source": "@Test public void getTransactionCount() {\ntransactionCounter = new TransactionCounter(mockCreditCardServer);\n// Use stubbing to return three transactions.\nwhen(mockCreditCardServer.getTransactions()).thenReturn( newList(TRANSACTION_1, TRANSACTION_2, TRANSACTION_3));\nassertThat(transactionCounter.getTransactionCount()).isEqualTo(3);\n}",
+    "python": "def test_get_transaction_count():\n    transaction_counter = TransactionCounter(mock_credit_card_server)\n    # Use stubbing to return three transactions.\n    mock_credit_card_server.get_transactions.return_value = [TRANSACTION_1, TRANSACTION_2, TRANSACTION_3]\n    assert transaction_counter.get_transaction_count() == 3"
+  },
+  {
+    "language": "java",
+    "source": "when(stubCalculator.add(1, 2)).thenReturn(3);",
+    "python": "stub_calculator.add.return_value = 3  # stub_calculator.add(1, 2) now returns 3"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void creditCardIsCharged() {\n    // Pass in test doubles that were created by a mocking framework.\n    paymentProcessor = new PaymentProcessor(mockCreditCardServer, mockTransactionProcessor);\n    // Set up stubbing for these test doubles. \n    when(mockCreditCardServer.isServerAvailable()).thenReturn(true);\n    when(mockTransactionProcessor.beginTransaction()).thenReturn(transaction);\n    when(mockCreditCardServer.initTransaction(transaction)).thenReturn(true);\n    when(mockCreditCardServer.pay(transaction, creditCard, 500)).thenReturn(false);\n    when(mockTransactionProcessor.endTransaction()).thenReturn(true);\n    // Call the system under test.\n    paymentProcessor.processPayment(creditCard, Money.dollars(500));\n    // There is no way to tell if the pay() method actually carried out the\n    // transaction, so the only thing the test can do is verify that the\n    // pay() method was called.\n    verify(mockCreditCardServer).pay(transaction, creditCard, 500);\n}",
+    "python": "def test_credit_card_is_charged():\n    # Pass in test doubles that were created by a mocking framework.\n    payment_processor = PaymentProcessor(mock_credit_card_server, mock_transaction_processor)\n    # Set up stubbing for these test doubles.\n    mock_credit_card_server.is_server_available.return_value = True\n    mock_transaction_processor.begin_transaction.return_value = transaction\n    mock_credit_card_server.init_transaction.return_value = True\n    mock_credit_card_server.pay.return_value = False\n    mock_transaction_processor.end_transaction.return_value = True\n    # Call the system under test.\n    payment_processor.process_payment(credit_card, Money.dollars(500))\n    # There is no way to tell if the pay() method actually carried out the\n    # transaction, so the only thing the test can do is verify that the\n    # pay() method was called.\n    mock_credit_card_server.pay.assert_called_with(transaction, credit_card, 500)"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void creditCardIsCharged() {\n    paymentProcessor = new PaymentProcessor(creditCardServer, transactionProcessor);\n    // Call the system under test.\n    paymentProcessor.processPayment(creditCard, Money.dollars(500));\n    // Query the credit card server state to see if the payment went through.\n    assertThat(creditCardServer.getMostRecentCharge(creditCard)).isEqualTo(500);\n}",
+    "python": "def test_credit_card_is_charged():\n    payment_processor = PaymentProcessor(credit_card_server, transaction_processor)\n    # Call the system under test.\n    payment_processor.process_payment(credit_card, Money.dollars(500))\n    # Query the credit card server state to see if the payment went through.\n    assert credit_card_server.get_most_recent_charge(credit_card) == 500"
+  },
+  {
+    "language": "java",
+    "source": "@Test \npublic void sortNumbers_quicksortIsUsed() {\n    // Pass in test doubles that were created by a mocking framework.\n    NumberSorter numberSorter = new NumberSorter(mockQuicksort, mockBubbleSort);\n    // Call the system under test.\n    numberSorter.sortNumbers(newList(3, 1, 2));\n    // Validate that numberSorter.sortNumbers() used quicksort. The test\n    // will fail if mockQuicksort.sort() is never called (e.g., if\n    // mockBubbleSort is used) or if it’s called with the wrong arguments.\n    verify(mockQuicksort).sort(newList(3, 1, 2));\n}",
+    "python": "def test_sort_numbers_quicksort_is_used():\n    # Pass in test doubles that were created by a mocking framework.\n    number_sorter = NumberSorter(mock_quicksort, mock_bubble_sort)\n    # Call the system under test.\n    number_sorter.sort_numbers([3, 1, 2])\n    # Validate that number_sorter.sort_numbers() used quicksort. The test\n    # will fail if mock_quicksort.sort() is never called (e.g., if\n    # mock_bubble_sort is used) or if it's called with the wrong arguments.\n    mock_quicksort.sort.assert_called_with([3, 1, 2])"
+  },
+  {
+    "language": "java",
+    "source": "verify(databaseReader, atMostOnce()).selectRecords();",
+    "python": "assert database_reader.select_records.call_count <= 1"
+  },
+  {
+    "language": "java",
+    "source": "sendEmail(), saveRecord(), logAccess().",
+    "python": "send_email(), save_record(), log_access()"
+  },
+  {
+    "language": "java",
+    "source": "getUser(), findResults(), readFile().",
+    "python": "get_user(), find_results(), read_file()"
+  },
+  {
+    "language": "java",
+    "source": "getUser(), findResults(), readFile()。",
+    "python": "get_user(), find_results(), read_file()"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void grantUserPermission() {\n    UserAuthorizer userAuthorizer = new UserAuthorizer(mockUserService, mockPermissionDatabase);\n    when(mockPermissionService.getPermission(FAKE_USER)).thenReturn(EMPTY);\n    // Call the system under test.\n    userAuthorizer.grantPermission(USER_ACCESS);\n    // addPermission() is state-changing, so it is reasonable to perform\n    // interaction testing to validate that it was called.\n    verify(mockPermissionDatabase).addPermission(FAKE_USER, USER_ACCESS);\n    // getPermission() is non-state-changing, so this line of code isn’t\n    // needed. One clue that interaction testing may not be needed:\n    // getPermission() was already stubbed earlier in this test.\n    verify(mockPermissionDatabase).getPermission(FAKE_USER);\n}",
+    "python": "def test_grant_user_permission():\n    user_authorizer = UserAuthorizer(mock_user_service, mock_permission_database)\n    mock_permission_service.get_permission.return_value = EMPTY\n    # Call the system under test.\n    user_authorizer.grant_permission(USER_ACCESS)\n    # add_permission() is state-changing, so it is reasonable to perform\n    # interaction testing to validate that it was called.\n    mock_permission_database.add_permission.assert_called_with(FAKE_USER, USER_ACCESS)\n    # get_permission() is non-state-changing, so this line of code isn't\n    # needed. One clue that interaction testing may not be needed:\n    # get_permission() was already stubbed earlier in this test.\n    mock_permission_database.get_permission.assert_called_with(FAKE_USER)"
+  },
+  {
+    "language": "java",
+    "source": "@Test public void displayGreeting_renderUserName() {\n    when(mockUserService.getUserName()).thenReturn(\"Fake User\");\n    userGreeter.displayGreeting();\n    // Call the system under test.\n    // The test will fail if any of the arguments to setText() are changed.\n    verify(userPrompt).setText(\"Fake User\", \"Good morning!\", \"Version 2.1\");\n    // The test will fail if setIcon() is not called, even though this\n    // behavior is incidental to the test since it is not related to\n    // validating the user name.\n    verify(userPrompt).setIcon(IMAGE_SUNSHINE);\n}",
+    "python": "def test_display_greeting_render_user_name():\n    mock_user_service.get_user_name.return_value = \"Fake User\"\n    user_greeter.display_greeting()\n    # Call the system under test.\n    # The test will fail if any of the arguments to set_text() are changed.\n    user_prompt.set_text.assert_called_with(\"Fake User\", \"Good morning!\", \"Version 2.1\")\n    # The test will fail if set_icon() is not called, even though this\n    # behavior is incidental to the test since it is not related to\n    # validating the user name.\n    user_prompt.set_icon.assert_called_with(IMAGE_SUNSHINE)"
+  },
+  {
+    "language": "java",
+    "source": "@Test \npublic void displayGreeting_renderUserName() {\n    when(mockUserService.getUserName()).thenReturn(\"Fake User\");\n    userGreeter.displayGreeting(); // Call the system under test. \n    verify(userPrompter).setText(eq(\"Fake User\"), any(), any());\n}\n\n@Test \npublic void displayGreeting_timeIsMorning_useMorningSettings() {\n    setTimeOfDay(TIME_MORNING);\n    userGreeter.displayGreeting(); // Call the system under test. \n    verify(userPrompt).setText(any(), eq(\"Good morning!\"), any());\n    verify(userPrompt).setIcon(IMAGE_SUNSHINE);\n}",
+    "python": "def test_display_greeting_render_user_name():\n    mock_user_service.get_user_name.return_value = \"Fake User\"\n    user_greeter.display_greeting()  # Call the system under test.\n    user_prompter.set_text.assert_called_with(\"Fake User\", ANY, ANY)\n\ndef test_display_greeting_time_is_morning_use_morning_settings():\n    set_time_of_day(TIME_MORNING)\n    user_greeter.display_greeting()  # Call the system under test.\n    user_prompt.set_text.assert_called_with(ANY, \"Good morning!\", ANY)\n    user_prompt.set_icon.assert_called_with(IMAGE_SUNSHINE)"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void sortNumbers() {\n    NumberSorter numberSorter = new NumberSorter(quicksort, bubbleSort);\n    // Call the system under test.\n    List sortedList = numberSorter.sortNumbers(newList(3, 1, 2));\n    // Validate that the returned list is sorted. It doesn’t matter which\n    // sorting algorithm is used, as long as the right result was returned.\n    assertThat(sortedList).isEqualTo(newList(1, 2, 3));\n}",
+    "python": "def test_sort_numbers():\n    number_sorter = NumberSorter(quicksort, bubble_sort)\n    # Call the system under test.\n    sorted_list = number_sorter.sort_numbers([3, 1, 2])\n    # Validate that the returned list is sorted. It doesn't matter which\n    # sorting algorithm is used, as long as the right result was returned.\n    assert sorted_list == [1, 2, 3]"
+  }
+]

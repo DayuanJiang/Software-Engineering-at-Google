@@ -837,6 +837,7 @@
       "route": "/zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules",
       "keepEnglish": [],
       "review": "assets/reader-review/ch08.json",
+      "codeVariants": "assets/code-variants/ch08.json",
       "sectionGuides": [
         {
           "id": "ch08-01",
@@ -1059,6 +1060,7 @@
       "route": "/zh-cn/Chapter-10_Documentation/Chapter-10_Documentation",
       "keepEnglish": [],
       "review": "assets/reader-review/ch10.json",
+      "codeVariants": "assets/code-variants/ch10.json",
       "sectionGuides": [
         {
           "id": "ch10-01",
@@ -1167,6 +1169,7 @@
       "route": "/zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview",
       "keepEnglish": [],
       "review": "assets/reader-review/ch11.json",
+      "codeVariants": "assets/code-variants/ch11.json",
       "sectionGuides": [
         {
           "id": "ch11-01",
@@ -1301,6 +1304,7 @@
       "route": "/zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing",
       "keepEnglish": [],
       "review": "assets/reader-review/ch12.json",
+      "codeVariants": "assets/code-variants/ch12.json",
       "sectionGuides": [
         {
           "id": "ch12-01",
@@ -1411,6 +1415,7 @@
       "route": "/zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles",
       "keepEnglish": [],
       "review": "assets/reader-review/ch13.json",
+      "codeVariants": "assets/code-variants/ch13.json",
       "sectionGuides": [
         {
           "id": "ch13-01",
@@ -1548,6 +1553,7 @@
       "route": "/zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing",
       "keepEnglish": [],
       "review": "assets/reader-review/ch14.json",
+      "codeVariants": "assets/code-variants/ch14.json",
       "sectionGuides": [
         {
           "id": "ch14-01",
@@ -2279,6 +2285,7 @@
       "route": "/zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis",
       "keepEnglish": [],
       "review": "assets/reader-review/ch20.json",
+      "codeVariants": "assets/code-variants/ch20.json",
       "sectionGuides": [
         {
           "id": "ch20-01",

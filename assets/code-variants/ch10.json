@@ -1,0 +1,27 @@
+[
+  {
+    "language": "cpp",
+    "source": "// -----------------------------------------------------------------------------\n// str_cat.h\n// -----------------------------------------------------------------------------\n//\n// This header file contains functions for efficiently concatenating and appending\n// strings: StrCat() and StrAppend(). Most of the work within these routines is\n// actually handled through use of a special AlphaNum type, which was designed\n// to be used as a parameter type that efficiently manages conversion to\n// strings and avoids copies in the above operations.\n... ...",
+    "python": "\"\"\"str_cat.py\n\nFunctions for efficiently concatenating and appending strings: str_cat() and\nstr_append(). Most of the work within these routines is actually handled through\nuse of a special AlphaNum type, which was designed to be used as a parameter type\nthat efficiently manages conversion to strings and avoids copies in the above\noperations.\n\"\"\"\n..."
+  },
+  {
+    "language": "java",
+    "source": "// -----------------------------------------------------------------------------\n// AlphaNum\n// -----------------------------------------------------------------------------\n//\n// The AlphaNum class acts as the main parameter type for StrCat() and\n// StrAppend(), providing efficient conversion of numeric, boolean, and\n// hexadecimal values (through the Hex type) into strings.",
+    "python": "class AlphaNum:\n    \"\"\"The main parameter type for str_cat() and str_append().\n\n    Provides efficient conversion of numeric, boolean, and hexadecimal values\n    (through the Hex type) into strings.\n    \"\"\""
+  },
+  {
+    "language": "java",
+    "source": "// StrCat()\n//\n// Merges the given strings or numbers, using no delimiter(s),\n// returning the merged result as a string.\n... ...",
+    "python": "def str_cat(*pieces):\n    \"\"\"Merge the given strings or numbers, using no delimiter(s), returning the\n    merged result as a string.\n    \"\"\"\n    ..."
+  },
+  {
+    "language": "java",
+    "source": "// Creates a new record for a customer with the given name and address,\n// and returns the record ID, or throws `DuplicateEntryError` if a\n// record with that name already exists.\nint AddCustomer(string name, string address);",
+    "python": "def add_customer(name: str, address: str) -> int:\n    \"\"\"Create a new record for a customer with the given name and address.\n\n    Returns the record ID, or raises DuplicateEntryError if a record with that\n    name already exists.\n    \"\"\""
+  },
+  {
+    "language": "java",
+    "source": "<!--*\n# Document freshness: For more information, see go/fresh-source. freshness: { owner: `username` reviewed: '2019-02-27' }\n\n# 文档的新鲜度：更多信息，请看 go/fresh-source。 freshness: { owner: `username` reviewed: '2019-02-27' }\n*-->",
+    "note": "这是文档开头用于标记新鲜度的 HTML 注释，与编程语言无关。"
+  }
+]

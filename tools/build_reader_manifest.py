@@ -1,5 +1,6 @@
 """Build and validate the static reader's chapter/SVG manifest without modifying book text."""
 
+import ast
 import json
 from pathlib import Path
 import re
@@ -10,6 +11,8 @@ import reader_content
 ROOT = Path(__file__).resolve().parents[1]
 DIAGRAMS = ROOT / "assets" / "diagrams"
 REVIEWS = ROOT / "assets" / "reader-review"
+VARIANTS = ROOT / "assets" / "code-variants"
+VARIANT_LANGUAGES = {".java": "java", ".cpp": "cpp", ".c": "c", ".go": "go"}
 
 PEDAGOGY_FIELDS = (
     "readerQuestion", "expectedAnswer", "visualEncoding", "sourceEvidence",
@@ -59,6 +62,33 @@ def load_reader_review(key, text):
     return review
 
 
+def compile_code_variants(folder, text):
+    """Pair each <n>.<lang> code example with its <n>.py rewrite or <n>.skip note and check them."""
+    if not folder.is_dir():
+        return None
+    # The Markdown renderer expands tabs to four spaces, so compare and publish sources that way.
+    fences = {t.content.replace("\t", "    ").strip() for t in audit.MD.parse(text) if t.type == "fence"}
+    entries = []
+    for source_path in sorted(p for p in folder.iterdir() if p.suffix in VARIANT_LANGUAGES):
+        source = source_path.read_text().replace("\t", "    ").strip()
+        if source not in fences:
+            raise ValueError(f"Code variant source is not a code block of the chapter: {source_path}")
+        entry = {"language": VARIANT_LANGUAGES[source_path.suffix], "source": source}
+        rewrite, skip = source_path.with_suffix(".py"), source_path.with_suffix(".skip")
+        if rewrite.exists():
+            entry["python"] = rewrite.read_text().strip()
+            try:
+                ast.parse(entry["python"], filename=str(rewrite))
+            except SyntaxError as error:
+                raise ValueError(f"Python rewrite does not parse: {rewrite}: {error}") from error
+        elif skip.read_text().strip() if skip.exists() else False:
+            entry["note"] = skip.read_text().strip()
+        else:
+            raise ValueError(f"Code example needs a Python rewrite or a skip note with a reason: {source_path}")
+        entries.append(entry)
+    return entries or None
+
+
 def compiled_review(chapter):
     """Load the per-chapter review file that the reader fetches on demand."""
     return json.loads((ROOT / chapter["review"]).read_text()) if "review" in chapter else None
@@ -100,7 +130,7 @@ def main():
     chapters = []
     guides = {}
     REVIEWS.mkdir(exist_ok=True)
-    for stale in REVIEWS.glob("*.json"):
+    for stale in list(REVIEWS.glob("*.json")) + list(VARIANTS.glob("*.json")):
         stale.unlink()
     paths = sorted((ROOT / "zh-cn").rglob("*.md"))
     for path in paths:
@@ -122,6 +152,10 @@ def main():
             chapters[-1]["review"] = f"assets/reader-review/{key}.json"
             translated = {reader_content.plain(t["english"]) for t in review.get("translations", [])}
             chapters[-1]["keepEnglish"] = [s for s in chapters[-1]["keepEnglish"] if reader_content.plain(s) not in translated]
+        variants = compile_code_variants(VARIANTS / key, text)
+        if variants:
+            (VARIANTS / f"{key}.json").write_text(json.dumps(variants, ensure_ascii=False, indent=2) + "\n")
+            chapters[-1]["codeVariants"] = f"assets/code-variants/{key}.json"
         if number:
             n = int(number[1])
             metadata = json.loads((DIAGRAMS / f"ch{n:02d}.json").read_text())

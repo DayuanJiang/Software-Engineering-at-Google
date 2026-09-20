@@ -28,6 +28,13 @@ def main():
         "docsify-zoom-image.min.js": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/zoom-image.min.js",
         "docsify-vue.css": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/vue.css",
         "docsify.LICENSE.txt": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/LICENSE",
+        # Prism language components register with the Prism instance bundled in Docsify.
+        "prism-python.min.js": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js",
+        "prism-java.min.js": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js",
+        "prism-c.min.js": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js",
+        "prism-cpp.min.js": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js",
+        "prism-go.min.js": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-go.min.js",
+        "prism.LICENSE.txt": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/LICENSE",
         "lucide.LICENSE.txt": "https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/LICENSE",
     }
     for name, url in sources.items():
@@ -50,7 +57,7 @@ def main():
         for child in source:
             symbol.append(child)
     ET.ElementTree(sprite).write(ROOT / "assets" / "reader-icons.svg", encoding="utf-8", xml_declaration=True)
-    print(f"Fetched Docsify 4.13.1 and {len(names)} Lucide 0.468.0 symbols.")
+    print(f"Fetched Docsify 4.13.1, Prism 1.29.0 language components, and {len(names)} Lucide 0.468.0 symbols.")
 
 
 if __name__ == "__main__":

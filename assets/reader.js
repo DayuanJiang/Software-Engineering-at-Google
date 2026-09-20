@@ -4,7 +4,7 @@
   const asset = (path) => new URL(path, base).href;
   const storageKey = "sweg-reader-preferences-v1";
   const han = /[\u3400-\u9fff]/;
-  let preferences = { mode: "bilingual", size: 19,
+  let preferences = { mode: "bilingual", size: 19, code: "original",
     theme: matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" };
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
@@ -12,6 +12,7 @@
     if (Number.isFinite(saved.size)) preferences.size = Math.max(16, Math.min(22, Math.round(saved.size)));
     if (["light", "dark"].includes(saved.theme)) preferences.theme = saved.theme;
     if (typeof saved.lastRoute === "string") preferences.lastRoute = saved.lastRoute;
+    if (["original", "python"].includes(saved.code)) preferences.code = saved.code;
   } catch (_) { /* Reading remains available when local storage is restricted. */ }
   document.documentElement.dataset.theme = preferences.theme;
   document.documentElement.style.setProperty("--reading-size", preferences.size + "px");
@@ -66,6 +67,9 @@
     document.body.dataset.readingMode = preferences.mode;
     document.querySelectorAll("[data-reader-mode]").forEach((node) => {
       node.setAttribute("aria-pressed", String(node.dataset.readerMode === preferences.mode));
+    });
+    document.querySelectorAll("[data-reader-code]").forEach((node) => {
+      node.setAttribute("aria-pressed", String(node.dataset.readerCode === preferences.code));
     });
     const size = document.getElementById("reader-font-value");
     if (size) size.textContent = String(preferences.size);
@@ -186,7 +190,22 @@
     const themeLabel = document.createElement("span"); themeLabel.textContent = "外观";
     const themeRow = document.createElement("div"); themeRow.className = "settings-row";
     themeRow.append(themeLabel, theme);
-    settings.append(settingsTitle, sizeRow, themeRow);
+    const codeLabel = document.createElement("span"); codeLabel.textContent = "代码示例";
+    const codeSwitch = document.createElement("div"); codeSwitch.className = "mode-switch";
+    codeSwitch.setAttribute("role", "group"); codeSwitch.setAttribute("aria-label", "代码示例语言");
+    [["original", "原文"], ["python", "Python"]].forEach(([value, label]) => {
+      const item = document.createElement("button");
+      item.type = "button"; item.dataset.readerCode = value; item.textContent = label;
+      item.addEventListener("click", () => {
+        preferences.code = value; applyPreferences(); persist();
+        const main = document.getElementById("main");
+        if (main && currentPage) applyCodeVariants(main, currentPage, routeVersion);
+      });
+      codeSwitch.append(item);
+    });
+    const codeRow = document.createElement("div"); codeRow.className = "settings-row";
+    codeRow.append(codeLabel, codeSwitch);
+    settings.append(settingsTitle, sizeRow, themeRow, codeRow);
     closeSettings = (restoreFocus = false) => {
       if (settings.hidden) return;
       settings.hidden = true; appearance.setAttribute("aria-expanded", "false");
@@ -1064,6 +1083,68 @@
     return page.reviewPromise;
   }
 
+  // Code examples: highlight originals, and optionally swap in Python rewrites loaded per chapter.
+  const PRISM_ALIASES = { "c++": "cpp", golang: "go" };
+  const LANGUAGE_LABELS = { java: "Java", cpp: "C++", c: "C", go: "Go" };
+  function highlightCode(code, language) {
+    const prism = window.Prism;
+    const grammar = prism && prism.languages[language];
+    if (grammar) return prism.highlight(code, grammar, language);
+    return code.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
+  }
+  function highlightOriginals(main) {
+    for (const pre of main.querySelectorAll("pre[data-lang]")) {
+      const code = pre.querySelector("code");
+      const language = PRISM_ALIASES[pre.dataset.lang.toLowerCase()] || pre.dataset.lang.toLowerCase();
+      if (!code || code.querySelector(".token") || !window.Prism?.languages[language]) continue;
+      code.innerHTML = highlightCode(code.textContent, language);
+      code.className = "lang-" + language;
+    }
+  }
+  function loadCodeVariants(page) {
+    if (!page?.codeVariants) return Promise.resolve([]);
+    if (!page.variantsPromise) {
+      page.variantsPromise = fetch(asset(page.codeVariants)).then((response) => {
+        if (!response.ok) throw new Error("Code variants unavailable: " + page.id);
+        return response.json();
+      }).catch((error) => { delete page.variantsPromise; throw error; });
+    }
+    return page.variantsPromise;
+  }
+  const originalCode = new WeakMap();
+  async function applyCodeVariants(main, page, version) {
+    for (const pre of main.querySelectorAll("pre")) {
+      const original = originalCode.get(pre);
+      if (!original) continue;
+      const code = pre.querySelector("code");
+      code.innerHTML = original.html; code.className = original.className;
+      pre.dataset.lang = original.lang;
+      if (pre.nextElementSibling?.classList.contains("code-variant-note")) pre.nextElementSibling.remove();
+      originalCode.delete(pre);
+    }
+    if (preferences.code !== "python") return;
+    let variants;
+    try { variants = await loadCodeVariants(page); } catch (error) { console.error(error); return; }
+    if (version !== routeVersion) return;
+    for (const variant of variants) {
+      for (const pre of main.querySelectorAll("pre")) {
+        const code = pre.querySelector("code");
+        if (!code || originalCode.has(pre) || pre.textContent.trim() !== variant.source) continue;
+        originalCode.set(pre, { html: code.innerHTML, className: code.className, lang: pre.dataset.lang || "" });
+        const note = document.createElement("p"); note.className = "code-variant-note";
+        const label = LANGUAGE_LABELS[variant.language] || variant.language;
+        if (variant.python) {
+          code.innerHTML = highlightCode(variant.python, "python");
+          code.className = "lang-python"; pre.dataset.lang = "python";
+          note.textContent = "Python 改写，原书示例为 " + label + "。";
+        } else {
+          note.textContent = "保留 " + label + " 原文：" + variant.note;
+        }
+        pre.after(note);
+      }
+    }
+  }
+
   // Full-text search over a prebuilt index; the index is downloaded only when someone searches.
   let searchIndexPromise = null;
   function loadSearchIndex() {
@@ -1243,6 +1324,9 @@
       reviewedContent(main, currentPage);
       classifyCaptions(main);
       classifyProse(main, currentPage);
+      highlightOriginals(main);
+      await applyCodeVariants(main, currentPage, version);
+      if (version !== routeVersion) return;
       if (currentGuide) await insertGuide(main, currentGuide, version);
       for (const guide of currentPage?.sectionGuides || []) {
         if (version !== routeVersion) return;

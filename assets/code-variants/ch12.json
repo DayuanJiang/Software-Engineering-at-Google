@@ -1,0 +1,137 @@
+[
+  {
+    "language": "java",
+    "source": "public void processTransaction(Transaction transaction) {\n    if(isValid(transaction)) {\n        saveToDatabase(transaction);\n    }\n}\nprivate boolean isValid(Transaction t) {\n    return t.getAmount() < t.getSender().getBalance();\n}\nprivate void saveToDatabase(Transaction t) {\n    String s = t.getSender() + \",\" + t.getRecipient() + \",\" + t.getAmount();\n    database.put(t.getId(), s);\n}\npublic void setAccountBalance(String accountName, int balance) {\n    // Write the balance to the database directly\n}\npublic void getAccountBalance(String accountName) {\n    // Read transactions from the database to determine the account balance\n}",
+    "python": "def process_transaction(self, transaction):\n    if self._is_valid(transaction):\n        self._save_to_database(transaction)\n\ndef _is_valid(self, t):\n    return t.amount < t.sender.balance\n\ndef _save_to_database(self, t):\n    s = f\"{t.sender},{t.recipient},{t.amount}\"\n    self.database.put(t.id, s)\n\ndef set_account_balance(self, account_name, balance):\n    # Write the balance to the database directly\n    ...\n\ndef get_account_balance(self, account_name):\n    # Read transactions from the database to determine the account balance\n    ..."
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void emptyAccountShouldNotBeValid() {\n    assertThat(processor.isValid(newTransaction().setSender(EMPTY_ACCOUNT))).isFalse();\n}\n\n@Test\npublic void shouldSaveSerializedData() {\n    processor.saveToDatabase(newTransaction().setId(123).setSender(\"me\").setRecipient(\"you\").setAmount(100));\n    assertThat(database.get(123)).isEqualTo(\"me,you,100\");\n}",
+    "python": "def test_empty_account_should_not_be_valid():\n    assert not processor._is_valid(new_transaction(sender=EMPTY_ACCOUNT))\n\ndef test_should_save_serialized_data():\n    processor._save_to_database(new_transaction(id=123, sender=\"me\", recipient=\"you\", amount=100))\n    assert database.get(123) == \"me,you,100\""
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldTransferFunds() {\n    processor.setAccountBalance(\"me\", 150);\n    processor.setAccountBalance(\"you\", 20);\n    processor.processTransaction(newTransaction().setSender(\"me\").setRecipient(\"you\").setAmount(100));\n    assertThat(processor.getAccountBalance(\"me\")).isEqualTo(50);\n    assertThat(processor.getAccountBalance(\"you\")).isEqualTo(120);\n}\n\n@Test\npublic void shouldNotPerformInvalidTransactions() {\n    processor.setAccountBalance(\"me\", 50);\n    processor.setAccountBalance(\"you\", 20);\n    processor.processTransaction(newTransaction().setSender(\"me\").setRecipient(\"you\").setAmount(100));\n    assertThat(processor.getAccountBalance(\"me\")).isEqualTo(50);\n    assertThat(processor.getAccountBalance(\"you\")).isEqualTo(20);\n}",
+    "python": "def test_should_transfer_funds():\n    processor.set_account_balance(\"me\", 150)\n    processor.set_account_balance(\"you\", 20)\n    processor.process_transaction(new_transaction(sender=\"me\", recipient=\"you\", amount=100))\n    assert processor.get_account_balance(\"me\") == 50\n    assert processor.get_account_balance(\"you\") == 120\n\ndef test_should_not_perform_invalid_transactions():\n    processor.set_account_balance(\"me\", 50)\n    processor.set_account_balance(\"you\", 20)\n    processor.process_transaction(new_transaction(sender=\"me\", recipient=\"you\", amount=100))\n    assert processor.get_account_balance(\"me\") == 50\n    assert processor.get_account_balance(\"you\") == 20"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldWriteToDatabase() {\n    accounts.createUser(\"foobar\");\n    verify(database).put(\"foobar\");\n}",
+    "python": "def test_should_write_to_database():\n    accounts.create_user(\"foobar\")\n    database.put.assert_called_with(\"foobar\")"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldCreateUsers() {\n    accounts.createUser(\"foobar\");\n    assertThat(accounts.getUser(\"foobar\")).isNotNull();\n}",
+    "python": "def test_should_create_users():\n    accounts.create_user(\"foobar\")\n    assert accounts.get_user(\"foobar\") is not None"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldPerformAddition() {\n    Calculator calculator = new Calculator(new RoundingStrategy(), \"unused\", ENABLE_COSINE_FEATURE, 0.01, calculusEngine, false);\n    int result = calculator.calculate(newTestCalculation());\n    assertThat(result).isEqualTo(5); // Where did this number come from?\n}",
+    "python": "def test_should_perform_addition():\n    calculator = Calculator(RoundingStrategy(), \"unused\", ENABLE_COSINE_FEATURE, 0.01, calculus_engine, False)\n    result = calculator.calculate(new_test_calculation())\n    assert result == 5  # Where did this number come from?"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldPerformAddition() { \n    Calculator calculator = newCalculator();\n    int result = calculator.calculate(newCalculation(2, Operation.PLUS, 3));\n    assertThat(result).isEqualTo(5);\n}",
+    "python": "def test_should_perform_addition():\n    calculator = new_calculator()\n    result = calculator.calculate(new_calculation(2, Operation.PLUS, 3))\n    assert result == 5"
+  },
+  {
+    "language": "java",
+    "source": "public void displayTransactionResults(User user, Transaction transaction) {\n    ui.showMessage(\"You bought a \" + transaction.getItemName());\n    if(user.getBalance() < LOW_BALANCE_THRESHOLD) {\n        ui.showMessage(\"Warning: your balance is low!\");\n    }\n}",
+    "python": "def display_transaction_results(self, user, transaction):\n    self.ui.show_message(f\"You bought a {transaction.item_name}\")\n    if user.balance < LOW_BALANCE_THRESHOLD:\n        self.ui.show_message(\"Warning: your balance is low!\")"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void testDisplayTransactionResults() {\ntransactionProcessor.displayTransactionResults(newUserWithBalance(LOW_BALANCE_THRESHOLD.plus(dollars(2))), new Transaction(\"Some Item\", dollars(3)));\n    assertThat(ui.getText()).contains(\"You bought a Some Item\");\n    assertThat(ui.getText()).contains(\"your balance is low\");\n}",
+    "python": "def test_display_transaction_results():\n    transaction_processor.display_transaction_results(\n        new_user_with_balance(LOW_BALANCE_THRESHOLD + dollars(2)), Transaction(\"Some Item\", dollars(3)))\n    assert \"You bought a Some Item\" in ui.get_text()\n    assert \"your balance is low\" in ui.get_text()"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void displayTransactionResults_showsItemName() {\n    transactionProcessor.displayTransactionResults(new User(), new Transaction(\"Some Item\"));\n    assertThat(ui.getText()).contains(\"You bought a Some Item\");\n}\n\n@Test\npublic void displayTransactionResults_showsLowBalanceWarning() {\n    transactionProcessor.displayTransactionResults(newUserWithBalance(LOW_BALANCE_THRESHOLD.plus(dollars(2))), new Transaction(\"Some Item\", dollars(3)));\n    assertThat(ui.getText()).contains(\"your balance is low\");\n}",
+    "python": "def test_display_transaction_results_shows_item_name():\n    transaction_processor.display_transaction_results(User(), Transaction(\"Some Item\"))\n    assert \"You bought a Some Item\" in ui.get_text()\n\ndef test_display_transaction_results_shows_low_balance_warning():\n    transaction_processor.display_transaction_results(\n        new_user_with_balance(LOW_BALANCE_THRESHOLD + dollars(2)), Transaction(\"Some Item\", dollars(3)))\n    assert \"your balance is low\" in ui.get_text()"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void transferFundsShouldMoveMoneyBetweenAccounts() {\n    // Given two accounts with initial balances of $150 and $20\n    Account account1 = newAccountWithBalance(usd(150));\n    Account account2 = newAccountWithBalance(usd(20));\n    // When transferring $100 from the first to the second account\n    bank.transferFunds(account1, account2, usd(100));\n    // Then the new account balances should reflect the transfer \n    assertThat(account1.getBalance()).isEqualTo(usd(50));\n    assertThat(account2.getBalance()).isEqualTo(usd(120));\n}",
+    "python": "def test_transfer_funds_should_move_money_between_accounts():\n    # Given two accounts with initial balances of $150 and $20\n    account1 = new_account_with_balance(usd(150))\n    account2 = new_account_with_balance(usd(20))\n    # When transferring $100 from the first to the second account\n    bank.transfer_funds(account1, account2, usd(100))\n    # Then the new account balances should reflect the transfer\n    assert account1.balance == usd(50)\n    assert account2.balance == usd(120)"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldTimeOutConnections() {\n    // Given two users\n    User user1 = newUser();\n    User user2 = newUser();\n    // And an empty connection pool with a 10-minute timeout\n    Pool pool = newPool(Duration.minutes(10));\n    // When connecting both users to the pool\n    pool.connect(user1);\n    pool.connect(user2);\n    // Then the pool should have two connections\n    assertThat(pool.getConnections()).hasSize(2);\n    // When waiting for 20 minutes\n    clock.advance(Duration.minutes(20));\n    // Then the pool should have no connections\n    assertThat(pool.getConnections()).isEmpty();\n    // And each user should be disconnected \n    assertThat(user1.isConnected()).isFalse();\n    assertThat(user2.isConnected()).isFalse();\n}",
+    "python": "def test_should_time_out_connections():\n    # Given two users\n    user1 = new_user()\n    user2 = new_user()\n    # And an empty connection pool with a 10-minute timeout\n    pool = new_pool(timedelta(minutes=10))\n    # When connecting both users to the pool\n    pool.connect(user1)\n    pool.connect(user2)\n    # Then the pool should have two connections\n    assert len(pool.connections) == 2\n    # When waiting for 20 minutes\n    clock.advance(timedelta(minutes=20))\n    # Then the pool should have no connections\n    assert pool.connections == []\n    # And each user should be disconnected\n    assert not user1.is_connected()\n    assert not user2.is_connected()"
+  },
+  {
+    "language": "java",
+    "source": "describe(\"multiplication\", function() {\n    describe(\"with a positive number\", function() {\n        var positiveNumber = 10;\n        it(\"is positive with another positive number\", function() {\n            expect(positiveNumber * 10).toBeGreaterThan(0);\n        });\n        it(\"is negative with a negative number\", function() {\n            expect(positiveNumber * -10).toBeLessThan(0);\n        });\n    });\n    describe(\"with a negative number\", function() {\n        var negativeNumber = 10;\n        it(\"is negative with a positive number\", function() {\n            expect(negativeNumber * 10).toBeLessThan(0);\n        });\n        it(\"is positive with another negative number\", function() {\n            expect(negativeNumber * -10).toBeGreaterThan(0);\n        });\n    });\n});",
+    "python": "# pytest lets nested classes play the role of describe() blocks.\nclass TestMultiplication:\n    class TestWithAPositiveNumber:\n        positive_number = 10\n\n        def test_is_positive_with_another_positive_number(self):\n            assert self.positive_number * 10 > 0\n\n        def test_is_negative_with_a_negative_number(self):\n            assert self.positive_number * -10 < 0\n\n    class TestWithANegativeNumber:\n        negative_number = 10\n\n        def test_is_negative_with_a_positive_number(self):\n            assert self.negative_number * 10 < 0\n\n        def test_is_positive_with_another_negative_number(self):\n            assert self.negative_number * -10 > 0"
+  },
+  {
+    "language": "java",
+    "source": "multiplyingTwoPositiveNumbersShouldReturnAPositiveNumber \nmultiply_postiveAndNegative_returnsNegative \ndivide_byZero_throwsException",
+    "python": "test_multiplying_two_positive_numbers_should_return_a_positive_number\ntest_multiply_positive_and_negative_returns_negative\ntest_divide_by_zero_raises_exception"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldNavigateToAlbumsPage() {\n    String baseUrl = \"http://photos.google.com/\";\n    Navigator nav = new Navigator(baseUrl);\n    nav.goToAlbumPage();\n    assertThat(nav.getCurrentUrl()).isEqualTo(baseUrl + \"/albums\");\n}",
+    "python": "def test_should_navigate_to_albums_page():\n    base_url = \"http://photos.google.com/\"\n    nav = Navigator(base_url)\n    nav.go_to_album_page()\n    assert nav.current_url == base_url + \"/albums\""
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldNavigateToPhotosPage() {\n    Navigator nav = new Navigator(\"http://photos.google.com/\");\n    nav.goToPhotosPage();\n    assertThat(nav.getCurrentUrl())).isEqualTo(\"http://photos.google.com//albums\"); // Oops!\n}",
+    "python": "def test_should_navigate_to_photos_page():\n    nav = Navigator(\"http://photos.google.com/\")\n    nav.go_to_photos_page()\n    assert nav.current_url == \"http://photos.google.com//albums\"  # Oops!"
+  },
+  {
+    "language": "java",
+    "source": "Test failed: account is closed",
+    "note": "这是测试失败时输出的提示文字，与编程语言无关。"
+  },
+  {
+    "language": "java",
+    "source": "Expected an account in state CLOSED, but got account:\n<{name: \"my-account\", state: \"OPEN\"}",
+    "note": "这是测试失败时输出的提示文字，与编程语言无关。"
+  },
+  {
+    "language": "java",
+    "source": "Set<String> colors = ImmutableSet.of(\"red\", \"green\", \"blue\"); \nassertTrue(colors.contains(\"orange\")); // JUnit \nassertThat(colors).contains(\"orange\"); // Truth",
+    "python": "colors = frozenset({\"red\", \"green\", \"blue\"})\nself.assertTrue(\"orange\" in colors)  # unittest, in the JUnit style\nself.assertIn(\"orange\", colors)      # a matcher-style assertion, in the Truth style"
+  },
+  {
+    "language": "go",
+    "source": "result: = Add(2, 3)\nif result != 5 {\n    t.Errorf(\"Add(2, 3) = %v, want %v\", result, 5)\n}",
+    "python": "result = add(2, 3)\nassert result == 5, f\"add(2, 3) = {result}, want 5\""
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldAllowMultipleUsers() {\n    List < User > users = createUsers(false, false);\n    Forum forum = createForumAndRegisterUsers(users);\n    validateForumAndUsers(forum, users);\n}\n\n@Test\npublic void shouldNotAllowBannedUsers() {\n        List < User > users = createUsers(true);\n        Forum forum = createForumAndRegisterUsers(users);\n        validateForumAndUsers(forum, users);\n}\n\n// Lots more tests...\nprivate static List < User > createUsers(boolean...banned) {\n    List < User > users = new ArrayList < > ();\n    for(boolean isBanned: banned) {\n        users.add(newUser().setState(isBanned ? State.BANNED : State.NORMAL).build());\n    }\n    return users;\n}\n\nprivate static Forum createForumAndRegisterUsers(List < User > users) {\n    Forum forum = new Forum();\n    for(User user: users) {\n        try {\n            forum.register(user);\n        } catch(BannedUserException ignored) {}\n    }\n    return forum;\n}\n\nprivate static void validateForumAndUsers(Forum forum, List < User > users) {\n    assertThat(forum.isReachable()).isTrue();\n    for(User user: users) {\n        assertThat(forum.hasRegisteredUser(user)).isEqualTo(user.getState() == State.BANNED);\n    }\n}",
+    "python": "def test_should_allow_multiple_users():\n    users = create_users(False, False)\n    forum = create_forum_and_register_users(users)\n    validate_forum_and_users(forum, users)\n\ndef test_should_not_allow_banned_users():\n    users = create_users(True)\n    forum = create_forum_and_register_users(users)\n    validate_forum_and_users(forum, users)\n\n# Lots more tests...\n\ndef create_users(*banned):\n    users = []\n    for is_banned in banned:\n        users.append(new_user(state=State.BANNED if is_banned else State.NORMAL))\n    return users\n\ndef create_forum_and_register_users(users):\n    forum = Forum()\n    for user in users:\n        try:\n            forum.register(user)\n        except BannedUserError:\n            pass\n    return forum\n\ndef validate_forum_and_users(forum, users):\n    assert forum.is_reachable()\n    for user in users:\n        assert forum.has_registered_user(user) == (user.state == State.BANNED)"
+  },
+  {
+    "language": "java",
+    "source": "@Test\npublic void shouldAllowMultipleUsers() {\n    User user1 = newUser().setState(State.NORMAL).build();\n    User user2 = newUser().setState(State.NORMAL).build();\n\n    Forum forum = new Forum();\n    forum.register(user1);\n    forum.register(user2);\n\n    assertThat(forum.hasRegisteredUser(user1)).isTrue();\n    assertThat(forum.hasRegisteredUser(user2)).isTrue();\n}\n\n@Test\npublic void shouldNotRegisterBannedUsers() {\n    User user = newUser().setState(State.BANNED).build();\n\n    Forum forum = new Forum();\n    try {\n        forum.register(user);\n    } catch(BannedUserException ignored) {}\n\n    assertThat(forum.hasRegisteredUser(user)).isFalse();\n}",
+    "python": "def test_should_allow_multiple_users():\n    user1 = new_user(state=State.NORMAL)\n    user2 = new_user(state=State.NORMAL)\n\n    forum = Forum()\n    forum.register(user1)\n    forum.register(user2)\n\n    assert forum.has_registered_user(user1)\n    assert forum.has_registered_user(user2)\n\ndef test_should_not_register_banned_users():\n    user = new_user(state=State.BANNED)\n\n    forum = Forum()\n    try:\n        forum.register(user)\n    except BannedUserError:\n        pass\n\n    assert not forum.has_registered_user(user)"
+  },
+  {
+    "language": "java",
+    "source": "private static final Account ACCOUNT_1 = Account.newBuilder()\n    .setState(AccountState.OPEN).setBalance(50).build();\n\nprivate static final Account ACCOUNT_2 = Account.newBuilder()\n    .setState(AccountState.CLOSED).setBalance(0).build();\n\nprivate static final Item ITEM = Item.newBuilder()\n    .setName(\"Cheeseburger\").setPrice(100).build();\n\n// Hundreds of lines of other tests...\n\n@Test\npublic void canBuyItem_returnsFalseForClosedAccounts() {\n    assertThat(store.canBuyItem(ITEM, ACCOUNT_1)).isFalse();\n}\n\n@Test\npublic void canBuyItem_returnsFalseWhenBalanceInsufficient() {\n    assertThat(store.canBuyItem(ITEM, ACCOUNT_2)).isFalse();\n}",
+    "python": "ACCOUNT_1 = Account(state=AccountState.OPEN, balance=50)\n\nACCOUNT_2 = Account(state=AccountState.CLOSED, balance=0)\n\nITEM = Item(name=\"Cheeseburger\", price=100)\n\n# Hundreds of lines of other tests...\n\ndef test_can_buy_item_returns_false_for_closed_accounts():\n    assert not store.can_buy_item(ITEM, ACCOUNT_1)\n\ndef test_can_buy_item_returns_false_when_balance_insufficient():\n    assert not store.can_buy_item(ITEM, ACCOUNT_2)"
+  },
+  {
+    "language": "java",
+    "source": "# A helper method wraps a constructor by defining arbitrary defaults for \n# each of its parameters.\ndef newContact(\n        firstName = \"Grace\", lastName = \"Hopper\", phoneNumber = \"555-123-4567\"):\n    return Contact(firstName, lastName, phoneNumber)\n\n# Tests call the helper, specifying values for only the parameters that they\n# care about.\ndef test_fullNameShouldCombineFirstAndLastNames(self):\n    def contact = newContact(firstName = \"Ada\", lastName = \"Lovelace\") self.assertEqual(contact.fullName(), \"Ada Lovelace\")\n\n// Languages like Java that don’t support named parameters can emulate them\n// by returning a mutable \"builder\" object that represents the value under\n// construction.\nprivate static Contact.Builder newContact() {\n    return Contact.newBuilder()\n        .setFirstName(\"Grace\")\n        .setLastName(\"Hopper\")\n        .setPhoneNumber(\"555-123-4567\");\n}\n\n// Tests then call methods on the builder to overwrite only the parameters\n// that they care about, then call build() to get a real value out of the\n// builder. @Test\npublic void fullNameShouldCombineFirstAndLastNames() {\n    Contact contact = newContact()\n        .setFirstName(\"Ada\").setLastName(\"Lovelace\")\n        .build();\n    assertThat(contact.getFullName()).isEqualTo(\"Ada Lovelace\");\n}",
+    "python": "# A helper method wraps a constructor by defining arbitrary defaults for\n# each of its parameters.\ndef new_contact(first_name=\"Grace\", last_name=\"Hopper\", phone_number=\"555-123-4567\"):\n    return Contact(first_name, last_name, phone_number)\n\n# Tests call the helper, specifying values for only the parameters that they\n# care about.\ndef test_full_name_should_combine_first_and_last_names():\n    contact = new_contact(first_name=\"Ada\", last_name=\"Lovelace\")\n    assert contact.full_name() == \"Ada Lovelace\"\n\n# Python supports named parameters, so the mutable \"builder\" object that Java\n# needs for the same purpose is unnecessary here."
+  },
+  {
+    "language": "java",
+    "source": "private NameService nameService;\nprivate UserStore userStore;\n\n@Before\npublic void setUp() {\n    nameService = new NameService();\n    nameService.set(\"user1\", \"Donald Knuth\");\n    userStore = new UserStore(nameService);\n}\n\n// [... hundreds of lines of tests ...]\n\n@Test\npublic void shouldReturnNameFromService() {\n    UserDetails user = userStore.get(\"user1\");\n    assertThat(user.getName()).isEqualTo(\"Donald Knuth\");\n}",
+    "python": "class UserStoreTest(unittest.TestCase):\n    def setUp(self):\n        self.name_service = NameService()\n        self.name_service.set(\"user1\", \"Donald Knuth\")\n        self.user_store = UserStore(self.name_service)\n\n    # [... hundreds of lines of tests ...]\n\n    def test_should_return_name_from_service(self):\n        user = self.user_store.get(\"user1\")\n        self.assertEqual(user.name, \"Donald Knuth\")"
+  },
+  {
+    "language": "java",
+    "source": "private NameService nameService;\nprivate UserStore userStore;\n\n@Before\npublic void setUp() {\n    nameService = new NameService();\n    nameService.set(\"user1\", \"Donald Knuth\");\n    userStore = new UserStore(nameService);\n}\n\n@Test\npublic void shouldReturnNameFromService() {\n    nameService.set(\"user1\", \"Margaret Hamilton\");\n    UserDetails user = userStore.get(\"user1\");\n    assertThat(user.getName()).isEqualTo(\"Margaret Hamilton\");\n}",
+    "python": "class UserStoreTest(unittest.TestCase):\n    def setUp(self):\n        self.name_service = NameService()\n        self.name_service.set(\"user1\", \"Donald Knuth\")\n        self.user_store = UserStore(self.name_service)\n\n    def test_should_return_name_from_service(self):\n        self.name_service.set(\"user1\", \"Margaret Hamilton\")\n        user = self.user_store.get(\"user1\")\n        self.assertEqual(user.name, \"Margaret Hamilton\")"
+  },
+  {
+    "language": "java",
+    "source": "private void assertUserHasAccessToAccount(User user, Account account) {\n    for(long userId: account.getUsersWithAccess()) {\n        if(user.getId() == userId) {\n            return;\n        }\n    }\n    fail(user.getName() + \" cannot access \" + account.getName());\n}",
+    "python": "def assert_user_has_access_to_account(user, account):\n    for user_id in account.users_with_access:\n        if user.id == user_id:\n            return\n    pytest.fail(f\"{user.name} cannot access {account.name}\")"
+  }
+]
