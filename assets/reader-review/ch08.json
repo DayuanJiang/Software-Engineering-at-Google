@@ -1,0 +1,323 @@
+{
+  "format": 2,
+  "sourceSha256": "ceaa20d7075b29afcf52f508756fef8d93768de1b24f6cbdcf92fe77bb67a663",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch08.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        32,
+        34
+      ],
+      "english": "Many of our style guides have external versions, which you can find at https://google.github.io/styleguide. We cite numerous examples from these guides within this chapter.",
+      "chinese": "我们的许多风格指南都有对外公开的版本，可见 https://google.github.io/styleguide。我们在本章中引用了这些指南中的许多例子。",
+      "after": "我们为谷歌使用的每门编程语言分别维护风格指南。",
+      "englishHtml": "<p>Many of our style guides have external versions, which you can find at https://google.github.io/styleguide. We cite numerous examples from these guides within this chapter.</p>\n",
+      "chineseHtml": "<p>我们的许多风格指南都有对外公开的版本，可见 https://google.github.io/styleguide。我们在本章中引用了这些指南中的许多例子。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        88,
+        90
+      ],
+      "english": "Tooling matters here. The measure for “too many” is not the raw number of rules in play, but how many an engineer needs to remember. For example, in the bad-old-days pre-clang-format, we needed to remember a ton of formatting rules. Those rules haven’t gone away, but with our current tooling, the cost of adherence has fallen dramatically. We’ve reached a point at which somebody could add an arbitrary number of formatting rules and nobody would care, because the tool just does it for you.",
+      "chinese": "工具在这里很重要。“规则太多”不是指规则总数太多，而是指工程师需要记住的规则太多。例如，在还没有 clang-format 的日子里，我们得记住大量格式规则。如今这些规则依然存在，但工具已大幅降低了遵守它们的成本。现在，即使再增加任意数量的格式规则，也不会有人在意，因为工具会自动处理。",
+      "after": "也会增加新工程师的学习难度。",
+      "englishHtml": "<p>Tooling matters here. The measure for “too many” is not the raw number of rules in play, but how many an engineer needs to remember. For example, in the bad-old-days pre-clang-format, we needed to remember a ton of formatting rules. Those rules haven’t gone away, but with our current tooling, the cost of adherence has fallen dramatically. We’ve reached a point at which somebody could add an arbitrary number of formatting rules and nobody would care, because the tool just does it for you.</p>\n",
+      "chineseHtml": "<p>工具在这里很重要。“规则太多”不是指规则总数太多，而是指工程师需要记住的规则太多。例如，在还没有 clang-format 的日子里，我们得记住大量格式规则。如今这些规则依然存在，但工具已大幅降低了遵守它们的成本。现在，即使再增加任意数量的格式规则，也不会有人在意，因为工具会自动处理。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        161,
+        163
+      ],
+      "english": "Credit to H. Wright for the real-world comparison, made at the point of having visited around 15 different Google offices.",
+      "chinese": "感谢 H. Wright 提供这个现实类比；他是在走访了约15处谷歌办公室后提出的。",
+      "after": "却能让更多工程师以更少的投入完成更多工作：",
+      "englishHtml": "<p>Credit to H. Wright for the real-world comparison, made at the point of having visited around 15 different Google offices.</p>\n",
+      "chineseHtml": "<p>感谢 H. Wright 提供这个现实类比；他是在走访了约15处谷歌办公室后提出的。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        165,
+        167
+      ],
+      "english": "“Chunking” is a cognitive process that groups pieces of information together into meaningful “chunks” rather than keeping note of them individually. Expert chess players, for example, think about configurations of  pieces rather than the positions of the individuals.",
+      "chinese": "“组块”是一种认知过程：把零散信息组合成有意义的整体，而不是逐项记忆。例如，国际象棋高手考虑的是棋子的布局，而不是每个棋子的位置。",
+      "after": "这种一致性在很大程度上有助于专家进行“组块”识别。",
+      "englishHtml": "<p>“Chunking” is a cognitive process that groups pieces of information together into meaningful “chunks” rather than keeping note of them individually. Expert chess players, for example, think about configurations of  pieces rather than the positions of the individuals.</p>\n",
+      "chineseHtml": "<p>“组块”是一种认知过程：把零散信息组合成有意义的整体，而不是逐项记忆。例如，国际象棋高手考虑的是棋子的布局，而不是每个棋子的位置。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        169,
+        171
+      ],
+      "english": "See [4.2 Block indentation: +2 spaces, Spaces vs. Tabs, 4.4 Column limit:100 and Line Length](https://oreil.ly/WhufW)",
+      "chinese": "查阅  [4.2 Block indentation: +2 spaces, Spaces vs. Tabs, 4.4 Column limit:100 and Line Length](https://oreil.ly/WhufW)",
+      "after": "例如缩进用几个空格、每行最多多少字符。",
+      "englishHtml": "<p>See <a href=\"https://oreil.ly/WhufW\">4.2 Block indentation: +2 spaces, Spaces vs. Tabs, 4.4 Column limit:100 and Line Length</a></p>\n",
+      "chineseHtml": "<p>查阅  <a href=\"https://oreil.ly/WhufW\">4.2 Block indentation: +2 spaces, Spaces vs. Tabs, 4.4 Column limit:100 and Line Length</a></p>\n"
+    },
+    {
+      "id": "6",
+      "definitionLines": [
+        203,
+        205
+      ],
+      "english": "Use of const, for example.",
+      "chinese": "例如，[使用const](https://google.github.io/styleguide/cppguide.html#Use_of_const)的规则。",
+      "after": "认为局部一致性比从技术角度选出一个最合理的方案更重要。",
+      "englishHtml": "<p>Use of const, for example.</p>\n",
+      "chineseHtml": "<p>例如，<a href=\"https://google.github.io/styleguide/cppguide.html#Use_of_const\">使用const</a>的规则。</p>\n"
+    },
+    {
+      "id": "7",
+      "definitionLines": [
+        225,
+        227
+      ],
+      "english": "Style formatting for BUILD files implemented with Starlark is applied by buildifier. See https://github.com/ bazelbuild/buildtools.",
+      "chinese": "使用 Starlark 编写的 BUILD 文件由 buildifier 统一格式。参见 https://github.com/ bazelbuild/buildtools。",
+      "after": "我们改为采用四个空格缩进，以便与外部社区保持一致。",
+      "englishHtml": "<p>Style formatting for BUILD files implemented with Starlark is applied by buildifier. See https://github.com/ bazelbuild/buildtools.</p>\n",
+      "chineseHtml": "<p>使用 Starlark 编写的 BUILD 文件由 buildifier 统一格式。参见 https://github.com/ bazelbuild/buildtools。</p>\n"
+    },
+    {
+      "id": "8",
+      "definitionLines": [
+        292,
+        294
+      ],
+      "english": "See [Exceptions to Naming Rules](https://google.github.io/styleguide/cppguide.html#Exceptions_to_Naming_Rules). As an example, our open sourced Abseil libraries use snake_case naming for types intended to be replacements for standard types. See the types defined in https://github.com/abseil/abseilcpp/blob/master/absl/utility/utility.h. These are C++11 implementation of C++14 standard types and therefore use the standard’s favored snake_case style instead of Google’s preferred CamelCase form.",
+      "chinese": "参见命名规则的例外。例如，开源 Abseil 库中用于替代标准类型的类型采用 snake_case 命名，可见 https://github.com/abseil/abseilcpp/blob/master/absl/utility/utility.h 中的定义。这些类型用 C++11 实现了 C++14 的标准类型，因此沿用标准偏好的 snake_case 风格，而不是谷歌偏好的 CamelCase。",
+      "after": "模仿标准库功能的实体，可以采用标准库的 snake_case 风格。",
+      "englishHtml": "<p>See <a href=\"https://google.github.io/styleguide/cppguide.html#Exceptions_to_Naming_Rules\">Exceptions to Naming Rules</a>. As an example, our open sourced Abseil libraries use snake_case naming for types intended to be replacements for standard types. See the types defined in https://github.com/abseil/abseilcpp/blob/master/absl/utility/utility.h. These are C++11 implementation of C++14 standard types and therefore use the standard’s favored snake_case style instead of Google’s preferred CamelCase form.</p>\n",
+      "chineseHtml": "<p>参见命名规则的例外。例如，开源 Abseil 库中用于替代标准类型的类型采用 snake_case 命名，可见 https://github.com/abseil/abseilcpp/blob/master/absl/utility/utility.h 中的定义。这些类型用 C++11 实现了 C++14 的标准类型，因此沿用标准偏好的 snake_case 风格，而不是谷歌偏好的 CamelCase。</p>\n"
+    },
+    {
+      "id": "9",
+      "definitionLines": [
+        296,
+        298
+      ],
+      "english": "See [Generated code: mostly exempt](https://google.github.io/styleguide/jsguide.html#policies-generated-code-mostly-exempt).",
+      "chinese": "参见[生成的代码：大多豁免](https://google.github.io/styleguide/jsguide.html#policies-generated-code-mostly-exempt)。",
+      "after": "这类代码经常需要与项目控制范围之外的组件交互，或依赖这些组件。",
+      "reason": "The English definition at line 296 uses the malformed prefix [^9}; instead of [^9]:. The body reference at line 288 is valid, so no englishAfter override is needed.",
+      "englishHtml": "<p>See <a href=\"https://google.github.io/styleguide/jsguide.html#policies-generated-code-mostly-exempt\">Generated code: mostly exempt</a>.</p>\n",
+      "chineseHtml": "<p>参见<a href=\"https://google.github.io/styleguide/jsguide.html#policies-generated-code-mostly-exempt\">生成的代码：大多豁免</a>。</p>\n"
+    },
+    {
+      "id": "10",
+      "definitionLines": [
+        334,
+        336
+      ],
+      "english": "See `https://google.github.io/styleguide/cppguide.html#Comments`, `http://google.github.io/styleguide/pyguide#38-comments-and-docstrings`, and `https://google.github.io/styleguide/javaguide.html#s7-javadoc`, where multiple languages define general comment rules.",
+      "chinese": "参见 `https://google.github.io/styleguide/cppguide.html#Comments`、`http://google.github.io/styleguide/pyguide#38-comments-and-docstrings`，以及 `https://google.github.io/styleguide/javaguide.html#s7-javadoc`, where multiple languages define general comment rules. 这些指南分别规定了多种语言的通用注释规则。",
+      "after": "例如，我们规定代码作者必须在什么地方、以什么方式添加注释。",
+      "englishHtml": "<p>See <code>https://google.github.io/styleguide/cppguide.html#Comments</code>, <code>http://google.github.io/styleguide/pyguide#38-comments-and-docstrings</code>, and <code>https://google.github.io/styleguide/javaguide.html#s7-javadoc</code>, where multiple languages define general comment rules.</p>\n",
+      "chineseHtml": "<p>参见 <code>https://google.github.io/styleguide/cppguide.html#Comments</code>、<code>http://google.github.io/styleguide/pyguide#38-comments-and-docstrings</code>，以及 <code>https://google.github.io/styleguide/javaguide.html#s7-javadoc</code>, where multiple languages define general comment rules. 这些指南分别规定了多种语言的通用注释规则。</p>\n"
+    },
+    {
+      "id": "11",
+      "definitionLines": [
+        358,
+        360
+      ],
+      "english": "Such discussions are really just bikeshedding, an illustration of Parkinson’s law of triviality.",
+      "chinese": "这类讨论其实只是围绕琐事争论不休，也就是“自行车棚效应”，体现了帕金森琐碎定律。",
+      "after": "也许正因如此，技术社区才会争论不休。",
+      "reason": "The paired definition is introduced by a plain 11 rather than Markdown footnote syntax. The English body has a valid [^11] reference.",
+      "englishHtml": "<p>Such discussions are really just bikeshedding, an illustration of Parkinson’s law of triviality.</p>\n",
+      "chineseHtml": "<p>这类讨论其实只是围绕琐事争论不休，也就是“自行车棚效应”，体现了帕金森琐碎定律。</p>\n"
+    },
+    {
+      "id": "12",
+      "definitionLines": [
+        476,
+        478
+      ],
+      "english": "https://abseil.io/tips has a selection of some of our most popular tips.",
+      "chinese": "https://abseil.io/tips 收录了部分最受欢迎的技巧。",
+      "after": "这个“每周技巧”系列在内部非常成功，代码审查和技术讨论中经常引用。",
+      "reason": "The paired definition is introduced by a plain 12 rather than Markdown footnote syntax. The English body has a valid [^12] reference.",
+      "englishHtml": "<p>https://abseil.io/tips has a selection of some of our most popular tips.</p>\n",
+      "chineseHtml": "<p>https://abseil.io/tips 收录了部分最受欢迎的技巧。</p>\n"
+    },
+    {
+      "id": "13",
+      "definitionLines": [
+        539,
+        541
+      ],
+      "english": "When you consider that it takes at least two engineers to have the discussion and multiply that by the number of times this conversation is likely to happen within a collection of more than 30,000 engineers, it turns out that “how many characters” can become a very expensive question.",
+      "chinese": "每次讨论至少涉及两名工程师，再乘以这种讨论在3万多名工程师中可能发生的次数，就会发现：“一行多少个字符”也可能是个代价高昂的问题。",
+      "after": "行长已不再是值得讨论的问题；",
+      "reason": "The paired definition is introduced by a plain 13 rather than Markdown footnote syntax. The English body has a valid [^13] reference.",
+      "englishHtml": "<p>When you consider that it takes at least two engineers to have the discussion and multiply that by the number of times this conversation is likely to happen within a collection of more than 30,000 engineers, it turns out that “how many characters” can become a very expensive question.</p>\n",
+      "chineseHtml": "<p>每次讨论至少涉及两名工程师，再乘以这种讨论在3万多名工程师中可能发生的次数，就会发现：“一行多少个字符”也可能是个代价高昂的问题。</p>\n"
+    },
+    {
+      "id": "14",
+      "definitionLines": [
+        595,
+        597
+      ],
+      "english": "In December 2018, Go was the #4 language on GitHub as measured by pull requests.",
+      "chinese": "2018年12月，按拉取请求数量衡量，Go 在 GitHub 的编程语言中排名第四。",
+      "after": "此后，Go 逐渐发展成为开发服务、工具、云基础设施和开源软件所使用的语言。",
+      "englishHtml": "<p>In December 2018, Go was the #4 language on GitHub as measured by pull requests.</p>\n",
+      "chineseHtml": "<p>2018年12月，按拉取请求数量衡量，Go 在 GitHub 的编程语言中排名第四。</p>\n"
+    },
+    {
+      "id": "15",
+      "definitionLines": [
+        599,
+        602
+      ],
+      "english": "Robert Griesemer’s 2015 talk, “The Cultural Evolution of gofmt,” provides details on the motivation, design,and impact of gofmt on Go and other languages.",
+      "chinese": "Robert Griesemer 在2015年的演讲《gofmt 的文化演变》中详细介绍了 gofmt 的动机、设计，\n以及 gofmt 对 Go 和其他语言的影响。",
+      "after": "标准格式未必合每个人的心意，却足以避免这种时间浪费。",
+      "englishHtml": "<p>Robert Griesemer’s 2015 talk, “The Cultural Evolution of gofmt,” provides details on the motivation, design,and impact of gofmt on Go and other languages.</p>\n",
+      "chineseHtml": "<p>Robert Griesemer 在2015年的演讲《gofmt 的文化演变》中详细介绍了 gofmt 的动机、设计，\n以及 gofmt 对 Go 和其他语言的影响。</p>\n"
+    },
+    {
+      "id": "16",
+      "definitionLines": [
+        604,
+        606
+      ],
+      "english": "Russ Cox explained in 2009 that gofmt was about automated changes: “So we have all the hard parts of a program manipulation tool just sitting waiting to be used. Agreeing to accept ‘gofmt style’ is the piece that makes it doable in a finite amount of code.”",
+      "chinese": "Russ Cox 在2009年解释说，gofmt 的目的在于支持自动化修改：“这样一来，开发程序修改工具所需的那些困难部分，我们都已经具备，只等投入使用。只要大家同意接受‘gofmt 风格’，就能用有限的代码量实现这样的工具。”",
+      "after": "因为机器编辑和人工编辑的代码在格式上没有区别。",
+      "englishHtml": "<p>Russ Cox explained in 2009 that gofmt was about automated changes: “So we have all the hard parts of a program manipulation tool just sitting waiting to be used. Agreeing to accept ‘gofmt style’ is the piece that makes it doable in a finite amount of code.”</p>\n",
+      "chineseHtml": "<p>Russ Cox 在2009年解释说，gofmt 的目的在于支持自动化修改：“这样一来，开发程序修改工具所需的那些困难部分，我们都已经具备，只等投入使用。只要大家同意接受‘gofmt 风格’，就能用有限的代码量实现这样的工具。”</p>\n"
+    },
+    {
+      "id": "17",
+      "definitionLines": [
+        608,
+        610
+      ],
+      "english": "The Go AST and format packages each have thousands of importers.",
+      "chinese": "Go 的 AST 包和 format 包，分别被数千个包导入使用。",
+      "after": "有数千个开源包会读取和生成 Go 代码。",
+      "englishHtml": "<p>The Go AST and format packages each have thousands of importers.</p>\n",
+      "chineseHtml": "<p>Go 的 AST 包和 format 包，分别被数千个包导入使用。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [
+    {
+      "text": "（原译补充：为渺小的政治家、哲学家和神学家所崇拜。一个伟大的灵魂与一致性毫无关系。）",
+      "title": "原译补充：引语续文（非原书内容）",
+      "body": "为渺小的政治家、哲学家和神学家所崇拜。一个伟大的灵魂与一致性毫无关系。",
+      "linkText": "",
+      "href": "",
+      "reason": "Explicit inline original-translation addition at line 282. The paired English book paragraph does not contain these extra sentences and supplies no source for them.",
+      "renderedText": "（原译补充：为渺小的政治家、哲学家和神学家所崇拜。一个伟大的灵魂与一致性毫无关系。）",
+      "bodyHtml": "<p>为渺小的政治家、哲学家和神学家所崇拜。一个伟大的灵魂与一致性毫无关系。</p>\n"
+    }
+  ],
+  "translations": [],
+  "issues": [
+    "Note 7 contains a literal space inside https://github.com/ bazelbuild/buildtools in both languages. The supplied spelling is preserved; this is not a validated working link.",
+    "Note 8 preserves the supplied abseilcpp repository spelling in the raw URL; no corrected external destination has been substituted or verified.",
+    "Note 10's Chinese source repeats an English clause before its existing Chinese translation. It is preserved exactly, not classified as missing translation.",
+    "The inline original-translation addition at line 282 has no supplied link or verifiable attribution for its extra wording. Empty link fields intentionally preserve that uncertainty.",
+    "The real Python examples at lines 239-264 have missing indentation in the source. They remain code, not proseCodeBlocks, and are outside this rollout's edit ownership."
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 32,
+      "endLine": 34,
+      "source": "> [^1]: Many of our style guides have external versions, which you can find at https://google.github.io/styleguide. We cite numerous examples from these guides within this chapter.\n>\n> 1 我们的许多风格指南都有对外公开的版本，可见 https://google.github.io/styleguide。我们在本章中引用了这些指南中的许多例子。\n"
+    },
+    {
+      "startLine": 88,
+      "endLine": 90,
+      "source": "> [^2]: Tooling matters here. The measure for “too many” is not the raw number of rules in play, but how many an engineer needs to remember. For example, in the bad-old-days pre-clang-format, we needed to remember a ton of formatting rules. Those rules haven’t gone away, but with our current tooling, the cost of adherence has fallen dramatically. We’ve reached a point at which somebody could add an arbitrary number of formatting rules and nobody would care, because the tool just does it for you.\n>\n> 2  工具在这里很重要。“规则太多”不是指规则总数太多，而是指工程师需要记住的规则太多。例如，在还没有 clang-format 的日子里，我们得记住大量格式规则。如今这些规则依然存在，但工具已大幅降低了遵守它们的成本。现在，即使再增加任意数量的格式规则，也不会有人在意，因为工具会自动处理。\n"
+    },
+    {
+      "startLine": 161,
+      "endLine": 163,
+      "source": "> [^3]:  Credit to H. Wright for the real-world comparison, made at the point of having visited around 15 different Google offices.\n>\n> 3 感谢 H. Wright 提供这个现实类比；他是在走访了约15处谷歌办公室后提出的。\n"
+    },
+    {
+      "startLine": 165,
+      "endLine": 167,
+      "source": "> [^4]:  “Chunking” is a cognitive process that groups pieces of information together into meaningful “chunks” rather than keeping note of them individually. Expert chess players, for example, think about configurations of  pieces rather than the positions of the individuals.\n>\n> 4  “组块”是一种认知过程：把零散信息组合成有意义的整体，而不是逐项记忆。例如，国际象棋高手考虑的是棋子的布局，而不是每个棋子的位置。\n"
+    },
+    {
+      "startLine": 169,
+      "endLine": 171,
+      "source": "> [^5]:  See [4.2 Block indentation: +2 spaces, Spaces vs. Tabs, 4.4 Column limit:100 and Line Length](https://oreil.ly/WhufW)\n>\n> 5 查阅  [4.2 Block indentation: +2 spaces, Spaces vs. Tabs, 4.4 Column limit:100 and Line Length](https://oreil.ly/WhufW)\n"
+    },
+    {
+      "startLine": 203,
+      "endLine": 205,
+      "source": "> [^6]: Use of const, for example.\n>\n> 6 例如，[使用const](https://google.github.io/styleguide/cppguide.html#Use_of_const)的规则。\n"
+    },
+    {
+      "startLine": 225,
+      "endLine": 227,
+      "source": "> [^7]: Style formatting for BUILD files implemented with Starlark is applied by buildifier. See https://github.com/ bazelbuild/buildtools.\n>\n> 7 使用 Starlark 编写的 BUILD 文件由 buildifier 统一格式。参见 https://github.com/ bazelbuild/buildtools。\n"
+    },
+    {
+      "startLine": 292,
+      "endLine": 294,
+      "source": "> [^8]: See [Exceptions to Naming Rules](https://google.github.io/styleguide/cppguide.html#Exceptions_to_Naming_Rules). As an example, our open sourced Abseil libraries use snake_case naming for types intended to be replacements for standard types. See the types defined in https://github.com/abseil/abseilcpp/blob/master/absl/utility/utility.h. These are C++11 implementation of C++14 standard types and therefore use the standard’s favored snake_case style instead of Google’s preferred CamelCase form.\n>\n> 8 参见命名规则的例外。例如，开源 Abseil 库中用于替代标准类型的类型采用 snake_case 命名，可见 https://github.com/abseil/abseilcpp/blob/master/absl/utility/utility.h 中的定义。这些类型用 C++11 实现了 C++14 的标准类型，因此沿用标准偏好的 snake_case 风格，而不是谷歌偏好的 CamelCase。\n"
+    },
+    {
+      "startLine": 296,
+      "endLine": 298,
+      "source": "> [^9};  See [Generated code: mostly exempt](https://google.github.io/styleguide/jsguide.html#policies-generated-code-mostly-exempt).\n>\n> 9 参见[生成的代码：大多豁免](https://google.github.io/styleguide/jsguide.html#policies-generated-code-mostly-exempt)。\n"
+    },
+    {
+      "startLine": 334,
+      "endLine": 336,
+      "source": "> [^10]: See `https://google.github.io/styleguide/cppguide.html#Comments`, `http://google.github.io/styleguide/pyguide#38-comments-and-docstrings`, and `https://google.github.io/styleguide/javaguide.html#s7-javadoc`, where multiple languages define general comment rules.\n>\n> 10 参见 `https://google.github.io/styleguide/cppguide.html#Comments`、`http://google.github.io/styleguide/pyguide#38-comments-and-docstrings`，以及 `https://google.github.io/styleguide/javaguide.html#s7-javadoc`, where multiple languages define general comment rules. 这些指南分别规定了多种语言的通用注释规则。\n"
+    },
+    {
+      "startLine": 358,
+      "endLine": 360,
+      "source": "> 11 Such discussions are really just bikeshedding, an illustration of Parkinson’s law of triviality.\n>\n> 11 这类讨论其实只是围绕琐事争论不休，也就是“自行车棚效应”，体现了帕金森琐碎定律。\n"
+    },
+    {
+      "startLine": 476,
+      "endLine": 478,
+      "source": "> 12 https://abseil.io/tips has a selection of some of our most popular tips.\n>\n> 12 https://abseil.io/tips 收录了部分最受欢迎的技巧。\n"
+    },
+    {
+      "startLine": 539,
+      "endLine": 541,
+      "source": "> 13 When you consider that it takes at least two engineers to have the discussion and multiply that by the number of times this conversation is likely to happen within a collection of more than 30,000 engineers, it turns out that “how many characters” can become a very expensive question.\n>\n> 13 每次讨论至少涉及两名工程师，再乘以这种讨论在3万多名工程师中可能发生的次数，就会发现：“一行多少个字符”也可能是个代价高昂的问题。\n"
+    },
+    {
+      "startLine": 595,
+      "endLine": 597,
+      "source": "> [^14]:  In December 2018, Go was the #4 language on GitHub as measured by pull requests.\n>\n> 14 2018年12月，按拉取请求数量衡量，Go 在 GitHub 的编程语言中排名第四。\n"
+    },
+    {
+      "startLine": 599,
+      "endLine": 602,
+      "source": "> [^15]:  Robert Griesemer’s 2015 talk, “The Cultural Evolution of gofmt,” provides details on the motivation, design,and impact of gofmt on Go and other languages.\n>\n> 15 Robert Griesemer 在2015年的演讲《gofmt 的文化演变》中详细介绍了 gofmt 的动机、设计，\n> 以及 gofmt 对 Go 和其他语言的影响。\n"
+    },
+    {
+      "startLine": 604,
+      "endLine": 606,
+      "source": "> [^16]:  Russ Cox explained in 2009 that gofmt was about automated changes: “So we have all the hard parts of a program manipulation tool just sitting waiting to be used. Agreeing to accept ‘gofmt style’ is the piece that makes it doable in a finite amount of code.”\n>\n> 16 Russ Cox 在2009年解释说，gofmt 的目的在于支持自动化修改：“这样一来，开发程序修改工具所需的那些困难部分，我们都已经具备，只等投入使用。只要大家同意接受‘gofmt 风格’，就能用有限的代码量实现这样的工具。”\n"
+    },
+    {
+      "startLine": 608,
+      "endLine": 610,
+      "source": "> [^17]:  The Go AST and format packages each have thousands of importers.\n>\n> 17 Go 的 AST 包和 format 包，分别被数千个包导入使用。\n"
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "format": 2,
+  "sourceSha256": "5f8bf1cf7a314c1b81229c505cdb02591b3b309a527f2c953f52f7bdff1eab21",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch21.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        40,
+        42
+      ],
+      "english": "This could be any of language version, version of a lower-level library, hardware version, operating system, compiler flag, compiler version, and so on.",
+      "chinese": "这类要求可以涉及语言版本、底层库版本、硬件版本、操作系统、编译器标志、编译器版本等。",
+      "after": "通常是一个依赖必须满足某项要求才能工作，而另一个依赖却与这项要求不兼容。",
+      "englishHtml": "<p>This could be any of language version, version of a lower-level library, hardware version, operating system, compiler flag, compiler version, and so on.</p>\n",
+      "chineseHtml": "<p>这类要求可以涉及语言版本、底层库版本、硬件版本、操作系统、编译器标志、编译器版本等。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        80,
+        82
+      ],
+      "english": "For instance, security bugs, deprecations, being in the dependency set of a higher-level dependency that has a security bug, and so on.",
+      "chinese": "例如，依赖存在安全缺陷、被弃用，或被某个存在安全缺陷的上层依赖所依赖，等等。",
+      "after": "网络中的所有节点都会发布新版本，其中一些更新还会很重要。",
+      "englishHtml": "<p>For instance, security bugs, deprecations, being in the dependency set of a higher-level dependency that has a security bug, and so on.</p>\n",
+      "chineseHtml": "<p>例如，依赖存在安全缺陷、被弃用，或被某个存在安全缺陷的上层依赖所依赖，等等。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        84,
+        86
+      ],
+      "english": "This is called shading or versioning.",
+      "chinese": "这种做法称为 shading 或 versioning。",
+      "after": "Java 提供了相当成熟的机制，可以重命名依赖提供的符号。",
+      "englishHtml": "<p>This is called shading or versioning.</p>\n",
+      "chineseHtml": "<p>这种做法称为 shading 或 versioning。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        137,
+        139
+      ],
+      "english": "In many cases, there is significant overlap in those populations.",
+      "chinese": "很多时候，这两类开发者有相当一部分是同一批人。",
+      "after": "Boost 开发者与标准库开发者同样专业；这与技术能力无关，纯粹取决于项目承诺什么、优先考虑什么。",
+      "englishHtml": "<p>In many cases, there is significant overlap in those populations.</p>\n",
+      "chineseHtml": "<p>很多时候，这两类开发者有相当一部分是同一批人。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        227,
+        229
+      ],
+      "english": "Common Vulnerabilities and Exposures.",
+      "chinese": "通用漏洞与披露。",
+      "after": "或者在问题被识别为 CVE 之前修补了安全漏洞。",
+      "englishHtml": "<p>Common Vulnerabilities and Exposures.</p>\n",
+      "chineseHtml": "<p>通用漏洞与披露。</p>\n"
+    },
+    {
+      "id": "6",
+      "definitionLines": [
+        289,
+        291
+      ],
+      "english": "Strictly speaking, SemVer refers only to the emerging practice of applying semantics to major/minor/patch version numbers, not the application of compatible version requirements among dependencies numbered in that fashion. There are numerous minor variations on those requirements among different ecosystems, but in general, the version-number-plus-constraints system described here as SemVer is representative of the practice at large.",
+      "chinese": "严格来说，SemVer 只指赋予主版本号、次版本号和补丁版本号特定语义这一新兴做法，不包括为采用这类编号的依赖设置兼容版本要求。不同生态系统对这些要求有许多细微不同的处理方式，但总体而言，本章统称为 SemVer 的“版本号加约束”体系，能够代表这类实践。",
+      "after": "事实上的标准是语义化版本管理（SemVer）。",
+      "englishHtml": "<p>Strictly speaking, SemVer refers only to the emerging practice of applying semantics to major/minor/patch version numbers, not the application of compatible version requirements among dependencies numbered in that fashion. There are numerous minor variations on those requirements among different ecosystems, but in general, the version-number-plus-constraints system described here as SemVer is representative of the practice at large.</p>\n",
+      "chineseHtml": "<p>严格来说，SemVer 只指赋予主版本号、次版本号和补丁版本号特定语义这一新兴做法，不包括为采用这类编号的依赖设置兼容版本要求。不同生态系统对这些要求有许多细微不同的处理方式，但总体而言，本章统称为 SemVer 的“版本号加约束”体系，能够代表这类实践。</p>\n"
+    },
+    {
+      "id": "7",
+      "definitionLines": [
+        293,
+        295
+      ],
+      "english": "In fact, it has been proven that SemVer constraints applied to a dependency network are NP-complete.",
+      "chinese": "事实上，已有证明表明，依赖网络中 SemVer 约束的可满足性问题是 NP 完全问题。",
+      "after": "要找到一组彼此兼容、又能满足应用程序全部传递依赖要求的版本，并不容易。",
+      "englishHtml": "<p>In fact, it has been proven that SemVer constraints applied to a dependency network are NP-complete.</p>\n",
+      "chineseHtml": "<p>事实上，已有证明表明，依赖网络中 SemVer 约束的可满足性问题是 NP 完全问题。</p>\n"
+    },
+    {
+      "id": "8",
+      "definitionLines": [
+        337,
+        339
+      ],
+      "english": "Especially the author and others in the Google C++ community.",
+      "chinese": "尤其是本章作者和谷歌 C++ 社区的其他一些成员。",
+      "after": "谷歌的一些人一直在推动另一种模型。",
+      "englishHtml": "<p>Especially the author and others in the Google C++ community.</p>\n",
+      "chineseHtml": "<p>尤其是本章作者和谷歌 C++ 社区的其他一些成员。</p>\n"
+    },
+    {
+      "id": "9",
+      "definitionLines": [
+        360,
+        362
+      ],
+      "english": "For example: a poorly implemented polyfill that adds the new libbase API ahead of time, causing a conflicting definition. Or, use of language reflection APIs to depend upon the precise number of APIs provided by libbase, introducing crashes if that number changes. These shouldn’t happen and are certainly rare even if they do happen by accident—the point is that the libbase providers can’t prove compatibility.",
+      "chinese": "例如，某个实现不当的 polyfill 提前补入了 libbase 的新 API，结果造成定义冲突；或者通过语言的反射 API，依赖 libbase 提供的 API 的确切数量，数量一变就崩溃。这些情况不应发生，即使偶然发生也很少见。关键在于，libbase 提供方无法证明兼容性。",
+      "after": "让一次“简单”的 API 新增也导致构建失败或行为变化。",
+      "englishHtml": "<p>For example: a poorly implemented polyfill that adds the new libbase API ahead of time, causing a conflicting definition. Or, use of language reflection APIs to depend upon the precise number of APIs provided by libbase, introducing crashes if that number changes. These shouldn’t happen and are certainly rare even if they do happen by accident—the point is that the libbase providers can’t prove compatibility.</p>\n",
+      "chineseHtml": "<p>例如，某个实现不当的 polyfill 提前补入了 libbase 的新 API，结果造成定义冲突；或者通过语言的反射 API，依赖 libbase 提供的 API 的确切数量，数量一变就崩溃。这些情况不应发生，即使偶然发生也很少见。关键在于，libbase 提供方无法证明兼容性。</p>\n"
+    },
+    {
+      "id": "10",
+      "definitionLines": [
+        374,
+        376
+      ],
+      "english": "The Node ecosystem has noteworthy examples of dependencies that provide exactly one API.",
+      "chinese": "Node 生态系统中，有一些只提供单个 API 的依赖，是值得注意的例子。",
+      "after": "有些依赖的粒度也许细到足以准确表达变更，但这并不是 SemVer 生态系统中的常态。",
+      "englishHtml": "<p>The Node ecosystem has noteworthy examples of dependencies that provide exactly one API.</p>\n",
+      "chineseHtml": "<p>Node 生态系统中，有一些只提供单个 API 的依赖，是值得注意的例子。</p>\n"
+    },
+    {
+      "id": "11",
+      "definitionLines": [
+        396,
+        398
+      ],
+      "english": "It’s worth noting: in our experience, naming like this doesn’t fully solve the problem of users reaching in to access private APIs. Prefer languages that have good control over public/private access to APIs of all forms.",
+      "chinese": "根据我们的经验，这样命名并不能彻底阻止用户访问私有 API。应优先选择能够有效控制各类 API 公有与私有访问权限的语言。",
+      "after": "或者把 API 命名为“ForInternalUseByLibBaseOnlyDoNotTouchThisIReallyMeanIt”，就能解决问题吗？",
+      "englishHtml": "<p>It’s worth noting: in our experience, naming like this doesn’t fully solve the problem of users reaching in to access private APIs. Prefer languages that have good control over public/private access to APIs of all forms.</p>\n",
+      "chineseHtml": "<p>根据我们的经验，这样命名并不能彻底阻止用户访问私有 API。应优先选择能够有效控制各类 API 公有与私有访问权限的语言。</p>\n"
+    },
+    {
+      "id": "12",
+      "definitionLines": [
+        418,
+        420
+      ],
+      "english": "In a world of ubiquitous unit tests, we could identify changes that required a change in test behavior, but it would still be difficult to algorithmically separate “This is a behavioral change” from “This is a bug fix to a behavior that wasn’t intended/promised.”",
+      "chinese": "即使单元测试无处不在，我们可以识别出哪些变更需要相应改变测试行为，也仍难以用算法区分“这是行为变更”和“这是在修复一种非预期或未承诺行为中的缺陷”。",
+      "after": "但要识别是否存在有意义且有意作出的语义变更，在计算上不可行。",
+      "englishHtml": "<p>In a world of ubiquitous unit tests, we could identify changes that required a change in test behavior, but it would still be difficult to algorithmically separate “This is a behavioral change” from “This is a bug fix to a behavior that wasn’t intended/promised.”</p>\n",
+      "chineseHtml": "<p>即使单元测试无处不在，我们可以识别出哪些变更需要相应改变测试行为，也仍难以用算法区分“这是行为变更”和“这是在修复一种非预期或未承诺行为中的缺陷”。</p>\n"
+    },
+    {
+      "id": "13",
+      "definitionLines": [
+        422,
+        424
+      ],
+      "english": "So, when it matters in the long term, choose well-maintained dependencies.",
+      "chinese": "因此，如果需要长期使用，就应选择维护良好的依赖。",
+      "after": "如果只依赖少数几个得到专业维护的项目，遇到这类 SemVer 标号失误的概率可能很低；但如果产品之下有一个包含成千上万个依赖的网络，就应做好准备，仅人为失误也会带来一定程度的混乱。",
+      "englishHtml": "<p>So, when it matters in the long term, choose well-maintained dependencies.</p>\n",
+      "chineseHtml": "<p>因此，如果需要长期使用，就应选择维护良好的依赖。</p>\n"
+    },
+    {
+      "id": "14",
+      "definitionLines": [
+        444,
+        446
+      ],
+      "english": "Russ Cox, “Minimal Version Selection,” February 21, 2018, https://research.swtch.com/vgo-mvs.",
+      "chinese": "Russ Cox，《最小版本选择》，2018年2月21日，https://research.swtch.com/vgo-mvs。",
+      "after": "这会“产生高保真度的构建，让用户构建时使用的依赖尽可能接近作者开发时所用的依赖”。",
+      "englishHtml": "<p>Russ Cox, “Minimal Version Selection,” February 21, 2018, https://research.swtch.com/vgo-mvs.</p>\n",
+      "chineseHtml": "<p>Russ Cox，《最小版本选择》，2018年2月21日，https://research.swtch.com/vgo-mvs。</p>\n"
+    },
+    {
+      "id": "15",
+      "definitionLines": [
+        448,
+        450
+      ],
+      "english": "If that assumption doesn’t hold, you should really stop depending on liba.",
+      "chinese": "如果这个假设不成立，就确实应该停止依赖 liba。",
+      "after": "假设维护者在发布前至少做过基本测试，我们就有了零星证据，表明该版本的 liba 与 libbase 1.7接受过互操作性测试。",
+      "englishHtml": "<p>If that assumption doesn’t hold, you should really stop depending on liba.</p>\n",
+      "chineseHtml": "<p>如果这个假设不成立，就确实应该停止依赖 liba。</p>\n"
+    },
+    {
+      "id": "16",
+      "definitionLines": [
+        542,
+        544
+      ],
+      "english": "Because the public OSS dependency network can’t generally depend on a bunch of private nodes, graphics firmware notwithstanding.",
+      "chinese": "因为公开的开源依赖网络通常不能依赖一批私有节点，尽管图形固件是个例外。",
+      "after": "一般会形成一个公开子集，以及一个独立的私有子图。",
+      "englishHtml": "<p>Because the public OSS dependency network can’t generally depend on a bunch of private nodes, graphics firmware notwithstanding.</p>\n",
+      "chineseHtml": "<p>因为公开的开源依赖网络通常不能依赖一批私有节点，尽管图形固件是个例外。</p>\n"
+    },
+    {
+      "id": "17",
+      "definitionLines": [
+        546,
+        548
+      ],
+      "english": "Or something very close to it.",
+      "chinese": "或者是非常接近真实答案的结果。",
+      "after": "那么“这有多安全”的真实答案，就来自运行下游项目中受影响的测试。",
+      "englishHtml": "<p>Or something very close to it.</p>\n",
+      "chineseHtml": "<p>或者是非常接近真实答案的结果。</p>\n"
+    },
+    {
+      "id": "18",
+      "definitionLines": [
+        598,
+        600
+      ],
+      "english": "That isn’t to say it’s right or wise, just that as an organization we let some things slip through the cracks.",
+      "chinese": "这不是说这种做法正确或明智，只是说，组织运作中确实有些事情被遗漏了。",
+      "after": "既然不归任何具体团队负责，也没人说得清它为何重要，外部项目逐渐荒废也就不难理解。",
+      "englishHtml": "<p>That isn’t to say it’s right or wise, just that as an organization we let some things slip through the cracks.</p>\n",
+      "chineseHtml": "<p>这不是说这种做法正确或明智，只是说，组织运作中确实有些事情被遗漏了。</p>\n"
+    },
+    {
+      "id": "19",
+      "definitionLines": [
+        602,
+        604
+      ],
+      "english": "Often through trial and error.",
+      "chinese": "往往是通过反复试错找到的。",
+      "after": "这些项目的作者找到了 flags 内外两个分叉共有的 API 子集。",
+      "englishHtml": "<p>Often through trial and error.</p>\n",
+      "chineseHtml": "<p>往往是通过反复试错找到的。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [],
+  "issues": [],
+  "sourceEdits": [
+    {
+      "startLine": 40,
+      "endLine": 42,
+      "source": "> [^1]: This could be any of language version, version of a lower-level library, hardware version, operating system, compiler flag, compiler version, and so on.\n>\n> 1 这类要求可以涉及语言版本、底层库版本、硬件版本、操作系统、编译器标志、编译器版本等。\n"
+    },
+    {
+      "startLine": 80,
+      "endLine": 82,
+      "source": "> [^2]: For instance, security bugs, deprecations, being in the dependency set of a higher-level dependency that has a security bug, and so on.\n>\n> 2 例如，依赖存在安全缺陷、被弃用，或被某个存在安全缺陷的上层依赖所依赖，等等。\n"
+    },
+    {
+      "startLine": 84,
+      "endLine": 86,
+      "source": "> [^3]: This is called shading or versioning.\n>\n> 3 这种做法称为 shading 或 versioning。\n"
+    },
+    {
+      "startLine": 137,
+      "endLine": 139,
+      "source": "> [^4]: In many cases, there is significant overlap in those populations.\n>\n> 4 很多时候，这两类开发者有相当一部分是同一批人。\n"
+    },
+    {
+      "startLine": 227,
+      "endLine": 229,
+      "source": "> [^5]:\tCommon Vulnerabilities and Exposures.\n>\n> 5  通用漏洞与披露。\n"
+    },
+    {
+      "startLine": 289,
+      "endLine": 291,
+      "source": "> [^6]: Strictly speaking, SemVer refers only to the emerging practice of applying semantics to major/minor/patch version numbers, not the application of compatible version requirements among dependencies numbered in that fashion. There are numerous minor variations on those requirements among different ecosystems, but in general, the version-number-plus-constraints system described here as SemVer is representative of the practice at large.\n>\n> 6 严格来说，SemVer 只指赋予主版本号、次版本号和补丁版本号特定语义这一新兴做法，不包括为采用这类编号的依赖设置兼容版本要求。不同生态系统对这些要求有许多细微不同的处理方式，但总体而言，本章统称为 SemVer 的“版本号加约束”体系，能够代表这类实践。\n"
+    },
+    {
+      "startLine": 293,
+      "endLine": 295,
+      "source": "> [^7]:  In fact, it has been proven that SemVer constraints applied to a dependency network are NP-complete.\n>\n> 7 事实上，已有证明表明，依赖网络中 SemVer 约束的可满足性问题是 NP 完全问题。\n"
+    },
+    {
+      "startLine": 337,
+      "endLine": 339,
+      "source": "> [^8]: Especially the author and others in the Google C++ community.\n>\n> 8 尤其是本章作者和谷歌 C++ 社区的其他一些成员。\n"
+    },
+    {
+      "startLine": 360,
+      "endLine": 362,
+      "source": "> [^9]: For example: a poorly implemented polyfill that adds the new libbase API ahead of time, causing a conflicting definition. Or, use of language reflection APIs to depend upon the precise number of APIs provided by libbase, introducing crashes if that number changes. These shouldn’t happen and are certainly rare even if they do happen by accident—the point is that the libbase providers can’t prove compatibility.\n>\n> 9  例如，某个实现不当的 polyfill 提前补入了 libbase 的新 API，结果造成定义冲突；或者通过语言的反射 API，依赖 libbase 提供的 API 的确切数量，数量一变就崩溃。这些情况不应发生，即使偶然发生也很少见。关键在于，libbase 提供方无法证明兼容性。\n"
+    },
+    {
+      "startLine": 374,
+      "endLine": 376,
+      "source": "> [^10]: The Node ecosystem has noteworthy examples of dependencies that provide exactly one API.\n>\n> 10  Node 生态系统中，有一些只提供单个 API 的依赖，是值得注意的例子。\n"
+    },
+    {
+      "startLine": 396,
+      "endLine": 398,
+      "source": "> [^11]: It’s worth noting: in our experience, naming like this doesn’t fully solve the problem of users reaching in to access private APIs. Prefer languages that have good control over public/private access to APIs of all forms.\n>\n> 11  根据我们的经验，这样命名并不能彻底阻止用户访问私有 API。应优先选择能够有效控制各类 API 公有与私有访问权限的语言。\n"
+    },
+    {
+      "startLine": 418,
+      "endLine": 420,
+      "source": "> [^12]: In a world of ubiquitous unit tests, we could identify changes that required a change in test behavior, but it would still be difficult to algorithmically separate “This is a behavioral change” from “This is a bug fix to a behavior that wasn’t intended/promised.”\n>\n> 12  即使单元测试无处不在，我们可以识别出哪些变更需要相应改变测试行为，也仍难以用算法区分“这是行为变更”和“这是在修复一种非预期或未承诺行为中的缺陷”。\n"
+    },
+    {
+      "startLine": 422,
+      "endLine": 424,
+      "source": "> [^13]: So, when it matters in the long term, choose well-maintained dependencies.\n>\n> 13  因此，如果需要长期使用，就应选择维护良好的依赖。\n"
+    },
+    {
+      "startLine": 444,
+      "endLine": 446,
+      "source": "> [^14]: Russ Cox, “Minimal Version Selection,” February 21, 2018, https://research.swtch.com/vgo-mvs.\n>\n> 14 Russ Cox，《最小版本选择》，2018年2月21日，https://research.swtch.com/vgo-mvs。\n"
+    },
+    {
+      "startLine": 448,
+      "endLine": 450,
+      "source": "> [^15]: If that assumption doesn’t hold, you should really stop depending on liba.\n>\n> 15 如果这个假设不成立，就确实应该停止依赖 liba。\n"
+    },
+    {
+      "startLine": 542,
+      "endLine": 544,
+      "source": "> [^16]: Because the public OSS dependency network can’t generally depend on a bunch of private nodes, graphics firmware notwithstanding.\n>\n> 16 因为公开的开源依赖网络通常不能依赖一批私有节点，尽管图形固件是个例外。\n"
+    },
+    {
+      "startLine": 546,
+      "endLine": 548,
+      "source": "> [^17]: Or something very close to it.\n>\n> 17 或者是非常接近真实答案的结果。\n"
+    },
+    {
+      "startLine": 598,
+      "endLine": 600,
+      "source": "> [^18]: That isn’t to say it’s right or wise, just that as an organization we let some things slip through the cracks.\n>\n> 18  这不是说这种做法正确或明智，只是说，组织运作中确实有些事情被遗漏了。\n"
+    },
+    {
+      "startLine": 602,
+      "endLine": 604,
+      "source": "> [^19]: Often through trial and error.\n>\n> 19 往往是通过反复试错找到的。\n"
+    }
+  ]
+}

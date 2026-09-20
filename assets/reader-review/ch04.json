@@ -1,0 +1,128 @@
+{
+  "format": 2,
+  "sourceSha256": "64af48678908988c4cf9621092fad72f4fb95f4b3e99a6f68f9b48cd9dce0d44",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch04.html",
+  "textEdits": [],
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        74,
+        75
+      ],
+      "english": "Google’s 2019 Diversity Report.",
+      "chinese": "谷歌的2019年多样性报告。",
+      "after": "难以理解产品的使用会如何影响代表性不足或处于弱势的用户。",
+      "englishHtml": "<p>Google’s 2019 Diversity Report.</p>\n",
+      "chineseHtml": "<p>谷歌的2019年多样性报告。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        77,
+        78
+      ],
+      "english": "@jackyalcine. 2015. “Google Photos, Y’all Fucked up. My Friend’s Not a Gorilla.” Twitter, June 29, 2015.https://twitter.com/jackyalcine/status/615329515909156865.",
+      "chinese": "@jackyalcine. 2015. “谷歌照片，你们他妈的搞砸了。我的朋友不是大猩猩。”Twitter，2015年6月29日。https://twitter.com/jackyalcine/status/615329515909156865",
+      "after": "2015年，软件工程师 Jacky Alciné 指出，谷歌照片的图像识别算法把他的黑人朋友归类为“大猩猩”。",
+      "englishHtml": "<p>@jackyalcine. 2015. “Google Photos, Y’all Fucked up. My Friend’s Not a Gorilla.” Twitter, June 29, 2015.https://twitter.com/jackyalcine/status/615329515909156865.</p>\n",
+      "chineseHtml": "<p>@jackyalcine. 2015. “谷歌照片，你们他妈的搞砸了。我的朋友不是大猩猩。”Twitter，2015年6月29日。https://twitter.com/jackyalcine/status/615329515909156865</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        80,
+        81
+      ],
+      "english": "Many reports in 2018–2019 pointed to a lack of diversity across tech. Some notables include the National Center for Women & Information Technology, and Diversity in Tech./",
+      "chinese": "2018-2019年的许多报告指出，整个科技行业都缺乏多样性。其中较知名的报告来自国家女性与信息技术中心和 Diversity in Tech。",
+      "after": "谷歌本身以及整个科技行业，过去和现在都缺乏足够的黑人代表性，这会影响算法设计和数据集收集中的主观决策。",
+      "englishHtml": "<p>Many reports in 2018–2019 pointed to a lack of diversity across tech. Some notables include the National Center for Women &amp; Information Technology, and Diversity in Tech./</p>\n",
+      "chineseHtml": "<p>2018-2019年的许多报告指出，整个科技行业都缺乏多样性。其中较知名的报告来自国家女性与信息技术中心和 Diversity in Tech。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        83,
+        84
+      ],
+      "english": "Tom Simonite, “When It Comes to Gorillas, Google Photos Remains Blind,” Wired, January 11, 2018.",
+      "chinese": "Tom Simonite，《谷歌照片仍然识别不了大猩猩》，《连线》，2018年1月11日。",
+      "after": "直到2018年，谷歌仍未妥善解决这一根本问题。",
+      "englishHtml": "<p>Tom Simonite, “When It Comes to Gorillas, Google Photos Remains Blind,” Wired, January 11, 2018.</p>\n",
+      "chineseHtml": "<p>Tom Simonite，《谷歌照片仍然识别不了大猩猩》，《连线》，2018年1月11日。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        134,
+        137
+      ],
+      "english": "Stephen Gaines and Sara Williams. “The Perpetual Lineup: Unregulated Police Face Recognition in America.”",
+      "chinese": "斯蒂芬·盖恩斯和莎拉·威廉姆斯。《永不结束的列队辨认：美国不受监管的警方人脸识别》。\n乔治敦法律学院隐私与技术中心，2016年10月18日。",
+      "after": "2016年完成的一项研究发现，超过1.17亿名美国成年人被收录在执法部门的人脸识别数据库中。",
+      "englishHtml": "<p>Stephen Gaines and Sara Williams. “The Perpetual Lineup: Unregulated Police Face Recognition in America.”</p>\n",
+      "chineseHtml": "<p>斯蒂芬·盖恩斯和莎拉·威廉姆斯。《永不结束的列队辨认：美国不受监管的警方人脸识别》。\n乔治敦法律学院隐私与技术中心，2016年10月18日。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [
+    {
+      "text": "〔译注：原文末句的逻辑关系不够明确，暂保留其表述。〕",
+      "title": "译者注：原文逻辑歧义",
+      "body": "原文末句的逻辑关系不够明确，暂保留其表述。",
+      "linkText": "",
+      "href": "",
+      "reason": "Source line 112 explicitly marks this inline text as a translator note about the unresolved logic of the preceding English sentence.",
+      "renderedText": "〔译注：原文末句的逻辑关系不够明确，暂保留其表述。〕",
+      "bodyHtml": "<p>原文末句的逻辑关系不够明确，暂保留其表述。</p>\n"
+    }
+  ],
+  "translations": [],
+  "issues": [
+    {
+      "sourceLines": [
+        110,
+        112
+      ],
+      "kind": "source-meaning",
+      "reason": "The English sentence combines 'eliminate the potential ... to experience shared prosperity' with 'and provide equal access to technology'. The scope and intended logical connection remain unclear, as the existing translator note acknowledges. No replacement translation or diagram inference is supplied for that sentence."
+    },
+    {
+      "sourceLines": [
+        134,
+        137
+      ],
+      "kind": "source-bibliography-asymmetry",
+      "noteId": "5",
+      "reason": "The Chinese definition includes the institution and publication date on line 137, while the local English definition ends at the title. Preserve both versions exactly; no missing English bibliographic facts have been invented."
+    }
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 74,
+      "endLine": 75,
+      "source": "> [^1]:    Google’s 2019 Diversity Report.\n> 1 谷歌的2019年多样性报告。\n"
+    },
+    {
+      "startLine": 77,
+      "endLine": 78,
+      "source": "> [^2]:    @jackyalcine. 2015. “Google Photos, Y’all Fucked up. My Friend’s Not a Gorilla.” Twitter, June 29, 2015.https://twitter.com/jackyalcine/status/615329515909156865.\n> 2 @jackyalcine. 2015. “谷歌照片，你们他妈的搞砸了。我的朋友不是大猩猩。”Twitter，2015年6月29日。https://twitter.com/jackyalcine/status/615329515909156865\n"
+    },
+    {
+      "startLine": 80,
+      "endLine": 81,
+      "source": "> [^3]:    Many reports in 2018–2019 pointed to a lack of diversity across tech. Some notables include the National Center for Women & Information Technology, and Diversity in Tech./\n> 3  2018-2019年的许多报告指出，整个科技行业都缺乏多样性。其中较知名的报告来自国家女性与信息技术中心和 Diversity in Tech。\n"
+    },
+    {
+      "startLine": 83,
+      "endLine": 84,
+      "source": "> [^4]:    Tom Simonite, “When It Comes to Gorillas, Google Photos Remains Blind,” Wired, January 11, 2018.\n> 4    Tom Simonite，《谷歌照片仍然识别不了大猩猩》，《连线》，2018年1月11日。\n"
+    },
+    {
+      "startLine": 134,
+      "endLine": 137,
+      "source": "> [^5]:    Stephen Gaines and Sara Williams. “The Perpetual Lineup: Unregulated Police Face Recognition in America.”\n>\n> 5    斯蒂芬·盖恩斯和莎拉·威廉姆斯。《永不结束的列队辨认：美国不受监管的警方人脸识别》。\n乔治敦法律学院隐私与技术中心，2016年10月18日。\n"
+    }
+  ]
+}

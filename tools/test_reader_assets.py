@@ -19,9 +19,11 @@ class ReaderAssetsTests(unittest.TestCase):
                 reader.check_svg(reader.ROOT / guide[field], number, mobile)
 
     def test_existing_book_text_is_byte_identical_to_translation_commit(self):
+        renamed = {"zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md":
+                   "zh-cn/Chapter-10_Documentation/Chapter-10_Documentatio.md"}
         for path in (reader.ROOT / "zh-cn").rglob("*.md"):
             relative = path.relative_to(reader.ROOT).as_posix()
-            before = subprocess.check_output(["git", "-C", str(reader.ROOT), "show", "529190f:" + relative])
+            before = subprocess.check_output(["git", "-C", str(reader.ROOT), "show", "529190f:" + renamed.get(relative, relative)])
             self.assertEqual(path.read_bytes(), before, relative)
 
     def test_lucide_sprite_contains_required_controls(self):
@@ -42,7 +44,7 @@ class ReaderAssetsTests(unittest.TestCase):
         for key, line in [("ch18", 337), ("ch23", 673)]:
             page = next(p for p in manifest["chapters"] if p["id"] == key)
             source = (reader.ROOT / page["file"]).read_text().splitlines()[line - 1]
-            translations = page["readerReview"]["translations"]
+            translations = reader.compiled_review(page)["translations"]
             matches = [t for t in translations if reader.reader_content.plain(t["english"]) == reader.reader_content.plain(source)]
             self.assertEqual(len(matches), 1)
             self.assertGreater(len(matches[0]["chinese"]), 100)
@@ -52,14 +54,14 @@ class ReaderAssetsTests(unittest.TestCase):
         manifest = json.loads((reader.ROOT / "assets/reader-manifest.json").read_text())
         chapter = next(p for p in manifest["chapters"] if p["id"] == "ch01")
         text = (reader.ROOT / chapter["file"]).read_text()
-        self.assertEqual(reader.load_reader_review("ch01", text), chapter["readerReview"])
+        self.assertEqual(reader.load_reader_review("ch01", text), reader.compiled_review(chapter))
         with self.assertRaisesRegex(ValueError, "re-review"):
             reader.load_reader_review("ch01", text + "\n")
 
     def test_chapter_review_covers_every_original_footnote(self):
         manifest = json.loads((reader.ROOT / "assets/reader-manifest.json").read_text())
         chapter = next(p for p in manifest["chapters"] if p["id"] == "ch01")
-        review = chapter["readerReview"]
+        review = reader.compiled_review(chapter)
         self.assertEqual({n["id"] for n in review["footnotes"]}, {str(n) for n in range(1, 18)})
         self.assertEqual(len(review["proseCodeBlocks"]), 2)
         self.assertEqual(len(review["translatorNotes"]), 1)
@@ -82,8 +84,8 @@ class ReaderAssetsTests(unittest.TestCase):
             if not page["number"]:
                 continue
             source = (reader.ROOT / page["file"]).read_text()
-            self.assertIn("readerReview", page, page["id"])
-            self.assertEqual(reader.load_reader_review(page["id"], source), page["readerReview"])
+            self.assertIn("review", page, page["id"])
+            self.assertEqual(reader.load_reader_review(page["id"], source), reader.compiled_review(page))
             reader.check_pedagogy(manifest["guides"][page["id"]], overview=True)
             for guide in page.get("sectionGuides", []):
                 self.assertTrue(reader.check_pedagogy(guide))

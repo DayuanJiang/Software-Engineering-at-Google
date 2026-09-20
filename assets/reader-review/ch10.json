@@ -1,0 +1,97 @@
+{
+  "format": 2,
+  "sourceSha256": "c858e9094bc7fca551b6c9572008a4f8e48866b4cf77549764bb1e7b4f2ddd5c",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch10.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        62,
+        64
+      ],
+      "english": "OK, you will need to maintain it and revise it occasionally.",
+      "chinese": "当然，你还是需要维护文档，偶尔作些修订。",
+      "after": "毕竟，一份文档可能只需编写一次，",
+      "englishHtml": "<p>OK, you will need to maintain it and revise it occasionally.</p>\n",
+      "chineseHtml": "<p>当然，你还是需要维护文档，偶尔作些修订。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        66,
+        68
+      ],
+      "english": "English is still the primary language for most programmers, and most technical documentation for programmers relies on an understanding of English.",
+      "chinese": "英语仍然是大多数程序员使用的主要语言，阅读面向程序员的技术文档，大多也需要理解英语。",
+      "after": "但写出实用的文档并不需要精通英语，",
+      "englishHtml": "<p>English is still the primary language for most programmers, and most technical documentation for programmers relies on an understanding of English.</p>\n",
+      "chineseHtml": "<p>英语仍然是大多数程序员使用的主要语言，阅读面向程序员的技术文档，大多也需要理解英语。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        170,
+        172
+      ],
+      "english": "When we deprecated GooWiki, we found that around 90% of the documents had no views or updates in the previous few months.",
+      "chinese": "弃用 GooWiki 时，我们发现约90%的文档在此前几个月里既无人查看，也无人更新。",
+      "after": "文档没有真正的负责人，许多内容因此过时。",
+      "englishHtml": "<p>When we deprecated GooWiki, we found that around 90% of the documents had no views or updates in the previous few months.</p>\n",
+      "chineseHtml": "<p>弃用 GooWiki 时，我们发现约90%的文档在此前几个月里既无人查看，也无人更新。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "pairedSources": [
+    {
+      "english": "We all know that code comments are essential to a well-documented API. But what precisely is a “good” comment? Earlier in this chapter, we identified two major audiences for reference documentation: seekers and stumblers. Seekers know what they want; stumblers don’t. The key win for seekers is a consistently commented codebase so that they can quickly scan an API and find what they are looking for. The key win for stumblers is clearly identifying the purpose of an API, often at the top of a file header. We’ll walk through some code comments in the subsections that follow. The code commenting guidelines that follow apply to C++, but similar rules are in place at Google for other languages.",
+      "chinese": "我们都知道，API 要有完善的文档，代码注释必不可少。",
+      "reason": "The complete Chinese counterpart is the next paragraph at source line 266. The following bilingual File comments label and its English introduction share a paragraph, adding a mixed-language block to the Chinese run and preventing automatic one-to-one pairing."
+    },
+    {
+      "english": "Download the package from our server at http://example.com:",
+      "chinese": "从我们的服务器下载软件包，地址为http://example.com：",
+      "reason": "The improved tutorial groups English steps before their Chinese counterparts. Genuine shell-command fences separate the numbered prose units and prevent adjacent-list pairing; map only this instruction, not the curl example."
+    },
+    {
+      "english": "Copy the shell script to your home directory:",
+      "chinese": "将 shell 脚本复制到主目录：",
+      "reason": "The matching Chinese instruction appears later in the improved tutorial, with genuine shell-command fences between the English and Chinese steps. Pair only the instruction and leave the cp command intact."
+    },
+    {
+      "english": "Execute the shell script in your home directory:",
+      "chinese": "在主目录中执行 shell 脚本：",
+      "reason": "The matching Chinese instruction appears later in the improved tutorial, separated by numbered steps and genuine shell-command fences. Pair only the instruction and leave the shell execution example intact."
+    },
+    {
+      "english": "The foobar system will first communicate with the authentication system. Once authenticated, foobar will bootstrap a new database named “baz” and open an input shell. 4. Test “baz” by executing a SQL command on the command line:",
+      "chinese": "foobar 系统会先与身份验证系统通信。",
+      "reason": "Source lines 423-424 render as one prose paragraph including the literal step number 4. Its complete Chinese translation is split between the system-response paragraph at line 450 and the SQL-test instruction at line 452, with code blocks separating the language groups. Pair this entire rendered prose unit, excluding the following SQL code block."
+    }
+  ],
+  "translations": [
+    {
+      "english": "Example: A bad tutorial made better",
+      "chinese": "示例：改进后的教程",
+      "chineseHtml": "<p>示例：改进后的教程</p>\n"
+    }
+  ],
+  "issues": [],
+  "sourceEdits": [
+    {
+      "startLine": 62,
+      "endLine": 64,
+      "source": "> [^1]: OK, you will need to maintain it and revise it occasionally.\n>\n> 1   当然，你还是需要维护文档，偶尔作些修订。\n"
+    },
+    {
+      "startLine": 66,
+      "endLine": 68,
+      "source": "> [^2]: English is still the primary language for most programmers, and most technical documentation for programmers relies on an understanding of English.\n>\n> 2   英语仍然是大多数程序员使用的主要语言，阅读面向程序员的技术文档，大多也需要理解英语。\n"
+    },
+    {
+      "startLine": 170,
+      "endLine": 172,
+      "source": "> [^3]: When we deprecated GooWiki, we found that around 90% of the documents had no views or updates in the previous few months.\n>\n> 3   弃用 GooWiki 时，我们发现约90%的文档在此前几个月里既无人查看，也无人更新。\n"
+    }
+  ]
+}

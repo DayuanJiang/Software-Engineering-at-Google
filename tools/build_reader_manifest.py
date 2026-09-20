@@ -9,6 +9,7 @@ import reader_content
 
 ROOT = Path(__file__).resolve().parents[1]
 DIAGRAMS = ROOT / "assets" / "diagrams"
+REVIEWS = ROOT / "assets" / "reader-review"
 
 PEDAGOGY_FIELDS = (
     "readerQuestion", "expectedAnswer", "visualEncoding", "sourceEvidence",
@@ -58,6 +59,11 @@ def load_reader_review(key, text):
     return review
 
 
+def compiled_review(chapter):
+    """Load the per-chapter review file that the reader fetches on demand."""
+    return json.loads((ROOT / chapter["review"]).read_text()) if "review" in chapter else None
+
+
 def check_svg(path, chapter, mobile, section=None):
     root = ET.parse(path).getroot()
     expected = ("0 0 420 600" if mobile else "0 0 960 480") if section else (
@@ -93,6 +99,9 @@ def check_svg(path, chapter, mobile, section=None):
 def main():
     chapters = []
     guides = {}
+    REVIEWS.mkdir(exist_ok=True)
+    for stale in REVIEWS.glob("*.json"):
+        stale.unlink()
     paths = sorted((ROOT / "zh-cn").rglob("*.md"))
     for path in paths:
         text = path.read_text()
@@ -109,7 +118,8 @@ def main():
                                          for line in preserve_lines]})
         review = load_reader_review(key, text)
         if review:
-            chapters[-1]["readerReview"] = review
+            (REVIEWS / f"{key}.json").write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n")
+            chapters[-1]["review"] = f"assets/reader-review/{key}.json"
             translated = {reader_content.plain(t["english"]) for t in review.get("translations", [])}
             chapters[-1]["keepEnglish"] = [s for s in chapters[-1]["keepEnglish"] if reader_content.plain(s) not in translated]
         if number:

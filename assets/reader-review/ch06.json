@@ -1,0 +1,174 @@
+{
+  "format": 2,
+  "sourceSha256": "f5295e306555f0deba37bbc882f8b0fb466c6bc91adaf94c010ccb476babd4aa",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch06.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        149,
+        151
+      ],
+      "english": "“Code yellow” is Google’s term for “emergency hackathon to fix a critical problem.” Affected teams are expected to suspend all work and focus 100% attention on the problem until the state of emergency is declared over.",
+      "chinese": "“Code yellow”（黄色警报）是谷歌的术语，指为解决关键问题而开展的紧急黑客马拉松。相关团队必须暂停其他所有工作，将100%的注意力投入这个问题，直到宣布紧急状态结束。",
+      "after": "所有人放下手头工作，集中优化代码，为产品提速。",
+      "englishHtml": "<p>“Code yellow” is Google’s term for “emergency hackathon to fix a critical problem.” Affected teams are expected to suspend all work and focus 100% attention on the problem until the state of emergency is declared over.</p>\n",
+      "chineseHtml": "<p>“Code yellow”（黄色警报）是谷歌的术语，指为解决关键问题而开展的紧急黑客马拉松。相关团队必须暂停其他所有工作，将100%的注意力投入这个问题，直到宣布紧急状态结束。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        237,
+        239
+      ],
+      "english": "Brian W. Fitzpatrick and Ben Collins-Sussman, Debugging Teams: Better Productivity through Collaboration(Boston: O’Reilly, 2016).",
+      "chinese": "Brian W. Fitzpatrick 和 Ben Collins-Sussman，《进化：从孤胆极客到高效团队》（波士顿：O'Reilly，2016）。",
+      "after": "《进化：从孤胆极客到高效团队》用下面的故事说明，如何作出审慎的调整：",
+      "englishHtml": "<p>Brian W. Fitzpatrick and Ben Collins-Sussman, Debugging Teams: Better Productivity through Collaboration(Boston: O’Reilly, 2016).</p>\n",
+      "chineseHtml": "<p>Brian W. Fitzpatrick 和 Ben Collins-Sussman，《进化：从孤胆极客到高效团队》（波士顿：O'Reilly，2016）。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        296,
+        298
+      ],
+      "english": "It’s easy for imposter syndrome to kick in at this point. One technique for fighting the feeling that you don’t know what you’re doing is to simply pretend that some expert out there knows exactly what to do, and that they’re simply on vacation and you’re temporarily subbing in for them. It’s a great way to remove the personal stakes and give yourself permission to fail and learn.",
+      "chinese": "此时很容易出现“冒名顶替综合征”。如果你觉得自己根本不知道该怎么做，可以试试这样想：有一位专家完全知道该怎么办，只是正在休假，而你暂时代班而已。这样有助于减轻对个人得失的担忧，允许自己在失败中学习。",
+      "after": "哪怕起初你不得不“先装作自己知道该怎么做”。",
+      "englishHtml": "<p>It’s easy for imposter syndrome to kick in at this point. One technique for fighting the feeling that you don’t know what you’re doing is to simply pretend that some expert out there knows exactly what to do, and that they’re simply on vacation and you’re temporarily subbing in for them. It’s a great way to remove the personal stakes and give yourself permission to fail and learn.</p>\n",
+      "chineseHtml": "<p>此时很容易出现“冒名顶替综合征”。如果你觉得自己根本不知道该怎么做，可以试试这样想：有一位专家完全知道该怎么办，只是正在休假，而你暂时代班而已。这样有助于减轻对个人得失的担忧，允许自己在失败中学习。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        414,
+        416
+      ],
+      "english": "You need to plan ahead and build around the assumption that your work simply won’t get done during vacation. Working hard (or smart) just before and after your vacation mitigates this issue.",
+      "chinese": "你需要提前规划，以自己负责的工作在休假期间不会推进为前提作出安排。休假前后多努力一些，或更高效地工作，可以缓解这个问题。",
+      "after": "只有严格要求自己真正断开工作联系，休假才能恢复精力。",
+      "englishHtml": "<p>You need to plan ahead and build around the assumption that your work simply won’t get done during vacation. Working hard (or smart) just before and after your vacation mitigates this issue.</p>\n",
+      "chineseHtml": "<p>你需要提前规划，以自己负责的工作在休假期间不会推进为前提作出安排。休假前后多努力一些，或更高效地工作，可以缓解这个问题。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        418,
+        420
+      ],
+      "english": "You can read more about BRAC at https://en.wikipedia.org/wiki/Basic_rest-activity_cycle.",
+      "chinese": "你可以在 https://en.wikipedia.org/wiki/Basic_rest-activity_cycle，了解更多关于BRAC的信息。",
+      "after": "大脑会按90分钟的自然周期运转。",
+      "englishHtml": "<p>You can read more about BRAC at https://en.wikipedia.org/wiki/Basic_rest-activity_cycle.</p>\n",
+      "chineseHtml": "<p>你可以在 https://en.wikipedia.org/wiki/Basic_rest-activity_cycle，了解更多关于BRAC的信息。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [
+    {
+      "text": "There’s a story about a Master of all things mechanical who had long since retired. His former company was having a problem that no one could fix, so they called in the Master to see if he could help find the problem. The Master examined the machine, listened to it, and eventually pulled out a worn piece of chalk and made a small X on the side of the machine. He informed the technician that there was a loose wire that needed repair at that very spot. The technician opened the machine and tightened the loose wire, thus fixing the problem. When the Master’s invoice arrived for $10,000, the irate CEO wrote back demanding a breakdown for this ridiculously high charge for a simple chalk mark! The Master responded with another invoice, showing a $1 cost for the chalk to make the mark, and $9,999 for knowing where to put it.\n\n有位精通机械的大师退休多年后，原公司遇到了无人能解决的故障，便请他回来帮忙。大师检查机器，仔细听了听，最后拿出一截旧粉笔，在机器侧面画了一个小叉。他告诉技术员，那个位置有根电线松了，需要修好。技术员打开机器，紧固电线，故障就排除了。公司收到10,000美元的账单后，CEO 十分恼火：不过画了一个粉笔记号，怎么能收这么高的费用？他要求提供明细。大师又寄来一张账单：画记号的粉笔，1美元；知道该在哪里画，9,999美元。\n\nTo us, this is a story about wisdom: that a single, carefully considered adjustment can have gigantic effects. We use this technique when managing people. We imagine our team as flying around in a great blimp, headed slowly and surely in a certain direction. Instead of micromanaging and trying to make continuous course corrections, we spend most of the week carefully watching and listening. At the end of the week we make a small chalk mark in a precise location on the blimp, then give a small but critical “tap” to adjust the course.\n\n在我们看来，这个故事讲的是智慧：一次经过深思熟虑的细微调整，也能产生巨大影响。管理人员时，我们也采用这种方法。可以把团队想象成一艘巨大的飞艇，正缓慢而稳当地朝某个方向前进。我们不事无巨细地干预，也不持续修正航向，而是用一周的大部分时间仔细观察、倾听。到周末，再在飞艇的一个准确位置画上小小的粉笔记号，然后轻轻一推，作出关键的航向调整。",
+      "parts": [
+        {
+          "language": "en",
+          "html": "<p>There’s a story about a Master of all things mechanical who had long since retired. His former company was having a problem that no one could fix, so they called in the Master to see if he could help find the problem. The Master examined the machine, listened to it, and eventually pulled out a worn piece of chalk and made a small X on the side of the machine. He informed the technician that there was a loose wire that needed repair at that very spot. The technician opened the machine and tightened the loose wire, thus fixing the problem. When the Master’s invoice arrived for $10,000, the irate CEO wrote back demanding a breakdown for this ridiculously high charge for a simple chalk mark! The Master responded with another invoice, showing a $1 cost for the chalk to make the mark, and $9,999 for knowing where to put it.</p>\n"
+        },
+        {
+          "language": "zh",
+          "html": "<p>有位精通机械的大师退休多年后，原公司遇到了无人能解决的故障，便请他回来帮忙。大师检查机器，仔细听了听，最后拿出一截旧粉笔，在机器侧面画了一个小叉。他告诉技术员，那个位置有根电线松了，需要修好。技术员打开机器，紧固电线，故障就排除了。公司收到10,000美元的账单后，CEO 十分恼火：不过画了一个粉笔记号，怎么能收这么高的费用？他要求提供明细。大师又寄来一张账单：画记号的粉笔，1美元；知道该在哪里画，9,999美元。</p>\n"
+        },
+        {
+          "language": "en",
+          "html": "<p>To us, this is a story about wisdom: that a single, carefully considered adjustment can have gigantic effects. We use this technique when managing people. We imagine our team as flying around in a great blimp, headed slowly and surely in a certain direction. Instead of micromanaging and trying to make continuous course corrections, we spend most of the week carefully watching and listening. At the end of the week we make a small chalk mark in a precise location on the blimp, then give a small but critical “tap” to adjust the course.</p>\n"
+        },
+        {
+          "language": "zh",
+          "html": "<p>在我们看来，这个故事讲的是智慧：一次经过深思熟虑的细微调整，也能产生巨大影响。管理人员时，我们也采用这种方法。可以把团队想象成一艘巨大的飞艇，正缓慢而稳当地朝某个方向前进。我们不事无巨细地干预，也不持续修正航向，而是用一周的大部分时间仔细观察、倾听。到周末，再在飞艇的一个准确位置画上小小的粉笔记号，然后轻轻一推，作出关键的航向调整。</p>\n"
+        }
+      ]
+    },
+    {
+      "text": "I have two kinds of problems, the urgent and the important. The urgent are not important, and the important are never urgent.",
+      "parts": [
+        {
+          "language": "en",
+          "html": "<p>I have two kinds of problems, the urgent and the important. The urgent are not important, and the important are never urgent.</p>\n"
+        }
+      ]
+    },
+    {
+      "text": "我有两类问题，紧急的问题和重要的问题。紧急的并不重要，重要的也从不紧急。",
+      "parts": [
+        {
+          "language": "zh",
+          "html": "<p>我有两类问题，紧急的问题和重要的问题。紧急的并不重要，重要的也从不紧急。</p>\n"
+        }
+      ]
+    }
+  ],
+  "translatorNotes": [
+    {
+      "text": "（译注：鱼和熊掌不可兼得？）",
+      "title": "译者补充：取舍的比喻（非原书内容）",
+      "body": "鱼和熊掌不可兼得？",
+      "linkText": "",
+      "href": "",
+      "reason": "Explicit inline translator note at source line 137; the paired English paragraph contains no corresponding remark or citation.",
+      "renderedText": "（译注：鱼和熊掌不可兼得？）",
+      "bodyHtml": "<p>鱼和熊掌不可兼得？</p>\n"
+    },
+    {
+      "text": "（译注：主要指消息模式切换）",
+      "title": "译者补充：断开工作联系（非原书内容）",
+      "body": "主要指消息模式切换",
+      "linkText": "",
+      "href": "",
+      "reason": "Explicit inline translator note inside the Chinese list label at source line 401; the English label has no counterpart and the source supplies no link.",
+      "renderedText": "（译注：主要指消息模式切换）",
+      "bodyHtml": "<p>主要指消息模式切换</p>\n"
+    }
+  ],
+  "pairedSources": [
+    {
+      "english": "Lindsay Jones is a friend of ours who is a professional theatrical sound designer and composer. He spends his life flying around the United States, hopping from production to production, and he’s full of crazy (and true) stories about air travel. Here’s one of our favorite stories:",
+      "chinese": "我们的朋友 Lindsay Jones 是一位专业的戏剧音效设计师兼作曲家。",
+      "reason": "The English introduction at source line 32 has its complete Chinese counterpart at line 34. The following bilingual story is a blockquote containing Chinese, which the automatic sibling-run pairing groups with the Chinese introduction, producing unequal English and Chinese runs."
+    },
+    {
+      "english": "So what changed? At some point, we took a step back, identified the blinders, and did a full reevaluation of the trade-offs. It turns out that the pursuit of “quality” has not one, but two different costs. The first cost is to the user: more quality usually means more data being sent out, which means more latency. The second cost is to Google: more quality means doing more work to generate the data, which costs more CPU time in our servers—what we call “serving capacity.” Although leadership had often trodden carefully around the trade-off between quality and capacity, it had never treated latency as a full citizen in the calculus. As the old joke goes, “Good, Fast, Cheap—pick two.” A simple way to depict the trade-offs is to draw a triangle of tension between Good (Quality), Fast (Latency), and Cheap (Capacity), as illustrated in Figure 6-1.",
+      "chinese": "后来发生了什么变化？我们终于退后一步，找出思维盲点，全面重新评估了这些取舍。",
+      "reason": "Source line 132 has a complete Chinese translation at line 137, but the Figure 6-1 image and bilingual caption at lines 134-135 intervene and break automatic adjacency pairing. The existing translator note is separate from the translation; the identifying excerpt excludes it."
+    }
+  ],
+  "translations": [],
+  "issues": [
+    "The bilingual prose at lines 225-231 is one Markdown code block, not four separate code blocks. The bilingual language value records the four alternating English and Chinese paragraphs without discarding any source text.",
+    "The two explicit translator notes are inline source spans, not standalone code blocks; neither has an attributed author or supplied link. Empty link fields intentionally avoid inventing attribution."
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 149,
+      "endLine": 151,
+      "source": "> [^1]: “Code yellow” is Google’s term for “emergency hackathon to fix a critical problem.” Affected teams are expected to suspend all work and focus 100% attention on the problem until the state of emergency is declared over.\n>\n> 1 “Code yellow”（黄色警报）是谷歌的术语，指为解决关键问题而开展的紧急黑客马拉松。相关团队必须暂停其他所有工作，将100%的注意力投入这个问题，直到宣布紧急状态结束。\n"
+    },
+    {
+      "startLine": 237,
+      "endLine": 239,
+      "source": "> [^2]: Brian W. Fitzpatrick and Ben Collins-Sussman, Debugging Teams: Better Productivity through Collaboration(Boston: O’Reilly, 2016).\n>\n> 2 Brian W. Fitzpatrick 和 Ben Collins-Sussman，《进化：从孤胆极客到高效团队》（波士顿：O'Reilly，2016）。\n"
+    },
+    {
+      "startLine": 296,
+      "endLine": 298,
+      "source": "> [^3]: It’s easy for imposter syndrome to kick in at this point. One technique for fighting the feeling that you don’t know what you’re doing is to simply pretend that some expert out there knows exactly what to do, and that they’re simply on vacation and you’re temporarily subbing in for them. It’s a great way to remove the personal stakes and give yourself permission to fail and learn.\n>\n>3  此时很容易出现“冒名顶替综合征”。如果你觉得自己根本不知道该怎么做，可以试试这样想：有一位专家完全知道该怎么办，只是正在休假，而你暂时代班而已。这样有助于减轻对个人得失的担忧，允许自己在失败中学习。\n"
+    },
+    {
+      "startLine": 414,
+      "endLine": 416,
+      "source": "> [^4]: You need to plan ahead and build around the assumption that your work simply won’t get done during vacation. Working hard (or smart) just before and after your vacation mitigates this issue.\n>\n> 4 你需要提前规划，以自己负责的工作在休假期间不会推进为前提作出安排。休假前后多努力一些，或更高效地工作，可以缓解这个问题。\n"
+    },
+    {
+      "startLine": 418,
+      "endLine": 420,
+      "source": "> [^5]: You can read more about BRAC at https://en.wikipedia.org/wiki/Basic_rest-activity_cycle.\n>\n> 5 你可以在 https://en.wikipedia.org/wiki/Basic_rest-activity_cycle，了解更多关于BRAC的信息。\n"
+    }
+  ]
+}

@@ -1,0 +1,440 @@
+{
+  "format": 2,
+  "sourceSha256": "cb3a3cfdae7c592d97548ede5ade9f4a84c805e6e465b7c60ab76fe18e2e9e2b",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch25.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        35,
+        37
+      ],
+      "english": "Disclaimer: for some applications, the “hardware to run it” is the hardware of your customers (think, for example, of a shrink-wrapped game you bought a decade ago). This presents very different challenges that we do not cover in this chapter.",
+      "chinese": "说明：有些应用程序运行在客户自己的硬件上，例如你十年前购买的盒装游戏。这会带来截然不同的挑战，不在本章的讨论范围内。",
+      "after": "落实为一个能随着组织演进和壮大而持续运行、不断扩展的系统。",
+      "englishHtml": "<p>Disclaimer: for some applications, the “hardware to run it” is the hardware of your customers (think, for example, of a shrink-wrapped game you bought a decade ago). This presents very different challenges that we do not cover in this chapter.</p>\n",
+      "chineseHtml": "<p>说明：有些应用程序运行在客户自己的硬件上，例如你十年前购买的盒装游戏。这会带来截然不同的挑战，不在本章的讨论范围内。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        57,
+        59
+      ],
+      "english": "Abhishek Verma, Luis Pedrosa, Madhukar R Korupolu, David Oppenheimer, Eric Tune, and John Wilkes, “Large-scale cluster management at Google with Borg,” EuroSys, Article No.: 18 (April 2015): 1–17.",
+      "chinese": "Abhishek Verma、Luis Pedrosa、Madhukar R Korupolu、David Oppenheimer、Eric Tune 和 John Wilkes，《在谷歌使用 Borg 进行大规模集群管理》，EuroSys，文章编号：18（2015年4月）：1-17。",
+      "after": "谷歌内部的 Borg 系统是如今许多 CaaS 架构（如 Kubernetes 或 Mesos）的前身。",
+      "englishHtml": "<p>Abhishek Verma, Luis Pedrosa, Madhukar R Korupolu, David Oppenheimer, Eric Tune, and John Wilkes, “Large-scale cluster management at Google with Borg,” EuroSys, Article No.: 18 (April 2015): 1–17.</p>\n",
+      "chineseHtml": "<p>Abhishek Verma、Luis Pedrosa、Madhukar R Korupolu、David Oppenheimer、Eric Tune 和 John Wilkes，《在谷歌使用 Borg 进行大规模集群管理》，EuroSys，文章编号：18（2015年4月）：1-17。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        125,
+        127
+      ],
+      "english": "Note that this and the next point apply less if your organization is renting machines from a public cloud provider.",
+      "chinese": "如果组织从公有云提供商租用机器，这一点和下一点的影响就相对较小。",
+      "after": "这样一来，新机器的容量无法充分利用，造成浪费。",
+      "englishHtml": "<p>Note that this and the next point apply less if your organization is renting machines from a public cloud provider.</p>\n",
+      "chineseHtml": "<p>如果组织从公有云提供商租用机器，这一点和下一点的影响就相对较小。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        151,
+        153
+      ],
+      "english": "Google has chosen, long ago, that the latency degradation due to disk swap is so horrible that an out-of- memory kill and a migration to a different machine is universally preferable—so in Google’s case, it’s always an out-of-memory kill.",
+      "chinese": "谷歌很早就作出了选择：磁盘交换引起的延迟恶化太严重，相比之下，因内存不足而终止进程、再迁移到另一台机器总是更可取。因此，在谷歌，内存不足时一律终止进程。",
+      "after": "或者因磁盘交换而产生极高的延迟。",
+      "englishHtml": "<p>Google has chosen, long ago, that the latency degradation due to disk swap is so horrible that an out-of- memory kill and a migration to a different machine is universally preferable—so in Google’s case, it’s always an out-of-memory kill.</p>\n",
+      "chineseHtml": "<p>谷歌很早就作出了选择：磁盘交换引起的延迟恶化太严重，相比之下，因内存不足而终止进程、再迁移到另一台机器总是更可取。因此，在谷歌，内存不足时一律终止进程。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        155,
+        157
+      ],
+      "english": "Although a considerable amount of research is going into decreasing this overhead, it will never be as low as a process running natively.",
+      "chinese": "尽管已有大量研究致力于降低这种开销，它也永远不会低到与原生运行的进程相同。",
+      "after": "又要等待这个操作系统启动。",
+      "englishHtml": "<p>Although a considerable amount of research is going into decreasing this overhead, it will never be as low as a process running natively.</p>\n",
+      "chineseHtml": "<p>尽管已有大量研究致力于降低这种开销，它也永远不会低到与原生运行的进程相同。</p>\n"
+    },
+    {
+      "id": "6",
+      "definitionLines": [
+        235,
+        237
+      ],
+      "english": "The scheduler does not do this arbitrarily, but for concrete reasons (like the need to update the kernel, or a disk going bad on the machine, or a reshuffle to make the overall distribution of workloads in the datacenter bin-packed better). However, the point of having a compute service is that as a software author, I should neither know nor care why regarding the reasons this might happen.",
+      "chinese": "调度器并非无缘无故地这样做，而是有具体原因，例如需要更新内核、机器磁盘出现故障，或者通过重新安排工作负载，提高整个数据中心的装箱效率。不过，计算服务的意义就在于：作为软件作者，我无须知道或关心这些具体原因。",
+      "after": "调度器可以自行终止200个工作进程（worker）中的一个，将其迁移到另一台机器。",
+      "englishHtml": "<p>The scheduler does not do this arbitrarily, but for concrete reasons (like the need to update the kernel, or a disk going bad on the machine, or a reshuffle to make the overall distribution of workloads in the datacenter bin-packed better). However, the point of having a compute service is that as a software author, I should neither know nor care why regarding the reasons this might happen.</p>\n",
+      "chineseHtml": "<p>调度器并非无缘无故地这样做，而是有具体原因，例如需要更新内核、机器磁盘出现故障，或者通过重新安排工作负载，提高整个数据中心的装箱效率。不过，计算服务的意义就在于：作为软件作者，我无须知道或关心这些具体原因。</p>\n"
+    },
+    {
+      "id": "7",
+      "definitionLines": [
+        239,
+        241
+      ],
+      "english": "The “pets versus cattle” metaphor is attributed to Bill Baker by Randy Bias and it’s become extremely popular as a way to describe the “replicated software unit” concept. As an analogy, it can also be used to describe concepts other than servers; for example, see Chapter 22.",
+      "chinese": "Randy Bias 将“宠物与牛群”这一比喻归功于 Bill Baker。它已被广泛用来描述“可复制的软件单元”这一概念，也可以比喻服务器以外的事物，例如第22章中的用法。",
+      "after": "多年以后，人们用“宠物与牛群”的比喻来描述这种转变。",
+      "englishHtml": "<p>The “pets versus cattle” metaphor is attributed to Bill Baker by Randy Bias and it’s become extremely popular as a way to describe the “replicated software unit” concept. As an analogy, it can also be used to describe concepts other than servers; for example, see Chapter 22.</p>\n",
+      "chineseHtml": "<p>Randy Bias 将“宠物与牛群”这一比喻归功于 Bill Baker。它已被广泛用来描述“可复制的软件单元”这一概念，也可以比喻服务器以外的事物，例如第22章中的用法。</p>\n"
+    },
+    {
+      "id": "8",
+      "definitionLines": [
+        273,
+        275
+      ],
+      "english": "Like all categorizations, this one isn’t perfect; there are types of programs that don’t fit neatly into any of the categories, or that possess characteristics typical of both serving and batch jobs. However, like most useful categorizations, it still captures a distinction present in many real-life cases.",
+      "chinese": "和所有分类一样，这种分类也不完美。有些程序难以明确归入任何一类，或同时具有服务作业和批处理作业的典型特征。但和大多数有用的分类一样，它仍然揭示了许多实际情形中存在的区别。",
+      "after": "这两类作业通常具有不同的特点，尤其是：",
+      "englishHtml": "<p>Like all categorizations, this one isn’t perfect; there are types of programs that don’t fit neatly into any of the categories, or that possess characteristics typical of both serving and batch jobs. However, like most useful categorizations, it still captures a distinction present in many real-life cases.</p>\n",
+      "chineseHtml": "<p>和所有分类一样，这种分类也不完美。有些程序难以明确归入任何一类，或同时具有服务作业和批处理作业的典型特征。但和大多数有用的分类一样，它仍然揭示了许多实际情形中存在的区别。</p>\n"
+    },
+    {
+      "id": "9",
+      "definitionLines": [
+        277,
+        279
+      ],
+      "english": "See Jeffrey Dean and Sanjay Ghemawat, “MapReduce: Simplified Data Processing on Large Clusters,” 6th Symposium on Operating System Design and Implementation (OSDI), 2004.",
+      "chinese": "参见 Jeffrey Dean 和 Sanjay Ghemawat，《MapReduce：简化大规模集群上的数据处理》，第六届操作系统设计与实现研讨会（OSDI），2004年。",
+      "after": "在谷歌，实现这一模式的典型框架是 MapReduce，后来由 Flume 取代。",
+      "englishHtml": "<p>See Jeffrey Dean and Sanjay Ghemawat, “MapReduce: Simplified Data Processing on Large Clusters,” 6th Symposium on Operating System Design and Implementation (OSDI), 2004.</p>\n",
+      "chineseHtml": "<p>参见 Jeffrey Dean 和 Sanjay Ghemawat，《MapReduce：简化大规模集群上的数据处理》，第六届操作系统设计与实现研讨会（OSDI），2004年。</p>\n"
+    },
+    {
+      "id": "10",
+      "definitionLines": [
+        281,
+        283
+      ],
+      "english": "Craig Chambers, Ashish Raniwala, Frances Perry, Stephen Adams, Robert Henry, Robert Bradshaw, and Nathan Weizenbaum, “Flume‐Java: Easy, Efficient Data-Parallel Pipelines,” ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI), 2010.",
+      "chinese": "Craig Chambers, Ashish Raniwala, Frances Perry, Stephen Adams, Robert Henry, Robert Bradshaw, and Nathan Weizenbaum, \"Flume-Java: Easy, Efficient Data-Parallel Pipelines,\" ACM SIGPLAN 编程语言设计与实现会议（PLDI），2010年。",
+      "after": "在谷歌，实现这一模式的典型框架是 MapReduce，后来由 Flume 取代。",
+      "englishHtml": "<p>Craig Chambers, Ashish Raniwala, Frances Perry, Stephen Adams, Robert Henry, Robert Bradshaw, and Nathan Weizenbaum, “Flume‐Java: Easy, Efficient Data-Parallel Pipelines,” ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI), 2010.</p>\n",
+      "chineseHtml": "<p>Craig Chambers, Ashish Raniwala, Frances Perry, Stephen Adams, Robert Henry, Robert Bradshaw, and Nathan Weizenbaum, &quot;Flume-Java: Easy, Efficient Data-Parallel Pipelines,&quot; ACM SIGPLAN 编程语言设计与实现会议（PLDI），2010年。</p>\n"
+    },
+    {
+      "id": "11",
+      "definitionLines": [
+        285,
+        287
+      ],
+      "english": "See also Atul Adya et al. “Auto-sharding for datacenter applications,” OSDI, 2019; and Atul Adya, Daniel Myers, Henry Qin, and Robert Grandl, “Fast key-value stores: An idea whose time has come and gone,” HotOS XVII, 2019.",
+      "chinese": "另见 Atul Adya 等人，《数据中心应用的自动分片》，OSDI，2019年；以及 Atul Adya、Daniel Myers、Henry Qin 和 Robert Grandl，《快速键值存储：一个曾逢其时、如今已过时的想法》，HotOS XVII，2019年。",
+      "after": "只要这台主机失去网络连接，系统其他部分就无法联系到它。",
+      "englishHtml": "<p>See also Atul Adya et al. “Auto-sharding for datacenter applications,” OSDI, 2019; and Atul Adya, Daniel Myers, Henry Qin, and Robert Grandl, “Fast key-value stores: An idea whose time has come and gone,” HotOS XVII, 2019.</p>\n",
+      "chineseHtml": "<p>另见 Atul Adya 等人，《数据中心应用的自动分片》，OSDI，2019年；以及 Atul Adya、Daniel Myers、Henry Qin 和 Robert Grandl，《快速键值存储：一个曾逢其时、如今已过时的想法》，HotOS XVII，2019年。</p>\n"
+    },
+    {
+      "id": "12",
+      "definitionLines": [
+        315,
+        317
+      ],
+      "english": "Note that, besides distributed state, there are other requirements to setting up an effective “servers as cattle” solution, like discovery and load-balancing systems (so that your application, which moves around the datacenter, can be accessed effectively). Because this book is less about building a full CaaS infrastructure and more about how such an infrastructure relates to the art of software engineering, we won’t go into more detail here.",
+      "chinese": "除了分布式状态，要有效实现“将服务器当作牛群管理”，还需要满足其他要求，例如提供服务发现和负载均衡系统，让应用即使在数据中心内迁移，也能被正常访问。本书着重讨论这类基础设施与软件工程实践的关系，而非如何构建完整的 CaaS 基础设施，因此这里不再展开。",
+      "after": "前面的讨论有一个共同主题：将作业当作牛群管理时，状态往往是问题的来源。",
+      "englishHtml": "<p>Note that, besides distributed state, there are other requirements to setting up an effective “servers as cattle” solution, like discovery and load-balancing systems (so that your application, which moves around the datacenter, can be accessed effectively). Because this book is less about building a full CaaS infrastructure and more about how such an infrastructure relates to the art of software engineering, we won’t go into more detail here.</p>\n",
+      "chineseHtml": "<p>除了分布式状态，要有效实现“将服务器当作牛群管理”，还需要满足其他要求，例如提供服务发现和负载均衡系统，让应用即使在数据中心内迁移，也能被正常访问。本书着重讨论这类基础设施与软件工程实践的关系，而非如何构建完整的 CaaS 基础设施，因此这里不再展开。</p>\n"
+    },
+    {
+      "id": "13",
+      "definitionLines": [
+        319,
+        321
+      ],
+      "english": "See, for example, Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung, “The Google File System,” Proceedings of the 19th ACM Symposium on Operating Systems, 2003; Fay Chang et al., “Bigtable: A Distributed Storage System for Structured Data,” 7th USENIX Symposium on Operating Systems Design and Implementation (OSDI); or James C. Corbett et al., “Spanner: Google’s Globally Distributed Database,” OSDI, 2012.",
+      "chinese": "例如，参见 Sanjay Ghemawat、Howard Gobioff 和 Shun-Tak Leung，《谷歌文件系统》，第19届 ACM 操作系统研讨会论文集，2003年；Fay Chang 等人，《Bigtable：面向结构化数据的分布式存储系统》，第七届 USENIX 操作系统设计与实现研讨会（OSDI）；或 James C. Corbett 等人，《Spanner：谷歌的全球分布式数据库》，OSDI，2012年。",
+      "after": "使大多数应用能够采用将所有自身状态视为临时状态的模型。",
+      "reason": "The Chinese reference is a bare 13 attached to 存储方案 at line 301, not a Markdown marker. The reviewed anchor is the end of that exact storage-solutions sentence; do not reinterpret unrelated numbers as footnotes.",
+      "englishHtml": "<p>See, for example, Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung, “The Google File System,” Proceedings of the 19th ACM Symposium on Operating Systems, 2003; Fay Chang et al., “Bigtable: A Distributed Storage System for Structured Data,” 7th USENIX Symposium on Operating Systems Design and Implementation (OSDI); or James C. Corbett et al., “Spanner: Google’s Globally Distributed Database,” OSDI, 2012.</p>\n",
+      "chineseHtml": "<p>例如，参见 Sanjay Ghemawat、Howard Gobioff 和 Shun-Tak Leung，《谷歌文件系统》，第19届 ACM 操作系统研讨会论文集，2003年；Fay Chang 等人，《Bigtable：面向结构化数据的分布式存储系统》，第七届 USENIX 操作系统设计与实现研讨会（OSDI）；或 James C. Corbett 等人，《Spanner：谷歌的全球分布式数据库》，OSDI，2012年。</p>\n"
+    },
+    {
+      "id": "14",
+      "definitionLines": [
+        341,
+        343
+      ],
+      "english": "Note that retries need to be implemented correctly—with backoff, graceful degradation and tools to avoid cascading failures like jitter. Thus, this should likely be a part of Remote Procedure Call library, instead of implemented by hand by each developer. See, for example, Chapter 22: Addressing Cascading Failures in the SRE book.",
+      "chinese": "重试必须正确实现，需要采用退避、平稳降级，以及抖动等避免级联故障的手段。因此，这些机制通常应当由远程过程调用库提供，而不是由每名开发者自行实现。例如，参见《SRE》第22章“处理级联故障”。",
+      "after": "因为正在通信的服务器可能尚未答复就被终止了。",
+      "englishHtml": "<p>Note that retries need to be implemented correctly—with backoff, graceful degradation and tools to avoid cascading failures like jitter. Thus, this should likely be a part of Remote Procedure Call library, instead of implemented by hand by each developer. See, for example, Chapter 22: Addressing Cascading Failures in the SRE book.</p>\n",
+      "chineseHtml": "<p>重试必须正确实现，需要采用退避、平稳降级，以及抖动等避免级联故障的手段。因此，这些机制通常应当由远程过程调用库提供，而不是由每名开发者自行实现。例如，参见《SRE》第22章“处理级联故障”。</p>\n"
+    },
+    {
+      "id": "15",
+      "definitionLines": [
+        367,
+        369
+      ],
+      "english": "This has happened multiple times at Google; for instance, because of someone leaving load-testing infrastructure occupying a thousand Google Compute Engine VMs running when they went on vacation, or because a new employee was debugging a master binary on their workstation without realizing it was spawning 8,000 full-machine workers in the background.",
+      "chinese": "谷歌多次发生过这种情况。例如，有人去休假时，没有关闭占用一千台 Google Compute Engine 虚拟机的负载测试基础设施；还有新员工在工作站上调试主控程序，却没有意识到它正在后台启动8,000个各占用一整台机器的 worker。",
+      "after": "却完全可能无意中写出占用一千台机器的程序，自己还没有察觉。",
+      "englishHtml": "<p>This has happened multiple times at Google; for instance, because of someone leaving load-testing infrastructure occupying a thousand Google Compute Engine VMs running when they went on vacation, or because a new employee was debugging a master binary on their workstation without realizing it was spawning 8,000 full-machine workers in the background.</p>\n",
+      "chineseHtml": "<p>谷歌多次发生过这种情况。例如，有人去休假时，没有关闭占用一千台 Google Compute Engine 虚拟机的负载测试基础设施；还有新员工在工作站上调试主控程序，却没有意识到它正在后台启动8,000个各占用一整台机器的 worker。</p>\n"
+    },
+    {
+      "id": "16",
+      "definitionLines": [
+        459,
+        461
+      ],
+      "english": "As in any complex system, there are exceptions. Not all machines owned by Google are Borg-managed, and not every datacenter is covered by a single Borg cell. But the majority of engineers work in an environment in which they don’t touch non-Borg machines, or nonstandard cells.",
+      "chinese": "和任何复杂系统一样，这里也有例外。并非谷歌的所有机器都由 Borg 管理，也并非每个数据中心都只包含一个 Borg 单元。不过，大多数工程师所在的环境，不需要他们接触非 Borg 管理的机器或非标准单元。",
+      "after": "机群中的物理机器不再有N种管理方式，只有 Borg。",
+      "englishHtml": "<p>As in any complex system, there are exceptions. Not all machines owned by Google are Borg-managed, and not every datacenter is covered by a single Borg cell. But the majority of engineers work in an environment in which they don’t touch non-Borg machines, or nonstandard cells.</p>\n",
+      "chineseHtml": "<p>和任何复杂系统一样，这里也有例外。并非谷歌的所有机器都由 Borg 管理，也并非每个数据中心都只包含一个 Borg 单元。不过，大多数工程师所在的环境，不需要他们接触非 Borg 管理的机器或非标准单元。</p>\n"
+    },
+    {
+      "id": "17",
+      "definitionLines": [
+        539,
+        541
+      ],
+      "english": "This particular command is actively harmful under Borg because it prevents Borg’s mechanisms for dealing with failure from kicking in. However, more complex wrappers that echo parts of the environment to logging, for example, are still in use to help debug startup problems.",
+      "chinese": "这个具体命令在 Borg 中反而有害，因为它会阻止 Borg 的故障处理机制生效。不过，更复杂的包装脚本仍在使用，例如将部分环境信息输出到日志，以帮助排查启动问题。",
+      "after": "例如 while true; do ./ my_binary; done。",
+      "englishHtml": "<p>This particular command is actively harmful under Borg because it prevents Borg’s mechanisms for dealing with failure from kicking in. However, more complex wrappers that echo parts of the environment to logging, for example, are still in use to help debug startup problems.</p>\n",
+      "chineseHtml": "<p>这个具体命令在 Borg 中反而有害，因为它会阻止 Borg 的故障处理机制生效。不过，更复杂的包装脚本仍在使用，例如将部分环境信息输出到日志，以帮助排查启动问题。</p>\n"
+    },
+    {
+      "id": "18",
+      "definitionLines": [
+        559,
+        561
+      ],
+      "english": "My mail server is not interchangeable with your graphics rendering job, even if both of those tasks are running in the same form of VM.",
+      "chinese": "即使两个任务运行在同一种虚拟机中，我的邮件服务器也不能与你的图形渲染作业互换。",
+      "after": "而云用户通常不按牛群模式使用虚拟机。",
+      "englishHtml": "<p>My mail server is not interchangeable with your graphics rendering job, even if both of those tasks are running in the same form of VM.</p>\n",
+      "chineseHtml": "<p>即使两个任务运行在同一种虚拟机中，我的邮件服务器也不能与你的图形渲染作业互换。</p>\n"
+    },
+    {
+      "id": "19",
+      "definitionLines": [
+        563,
+        565
+      ],
+      "english": "This is not the only motivation for making user VMs possible to live migrate; it also offers considerable user- facing benefits because it means the host operating system can be patched and the host hardware updated without disrupting the VM. The alternative (used by other major cloud vendors) is to deliver “maintenance event notices,” which mean the VM can be, for example, rebooted or stopped and later started up by the cloud provider.",
+      "chinese": "这并不是支持用户虚拟机热迁移的唯一原因。热迁移也为用户带来显著好处：可以在不中断虚拟机的情况下，为宿主机操作系统打补丁或更新硬件。其他主要云提供商采用的另一种方式是发送“维护事件通知”，告知用户虚拟机可能由云提供商重启，或先停止、稍后再启动。",
+      "after": "整个过程不会造成可感知的服务中断。",
+      "englishHtml": "<p>This is not the only motivation for making user VMs possible to live migrate; it also offers considerable user- facing benefits because it means the host operating system can be patched and the host hardware updated without disrupting the VM. The alternative (used by other major cloud vendors) is to deliver “maintenance event notices,” which mean the VM can be, for example, rebooted or stopped and later started up by the cloud provider.</p>\n",
+      "chineseHtml": "<p>这并不是支持用户虚拟机热迁移的唯一原因。热迁移也为用户带来显著好处：可以在不中断虚拟机的情况下，为宿主机操作系统打补丁或更新硬件。其他主要云提供商采用的另一种方式是发送“维护事件通知”，告知用户虚拟机可能由云提供商重启，或先停止、稍后再启动。</p>\n"
+    },
+    {
+      "id": "20",
+      "definitionLines": [
+        567,
+        569
+      ],
+      "english": "This is particularly relevant given that not all customer VMs are opted into live migration; for some workloads even the short period of degraded performance during the migration is unacceptable. These customers will receive maintenance event notices, and Borg will avoid evicting the containers with those VMs unless strictly necessary.",
+      "chinese": "并非所有客户虚拟机都启用了热迁移，因此这一点尤为重要。对于某些工作负载，即使迁移期间短暂的性能下降也无法接受。这些客户会收到维护事件通知，而 Borg 除非确有必要，否则会避免驱逐承载这些虚拟机的容器。",
+      "after": "Borg 还调整了调度算法，尽量降低需要重新调度的可能性。",
+      "englishHtml": "<p>This is particularly relevant given that not all customer VMs are opted into live migration; for some workloads even the short period of degraded performance during the migration is unacceptable. These customers will receive maintenance event notices, and Borg will avoid evicting the containers with those VMs unless strictly necessary.</p>\n",
+      "chineseHtml": "<p>并非所有客户虚拟机都启用了热迁移，因此这一点尤为重要。对于某些工作负载，即使迁移期间短暂的性能下降也无法接受。这些客户会收到维护事件通知，而 Borg 除非确有必要，否则会避免驱逐承载这些虚拟机的容器。</p>\n"
+    },
+    {
+      "id": "21",
+      "definitionLines": [
+        587,
+        589
+      ],
+      "english": "A good reminder that monitoring and tracking the usage of your features is valuable over time.",
+      "chinese": "这再次提醒我们，长期监控和跟踪功能的使用情况很有价值。",
+      "after": "2012年后，Borg 团队投入大量时间清理 API，发现有些功能已完全无人使用。",
+      "englishHtml": "<p>A good reminder that monitoring and tracking the usage of your features is valuable over time.</p>\n",
+      "chineseHtml": "<p>这再次提醒我们，长期监控和跟踪功能的使用情况很有价值。</p>\n"
+    },
+    {
+      "id": "22",
+      "definitionLines": [
+        591,
+        593
+      ],
+      "english": "This means that Kubernetes, which benefited from the experience of cleaning up Borg but was not hampered by a broad existing userbase to begin with, was significantly more modern in quite a few aspects (like its treatment of labels) from the beginning. That said, Kubernetes suffers some of the same issues now that it has broad adoption across a variety of types of applications.",
+      "chinese": "Kubernetes 借鉴了清理 Borg 的经验，又没有庞大既有用户群带来的束缚，因此从一开始，在标签处理等不少方面就明显更现代。不过，如今 Kubernetes 已广泛用于各类应用，也开始遇到一些同样的问题。",
+      "after": "有些改动，例如用标签标识容器组，尚未全部完成。",
+      "englishHtml": "<p>This means that Kubernetes, which benefited from the experience of cleaning up Borg but was not hampered by a broad existing userbase to begin with, was significantly more modern in quite a few aspects (like its treatment of labels) from the beginning. That said, Kubernetes suffers some of the same issues now that it has broad adoption across a variety of types of applications.</p>\n",
+      "chineseHtml": "<p>Kubernetes 借鉴了清理 Borg 的经验，又没有庞大既有用户群带来的束缚，因此从一开始，在标签处理等不少方面就明显更现代。不过，如今 Kubernetes 已广泛用于各类应用，也开始遇到一些同样的问题。</p>\n"
+    },
+    {
+      "id": "23",
+      "definitionLines": [
+        631,
+        633
+      ],
+      "english": "FaaS (Function as a Service) and PaaS (Platform as a Service) are related terms to serverless. There are differences between the three terms, but there are more similarities, and the boundaries are somewhat blurred.",
+      "chinese": "FaaS（函数即服务）和 PaaS（平台即服务）是与无服务器相关的术语。三者虽有区别，但相似之处更多，边界也有些模糊。",
+      "after": "无服务器产品提供了更高层次的抽象。",
+      "englishHtml": "<p>FaaS (Function as a Service) and PaaS (Platform as a Service) are related terms to serverless. There are differences between the three terms, but there are more similarities, and the boundaries are somewhat blurred.</p>\n",
+      "chineseHtml": "<p>FaaS（函数即服务）和 PaaS（平台即服务）是与无服务器相关的术语。三者虽有区别，但相似之处更多，边界也有些模糊。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [
+    {
+      "text": "〔译注：英文写作 latency decreases，与上下文论证方向相悖；此处按上下文理解为避免延迟恶化。〕",
+      "title": "译者补充：延迟表述（非原书内容）",
+      "body": "英文写作 latency decreases，与上下文论证方向相悖；此处按上下文理解为避免延迟恶化。",
+      "reason": "Explicitly labeled translator annotation already present at source line 449. Separate it from book prose without inventing attribution or an external link.",
+      "renderedText": "〔译注：英文写作 latency decreases，与上下文论证方向相悖；此处按上下文理解为避免延迟恶化。〕",
+      "bodyHtml": "<p>英文写作 latency decreases，与上下文论证方向相悖；此处按上下文理解为避免延迟恶化。</p>\n"
+    }
+  ],
+  "textEdits": [
+    {
+      "source": "*/bin/foo/bar*",
+      "replacement": "/bin/foo/bar",
+      "reason": "Remove the exposed emphasis delimiters around the path in the display copy; preserve the actual filesystem path."
+    },
+    {
+      "source": "专用存储方案13",
+      "replacement": "专用存储方案",
+      "reason": "The bare 13 is the malformed Chinese reference to footnote 13, not a count of storage systems. Remove it only from the display copy; the reviewed footnote anchor supplies the dot."
+    }
+  ],
+  "translations": [
+    {
+      "english": "I don’t try to understand computers. I try to understand the programs.",
+      "chinese": "我不试图理解计算机，而是试图理解程序。",
+      "kind": "epigraph",
+      "author": "芭芭拉·利斯科夫",
+      "chineseHtml": "<p>我不试图理解计算机，而是试图理解程序。</p>\n"
+    }
+  ],
+  "issues": [
+    "The Chinese storage paragraph at line 301 contains a bare footnote number in 专用存储方案13. textEdits removes the bare number only in the display copy, while the footnote remains mapped to its matching storage-solutions sentence.",
+    "Line 449 contains an explicit translator note about the source phrase latency decreases contradicting its surrounding argument. translatorNotes preserves the existing disclosure as non-book material; diagrams use the intended latency-protection argument without changing source Markdown.",
+    "The batch example states one million one-second documents on 200 workers take 100 minutes (line 203), rather than the ideal arithmetic duration of about 83 minutes. No overhead explanation is supplied; diagrams omit this timing instead of inventing one.",
+    "The PID discussion calls the remediation a two-phase project and then describes a third phase (line 425). Source wording is retained; no inferred phase count is added to diagrams.",
+    "The serverless comparison describes the book's architectural assumptions, not guaranteed present-day cloud product limits. Diagrams avoid treating product-specific zero-scaling statements as universal or current guarantees."
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 35,
+      "endLine": 37,
+      "source": "> [^1]: Disclaimer: for some applications, the “hardware to run it” is the hardware of your customers (think, for example, of a shrink-wrapped game you bought a decade ago). This presents very different challenges that we do not cover in this chapter.\n>\n> 1   说明：有些应用程序运行在客户自己的硬件上，例如你十年前购买的盒装游戏。这会带来截然不同的挑战，不在本章的讨论范围内。\n"
+    },
+    {
+      "startLine": 57,
+      "endLine": 59,
+      "source": "> [^2]: Abhishek Verma, Luis Pedrosa, Madhukar R Korupolu, David Oppenheimer, Eric Tune, and John Wilkes, “Large-scale cluster management at Google with Borg,” EuroSys, Article No.: 18 (April 2015): 1–17.\n>\n> 2  Abhishek Verma、Luis Pedrosa、Madhukar R Korupolu、David Oppenheimer、Eric Tune 和 John Wilkes，《在谷歌使用 Borg 进行大规模集群管理》，EuroSys，文章编号：18（2015年4月）：1-17。\n"
+    },
+    {
+      "startLine": 125,
+      "endLine": 127,
+      "source": "> [^3]: Note that this and the next point apply less if your organization is renting machines from a public cloud provider.\n>\n> 3 如果组织从公有云提供商租用机器，这一点和下一点的影响就相对较小。\n"
+    },
+    {
+      "startLine": 151,
+      "endLine": 153,
+      "source": "> [^4]: Google has chosen, long ago, that the latency degradation due to disk swap is so horrible that an out-of- memory kill and a migration to a different machine is universally preferable—so in Google’s case, it’s always an out-of-memory kill.\n>\n> 4 谷歌很早就作出了选择：磁盘交换引起的延迟恶化太严重，相比之下，因内存不足而终止进程、再迁移到另一台机器总是更可取。因此，在谷歌，内存不足时一律终止进程。\n"
+    },
+    {
+      "startLine": 155,
+      "endLine": 157,
+      "source": "> [^5]: Although a considerable amount of research is going into decreasing this overhead, it will never be as low as a process running natively.\n>\n> 5 尽管已有大量研究致力于降低这种开销，它也永远不会低到与原生运行的进程相同。\n"
+    },
+    {
+      "startLine": 235,
+      "endLine": 237,
+      "source": "> [^6]: The scheduler does not do this arbitrarily, but for concrete reasons (like the need to update the kernel, or a disk going bad on the machine, or a reshuffle to make the overall distribution of workloads in the datacenter bin-packed better). However, the point of having a compute service is that as a software author, I should neither know nor care why regarding the reasons this might happen.\n>\n> 6 调度器并非无缘无故地这样做，而是有具体原因，例如需要更新内核、机器磁盘出现故障，或者通过重新安排工作负载，提高整个数据中心的装箱效率。不过，计算服务的意义就在于：作为软件作者，我无须知道或关心这些具体原因。\n"
+    },
+    {
+      "startLine": 239,
+      "endLine": 241,
+      "source": "> [^7]: The “pets versus cattle” metaphor is attributed to Bill Baker by Randy Bias and it’s become extremely popular as a way to describe the “replicated software unit” concept. As an analogy, it can also be used to describe concepts other than servers; for example, see Chapter 22.\n>\n> 7 Randy Bias 将“宠物与牛群”这一比喻归功于 Bill Baker。它已被广泛用来描述“可复制的软件单元”这一概念，也可以比喻服务器以外的事物，例如第22章中的用法。\n"
+    },
+    {
+      "startLine": 273,
+      "endLine": 275,
+      "source": "> [^8]: Like all categorizations, this one isn’t perfect; there are types of programs that don’t fit neatly into any of the categories, or that possess characteristics typical of both serving and batch jobs. However, like most useful categorizations, it still captures a distinction present in many real-life cases.\n>\n> 8 和所有分类一样，这种分类也不完美。有些程序难以明确归入任何一类，或同时具有服务作业和批处理作业的典型特征。但和大多数有用的分类一样，它仍然揭示了许多实际情形中存在的区别。\n"
+    },
+    {
+      "startLine": 277,
+      "endLine": 279,
+      "source": "> [^9]: See Jeffrey Dean and Sanjay Ghemawat, “MapReduce: Simplified Data Processing on Large Clusters,” 6th Symposium on Operating System Design and Implementation (OSDI), 2004.\n>\n> 9 参见 Jeffrey Dean 和 Sanjay Ghemawat，《MapReduce：简化大规模集群上的数据处理》，第六届操作系统设计与实现研讨会（OSDI），2004年。\n"
+    },
+    {
+      "startLine": 281,
+      "endLine": 283,
+      "source": "> [^10]: Craig Chambers, Ashish Raniwala, Frances Perry, Stephen Adams, Robert Henry, Robert Bradshaw, and Nathan Weizenbaum, “Flume‐Java: Easy, Efficient Data-Parallel Pipelines,” ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI), 2010.\n>\n> 10 Craig Chambers, Ashish Raniwala, Frances Perry, Stephen Adams, Robert Henry, Robert Bradshaw, and Nathan Weizenbaum, \"Flume-Java: Easy, Efficient Data-Parallel Pipelines,\" ACM SIGPLAN 编程语言设计与实现会议（PLDI），2010年。\n"
+    },
+    {
+      "startLine": 285,
+      "endLine": 287,
+      "source": "> [^11]: See also Atul Adya et al. “Auto-sharding for datacenter applications,” OSDI, 2019; and Atul Adya, Daniel Myers, Henry Qin, and Robert Grandl, “Fast key-value stores: An idea whose time has come and gone,” HotOS XVII, 2019.\n>\n> 11 另见 Atul Adya 等人，《数据中心应用的自动分片》，OSDI，2019年；以及 Atul Adya、Daniel Myers、Henry Qin 和 Robert Grandl，《快速键值存储：一个曾逢其时、如今已过时的想法》，HotOS XVII，2019年。\n"
+    },
+    {
+      "startLine": 315,
+      "endLine": 317,
+      "source": "> [^12]: Note that, besides distributed state, there are other requirements to setting up an effective “servers as cattle” solution, like discovery and load-balancing systems (so that your application, which moves around the datacenter, can be accessed effectively). Because this book is less about building a full CaaS infrastructure and more about how such an infrastructure relates to the art of software engineering, we won’t go into more detail here.\n>\n> 12 除了分布式状态，要有效实现“将服务器当作牛群管理”，还需要满足其他要求，例如提供服务发现和负载均衡系统，让应用即使在数据中心内迁移，也能被正常访问。本书着重讨论这类基础设施与软件工程实践的关系，而非如何构建完整的 CaaS 基础设施，因此这里不再展开。\n"
+    },
+    {
+      "startLine": 319,
+      "endLine": 321,
+      "source": "> [^13]: See, for example, Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung, “The Google File System,” Proceedings of the 19th ACM Symposium on Operating Systems, 2003; Fay Chang et al., “Bigtable: A Distributed Storage System for Structured Data,” 7th USENIX Symposium on Operating Systems Design and Implementation (OSDI); or James C. Corbett et al., “Spanner: Google’s Globally Distributed Database,” OSDI, 2012.\n>\n> 13 例如，参见 Sanjay Ghemawat、Howard Gobioff 和 Shun-Tak Leung，《谷歌文件系统》，第19届 ACM 操作系统研讨会论文集，2003年；Fay Chang 等人，《Bigtable：面向结构化数据的分布式存储系统》，第七届 USENIX 操作系统设计与实现研讨会（OSDI）；或 James C. Corbett 等人，《Spanner：谷歌的全球分布式数据库》，OSDI，2012年。\n"
+    },
+    {
+      "startLine": 341,
+      "endLine": 343,
+      "source": "> [^14]: Note that retries need to be implemented correctly—with backoff, graceful degradation and tools to avoid cascading failures like jitter. Thus, this should likely be a part of Remote Procedure Call library, instead of implemented by hand by each developer. See, for example, Chapter 22: Addressing Cascading Failures in the SRE book.\n>\n> 14 重试必须正确实现，需要采用退避、平稳降级，以及抖动等避免级联故障的手段。因此，这些机制通常应当由远程过程调用库提供，而不是由每名开发者自行实现。例如，参见《SRE》第22章“处理级联故障”。\n"
+    },
+    {
+      "startLine": 367,
+      "endLine": 369,
+      "source": "> [^15]: This has happened multiple times at Google; for instance, because of someone leaving load-testing infrastructure occupying a thousand Google Compute Engine VMs running when they went on vacation, or because a new employee was debugging a master binary on their workstation without realizing it was spawning 8,000 full-machine workers in the background.\n>\n> 15  谷歌多次发生过这种情况。例如，有人去休假时，没有关闭占用一千台 Google Compute Engine 虚拟机的负载测试基础设施；还有新员工在工作站上调试主控程序，却没有意识到它正在后台启动8,000个各占用一整台机器的 worker。\n"
+    },
+    {
+      "startLine": 459,
+      "endLine": 461,
+      "source": ">[^16]: As in any complex system, there are exceptions. Not all machines owned by Google are Borg-managed, and not every datacenter is covered by a single Borg cell. But the majority of engineers work in an environment in which they don’t touch non-Borg machines, or nonstandard cells.\n>\n> 16 和任何复杂系统一样，这里也有例外。并非谷歌的所有机器都由 Borg 管理，也并非每个数据中心都只包含一个 Borg 单元。不过，大多数工程师所在的环境，不需要他们接触非 Borg 管理的机器或非标准单元。\n"
+    },
+    {
+      "startLine": 539,
+      "endLine": 541,
+      "source": "> [^17]: This particular command is actively harmful under Borg because it prevents Borg’s mechanisms for dealing with failure from kicking in. However, more complex wrappers that echo parts of the environment to logging, for example, are still in use to help debug startup problems.\n>\n> 17  这个具体命令在 Borg 中反而有害，因为它会阻止 Borg 的故障处理机制生效。不过，更复杂的包装脚本仍在使用，例如将部分环境信息输出到日志，以帮助排查启动问题。\n"
+    },
+    {
+      "startLine": 559,
+      "endLine": 561,
+      "source": "> [^18]: My mail server is not interchangeable with your graphics rendering job, even if both of those tasks are running in the same form of VM.\n>\n> 18  即使两个任务运行在同一种虚拟机中，我的邮件服务器也不能与你的图形渲染作业互换。\n"
+    },
+    {
+      "startLine": 563,
+      "endLine": 565,
+      "source": "> [^19]: This is not the only motivation for making user VMs possible to live migrate; it also offers considerable user- facing benefits because it means the host operating system can be patched and the host hardware updated without disrupting the VM. The alternative (used by other major cloud vendors) is to deliver “maintenance event notices,” which mean the VM can be, for example, rebooted or stopped and later started up by the cloud provider.\n>\n> 19  这并不是支持用户虚拟机热迁移的唯一原因。热迁移也为用户带来显著好处：可以在不中断虚拟机的情况下，为宿主机操作系统打补丁或更新硬件。其他主要云提供商采用的另一种方式是发送“维护事件通知”，告知用户虚拟机可能由云提供商重启，或先停止、稍后再启动。\n"
+    },
+    {
+      "startLine": 567,
+      "endLine": 569,
+      "source": "> [^20]: This is particularly relevant given that not all customer VMs are opted into live migration; for some workloads even the short period of degraded performance during the migration is unacceptable. These customers will receive maintenance event notices, and Borg will avoid evicting the containers with those VMs unless strictly necessary.\n>\n> 20  并非所有客户虚拟机都启用了热迁移，因此这一点尤为重要。对于某些工作负载，即使迁移期间短暂的性能下降也无法接受。这些客户会收到维护事件通知，而 Borg 除非确有必要，否则会避免驱逐承载这些虚拟机的容器。\n"
+    },
+    {
+      "startLine": 587,
+      "endLine": 589,
+      "source": "> [^21]: A good reminder that monitoring and tracking the usage of your features is valuable over time.\n>\n> 21  这再次提醒我们，长期监控和跟踪功能的使用情况很有价值。\n"
+    },
+    {
+      "startLine": 591,
+      "endLine": 593,
+      "source": "> [^22]: This means that Kubernetes, which benefited from the experience of cleaning up Borg but was not hampered by a broad existing userbase to begin with, was significantly more modern in quite a few aspects (like its treatment of labels) from the beginning. That said, Kubernetes suffers some of the same issues now that it has broad adoption across a variety of types of applications.\n>\n> 22  Kubernetes 借鉴了清理 Borg 的经验，又没有庞大既有用户群带来的束缚，因此从一开始，在标签处理等不少方面就明显更现代。不过，如今 Kubernetes 已广泛用于各类应用，也开始遇到一些同样的问题。\n"
+    },
+    {
+      "startLine": 631,
+      "endLine": 633,
+      "source": "> [^23]: FaaS (Function as a Service) and PaaS (Platform as a Service) are related terms to serverless. There are differences between the three terms, but there are more similarities, and the boundaries are somewhat blurred.\n>\n> 23 FaaS（函数即服务）和 PaaS（平台即服务）是与无服务器相关的术语。三者虽有区别，但相似之处更多，边界也有些模糊。\n"
+    }
+  ]
+}

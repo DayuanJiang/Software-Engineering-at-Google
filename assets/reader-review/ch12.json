@@ -1,0 +1,168 @@
+{
+  "format": 2,
+  "sourceSha256": "f38e63c2cee62c61e6a3d1a6a7672cf5457e2f84976cf0a22d2480f41c7b4d95",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch12.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        64,
+        65
+      ],
+      "english": "Note that this is slightly different from a flaky test, which fails nondeterministically without any change to production code./",
+      "chinese": "注意，这与不稳定测试略有不同：不稳定测试在生产代码没有任何变化时，也会非确定性地失败。",
+      "after": "生产代码发生了与测试无关、也没有引入真正缺陷的变更，测试却因此失败。",
+      "englishHtml": "<p>Note that this is slightly different from a flaky test, which fails nondeterministically without any change to production code./</p>\n",
+      "chineseHtml": "<p>注意，这与不稳定测试略有不同：不稳定测试在生产代码没有任何变化时，也会非确定性地失败。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        193,
+        195
+      ],
+      "english": "This is sometimes called the \"Use the front door first principle.”",
+      "chinese": "这有时被称为“优先走前门原则”。",
+      "after": "其实，只通过类的公共 API 进行测试，也能达到相同的测试覆盖程度，如例12-3所示",
+      "englishHtml": "<p>This is sometimes called the &quot;Use the front door first principle.”</p>\n",
+      "chineseHtml": "<p>这有时被称为“优先走前门原则”。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        301,
+        303
+      ],
+      "english": "These are also the same two reasons that a test can be “flaky.” Either the system under test has a nondeterministic fault, or the test is flawed such that it sometimes fails when it should pass.",
+      "chinese": "测试结果“不稳定”也出于这两个原因：要么被测系统存在非确定性故障，要么测试本身有缺陷，导致它有时在本应通过的情况下失败。",
+      "after": "测试失败的原因有以下两种：",
+      "englishHtml": "<p>These are also the same two reasons that a test can be “flaky.” Either the system under test has a nondeterministic fault, or the test is flawed such that it sometimes fails when it should pass.</p>\n",
+      "chineseHtml": "<p>测试结果“不稳定”也出于这两个原因：要么被测系统存在非确定性故障，要么测试本身有缺陷，导致它有时在本应通过的情况下失败。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        402,
+        404
+      ],
+      "english": "See `https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html` and `https://dannorth.net/introducing-bdd`.",
+      "chinese": "见 `https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html` 和 `https://dannorth.net/introducing-bdd`。",
+      "after": "更好的做法是，不为每个方法写一个测试，而为每个行为写一个测试。",
+      "englishHtml": "<p>See <code>https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html</code> and <code>https://dannorth.net/introducing-bdd</code>.</p>\n",
+      "chineseHtml": "<p>见 <code>https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html</code> 和 <code>https://dannorth.net/introducing-bdd</code>。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        406,
+        408
+      ],
+      "english": "Furthermore, a feature (in the product sense of the word) can be expressed as a collection of behaviors.",
+      "chinese": "此外，产品意义上的一项功能，可以表示为一组行为。",
+      "after": "行为指系统作出的保证：处于某种状态时，它会如何响应一系列输入。",
+      "englishHtml": "<p>Furthermore, a feature (in the product sense of the word) can be expressed as a collection of behaviors.</p>\n",
+      "chineseHtml": "<p>此外，产品意义上的一项功能，可以表示为一组行为。</p>\n"
+    },
+    {
+      "id": "6",
+      "definitionLines": [
+        483,
+        485
+      ],
+      "english": "These components are sometimes referred to as “arrange,” “act,” and “assert.”",
+      "chinese": "这三个部分有时也称为“准备”“执行”和“断言”。",
+      "after": "“when”定义对系统执行的操作，“then”验证结果。",
+      "englishHtml": "<p>These components are sometimes referred to as “arrange,” “act,” and “assert.”</p>\n",
+      "chineseHtml": "<p>这三个部分有时也称为“准备”“执行”和“断言”。</p>\n"
+    },
+    {
+      "id": "7",
+      "definitionLines": [
+        817,
+        819
+      ],
+      "english": "In many cases, it can even be useful to slightly randomize the default values returned for fields that aren’t explicitly set. This helps to ensure that two different instances won’t accidentally compare as equal, and makes it more difficult for engineers to hardcode dependencies on the defaults.",
+      "chinese": "在许多情况下，对未显式设置的字段所返回的默认值作少量随机化，甚至也有帮助。这样有助于避免两个不同实例在比较时意外相等，也能让工程师更难通过硬编码来依赖这些默认值。",
+      "after": "测试作者只需指定自己关心的值，其余值都采用合理的默认值。",
+      "englishAfter": "for all other values.",
+      "reason": "The reference is malformed as the bare digit in defaults7 at source line 774. A reviewed textEdit removes that digit before anchor insertion. This note concerns defaults for unspecified fields in helper-built test data, not shared setup or the following mixed-language code example.",
+      "englishHtml": "<p>In many cases, it can even be useful to slightly randomize the default values returned for fields that aren’t explicitly set. This helps to ensure that two different instances won’t accidentally compare as equal, and makes it more difficult for engineers to hardcode dependencies on the defaults.</p>\n",
+      "chineseHtml": "<p>在许多情况下，对未显式设置的字段所返回的默认值作少量随机化，甚至也有帮助。这样有助于避免两个不同实例在比较时意外相等，也能让工程师更难通过硬编码来依赖这些默认值。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [
+    {
+      "kind": "heading",
+      "english": "Conclusion",
+      "chinese": "总结",
+      "chineseHtml": "<p>总结</p>\n"
+    }
+  ],
+  "textEdits": [
+    {
+      "source": "如例12-3所示（注2）。",
+      "replacement": "如例12-3所示。",
+      "reason": "Remove the literal Chinese note label from the display copy so footnote 2 is represented only by the reviewed dot."
+    },
+    {
+      "source": "and setting reasonable defaults7 for all other values.",
+      "replacement": "and setting reasonable defaults for all other values.",
+      "reason": "The bare 7 attached to defaults is the malformed reference to footnote 7. Remove it before inserting the dot at the reviewed English anchor; retain the surrounding source wording."
+    }
+  ],
+  "issues": [
+    {
+      "sourceLines": [
+        64,
+        65
+      ],
+      "reason": "The English note ends with a stray slash. Exact source wording is preserved as required; the review does not silently repair source punctuation."
+    },
+    {
+      "sourceLines": [
+        162,
+        164
+      ],
+      "reason": "Historical display artifact: the Chinese body uses the literal label （注2）, not a Markdown footnote reference. The reviewed textEdit removes it from the display copy before the dot is inserted; the source remains unchanged."
+    }
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 64,
+      "endLine": 65,
+      "source": "> [^1]: Note that this is slightly different from a flaky test, which fails nondeterministically without any change to production code./\n> 1  注意，这与不稳定测试略有不同：不稳定测试在生产代码没有任何变化时，也会非确定性地失败。\n"
+    },
+    {
+      "startLine": 193,
+      "endLine": 195,
+      "source": "> [^2]:\tThis is sometimes called the \"Use the front door first principle.”\n>\n> 2   这有时被称为“优先走前门原则”。\n"
+    },
+    {
+      "startLine": 301,
+      "endLine": 303,
+      "source": "> [^3]: These are also the same two reasons that a test can be “flaky.” Either the system under test has a nondeterministic fault, or the test is flawed such that it sometimes fails when it should pass.\n>\n> 3   测试结果“不稳定”也出于这两个原因：要么被测系统存在非确定性故障，要么测试本身有缺陷，导致它有时在本应通过的情况下失败。\n"
+    },
+    {
+      "startLine": 402,
+      "endLine": 404,
+      "source": "> [^4]:\tSee `https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html` and `https://dannorth.net/introducing-bdd`.\n>\n> 4 见 `https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html` 和 `https://dannorth.net/introducing-bdd`。\n"
+    },
+    {
+      "startLine": 406,
+      "endLine": 408,
+      "source": "> [^5]: Furthermore, a feature (in the product sense of the word) can be expressed as a collection of behaviors.\n>\n> 5 此外，产品意义上的一项功能，可以表示为一组行为。\n"
+    },
+    {
+      "startLine": 483,
+      "endLine": 485,
+      "source": "> [^6]: These components are sometimes referred to as “arrange,” “act,” and “assert.”\n>\n> 6 这三个部分有时也称为“准备”“执行”和“断言”。\n"
+    },
+    {
+      "startLine": 817,
+      "endLine": 819,
+      "source": "> [^7]: In many cases, it can even be useful to slightly randomize the default values returned for fields that aren’t explicitly set. This helps to ensure that two different instances won’t accidentally compare as equal, and makes it more difficult for engineers to hardcode dependencies on the defaults.\n>\n> 7 在许多情况下，对未显式设置的字段所返回的默认值作少量随机化，甚至也有帮助。这样有助于避免两个不同实例在比较时意外相等，也能让工程师更难通过硬编码来依赖这些默认值。\n"
+    }
+  ]
+}

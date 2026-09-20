@@ -25,7 +25,6 @@ def strip_remote_font_import():
 def main():
     sources = {
         "docsify.min.js": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js",
-        "docsify-search.min.js": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/search.min.js",
         "docsify-zoom-image.min.js": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/zoom-image.min.js",
         "docsify-vue.css": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/vue.css",
         "docsify.LICENSE.txt": "https://cdn.jsdelivr.net/npm/docsify@4.13.1/LICENSE",

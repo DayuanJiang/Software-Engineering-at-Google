@@ -2,16 +2,25 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Software Engineering at Google</title>
+    <title>谷歌的软件工程 · Software Engineering at Google</title>
     <link rel="icon" href="assets/images/swe_at_google.2.cover.jpg">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="description" content="Software Engineering at Google 中英对照阅读版">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="《Software Engineering at Google》中英对照阅读版：逐段对照原文与译文，配有章节图解、脚注与译者注。">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="谷歌的软件工程">
+    <meta property="og:title" content="谷歌的软件工程 · Software Engineering at Google 中英对照">
+    <meta property="og:description" content="逐段对照原文与译文，配有 134 张章节图解、就地展开的脚注和译者注。">
+    <meta property="og:url" content="https://dayuanjiang.github.io/Software-Engineering-at-Google/">
+    <meta property="og:image" content="https://dayuanjiang.github.io/Software-Engineering-at-Google/assets/images/swe_at_google.2.cover.jpg">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="谷歌的软件工程 · Software Engineering at Google 中英对照">
+    <meta name="twitter:description" content="逐段对照原文与译文，配有 134 张章节图解、就地展开的脚注和译者注。">
+    <meta name="twitter:image" content="https://dayuanjiang.github.io/Software-Engineering-at-Google/assets/images/swe_at_google.2.cover.jpg">
+
     <link rel="stylesheet" href="assets/vendor/docsify-vue.css">
     <link rel="stylesheet" href="assets/reader.css">
-
-
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
@@ -19,79 +28,30 @@
 
 <script>
     if (!location.hash || location.hash === '#/' || location.hash === '#') {
-        location.replace('#/zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering');
+        // Reopen the chapter the reader was last on; fall back to chapter 1.
+        var lastRoute = '';
+        try {
+            lastRoute = JSON.parse(localStorage.getItem('sweg-reader-preferences-v1') || '{}').lastRoute || '';
+        } catch (_) {}
+        if (!/^\/zh-cn\/[A-Za-z0-9_\/-]+$/.test(lastRoute)) lastRoute = '';
+        location.replace('#' + (lastRoute || '/zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering'));
     }
     window.$docsify = {
         name: 'Software Engineering at Google',
         repo: '',
         themeColor: '#b4423a',
-
         auto2top: true,
-
-
-        // 侧边栏
         loadSidebar: true,
         alias: {
             '/.*/_sidebar.md': '/_sidebar.md'
         },
         subMaxLevel: 0,
-        // 自动为每个页面增加标题
-        // autoHeader: true,
-
-        // 封面
         coverpage: false,
-
-        // 搜索支持
-        search: {
-            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-            paths: 'auto', // or 'auto'
-
-            // 支持本地化
-            placeholder: {
-                '/zh-cn/': '搜索章节',
-                '/': '搜索章节'
-            },
-
-            // 支持本地化
-            noData: {
-                '/zh-cn/': '没有找到结果',
-                '/': '没有找到结果'
-            },
-
-            // 避免搜索索引冲突
-            // 同一域下的多个网站之间
-            namespace: 'Software-Engineering-at-Google',
-
-        },
         plugins: [],
     }
 </script>
 <script src="assets/reader.js"></script>
 <script src="assets/vendor/docsify.min.js"></script>
-<script src="assets/vendor/docsify-search.min.js"></script>
 <script src="assets/vendor/docsify-zoom-image.min.js"></script>
-
-<script>
-
-    function NewGitalk() {
-        // 除去param
-        const hashPath = location.hash.indexOf("?id=") === -1 ? location.hash : location.hash.substring(0, location.hash.indexOf("?id="));
-        const hrefPath = location.hash.indexOf("?id=") === -1 ? location.href : location.href.substring(0, location.href.indexOf("?id="));
-        // id 50字符限制
-        const md5Id = CryptoJS.MD5(hashPath).toString();
-
-        return new Gitalk({
-            clientID: '92436d65d807aaf80fcd',
-            clientSecret: '8df80f61b0d3e4389747e74616c3fd7ad7d359d5',
-            repo: 'SwEAtGoogleTalk',
-            owner: 'suixinio',
-            admin: ['suixinio'],
-            id: md5Id,
-            body: hrefPath,
-            distractionFreeMode: false
-        });
-    }
-</script>
-
 </body>
 </html>

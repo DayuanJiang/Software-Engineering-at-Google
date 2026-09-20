@@ -1,0 +1,132 @@
+{
+  "format": 2,
+  "sourceSha256": "074911f350c72c649b47493e39cab7d1103574b1078878983f0f7ae343041324",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch14.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        102,
+        104
+      ],
+      "english": "See “Continuous Delivery” on page 483 and Chapter 25 for more information.",
+      "chinese": "更多信息参见第483页的“持续交付”及第25章。",
+      "after": "仅靠单元测试无法验证这种兼容性。",
+      "englishHtml": "<p>See “Continuous Delivery” on page 483 and Chapter 25 for more information.</p>\n",
+      "chineseHtml": "<p>更多信息参见第483页的“持续交付”及第25章。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        622,
+        624
+      ],
+      "english": "James A. Whittaker, Exploratory Software Testing: Tips, Tricks, Tours, and Techniques to Guide Test Design(New York: Addison-Wesley Professional, 2009).",
+      "chinese": "James A. Whittaker，《探索性软件测试：指导测试设计的提示、诀窍、探索路线与技术》（纽约：Addison-Wesley Professional，2009年）。",
+      "after": "探索性测试是一种手动测试，重点不是重复已知流程来查找行为回归缺陷，而是尝试新的用户场景，寻找可疑行为。",
+      "englishHtml": "<p>James A. Whittaker, Exploratory Software Testing: Tips, Tricks, Tours, and Techniques to Guide Test Design(New York: Addison-Wesley Professional, 2009).</p>\n",
+      "chineseHtml": "<p>James A. Whittaker，《探索性软件测试：指导测试设计的提示、诀窍、探索路线与技术》（纽约：Addison-Wesley Professional，2009年）。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        789,
+        791
+      ],
+      "english": "During this test, almost no one could get anything done, so many people gave up on work and went to one of our many cafes, and in doing so, we ended up creating a DDoS attack on our cafe teams!",
+      "chinese": "在这次测试中，几乎没人能推进工作，许多人索性放下工作，去了公司众多咖啡厅中的某一家。结果，我们对咖啡厅服务团队制造了一场 DDoS 攻击！",
+      "after": "这不仅暴露了技术短板，也揭示了所有关键决策者都无法联系时，维持公司运转有多困难。",
+      "englishHtml": "<p>During this test, almost no one could get anything done, so many people gave up on work and went to one of our many cafes, and in doing so, we ended up creating a DDoS attack on our cafe teams!</p>\n",
+      "chineseHtml": "<p>在这次测试中，几乎没人能推进工作，许多人索性放下工作，去了公司众多咖啡厅中的某一家。结果，我们对咖啡厅服务团队制造了一场 DDoS 攻击！</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [
+    {
+      "text": "（译者注：Martin Fowler 的文章[Test Double](https://martinfowler.com/bliki/TestDouble.html)介绍了 Gerard Meszaros 提出的`Test Double`概念。文章虽发表于2006年，其中的概念仍有参考价值。`Test Double`是一个统称，指为实现测试目的，用“替身”代替真实依赖对象，降低被测对象对真实组件的依赖，有助于提高测试速度和稳定性。本译文统一译为“测试替身”。）",
+      "title": "译者补充：测试替身（非原书内容）",
+      "body": "Martin Fowler 的文章 Test Double 介绍了 Gerard Meszaros 提出的 Test Double 概念。文章虽发表于2006年，其中的概念仍有参考价值。Test Double 是一个统称，指为实现测试目的，用“替身”代替真实依赖对象，降低被测对象对真实组件的依赖，有助于提高测试速度和稳定性。本译文统一译为“测试替身”。",
+      "linkText": "Test Double",
+      "href": "https://martinfowler.com/bliki/TestDouble.html",
+      "reason": "Source line 20 explicitly labels this inline parenthetical as a translator note. It is not a code block and is absent from the preceding English paragraph.",
+      "renderedText": "（译者注：Martin Fowler 的文章Test Double介绍了 Gerard Meszaros 提出的Test Double概念。文章虽发表于2006年，其中的概念仍有参考价值。Test Double是一个统称，指为实现测试目的，用“替身”代替真实依赖对象，降低被测对象对真实组件的依赖，有助于提高测试速度和稳定性。本译文统一译为“测试替身”。）",
+      "bodyHtml": "<p>Martin Fowler 的文章 Test Double 介绍了 Gerard Meszaros 提出的 Test Double 概念。文章虽发表于2006年，其中的概念仍有参考价值。Test Double 是一个统称，指为实现测试目的，用“替身”代替真实依赖对象，降低被测对象对真实组件的依赖，有助于提高测试速度和稳定性。本译文统一译为“测试替身”。</p>\n"
+    }
+  ],
+  "pairedSources": [
+    {
+      "english": "After an SUT is running and traffic is sent to it, we must still verify the behavior. There are a few different ways to do this:",
+      "chinese": "启动 SUT 并向它发送流量后，还必须验证其行为。常见方法有以下几种：",
+      "reason": "The English introduction is followed by all three verification methods and an assertion code block before its complete Chinese counterpart at source line 470. These intervening list and code blocks prevent adjacent paragraph pairing."
+    },
+    {
+      "english": "Manual Much like when you try out your binary locally, manual verification uses humans to interact with an SUT to determine whether it functions correctly. This verification can consist of testing for regressions by performing actions as defined on a consistent test plan or it can be exploratory, working a way through different interaction paths to identify possible new failures. Note that manual regression testing does not scale sublinearly: the larger a system grows and the more journeys through it there are, the more human time is needed to manually test.",
+      "chinese": "就像在本地试用二进制程序一样，手动验证由人来操作 SUT，判断其功能是否正确。",
+      "reason": "The English and Chinese verification lists are grouped separately and interrupted by genuine assertion code blocks. The full Chinese counterpart at source lines 472-474 covers both verification approaches and the manual regression cost warning; pair the entire Manual prose unit, not just its first sentence."
+    },
+    {
+      "english": "Assertions Much like with unit tests, these are explicit checks about the intended behavior of the system. For example, for an integration test of Google search of xyzzy, an assertion might be as follows:",
+      "chinese": "与单元测试一样，断言明确检查系统的预期行为。",
+      "reason": "The complete Chinese heading and explanation at source lines 475-476 occur in a later list, separated from the English item by a genuine assertion code block and the A/B method. Pair only this prose through the colon, leaving the assertThat example intact."
+    },
+    {
+      "english": "A/B comparison (differential) Instead of defining explicit assertions, A/B testing involves running two copies of the SUT, sending the same data, and comparing the output. The intended behavior is not explicitly defined: a human must manually go through the differences to ensure any changes are intended.",
+      "chinese": "A/B 测试不显式定义断言，而是运行两套 SUT，发送相同数据，再比较输出。",
+      "reason": "A genuine assertion code block splits this English method from the preceding list; its complete Chinese counterpart at source lines 482-483 follows the Chinese introduction, other methods, and another code block. The resulting paragraph/list sequence cannot be paired automatically."
+    }
+  ],
+  "translations": [
+    {
+      "english": "Figure 14-4. Chained tests",
+      "chinese": "图14-4. 串联测试",
+      "chineseHtml": "<p>图14-4. 串联测试</p>\n"
+    },
+    {
+      "english": "Figure 14-6. A reduced-size SUT",
+      "chinese": "图14-6. 缩小后的被测系统",
+      "chineseHtml": "<p>图14-6. 缩小后的被测系统</p>\n"
+    },
+    {
+      "english": "Figure 14-2. The ice cream cone testing antipattern",
+      "chinese": "图14-2. 冰淇淋筒测试反模式",
+      "chineseHtml": "<p>图14-2. 冰淇淋筒测试反模式</p>\n"
+    },
+    {
+      "english": "Figure 14-3. Example of a fairly small SUT: a social network with advertising",
+      "chinese": "图14-3. 较小被测系统的示例：带广告的社交网络",
+      "chineseHtml": "<p>图14-3. 较小被测系统的示例：带广告的社交网络</p>\n"
+    },
+    {
+      "english": "Figure 14-5. An example system under test (SUT)",
+      "chinese": "图14-5. 被测系统（SUT）示例",
+      "chineseHtml": "<p>图14-5. 被测系统（SUT）示例</p>\n"
+    }
+  ],
+  "issues": [
+    {
+      "kind": "inline-translator-note",
+      "sourceLines": [
+        20,
+        20
+      ],
+      "detail": "The reviewed translator note is embedded in a body paragraph. Integration must extract only the exact parenthetical text, retaining the translated book paragraph; the chapter-1 pre-only replacement is insufficient."
+    }
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 102,
+      "endLine": 104,
+      "source": "> [^1]:\tSee “Continuous Delivery” on page 483 and Chapter 25 for more information.\n>\n> 1   更多信息参见第483页的“持续交付”及第25章。\n"
+    },
+    {
+      "startLine": 622,
+      "endLine": 624,
+      "source": ">[^2]: James A. Whittaker, Exploratory Software Testing: Tips, Tricks, Tours, and Techniques to Guide Test Design(New York: Addison-Wesley Professional, 2009).\n>\n> 2     James A. Whittaker，《探索性软件测试：指导测试设计的提示、诀窍、探索路线与技术》（纽约：Addison-Wesley Professional，2009年）。\n"
+    },
+    {
+      "startLine": 789,
+      "endLine": 791,
+      "source": "> [^3]:\tDuring this test, almost no one could get anything done, so many people gave up on work and went to one of our many cafes, and in doing so, we ended up creating a DDoS attack on our cafe teams!\n>\n> 3   在这次测试中，几乎没人能推进工作，许多人索性放下工作，去了公司众多咖啡厅中的某一家。结果，我们对咖啡厅服务团队制造了一场 DDoS 攻击！\n"
+    }
+  ]
+}

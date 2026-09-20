@@ -4,12 +4,14 @@
   const asset = (path) => new URL(path, base).href;
   const storageKey = "sweg-reader-preferences-v1";
   const han = /[\u3400-\u9fff]/;
-  let preferences = { mode: "bilingual", size: 19, theme: "light" };
+  let preferences = { mode: "bilingual", size: 19,
+    theme: matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" };
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
     if (["bilingual", "chinese"].includes(saved.mode)) preferences.mode = saved.mode;
     if (Number.isFinite(saved.size)) preferences.size = Math.max(16, Math.min(22, Math.round(saved.size)));
     if (["light", "dark"].includes(saved.theme)) preferences.theme = saved.theme;
+    if (typeof saved.lastRoute === "string") preferences.lastRoute = saved.lastRoute;
   } catch (_) { /* Reading remains available when local storage is restricted. */ }
   document.documentElement.dataset.theme = preferences.theme;
   document.documentElement.style.setProperty("--reading-size", preferences.size + "px");
@@ -249,28 +251,15 @@
           const route = decodeURIComponent(new URL(link.href).hash.split("?")[0]).replace(/^#/, "").replace(/\.md$/, "");
           link.parentElement.classList.toggle("active", route === currentPage?.route);
         });
-        const clear = sidebarRoot.querySelector(".clear-button");
-        const searchInput = sidebarRoot.querySelector(".search input");
-        if (searchInput) {
-          searchInput.setAttribute("aria-label", "搜索章节");
-          searchInput.setAttribute("autocomplete", "off");
-          searchInput.setAttribute("name", "chapter-search");
-        }
-        if (clear) {
-          clear.setAttribute("aria-label", "清除搜索");
-          clear.title = "清除搜索";
-          clear.setAttribute("role", "button");
-          clear.tabIndex = 0;
-          if (!clear.dataset.readerBound) {
-            clear.dataset.readerBound = "true";
-            clear.addEventListener("keydown", (event) => {
-              if (event.key === "Enter" || event.key === " ") { event.preventDefault(); clear.click(); }
-            });
-          }
-        }
       };
       new MutationObserver(updateSidebar).observe(sidebarRoot, { childList: true, subtree: true });
       updateSidebar();
+      mountSearch(sidebarRoot);
+      const repo = document.createElement("a");
+      repo.className = "sidebar-repo"; repo.href = "https://github.com/DayuanJiang/Software-Engineering-at-Google";
+      repo.target = "_blank"; repo.rel = "noopener noreferrer";
+      repo.innerHTML = icon("github") + "<span>GitHub 仓库</span>";
+      sidebarRoot.append(repo);
     }
     document.addEventListener("click", (event) => {
       if (event.target.closest(".sidebar-nav a") && matchMedia("(max-width: 900px)").matches) {
@@ -1058,40 +1047,90 @@
       if (!position) link.append(marker, text); else link.append(text, marker);
       nav.append(link);
     });
-    const links = document.createElement("div"); links.className = "reader-links";
-    const discussions = document.createElement("button");
-    discussions.type = "button"; discussions.textContent = "讨论";
-    const comments = document.createElement("div"); comments.className = "reader-comments";
-    discussions.addEventListener("click", async () => {
-      discussions.disabled = true;
-      comments.textContent = "讨论加载中";
-      try {
-        await loadDiscussionAssets();
-        if (!comments.isConnected) return;
-        comments.textContent = "";
-        comments.id = "gitalk-container";
-        window.NewGitalk().render("gitalk-container");
-      } catch (_) {
-        comments.textContent = "讨论暂时无法加载";
-        discussions.disabled = false;
+    main.append(nav);
+  }
+
+  // Per-chapter review data (footnotes, translations, display edits) is fetched on demand.
+  function loadReview(page) {
+    if (!page.review) return Promise.resolve(null);
+    if (!page.reviewPromise) {
+      page.reviewPromise = fetch(asset(page.review)).then((response) => {
+        if (!response.ok) throw new Error("Reader review unavailable: " + page.id);
+        return response.json();
+      }).then((review) => { page.readerReview = review; return review; })
+        .catch((error) => { delete page.reviewPromise; throw error; });
+    }
+    return page.reviewPromise;
+  }
+
+  // Full-text search over a prebuilt index; the index is downloaded only when someone searches.
+  let searchIndexPromise = null;
+  function loadSearchIndex() {
+    if (!searchIndexPromise) {
+      searchIndexPromise = fetch(asset("assets/search-index.json")).then((response) => {
+        if (!response.ok) throw new Error("Search index unavailable");
+        return response.json();
+      }).catch((error) => { searchIndexPromise = null; throw error; });
+    }
+    return searchIndexPromise;
+  }
+  function highlight(text, query) {
+    const fragment = document.createDocumentFragment();
+    const lower = text.toLowerCase();
+    let from = 0, at;
+    while ((at = lower.indexOf(query, from)) >= 0) {
+      fragment.append(text.slice(from, at));
+      const mark = document.createElement("mark"); mark.textContent = text.slice(at, at + query.length);
+      fragment.append(mark);
+      from = at + query.length;
+    }
+    fragment.append(text.slice(from));
+    return fragment;
+  }
+  function mountSearch(sidebar) {
+    const box = document.createElement("div"); box.className = "search"; box.setAttribute("role", "search");
+    const wrap = document.createElement("div"); wrap.className = "input-wrap";
+    const input = document.createElement("input");
+    input.type = "search"; input.name = "book-search"; input.placeholder = "搜索全书"; input.autocomplete = "off";
+    input.setAttribute("aria-label", "搜索全书");
+    const clear = button("清除搜索", "x", "clear-button");
+    const results = document.createElement("div"); results.className = "results-panel";
+    results.setAttribute("aria-live", "polite");
+    wrap.append(input, clear); box.append(wrap, results);
+    sidebar.insertBefore(box, sidebar.querySelector(".sidebar-nav"));
+    const show = (nodes) => { results.replaceChildren(...nodes); sidebar.classList.toggle("searching", nodes.length > 0); };
+    const message = (text) => { const p = document.createElement("p"); p.className = "search-message"; p.textContent = text; return p; };
+    const run = async () => {
+      const query = input.value.trim().toLowerCase();
+      if (!query) { show([]); return; }
+      let index;
+      try { index = await loadSearchIndex(); } catch (_) { show([message("搜索暂时无法使用")]); return; }
+      if (input.value.trim().toLowerCase() !== query) return;
+      const nodes = [];
+      for (const entry of index) {
+        const at = entry.text.toLowerCase().indexOf(query);
+        if (at < 0 && !entry.title.toLowerCase().includes(query)) continue;
+        const link = document.createElement("a"); link.className = "matching-post";
+        link.href = "#" + entry.route + "?id=" + encodeURIComponent(window.Docsify.slugify(entry.title));
+        const title = document.createElement("h2"); title.append(highlight(entry.title, query));
+        const chapter = document.createElement("small"); chapter.textContent = entry.chapter;
+        const start = Math.max(0, Math.max(at, 0) - 40);
+        const excerpt = (start > 0 ? "…" : "") + entry.text.slice(start, start + 140) + (start + 140 < entry.text.length ? "…" : "");
+        const snippet = document.createElement("p"); snippet.append(highlight(excerpt, query));
+        link.append(title, chapter, snippet);
+        nodes.push(link);
+        if (nodes.length === 40) break;
+      }
+      show(nodes.length ? nodes : [message("没有找到结果")]);
+    };
+    let timer = 0;
+    input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(run, 150); });
+    clear.addEventListener("click", () => { input.value = ""; show([]); input.focus(); });
+    results.addEventListener("click", (event) => {
+      if (event.target.closest("a") && matchMedia("(max-width: 900px)").matches) {
+        document.body.classList.remove("close"); menuState();
       }
     });
-    links.append(discussions);
-    main.append(nav, links, comments);
-  }
-  let discussionPromise;
-  function loadDiscussionAssets() {
-    if (discussionPromise) return discussionPromise;
-    const stylesheet = document.createElement("link"); stylesheet.rel = "stylesheet";
-    stylesheet.href = "https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.css"; document.head.append(stylesheet);
-    const script = (src) => new Promise((resolve, reject) => {
-      const node = document.createElement("script"); node.src = src; node.onload = resolve; node.onerror = reject; document.head.append(node);
-    });
-    discussionPromise = Promise.all([
-      script("https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js"),
-      script("https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"),
-    ]).catch((error) => { discussionPromise = null; throw error; });
-    return discussionPromise;
   }
 
   function mountViewer() {
@@ -1169,9 +1208,11 @@
       resizeObservers.forEach((observer) => observer.disconnect()); resizeObservers = [];
       headings = [];
       document.getElementById("diagram-modal")?.close();
-      manifestPromise.then((manifest) => {
+      manifestPromise.then(async (manifest) => {
         if (version !== routeVersion) { next(markdown); return; }
-        const review = routePage(vm, manifest)?.readerReview;
+        const page = routePage(vm, manifest);
+        const review = page ? await loadReview(page) : null;
+        if (version !== routeVersion) { next(markdown); return; }
         let prepared = markdown;
         for (const edit of [...(review?.sourceEdits || [])].sort((a, b) => b.startLine - a.startLine)) {
           const lines = prepared.match(/[^\n]*\n|[^\n]+$/g) || [];
@@ -1194,6 +1235,7 @@
       if (version !== routeVersion) return;
       if (preparationError) throw preparationError;
       currentPage = routePage(vm, manifest);
+      if (currentPage) { preferences.lastRoute = currentPage.route; persist(); }
       updateSidebar();
       currentGuide = currentPage ? manifest.guides[currentPage.id] : null;
       cleanTitle(main);

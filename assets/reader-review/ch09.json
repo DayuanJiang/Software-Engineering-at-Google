@@ -1,0 +1,171 @@
+{
+  "format": 2,
+  "sourceSha256": "d19a1c3956870dc970a437bdaab0ee51dffb5dcfe97b8418f31567194d9d2607",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch09.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        24,
+        26
+      ],
+      "english": "We also use Gerrit to review Git code, primarily for our open source projects. However, Critique is the primary tool of a typical software engineer at Google.",
+      "chinese": "我们也使用 Gerrit 审查 Git 中的代码，主要用于开源项目。不过，对谷歌一般的软件工程师而言，主要工具仍是 Critique。",
+      "after": "在谷歌，我们使用定制的代码审查工具 Critique 来支持这一流程。",
+      "englishHtml": "<p>We also use Gerrit to review Git code, primarily for our open source projects. However, Critique is the primary tool of a typical software engineer at Google.</p>\n",
+      "chineseHtml": "<p>我们也使用 Gerrit 审查 Git 中的代码，主要用于开源项目。不过，对谷歌一般的软件工程师而言，主要工具仍是 Critique。</p>\n"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        28,
+        30
+      ],
+      "english": "Steve McConnell, Code Complete (Redmond: Microsoft Press, 2004).",
+      "chinese": "史蒂夫·麦康奈尔，Code Complete（雷蒙德：微软出版社，2004年）。",
+      "after": "例如在代码进入代码库之前发现缺陷，尽管这些好处未必能精确衡量。",
+      "englishHtml": "<p>Steve McConnell, Code Complete (Redmond: Microsoft Press, 2004).</p>\n",
+      "chineseHtml": "<p>史蒂夫·麦康奈尔，Code Complete（雷蒙德：微软出版社，2004年）。</p>\n"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        116,
+        118
+      ],
+      "english": "At Google, “readability” does not refer simply to comprehension, but to the set of styles and best practices that allow code to be maintainable to other engineers. See Chapter 3.",
+      "chinese": "在谷歌，Readability（可读性）不只是指代码易于理解，还涉及一套让其他工程师能够维护代码的风格规范和最佳实践。参见第3章。",
+      "after": "确认代码符合该语言的风格和最佳实践，采用了我们期望的写法。",
+      "englishHtml": "<p>At Google, “readability” does not refer simply to comprehension, but to the set of styles and best practices that allow code to be maintainable to other engineers. See Chapter 3.</p>\n",
+      "chineseHtml": "<p>在谷歌，Readability（可读性）不只是指代码易于理解，还涉及一套让其他工程师能够维护代码的风格规范和最佳实践。参见第3章。</p>\n"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        186,
+        188
+      ],
+      "english": "Some changes to documentation and configurations might not require a code review, but it is often still preferable to obtain such a review.",
+      "chinese": "某些文档和配置变更可能无须代码审查，但通常仍以经过审查为佳。",
+      "after": "代码库中几乎每项变更，无论多小，都要经过代码审查。",
+      "englishHtml": "<p>Some changes to documentation and configurations might not require a code review, but it is often still preferable to obtain such a review.</p>\n",
+      "chineseHtml": "<p>某些文档和配置变更可能无须代码审查，但通常仍以经过审查为佳。</p>\n"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        216,
+        218
+      ],
+      "english": "“Advances in Software Inspection,” IEEE Transactions on Software Engineering, SE-12(7): 744–751, July 1986. Granted, this study took place before robust tooling and automated testing had become so important in the software development process, but the results still seem relevant in the modern software age.",
+      "chinese": "\"Advances in Software Inspection,\" IEEE Transactions on Software Engineering, SE-12(7): 744-751, July 1986. 诚然，开展这项研究时，强大的工具和自动化测试尚未在软件开发中占据如今这样重要的地位，但研究结果对现代软件开发似乎仍有参考价值。",
+      "after": "IBM 的一项研究发现，越早发现缺陷，后续修复所需的时间就越少，这并不意外。",
+      "englishHtml": "<p>“Advances in Software Inspection,” IEEE Transactions on Software Engineering, SE-12(7): 744–751, July 1986. Granted, this study took place before robust tooling and automated testing had become so important in the software development process, but the results still seem relevant in the modern software age.</p>\n",
+      "chineseHtml": "<p>&quot;Advances in Software Inspection,&quot; IEEE Transactions on Software Engineering, SE-12(7): 744-751, July 1986. 诚然，开展这项研究时，强大的工具和自动化测试尚未在软件开发中占据如今这样重要的地位，但研究结果对现代软件开发似乎仍有参考价值。</p>\n"
+    },
+    {
+      "id": "6",
+      "definitionLines": [
+        220,
+        222
+      ],
+      "english": "Rigby, Peter C. and Christian Bird. 2013. “Convergent software peer review practices.” ESEC/FSE 2013: Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering, August 2013: 202-212. https:// dl.acm.org/doi/10.1145/2491411.2491444.",
+      "chinese": "Rigby, Peter C. and Christian Bird. 2013.《趋同的软件同行审查实践》。ESEC/FSE 2013，《2013年第九届软件工程基础联合会议论文集》，2013年8月：202-212。https:// dl.acm.org/doi/10.1145/2491411.2491444。",
+      "after": "流程如果过于繁重，或无法适应规模增长，就难以持续。",
+      "englishHtml": "<p>Rigby, Peter C. and Christian Bird. 2013. “Convergent software peer review practices.” ESEC/FSE 2013: Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering, August 2013: 202-212. https:// dl.acm.org/doi/10.1145/2491411.2491444.</p>\n",
+      "chineseHtml": "<p>Rigby, Peter C. and Christian Bird. 2013.《趋同的软件同行审查实践》。ESEC/FSE 2013，《2013年第九届软件工程基础联合会议论文集》，2013年8月：202-212。https:// dl.acm.org/doi/10.1145/2491411.2491444。</p>\n"
+    },
+    {
+      "id": "7",
+      "definitionLines": [
+        358,
+        360
+      ],
+      "english": "Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko, and Alberto Bacchelli, “Modern code review: a case study at Google.”",
+      "chinese": "Caitlin Sadowski、Emma Söderberg、Luke Church、Michal Sipko 和 Alberto Baccelli，《现代代码审查：谷歌案例研究》。",
+      "after": "这不一定意味着一天内审完，而是一天内给出初步反馈。",
+      "englishHtml": "<p>Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko, and Alberto Bacchelli, “Modern code review: a case study at Google.”</p>\n",
+      "chineseHtml": "<p>Caitlin Sadowski、Emma Söderberg、Luke Church、Michal Sipko 和 Alberto Baccelli，《现代代码审查：谷歌案例研究》。</p>\n"
+    },
+    {
+      "id": "8",
+      "definitionLines": [
+        362,
+        364
+      ],
+      "english": "Ibid.",
+      "chinese": "同上。",
+      "after": "谷歌约35%的变更只涉及一个文件。",
+      "englishHtml": "<p>Ibid.</p>\n",
+      "chineseHtml": "<p>同上。</p>\n"
+    },
+    {
+      "id": "9",
+      "definitionLines": [
+        395,
+        397
+      ],
+      "english": "Ibid.",
+      "chinese": "同上。",
+      "after": "谷歌大多数代码审查只由一位审查者负责。",
+      "englishHtml": "<p>Ibid.</p>\n",
+      "chineseHtml": "<p>同上。</p>\n"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [],
+  "issues": [
+    "Note 6 has a space after https:// in the DOI URL in both languages. Source wording is preserved; no working external link is claimed.",
+    "Notes 8 and 9 contain only Ibid./同上. and refer back to note 7's Modern code review study. The original shorthand is preserved rather than silently expanded.",
+    "Note 7 spells the last author's surname Bacchelli in English and Baccelli in the existing Chinese note. Both source spellings are preserved.",
+    "Source line 10 combines Caitlin Sadowski's name and Edited by Lisa Carey in one bold span. This malformed credit is outside note/diagram ownership and has not been rewritten."
+  ],
+  "sourceEdits": [
+    {
+      "startLine": 24,
+      "endLine": 26,
+      "source": "> [^1]: We also use Gerrit to review Git code, primarily for our open source projects. However, Critique is the primary tool of a typical software engineer at Google.\n>\n> 1 我们也使用 Gerrit 审查 Git 中的代码，主要用于开源项目。不过，对谷歌一般的软件工程师而言，主要工具仍是 Critique。\n"
+    },
+    {
+      "startLine": 28,
+      "endLine": 30,
+      "source": "> [^2]: Steve McConnell, Code Complete (Redmond: Microsoft Press, 2004).\n>\n> 2 史蒂夫·麦康奈尔，Code Complete（雷蒙德：微软出版社，2004年）。\n"
+    },
+    {
+      "startLine": 116,
+      "endLine": 118,
+      "source": "> [^3]: At Google, “readability” does not refer simply to comprehension, but to the set of styles and best practices that allow code to be maintainable to other engineers. See Chapter 3.\n>\n> 3   在谷歌，Readability（可读性）不只是指代码易于理解，还涉及一套让其他工程师能够维护代码的风格规范和最佳实践。参见第3章。\n"
+    },
+    {
+      "startLine": 186,
+      "endLine": 188,
+      "source": "> [^4]: Some changes to documentation and configurations might not require a code review, but it is often still preferable to obtain such a review.\n>\n> 4   某些文档和配置变更可能无须代码审查，但通常仍以经过审查为佳。\n"
+    },
+    {
+      "startLine": 216,
+      "endLine": 218,
+      "source": "> [^5]: “Advances in Software Inspection,” IEEE Transactions on Software Engineering, SE-12(7): 744–751, July 1986. Granted, this study took place before robust tooling and automated testing had become so important in the software development process, but the results still seem relevant in the modern software age.\n>\n> 5 \"Advances in Software Inspection,\" IEEE Transactions on Software Engineering, SE-12(7): 744-751, July 1986. 诚然，开展这项研究时，强大的工具和自动化测试尚未在软件开发中占据如今这样重要的地位，但研究结果对现代软件开发似乎仍有参考价值。\n"
+    },
+    {
+      "startLine": 220,
+      "endLine": 222,
+      "source": "> [^6]: Rigby, Peter C. and Christian Bird. 2013. “Convergent software peer review practices.” ESEC/FSE 2013: Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering, August 2013: 202-212. https:// dl.acm.org/doi/10.1145/2491411.2491444.\n>\n> 6 Rigby, Peter C. and Christian Bird. 2013.《趋同的软件同行审查实践》。ESEC/FSE 2013，《2013年第九届软件工程基础联合会议论文集》，2013年8月：202-212。https:// dl.acm.org/doi/10.1145/2491411.2491444。\n"
+    },
+    {
+      "startLine": 358,
+      "endLine": 360,
+      "source": "> [^7]: Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko, and Alberto Bacchelli, “Modern code review: a case study at Google.”\n>\n> 7   Caitlin Sadowski、Emma Söderberg、Luke Church、Michal Sipko 和 Alberto Baccelli，《现代代码审查：谷歌案例研究》。\n"
+    },
+    {
+      "startLine": 362,
+      "endLine": 364,
+      "source": "> [^8]: Ibid.\n>\n> 8   同上。\n"
+    },
+    {
+      "startLine": 395,
+      "endLine": 397,
+      "source": "> [^9]: Ibid.\n>\n> 9   同上。\n"
+    }
+  ]
+}
