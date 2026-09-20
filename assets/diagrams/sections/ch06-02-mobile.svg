@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch06-02" data-layout="mobile" role="img" aria-labelledby="ch06-02m-title ch06-02m-desc">
+  <title id="ch06-02m-title">为什么只优化代码，延迟还会回来？</title>
+  <desc id="ch06-02m-desc">搜索的质量改动持续增加代码和页面复杂度，从而累积延迟，抵消已有代码的提速收益。因此，症状侧团队优化已有代码，成因侧团队同时补足指标、延迟分析工具、开发者培训与文档。两条回指箭头表示两组工作针对不同作用点，不表示先后执行或确保完全消除延迟。分配的是问题域，不是固定解决方案，也不表示恰好有两个实际团队。</desc>
+  <style>
+    .cg-ch06-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424);}
+    .cg-ch06-02[data-layout="mobile"] .strong {font-weight:600;}
+    .cg-ch06-02[data-layout="mobile"] .heading {font-size:22px;font-weight:600;}
+    .cg-ch06-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868);}
+    .cg-ch06-02[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);}
+    .cg-ch06-02[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);}
+    .cg-ch06-02[data-layout="mobile"] .cost {fill:var(--diagram-warm,#a56a1f);}
+    .cg-ch06-02[data-layout="mobile"] .blue {fill:var(--diagram-secondary,#2f6eac);}
+    .cg-ch06-02[data-layout="mobile"] .edge {fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;}
+  </style>
+  <defs>
+    <marker id="ch06-02m-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch06-02m-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch06-02m-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+    <marker id="ch06-02m-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="38" text-anchor="start" class="heading">为什么只优化代码，</text>
+  <text x="24" y="68" text-anchor="start" class="heading">延迟还会回来？</text>
+  <rect x="56" y="106" width="340" height="66" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" id="ch06-02m-complexity" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2"/>
+  <text x="226" y="134" text-anchor="middle" class="strong" data-box="ch06-02m-complexity">质量改动持续上线</text>
+  <text x="226" y="160" text-anchor="middle" class="small" data-box="ch06-02m-complexity">代码与页面越来越复杂</text>
+  <path d="M226 172V198" class="edge" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch06-02m-danger)"/>
+  <rect x="56" y="206" width="340" height="58" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-02m-latency" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+  <text x="226" y="242" text-anchor="middle" class="strong" data-box="ch06-02m-latency">延迟逐渐累积</text>
+  <text x="56" y="302" text-anchor="start" class="bad">新增复杂度可抵消提速收益</text>
+  <path d="M56 319H396" class="edge" stroke="var(--diagram-line,#b9c9c0)"/>
+  <text x="56" y="350" text-anchor="start" class="strong good">成因侧团队：预防新增</text>
+  <rect x="56" y="366" width="340" height="72" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" id="ch06-02m-prevention" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+  <text x="72" y="396" text-anchor="start" data-box="ch06-02m-prevention">指标、工具、培训与文档</text>
+  <text x="72" y="425" text-anchor="start" class="small" data-box="ch06-02m-prevention">从源头预防延迟</text>
+  <path d="M56 402H16V139H48" class="edge" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch06-02m-primary)"/>
+  <text x="56" y="478" text-anchor="start" class="strong blue">症状侧团队：降低已有</text>
+  <rect x="56" y="493" width="340" height="55" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" id="ch06-02m-optimization" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2"/>
+  <text x="72" y="528" text-anchor="start" data-box="ch06-02m-optimization">优化已有代码，降低延迟</text>
+  <path d="M56 520H36V235H48" class="edge" stroke="var(--diagram-secondary,#2f6eac)" marker-end="url(#ch06-02m-secondary)"/>
+  <text x="24" y="582" text-anchor="start" class="small">两侧并行负责问题，不绑定固定方案</text>
+</svg>

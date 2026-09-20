@@ -1,0 +1,21 @@
+{
+  "id": "ch21-04",
+  "chapter": 21,
+  "title": "为什么 MVS 有时也要选 1.8？",
+  "summary": "沿用 liba≥1.7，补充另一使用方的最低要求，逐列核对所有要求；libb 下限从1.6升至1.8后，共同最低候选必须由1.7变成1.8，仍须纳入传递要求和组合测试。",
+  "enabled": true,
+  "sourceSections": ["### Minimum Version Selection  最小版本选择"],
+  "afterParagraph": "现在运行一些测试，看看是否正常吧。",
+  "desktop": "assets/diagrams/sections/ch21-04.svg",
+  "mobile": "assets/diagrams/sections/ch21-04-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "已有 1.8 时 MVS 为什么先选 1.7，而另一依赖提高最低要求后又必须改选 1.8？",
+    "expectedAnswer": "同一主版本、仅最低要求的示例中，liba≥1.7 且 libb≥1.6 时，1.7 是同时满足要求的最低候选；若 libb 改为≥1.8，1.7 不再合格，必须至少选择1.8。MVS 不能忽略任何传递要求，也不证明所选用法兼容。",
+    "visualEncoding": "前后矩阵使用相同的1.6、1.7、1.8列，逐行列出liba、libb和全部满足，框出全部满足行中最左的可选列。只改变libb下限，选择框便由1.7移到1.8。",
+    "sourceEvidence": "### Minimum Version Selection  最小版本选择：'当 liba 声明要求 libbase≥1.7时，即使已有1.8，也直接尝试 libbase 1.7'、'只把每个受影响的依赖推进到满足要求的最低版本'、'现在运行一些测试，看看是否正常吧'。",
+    "beforeProblem": "旧版用两个版本圆点强调选择1.7，把其他依赖的更高要求放在文字脚注中，读者容易记成永远选单个依赖声明的最低版本。",
+    "whyBetter": "更高的另一要求成为会实际改变输出的输入，而非附带警告；所有行必须通过这一条件直接决定选择框的位置。",
+    "limits": "liba≥1.7及可用1.8来自原文，libb与候选1.6为明确标注的补充示意。限定同一主版本且只含最低要求，不把MVS表述为任意上限冲突的SAT求解器；未展开完整图的迭代过程，也不声称最低或最新适用于所有项目。"
+  }
+}

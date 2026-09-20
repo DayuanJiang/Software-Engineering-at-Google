@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch02-02" data-layout="mobile" role="img" aria-labelledby="ch02-02m-title ch02-02m-desc">
+<title id="ch02-02m-title">主负责人离开后，谁还能接手？</title>
+<desc id="ch02-02m-desc">两个示意情境中的主负责人 A 都不可用。只有 A 懂原型时，旧知识路径断开。B 已共同掌握原型时，B 的实线知识路径仍在，文档辅助接手。文档不是第三个人。</desc>
+<style>
+.cg-ch02-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch02-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch02-02[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch02-02[data-layout="mobile"] .primary {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch02-02[data-layout="mobile"] .secondary {fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch02-02[data-layout="mobile"] .danger {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch02-02[data-layout="mobile"] .warm {fill:var(--diagram-warm,#a56a1f);font-weight:600}
+</style>
+<defs>
+<marker id="ch02-02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch02-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch02-02m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch02-02m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+<marker id="ch02-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" class="strong" text-anchor="start">主负责人离开后，谁还能接手？</text>
+<text x="24" y="72" class="small" text-anchor="start">同一变化：两种情境的 A 都不可用</text>
+<text x="24" y="112" class="danger" text-anchor="start">只有 A 懂原型</text>
+<g id="ch02-02m-a-alone" data-box="24,131,168,76">
+<rect x="24" y="131" width="168" height="76" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="108.0" y="162.5" class="" text-anchor="middle">A：主负责人</text>
+<text x="108.0" y="191.5" class="" text-anchor="middle">已不可用</text>
+</g>
+<path d="M32 139L184 199" class="unavailable" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="3" stroke-linejoin="round"/>
+<g id="ch02-02m-b-unknown" data-box="228,131,168,76">
+<rect x="228" y="131" width="168" height="76" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="312.0" y="162.5" class="" text-anchor="middle">B：其他成员</text>
+<text x="312.0" y="191.5" class="" text-anchor="middle">不懂此原型</text>
+</g>
+<path d="M108 213V229M108 252V262H162" class="connector" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M98 233L118 248M118 233L98 248" class="cut" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
+<g id="ch02-02m-no-path" data-box="168,230,228,56">
+<rect x="168" y="230" width="228" height="56" rx="4" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="282.0" y="266.0" class="" text-anchor="middle">原型：无知情者接手</text>
+</g>
+<path d="M24 309H396" class="connector" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
+<text x="24" y="348" class="primary" text-anchor="start">A、B 已共同掌握原型</text>
+<g id="ch02-02m-a-shared" data-box="24,368,168,76">
+<rect x="24" y="368" width="168" height="76" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="108.0" y="399.5" class="" text-anchor="middle">A：主负责人</text>
+<text x="108.0" y="428.5" class="" text-anchor="middle">已不可用</text>
+</g>
+<path d="M32 376L184 436" class="unavailable" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="3" stroke-linejoin="round"/>
+<g id="ch02-02m-b-knows" data-box="228,368,168,76">
+<rect x="228" y="368" width="168" height="76" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="312.0" y="399.5" class="" text-anchor="middle">B：后备负责人</text>
+<text x="312.0" y="428.5" class="" text-anchor="middle">确实理解原型</text>
+</g>
+<path d="M108 450V464M108 488V498H162" class="connector" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M98 468L118 483M118 468L98 483" class="cut" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M312 450V468" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-02m-primary-arrow)"/>
+<g id="ch02-02m-has-path" data-box="168,474,228,56">
+<rect x="168" y="474" width="228" height="56" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="282.0" y="510.0" class="" text-anchor="middle">原型：B 仍能接手</text>
+</g>
+<text x="24" y="563" class="small" text-anchor="start">文档辅助 B；不是第三位接手者。</text>
+<text x="24" y="590" class="small" text-anchor="start">实线为可用知识路径，不计算人数。</text>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "id": "ch25-04",
+  "chapter": 25,
+  "title": "服务要收回资源，批处理会怎样？",
+  "summary": "搜索服务预留但未使用的资源可被日志分析借用。需要收回 CPU 时暂停批处理，计算停止推进但内存仍占用；需要 RAM 时终止批处理，释放内存而丢失进程状态，重启后重做未上报块。余量不能再当作不可抢占服务的另一份承诺。",
+  "enabled": true,
+  "sourceSections": ["### One Service to Rule Them All 用一个服务统一管理", "#### Multitenancy for serving jobs 服务作业的多租户支持", "### Architecting for Failure 为应对故障设计架构"],
+  "afterParagraph": "都能从牛群式管理中受益。",
+  "desktop": "assets/diagrams/sections/ch25-04.svg",
+  "mobile": "assets/diagrams/sections/ch25-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "搜索流量上涨、需要收回日志分析借用的资源时，为什么 CPU 和 RAM 对应不同处理？",
+    "expectedAnswer": "书中 Borg 策略在需要 CPU 时暂停批处理，让出执行资源，但内存仍占用；在需要 RAM 时终止批处理来释放内存，因而失去进程状态，需要重做未上报的工作。批处理接受抢占，不能把该余量再承诺给不可抢占的服务。",
+    "visualEncoding": "先标明同一份服务预留余量被借用，再由搜索请求增加触发按资源类型分叉。CPU 分支保留内存，RAM 分支明确内存释放与进度丢失，使动作和后果可以逐一对应。无面积或比例编码。",
+    "sourceEvidence": "One Service to Rule Them All 用一个服务统一管理：收回 CPU 时暂停它们，收回 RAM 时终止它们；即使实际利用率只有30%，也不能再放入更多服务作业。Architecting for Failure 为应对故障设计架构：尚未上报结果时终止，最多也只损失一个数据块的工作量。",
+    "beforeProblem": "原图用不等宽容量块加两句处理规则，容易让宽度成为无来源的比例；与旧总览重复，且没有解释暂停和终止对内存与工作进度的不同后果。",
+    "whyBetter": "删除容量面积比较，把图形用于输入条件变化与资源状态转移；读者可以回答暂停为什么不能替代释放 RAM，以及为何借来的资源不是第二份服务保障。",
+    "limits": "仅解释书中 Borg 的策略，不声称现代产品通用行为、即时回收、具体收益或免费资源。作业与需求变化是示例，未给容量、速度、费用、资源比值或时间轴。"
+  }
+}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch08-diagram" class="chapter-svg cg-ch08" role="img" aria-labelledby="ch08-title ch08-desc" viewBox="0 0 960 560" width="960" height="560">
+<title id="ch08-title">同一个 unique_ptr，为何先禁用后采用？</title>
+<desc id="ch08-desc">书中引入 std::unique_ptr 的历史案例。目标始终是可读、可维护的代码库。C++11 初引入时，类型和移动语义陌生，谷歌禁用并沿用已有智能指针。工程师逐渐理解后，调用处显示所有权的长期阅读收益使采用成为值得的取舍；复杂性的代价并没有消失。时间本身不是放行条件。</desc>
+<style>
+.cg-ch08#ch08-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch08#ch08-diagram .strong{font-weight:600}
+.cg-ch08#ch08-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch08#ch08-diagram .code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.cg-ch08#ch08-diagram .green{fill:var(--diagram-primary,#087f6d)}
+.cg-ch08#ch08-diagram .red{fill:var(--diagram-danger,#b54750)}
+.cg-ch08#ch08-diagram .blue{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch08#ch08-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch08#ch08-diagram .arrow{fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch08-arrow)}
+.cg-ch08#ch08-diagram .uncertain{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;stroke-dasharray:5 5}
+</style>
+<defs><marker id="ch08-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong">同一个 unique_ptr，为何先禁用后采用？</text>
+<text x="32" y="70" class="small">书中历史案例：不是推翻“为读者优化”，而是重新权衡如何实现它</text>
+<text x="480" y="112" class="strong green" text-anchor="middle">持续目标：让代码长期可读、可维护</text>
+<path class="line" d="M32 130H928"/>
+<text x="190" y="175" class="strong">C++11 刚引入时</text>
+<path class="arrow" d="M433 168H545"/>
+<text x="570" y="175" class="strong">逐渐适应移动语义后</text>
+<text x="32" y="230" class="strong">代价</text>
+<text x="190" y="230">类型、移动语义都陌生</text>
+<text x="570" y="230">逐渐理解，复杂性成本仍在</text>
+<path class="line" d="M32 251H928"/>
+<text x="32" y="291" class="strong">判断依据</text>
+<text x="190" y="286">暂不引入看来更安全</text>
+<text x="190" y="318" class="small">继续使用熟悉的智能指针</text>
+<text x="570" y="286">调用处提供所有权信息</text>
+<text x="570" y="318" class="small">长期阅读收益使采用值得</text>
+<path class="line" d="M32 340H928"/>
+<text x="32" y="388" class="strong">决定</text>
+<rect id="ch08-box1" x="174" y="359" width="343" height="92" rx="4" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)"/>
+<rect id="ch08-box2" x="554" y="359" width="374" height="92" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="190" y="392" class="strong" data-box="ch08-box1">禁用 std::unique_ptr</text>
+<text x="190" y="427" class="small" data-box="ch08-box1">工具检测并拦截引用</text>
+<text x="570" y="392" class="strong" data-box="ch08-box2">采用 std::unique_ptr</text>
+<text x="570" y="427" class="small" data-box="ch08-box2">接受成本，换取长期可读性</text>
+<text x="32" y="494" class="small">记录决策理由 → 条件变化时重新评估，而非凭个人偏好改变规则</text>
+<text x="32" y="530" class="small">这不是“等一段时间就该放行新特性”，也没有假定学习成本已经消失。</text>
+</svg>

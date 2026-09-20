@@ -1,0 +1,27 @@
+{
+  "id": "ch07-02",
+  "chapter": 7,
+  "title": "指标缺位，不等于目标消失",
+  "summary": "对照 Readability 的速度和质量研究设计：速度可用按资格分组的审查耗时中位数作代理，质量则保留自评并承认客观定量代理空缺，不用不理想指标填满表格。",
+  "sourceSections": [
+    "## Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
+    "## Goals  目标",
+    "## Signals  信号",
+    "## Metrics  指标",
+    "## Using Data to Validate Metrics  使用数据验证指标"
+  ],
+  "afterParagraph": "在谷歌，我们用定性数据验证指标，确保它们确实反映了预期的信号。",
+  "enabled": true,
+  "desktop": "assets/diagrams/sections/ch07-02.svg",
+  "mobile": "assets/diagrams/sections/ch07-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "既然可以计算审查耗时中位数，为什么 Readability 研究没有给代码质量也选一个客观分数？这是否意味着放弃质量目标？",
+    "expectedAnswer": "目标先于指标。审查更快这一信号可用按资格分组的 CL 审查耗时中位数作日志代理，但该值不等于整体生产力。研究没有采用不理想的代码质量客观定量代理，仍保留质量目标并收集工程师自评；调查比例反映看法，不直接度量客观代码质量。",
+    "visualEncoding": "桌面把速度、质量两条目标到信号到代理的路径对齐，质量路径上的虚线空框与仍保留的调查形成对照。移动版逐条重排，并在质量目标下保留同样的空框和自评。箭头表示选择度量的依据，不是因果或实测结果。",
+    "sourceEvidence": "Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标：'关键是保持可追溯性'；Metrics  指标：'最终，我们决定不将代码质量纳入定量度量，不过仍请工程师对自己的代码质量作了评价'；Using Data to Validate Metrics  使用数据验证指标，表7-2：'已取得和未取得 Readability 资格的作者所写 CL 的审查耗时中位数'、'对自身代码质量表示满意的工程师比例'。",
+    "beforeProblem": "原图只有一条速度 GSM 链；'取得资格后'容易被当成同人前后比较，而表7-2实际列的是按资格分组。虽写空缺警告，却未展示任何真实空缺。",
+    "whyBetter": "明确比较组，给出可测代理和不能可靠客观量化的并列实例，让读者直接看到保留目标与拒绝差代理可以同时成立。",
+    "limits": "两行是研究设计而非结果；不是完整 GSM 表或一一对应规则。自评比例本身可以计数，空缺特指客观代码质量的定量代理。日志可能受变更规模或难度影响，自评也可能有偏差。"
+  }
+}

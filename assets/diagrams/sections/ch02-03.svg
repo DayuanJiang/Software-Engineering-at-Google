@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch02-03" data-layout="desktop" role="img" aria-labelledby="ch02-03-title ch02-03-desc">
+<title id="ch02-03-title">同样建议 xyzzy，措辞改变了什么？</title>
+<desc id="ch02-03-desc">原文两段反馈完整对照。坏反馈断言控制流完全搞错，要求与大家一样。较好反馈承认自己没看懂，问会不会更清晰、更容易维护。短语对应的改变是允许解释、允许拒绝、讨论维护目标。xyzzy 是原文占位词，措辞不保证建议被接受。</desc>
+<style>
+.cg-ch02-03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch02-03[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch02-03[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch02-03[data-layout="desktop"] .primary {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch02-03[data-layout="desktop"] .secondary {fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch02-03[data-layout="desktop"] .danger {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch02-03[data-layout="desktop"] .warm {fill:var(--diagram-warm,#a56a1f);font-weight:600}
+</style>
+<defs>
+<marker id="ch02-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch02-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch02-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch02-03-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+<marker id="ch02-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong" text-anchor="start">同样建议 xyzzy，措辞改变了什么？</text>
+<text x="32" y="78" class="danger" text-anchor="start">原文：不要这样说</text>
+<text x="512" y="78" class="primary" text-anchor="start">原文：可以换一种说法</text>
+<g id="ch02-03-bad-quote" data-box="32,95,416,155">
+<rect x="32" y="95" width="416" height="155" rx="4" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="48" y="124" class="" text-anchor="start">“伙计，你把那个方法的</text>
+<text x="48" y="158" class=""><tspan class="">控制流</tspan><tspan class="danger">完全搞错了</tspan><tspan class="">。</tspan></text>
+<text x="48" y="192" class=""><tspan class="danger">你应该和大家一样</tspan><tspan class="">，用标准的</tspan></text>
+<text x="48" y="226" class="" text-anchor="start">xyzzy 代码模式。”</text>
+</g>
+<g id="ch02-03-better-quote" data-box="512,95,416,155">
+<rect x="512" y="95" width="416" height="155" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="528" y="124" class="" text-anchor="start">“嘿，这部分的控制流</text>
+<text x="528" y="158" class=""><tspan class="primary">我有些没看懂</tspan><tspan class="">。用 xyzzy</tspan></text>
+<text x="528" y="192" class=""><tspan class="">代码模式，</tspan><tspan class="secondary">会不会</tspan><tspan class="warm">更清晰，</tspan></text>
+<text x="528" y="226" class=""><tspan class="warm">也更容易维护</tspan><tspan class="">？”</tspan></text>
+</g>
+<text x="32" y="280" class="small" text-anchor="start">判错、命令、从众：容易引向反击</text>
+<text x="512" y="280" class="small" text-anchor="start">提案仍可拒绝，讨论仍针对代码</text>
+<path d="M32 301H928" class="connector" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
+<text x="32" y="337" class="primary" text-anchor="start">“我有些没看懂”</text>
+<path d="M353 329H414" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-03-primary-arrow)"/>
+<text x="436" y="337" class="" text-anchor="start">谦逊：报告理解困难，给对方解释空间</text>
+<text x="32" y="381" class="secondary" text-anchor="start">“会不会”</text>
+<path d="M353 373H414" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-03-secondary-arrow)"/>
+<text x="436" y="381" class="" text-anchor="start">信任：提出问题，保留拒绝建议的空间</text>
+<text x="32" y="425" class="warm" text-anchor="start">“更清晰，也更容易维护”</text>
+<path d="M353 417H414" class="connector" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-03-warm-arrow)"/>
+<text x="436" y="425" class="" text-anchor="start">尊重：给出可讨论的项目目标</text>
+<text x="32" y="464" class="small" text-anchor="start">xyzzy 是原文占位词；措辞不证明模式更好，也不保证对方接受建议。</text>
+</svg>

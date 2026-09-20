@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch13-01" data-layout="desktop" role="img" aria-labelledby="ch13-01-title ch13-01-desc">
+<title id="ch13-01-title">替身返回 true，过期卡为什么仍返回 false？</title>
+<desc id="ch13-01-desc">由构造函数传入同一 CreditCardService 接口的替身，再跟踪 makePayment 的过期判断：过期卡直接返回 false，未调用扣款；有效卡才调用始终返回 true 的替身。 0次和1次由例13-1的单次调用路径推导，不是书中另加的 verify 断言。有效卡 true 是该替身的响应，不是真实扣款证据；图不推荐把此替身用于所有支付测试。</desc>
+<style>
+.cg-ch13-01[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch13-01[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch13-01[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch13-01[data-layout="desktop"] .good {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch13-01[data-layout="desktop"] .bad {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch13-01[data-layout="desktop"] .rule {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch13-01[data-layout="desktop"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch13-01-arrow)}
+</style>
+<defs><marker id="ch13-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9 Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect id="ch13-01-region-1" x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" text-anchor="start" class="strong">替身返回 true，过期卡为什么仍返回 false？</text>
+<text x="32" y="75" text-anchor="start" class="small">例13-1至13-5：换的是传入依赖，makePayment 的控制流不变。</text>
+<rect id="ch13-01-region-2" x="32" y="97" width="896" height="66" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="126" text-anchor="start" class="" data-fit="ch13-01-region-2">new PaymentProcessor(service)</text>
+<text x="48" y="152" text-anchor="start" class="small" data-fit="ch13-01-region-2">构造函数接收依赖，不自行创建</text>
+<text x="542" y="126" text-anchor="start" class="" data-fit="ch13-01-region-2">传入 CreditCardService 替身</text>
+<text x="542" y="152" text-anchor="start" class="small" data-fit="ch13-01-region-2">chargeCreditCard(...) 始终返回 true</text>
+<text x="32" y="201" text-anchor="start" class="strong">同一方法 makePayment(card, amount)：比较两种输入</text>
+<rect id="ch13-01-region-3" x="32" y="230" width="228" height="83" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="261" text-anchor="start" class="strong" data-fit="ch13-01-region-3">过期卡</text>
+<text x="48" y="295" text-anchor="start" class="small" data-fit="ch13-01-region-3">isExpired() = true</text>
+<path class="arrow" d="M268 271 L315 271"/>
+<rect id="ch13-01-region-4" x="328" y="230" width="249" height="83" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="344" y="261" text-anchor="start" class="good" data-fit="ch13-01-region-4">return false</text>
+<text x="344" y="295" text-anchor="start" class="small" data-fit="ch13-01-region-4">断言 success 为 false</text>
+<text x="651" y="262" text-anchor="start" class="strong">扣款调用：0 次</text>
+<text x="651" y="297" text-anchor="start" class="small">提前返回，不执行替身</text>
+<rect id="ch13-01-region-5" x="32" y="335" width="228" height="83" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="48" y="366" text-anchor="start" class="strong" data-fit="ch13-01-region-5">有效卡</text>
+<text x="48" y="400" text-anchor="start" class="small" data-fit="ch13-01-region-5">isExpired() = false</text>
+<path class="arrow" d="M268 376 L315 376"/>
+<rect id="ch13-01-region-6" x="328" y="335" width="275" height="83" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="344" y="366" text-anchor="start" class="small" data-fit="ch13-01-region-6">chargeCreditCard(...)</text>
+<text x="344" y="400" text-anchor="start" class="" data-fit="ch13-01-region-6">替身返回 true</text>
+<path class="arrow" d="M614 376 L665 376"/>
+<rect id="ch13-01-region-7" x="679" y="335" width="249" height="83" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="695" y="366" text-anchor="start" class="" data-fit="ch13-01-region-7">return true</text>
+<text x="695" y="400" text-anchor="start" class="small" data-fit="ch13-01-region-7">扣款调用：1 次</text>
+<text x="32" y="458" text-anchor="start" class="small">两条路径都不证明真实扣款成功；0/1 次由控制流推导，并非新增的交互断言。</text>
+</svg>

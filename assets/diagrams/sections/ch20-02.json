@@ -1,0 +1,22 @@
+{
+  "id": "ch20-02",
+  "chapter": 20,
+  "title": "Tricorder 的请求、执行与结果",
+  "summary": "数据流展示变更元数据如何触发分析服务器读取相应版本的源文件与缓存构建产物，运行分析器并写入结果存储；Critique 展示每类最新结果和运行状态。",
+  "enabled": false,
+  "removalReason": "请求、服务器、存储、界面的通用框图主要复述相邻架构段落，未展示开发者如何判断或处理报告；已有图20-1展示审查界面。本轮保留源文架构说明与原 SVG 以便追溯，不再额外插入该图。",
+  "sourceSections": ["## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台"],
+  "afterParagraph": "谷歌各处的开发者会编写 Tricorder 分析，称为“分析器”，也会为已有分析贡献单独的“检查项”。",
+  "desktop": "assets/diagrams/sections/ch20-02.svg",
+  "mobile": "assets/diagrams/sections/ch20-02-mobile.svg",
+  "pedagogy": {
+    "action": "retire",
+    "readerQuestion": "一次 Tricorder 分析请求如何取得输入，并向审查者展示结果和运行状态？",
+    "expectedAnswer": "请求携带变更元数据，服务器读取相应版本的文件和缓存构建输入输出，运行分析器并存储结果；Critique 展示每类最新结果，服务器另行发布运行和完成状态。",
+    "visualEncoding": "原桌面图用主链表示请求、执行、存储和展示，用侧向箭头表示输入、虚线表示状态。移动版把状态并入展示框，未保留单独的状态路径。",
+    "sourceEvidence": "## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台：'系统将分析请求与代码变更的元数据一同发送到分析服务器'、'服务器还会发布状态更新'。",
+    "beforeProblem": "节点主要是基础设施名称，内容与相邻段落高度重复；移动版容易让人把运行状态误读为结果存储链的产物。没有提供具体报告、判断条件或开发者动作。",
+    "whyBetter": "退役减少解释价值有限的重复插图，将阅读注意力留给代码求值、误报分类证据、诊断改写及推广顺序。原文件保持不变，便于追溯而不隐去历史设计。",
+    "limits": "退役并不表示微服务、FUSE 或缓存架构不重要，也不否定原文的架构说明。两个 SVG 仅作为历史文件验证，不再作为本轮启用的教学图。"
+  }
+}

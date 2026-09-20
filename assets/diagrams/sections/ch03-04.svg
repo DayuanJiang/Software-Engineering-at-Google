@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch03-04" data-layout="desktop" role="img" aria-labelledby="ch03-04-title ch03-04-desc">
+<title id="ch03-04-title">有资格后，还需代码审查吗？</title>
+<desc id="ch03-04-desc">仍然需要。对于同一种语言，未取得 Readability 资格的作者需由具资格审查者明确批准本项；具资格作者的 CL 隐含满足本项。两种情况都仍需代码审查，本项满足不代表全部批准齐备。教学反馈引用准则并解释理由。范围为本书的单体仓库制度，明确短期代码可有豁免。</desc>
+<style>
+.cg-ch03-04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch03-04[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch03-04[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch03-04[data-layout="desktop"] .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch03-04-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch03-04-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch03-04-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" text-anchor="start" class="strong">有 Readability 资格，就不用代码审查吗？</text>
+<text x="32" y="78" text-anchor="start" class="small">不是。资格只改变本语言 Readability 批准的取得方式。</text>
+<text x="32" y="119" text-anchor="start" class="strong">作者尚无该语言资格</text>
+<g id="ch03-04-node-1" data-box="32,141,220,86">
+<rect x="32" y="141" width="220" height="86" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="142.0" y="176" text-anchor="middle" class="strong">作者的 CL</text>
+<text x="142.0" y="209" text-anchor="middle" class="small">CL = 变更列表</text>
+</g>
+<path d="M258 184H362" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-04-arrow-primary)"/>
+<text x="310" y="164" text-anchor="middle" class="small">请其审查</text>
+<g id="ch03-04-node-2" data-box="368,141,248,86">
+<rect x="368" y="141" width="248" height="86" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="492.0" y="176" text-anchor="middle" class="strong">具资格的审查者</text>
+<text x="492.0" y="209" text-anchor="middle" class="small">明确给予本项批准</text>
+</g>
+<path d="M622 184H722" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-04-arrow-primary)"/>
+<g id="ch03-04-node-3" data-box="728,141,200,86">
+<rect x="728" y="141" width="200" height="86" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="828.0" y="176" text-anchor="middle" class="strong">Readability</text>
+<text x="828.0" y="209" text-anchor="middle" class="small">批准已满足</text>
+</g>
+<path d="M492 233V270H142V233" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-04-arrow-secondary)"/>
+<text x="528" y="267" text-anchor="start" class="small">意见引用准则，解释理由</text>
+<text x="32" y="311" text-anchor="start" class="strong">作者已有该语言资格</text>
+<g id="ch03-04-node-4" data-box="32,329,220,76">
+<rect x="32" y="329" width="220" height="76" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="142.0" y="361" text-anchor="middle" class="strong">作者的 CL</text>
+<text x="142.0" y="391" text-anchor="middle" class="small">继续应用规范</text>
+</g>
+<path d="M258 369H722" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-04-arrow-primary)"/>
+<text x="490" y="348" text-anchor="middle" class="small">作者的资格隐含满足这一项</text>
+<g id="ch03-04-node-5" data-box="728,329,200,76">
+<rect x="728" y="329" width="200" height="76" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="828.0" y="361" text-anchor="middle" class="strong">Readability</text>
+<text x="828.0" y="391" text-anchor="middle" class="small">批准已满足</text>
+</g>
+<text x="32" y="444" text-anchor="start" class="strong">两条路径都仍需代码审查；本图不代表其他批准齐备。</text>
+<text x="32" y="473" text-anchor="start" class="small">限本书描述的单体仓库；明确短期使用的代码可有豁免。</text>
+</svg>

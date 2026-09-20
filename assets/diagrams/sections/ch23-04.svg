@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-04-root" class="chapter-svg cg-ch23-04" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch23-04-title ch23-04-desc">
+  <title id="ch23-04-title">Takeout：用成对结果缩小排查范围</title>
+  <desc id="ch23-04-desc">书中 Takeout 在提交后 CI 的新二进制与生产二进制上持续运行同一套测试，两边连接相同真实后端。图中四条归档测试的红绿组合都是解释用假设结果，不是历史测量。仅 CI 失败可优先检查新构建及环境差异；两边失败表明生产中也可观察到问题；仅生产失败可调查生产侧差异；两边通过只说明本项本次通过。这些对照不能自动证明上游或某次提交是根因。录制／重放在此案例中仍是未来改进。</desc>
+  <style>
+  .cg-ch23-04#ch23-04-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23-04#ch23-04-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23-04#ch23-04-root .strong {font-weight:600}
+  .cg-ch23-04#ch23-04-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23-04#ch23-04-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23-04#ch23-04-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-04-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong" data-box="16,8,928,464">Takeout：用成对结果缩小排查范围</text>
+  <text x="32" y="78" class="small" data-box="16,8,928,464">相同测试套件，不同二进制；以下结果为示意，不是案例运行记录</text>
+  <rect x="32" y="101" width="270" height="76" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="132" class="strong" data-box="32,101,270,76">提交后 CI：新二进制</text>
+  <text x="48" y="162" class="small" data-box="32,101,270,76">运行归档测试套件</text>
+  <rect x="658" y="101" width="270" height="76" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="674" y="132" class="strong" data-box="658,101,270,76">生产：生产二进制</text>
+  <text x="674" y="162" class="small" data-box="658,101,270,76">运行同一测试套件</text>
+  <path d="M312 140L358 140" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-04-arrow)"/>
+  <path d="M648 140L602 140" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-04-arrow)"/>
+  <rect x="370" y="112" width="220" height="56" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="480" y="148" class="strong" data-box="370,112,220,56" text-anchor="middle">相同真实后端</text>
+  <text x="48" y="219" class="small strong" data-box="16,8,928,464">测试项（示意）</text>
+  <text x="330" y="219" class="strong" data-box="16,8,928,464">CI</text>
+  <text x="470" y="219" class="strong" data-box="16,8,928,464">生产</text>
+  <text x="628" y="219" class="strong" data-box="16,8,928,464">下一步排查方向</text>
+  <rect x="32" y="233" width="896" height="44" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="263" class="" data-box="32,233,264,44">照片归档</text>
+  <text x="330" y="263" class="bad" data-box="310,233,112,44">失败</text>
+  <text x="470" y="263" class="good" data-box="450,233,112,44">通过</text>
+  <text x="628" y="263" class="" data-box="612,233,316,44">新构建及环境差异</text>
+  <text x="48" y="307" class="" data-box="32,277,264,44">邮件归档</text>
+  <text x="330" y="307" class="bad" data-box="310,277,112,44">失败</text>
+  <text x="470" y="307" class="bad" data-box="450,277,112,44">失败</text>
+  <text x="628" y="307" class="" data-box="612,277,316,44">生产也有此问题</text>
+  <rect x="32" y="321" width="896" height="44" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="351" class="" data-box="32,321,264,44">文件夹归档</text>
+  <text x="330" y="351" class="good" data-box="310,321,112,44">通过</text>
+  <text x="470" y="351" class="bad" data-box="450,321,112,44">失败</text>
+  <text x="628" y="351" class="" data-box="612,321,316,44">生产侧差异</text>
+  <text x="48" y="395" class="" data-box="32,365,264,44">联系人归档</text>
+  <text x="330" y="395" class="good" data-box="310,365,112,44">通过</text>
+  <text x="470" y="395" class="good" data-box="450,365,112,44">通过</text>
+  <text x="628" y="395" class="" data-box="612,365,316,44">仅此项本次通过</text>
+  <text x="32" y="440" class="small" data-box="16,8,928,464">对照提供线索，不自动证明根因；两边失败也不能直接归责上游。</text>
+  <text x="32" y="467" class="small" data-box="16,8,928,464">本案例中，录制／重放仍是未来改进。</text>
+</svg>

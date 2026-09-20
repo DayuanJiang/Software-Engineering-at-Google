@@ -1,0 +1,23 @@
+{
+  "id": "ch01-06",
+  "chapter": 1,
+  "title": "同一漏洞，修复要经过哪些地方？",
+  "summary": "对照共享依赖与受影响分叉的修复路径：两者都要更新使用方，而分叉需要先找全受影响副本并分别处理。保留分叉的控制权收益及生命周期、范围边界。",
+  "enabled": true,
+  "sourceSections": [
+    "### Example: Deciding Between Time and Scale 示例：在时间与规模之间取舍"
+  ],
+  "afterParagraph": "只要足够审慎，自行实现往往也能获得收益。",
+  "desktop": "assets/diagrams/sections/ch01-06.svg",
+  "mobile": "assets/diagrams/sections/ch01-06-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "底层库出现同一个漏洞时，复用和分叉分别需要修复哪些位置？",
+    "expectedAnswer": "共享依赖要更新库及其使用方；分叉后还要识别所有受影响分叉，分别修复并更新各自使用方。分叉有局部适配和控制权收益，其风险取决于维护期和可证明的影响范围。",
+    "visualEncoding": "同样两个使用方分别连接一个共享修复节点或两个独立修复节点；分叉侧先找全副本，随后两条独立修复路径让额外维护位置可见。箭头被明确标为修复推进方向。",
+    "sourceEvidence": "### Example: Deciding Between Time and Scale 示例：在时间与规模之间取舍：'找出这个依赖所有存在漏洞的分叉，以及每个分叉的使用方'、'生命周期很短'、'影响范围有限'、'对于可能跨越时间或项目时间边界的接口'。",
+    "beforeProblem": "旧图是两列优缺点列表，虽准确但不显示一处安全问题如何扩展成多个独立修复位置；在移动端靠窄列堆叠文字。",
+    "whyBetter": "把同一事件作用于两种拓扑，读者可以逐条追踪修复要到达的位置，并看到复用也不能省掉使用方更新。",
+    "limits": "示例明确假定两个分叉都受影响，数量不是实测。箭头不是依赖方向或自动部署承诺；不把所有分叉认定为有漏洞，也不声称共享依赖总是更优。"
+  }
+}

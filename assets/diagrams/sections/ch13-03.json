@@ -1,0 +1,21 @@
+{
+  "id": "ch13-03",
+  "chapter": 13,
+  "title": "数据库不可用于测试时，替换哪一层？",
+  "summary": "示意保留真实的两个调用者，只在无法用于测试的数据库 API 边界提供共享 fake；写入调用改变 fake 状态，另一调用者读回该状态，而非为每个调用者分别写 fake。",
+  "enabled": true,
+  "sourceSections": ["### When Should Fakes Be Written? 何时应该编写伪实现？", "### Prefer Realism Over Isolation 优先考虑真实性，而非隔离性", "#### Tests become less effective 测试有效性降低", "## Conclusion 总结"],
+  "afterParagraph": "而不是为每个调用该 API 的类都写一个。",
+  "desktop": "assets/diagrams/sections/ch13-03.svg",
+  "mobile": "assets/diagrams/sections/ch13-03-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "数据库本身无法用于测试时，fake 放在哪里，才能继续执行调用者的真实逻辑并检查写后读？",
+    "expectedAnswer": "通常只在无法用于测试的代码根部，也就是数据库 API 处提供 fake，而不是为每个调用者单独提供 fake。真实调用者对共享 fake 执行 save(item) 后，另一个调用者可以通过 get(id) 读回记录，因为两者访问相同状态。仍须另有运行真实数据库的测试。",
+    "visualEncoding": "上方两个真实调用者保持不变，带编号的 save/get 箭头都指向同一数据库 API 边界。边界内空集合经保存变为含 id 的集合，读回箭头返回 item 并对齐结果断言。只高亮被替换的数据库层，避免把真实调用者也画成替身。",
+    "sourceEvidence": "### When Should Fakes Be Written? 何时应该编写伪实现？，只应在无法用于测试的那部分代码的根部提供伪实现，数据库 API 而不是每个调用该 API 的类；#### Tests become less effective 测试有效性降低，database.save(item) 后 database.get(item.id()) 访问内部状态。",
+    "beforeProblem": "原通用决策树把速度、确定性、构造依赖压成单一是/否条件，缺少具体约束变化；无 fake 分支也容易被读成只能打桩或交互验证，遗漏继续使用真实实现或请 API 维护者提供 fake 等选择。",
+    "whyBetter": "聚焦书中一个明确的替换边界，读者可以沿两次调用推导保存与读取如何共享状态，同时看见哪些真实代码仍在测试中执行。移到源文明确讨论数据库 API fake 的段落，避免泛化为机械决策规则。",
+    "limits": "A/B 是说明替换边界的示意调用者，不是书中新增的类；假定先保存再读取、同一实例、支持该契约，不暗示并发、持久性或事务保证。图不是所有依赖选择的完整决策树。"
+  }
+}

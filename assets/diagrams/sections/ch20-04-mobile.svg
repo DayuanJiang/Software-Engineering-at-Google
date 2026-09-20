@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch20-04" data-layout="mobile" role="img" aria-labelledby="ch20-04m-title ch20-04m-desc">
+<title id="ch20-04m-title">跳过清理，会让谁的构建失败？</title>
+<desc id="ch20-04m-desc">对照先开错误导致旧项目失败与先扫描、自动修复、测试提交清理后再启用错误的推广顺序，同时保留严格准入条件和提交前后发现失败的区别。 不声称启用后所有问题都在提交前发现，也不保证其他原因不会令旧项目构建失败。图不规定扫描时长；不满足准入的检查可在审查中展示或被屏蔽，不能自动升级为构建错误。</desc>
+<style>
+.cg-ch20-04[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20-04[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch20-04[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch20-04[data-layout="mobile"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20-04[data-layout="mobile"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20-04[data-layout="mobile"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20-04[data-layout="mobile"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20-04[data-layout="mobile"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20-04[data-layout="mobile"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20-04m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-04m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-04m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">跳过清理，会让谁的构建失败？</text>
+<text x="24" y="70" class="small" text-anchor="start">谷歌编译器检查的推广顺序</text>
+<rect id="ch20-04m-shape-1" x="24" y="87" width="372" height="77" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="115" class="small" text-anchor="start" data-owner="ch20-04m-shape-1">准入：快、易修复、无感知误报；</text>
+<text x="40" y="143" class="small" text-anchor="start" data-owner="ch20-04m-shape-1">只查正确性，收益值得全库清理。</text>
+<text x="24" y="198" class="strong" text-anchor="start">若跳过清理</text>
+<rect id="ch20-04m-shape-2" x="24" y="214" width="172" height="77" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch20-04m-shape-3" x="224" y="214" width="172" height="77" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="245" class="strong" text-anchor="start" data-owner="ch20-04m-shape-2">旧问题仍在</text>
+<text x="40" y="275" class="small" text-anchor="start" data-owner="ch20-04m-shape-2">先启用 ERROR</text>
+<text x="240" y="245" class="strong" text-anchor="start" data-owner="ch20-04m-shape-3">既有项目</text>
+<text x="240" y="277" class="strong" text-anchor="start" data-owner="ch20-04m-shape-3">也构建失败</text>
+<path class="connector danger-edge" d="M196 252H218" marker-end="url(#ch20-04m-danger-arrow)"/>
+<text x="24" y="332" class="strong" text-anchor="start">先清理，再启用</text>
+<circle cx="36" cy="370" r="17" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="36" y="377" class="strong" text-anchor="middle">1</text>
+<text x="66" y="377" class="" text-anchor="start">扫描全库，自动生成修复</text>
+<circle cx="36" cy="426" r="17" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="36" y="433" class="strong" text-anchor="middle">2</text>
+<text x="66" y="433" class="" text-anchor="start">测试并提交，清空既有问题</text>
+<circle cx="36" cy="482" r="17" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="36" y="489" class="strong" text-anchor="middle">3</text>
+<text x="66" y="489" class="" text-anchor="start">启用 ERROR：再犯即构建失败</text>
+<path class="connector primary-edge" d="M36 389V406" marker-end="url(#ch20-04m-primary-arrow)"/>
+<path class="connector primary-edge" d="M36 445V462" marker-end="url(#ch20-04m-primary-arrow)"/>
+<text x="24" y="551" class="small" text-anchor="start">失败可由提交前检查发现，</text>
+<text x="24" y="580" class="small" text-anchor="start">也可在提交后由 CI 发现。</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch17-04" data-layout="mobile" role="img" aria-labelledby="ch17-04m-title ch17-04m-desc">
+<title id="ch17-04m-title">工作区结果不是基线与改动的并集</title>
+<desc id="ch17-04m-desc">查询 OldApi 的示例工作区同步于快照 S。a.cc 从 OldApi 改为 NewApi，所以不匹配；b.cc 未修改，保留快照 S 的 OldApi；c.cc 在工作区新增 OldApi，所以匹配；d.cc 从工作区删除，不再匹配。最终结果仅 b.cc、c.cc。比 S 更新的 head 新增 h.cc，即使包含 OldApi 也不应混入该工作区。这说明当前文件覆盖基线的结果语义，并未指定内部合并算法，也不保证语义交叉引用同步。</desc>
+<style>
+.cg-ch17-04[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch17-04[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch17-04[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch17-04[data-layout="mobile"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.cg-ch17-04[data-layout="mobile"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch17-04[data-layout="mobile"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch17-04[data-layout="mobile"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
+.cg-ch17-04[data-layout="mobile"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch17-04[data-layout="mobile"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch17-04[data-layout="mobile"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
+.cg-ch17-04[data-layout="mobile"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch17-04[data-layout="mobile"] .danger{fill:var(--diagram-danger-soft,#faecee)}
+.cg-ch17-04[data-layout="mobile"] .danger-ink{fill:var(--diagram-danger,#b54750)}
+</style>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">工作区结果不能直接求并集</text>
+<text x="24" y="71" class="small" text-anchor="start">示例查询 OldApi；工作区同步于 S</text>
+<text x="24" y="113" class="small" text-anchor="start">文件 / 结果</text>
+<text x="169" y="113" class="small" text-anchor="middle">快照 S</text>
+<text x="313" y="113" class="small" text-anchor="middle">工作区当前</text>
+<g data-box="24,133,372,65">
+<rect x="24" y="133" width="372" height="65" class="danger"/>
+<text x="34" y="160" class="code strong" text-anchor="start">a.cc</text>
+<text x="34" y="187" class="small" text-anchor="start">不命中</text>
+<text x="169" y="172" class="small" text-anchor="middle">OldApi</text>
+<text x="313" y="172" class="small" text-anchor="middle">改为 NewApi</text>
+</g>
+<g data-box="24,206,372,65">
+<rect x="24" y="206" width="372" height="65" class="primary"/>
+<text x="34" y="233" class="code strong" text-anchor="start">b.cc</text>
+<text x="34" y="260" class="small" text-anchor="start">命中</text>
+<text x="169" y="245" class="small" text-anchor="middle">OldApi</text>
+<text x="313" y="245" class="small" text-anchor="middle">未改 OldApi</text>
+</g>
+<g data-box="24,279,372,65">
+<rect x="24" y="279" width="372" height="65" class="primary"/>
+<text x="34" y="306" class="code strong" text-anchor="start">c.cc</text>
+<text x="34" y="333" class="small" text-anchor="start">命中</text>
+<text x="169" y="318" class="small" text-anchor="middle">不存在</text>
+<text x="313" y="318" class="small" text-anchor="middle">新增 OldApi</text>
+</g>
+<g data-box="24,352,372,65">
+<rect x="24" y="352" width="372" height="65" class="danger"/>
+<text x="34" y="379" class="code strong" text-anchor="start">d.cc</text>
+<text x="34" y="406" class="small" text-anchor="start">不命中</text>
+<text x="169" y="391" class="small" text-anchor="middle">OldApi</text>
+<text x="313" y="391" class="small" text-anchor="middle">已删除</text>
+</g>
+<text x="24" y="452" class="strong" text-anchor="start">结果只有 b.cc、c.cc</text>
+<text x="24" y="483" class="small" text-anchor="start">历史索引查未改文件；当前改动另查。</text>
+<path d="M24 501L396 501" class="line"/>
+<text x="24" y="532" class="" text-anchor="start">反例：HEAD 后来新增 h.cc</text>
+<text x="24" y="560" class="small" text-anchor="start">即使它含 OldApi，也不属于此工作区。</text>
+<text x="24" y="590" class="small" text-anchor="start">文本视图准确，不等于交叉引用同步。</text>
+</svg>

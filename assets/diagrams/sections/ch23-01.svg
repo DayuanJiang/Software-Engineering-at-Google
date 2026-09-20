@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-01-root" class="chapter-svg cg-ch23-01" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch23-01-title ch23-01-desc">
+  <title id="ch23-01-title">head 与 RC：测试证据属于哪个版本？</title>
+  <desc id="ch23-01-desc">示意快照：r40 是 CB 已验证通过的最新版本，即 green head；r41 失败，r42 是最新已提交但仍在测试的 true head。两种 head 是同一仓库的指针，不是必须依次经历的状态。CD 通常从 green head 组装 RC-A，候选自身仍需测试。向 RC-A 拣选修复 F 后得到 RC-B，已有结果不能替代 RC-B 的测试证据。同一个候选在环境间推进时理想上不重建；并非每个候选都会进入生产。</desc>
+  <style>
+  .cg-ch23-01#ch23-01-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23-01#ch23-01-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23-01#ch23-01-root .strong {font-weight:600}
+  .cg-ch23-01#ch23-01-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23-01#ch23-01-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23-01#ch23-01-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-01-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong" data-box="16,8,928,464">head 与 RC：测试证据属于哪个版本？</text>
+  <text x="32" y="78" class="small" data-box="16,8,928,464">示意快照：CB（持续构建）检查编译与相关测试；r40、r41、r42 是提交序号</text>
+  <rect x="32" y="101" width="284" height="118" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="48" y="134" class="strong" data-box="32,101,284,118">r40</text>
+  <text x="132" y="134" class="good" data-box="32,101,284,118">CB 通过</text>
+  <text x="48" y="171" class="strong" data-box="32,101,284,118">green head</text>
+  <text x="48" y="204" class="small" data-box="32,101,284,118">最新已验证通过</text>
+  <rect x="338" y="101" width="284" height="118" fill="var(--diagram-danger-soft,#faecee)"/>
+  <text x="354" y="134" class="strong" data-box="338,101,284,118">r41</text>
+  <text x="438" y="134" class="bad" data-box="338,101,284,118">CB 失败</text>
+  <text x="354" y="171" class="strong" data-box="338,101,284,118">不是已验证版本</text>
+  <text x="354" y="204" class="small" data-box="338,101,284,118">已提交，但测试未通过</text>
+  <rect x="644" y="101" width="284" height="118" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="660" y="134" class="strong" data-box="644,101,284,118">r42</text>
+  <text x="744" y="134" class="pending" data-box="644,101,284,118">CB 运行中</text>
+  <text x="660" y="171" class="strong" data-box="644,101,284,118">true head</text>
+  <text x="660" y="204" class="small" data-box="644,101,284,118">最新已提交</text>
+  <text x="32" y="253" class="strong" data-box="16,8,928,464">CD 通常从 green head 组装候选；候选自身仍需测试</text>
+  <rect x="32" y="277" width="400" height="130" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="309" class="strong" data-box="32,277,400,130">RC-A = r40 + 配置 + 依赖</text>
+  <text x="48" y="348" class="" data-box="32,277,400,130">候选测试：通过（示意）</text>
+  <text x="48" y="387" class="small" data-box="32,277,400,130">推进时理想上复用同一产物</text>
+  <path d="M442 348L518 348" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-01-arrow)"/>
+  <text x="480" y="310" class="strong" data-box="440,277,80,55" text-anchor="middle">+ F</text>
+  <text x="480" y="388" class="small" data-box="438,365,84,35" text-anchor="middle">拣选修复</text>
+  <rect x="536" y="277" width="392" height="130" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="552" y="309" class="strong" data-box="536,277,392,130">RC-B = RC-A + 修复 F</text>
+  <text x="552" y="348" class="" data-box="536,277,392,130">RC-A 的通过不能替它作证</text>
+  <text x="552" y="387" class="small" data-box="536,277,392,130">需取得并关联 RC-B 的测试结果</text>
+  <text x="32" y="449" class="small" data-box="16,8,928,464">CD 推进并测试候选版本，不保证每个候选都进入生产。</text>
+</svg>

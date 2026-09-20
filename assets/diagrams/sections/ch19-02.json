@@ -1,0 +1,22 @@
+{
+  "id": "ch19-02",
+  "chapter": 19,
+  "title": "集成入口，不把所有工具塞进审查",
+  "summary": "以 Critique 为审查中心，分别标示编辑、搜索和发布的链接入口，以及在审查界面中显示的分析结果和覆盖率，体现原文的关注点分离。",
+  "sourceSections": ["### Tight Tool Integration 紧密的工具集成"],
+  "afterParagraph": "测试覆盖率是一个例外：文件的 diff 视图会在行号栏用不同背景色表示各行是否被测试覆盖，但并非所有项目都使用这一覆盖率工具。",
+  "enabled": false,
+  "removalReason": "原图只是把紧邻的工具清单和链接/内嵌区别重新装入方框，未增加可推导的案例或状态变化。原文已经具体说明 Cider 编辑、Code Search 主干浏览、发布版本查询及覆盖率例外，保留该图会重复阅读而无额外解释价值。",
+  "pedagogy": {
+    "action": "retire",
+    "readerQuestion": "在 Critique 中继续编辑代码或查看覆盖率，分别留在何处、转往何处？",
+    "expectedAnswer": "编辑通过链接转到 Cider；覆盖率作为例外呈现在 diff 行号栏，并非所有项目使用。其他功能由独立子系统实现，Critique 保持审查焦点。",
+    "visualEncoding": "旧图的箭头区分链接到独立工具和在审查界面呈现的结果，但节点只复述工具名和职责，没有具体变更或使用状态。",
+    "sourceEvidence": "Tight Tool Integration 紧密的工具集成：转到 Cider 继续编辑；优先使用链接而非嵌入式界面；测试覆盖率是一个例外。",
+    "beforeProblem": "组件目录式图示重复紧邻的工具清单与解释；桌面 Rapid：发布 还可能被误读成 Critique 内直接执行发布，而原文此处讲查询已提交变更是否包含在发布版本中。",
+    "whyBetter": "停用重复图示，保留原文更具体的跨工具行为说明。SVG 原件保留以供追溯，避免把元数据补齐当作解释性改进。",
+    "limits": "退休不否定工具集成的重要性；不据此引入任何外部产品行为，也不改变源文、原书截图或阅读器映射。"
+  },
+  "desktop": "assets/diagrams/sections/ch19-02.svg",
+  "mobile": "assets/diagrams/sections/ch19-02-mobile.svg"
+}

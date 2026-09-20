@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch18-04" data-layout="desktop" role="img" aria-labelledby="ch18-04-title ch18-04-desc"><title id="ch18-04-title">缓存共享结果，远程执行共享算力</title><desc id="ch18-04-desc">区分远程缓存命中、未命中的本地路径和由主控节点调度工作节点的远程执行路径；后者仍使用缓存交换中间产物，并依赖完整声明、自包含和确定性。</desc><style>.cg-ch18-04[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch18-04[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}.cg-ch18-04[data-layout="desktop"] .strong{font-weight:600}</style><defs>
+<marker id="ch18-04-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18-04-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18-04-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18-04-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18-04-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch18-04-box-1" x="0" y="0" width="960" height="480" rx="6" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">
+<tspan x="32" y="42">缓存共享结果，远程执行共享算力</tspan>
+</text>
+<text x="32" y="76" class="small" text-anchor="start">
+<tspan x="32" y="76">缓存复用已有结果；执行分担计算工作</tspan>
+</text>
+<text x="32" y="123" class="strong" text-anchor="start">
+<tspan x="32" y="123">远程缓存</tspan>
+</text>
+<rect id="ch18-04-box-2" x="32" y="145" width="416" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="240.0" y="175" class="strong" text-anchor="middle" data-owner="ch18-04-box-2">
+<tspan x="240.0" y="175">查询共享缓存</tspan>
+</text>
+<path d="M132 203V260" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch18-04-secondary-arrow)"/>
+<path d="M348 203V260" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch18-04-warm-arrow)"/>
+<rect id="ch18-04-box-3" x="32" y="262" width="200" height="103" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="132.0" y="292" class="strong" text-anchor="middle" data-owner="ch18-04-box-3">
+<tspan x="132.0" y="292">命中</tspan>
+</text>
+<text x="132.0" y="327" class="small" text-anchor="middle" data-owner="ch18-04-box-3">
+<tspan x="132.0" y="327">直接下载产物</tspan>
+</text>
+<rect id="ch18-04-box-4" x="248" y="262" width="200" height="103" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="348.0" y="292" class="strong" text-anchor="middle" data-owner="ch18-04-box-4">
+<tspan x="348.0" y="292">未命中</tspan>
+</text>
+<text x="348.0" y="327" class="small" text-anchor="middle" data-owner="ch18-04-box-4">
+<tspan x="348.0" y="327">本地构建</tspan>
+<tspan x="348.0" y="355">并上传结果</tspan>
+</text>
+<text x="512" y="123" class="strong" text-anchor="start">
+<tspan x="512" y="123">远程执行</tspan>
+</text>
+<rect id="ch18-04-box-5" x="512" y="145" width="416" height="58" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="528" y="175" class="strong" text-anchor="start" data-owner="ch18-04-box-5">
+<tspan x="528" y="175">主控节点按依赖调度动作</tspan>
+</text>
+<path d="M720 203V225" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch18-04-primary-arrow)"/>
+<rect id="ch18-04-box-6" x="512" y="227" width="416" height="58" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="528" y="257" class="strong" text-anchor="start" data-owner="ch18-04-box-6">
+<tspan x="528" y="257">工作节点池执行实际构建</tspan>
+</text>
+<path d="M720 285V307" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch18-04-primary-arrow)"/>
+<rect id="ch18-04-box-7" x="512" y="309" width="416" height="58" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="528" y="339" class="strong" text-anchor="start" data-owner="ch18-04-box-7">
+<tspan x="528" y="339">经共享缓存交换中间产物</tspan>
+</text>
+<rect id="ch18-04-box-8" x="32" y="416" width="896" height="48" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="443" class="small" text-anchor="start" data-owner="ch18-04-box-8">
+<tspan x="48" y="443">共同前提：明确输入、确定输出。远程执行还需自包含的构建环境。</tspan>
+</text>
+</svg>

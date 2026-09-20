@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch20-01" data-layout="desktop" role="img" aria-labelledby="ch20-01-title ch20-01-desc">
+<title id="ch20-01-title">两种误报，要用两类证据判断</title>
+<desc id="ch20-01-desc">保留技术正确性与积极行动的二维矩阵，并用原文 Hashtable.contains 示例提供意图、方法语义和实际修改三项证据，定位技术误报但非感知误报的格子。 例 A 按原文构造，不是额外实测案例。矩阵仅讨论已经发出的报告，不表示漏报率，也不把点击次数等同于积极行动。</desc>
+<style>
+.cg-ch20-01[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20-01[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch20-01[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch20-01[data-layout="desktop"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20-01[data-layout="desktop"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20-01[data-layout="desktop"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20-01[data-layout="desktop"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20-01[data-layout="desktop"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20-01[data-layout="desktop"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20-01-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-01-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-01-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">两种误报，要用两类证据判断</text>
+<text x="32" y="76" class="small" text-anchor="start">例 A（按原文构造）：先核对意图和语义，再查看实际行动</text>
+<text x="32" y="119" class="" text-anchor="start">意图：开发者想查值；工具却怀疑这里本应查键。</text>
+<text x="32" y="155" class="" text-anchor="start">事实：Hashtable.contains 与 containsValue 等价。</text>
+<text x="32" y="191" class="" text-anchor="start">行动：仍改用 containsValue，让查值意图更清楚。</text>
+<path class="rule" d="M32 213L928 213"/>
+<text x="388" y="251" class="strong" text-anchor="middle">采取积极行动</text>
+<text x="760" y="251" class="strong" text-anchor="middle">未采取积极行动</text>
+<text x="32" y="303" class="strong" text-anchor="start">技术正确</text>
+<text x="32" y="403" class="strong" text-anchor="start">技术误报</text>
+<rect id="ch20-01-shape-1" x="218" y="273" width="338" height="83" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="234" y="304" class="strong" text-anchor="start" data-owner="ch20-01-shape-1">非感知误报</text>
+<text x="234" y="338" class="small" text-anchor="start" data-owner="ch20-01-shape-1">修复真实问题</text>
+<rect id="ch20-01-shape-2" x="590" y="273" width="338" height="83" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="606" y="304" class="strong" text-anchor="start" data-owner="ch20-01-shape-2">感知误报</text>
+<text x="606" y="338" class="small" text-anchor="start" data-owner="ch20-01-shape-2">例如没理解真实缺陷，未行动</text>
+<rect id="ch20-01-shape-3" x="218" y="373" width="338" height="83" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="234" y="404" class="strong" text-anchor="start" data-owner="ch20-01-shape-3">例 A：非感知误报</text>
+<text x="234" y="438" class="small" text-anchor="start" data-owner="ch20-01-shape-3">技术判断错了，但修改有益</text>
+<rect id="ch20-01-shape-4" x="590" y="373" width="338" height="83" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="606" y="404" class="strong" text-anchor="start" data-owner="ch20-01-shape-4">感知误报</text>
+<text x="606" y="438" class="small" text-anchor="start" data-owner="ch20-01-shape-4">没有促成积极行动</text>
+</svg>

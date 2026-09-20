@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch04-03" data-layout="mobile" role="img" aria-labelledby="ch04-03m-title ch04-03m-desc">
+<title id="ch04-03m-title">旧岗位低评分，能否决定新岗位资格？</title>
+<desc id="ch04-03m-desc">本章内部流动案例：招聘方提议，员工表达转组意向时就突出显示历史低评级。工程师质疑旧岗位评价是否能预测新岗位表现。调查发现，转组后曾获低评级和从无低评级的候选人，获得满意或卓越评级的可能性相当，原文未给数值。因此不应据此判断新团队资格，但可审视当前岗位匹配与支持需求。同时仍须审视个人偏见与跨组织标准；这些问题不是公平保证。</desc>
+<style>
+.cg-ch04-03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch04-03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch04-03[data-layout="mobile"] .strong {font-weight:600}
+</style>
+<defs>
+<marker id="ch04-03m-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch04-03m-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch04-03m-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch04-03m-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="34" text-anchor="start" class="strong">旧岗位低评分，能否</text>
+<text x="24" y="64" text-anchor="start" class="strong">决定新岗位资格？</text>
+<text x="24" y="94" text-anchor="start" class="small">提效请求：员工一表达转组意向，</text>
+<text x="24" y="119" text-anchor="start" class="small">就向招聘方突出显示历史低评级。</text>
+<g id="ch04-03m-old-role" data-box="24,137,372,57">
+<rect x="24" y="137" width="372" height="57" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="210" y="173" text-anchor="middle" class="strong">旧岗位、当期：低评级</text>
+</g>
+<polyline data-connector="true" points="210,199 210,208" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
+<polyline data-connector="true" points="210,226 210,239" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-03m-arrow-danger)"/>
+<polyline data-connector="true" points="204,211 216,223" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="3" stroke-linejoin="round"/>
+<polyline data-connector="true" points="216,211 204,223" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="3" stroke-linejoin="round"/>
+<text x="231" y="224" text-anchor="start" class="small">不能外推</text>
+<g id="ch04-03m-new-role" data-box="24,245,372,57">
+<rect x="24" y="245" width="372" height="57" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="210" y="281" text-anchor="middle" class="strong">新团队：不应据此判断资格</text>
+</g>
+<text x="24" y="336" text-anchor="start" class="strong">书中调查：转组后的两组候选人</text>
+<text x="116" y="376" text-anchor="middle" class="">曾获低评级</text>
+<text x="304" y="376" text-anchor="middle" class="">从无低评级</text>
+<polyline data-connector="true" points="116,385 116,396 304,396 304,385" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round"/>
+<polyline data-connector="true" points="210,396 210,407" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round"/>
+<text x="210" y="435" text-anchor="middle" class="strong">获满意或卓越评级的可能性相当</text>
+<text x="210" y="463" text-anchor="middle" class="small">未给数值；不是个人表现保证</text>
+<g id="ch04-03m-valid-use" data-box="24,484,372,51">
+<rect x="24" y="484" width="372" height="51" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="210" y="516" text-anchor="middle" class="">仍可审视当前岗位与支持需求</text>
+</g>
+<text x="24" y="563" text-anchor="start" class="small">还须审视偏见与跨组织标准；</text>
+<text x="24" y="589" text-anchor="start" class="small">三项问题全答“是”也不证明公平。</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch19-03" data-layout="mobile" role="img" aria-labelledby="ch19-03m-title ch19-03m-desc">
+<title id="ch19-03m-title">甲已发意见，为什么还在等乙？</title>
+<desc id="ch19-03m-desc">同一参与者名单的三次交接：先等甲乙审查；甲发布意见后，等作者处理且仍等乙；作者回复甲后，等甲复看且仍等乙。示例通过手动设置关注集明确等待关系，不假定具体自动更新算法。</desc>
+<style>.cg-ch19-03[data-layout=mobile] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19-03[data-layout=mobile] .small{font-size:19px;fill:var(--diagram-muted,#686868)}.cg-ch19-03[data-layout=mobile] .strong{font-weight:600}.cg-ch19-03[data-layout=mobile] .code{font-family:Menlo,Consolas,monospace}.cg-ch19-03[data-layout=mobile] .danger{fill:var(--diagram-danger,#b54750)}.cg-ch19-03[data-layout=mobile] .positive{fill:var(--diagram-primary,#087f6d)}</style>
+<defs><marker id="ch19-03m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">甲已发意见，为何还等乙？</text>
+<text x="24" y="74" class="small" text-anchor="start">粗体姓名＝本例手动设置的关注集</text>
+<rect id="ch19-03m-region-1" x="24" y="105" width="372" height="114" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="36" y="133" class="strong" text-anchor="start" data-owner="ch19-03m-region-1">1 送审后：等甲与乙</text>
+<text x="59" y="169" class="" text-anchor="start" data-owner="ch19-03m-region-1">作者</text>
+<rect id="ch19-03m-region-2" x="167" y="145" width="102" height="32" rx="3" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="174" y="169" class="strong" text-anchor="start" data-owner="ch19-03m-region-2">审查者甲</text>
+<rect id="ch19-03m-region-3" x="289" y="145" width="102" height="32" rx="3" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="296" y="169" class="strong" text-anchor="start" data-owner="ch19-03m-region-3">审查者乙</text>
+<text x="36" y="205" class="small" text-anchor="start" data-owner="ch19-03m-region-1">甲、乙分别开始审查</text>
+<path class="connector" d="M210 223V237" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch19-03m-arrow)"/>
+<rect id="ch19-03m-region-4" x="24" y="241" width="372" height="114" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="36" y="269" class="strong" text-anchor="start" data-owner="ch19-03m-region-4">2 甲发布意见：仍等乙</text>
+<rect id="ch19-03m-region-5" x="52" y="281" width="61" height="32" rx="3" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="59" y="305" class="strong" text-anchor="start" data-owner="ch19-03m-region-5">作者</text>
+<text x="174" y="305" class="" text-anchor="start" data-owner="ch19-03m-region-4">审查者甲</text>
+<rect id="ch19-03m-region-6" x="289" y="281" width="102" height="32" rx="3" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="296" y="305" class="strong" text-anchor="start" data-owner="ch19-03m-region-6">审查者乙</text>
+<text x="36" y="341" class="small" text-anchor="start" data-owner="ch19-03m-region-4">作者处理意见；乙继续审查</text>
+<path class="connector" d="M210 359V373" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch19-03m-arrow)"/>
+<rect id="ch19-03m-region-7" x="24" y="377" width="372" height="114" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="36" y="405" class="strong" text-anchor="start" data-owner="ch19-03m-region-7">3 作者回复甲：仍等乙</text>
+<text x="59" y="441" class="" text-anchor="start" data-owner="ch19-03m-region-7">作者</text>
+<rect id="ch19-03m-region-8" x="167" y="417" width="102" height="32" rx="3" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="174" y="441" class="strong" text-anchor="start" data-owner="ch19-03m-region-8">审查者甲</text>
+<rect id="ch19-03m-region-9" x="289" y="417" width="102" height="32" rx="3" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="296" y="441" class="strong" text-anchor="start" data-owner="ch19-03m-region-9">审查者乙</text>
+<text x="36" y="477" class="small" text-anchor="start" data-owner="ch19-03m-region-7">甲复看回复；乙仍需首次审查</text>
+<text x="24" y="544" class="small" text-anchor="start">甲发意见，不代表乙已经完成。</text>
+<text x="24" y="574" class="small" text-anchor="start">系统也会在发布意见时尝试更新。</text>
+</svg>

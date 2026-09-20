@@ -1,0 +1,21 @@
+{
+  "id": "ch13-01",
+  "chapter": 13,
+  "title": "替身返回 true，过期卡为什么仍返回 false？",
+  "summary": "由构造函数传入同一 CreditCardService 接口的替身，再跟踪 makePayment 的过期判断：过期卡直接返回 false，未调用扣款；有效卡才调用始终返回 true 的替身。",
+  "enabled": true,
+  "sourceSections": ["### Seams", "### An Example Test Double 测试替身示例"],
+  "afterParagraph": "通常需要先重构或重写，才能补上适当的测试。",
+  "desktop": "assets/diagrams/sections/ch13-01.svg",
+  "mobile": "assets/diagrams/sections/ch13-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "传入始终返回 true 的扣款替身后，为什么过期卡测试仍能断言 makePayment 返回 false？",
+    "expectedAnswer": "PaymentProcessor 的构造函数接收 CreditCardService；测试换掉服务实现，不改 makePayment。过期卡在 isExpired 判断后直接返回 false，因此 chargeCreditCard 不会执行。有效卡才执行替身并返回 true；这不能证明真实扣款成功。",
+    "visualEncoding": "在构造函数接收依赖的标注下，过期与有效两条输入轨迹分别终止于 false 和经过 chargeCreditCard 到 true；明确标记过期路径的服务调用次数为 0，有效路径为 1。手机改为两条上下排列的独立轨迹。",
+    "sourceEvidence": "### An Example Test Double 测试替身示例，例13-1 if (creditCard.isExpired()) { return false; }，例13-2 return true，例13-3 assertThat(success).isFalse()；### Seams，例13-4和例13-5构造函数接收替身。",
+    "beforeProblem": "原图只是生产/测试实现汇合到接口的框图，真正解释过期分支的内容藏在脚注中；汇合箭头还可能被误解为同时注入两个实现。",
+    "whyBetter": "两条具体执行路径解释为什么粗糙替身仍能支持某个测试，并让读者看见未执行的依赖和没有得到验证的扣款行为。",
+    "limits": "0次和1次由例13-1的单次调用路径推导，不是书中另加的 verify 断言。有效卡 true 是该替身的响应，不是真实扣款证据；图不推荐把此替身用于所有支付测试。"
+  }
+}

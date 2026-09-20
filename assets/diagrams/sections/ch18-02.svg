@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch18-02" data-layout="desktop" role="img" aria-labelledby="ch18-02-title ch18-02-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch18-02-title">改 common，为什么不重建 otherlib？</title>
+<desc id="ch18-02-desc">保留原文增量构建图，并补上 Guava 和相反方向的依赖声明。MyBinary 依赖 mylib，mylib 依赖 common、otherlib、Guava。图中箭头是产物流和变更影响方向，从依赖流向使用方。假定其他输入不变且旧产物可用，common 源码变化后重建 common、mylib、MyBinary，复用 otherlib 与 Guava。仅改 MyBinary.java 则只重建 MyBinary。按原文目标级简化，不表示重建必定改变输出字节。</desc>
+<style>
+.cg-ch18-02[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch18-02[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch18-02[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch18-02[data-layout="desktop"] .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+</style><defs>
+<marker id="ch18-02-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18-02-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18-02-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18-02-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18-02-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">改 common，为什么不重建 otherlib？</text>
+<text x="32" y="76" class="small" text-anchor="start">依赖声明：MyBinary → mylib；mylib → common、otherlib、Guava</text>
+<text x="32" y="110" class="small" text-anchor="start">下面的箭头方向相反：依赖产物 → 使用方；暖色路径传播本次影响</text>
+<rect id="ch18-02-box-1" x="32" y="136" width="218" height="74" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="141.0" y="165" class="strong" text-anchor="middle" data-owner="ch18-02-box-1">common</text>
+<text x="141.0" y="193" class="small" text-anchor="middle" data-owner="ch18-02-box-1">源码变，重建</text>
+<rect id="ch18-02-box-2" x="32" y="238" width="218" height="74" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="141.0" y="267" class="strong" text-anchor="middle" data-owner="ch18-02-box-2">otherlib</text>
+<text x="141.0" y="295" class="small" text-anchor="middle" data-owner="ch18-02-box-2">输入未变，复用</text>
+<rect id="ch18-02-box-3" x="32" y="340" width="218" height="74" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="141.0" y="369" class="strong" text-anchor="middle" data-owner="ch18-02-box-3">Guava JAR</text>
+<text x="141.0" y="397" class="small" text-anchor="middle" data-owner="ch18-02-box-3">输入未变，复用</text>
+<path class="edge" d="M250 173H304V255H374" stroke="var(--diagram-warm,#a56a1f)" marker-end="url(#ch18-02-warm-arrow)"/>
+<path class="edge" d="M250 275H374" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch18-02-primary-arrow)"/>
+<path class="edge" d="M250 377H304V295H374" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch18-02-primary-arrow)"/>
+<rect id="ch18-02-box-4" x="376" y="236" width="226" height="78" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="489.0" y="265" class="strong" text-anchor="middle" data-owner="ch18-02-box-4">mylib</text>
+<text x="489.0" y="293" class="small" text-anchor="middle" data-owner="ch18-02-box-4">依赖受影响，重建</text>
+<path class="edge" d="M602 275H700" stroke="var(--diagram-warm,#a56a1f)" marker-end="url(#ch18-02-warm-arrow)"/>
+<rect id="ch18-02-box-5" x="702" y="236" width="226" height="78" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="815.0" y="265" class="strong" text-anchor="middle" data-owner="ch18-02-box-5">MyBinary</text>
+<text x="815.0" y="293" class="small" text-anchor="middle" data-owner="ch18-02-box-5">依赖受影响，重建</text>
+<text x="376" y="364" class="strong" text-anchor="start">对照：只改 MyBinary.java</text>
+<text x="376" y="395" class="small" text-anchor="start">只重建 MyBinary，其他产物复用。</text>
+<path d="M24 428H936" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="32" y="458" class="small" text-anchor="start">按原文目标级简化；其他输入不变、旧产物可用。重建不等于输出字节必变。</text>
+</svg>

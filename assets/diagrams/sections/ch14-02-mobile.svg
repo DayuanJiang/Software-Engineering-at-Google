@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch14-02" data-layout="mobile" role="img" aria-labelledby="ch14-02m-title ch14-02m-desc">
+<title id="ch14-02m-title">用数据衔接较小的集成测试</title>
+<desc id="ch14-02m-desc">把跨越多个组件的用户旅程拆成两两集成测试。测试 A 加 B 的输出持久化后成为测试 B 加 C 的输入。箭头只表示数据传递，不表示必须串行执行。</desc>
+<style>
+.cg-ch14-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch14-02[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch14-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch14-02[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:2}
+.cg-ch14-02[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch14-02[data-layout="mobile"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch14-02m-primary-arrow)}
+.cg-ch14-02[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch14-02[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch14-02[data-layout="mobile"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch14-02m-secondary-arrow)}
+.cg-ch14-02[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch14-02[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch14-02[data-layout="mobile"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch14-02m-warm-arrow)}
+.cg-ch14-02[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch14-02[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch14-02[data-layout="mobile"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch14-02m-danger-arrow)}
+.cg-ch14-02[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch14-02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch14-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch14-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch14-02m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">用数据衔接较小的集成测试</text>
+<text x="24" y="72" class="small" text-anchor="start">缩小边界，同时传递真实数据</text>
+<g data-box="34,99,352,94"><rect x="34" y="99" width="352" height="94" rx="6" class="secondary"/>
+<text x="210.0" y="141.0" class="strong" text-anchor="middle">集成测试 A + B</text>
+<text x="210.0" y="170.0" class="small" text-anchor="middle">只启动这一对组件</text>
+</g>
+<path d="M210 193V230" class="primary-path"/>
+<text x="232" y="219" class="small" text-anchor="start">保存输出</text>
+<g data-box="64,233,292,88"><rect x="64" y="233" width="292" height="88" rx="6" class="warm"/>
+<text x="210.0" y="272.0" class="strong" text-anchor="middle">持久化数据</text>
+<text x="210.0" y="301.0" class="small" text-anchor="middle">可复用的测试输入</text>
+</g>
+<path d="M210 321V358" class="primary-path"/>
+<text x="232" y="348" class="small" text-anchor="start">读取输入</text>
+<g data-box="34,361,352,94"><rect x="34" y="361" width="352" height="94" rx="6" class="primary"/>
+<text x="210.0" y="403.0" class="strong" text-anchor="middle">集成测试 B + C</text>
+<text x="210.0" y="432.0" class="small" text-anchor="middle">独立运行另一对组件</text>
+</g>
+<text x="24" y="495" class="small" text-anchor="start">A / B / C 为概念组件</text>
+<rect x="24" y="524" width="372" height="60" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="210.0" y="549.0" class="small" text-anchor="middle">箭头表示数据传递</text>
+<text x="210.0" y="574.0" class="small" text-anchor="middle">不是两个测试必须串行执行</text>
+</svg>

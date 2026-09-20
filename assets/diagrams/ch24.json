@@ -1,0 +1,26 @@
+{
+  "chapter": 24,
+  "title": "版本已就绪，用户就能用新功能吗？",
+  "summary": "以候选版本 v2 和新功能 F 为示例，对照暂不部署、部署但关闭功能、只为部分用户启用三种状态。可交付能力不要求立即部署；部署代码与启用功能分别改变产物位置和用户行为。",
+  "sourceSections": [
+    "Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践",
+    "Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能",
+    "Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能",
+    "Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策",
+    "Conclusion 总结"
+  ],
+  "kind": "state-comparison",
+  "desktop": "assets/diagrams/ch24.svg",
+  "mobile": "assets/diagrams/ch24-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "v2 已可交付时，暂不部署、部署但关闭 F、仅向部分用户启用 F，分别会让用户得到什么？",
+    "expectedAnswer": "暂不部署时生产仍运行 v1；部署含新旧路径的 v2 但关闭 F 时，用户仍走旧路径；同一 v2 通过配置可只让选定用户走新路径。团队可以保持可部署能力而有意不推送，持续部署不是必经终点。",
+    "visualEncoding": "同一列中的 v1/v2 标记显示实际运行产物；关闭与部分开启状态和带文字的用户符号显示行为。后两行重复 v2，突出只改配置也能改变启用范围。三行是状态对照，不以单向箭头暗示必须依次升级。",
+    "sourceEvidence": "Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践：'具备随时部署的能力，而不必真的随时部署'；Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能：'新功能代码与旧代码路径共存于二进制文件中'；Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能：'生成可发布版本的频率就能与用户实际收到版本的频率分开'；Conclusion 总结：'配置，以及支持试运行验证、回滚与前滚机制'。",
+    "beforeProblem": "原图是持续交付、部署、功能发布的阶梯盒图，用户看不到各阶段运行的具体版本和实际行为；单向布局也可能被读成必经成熟度阶梯。",
+    "whyBetter": "读者可逐行回答运行哪个版本、F 是否启用、谁看到新行为；暂不部署明确是有效选择。代替重复的 ch24-01 定义图。",
+    "limits": "v1、v2、F 和用户符号是示例而非真实版本、人数或发布比例。只展示已保留新旧路径的运行时标志情形；不保证即时配置传播、全风险隔离或功能保密。"
+  }
+}

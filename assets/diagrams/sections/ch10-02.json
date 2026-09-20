@@ -1,0 +1,21 @@
+{
+  "id": "ch10-02",
+  "chapter": 10,
+  "title": "重名时，还会返回记录 ID 吗？",
+  "summary": "从原文 AddCustomer 注释推演：没有同名记录时创建并返回 ID，已有同名记录时抛出 DuplicateEntryError；删掉条件与异常后，调用者便无法判断重名的结果。",
+  "sourceSections": ["### Reference Documentation 参考文档", "#### Function comments 函数注释"],
+  "afterParagraph": "加入固定格式的小节，只会让注释更冗长、更重复，并不会更清楚，甚至可能更难理解。",
+  "desktop": "assets/diagrams/sections/ch10-02.svg",
+  "mobile": "assets/diagrams/sections/ch10-02-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "AddCustomer 的注释若只写创建客户，调用者能否判断同名记录已存在时会发生什么？",
+    "expectedAnswer": "不能。原文把创建记录、name 和 address 参数、返回记录 ID，以及已有同名记录时抛出 DuplicateEntryError 连在同一条注释中。保留条件与结果才能判断调用契约；这里无须解释内部如何检测重复。",
+    "visualEncoding": "保留原函数声明，左侧或上方展示明确标为删减对照的创建客户短句；右侧或下方用两个条件行分别连接返回 ID 和抛出异常。改变同名记录是否存在这个条件，就能看到结果改变；两个分支不表示先后执行。",
+    "sourceEvidence": "#### Function comments 函数注释：Creates a new record for a customer with the given name and address ... returns the record ID, or throws DuplicateEntryError if a record with that name already exists；紧随的中文段落指出参数、返回值和异常并非彼此独立。",
+    "beforeProblem": "原图只是两组受众分类及各自需求的列表，读者看不到少写一条信息会造成什么理解缺口；图旁已有同样的分类说明。",
+    "whyBetter": "用原书函数契约作条件反事实对照，读者可以直接回答重名时是否返回 ID；把信息完整性具体落实为保留必要条件，而非泛泛要求面向受众。",
+    "limits": "图只推演原文示例所述两种条件，不补充其他错误、并发行为或实现算法。删减短句是为对照而作的摘要，不冒充原书错误示例。函数声明只展示，未编译或调用。"
+  }
+}

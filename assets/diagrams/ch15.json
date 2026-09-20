@@ -1,0 +1,24 @@
+{
+  "chapter": 15,
+  "title": "只剩一个用户，为什么还不能关？",
+  "summary": "旧系统的最后一个直接用户可能是关键基础设施。依赖链说明关闭的连带影响，也说明建议性通知与有团队、有授权的强制性弃用为何不同。",
+  "sourceSections": [
+    "建议性弃用 (Advisory Deprecation)",
+    "Compulsory Deprecation  强制性弃用",
+    "Process Owners  弃用流程的负责人"
+  ],
+  "kind": "dependency-case",
+  "enabled": true,
+  "desktop": "assets/diagrams/ch15.svg",
+  "mobile": "assets/diagrams/ch15-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "旧系统只剩一个直接用户，为什么不能只按截止日期关闭？",
+    "expectedAnswer": "最后一个直接用户可能是全组织依赖的关键基础设施，关闭旧系统会连带影响其调用方。建议性通知不能完成迁移；强制性弃用需要专门团队、充分告知和迁移帮助后的执行权限，时间表仍可调整。",
+    "visualEncoding": "两条应用依赖汇入关键基础设施，再指向同一旧系统，把直接用户数与影响范围区分开。下方对照同一依赖情境中的建议性通知和有资源的强制性推进；没有把截止日期画成自动移除开关。",
+    "sourceEvidence": "Compulsory Deprecation  强制性弃用：'旧系统最后一个使用方，是整个组织都依赖的关键基础设施'、'这并不意味着时间表不能调整'、'充分告知后'；建议性弃用 (Advisory Deprecation)：'没有截止日期'；Process Owners  弃用流程的负责人：'没有明确的负责人'。",
+    "beforeProblem": "旧图把发现、迁移、验证、移除排成通用生命周期，几乎重复 ch15-04，未展示为什么最后一个使用方仍可能阻止移除。",
+    "whyBetter": "读者可以沿可见依赖边追出间接影响，并比较资源与授权改变了什么，而不是把有截止日期误读为能够安全删除。",
+    "limits": "应用甲乙是书中关键基础设施反例的示意展开，不是实测拓扑或用户数量。连带失效取决于实际依赖行为；图不授权任意破坏关键基础设施，也不保证强制性弃用一定完成。"
+  }
+}

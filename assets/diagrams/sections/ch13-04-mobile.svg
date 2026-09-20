@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch13-04" data-layout="mobile" role="img" aria-labelledby="ch13-04m-title ch13-04m-desc">
+<title id="ch13-04m-title">同一 ID 保存两次，fake 也必须报错</title>
+<desc id="ch13-04m-desc">将书中的重复 ID 契约变为并排执行轨迹：从空库开始，首次 save(id) 成功并改变状态，第二次必须报错；只测首次成功会漏掉允许重复保存的 fake。 重复 ID 报错是书中此数据库的示例契约，不是所有数据库 save/upsert API 的通用规则。示意未指定异常类，不证明持久化、并发或性能；真实性能应使用真实实现测试。</desc>
+<style>
+.cg-ch13-04[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch13-04[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch13-04[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch13-04[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch13-04[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch13-04[data-layout="mobile"] .rule {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch13-04[data-layout="mobile"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch13-04m-arrow)}
+</style>
+<defs><marker id="ch13-04m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9 Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect id="ch13-04m-region-1" x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" text-anchor="start" class="strong">同一 ID 保存两次</text>
+<text x="24" y="68" text-anchor="start" class="small">第二次报错，也是契约的一部分</text>
+<rect id="ch13-04m-region-2" x="24" y="94" width="372" height="40" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="122" text-anchor="start" class="strong">输入</text>
+<text x="168" y="122" text-anchor="start" class="strong">真实</text>
+<text x="308" y="122" text-anchor="start" class="strong">fake</text>
+<text x="40" y="167" text-anchor="start" class="">空库</text>
+<text x="178" y="167" text-anchor="start" class="">{}</text>
+<text x="315" y="167" text-anchor="start" class="">{}</text>
+<path class="rule" d="M24 184 L396 184"/>
+<text x="40" y="216" text-anchor="start" class="small">save(id)</text>
+<text x="40" y="244" text-anchor="start" class="small">第一次</text>
+<text x="169" y="216" text-anchor="start" class="good">成功</text>
+<text x="174" y="247" text-anchor="start" class="">{id}</text>
+<text x="306" y="216" text-anchor="start" class="good">成功</text>
+<text x="310" y="247" text-anchor="start" class="">{id}</text>
+<path class="rule" d="M24 267 L396 267"/>
+<text x="40" y="301" text-anchor="start" class="small">save(id)</text>
+<text x="40" y="329" text-anchor="start" class="small">同一 ID</text>
+<text x="169" y="303" text-anchor="start" class="strong">报错</text>
+<text x="306" y="303" text-anchor="start" class="strong">报错</text>
+<text x="24" y="363" text-anchor="start" class="small">书中示例契约，不是通用数据库规则。</text>
+<rect id="ch13-04m-region-3" x="24" y="384" width="372" height="122" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="40" y="416" text-anchor="start" class="strong" data-fit="ch13-04m-region-3">反例：fake 第二次仍成功</text>
+<text x="40" y="451" text-anchor="start" class="" data-fit="ch13-04m-region-3">只测首次保存：通过</text>
+<text x="40" y="488" text-anchor="start" class="bad" data-fit="ch13-04m-region-3">加重复报错断言：失败</text>
+<text x="24" y="544" text-anchor="start" class="small">同一公开接口测试分别运行于</text>
+<text x="24" y="574" text-anchor="start" class="small">真实实现和 fake；不验证性能。</text>
+</svg>

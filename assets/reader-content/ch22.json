@@ -1,0 +1,130 @@
+{
+  "format": 2,
+  "sourceSha256": "6e5dc79fd989a1c4451d2466e107b0e0dd83e86bd6ce3dedd26823e0b94f95f7",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch22.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [56, 58],
+      "english": "For some ideas about why, see Chapter 16.",
+      "chinese": "关于其中的原因，参见第16章。",
+      "after": "如果组织使用一组分布式或联邦式代码仓库，跨仓库进行原子变更甚至可能在技术上都无法实现。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [60, 62],
+      "english": "It’s possible in this federated world to say “we’ll just commit to each repo as fast as possible to keep the duration of the build break small!” But that approach really doesn’t scale as the number of federated repositories grows.",
+      "chinese": "在这种联邦式仓库环境中，有人可能会说：“我们尽快向每个代码仓库提交，把构建失败的时间压到最短就行了！”但随着联邦式仓库数量增加，这种方法实际上无法有效扩展。",
+      "after": "跨仓库进行原子变更甚至可能在技术上都无法实现。"
+    },
+    {
+      "id": "3",
+      "definitionLines": [64, 66],
+      "english": "For a further discussion about this practice, see Chapter 15.",
+      "chinese": "关于这种做法的进一步讨论，见第15章。",
+      "after": "将用户从旧系统迁移到新系统"
+    },
+    {
+      "id": "4",
+      "definitionLines": [90, 92],
+      "english": "By “unfunded mandate,” we mean “additional requirements imposed by an external entity without balancing compensation.” Sort of like when the CEO says that everybody must wear an evening gown for “formal Fridays” but doesn’t give you a corresponding raise to pay for your formal wear.",
+      "chinese": "这里所说的“只下达任务却不给相应资源”，是指“外部主体提出额外要求，却不提供相应补偿”。这有点像 CEO 要求每个人在“正装星期五”穿晚礼服，却不给你相应加薪来支付礼服费用。",
+      "after": "第二，没有人喜欢只下达任务却不给相应资源的要求。"
+    },
+    {
+      "id": "5",
+      "definitionLines": [132, 134],
+      "english": "See [*https://ieeexplore.ieee.org/abstract/document/8443579*](https://ieeexplore.ieee.org/abstract/document/8443579).",
+      "chinese": "查阅 [*https://ieeexplore.ieee.org/abstract/document/8443579*](https://ieeexplore.ieee.org/abstract/document/8443579)。",
+      "after": "可以绕过这些限制，但也会让执行过程更复杂。"
+    },
+    {
+      "id": "6",
+      "definitionLines": [196, 198],
+      "english": "This probably sounds like overkill, and it likely is. We’re doing active research on the best way to determine the “right” set of tests for a given change, balancing the cost of compute time to run the tests, and the human cost of making the wrong choice.",
+      "chinese": "这听起来可能有些过度，而且很可能确实如此。我们正在积极研究如何为给定变更确定“恰当”的测试集，在运行测试所需的计算时间成本与选错测试集带来的人力成本之间取得平衡。",
+      "after": "还会运行所有通过传递依赖关联到修改文件的测试。"
+    },
+    {
+      "id": "7",
+      "definitionLines": [256, 258],
+      "english": "The largest series of LSCs ever executed removed more than one billion lines of code from the repository over the course of three days. This was largely to remove an obsolete part of the repository that had been migrated to a new home; but still, how confident do you have to be to delete one billion lines of code?",
+      "chinese": "迄今实施过的最大一组大规模变更，在三天内从代码仓库中删除了超过10亿行代码。这主要是清除已迁往新位置的过时部分；即便如此，要删除10亿行代码，也得有多大的把握才行？",
+      "after": "一旦涉及数百个产品和服务中的上千处位置，也会变得复杂。"
+    },
+    {
+      "id": "8",
+      "definitionLines": [260, 262],
+      "english": "LSCs are usually supported by tools that make finding, making, and reviewing changes relatively straightforward.",
+      "chinese": "大规模变更通常有工具支持，使查找修改位置、生成变更和审查变更都相对直接。",
+      "after": "审查通过后，还要运行尽可能多的测试，确保变更安全。"
+    },
+    {
+      "id": "9",
+      "definitionLines": [264, 266],
+      "english": "It is possible to ask TAP for single change “isolated” run, but these are very expensive and are performed only during off-peak hours.",
+      "chinese": "可以要求 TAP 针对单项变更进行“隔离”运行，但成本很高，因此只在非高峰时段执行。",
+      "after": "不必让每项变更单独“乘车”。"
+    },
+    {
+      "id": "10",
+      "definitionLines": [332, 334],
+      "english": "There are obvious technical costs here in terms of compute and storage, but the human costs in time to review a change far outweigh the technical ones.",
+      "chinese": "这里显然涉及计算和存储方面的技术成本，但审查变更所花时间对应的人力成本，远高于这些技术成本。",
+      "after": "不过，每次修改都有成本，生成和审查变更都需要投入。"
+    },
+    {
+      "id": "11",
+      "definitionLines": [336, 338],
+      "english": "For example, we do not want the resulting tools to be used as a mechanism to fight over the proper spelling of “gray” or “grey” in comments.",
+      "chinese": "例如，我们不希望这些工具被用来争论注释中应该写“gray”还是“grey”。",
+      "after": "但也希望这些工作经过监督和审慎考虑，而不是随意修改。"
+    },
+    {
+      "id": "12",
+      "definitionLines": [388, 390],
+      "english": "In fact, Go recently introduced these kinds of language features specifically to support large-scale refactorings （ see [https://talks.golang.org/2016/refactor.article](https://talks.golang.org/2016/refactor.article) ）.",
+      "chinese": "事实上，Go 最近就专门引入了这类语言特性，以支持大规模重构（参见`https://talks.golang.org/2016/refactor.article`）。",
+      "after": "缺少这些特性的语言，通常很难支持系统的增量迁移。"
+    },
+    {
+      "id": "13",
+      "definitionLines": [448, 450],
+      "english": "The only kinds of changes that the committee has outright rejected have been those that are deemed dangerous, such as converting all NULL instances to nullptr, or extremely low-value, such as changing spelling from British English to American English, or vice versa. As our experience with such changes has increased and the cost of LSCs has dropped, the threshold for approval has as well.",
+      "chinese": "委员会直接否决过的，只有被认为危险或价值极低的变更。前者例如将所有 NULL 替换为 nullptr，后者例如将英式拼写改为美式拼写，或反过来。随着相关经验积累、大规模变更成本下降，审批门槛也在降低。",
+      "after": "过去，委员会的审批一直较为宽松，而且往往不只批准某一项变更，还会一并批准一大类相关变更。"
+    },
+    {
+      "id": "14",
+      "definitionLines": [466, 468],
+      "english": "This happens for many reasons: copy-and-paste from existing examples, committing changes that have been in development for some time, or simply reliance on old habits.",
+      "chinese": "原因有很多：复制粘贴现有示例，提交已开发了一段时间的变更，或者仅仅沿用旧习惯。",
+      "after": "以便在用户重新引入旧用法，或修改的代码发生文本合并冲突时，及时更新总变更。"
+    },
+    {
+      "id": "15",
+      "definitionLines": [470, 472],
+      "english": "In actuality, this is the reasoning behind the original work on clang-format for C++.",
+      "chinese": "实际上，这正是最初为 C++ 开发 clang-format 的出发点。",
+      "after": "这也是为什么需要风格指南和自动格式化工具，参见第8章。"
+    },
+    {
+      "id": "16",
+      "definitionLines": [572, 574],
+      "english": "Sadly, the systems we most want to organically decompose are those that are the most resilient to doing so. They are the plastic six-pack rings of the code ecosystem.",
+      "chinese": "遗憾的是，我们最希望自然分解的系统，往往恰恰最难分解。它们就像代码生态系统中捆扎六罐装饮料的塑料环。",
+      "after": "有的只迁移高价值的引用，让其余旧引用自然消失。"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "pairedSources": [
+    {
+      "english": "Today it is common for a double-digit percentage (10% to 20%) of the changes in a project to be the result of LSCs, meaning a substantial amount of code is changed in projects by people whose full-time job is unrelated to those projects. Without good tests, such work would be impossible, and Google’s codebase would quickly atrophy under its own weight. LSCs enable us to systematically migrate our entire codebase to newer APIs, deprecate older APIs, change language versions, and remove popular but dangerous practices.",
+      "chinese": "如今，一个项目中有两位数百分比的变更，通常为10%到20%，来自大规模变更，已是常见现象。",
+      "reason": "Source line 208 fully translates all three English sentences at line 206. The preceding standalone Adam Bender byline at line 204 is classified as another English paragraph, producing two English paragraphs before one Chinese paragraph and preventing automatic equal-count pairing. Pair only the prose, not the byline."
+    }
+  ],
+  "translations": [],
+  "issues": []
+}

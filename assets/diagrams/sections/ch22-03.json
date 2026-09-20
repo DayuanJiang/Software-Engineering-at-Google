@@ -1,0 +1,21 @@
+{
+  "id": "ch22-03",
+  "chapter": 22,
+  "title": "别名怎样解开 API 与调用方的绑定？",
+  "summary": "用新旧类型的兼容矩阵比较别名前后：没有转换适配时，新旧类型不同会卡住混合迁移；旧名成为新类型别名后，API 和调用方即使分批改名，也指向同一类型。行为准备仍是前提，旧引用清完才删除别名。",
+  "enabled": true,
+  "sourceSections": ["##### Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr", "### Language Support  编程语言支持"],
+  "afterParagraph": "最后删除旧的 scoped_ptr 别名，完成了迁移。",
+  "desktop": "assets/diagrams/sections/ch22-03.svg",
+  "mobile": "assets/diagrams/sections/ch22-03-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "API 参数先改新名、调用方暂留旧名，为什么建立类型别名之后可以分开改名？",
+    "expectedAnswer": "原案例的 API 参数使用 scoped_ptr，沿调用图一次修改可能过大。完成行为准备后，让 scoped_ptr 成为 std::unique_ptr 的别名，使两个拼写指向同一类型，从而允许 API 和调用方渐进替换名称；旧引用消除后再删除别名。",
+    "visualEncoding": "两张相同坐标的二乘二矩阵，列是 API 参数类型名，行是调用方类型名。别名前无转换适配时混合格标不同，建立别名后四格均标同型；变化只在混合格，明确展示新增的兼容中间态。",
+    "sourceEvidence": "##### Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr: 一些广泛使用的 API 还将 scoped_ptr 用作参数类型；先将 scoped_ptr 改为 std::unique_ptr 的类型别名。### Language Support  编程语言支持: 类型别名和转发函数等语言特性。",
+    "beforeProblem": "原图把行为准备、桥接、迁移、清理列成四行或四个方框，没有显示 API 与调用方为何无法分开改，也没有显示别名实际改变了哪些兼容组合。",
+    "whyBetter": "固定 API 和调用方两个维度，只改变是否建立别名，使读者能比较混合状态从类型不同到同型的变化；保留行为准备和删除条件，避免把文本替换当作整个迁移。",
+    "limits": "S/U 为图中缩写，均指同一模板参数 T；不是可直接复制的 C++ 语法。图仅比较类型一致性，假设别名前无额外转换适配，不展示移动语义、细微行为依赖或所有长尾修复；同型不等于完整程序已被证明正确。"
+  }
+}

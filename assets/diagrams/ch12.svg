@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch12" data-layout="desktop" role="img" aria-labelledby="ch12-title ch12-desc" viewBox="0 0 960 560" width="960" height="560">
+<title id="ch12-title">测试要守住契约，也要解释失败</title>
+<desc id="ch12-desc">以例12-6/7的加法测试连接本章的两个维护性问题。隐藏计算输入使期望5的来源不明；以代码简写隐藏无关构造、显露2加3等于5。对同一测试施加两种示意变化：行为不变的内部重构不应要求修改测试，错误地返回6则应报告期望5、实际6。示意结果不是实测数据。</desc>
+<style>
+.cg-ch12[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0}
+.cg-ch12[data-layout="desktop"] .small {font-size:20px}
+.cg-ch12[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 896">测试要守住契约，也要解释失败</text>
+<text x="32" y="76" class="small" text-anchor="start" fill="var(--diagram-muted,#686868)" data-font-size="20" data-lane="32 896">例12-6/7的加法测试（代码简写）；底部为两种示意变更</text>
+<rect x="32" y="100" width="896" height="100" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
+<text x="48" y="135" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 420">newTestCalculation()</text>
+<text x="504" y="135" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="504 408">期待 5，却看不到输入 2 和 3</text>
+<text x="48" y="176" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="48 864">RoundingStrategy、ENABLE_COSINE_FEATURE 等构造细节反而占据测试主体</text>
+<text x="32" y="232" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 896">改写后：shouldPerformAddition</text>
+<rect x="32" y="251" width="540" height="126" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="48" y="281" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 508">calc = newCalculator()</text>
+<text x="48" y="320" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 508">result = calc.calculate(2, PLUS, 3)</text>
+<text x="48" y="359" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 508">assert(result == 5)</text>
+<path d="M582 273 L615 273" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" data-connector="true"/>
+<text x="634" y="281" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="634 294">隐藏：无关构造细节</text>
+<path d="M582 312 L615 312" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" data-connector="true"/>
+<text x="634" y="320" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="634 294">显露：具体输入与操作</text>
+<path d="M582 351 L615 351" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" data-connector="true"/>
+<text x="634" y="359" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="634 294">显露：明确的预期结果</text>
+<rect x="32" y="407" width="432" height="103" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" data-region="true"/>
+<rect x="496" y="407" width="432" height="103" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" data-region="true"/>
+<text x="48" y="441" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 400">只重构内部，2 + 3 仍为 5</text>
+<text x="48" y="480" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 400">同一测试不改，继续通过</text>
+<text x="512" y="441" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="512 400">示意缺陷：2 + 3 返回 6</text>
+<text x="512" y="480" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="512 400">同一测试失败：期望 5，实际 6</text>
+<text x="32" y="544" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="32 896">两个检查点：会不会因无害改动而失效？失败时能否看清哪项行为不符？</text>
+</svg>

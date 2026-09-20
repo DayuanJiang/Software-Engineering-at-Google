@@ -1,0 +1,25 @@
+{
+  "chapter": 2,
+  "title": "团队协作，不必采用同一种工作方式",
+  "summary": "用作者与 Karl 调试转换工具的原文案例，比较强行同步的冲突与共同确认缺陷、分头探索、汇合发现的协作关系；独立探索不等于隐藏工作。",
+  "sourceSections": [
+    "## Hiding Considered Harmful 隐藏工作的危害",
+    "### The Three Pillars of Social Interaction社交互动的三大支柱",
+    "#### Learn patience 培养耐心",
+    "## TL;DRs  内容提要"
+  ],
+  "kind": "comparison",
+  "enabled": true,
+  "desktop": "assets/diagrams/ch02.svg",
+  "mobile": "assets/diagrams/ch02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "工作方式不同，是否只能强行同步或各自隐藏工作？",
+    "expectedAnswer": "不必二选一。原文中作者偏好自下而上、Karl 偏好自上而下；共同确认缺陷后分头分析，再汇合发现，既保留不同工作方式又保持协作。",
+    "visualEncoding": "上部把两种工作顺序接到同一次结对中的冲突；下部从共同确认缺陷分叉为两条不同探索路径，再汇合到交流发现。分叉表示独立探索，汇合表示没有隐藏工作，不编码速度或贡献大小。",
+    "sourceEvidence": "#### Learn patience 培养耐心：'先一起坐在电脑前确认缺陷，再分头从两个方向同时分析问题'；## Hiding Considered Harmful 隐藏工作的危害：'专注和独处'与'协作、审查'的权衡；## TL;DRs  内容提要：了解彼此偏好的工作方式。",
+    "beforeProblem": "旧总览只有我与队友的反馈双箭头，加三项原则的文字列举；与反馈时机和反馈原则两张节图重复，没有解释协作如何兼容独处和不同工作方式。",
+    "whyBetter": "读者可以沿同一缺陷的分叉与汇合追踪谁在何时共同工作、何时独立探索，直接看到团队协作不同于强行同步或完全隔离。",
+    "limits": "这是书中作者与 Karl 的具体经历，不是所有冲突的通用处方，也不证明并行一定更快；总览选取协作关系，不罗列本章所有主题。"
+  }
+}

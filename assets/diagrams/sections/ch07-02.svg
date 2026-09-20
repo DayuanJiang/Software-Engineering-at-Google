@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch07-02-diagram" class="chapter-svg cg-ch07-02" role="img" aria-labelledby="ch07-02-title ch07-02-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch07-02-title">指标缺位，不等于目标消失</title><desc id="ch07-02-desc">研究设计中，更快完成工作的目标对应已取得 Readability 资格者的 CL 比未取得资格者审查更快这一信号；日志代理是按资格分组的 CL 审查耗时中位数。质量目标保留，但研究不采用不理想的客观定量代理，仍收集代码质量自评。自评比例反映看法，不等于客观代码质量。</desc>
+<style>.cg-ch07-02#ch07-02-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch07-02#ch07-02-diagram .strong{font-weight:600}
+.cg-ch07-02#ch07-02-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch07-02#ch07-02-diagram .danger-text{fill:var(--diagram-danger,#b54750)}
+.cg-ch07-02#ch07-02-diagram .primary{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch07-02#ch07-02-diagram .secondary{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch07-02#ch07-02-diagram .warm{fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch07-02#ch07-02-diagram .empty{fill:var(--diagram-bg,#fff);stroke:var(--diagram-danger,#b54750);stroke-width:1.5;stroke-dasharray:6 5}
+.cg-ch07-02#ch07-02-diagram .band{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch07-02#ch07-02-diagram .blue-band{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch07-02#ch07-02-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch07-02#ch07-02-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch07-02-arrow)}</style>
+<defs><marker id="ch07-02-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong" text-anchor="start">指标缺位，不等于目标消失</text>
+<text x="32" y="72" class="small" text-anchor="start">Readability：以下是研究设计，不是研究结果</text>
+<text x="32" y="119" class="strong" text-anchor="start">目标：期望的结果</text>
+<text x="280" y="119" class="strong" text-anchor="start">信号：想检查的现象</text>
+<text x="632" y="119" class="strong" text-anchor="start">指标：可测的代理</text>
+<rect id="ch07-02-speed-goal" x="32" y="146" width="208" height="132" rx="4" class="primary"/>
+<text x="48" y="190" class="" text-anchor="start" data-box="ch07-02-speed-goal">更快、更高效地</text>
+<text x="48" y="225" class="" text-anchor="start" data-box="ch07-02-speed-goal">完成工作</text>
+<path d="M242 210H268" class="arrow"/>
+<text x="280" y="179" class="" text-anchor="start">已取得资格者的 CL</text>
+<text x="280" y="214" class="" text-anchor="start">比未取得资格者</text>
+<text x="280" y="249" class="" text-anchor="start">审查更快</text>
+<path d="M590 210H618" class="arrow"/>
+<rect id="ch07-02-speed-metric" x="628" y="146" width="300" height="132" rx="4" class="secondary"/>
+<text x="644" y="184" class="" text-anchor="start" data-box="ch07-02-speed-metric">按资格分组，比较</text>
+<text x="644" y="220" class="" text-anchor="start" data-box="ch07-02-speed-metric">CL 审查耗时中位数</text>
+<text x="644" y="258" class="small" text-anchor="start" data-box="ch07-02-speed-metric">日志值不是生产力本身</text>
+<path d="M32 296H928" class="line"/>
+<rect id="ch07-02-quality-goal" x="32" y="316" width="208" height="100" rx="4" class="primary"/>
+<text x="48" y="357" class="" text-anchor="start" data-box="ch07-02-quality-goal">写出更高质量</text>
+<text x="48" y="392" class="" text-anchor="start" data-box="ch07-02-quality-goal">的代码</text>
+<path d="M242 365H268" class="arrow"/>
+<text x="280" y="343" class="" text-anchor="start">自评代码质量较高</text>
+<text x="280" y="376" class="" text-anchor="start">流程对质量有正面影响</text>
+<text x="280" y="407" class="small" text-anchor="start">这些是待检验的信号</text>
+<path d="M590 365H604V337H620" class="arrow"/>
+<path d="M604 365V388H620" class="arrow"/>
+<rect id="ch07-02-quality-gap" x="628" y="315" width="300" height="45" rx="4" class="empty"/>
+<text x="644" y="345" class="" text-anchor="start" data-box="ch07-02-quality-gap">客观定量代理：空缺</text>
+<text x="632" y="395" class="strong" text-anchor="start">仍收集工程师自评</text>
+<text x="632" y="425" class="small" text-anchor="start">自评比例 ≠ 客观代码质量</text>
+<text x="32" y="460" class="small" text-anchor="start">日志可能受变更规模或难度干扰，调查也可能有偏差；不拿差代理填补质量度量空缺。</text>
+</svg>

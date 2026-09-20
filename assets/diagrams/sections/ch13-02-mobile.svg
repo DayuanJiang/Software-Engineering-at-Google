@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch13-02" data-layout="mobile" role="img" aria-labelledby="ch13-02m-title ch13-02m-desc">
+<title id="ch13-02m-title">fake、stub 与交互验证不是一回事</title>
+<desc id="ch13-02m-desc">区分伪实现的轻量行为、打桩的预设响应和交互测试的调用验证；mock 是框架创建的对象，框架既能打桩也能验证交互。</desc>
+<style>
+.cg-ch13-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch13-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch13-02[data-layout="mobile"] .strong {font-weight:600}
+</style>
+<defs><marker id="ch13-02m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" text-anchor="start" class="strong" data-font-size="22">三种技术，各自验证什么</text>
+<text x="24" y="68" text-anchor="start" class="small" data-font-size="19">mock 对象与使用技术不能混称</text>
+<rect x="24" y="96" width="372" height="124" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" />
+<text x="40" y="128" text-anchor="start" class="strong" data-font-size="22">fake：轻量级伪实现</text>
+<text x="40" y="161" text-anchor="start" class="small" data-font-size="19">有与真实实现相似的行为</text>
+<text x="40" y="188" text-anchor="start" class="small" data-font-size="19">例如保存数据，再读取数据</text>
+<rect x="24" y="237" width="372" height="124" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+<text x="40" y="269" text-anchor="start" class="strong" data-font-size="22">stub：为函数预设响应</text>
+<text x="40" y="302" text-anchor="start" class="small" data-font-size="19">按测试需要指定返回值或错误</text>
+<text x="40" y="329" text-anchor="start" class="small" data-font-size="19">不自动验证真实实现的契约</text>
+<rect x="24" y="378" width="372" height="124" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" />
+<text x="40" y="410" text-anchor="start" class="strong" data-font-size="22">交互测试：验证如何调用</text>
+<text x="40" y="443" text-anchor="start" class="small" data-font-size="19">检查是否调用、参数、次数或顺序</text>
+<text x="40" y="470" text-anchor="start" class="small" data-font-size="19">不证明函数执行后的结果正确</text>
+<text x="24" y="541" text-anchor="start" class="small" data-font-size="19">模拟框架创建 mock 对象，</text>
+<text x="24" y="568" text-anchor="start" class="small" data-font-size="19">既可用于打桩，也可用于交互测试。</text>
+</svg>

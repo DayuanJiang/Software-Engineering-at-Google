@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch11-05" data-layout="desktop" role="img" aria-labelledby="ch11-05-title ch11-05-desc">
+<title id="ch11-05-title">识别了不稳定测试，就算完成了吗？</title>
+<desc id="ch11-05-desc">用书中 Test Certified 的第1级与第5级检查一个示意项目：持续构建、覆盖率跟踪、规模分类、快速测试与 flake 清单满足起步条件，但已识别而未消除的非确定性仍不满足第5级。仅演示书中历史 Test Certified 的第1级与第5级要求，不能推断第2至第4级，也不是当前谷歌政策或 pH 评分算法。</desc>
+<style>
+.cg-ch11-05[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch11-05[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch11-05[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch11-05[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+.cg-ch11-05[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch11-05[data-layout="desktop"] .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
+<defs><marker id="ch11-05-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">识别了不稳定测试，就算完成了吗？</text>
+<text x="32" y="76" class="small" text-anchor="start">按书中历史 Test Certified 要求判断，不是 pH 评分。</text>
+<text x="32" y="120" class="strong" text-anchor="start">示意项目：已做到</text>
+<rect x="32" y="138" width="385" height="230" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="174" class="" text-anchor="start" data-region="32 138 385 230">持续构建</text>
+<text x="48" y="206" class="" text-anchor="start" data-region="32 138 385 230">跟踪代码覆盖率</text>
+<text x="48" y="238" class="" text-anchor="start" data-region="32 138 385 230">已按规模分类全部测试</text>
+<text x="48" y="270" class="" text-anchor="start" data-region="32 138 385 230">有一组快速测试</text>
+<text x="48" y="302" class="strong danger" text-anchor="start" data-region="32 138 385 230">已识别 flake，但未消除</text>
+<text x="48" y="346" class="small" text-anchor="start" data-region="32 138 385 230">这些符合第1级起步要求</text>
+<text x="484" y="120" class="strong" text-anchor="start">逐项检查第5级要求</text>
+<text x="896" y="120" class="small" text-anchor="middle">证据</text>
+<path d="M484 196H928" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/>
+<text x="484" y="177" class="" text-anchor="start" data-region="484 149 356 38">全部测试自动化</text>
+<text x="896" y="177" class="strong" text-anchor="middle" data-region="864 149 64 38">?</text>
+<path d="M484 250H928" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/>
+<text x="484" y="231" class="" text-anchor="start" data-region="484 203 356 38">每次提交前运行快速测试</text>
+<text x="896" y="231" class="strong" text-anchor="middle" data-region="864 203 64 38">?</text>
+<path d="M484 304H928" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/>
+<text x="484" y="285" class="" text-anchor="start" data-region="484 257 356 38">消除全部非确定性</text>
+<text x="896" y="285" class="strong danger" text-anchor="middle" data-region="864 257 64 38">×</text>
+<path d="M484 358H928" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/>
+<text x="484" y="339" class="" text-anchor="start" data-region="484 311 356 38">每种行为都有测试覆盖</text>
+<text x="896" y="339" class="strong" text-anchor="middle" data-region="864 311 64 38">?</text>
+<text x="32" y="407" class="strong danger" text-anchor="start">结论：仍不满足第5级</text>
+<text x="32" y="441" class="small" text-anchor="start">× 已知不满足：非确定性仍在；? 其余第5级要求尚缺证据。</text>
+<text x="32" y="472" class="small" text-anchor="start">第1级允许先识别问题；识别清单不能替代修复工作。</text>
+</svg>

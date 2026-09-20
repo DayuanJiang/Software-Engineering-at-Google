@@ -1,0 +1,26 @@
+{
+  "chapter": 10,
+  "title": "读者能做出下一步判断吗？",
+  "summary": "用字符串拼接、漏写授权前提和失效教程三个卡点，比较补明行为、前提与时效状态后，读者能够作出的判断；再将使用中发现的问题接回维护流程。",
+  "sourceSections": [
+    "Documentation Is Like Code 把文档当作代码",
+    "Function comments 函数注释",
+    "Tutorials 教程",
+    "Documentation Reviews 文档评审",
+    "Deprecating Documents 弃用文档"
+  ],
+  "kind": "worked-comparison",
+  "enabled": true,
+  "desktop": "assets/diagrams/ch10.svg",
+  "mobile": "assets/diagrams/ch10-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "函数名、教程步骤和旧页面都已经存在，读者还缺什么信息才能决定下一步？",
+    "expectedAnswer": "函数注释须说明调用行为，教程须交代必要前提，失效文档须删除或标明过时并在有新来源时给出指引。以原文注释推演，StrCat(\"a\", \"b\") 不插入分隔符，结果为 \"ab\"；教程可能因漏写授权要求而让读者报错。使用中的问题还需通过反馈进入维护流程。",
+    "visualEncoding": "桌面三行分别将具体问题、缺失的文档依据和可作出的判断横向对齐；移动端每个案例重新纵向排布。拼接示例直接显示输入到输出的箭头；权限与时效案例对照缺失信息和补明后的行动条件。页脚把使用反馈接回负责人和变更评审，而非画成必经顺序的循环。",
+    "sourceEvidence": "#### Function comments 函数注释：StrCat 注释中的 using no delimiter(s)；### Tutorials 教程：漏写用户名授权导致第4步报错；### Deprecating Documents 弃用文档：标明已过时，并在有新信息来源时给出指引；## Documentation Is Like Code 把文档当作代码：文档也应该有负责人；## Documentation Reviews 文档评审：通过缺陷报告或其他反馈途径告诉作者。",
+    "beforeProblem": "原概览只有同步变更、评审、反馈和复查四个框，与 ch10-01 的维护回路重复，没有显示具体哪条信息会改变读者的判断。",
+    "whyBetter": "读者可以从图中的输入、条件和文档改动推导输出或下一步，不必先接受抽象的文档价值结论；三个案例覆盖使用行为、操作前提和长期时效。",
+    "limits": "字符串调用与输出是根据原注释推演的展示示例，并非原书逐字代码；授权是原文给出的失败示例，不是第4步报错的通用诊断。图不保证补齐权限就能完成所有操作，也不以更新日期证明文档正确。"
+  }
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch12-01" data-layout="desktop" role="img" aria-labelledby="ch12-01-title ch12-01-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch12-01-title">换了存储格式，哪条测试不该失败？</title>
+<desc id="ch12-01-desc">例12-2的内部字符串断言与例12-3的公开余额断言对照。示意纯重构把内部逗号分隔记录换为竖线分隔，并相应调整读取逻辑；交易与公开余额保持不变。旧字符串断言从通过变为失败，公开余额断言仍通过。前者是无害变更暴露的脆弱性，不是同一代码下非确定性失败的不稳定性。</desc>
+<style>
+.cg-ch12-01[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0}
+.cg-ch12-01[data-layout="desktop"] .small {font-size:20px}
+.cg-ch12-01[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 896">换了存储格式，哪条测试不该失败？</text>
+<text x="32" y="76" class="small" text-anchor="start" fill="var(--diagram-muted,#686868)" data-font-size="20" data-lane="32 896">例12-2/3；分隔符替换为示意，读写同步修改，公开行为不变</text>
+<text x="32" y="150" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 235">交易仍是</text>
+<text x="32" y="185" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 235">me 向 you 转 100</text>
+<rect x="288" y="102" width="304" height="112" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" data-region="true"/>
+<rect x="624" y="102" width="304" height="112" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="304" y="133" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="304 272">重构前：逗号分隔</text>
+<text x="304" y="168" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="304 272">&quot;me,you,100&quot;</text>
+<text x="304" y="199" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="304 272">公开余额：50 / 120</text>
+<text x="640" y="133" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="640 272">重构后：竖线分隔</text>
+<text x="640" y="168" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="640 272">&quot;me|you|100&quot;</text>
+<text x="640" y="199" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="640 272">公开余额：50 / 120</text>
+<text x="48" y="255" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 470">不修改任何测试，重跑相同断言</text>
+<text x="630" y="255" class="" text-anchor="middle" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="555.0 150">重构前</text>
+<text x="833" y="255" class="" text-anchor="middle" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="754.0 158">重构后</text>
+<path d="M32 272 L928 272" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" data-connector="true"/>
+<rect x="32" y="283" width="896" height="60" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
+<text x="48" y="322" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 470">内部记录 == &quot;me,you,100&quot;</text>
+<text x="630" y="322" class="" text-anchor="middle" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="555.0 150">通过</text>
+<text x="833" y="322" class="strong" text-anchor="middle" fill="var(--diagram-danger,#b54750)" data-font-size="24" data-lane="754.0 158">失败</text>
+<rect x="32" y="354" width="896" height="60" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="48" y="393" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 470">公开余额分别 == 50、120</text>
+<text x="630" y="393" class="" text-anchor="middle" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="555.0 150">通过</text>
+<text x="833" y="393" class="strong" text-anchor="middle" fill="var(--diagram-primary,#087f6d)" data-font-size="24" data-lane="754.0 158">通过</text>
+<text x="32" y="449" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="32 896">脆弱：无害重构导致失败。不稳定：生产代码未变也会非确定性失败。</text>
+</svg>

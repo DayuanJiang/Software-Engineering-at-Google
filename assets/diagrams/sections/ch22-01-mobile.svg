@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22-01m-root" class="chapter-svg cg-ch22-01" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch22-01m-title ch22-01m-desc">
+  <title id="ch22-01m-title">分片边界不能切断配套修改</title>
+  <desc id="ch22-01m-desc">示意把函数返回类型从 int 改为 long：若先提交头文件，声明与旧实现不一致；把头文件与实现放进同一分片，才能形成可独立提交的变更。另一项目的独立修改不必捆绑提交。 函数 f、文件 api.h/api.cc 和项目名均为教学示例。假设 api.cc 包含 api.h，且没有其他必须同步修改的调用方；现实中若有更多依赖，应继续合并或先建立兼容路径。这里只比较声明与定义，不证明完整程序的行为正确性。</desc>
+  <style>
+.cg-ch22-01#ch22-01m-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:22px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22-01#ch22-01m-root .small { font-size:19px; fill:var(--diagram-muted,#686868); }
+.cg-ch22-01#ch22-01m-root .strong { font-weight:600; }
+.cg-ch22-01#ch22-01m-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22-01#ch22-01m-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22-01#ch22-01m-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22-01#ch22-01m-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22-01m-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22-01m-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22-01m-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22-01m-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22-01m-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)" />
+  <text x="24" y="38" text-anchor="start" class="strong">分片边界不能切断配套修改</text>
+  <text x="24" y="71" text-anchor="start" class="small">示意：int 改 long；实现包含头文件</text>
+  <text x="24" y="98" text-anchor="start" class="small">假设没有其他需同步修改的调用方</text>
+  <text x="24" y="135" text-anchor="start" class="strong danger-ink">错误：按文件拆</text>
+  <rect x="24" y="153" width="372" height="62" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="2" />
+  <text x="38" y="180" text-anchor="start" class="small" data-box="24,153,372,62">先交 api.h</text>
+  <text x="38" y="206" text-anchor="start" data-box="24,153,372,62">long f();</text>
+  <path d="M24 228L396 228" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-dasharray="6 5" />
+  <text x="38" y="257" text-anchor="start">旧 api.cc：int f() { ... }</text>
+  <text x="24" y="290" text-anchor="start" class="strong danger-ink">声明与定义不一致</text>
+  <rect x="24" y="320" width="372" height="140" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="38" y="350" text-anchor="start" class="strong" data-box="24,320,372,140">分片甲：同一项目，配套修改同交</text>
+  <text x="38" y="395" text-anchor="start" data-box="24,320,372,140">api.h:   long f();</text>
+  <text x="38" y="434" text-anchor="start" data-box="24,320,372,140">api.cc: long f() { ... }</text>
+  <text x="24" y="496" text-anchor="start">项目乙无同步依赖，可另分一片。</text>
+  <text x="24" y="532" text-anchor="start" class="small">有更多依赖：合并或先建立兼容。</text>
+  <text x="24" y="565" text-anchor="start" class="small">每片仍需测试、审查与项目检查。</text>
+</svg>

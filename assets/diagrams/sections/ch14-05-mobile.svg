@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch14-05" data-layout="mobile" role="img" aria-labelledby="ch14-05m-title ch14-05m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch14-05m-title">没显示广告：代码坏了，还是超时了？</title>
+<desc id="ch14-05m-desc">本章广告案例：超过服务内部期限仍未获得广告时，不展示广告而非返回500。测试只见广告缺失可能误判业务代码。另一层是测试等待：响应完成状态就立即验证，达到最大等待期限则报告超时。过载使固定等待或超时失败增多，失败测试重跑又增加负载。内部期限要可配置并明确暴露原因，不是无限等待或一味缩短；重跑指测试重新执行，不是服务 RPC 重试。</desc>
+<style>
+.cg-ch14-05[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch14-05[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch14-05[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch14-05[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch14-05[data-layout="mobile"] .boundary {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;stroke-dasharray:7 5}
+.cg-ch14-05[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch14-05[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch14-05[data-layout="mobile"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch14-05m-primary-arrow)}
+.cg-ch14-05[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch14-05[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch14-05[data-layout="mobile"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch14-05m-secondary-arrow)}
+.cg-ch14-05[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch14-05[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch14-05[data-layout="mobile"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch14-05m-warm-arrow)}
+.cg-ch14-05[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch14-05[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch14-05[data-layout="mobile"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch14-05m-danger-arrow)}
+</style><defs>
+<marker id="ch14-05m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch14-05m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch14-05m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch14-05m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="22" y="34" class="strong" text-anchor="start">没显示广告：代码坏了？</text>
+<text x="22" y="68" class="small" text-anchor="start">本章广告案例：也可能是内部超时</text>
+<g data-box="22,96,170,76"><rect x="22" y="96" width="170" height="76" rx="6" class="danger"/>
+<text x="107.0" y="127" class="strong" text-anchor="middle">内部期限到</text>
+<text x="107.0" y="158" class="small" text-anchor="middle">未取得广告</text>
+</g>
+<g data-box="226,96,172,76"><rect x="226" y="96" width="172" height="76" rx="6" class="warm"/>
+<text x="312.0" y="127" class="strong" text-anchor="middle">不展示广告</text>
+<text x="312.0" y="158" class="small" text-anchor="middle">不是 500</text>
+</g>
+<path d="M192 134H224" class="danger-path" data-connector="true"/>
+<text x="22" y="205" class="strong" text-anchor="start">测试只见缺广告，可能误判</text>
+<g data-box="22,232,164,46"><rect x="22" y="232" width="164" height="46" rx="6" class="danger"/>
+<text x="104.0" y="263" class="" text-anchor="middle">过载</text>
+</g>
+<g data-box="234,232,164,46"><rect x="234" y="232" width="164" height="46" rx="6" class="warm"/>
+<text x="316.0" y="263" class="" text-anchor="middle">等待失败</text>
+</g>
+<g data-box="234,318,164,46"><rect x="234" y="318" width="164" height="46" rx="6" class="warm"/>
+<text x="316.0" y="349" class="" text-anchor="middle">重跑测试</text>
+</g>
+<g data-box="22,318,164,46"><rect x="22" y="318" width="164" height="46" rx="6" class="danger"/>
+<text x="104.0" y="349" class="" text-anchor="middle">负载增加</text>
+</g>
+<path d="M186 255H232" class="danger-path" data-connector="true"/>
+<path d="M316 278V316" class="danger-path" data-connector="true"/>
+<path d="M234 341H188" class="danger-path" data-connector="true"/>
+<path d="M104 318V280" class="danger-path" data-connector="true"/>
+<text x="22" y="403" class="strong" text-anchor="start">测试等待：完成即验证</text>
+<g data-box="22,422,156,84"><rect x="22" y="422" width="156" height="84" rx="6" class="secondary"/>
+<text x="100.0" y="454" class="strong" text-anchor="middle">等待状态</text>
+<text x="100.0" y="487" class="small" text-anchor="middle">轮询 / 通知</text>
+</g>
+<g data-box="226,416,172,48"><rect x="226" y="416" width="172" height="48" rx="6" class="primary"/>
+<text x="312.0" y="448" class="" text-anchor="middle">完成：验证</text>
+</g>
+<g data-box="226,484,172,48"><rect x="226" y="484" width="172" height="48" rx="6" class="warm"/>
+<text x="312.0" y="516" class="" text-anchor="middle">到上限：报超时</text>
+</g>
+<path d="M178 446H200V440H224" class="primary-path" data-connector="true"/>
+<path d="M178 482H200V508H224" class="warm-path" data-connector="true"/>
+<text x="22" y="563" class="small" text-anchor="start">内部期限另调，并暴露超时原因</text>
+<text x="22" y="589" class="small" text-anchor="start">延长或缩短都要权衡用户时限</text>
+</svg>

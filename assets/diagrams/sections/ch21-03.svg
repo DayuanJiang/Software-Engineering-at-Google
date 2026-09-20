@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21-03" data-layout="desktop" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch21-03-title ch21-03-desc">
+<title id="ch21-03-title">版本允许，不等于用法兼容</title>
+<desc id="ch21-03-desc">两个源于原文的反例，函数签名、数组与补丁编号为示意。第一例只有未使用的 Bar 从 Bar() 改为 Bar(mode)，liba 与 libb 调用的 Foo(x) 不变；1.x 约束拒绝 2.x，却未反映本例的真实使用范围。第二例契约不承诺顺序，版本 1.1.14 输出 A、B，1.1.15 输出 B、A；调用方断言首项是 A，旧版通过新版失败，尽管 1.1.14≤v&lt;2 允许新补丁。判断兼容必须结合具体用法，不能把 SemVer 或解算器结果当作行为证明。</desc>
+<style>
+.cg-ch21-03[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch21-03[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch21-03[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch21-03[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch21-03[data-layout="desktop"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch21-03[data-layout="desktop"] .warm{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch21-03[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch21-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch21-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch21-03-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch21-03-shape-1" x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">版本允许，不等于用法兼容</text>
+<text x="32" y="76" class="small" text-anchor="start">沿用 Foo / Bar 与无序流反例；签名、数组和补丁编号仅为示意</text>
+<text x="32" y="122" class="strong warm" text-anchor="start">过度约束：拒绝可用组合</text>
+<text x="206" y="167" class="strong" text-anchor="middle">1.x</text>
+<text x="372" y="167" class="strong" text-anchor="middle">2.x</text>
+<rect id="ch21-03-shape-2" x="32" y="183" width="432" height="40" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="42" y="210" class="small" text-anchor="start" data-owner="ch21-03-shape-2">使用</text>
+<text x="206" y="210" class="" text-anchor="middle" data-owner="ch21-03-shape-2">Foo(x)</text>
+<text x="372" y="210" class="" text-anchor="middle" data-owner="ch21-03-shape-2">Foo(x)</text>
+<rect id="ch21-03-shape-3" x="32" y="225" width="432" height="40" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="42" y="252" class="small" text-anchor="start" data-owner="ch21-03-shape-3">未用</text>
+<text x="206" y="252" class="" text-anchor="middle" data-owner="ch21-03-shape-3">Bar()</text>
+<text x="372" y="252" class="" text-anchor="middle" data-owner="ch21-03-shape-3">Bar(mode)</text>
+<text x="32" y="309" class="" text-anchor="start">liba、libb：只调用 Foo(x)</text>
+<text x="32" y="347" class="danger" text-anchor="start">约束 1.x 排除 2.x</text>
+<text x="32" y="385" class="primary" text-anchor="start">Foo 未变，本例用法仍可运行</text>
+<text x="496" y="122" class="strong danger" text-anchor="start">保护不足：允许失效组合</text>
+<text x="692" y="167" class="strong" text-anchor="middle">1.1.14</text>
+<text x="858" y="167" class="strong" text-anchor="middle">1.1.15</text>
+<text x="496" y="222" class="small" text-anchor="start">无序流 out</text>
+<rect id="ch21-03-shape-4" x="649" y="193" width="40" height="40" rx="3" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="669" y="221" class="strong" text-anchor="middle" data-owner="ch21-03-shape-4">A</text>
+<rect id="ch21-03-shape-5" x="695" y="193" width="40" height="40" rx="3" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="715" y="221" class="strong" text-anchor="middle" data-owner="ch21-03-shape-5">B</text>
+<rect id="ch21-03-shape-6" x="815" y="193" width="40" height="40" rx="3" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="835" y="221" class="strong" text-anchor="middle" data-owner="ch21-03-shape-6">B</text>
+<rect id="ch21-03-shape-7" x="861" y="193" width="40" height="40" rx="3" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="881" y="221" class="strong" text-anchor="middle" data-owner="ch21-03-shape-7">A</text>
+<text x="496" y="273" class="" text-anchor="start">用法：assert(out[0] == &#x27;A&#x27;)</text>
+<text x="692" y="312" class="primary strong" text-anchor="middle">通过</text>
+<text x="858" y="312" class="danger strong" text-anchor="middle">失败</text>
+<text x="496" y="350" class="" text-anchor="start">约束：1.1.14 ≤ v &lt; 2</text>
+<text x="496" y="387" class="danger" text-anchor="start">新补丁可选，但首项已变</text>
+<path d="M32 413h896" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" fill="none"/>
+<text x="32" y="450" class="small" text-anchor="start">版本号概括的是维护者判断；测试必须覆盖下游真正依赖的行为。</text>
+</svg>

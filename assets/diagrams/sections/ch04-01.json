@@ -1,0 +1,21 @@
+{
+  "id": "ch04-01",
+  "chapter": 4,
+  "title": "数据覆盖不足，测试也未拦截",
+  "summary": "按本章对 2015 年 Google Photos 的解释，区分未能代表人群的照片数据、实际伤害性误分类，以及测试漏检后由用户发现错误。团队视角是可能影响数据与设计的因素，不是与数据、测试并列的自动致错开关。",
+  "sourceSections": ["## Bias Is the Default 偏见是默认状态", "#### Case Study: Google Misses the Mark on Racial Inclusion  案例研究：谷歌在种族包容方面的失误", "## Building Multicultural Capacity 培养多元文化能力"],
+  "afterParagraph": "让软件工程组织的人员构成，更能代表我们所服务的用户群体。",
+  "desktop": "assets/diagrams/sections/ch04-01.svg",
+  "mobile": "assets/diagrams/sections/ch04-01-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "Google Photos 案例里，照片数据的覆盖缺口与测试的缺口分别起了什么作用，错误最终由谁发现？",
+    "expectedAnswer": "本章指出照片数据未代表实际人群，图像识别把黑人朋友的照片误标为“大猩猩”，而测试没有发现此错误，最终由用户发现并承受伤害。团队代表性不足可能影响数据收集和设计判断，但即使有代表性，训练集仍可能带有偏差。",
+    "visualEncoding": "数据、具体误分类、用户发现沿处理方向排列；发布前测试画成带缺口的拦截线，错误路径穿过缺口。团队视角用标明“可能”的虚线接入数据/设计背景，避免三项因素无区别地汇入一个结果。",
+    "sourceEvidence": "Case Study: Google Misses the Mark on Racial Inclusion  案例研究：谷歌在种族包容方面的失误: “the data did not represent the population”, “classifying his black friends as ‘gorillas’”, “Google's tests did not catch these mistakes; as a result, our users did”; Building Multicultural Capacity 培养多元文化能力: “Even when we do have representation, a training set can still be biased”.",
+    "beforeProblem": "原图将数据、团队、测试三框平行汇聚到伤害，既没有展示具体识别错误，也没有区分错误产生与测试未拦截；三条箭头易被读作等价的独立因果。",
+    "whyBetter": "读者可以沿错误路径定位数据覆盖、输出和测试漏检各自的作用，也能直接回答为何有测试仍会由用户先发现问题。",
+    "limits": "这是对书中案例解释的机制示意，不重建未知的训练集、模型架构或测试流程；缺口不表示误差率、样本数或比例。并未暗示换一组开发者即可修复问题。"
+  }
+}

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch05-03" data-layout="mobile" role="img" aria-labelledby="ch05-03m-title ch05-03m-desc">
+  <title id="ch05-03m-title">经理不是 Java 专家，怎么办？</title>
+  <desc id="ch05-03m-desc">原书 Java 案例：一位工程师被代码难住；经理并非 Java 专家，却将他与另一位恰好了解问题的工程师联系起来。经理改变的是两位工程师之间的联系，而不是自己的专业知识。介绍关系不是汇报线。</desc>
+  <style>
+.cg-ch05-03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch05-03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch05-03[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch05-03[data-layout="mobile"] .connector {fill:none;stroke-width:2;stroke-linejoin:round}
+</style>
+  <defs>
+    <marker id="ch05-03m-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch05-03m-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch05-03m-arrow-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch05-03m-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)" />
+  <g id="ch05-03m-heading" data-box="24,12,372,72">
+    <text x="24" y="38" class="strong" text-anchor="start">经理不是 Java 专家，怎么办？</text>
+    <text x="24" y="72" class="small" text-anchor="start">原书 Java 案例：改变的是求助路径</text>
+  </g>
+  <g id="ch05-03m-manager" data-box="74,105,272,84">
+    <rect x="74" y="105" width="272" height="84" fill="var(--diagram-warm-soft,#fff3dc)" />
+    <text x="210" y="137" class="strong" text-anchor="middle">经理：负责牵线</text>
+    <text x="210" y="170" class="small" text-anchor="middle">并非 Java 专家</text>
+  </g>
+  <g id="ch05-03m-engineer" data-box="24,280,174,123">
+    <rect x="24" y="280" width="174" height="123" fill="var(--diagram-primary-soft,#e5f4ee)" />
+    <text x="111" y="311" class="strong" text-anchor="middle">受阻的工程师</text>
+    <text x="111" y="350" class="small" text-anchor="middle">被一段</text>
+    <text x="111" y="380" class="small" text-anchor="middle">Java 代码难住</text>
+  </g>
+  <g id="ch05-03m-expert" data-box="222,280,174,123">
+    <rect x="222" y="280" width="174" height="123" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+    <text x="309" y="311" class="strong" text-anchor="middle">另一位工程师</text>
+    <text x="309" y="350" class="small" text-anchor="middle">恰好了解</text>
+    <text x="309" y="380" class="small" text-anchor="middle">这个问题</text>
+  </g>
+  <polyline points="102,194 52,222 52,274" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-03m-arrow-warm)" />
+  <polyline points="318,194 368,222 368,274" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-03m-arrow-warm)" />
+  <g id="ch05-03m-introduction-label" data-box="70,224,280,39">
+    <text x="210" y="250" class="small" text-anchor="middle">把两人介绍给彼此</text>
+  </g>
+  <polyline points="111,407 111,454 309,454 309,409" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-03m-arrow-secondary)" />
+  <g id="ch05-03m-contact-label" data-box="36,468,348,39">
+    <text x="210" y="494" class="strong" text-anchor="middle">建立技术求助联系</text>
+  </g>
+  <g id="ch05-03m-takeaway" data-box="24,522,372,74">
+    <text x="24" y="550" class="small" text-anchor="start">经理提供联系，懂问题的人提供帮助</text>
+    <text x="24" y="581" class="small" text-anchor="start">连线不是汇报关系，也不是职级排序</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch17" data-layout="desktop" role="img" aria-labelledby="ch17-title ch17-desc">
+<title id="ch17-title">从限定名找到定义，再辨认调用</title>
+<desc id="ch17-desc">沿用书中限定名的教学示例：monitor.h 在 namespace absl 的 Monitor 类内定义 Alert，完整限定名虽未连续出现在源码中，符号搜索仍能匹配 absl::Monitor::Alert。ui::Monitor::Alert 是另一符号；Kythe 用构建信息区分调用，而不是汇集所有名为 Alert 的代码。这里不保证交叉引用索引已更新。</desc>
+<style>
+.cg-ch17[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch17[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch17[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch17[data-layout="desktop"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.cg-ch17[data-layout="desktop"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch17[data-layout="desktop"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch17[data-layout="desktop"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
+.cg-ch17[data-layout="desktop"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch17[data-layout="desktop"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch17[data-layout="desktop"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
+.cg-ch17[data-layout="desktop"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch17[data-layout="desktop"] .danger{fill:var(--diagram-danger-soft,#faecee)}
+.cg-ch17[data-layout="desktop"] .danger-ink{fill:var(--diagram-danger,#b54750)}
+</style>
+<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="44" class="strong" text-anchor="start">从限定名找到定义，再辨认调用</text>
+<text x="32" y="78" class="small" text-anchor="start">沿用书中 absl::Monitor::Alert；源码与同名对照均为教学示例，非实际 API</text>
+<g data-box="32,100,896,56">
+<rect x="32" y="100" width="896" height="56" class="secondary"/>
+<text x="48" y="136" class="strong" text-anchor="start">限定名查询</text>
+<text x="224" y="136" class="code" text-anchor="start">absl::Monitor::Alert</text>
+</g>
+<g data-box="32,176,426,262">
+<rect x="32" y="176" width="426" height="262" class="primary"/>
+<text x="48" y="210" class="strong" text-anchor="start">命中 monitor.h 的定义</text>
+<text x="48" y="246" class="code" text-anchor="start">namespace absl {</text>
+<text x="72" y="275" class="code" text-anchor="start">class Monitor {</text>
+<text x="96" y="304" class="code" text-anchor="start">public:</text>
+<text x="120" y="333" class="code" text-anchor="start">void Alert() {}</text>
+<text x="72" y="362" class="code" text-anchor="start">};</text>
+<text x="48" y="391" class="code" text-anchor="start">}</text>
+<text x="48" y="422" class="small" text-anchor="start">完整限定名没有连续出现在源码中</text>
+</g>
+<text x="504" y="210" class="strong" text-anchor="start">作用域组合出的符号名</text>
+<text x="504" y="252" class="code primary-ink" text-anchor="start">absl::Monitor::Alert</text>
+<text x="504" y="287" class="small" text-anchor="start">命名空间 + 类名 + 函数名</text>
+<path d="M504 312L928 312" class="line"/>
+<text x="504" y="350" class="strong" text-anchor="start">另一个同名函数</text>
+<text x="504" y="389" class="code danger-ink" text-anchor="start">ui::Monitor::Alert</text>
+<text x="504" y="423" class="small" text-anchor="start">属于 ui，不是查询指定的 absl 符号</text>
+<g data-box="32,457,896,81">
+<rect x="32" y="457" width="896" height="81" class="secondary"/>
+<text x="48" y="489" class="strong" text-anchor="start">再查它的使用处</text>
+<text x="366" y="489" class="code" text-anchor="start">absl::Monitor m; m.Alert();</text>
+<text x="48" y="524" class="small" text-anchor="start">Kythe 用构建信息辨认同一符号，不只看 Alert 的拼写；仍受索引时效限制。</text>
+</g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch20-01" data-layout="mobile" role="img" aria-labelledby="ch20-01m-title ch20-01m-desc">
+<title id="ch20-01m-title">两种误报，要用两类证据判断</title>
+<desc id="ch20-01m-desc">保留技术正确性与积极行动的二维矩阵，并用原文 Hashtable.contains 示例提供意图、方法语义和实际修改三项证据，定位技术误报但非感知误报的格子。 例 A 按原文构造，不是额外实测案例。矩阵仅讨论已经发出的报告，不表示漏报率，也不把点击次数等同于积极行动。</desc>
+<style>
+.cg-ch20-01[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20-01[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch20-01[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch20-01[data-layout="mobile"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20-01[data-layout="mobile"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20-01[data-layout="mobile"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20-01[data-layout="mobile"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20-01[data-layout="mobile"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20-01[data-layout="mobile"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20-01m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-01m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-01m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">两种误报，要用两类证据判断</text>
+<text x="24" y="73" class="small" text-anchor="start">例 A（按原文构造）</text>
+<text x="24" y="108" class="small" text-anchor="start">意图：查值；工具却怀疑应查键。</text>
+<text x="24" y="140" class="small" text-anchor="start">事实：Hashtable.contains</text>
+<text x="24" y="167" class="small" text-anchor="start">等价于 containsValue。</text>
+<text x="24" y="201" class="small" text-anchor="start">行动：改成 containsValue，</text>
+<text x="24" y="228" class="small" text-anchor="start">更清楚地表达查值意图。</text>
+<path class="rule" d="M24 246L396 246"/>
+<text x="177" y="280" class="strong" text-anchor="middle">有积极行动</text>
+<text x="327" y="280" class="strong" text-anchor="middle">无积极行动</text>
+<text x="24" y="332" class="strong" text-anchor="start">技术</text>
+<text x="24" y="360" class="strong" text-anchor="start">正确</text>
+<text x="24" y="431" class="strong" text-anchor="start">技术</text>
+<text x="24" y="459" class="strong" text-anchor="start">误报</text>
+<rect id="ch20-01m-shape-1" x="108" y="302" width="138" height="82" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="177" y="333" class="strong" text-anchor="middle" data-owner="ch20-01m-shape-1">非感知误报</text>
+<text x="177" y="365" class="small" text-anchor="middle" data-owner="ch20-01m-shape-1">修复真实问题</text>
+<rect id="ch20-01m-shape-2" x="258" y="302" width="138" height="82" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="327" y="333" class="strong" text-anchor="middle" data-owner="ch20-01m-shape-2">感知误报</text>
+<text x="327" y="365" class="small" text-anchor="middle" data-owner="ch20-01m-shape-2">例如未理解</text>
+<rect id="ch20-01m-shape-3" x="108" y="401" width="138" height="82" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="177" y="432" class="strong" text-anchor="middle" data-owner="ch20-01m-shape-3">非感知误报</text>
+<text x="177" y="464" class="small" text-anchor="middle" data-owner="ch20-01m-shape-3">例 A 在此</text>
+<rect id="ch20-01m-shape-4" x="258" y="401" width="138" height="82" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="327" y="432" class="strong" text-anchor="middle" data-owner="ch20-01m-shape-4">感知误报</text>
+<text x="327" y="464" class="small" text-anchor="middle" data-owner="ch20-01m-shape-4">无积极行动</text>
+<text x="24" y="533" class="small" text-anchor="start">查代码与意图，判断技术是否正确。</text>
+<text x="24" y="563" class="small" text-anchor="start">再看有益行动，判断感知误报。</text>
+</svg>

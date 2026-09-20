@@ -1,0 +1,21 @@
+{
+  "id": "ch15-03",
+  "chapter": 15,
+  "title": "同一条弃用警告，何时才有用？",
+  "summary": "区分 A 到 B 到 C 的依赖方向和 C 的警告传到 A 的方向；对照泛报与新修改行上的替代调用提示，并以数据迁移邮件说明准备时间。",
+  "sourceSections": ["### Deprecation Warnings  弃用警告", "#### Preventing backsliding  防止新增旧系统依赖"],
+  "afterParagraph": "让我们在增加警告的同时，避免用户产生警报疲劳。",
+  "desktop": "assets/diagrams/sections/ch15-03.svg",
+  "mobile": "assets/diagrams/sections/ch15-03-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么构建 A 时看到 C 已弃用可能只是噪声，而编辑调用时得到替代建议更有用？",
+    "expectedAnswer": "A 依赖 B，B 依赖 C，C 的警告可以在构建 A 时出现；累积的传递性警告可能造成警报疲劳。有效警告要给出实际可执行的替代调用或迁移步骤，并在编写相关代码或迁移准备期出现；谷歌针对新修改行显示函数弃用警告。",
+    "visualEncoding": "实线箭头 A 到 B 到 C 表示依赖，单独的反向虚线路径表示警告到达 A。下方把不含下一步的 C 已弃用消息，与明确限定新修改行、oldCall() 改为 newCall() 的示意提示对照；数据邮件对照停用前数月和最后一个周末。",
+    "sourceEvidence": "Deprecation Warnings  弃用警告：'库 A 依赖库 B，库 B 又依赖库 C'、'可操作性和相关性'、'只在新修改的代码行上显示这些警告'、'移除旧系统前几个月'；Preventing backsliding  防止新增旧系统依赖：'在代码审查时提示'。",
+    "beforeProblem": "旧图虽有 A/B/C，却没有画出反向警告传播；又断言用户无法直接处理、最终忽略全部警告，强于原文。右侧两个原则框没有展示一条实际可操作提示。",
+    "whyBetter": "同一依赖情境对照消息内容和出现时机两项变化，读者能从可见提示中读出下一步；使用可能而非必然描述警报疲劳。",
+    "limits": "oldCall()/newCall() 是示意名称，不是真实 API 或普遍可一对一替换的承诺。新旧功能仍须逐项评估；警告并不自动迁移存量调用。图未展开强制性弃用中更强的目标级警告。"
+  }
+}

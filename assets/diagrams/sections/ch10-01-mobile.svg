@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch10-01m-diagram" class="chapter-svg cg-ch10-01" role="img" aria-labelledby="ch10-01m-title ch10-01m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch10-01m-title">发现错误，怎样进入修复？</title>
+<desc id="ch10-01m-desc">据 GooWiki 案例改绘。新人照着配置失败，却未必能确认文档错了，也缺少便捷报错途径；懂得修复的人已经不再查阅教程，虚线断点表示反馈未到达维护者。改进路径把读者提交的文档缺陷送到有负责人的权威来源，通过现有变更评审修正文档，让下一位读者找到同一份修订。路径可用不代表问题会自动修复。</desc>
+<style>
+.cg-ch10-01#ch10-01m-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch10-01#ch10-01m-diagram .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch10-01#ch10-01m-diagram .heading{font-size:24px;font-weight:600}
+.cg-ch10-01#ch10-01m-diagram .strong{font-weight:600}
+.cg-ch10-01#ch10-01m-diagram .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+.cg-ch10-01#ch10-01m-diagram .good{fill:var(--diagram-primary,#087f6d)}
+.cg-ch10-01#ch10-01m-diagram .bad{fill:var(--diagram-danger,#b54750)}
+.cg-ch10-01#ch10-01m-diagram .system{fill:var(--diagram-secondary,#2f6eac)}
+</style>
+<defs><marker id="ch10-01m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.6"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="heading" text-anchor="start">发现错误，怎样进入修复？</text>
+<text x="24" y="69" class="small" text-anchor="start">GooWiki：使用者与修复者错开</text>
+<rect x="24" y="94" width="372" height="174" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="40" y="125" class="strong bad" text-anchor="start" data-bounds="40 102 340 154">断开的反馈</text>
+<text x="40" y="158" class="small" text-anchor="start" data-bounds="40 102 340 154">新人失败，却不知是否文档错了</text>
+<path d="M44 171V182M44 203V217" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-dasharray="5 5" data-connector="true"/>
+<path d="M37 187L51 201M51 187L37 201" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<text x="70" y="198" class="small bad" text-anchor="start" data-bounds="40 102 340 154">缺少便捷报错途径</text>
+<text x="40" y="243" class="small" text-anchor="start" data-bounds="40 102 340 154">能修的人：早已不再查教程</text>
+<text x="24" y="307" class="strong good" text-anchor="start">接回现有工作流</text>
+<rect x="24" y="326" width="372" height="52" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="40" y="359" class="" text-anchor="start" data-bounds="40 330 340 44">新人提交文档缺陷</text>
+<path d="M210 380V394" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-01m-arrow)" data-connector="true"/>
+<rect x="24" y="398" width="372" height="68" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="427" class="strong" text-anchor="start" data-bounds="40 402 340 60">负责人接手权威文档</text>
+<text x="40" y="454" class="small" text-anchor="start" data-bounds="40 402 340 60">可直接提交修改，沿用变更评审</text>
+<path d="M210 468V480" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-01m-arrow)" data-connector="true"/>
+<rect x="24" y="484" width="372" height="68" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="513" class="strong" text-anchor="start" data-bounds="40 488 340 60">修订回到同一权威来源</text>
+<text x="40" y="540" class="small" text-anchor="start" data-bounds="40 488 340 60">相关代码与文档尽量同步变更</text>
+<text x="24" y="583" class="small" text-anchor="start">接通反馈，不等于问题会自动修好。</text>
+</svg>

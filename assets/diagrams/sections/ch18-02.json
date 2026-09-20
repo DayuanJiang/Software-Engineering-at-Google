@@ -1,0 +1,21 @@
+{
+  "id": "ch18-02",
+  "chapter": 18,
+  "title": "改 common，为什么不重建 otherlib？",
+  "summary": "保留原文的 common 变更传播图，补上 Guava，并同时显示使用方指向依赖的声明和反向的产物流。common、mylib、MyBinary 重建，otherlib 与 Guava 复用；只改 MyBinary.java 则只重建 MyBinary。",
+  "sourceSections": ["#### A functional perspective 函数式视角"],
+  "afterParagraph": "并行执行与结果复用，还将成为后文所述分布式、高可扩展性构建系统的基础。",
+  "desktop": "assets/diagrams/sections/ch18-02.svg",
+  "mobile": "assets/diagrams/sections/ch18-02-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "common 源码变化后，为什么要重建 mylib 和 MyBinary，却可以复用 otherlib；若只改 MyBinary.java 呢？",
+    "expectedAnswer": "mylib 使用 common 的产物，MyBinary 又使用 mylib，变更影响沿使用方方向传播；otherlib 和 Guava 的输入未变，可复用已有产物。只改 MyBinary.java 时其他目标的输入不变。",
+    "visualEncoding": "顶部明确写出 MyBinary → mylib 与 mylib → common/otherlib/Guava 的依赖声明；主图反向绘制依赖产物到使用方的供给路径，暖色节点明确标为重建、绿色节点标为复用。对照文字给出仅改 MyBinary.java 的重建集合。",
+    "sourceEvidence": "A functional perspective 函数式视角：BUILD 示例的 mylib deps，以及英文段落 'if MyBinary.java changes'、'If a source file for ... common changes'、'but reuse ... otherlib'。",
+    "beforeProblem": "现有 common 传播图有实质解释价值，值得保留；但缺少 Guava，主图方向只以图例交代，未与实际 deps 声明比较，也没有源文件改动位置不同的对照。",
+    "whyBetter": "补齐原 BUILD 示例的第三方输入；同时展示两种相反方向，降低把影响传播箭头误读为依赖声明的风险，并能比较根部与叶部变更的不同结果。",
+    "limits": "依原文进行目标级简化，省略源文件节点、工具链及动作级优化；假定其他输入不变且旧产物可用。重建不是输出字节必然变化的断言，也不是所有 Bazel 配置的精确调度轨迹。"
+  }
+}

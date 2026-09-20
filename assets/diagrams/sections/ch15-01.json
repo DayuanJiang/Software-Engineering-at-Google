@@ -1,0 +1,21 @@
+{
+  "id": "ch15-01",
+  "chapter": 15,
+  "title": "存在已久，不等于已经过时",
+  "summary": "LaTeX 是年龄不构成弃用理由的原文反例；新系统用户仍经组件依赖旧系统，则揭示为什么发布替代品没有自动消除旧系统成本。",
+  "sourceSections": ["## Why Deprecate? 为什么要弃用？", "## 为什么弃用这么难？ (Why Is Deprecation So Hard?)"],
+  "afterParagraph": "用户可能需要使用新系统，却仍然依赖某些使用旧系统的组件。",
+  "desktop": "assets/diagrams/sections/ch15-01.svg",
+  "mobile": "assets/diagrams/sections/ch15-01-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "LaTeX 已改进几十年，为什么不能据此弃用；已有新系统时，又为什么旧系统仍有成本？",
+    "expectedAnswer": "年龄本身不代表过时。用户可以直接使用新系统，却通过组件继续依赖旧系统。确实过时且有功能相当替代品时，仍需权衡持续维护和兼容负担与迁移、移除投入；原地演进通常更容易。",
+    "visualEncoding": "一侧明确呈现 LaTeX 的多年改进反例；另一侧让同一用户的依赖分叉为新系统与组件到旧系统两条路径。路径共存显示采用新系统不等于旧依赖消失，下方并列两侧成本而不使用虚构的金额或大小。",
+    "sourceEvidence": "Why Deprecate? 为什么要弃用？：'LaTeX 排版系统，已经改进了几十年'、'用户可能需要使用新系统，却仍然依赖某些使用旧系统的组件'；为什么弃用这么难？ (Why Is Deprecation So Hard?)：'让系统原地演进通常比彻底替换更容易'。",
+    "beforeProblem": "旧图只有确认前提、比较成本、保留或弃用几个框，分支没有让读者看到输入条件如何改变判断，也漏掉原文 LaTeX 反例与并存依赖。",
+    "whyBetter": "用年龄反例排除错误理由，再沿具体双路径说明旧成本为何尚未消失；不把新替代品的存在当作删除旧系统的充分条件。",
+    "limits": "依赖图是原文情境的示意，不声称 LaTeX 有某个新替代品，也不把原地演进说成始终更便宜。成本未量化，弃用价值仍需组织自行评估。"
+  }
+}

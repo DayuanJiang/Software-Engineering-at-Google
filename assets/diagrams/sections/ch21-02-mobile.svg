@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21-02" data-layout="mobile" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch21-02m-title ch21-02m-desc">
+<title id="ch21-02m-title">OWNERS 没变，使用范围变了</title>
+<desc id="ch21-02m-desc">Alice 为演示引入 third_party 包，与 Bob 登记为 OWNERS，但不要求他们具备维护经验。随后 Charlie 在搜索基础设施深处使用同一个包，新增传递依赖。等安全问题迫使升级时，Alice 和 Bob 已转岗而 OWNERS 未更新。删除包会破坏搜索构建，升级又需要不熟悉实现的人跨越许多发布。箭头均从使用方指向依赖。这是原文场景而非所有引入行为必然遵循的生命周期；图不编码人数、时长或成本比例。</desc>
+<style>
+.cg-ch21-02[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch21-02[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch21-02[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch21-02[data-layout="mobile"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch21-02[data-layout="mobile"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch21-02[data-layout="mobile"] .warm{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch21-02[data-layout="mobile"] .danger{fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch21-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch21-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch21-02m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch21-02m-shape-1" x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="20" y="36" class="strong" text-anchor="start">OWNERS 没变，使用范围变了</text>
+<text x="20" y="67" class="small" text-anchor="start">Alice / Bob / Charlie 原文场景</text>
+<text x="20" y="107" class="strong" text-anchor="start">引入时</text>
+<rect id="ch21-02m-shape-2" x="20" y="123" width="116" height="54" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="78.0" y="158.0" class="strong" text-anchor="middle" data-owner="ch21-02m-shape-2">演示</text>
+<rect id="ch21-02m-shape-3" x="208" y="123" width="192" height="54" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="304.0" y="158.0" class="strong" text-anchor="middle" data-owner="ch21-02m-shape-3">third_party 包</text>
+<path data-connector="true" d="M138 150H206" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-02m-secondary-arrow)"/>
+<text x="20" y="211" class="small" text-anchor="start">登记 Alice、Bob；未要求维护经验</text>
+<path d="M20 235h380" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" fill="none"/>
+<text x="20" y="269" class="strong danger" text-anchor="start">安全问题要求升级时</text>
+<rect id="ch21-02m-shape-4" x="20" y="287" width="144" height="52" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="92.0" y="321.0" class="strong" text-anchor="middle" data-owner="ch21-02m-shape-4">搜索</text>
+<rect id="ch21-02m-shape-5" x="208" y="287" width="192" height="52" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="304.0" y="321.0" class="strong" text-anchor="middle" data-owner="ch21-02m-shape-5">Charlie 模块</text>
+<path data-connector="true" d="M166 313H206" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-02m-secondary-arrow)"/>
+<path data-connector="true" d="M304 341V358H210V378" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-02m-secondary-arrow)"/>
+<rect id="ch21-02m-shape-6" x="92" y="380" width="236" height="56" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="210.0" y="416.0" class="strong" text-anchor="middle" data-owner="ch21-02m-shape-6">third_party 包</text>
+<text x="20" y="473" class="small" text-anchor="start">OWNERS 仍是 Alice、Bob；人已转岗</text>
+<text x="20" y="514" class="" text-anchor="start">不能直接删包：搜索构建会断。</text>
+<text x="20" y="545" class="small" text-anchor="start">无人熟悉实现，还要跨多个版本。</text>
+<text x="20" y="579" class="small" text-anchor="start">登记负责人 ≠ 持续维护能力。</text>
+</svg>

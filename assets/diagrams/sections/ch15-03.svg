@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch15-03" data-layout="desktop" role="img" aria-labelledby="ch15-03-title ch15-03-desc">
+<title id="ch15-03-title">同一条弃用警告，何时才有用？</title>
+<desc id="ch15-03-desc">书中依赖链 A 到 B 到 C 的实线箭头指向被依赖方，反向虚线表示 C 的警告在构建 A 时出现。大量传递性警告可能造成警报疲劳，但不是所有接收者都无法行动。示意对照：泛报 C 已弃用没有说明下一步；针对新修改行给出 oldCall() 改为 newCall() 的替代提示，同时满足可操作性和相关性。示意函数名称不承诺机械替换；数据迁移邮件应在停用前数月给步骤，而非最后一个周末。</desc>
+<style>
+.cg-ch15-03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch15-03[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch15-03[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch15-03[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch15-03[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch15-03[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch15-03[data-layout="desktop"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+.cg-ch15-03[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch15-03[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch15-03[data-layout="desktop"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
+.cg-ch15-03[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch15-03[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch15-03[data-layout="desktop"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2}
+.cg-ch15-03[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch15-03[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch15-03[data-layout="desktop"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2}
+</style>
+<defs>
+<marker id="ch15-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch15-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch15-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch15-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">同一条弃用警告，何时才有用？</text>
+<text x="32" y="78" class="small" text-anchor="start">原文 A／B／C 依赖链：实线是依赖，虚线是警告的传播</text>
+<g data-box="32,106,140,54">
+<rect x="32" y="106" width="140" height="54" rx="5" class="secondary"/>
+<text x="102.0" y="141.0" class="strong" text-anchor="middle">库 A</text>
+</g>
+<g data-box="252,106,140,54">
+<rect x="252" y="106" width="140" height="54" rx="5" class="secondary"/>
+<text x="322.0" y="141.0" class="strong" text-anchor="middle">库 B</text>
+</g>
+<g data-box="472,106,140,54">
+<rect x="472" y="106" width="140" height="54" rx="5" class="danger"/>
+<text x="542.0" y="141.0" class="strong" text-anchor="middle">库 C</text>
+</g>
+<path d="M172 133H250" class="primary-line" data-connector="true" marker-end="url(#ch15-03-primary-arrow)"/>
+<path d="M392 133H470" class="primary-line" data-connector="true" marker-end="url(#ch15-03-primary-arrow)"/>
+<path d="M542 160V191H102V162" class="danger-line" data-connector="true" marker-end="url(#ch15-03-danger-arrow)" stroke-dasharray="6 5"/>
+<text x="649" y="128" class="small" text-anchor="start">构建 A 也看到 C 的警告</text>
+<text x="649" y="166" class="small" text-anchor="start">大量累积可能造成</text>
+<text x="649" y="195" class="small danger-ink" text-anchor="start">警报疲劳</text>
+<path d="M32 218L928 218" class="guide"/>
+<text x="32" y="254" class="strong danger-ink" text-anchor="start">泛报：“C 已弃用”</text>
+<text x="32" y="291" class="" text-anchor="start">没有指出下一步；</text>
+<text x="32" y="323" class="" text-anchor="start">提交数周后才报也错过时机。</text>
+<rect x="428" y="238" width="500" height="117" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="448" y="269" class="strong" text-anchor="start">编辑／审查新修改行时</text>
+<text x="448" y="305" class="strong primary-ink" text-anchor="start">oldCall()  →  newCall()</text>
+<text x="448" y="337" class="small" text-anchor="start">给出替代调用，同时在相关操作时出现</text>
+<text x="32" y="389" class="small" text-anchor="start">函数名为示意，仍需评估行为差异；警告不会自动迁移已有调用。</text>
+<rect x="32" y="412" width="896" height="48" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="443" class="small" text-anchor="start">数据迁移邮件：停用前数月给出步骤，而不是最后一个周末才通知。</text>
+</svg>

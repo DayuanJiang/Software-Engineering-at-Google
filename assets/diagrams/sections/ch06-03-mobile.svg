@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch06-03" data-layout="mobile" role="img" aria-labelledby="ch06-03m-title ch06-03m-desc">
+  <title id="ch06-03m-title">20 分钟能修好，为什么还要交给别人？</title>
+  <desc id="ch06-03m-desc">本章假设你可以用二十分钟解决一个长期困扰的问题，另一个领导者也能做，但可能更慢。在并非只有你能做、也并非真正刻不容缓的前提下，对比两条路径：自己做很快，却没有给别人练习，下一次类似任务仍可能依赖你；授权并按需辅导，允许失败和重试，本次可能较慢，却让其他领导者练习独立承担同类工作。若前提改变，就不能机械套用这条授权路径；没有给出别人耗时或成功率。</desc>
+  <style>
+    .cg-ch06-03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424);}
+    .cg-ch06-03[data-layout="mobile"] .strong {font-weight:600;}
+    .cg-ch06-03[data-layout="mobile"] .heading {font-size:22px;font-weight:600;}
+    .cg-ch06-03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868);}
+    .cg-ch06-03[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);}
+    .cg-ch06-03[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);}
+    .cg-ch06-03[data-layout="mobile"] .cost {fill:var(--diagram-warm,#a56a1f);}
+    .cg-ch06-03[data-layout="mobile"] .blue {fill:var(--diagram-secondary,#2f6eac);}
+    .cg-ch06-03[data-layout="mobile"] .edge {fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;}
+  </style>
+  <defs>
+    <marker id="ch06-03m-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch06-03m-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch06-03m-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+    <marker id="ch06-03m-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="38" text-anchor="start" class="heading">20 分钟能修好，</text>
+  <text x="24" y="68" text-anchor="start" class="heading">为什么还要交给别人？</text>
+  <text x="24" y="99" text-anchor="start" class="small">书中情境：他也能做，但会更慢</text>
+  <rect x="24" y="120" width="372" height="66" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" id="ch06-03m-condition"/>
+  <text x="40" y="147" text-anchor="start" class="strong" data-box="ch06-03m-condition">前提：并非只有你能做</text>
+  <text x="40" y="176" text-anchor="start" data-box="ch06-03m-condition">也并非刻不容缓</text>
+  <path d="M210 211V492" class="edge" stroke="var(--diagram-line,#b9c9c0)"/>
+  <text x="24" y="228" text-anchor="start" class="strong bad">你亲手修好</text>
+  <text x="232" y="228" text-anchor="start" class="strong good">授权与辅导</text>
+  <rect x="24" y="247" width="176" height="108" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-03m-self" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+  <text x="112" y="285" text-anchor="middle" class="strong" data-box="ch06-03m-self">约 20 分钟</text>
+  <text x="112" y="324" text-anchor="middle" data-box="ch06-03m-self">这次很快</text>
+  <rect x="220" y="247" width="176" height="108" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" id="ch06-03m-delegate" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+  <text x="308" y="285" text-anchor="middle" class="strong" data-box="ch06-03m-delegate">他可能更慢</text>
+  <text x="308" y="324" text-anchor="middle" class="small" data-box="ch06-03m-delegate">允许失败重试</text>
+  <path d="M112 355V389" class="edge" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch06-03m-danger)" stroke-dasharray="6 5"/>
+  <path d="M308 355V389" class="edge" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch06-03m-primary)"/>
+  <rect x="24" y="399" width="176" height="88" rx="6" fill="var(--diagram-bg,#fff)" id="ch06-03m-dependency" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="112" y="435" text-anchor="middle" data-box="ch06-03m-dependency">下次仍可能</text>
+  <text x="112" y="468" text-anchor="middle" data-box="ch06-03m-dependency">要找你</text>
+  <rect x="220" y="399" width="176" height="88" rx="6" fill="var(--diagram-bg,#fff)" id="ch06-03m-practice" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+  <text x="308" y="435" text-anchor="middle" data-box="ch06-03m-practice">练习独立</text>
+  <text x="308" y="468" text-anchor="middle" data-box="ch06-03m-practice">处理同类任务</text>
+  <path d="M24 520H396" class="edge" stroke="var(--diagram-line,#b9c9c0)"/>
+  <text x="24" y="550" text-anchor="start" class="small">若只有你能做，或确实刻不容缓，</text>
+  <text x="24" y="579" text-anchor="start" class="small">就不能机械套用这条授权路径。</text>
+</svg>

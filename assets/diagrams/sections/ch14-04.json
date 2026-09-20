@@ -1,0 +1,21 @@
+{
+  "id": "ch14-04",
+  "chapter": 14,
+  "title": "响应不同，何时才能说 B 错了？",
+  "summary": "将本章 xyzzy 搜索断言作为对照：A 含 Colossal Cave、B 不含，仅比较只能发现差异；明确要求结果必须包含它，才能据该断言判 B 失败。A-A 对照帮助识别噪声。",
+  "enabled": true,
+  "sourceSections": ["### Verification 验证", "### A/B Diff Regression Testing  A/B 差异回归测试", "#### Limitations  局限性"],
+  "afterParagraph": "让人一眼就能看出当前变更的影响，以及下一个待发布版本的累积影响。",
+  "desktop": "assets/diagrams/sections/ch14-04.svg",
+  "mobile": "assets/diagrams/sections/ch14-04-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "同搜 xyzzy，A 含 Colossal Cave 而 B 不含，比较器能据此自动认定 B 错吗？",
+    "expectedAnswer": "不能，A/B 只揭示响应变化，基准也可能不正确。若另有本章示例的显式断言，规定结果必须包含 Colossal Cave，则 B 不满足该断言；实际差异仍需人结合预期核对，A-A 比较可辅助识别噪声。",
+    "visualEncoding": "保留相同输入分叉至两个真实版本的拓扑，在响应中显示唯一被比较的内容。随后并列无断言与有显式断言的判定，A-A 示例显示同版本两次也可能不同。",
+    "sourceEvidence": "Verification 验证：搜索 xyzzy，assertThat(response.Contains(\"Colossal Cave\"))；A/B Diff Regression Testing  A/B 差异回归测试：A-A 测试识别非确定性；Limitations  局限性：差异本身无法说明结果是好是坏，甚至基线版本是否有效也不明确。",
+    "beforeProblem": "原图的输入分叉与结果汇合准确、有价值，但响应只有 A/B 字母，读者看不到为什么比较和正确性判断是两件事。",
+    "whyBetter": "同一组具体输出，在缺少和加入预期条件时结论不同，直接展示正确性判断所依赖的信息，而不是只加免责声明。",
+    "limits": "响应有无及 A-A 变化都是用本章查询构造的教学示例，不是 Google 实测结果。A-A 有差异是噪声调查线索，不是自动过滤所有差异的许可；满足单条断言不证明版本整体正确。"
+  }
+}

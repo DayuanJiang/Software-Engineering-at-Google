@@ -1,0 +1,24 @@
+{
+  "chapter": 17,
+  "title": "从限定名找到定义，再辨认调用",
+  "summary": "以书中的 absl::Monitor::Alert 为例：限定名不必连续出现在源码中，符号搜索仍可找到定义；Kythe 再用构建信息区分同名函数的调用。",
+  "enabled": true,
+  "sourceSections": [
+    "The Code Search UI 代码搜索用户界面",
+    "Query dependent signals 查询相关信号",
+    "How? 如何做？"
+  ],
+  "kind": "worked-example",
+  "desktop": "assets/diagrams/ch17.svg",
+  "mobile": "assets/diagrams/ch17-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "源码里没有连续写出 absl::Monitor::Alert，为什么仍能找到它，并且不会把另一个 Alert 的调用算进来？",
+    "expectedAnswer": "默认搜索会匹配符号限定名，完整名称不必出现在实际文本中；交叉引用使用构建信息辨认特定符号，而不是只比较函数名。",
+    "visualEncoding": "源码缩进显示 namespace、class 和 Alert 的嵌套，旁边给出对应的完整限定名；同名 ui::Monitor::Alert 明确标为另一符号，后续调用片段展示从查找定义到浏览使用处。",
+    "sourceEvidence": "The Code Search UI 代码搜索用户界面：函数调用链接到函数定义；章首脚注3：利用完整的构建信息区分同名符号；Query dependent signals 查询相关信号，脚注14：absl::Monitor::Alert 即使没有出现在实际文本中也可搜索。",
+    "beforeProblem": "原图把查询、当前代码、定义、用法和历史画成分支框，没有展示任何能据此定位或排除的代码。",
+    "whyBetter": "读者可从源码的嵌套作用域推导出查询命中的名字，并区分名称相同与符号相同；不再只是记住工具组件。",
+    "limits": "沿用书中限定名，源码及 ui 对照为教学示例，不声称存在此实际 API；省略历史面板等 UI 功能，交叉引用仍受索引时效限制。"
+  }
+}

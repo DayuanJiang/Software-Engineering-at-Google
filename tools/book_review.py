@@ -105,7 +105,7 @@ def validate(file, before, after, manifest):
     }
 
 
-def verify_chapter(path, baseline):
+def verify_chapter(path, baseline, write_artifacts=True):
     file = str(path.relative_to(audit.ROOT))
     name = identifier(file)
     if name == "ch01":
@@ -129,16 +129,17 @@ def verify_chapter(path, baseline):
     counts = validate(file, before, after, manifest)
     result = {"id": name, "file": file, "status": "verified_with_holds" if counts["held_line_count"] else "verified",
               "after_sha256": audit.digest(after), **counts}
-    audit.dump(DIRECTORY / name / "verification.json", result)
+    if write_artifacts:
+        audit.dump(DIRECTORY / name / "verification.json", result)
     return result
 
 
-def verify_all(final=False):
+def verify_all(final=False, check_reader_config=True, write_artifacts=True):
     baseline = json.loads((audit.DEFAULT_OUT / "baseline.json").read_text())
     rows = []
     for path in audit.book_files(audit.ROOT):
         try:
-            rows.append(verify_chapter(path, baseline))
+            rows.append(verify_chapter(path, baseline, write_artifacts=write_artifacts))
         except (ValueError, KeyError, json.JSONDecodeError) as error:
             rows.append({"id": identifier(str(path)), "file": str(path.relative_to(audit.ROOT)),
                          "status": "needs_validation", "error": str(error)})
@@ -150,6 +151,8 @@ def verify_all(final=False):
     navigation = json.loads(nav_record.read_text()) if nav_record.exists() else {}
     site_errors = []
     for file in ("README.md", "_sidebar.md", "_coverpage.md", "index.html"):
+        if not check_reader_config and file in {"index.html", "_coverpage.md"}:
+            continue
         expected = navigation[file]["after_sha256"] if file in navigation else baseline["files"][file]["sha256"]
         if audit.digest((audit.ROOT / file).read_bytes()) != expected:
             site_errors.append(file)
@@ -166,13 +169,15 @@ def verify_all(final=False):
         "asset_errors": asset_errors, "site_errors": site_errors, "documents": rows,
         "workflow": "chapter-scoped Codex subagents and parent editing; offline verification",
     }
-    audit.dump(audit.DEFAULT_OUT / "book-verification.json", result)
+    if write_artifacts:
+        audit.dump(audit.DEFAULT_OUT / "book-verification.json", result)
     lines = ["# 全书润色进度", "", "状态根据实际文件、逐行清单和保护校验生成。第一章使用已批准样稿。",
              "不调用独立模型 API。原文疑点或未改动的保护内容见各章 notes.md。", "",
              "| 文档 | 状态 | 修改中文行 |", "| --- | --- | ---: |"]
     for row in rows:
         lines.append(f"| {row['id']} | {row['status']} | {row.get('changed_lines', 0)} |")
-    (audit.DEFAULT_OUT / "book-progress.md").write_text("\n".join(lines) + "\n")
+    if write_artifacts:
+        (audit.DEFAULT_OUT / "book-progress.md").write_text("\n".join(lines) + "\n")
     if final and (result["verified_documents"] != len(rows) or result["held_chinese_lines"] or asset_errors or site_errors):
         raise ValueError("Book not fully validated. See translation-review/book-verification.json")
     return result
@@ -391,6 +396,8 @@ def main():
     parser.add_argument("command", choices=("verify", "apply", "record", "reports", "integrate-parent", "sync-navigation", "summary"))
     parser.add_argument("--chapter")
     parser.add_argument("--final", action="store_true")
+    parser.add_argument("--content-only", action="store_true", help="Exclude reader HTML configuration from the translation baseline.")
+    parser.add_argument("--no-write", action="store_true", help="Verify without refreshing historical reports.")
     args = parser.parse_args()
     if args.command == "apply":
         apply_manifest(args.chapter)
@@ -405,7 +412,8 @@ def main():
     elif args.command == "summary":
         summary()
     else:
-        print(json.dumps(verify_all(args.final), ensure_ascii=False, indent=2))
+        print(json.dumps(verify_all(args.final, check_reader_config=not args.content_only,
+                                    write_artifacts=not args.no_write), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23m-root" class="chapter-svg cg-ch23" width="420" height="680" viewBox="0 0 420 680" role="img" aria-labelledby="ch23m-title ch23m-desc">
+  <title id="ch23m-title">CI：把不同问题放进合适的反馈回路</title>
+  <desc id="ch23m-desc">Takeout 的两个反馈回路。实例启动测试由夜间部署后提前到提交前，在临时沙盒中组合二进制与各实例配置。完整归档测试因测试账户的安全限制，放在已审代码的提交后环境，每两小时从 green head 组装 RC 后运行。启动成功不代表端到端成功。CI 决定何时测试何种系统，CB 验证 head，CD 组装并推进测试候选版本；候选版本不一定进入生产。</desc>
+  <style>
+  .cg-ch23#ch23m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23#ch23m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23#ch23m-root .strong {font-weight:600}
+  .cg-ch23#ch23m-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23#ch23m-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23#ch23m-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23m-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="36" class="strong" data-box="16,8,388,664">CI：把不同问题放进</text>
+  <text x="24" y="65" class="strong" data-box="16,8,388,664">合适的反馈回路</text>
+  <text x="24" y="99" class="small" data-box="16,8,388,664">Takeout：实例启动与完整归档</text>
+  <rect x="24" y="119" width="372" height="205" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="38" y="150" class="strong" data-box="24,119,372,205">各实例启动</text>
+  <text x="38" y="182" class="small" data-box="24,119,372,205">二进制 + Drive / Gmail 等配置</text>
+  <text x="38" y="220" class="" data-box="24,119,372,205">原先：夜间部署后</text>
+  <path d="M52 231L52 249" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23m-arrow)"/>
+  <text x="38" y="278" class="" data-box="24,119,372,205">提前：提交前逐实例沙盒检查</text>
+  <text x="38" y="310" class="small" data-box="24,119,372,205">能启动，不等于完整归档正确</text>
+  <rect x="24" y="340" width="372" height="205" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="38" y="371" class="strong" data-box="24,340,372,205">完整归档输出</text>
+  <text x="38" y="403" class="small" data-box="24,340,372,205">RC + 受安全与隐私保护的测试账户</text>
+  <text x="38" y="441" class="" data-box="24,340,372,205">原先：夜间部署后</text>
+  <path d="M52 452L52 469" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23m-arrow)"/>
+  <text x="38" y="498" class="" data-box="24,340,372,205">提前：提交后每两小时</text>
+  <text x="38" y="530" class="small" data-box="24,340,372,205">已审代码；从 green head 组装 RC</text>
+  <text x="24" y="579" class="small" data-box="16,8,388,664">CI：决定何时测什么、怎样组建 SUT</text>
+  <text x="24" y="608" class="small" data-box="16,8,388,664">CB 验证 head；CD 组装并测试 RC</text>
+  <text x="24" y="637" class="small" data-box="16,8,388,664">两小时是案例频率，不是时限保证</text>
+  <text x="24" y="666" class="small" data-box="16,8,388,664">CD 推进候选，但并非每个都进生产</text>
+</svg>

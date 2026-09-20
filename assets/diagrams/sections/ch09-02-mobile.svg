@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch09-02" data-layout="mobile" role="img" aria-labelledby="ch09-02m-title ch09-02m-desc">
+  <title id="ch09-02m-title">三项批准，不是三个人</title>
+  <desc id="ch09-02m-desc">同行 LGTM 检查正确性与可理解性，代码所有者批准目录适用性与维护责任，Readability 批准语言规范与最佳实践。三项均需满足，但可以由一个合格审查者兼任；作者可满足后两项，同行 LGTM 必须来自别人。</desc>
+  <style>
+.cg-ch09-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch09-02[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch09-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch09-02[data-layout="mobile"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch09-02m-arrow)}
+.cg-ch09-02[data-layout="mobile"] .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:2}
+</style>
+  <defs>
+    <marker id="ch09-02m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+  </defs>
+  <rect width="420" height="600" fill="var(--diagram-bg,#fff)" />
+  <text x="24" y="39" text-anchor="start" class="strong">三项批准，不是三个人</text>
+  <text x="24" y="70" text-anchor="start" class="small">分开要求，允许角色兼任</text>
+  <rect id="ch09-02m-box1" x="24" y="98" width="320" height="78" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" />
+  <text x="184.0" y="128.98" text-anchor="middle" class="strong" data-box="ch09-02m-box1">同行 LGTM</text>
+  <text x="184.0" y="159.98" text-anchor="middle" data-box="ch09-02m-box1">正确性与可理解性</text>
+  <rect id="ch09-02m-box2" x="24" y="206" width="320" height="78" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" />
+  <text x="184.0" y="237.96" text-anchor="middle" class="strong" data-box="ch09-02m-box2">代码所有者批准</text>
+  <text x="184.0" y="264.96000000000004" text-anchor="middle" class="small" data-box="ch09-02m-box2">适合负责的目录与维护范围</text>
+  <rect id="ch09-02m-box3" x="24" y="314" width="320" height="78" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" />
+  <text x="184.0" y="344.98" text-anchor="middle" class="strong" data-box="ch09-02m-box3">Readability 批准</text>
+  <text x="184.0" y="375.98" text-anchor="middle" data-box="ch09-02m-box3">语言规范与最佳实践</text>
+  <path d="M344 137H377V445H210V465" class="arrow" />
+  <path d="M344 245H377M344 353H377" class="line" />
+  <rect id="ch09-02m-box4" x="24" y="465" width="372" height="49" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" />
+  <text x="210.0" y="496.98" text-anchor="middle" class="strong" data-box="ch09-02m-box4">三项要求同时满足</text>
+  <path d="M24 530H396" class="line" />
+  <text x="24" y="552" text-anchor="start" class="small">三种角色不等于需要三个人</text>
+  <text x="24" y="579" text-anchor="start" class="small">作者可满足后两项，同行须为他人</text>
+</svg>

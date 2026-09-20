@@ -1,0 +1,21 @@
+{
+  "id": "ch16-03",
+  "chapter": 16,
+  "title": "只新增库 B，为何拉入两版 Abseil",
+  "summary": "保留原有 A 到 Abseil 原版的依赖路径，用虚线标出新增 B 后引入未改名分叉的第二条路径，显示同一程序的传递依赖如何改变。",
+  "enabled": true,
+  "sourceSections": ["### Scenario: Multiple Available Versions  场景：多个可用版本"],
+  "afterParagraph": "这既昂贵又令人遗憾，也不利于规模扩展。",
+  "desktop": "assets/diagrams/sections/ch16-03.svg",
+  "mobile": "assets/diagrams/sections/ch16-03-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "应用只添加了对库 B 的依赖，为什么可能出现构建失败或运行时缺陷？",
+    "expectedAnswer": "原来应用经库 A 只引入 Abseil 原版。库 B 依赖未改名且实现不匹配的 Abseil 分叉；新添到 B 的边使同一程序同时拉入两版同名库和符号，因而可能产生构建或运行时问题。",
+    "visualEncoding": "实线表示原有依赖，带新增文字的虚线单独标出应用到 B 的新边；箭头始终从使用方指向依赖。两条路径尽头均写明 Abseil，同名符号与不同实现并列；新增前后结论明确对应新边。",
+    "sourceEvidence": "### Scenario: Multiple Available Versions  场景：多个可用版本：却没有重命名库或其中的符号；同时依赖 Abseil 原版和分叉版；添加一项新依赖也可能需要运行整个代码库的全部测试。",
+    "beforeProblem": "原图的传递依赖方向与同名分叉关系有价值，但所有边同等呈现，看不出到底新增了哪条边以及新增前为何没有这项混用风险。",
+    "whyBetter": "保留有效的依赖拓扑，并把触发变化的输入单独标记；读者可沿新增路径找到第二版，而不是只接受图下的风险断言。",
+    "limits": "应用及库 A、B 是说明性名称，不是实测项目。这里只讨论未改名且不匹配的分叉，不声称所有多版本都会失败，也不把仓库暂时存放两版等同于同一程序混用两版。"
+  }
+}

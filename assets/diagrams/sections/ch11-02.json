@@ -1,0 +1,21 @@
+{
+  "id": "ch11-02",
+  "chapter": 11,
+  "title": "依赖搬到哪里，测试需要多大？",
+  "summary": "保持请求校验这一验证目标不变：依赖在进程内、移到本机独立进程、再移到远程机器，分别显示小型可行、中型起、大型起的运行边界。",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "只验证请求校验结果，但依赖从进程内替身换成本机数据库或远程数据库，最小运行规模如何变化？",
+    "expectedAnswer": "进程内替身并满足其他小型限制时可以是小型；独立的本机数据库进程排除小型，但可以满足中型边界；远程数据库排除中型，需书中所称的大型。验证目标本身没有随依赖位置自动扩大。",
+    "visualEncoding": "三个执行拓扑保持测试和校验目标不变。小型将替身放在同一进程框内；中型画出独立进程与 localhost 连接；大型连接明确越过单机边界。右侧或下方给出对应规模下限。",
+    "sourceEvidence": "### Test Size  测试规模；#### Small tests  小型测试：'不能在测试中启动数据库之类的第三方程序'及脚注5；#### Medium tests  中型测试：'不能通过网络调用 localhost 以外的系统'；#### Large tests  大型测试：'允许测试和被测系统跨多台机器运行'。",
+    "beforeProblem": "旧图把资源规则列在三个彩色框中，几乎重复正文和书中图11-2，缺少条件变化后的分类推导。",
+    "whyBetter": "同一目标下移动依赖位置，读者能看到具体是哪条进程或机器边界排除了较小规模；图示不是用单元或集成名称替代资源分类。",
+    "limits": "是运行边界的示意，不保证本机测试一定中型或进程内测试一定小型；时间、内存和其他约束仍须满足。不是性能测量，也不证明替身能验证真实数据库交互。"
+  },
+  "sourceSections": ["### Test Size  测试规模", "#### Small tests  小型测试", "#### Medium tests  中型测试", "#### Large tests  大型测试"],
+  "afterParagraph": "只在构建和发布过程中运行，以免影响开发者的工作流。",
+  "desktop": "assets/diagrams/sections/ch11-02.svg",
+  "mobile": "assets/diagrams/sections/ch11-02-mobile.svg"
+}

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch14-05" data-layout="desktop" role="img" aria-labelledby="ch14-05-title ch14-05-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch14-05-title">没显示广告：代码坏了，还是超时了？</title>
+<desc id="ch14-05-desc">本章广告案例：超过服务内部期限仍未获得广告时，不展示广告而非返回500。测试只见广告缺失可能误判业务代码。另一层是测试等待：响应完成状态就立即验证，达到最大等待期限则报告超时。过载使固定等待或超时失败增多，失败测试重跑又增加负载。内部期限要可配置并明确暴露原因，不是无限等待或一味缩短；重跑指测试重新执行，不是服务 RPC 重试。</desc>
+<style>
+.cg-ch14-05[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch14-05[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch14-05[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch14-05[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch14-05[data-layout="desktop"] .boundary {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;stroke-dasharray:7 5}
+.cg-ch14-05[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch14-05[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch14-05[data-layout="desktop"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch14-05-primary-arrow)}
+.cg-ch14-05[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch14-05[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch14-05[data-layout="desktop"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch14-05-secondary-arrow)}
+.cg-ch14-05[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch14-05[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch14-05[data-layout="desktop"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch14-05-warm-arrow)}
+.cg-ch14-05[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch14-05[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch14-05[data-layout="desktop"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch14-05-danger-arrow)}
+</style><defs>
+<marker id="ch14-05-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch14-05-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch14-05-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch14-05-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">没显示广告：代码坏了，还是超时了？</text>
+<text x="32" y="78" class="small" text-anchor="start">本章广告案例：服务内部超时与测试等待，是两层机制</text>
+<text x="32" y="120" class="strong" text-anchor="start">服务内部</text>
+<g data-box="32,142,226,80"><rect x="32" y="142" width="226" height="80" rx="6" class="danger"/>
+<text x="145.0" y="174" class="strong" text-anchor="middle">超过内部期限</text>
+<text x="145.0" y="205" class="small" text-anchor="middle">未及时取得广告</text>
+</g>
+<g data-box="340,142,248,80"><rect x="340" y="142" width="248" height="80" rx="6" class="warm"/>
+<text x="464.0" y="174" class="strong" text-anchor="middle">不展示广告</text>
+<text x="464.0" y="205" class="small" text-anchor="middle">不是返回 500</text>
+</g>
+<g data-box="680,142,248,80"><rect x="680" y="142" width="248" height="80" rx="6" class="danger"/>
+<text x="804.0" y="174" class="strong" text-anchor="middle">测试看到：无广告</text>
+<text x="804.0" y="205" class="small" text-anchor="middle">可能误判业务代码</text>
+</g>
+<path d="M258 182H338" class="danger-path" data-connector="true"/>
+<path d="M588 182H678" class="danger-path" data-connector="true"/>
+<text x="32" y="271" class="strong" text-anchor="start">测试层：状态等待有两个出口</text>
+<g data-box="32,296,236,82"><rect x="32" y="296" width="236" height="82" rx="6" class="secondary"/>
+<text x="150.0" y="329" class="strong" text-anchor="middle">等待完成状态</text>
+<text x="150.0" y="361" class="small" text-anchor="middle">轮询 / 完成事件</text>
+</g>
+<g data-box="340,282,242,62"><rect x="340" y="282" width="242" height="62" rx="6" class="primary"/>
+<text x="461.0" y="321" class="" text-anchor="middle">完成：立即验证</text>
+</g>
+<g data-box="340,379,242,62"><rect x="340" y="379" width="242" height="62" rx="6" class="warm"/>
+<text x="461.0" y="418" class="" text-anchor="middle">最大期限到：报超时</text>
+</g>
+<path d="M268 321H305V313H338" class="primary-path" data-connector="true"/>
+<path d="M268 351H305V410H338" class="warm-path" data-connector="true"/>
+<text x="642" y="270" class="small" text-anchor="start">固定等待失败后又重跑</text>
+<g data-box="642,296,116,54"><rect x="642" y="296" width="116" height="54" rx="6" class="danger"/>
+<text x="700.0" y="331" class="" text-anchor="middle">过载</text>
+</g>
+<g data-box="812,296,116,54"><rect x="812" y="296" width="116" height="54" rx="6" class="warm"/>
+<text x="870.0" y="331" class="small" text-anchor="middle">等待失败</text>
+</g>
+<g data-box="812,389,116,54"><rect x="812" y="389" width="116" height="54" rx="6" class="warm"/>
+<text x="870.0" y="424" class="small" text-anchor="middle">重跑测试</text>
+</g>
+<g data-box="642,389,116,54"><rect x="642" y="389" width="116" height="54" rx="6" class="danger"/>
+<text x="700.0" y="424" class="small" text-anchor="middle">负载增加</text>
+</g>
+<path d="M758 323H810" class="danger-path" data-connector="true"/>
+<path d="M870 350V387" class="danger-path" data-connector="true"/>
+<path d="M812 416H760" class="danger-path" data-connector="true"/>
+<path d="M700 389V352" class="danger-path" data-connector="true"/>
+<text x="32" y="473" class="small" text-anchor="start">内部期限可调、原因可见；延长或缩短都要权衡用户时限，不能只靠重跑。</text>
+</svg>

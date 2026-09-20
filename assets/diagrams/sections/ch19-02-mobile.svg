@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch19-02" data-layout="mobile" role="img" aria-labelledby="ch19-02m-title ch19-02m-desc"><title id="ch19-02m-title">集成入口，不把所有工具塞进审查</title><desc id="ch19-02m-desc">以 Critique 为审查中心，分别标示编辑、搜索和发布的链接入口，以及在审查界面中显示的分析结果和覆盖率，体现原文的关注点分离。</desc><style>.cg-ch19-02[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19-02[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}.cg-ch19-02[data-layout="mobile"] .strong{font-weight:600}</style><defs>
+<marker id="ch19-02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch19-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch19-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch19-02m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch19-02m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch19-02m-box-1" x="0" y="0" width="420" height="600" rx="6" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">
+<tspan x="24" y="38">集成入口，不把所有工具塞进审查</tspan>
+</text>
+<text x="24" y="76" class="small" text-anchor="start">
+<tspan x="24" y="76">链接与内嵌结果的职责不同</tspan>
+</text>
+<rect id="ch19-02m-box-2" x="24" y="110" width="372" height="66" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="210.0" y="140" class="strong" text-anchor="middle" data-owner="ch19-02m-box-2">
+<tspan x="210.0" y="140">Critique：专注代码审查</tspan>
+</text>
+<path d="M112 176V214" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch19-02m-secondary-arrow)"/>
+<path d="M398 419H408V176H320" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch19-02m-primary-arrow)"/>
+<rect id="ch19-02m-box-3" x="24" y="216" width="372" height="153" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="246" class="strong" text-anchor="start" data-owner="ch19-02m-box-3">
+<tspan x="40" y="246">链接到独立工具</tspan>
+</text>
+<text x="40" y="278" class="small" text-anchor="start" data-owner="ch19-02m-box-3">
+<tspan x="40" y="278">Cider：编辑</tspan>
+<tspan x="40" y="304">Code Search：搜索与浏览</tspan>
+<tspan x="40" y="330">Rapid：查看发布</tspan>
+</text>
+<rect id="ch19-02m-box-4" x="24" y="400" width="372" height="101" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="430" class="strong" text-anchor="start" data-owner="ch19-02m-box-4">
+<tspan x="40" y="430">在审查中呈现</tspan>
+</text>
+<text x="40" y="462" class="small" text-anchor="start" data-owner="ch19-02m-box-4">
+<tspan x="40" y="462">分析结果与修复建议</tspan>
+<tspan x="40" y="488">行号栏中的测试覆盖率</tspan>
+</text>
+<rect id="ch19-02m-box-5" x="24" y="522" width="372" height="62" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="549" class="small" text-anchor="start" data-owner="ch19-02m-box-5">
+<tspan x="40" y="549">其他子系统各负其责。</tspan>
+<tspan x="40" y="575">覆盖率工具并非所有项目使用。</tspan>
+</text>
+</svg>

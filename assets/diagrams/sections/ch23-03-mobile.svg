@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-03m-root" class="chapter-svg cg-ch23-03" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch23-03m-title ch23-03m-desc">
+  <title id="ch23-03m-title">录制／重放：什么变化应让缓存失配？</title>
+  <desc id="ch23-03m-desc">假设请求 format=zip、trace=a 曾录得 ZIP 响应，应用解码器只支持 ZIP。如果请求改成 format=tar，过宽匹配仍重放 ZIP，会让测试通过，却漏掉真实 TAR 响应暴露的错误。若只改无业务意义的 trace，过严匹配会导致缓存失配、测试阻塞，刷新后仍得到 ZIP 并通过。若识别 format 的实质变化，更新响应为 TAR 后重跑仍失败，才获得有用的错误信号。录制阶段访问真实后端，重放阶段自包含；封闭性不消除时间、随机数和竞态。</desc>
+  <style>
+  .cg-ch23-03#ch23-03m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23-03#ch23-03m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23-03#ch23-03m-root .strong {font-weight:600}
+  .cg-ch23-03#ch23-03m-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23-03#ch23-03m-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23-03#ch23-03m-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-03m-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="36" class="strong" data-box="16,8,388,584">录制／重放：何时应让缓存失配？</text>
+  <text x="24" y="72" class="small" data-box="16,8,388,584">假设：format=zip, trace=a</text>
+  <text x="24" y="101" class="small" data-box="16,8,388,584">缓存为 ZIP；解码器只支持 ZIP</text>
+  <rect x="24" y="122" width="372" height="119" fill="var(--diagram-danger-soft,#faecee)"/>
+  <text x="38" y="153" class="strong" data-box="24,122,372,119">format 改成 tar：匹配过宽</text>
+  <text x="38" y="190" class="small" data-box="24,122,372,119">仍命中旧缓存 ZIP，测试通过</text>
+  <text x="38" y="224" class="small" data-box="24,122,372,119">但真实 TAR 会让解码失败：漏报</text>
+  <rect x="24" y="257" width="372" height="119" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="38" y="288" class="strong" data-box="24,257,372,119">只改 trace：匹配过严</text>
+  <text x="38" y="325" class="small" data-box="24,257,372,119">业务未变，缓存失配却阻塞测试</text>
+  <text x="38" y="359" class="small" data-box="24,257,372,119">刷新仍得 ZIP 并通过：无关负担</text>
+  <rect x="24" y="392" width="372" height="119" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="38" y="423" class="strong" data-box="24,392,372,119">format 改成 tar：识别实质变化</text>
+  <text x="38" y="460" class="small" data-box="24,392,372,119">更新响应为 TAR，重跑仍失败</text>
+  <text x="38" y="494" class="small" data-box="24,392,372,119">有用信号：检查不兼容的解码器</text>
+  <text x="24" y="548" class="small" data-box="16,8,388,584">录制访问真实后端；重放自包含</text>
+  <text x="24" y="578" class="small" data-box="16,8,388,584">时间、随机数和竞态仍需处理</text>
+</svg>

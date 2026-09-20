@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch25-05-root" class="chapter-svg cg-ch25-05" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch25-05-title ch25-05-desc">
+<title id="ch25-05-title">Bash 换成 ash，为何反而告警？</title>
+<desc id="ch25-05-desc">本章计算服务选择中的真实历史案例：团队已经在自己的文件系统覆盖层里，把 /usr/bin/bash 换成只执行参数的极简程序，避开 Bash 包装开销。Borg 把统一启动路径改成 /usr/bin/ash，本想降低 shell 开销，但对这些团队却绕过了原有定制，真正启动 ash，内存使用反而增加，触发告警并回滚。这是隐式依赖导致迁移失败的反例，不是 Bash 与 ash 的性能比较，也不是当前云产品行为；图不提供任何内存测量或资源比例。</desc>
+<style>
+.cg-ch25-05#ch25-05-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch25-05#ch25-05-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch25-05#ch25-05-root .strong {font-weight:600}
+.cg-ch25-05#ch25-05-root .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch25-05-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch25-05-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch25-05-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch25-05-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch25-05-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
+<text x="32" y="42" text-anchor="start" class="strong">Bash 换成 ash，为何反而告警？</text>
+<text x="32" y="78" text-anchor="start" class="small">本章案例：统一启动器遇到团队私有覆盖层；未画内存比例</text>
+<text x="32" y="124" text-anchor="start" class="strong">变更前：启动路径经过定制</text>
+<text x="524" y="124" text-anchor="start" class="strong">变更后：绕过了定制</text>
+<rect x="32" y="147" width="404" height="64" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="50" y="188" text-anchor="start" class="" data-box="32,147,404,64">/usr/bin/bash -c ...</text>
+<rect x="524" y="147" width="404" height="64" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="542" y="188" text-anchor="start" class="" data-box="524,147,404,64">/usr/bin/ash -c ...</text>
+<path data-connector="true" d="M234 211V248" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch25-05-primary-arrow)"/>
+<path data-connector="true" d="M726 211V248" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch25-05-warm-arrow)"/>
+<rect x="32" y="258" width="404" height="91" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="50" y="291" text-anchor="start" class="strong" data-box="32,258,404,91">团队覆盖了 Bash 路径</text>
+<text x="50" y="327" text-anchor="start" class="small" data-box="32,258,404,91">执行的是极简“执行参数”程序</text>
+<rect x="524" y="258" width="404" height="91" rx="0" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="542" y="291" text-anchor="start" class="strong" data-box="524,258,404,91">执行真正的 ash</text>
+<text x="542" y="327" text-anchor="start" class="small" data-box="524,258,404,91">未被该团队覆盖层替换</text>
+<path data-connector="true" d="M234 349V372" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch25-05-primary-arrow)"/>
+<path data-connector="true" d="M726 349V372" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch25-05-danger-arrow)"/>
+<text x="32" y="402" text-anchor="start" class="small">原本已避开 shell 的额外开销</text>
+<text x="524" y="402" text-anchor="start" class="small danger">新增 shell 开销，内存反而增加</text>
+<text x="32" y="442" text-anchor="start" class="small">迁移必须检查实际依赖，</text>
+<text x="32" y="469" text-anchor="start" class="small">不能只检查新二进制是否存在。</text>
+<path data-connector="true" d="M726 414V434" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch25-05-danger-arrow)"/>
+<text x="726" y="469" text-anchor="middle" class="strong danger">触发告警 → 回滚</text>
+</svg>

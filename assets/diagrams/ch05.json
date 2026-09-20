@@ -1,0 +1,25 @@
+{
+  "chapter": 5,
+  "title": "先分清职责，再决定谁来做",
+  "summary": "从成员与业务需求、技术决策、人员与任务配置三个具体问题辨认工程经理、TL 和双方共同承担的职责；兼任不减少职责，负责技术也不等于亲自实现一切。",
+  "enabled": true,
+  "sourceSections": [
+    "Managers and Tech Leads (and Both)  经理、技术负责人及兼任两职者",
+    "The Engineering Manager  工程经理",
+    "The Tech Lead  技术负责人",
+    "The Tech Lead Manager  技术负责人兼经理"
+  ],
+  "kind": "responsibility-map",
+  "desktop": "assets/diagrams/ch05.svg",
+  "mobile": "assets/diagrams/ch05-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "成员与业务需求冲突、技术决策、人员与任务配置，分别由谁负责？TL 负责技术是否就该亲自做完？",
+    "expectedAnswer": "工程经理兼顾每个人（包括 TL）的绩效、生产力和幸福感与产品的业务需求；TL 负责技术选择、架构和项目推进；两人共同配齐人员、按技能与水平匹配任务。小或新团队可以由 TLM 兼任；培养团队时 TL 通常应委派，即使成员有时较慢。",
+    "visualEncoding": "三行把具体问题与负责角色对齐；最后一行是明确标注的共同职责，不画上下级箭头。底部将一人兼任与任务委派作为不同层次的决定，手机布局逐行重排。",
+    "sourceEvidence": "The Engineering Manager  工程经理：including their tech lead / needs of the business；The Tech Lead  技术负责人：adequately staffed / tasks that best match their skill sets and skill levels / delegating it；The Tech Lead Manager  技术负责人兼经理：two specialists / mentoring。",
+    "beforeProblem": "两大角色名词框汇入“共同服务团队”，与 ch05-01 几乎重复；抽象职责清单没有明确对应读者遇到的问题，也未显示负责技术与亲自实现之间的区别。",
+    "whyBetter": "每一行都能直接回答一类问题由谁负责，并把双方共同配置人员与任务的职责放在同一行；委派注释避免将 TL 的责任误读成包办所有实现。",
+    "limits": "是本章描述的 Google 角色惯例，不是通用组织章程或完整 RACI；行距和颜色不代表工作量、优先级或汇报层级。没有量化委派收益。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ch05-02",
+  "chapter": 5,
+  "title": "用限期指导，让差距可见",
+  "summary": "对照放任等待与限期指导：约定期限及小而可衡量的目标，每周对照实际进展；达标后明确下一里程碑，未达标时双方尽早看清差距。两个月是原书示例，不是统一期限或自动离职条件。",
+  "enabled": true,
+  "sourceSections": ["### Antipattern: Ignore Low Performers  反模式：忽略低绩效员工"],
+  "afterParagraph": "直接与低绩效员工一起解决问题，都能推动必要而重要的改变。",
+  "desktop": "assets/diagrams/sections/ch05-02.svg",
+  "mobile": "assets/diagrams/sections/ch05-02-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "已发现表现未达预期时，限期指导比等待自行改善多了什么判断依据？",
+    "expectedAnswer": "约定期限和小、递进、可衡量目标，每周将实际进展与明确期望对照，让双方尽早看见是否跟得上；细致指导应是暂时的并始终尊重对方。原书提到可能改善或离开，不给出自动离职规则。",
+    "visualEncoding": "等待路径终止于问题持续及同伴补位；指导路径明确画出期限、每周目标与实际进展的比较点，再按达标或未达标分支。回线只从下一里程碑回到周检查，表示继续指导而非无限期管控。",
+    "sourceEvidence": "Antipattern: Ignore Low Performers  反模式：忽略低绩效员工：Hope is not a strategy / temporary micromanagement / say, two months / Meet with the team member every week / explicit expectations / quite obvious to both of you。",
+    "beforeProblem": "原图已有指导顺序，但“定期检查”未呈现检查频率和比较对象；“明确后续安排”的结果框可能显得像既定处置流程，且没有展示等待时由谁承担后果。",
+    "whyBetter": "把具体比较点与分支条件放进图中，读者可沿线找到每周依据什么判断、达标后怎么继续，以及为什么等待没有提供同样的信息。",
+    "limits": "两个月明确标作原书例子，不是固定人事政策；没有虚构员工任务、绩效数值或改善率。回线不表示无限期延长，未达标也不等于自动离职。"
+  }
+}

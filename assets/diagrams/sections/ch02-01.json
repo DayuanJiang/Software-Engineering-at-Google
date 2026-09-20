@@ -1,0 +1,21 @@
+{
+  "id": "ch02-01",
+  "chapter": 2,
+  "title": "同一个设计缺陷，何时才能被看见？",
+  "summary": "把原文变速器故事与书中的早期分享反事实并列：保密使邻居的检查延后，早期展示则让相同缺陷有机会及早被指出；不把反事实当作实测工期。",
+  "sourceSections": ["## Hiding Considered Harmful 隐藏工作的危害", "### Early Detection 及早发现", "### Pace of Progress 进展速度"],
+  "afterParagraph": "记住那句久经检验的箴言：“尽早失败，快速失败，经常失败。”",
+  "desktop": "assets/diagrams/sections/ch02-01.svg",
+  "mobile": "assets/diagrams/sections/ch02-01-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "变速器中的简单设计缺陷，为什么拖到数月后才被邻居指出？",
+    "expectedAnswer": "不是缺陷到最后才出现，而是作者一直不展示原型，邻居无法检查。原文提出：早些展示，也许第一周就能解决；这是反事实可能性，不是保证。",
+    "visualEncoding": "两条按工作顺序排列的轨道保留同一个带缺陷原型；上轨道把外部检查放到独自试做之后，下轨道在继续打磨之前打开检查入口。虚线为未接受外部检查的工作，实线箭头为检查与可修正的路径。",
+    "sourceEvidence": "## Hiding Considered Harmful 隐藏工作的危害：自行车变速器故事，'如果早些拿给他看，也许第一周就能解决'；### Early Detection 及早发现 及脚注3：'过早获得太多反馈有时也会带来风险'。",
+    "beforeProblem": "旧图是通用的想法、打磨、反馈方框；桌面版的'才发现方向问题'容易被读成必然结果，未用原文展示检查入口为何延后。",
+    "whyBetter": "对齐同一问题的两种可见时机，使读者能指出改变的是谁能何时检查，而不是笼统记住尽早分享；保留原文的也许和反馈边界。",
+    "limits": "下轨道是原文反事实，不是另一个实测项目。轨道间距不代表工期、成本或成功概率；方向未明时过早收集太多反馈仍有风险。"
+  }
+}

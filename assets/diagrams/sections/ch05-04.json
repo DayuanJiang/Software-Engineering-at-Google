@@ -1,0 +1,21 @@
+{
+  "id": "ch05-04",
+  "chapter": 5,
+  "title": "不知怎么做，还是不知为何做？",
+  "summary": "并列区分方向缺口和意义缺口：前者需要把工作拆成可管理任务；后者以原书经理转发客户受益邮件的案例，展示如何让团队看见工作用途。两种帮助改变的信息不同。",
+  "enabled": true,
+  "sourceSections": ["## People Are Like Plants  人如植物", "### Intrinsic Versus Extrinsic Motivation  内在动机与外在动机"],
+  "afterParagraph": "这不但能激励大家，也常能启发成员思考怎样进一步改进产品。",
+  "desktop": "assets/diagrams/sections/ch05-04.svg",
+  "mobile": "assets/diagrams/sections/ch05-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "成员不知道下一步怎么做，与看不到工作为何有意义，需要相同的帮助吗？",
+    "expectedAnswer": "提供方向时，领导要把工作拆成可管理任务；让工作意义可见则需要说明工作如何帮助别人，原书例子是经理把客户描述产品帮助的邮件转发给工程团队。两种信息不能相互替代，成员也可能同时需要两者。",
+    "visualEncoding": "两条对齐路径分别显示信息缺口、领导采取的动作、变得可见的信息；意义路径明确标为原书客户邮件例子。移动端按路径重排，保留两类动作与结果的对应。",
+    "sourceEvidence": "People Are Like Plants  人如植物：break it down into manageable tasks / need both motivation and direction；Intrinsic Versus Extrinsic Motivation  内在动机与外在动机：customer talking about how the company's product has helped them / forwards it to the engineering team；脚注 11：income is not a source of stress。",
+    "beforeProblem": "四格概念矩阵只有“补充激励”等类别名，未展示激励实际改变什么；下方自主、精进、意义的列表缺乏具体作用机制。",
+    "whyBetter": "把“方向”和“意义”落实为不同的信息传递：可执行任务与客户受益证据；读者可看到为何同一种管理动作无法补足每一种缺口。",
+    "limits": "是两种支持需求的选择性示意，不是完备诊断或固定人格分类，也不将意义等同于全部动机。省略自主与精进的展开，保留薪酬不构成压力的前提；不声称邮件保证提高产出。"
+  }
+}

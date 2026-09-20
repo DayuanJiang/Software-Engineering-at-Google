@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch11-04" data-layout="mobile" role="img" aria-labelledby="ch11-04m-title ch11-04m-desc">
+<title id="ch11-04m-title">执行过，不等于验证过</title>
+<desc id="ch11-04m-desc">同一个错误实现把 subtract(2, 5) 算成 3：只调用方法与断言结果的测试，都执行了同一条功能代码，但只有断言 3 == -3 的测试暴露错误。错误实现及无断言分支为示意，不是新增书中代码。仅比较所示功能行的行覆盖率；不是整个程序覆盖率，也不证明一个断言已覆盖所有行为。</desc>
+<style>
+.cg-ch11-04[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch11-04[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch11-04[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch11-04[data-layout="mobile"] .danger{fill:var(--diagram-danger,#b54750)}
+.cg-ch11-04[data-layout="mobile"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch11-04[data-layout="mobile"] .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
+<defs><marker id="ch11-04m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">执行过，不等于验证过</text>
+<text x="24" y="68" class="small" text-anchor="start">同一错误返回值，不同的结果检查</text>
+<rect x="24" y="94" width="372" height="99" rx="4" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="122" class="" text-anchor="start" data-region="24 94 372 99">错误实现：return b - a;</text>
+<text x="40" y="154" class="" text-anchor="start" data-region="24 94 372 99">各自调用 subtract(2, 5) → 3</text>
+<text x="40" y="183" class="small" text-anchor="start" data-region="24 94 372 99">正确预期：-3</text>
+<path d="M24 177H12V405H24" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-04m-arrow)"/>
+<path d="M12 240H24" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-04m-arrow)"/>
+<rect x="24" y="211" width="372" height="146" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="40" y="241" class="strong" text-anchor="start" data-region="24 211 372 146">A  只调用，不检查结果</text>
+<text x="40" y="275" class="mono" text-anchor="start" data-region="24 211 372 146">actual = subtract(2, 5)</text>
+<text x="40" y="306" class="small" text-anchor="start" data-region="24 211 372 146">该功能行：已覆盖</text>
+<text x="40" y="339" class="strong " text-anchor="start" data-region="24 211 372 146">未报告错误；结果未被验证</text>
+<rect x="24" y="375" width="372" height="146" rx="4" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="40" y="405" class="strong" text-anchor="start" data-region="24 375 372 146">B  调用后断言</text>
+<text x="40" y="439" class="mono" text-anchor="start" data-region="24 375 372 146">assert(actual == -3)</text>
+<text x="40" y="470" class="small" text-anchor="start" data-region="24 375 372 146">该功能行：已覆盖</text>
+<text x="40" y="503" class="strong danger" text-anchor="start" data-region="24 375 372 146">3 ≠ -3 → 断言失败</text>
+<text x="24" y="554" class="small" text-anchor="start">都覆盖该行，但只有 B 检查返回值。</text>
+<text x="24" y="582" class="small" text-anchor="start">这里只比较所示功能行的行覆盖率。</text>
+</svg>

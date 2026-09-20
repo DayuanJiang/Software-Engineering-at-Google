@@ -1,0 +1,38 @@
+{
+  "format": 2,
+  "sourceSha256": "f63d55c62cfb90337f11bd2149f3d789026479c43da7bec9f9b8d28a67112539",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch24.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [144, 146],
+      "english": "Remember the SRE “error-budget” formulation: perfection is rarely the best goal. Understand how much room for error is acceptable and how much of that budget has been spent recently and use that to adjust the trade-off between velocity and stability.",
+      "chinese": "记住 SRE 的“错误预算”理念：完美很少是最佳目标。先明确可以容忍多少错误，以及近期已经消耗了多少预算，再据此调整速度与稳定性之间的权衡。",
+      "after": "为关键绩效指标设定明确的阈值，既能让尚不完美的功能获得发布机会，也能为原本容易引发争议的发布决策提供清晰依据。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [218, 220],
+      "english": "Dan Siroker and Pete Koomen, *A/B Testing: The Most Powerful Way to Turn Clicks Into Customers* (Hoboken: Wiley, 2013).",
+      "chinese": "Dan Siroker 和 Pete Koomen，《A/B 测试：将点击转化为客户的最有力方法》（Hoboken: Wiley，2013）。",
+      "after": "Dan Siroker 和 Pete Koomen 已经讨论过对功能进行 A/B 测试的价值，而在谷歌，一些较大型的应用还会对部署本身进行 A/B 测试。"
+    }
+  ],
+  "proseCodeBlocks": [
+    {
+      "text": "You get extraordinary outcomes by realizing that the launch *never lands* but that it begins a learning cycle where you then fix the next most important thing, measure how it went, fix the next thing, etc.—and it is *never complete*.\n—David Weekly, Former Google product manager",
+      "language": "en",
+      "reason": "English quotation and attribution in one bilingual indented code block; not executable code. Together with the Chinese entry this exactly covers the block."
+    },
+    {
+      "text": "要取得非凡成果，就要认识到：上线从来不是终点，而是学习循环的开始。你接着解决下一个最重要的问题，衡量效果，再解决下一个问题，如此反复，这个过程永远不会结束。\n-David Weekly，前谷歌产品经理",
+      "language": "zh",
+      "reason": "Existing Chinese quotation and attribution in the same block. Compiler may combine both reviewed entries to cover the whole source block."
+    }
+  ],
+  "translatorNotes": [],
+  "translations": [],
+  "issues": [
+    "Lines 24-28 parse as one bilingual indented code block. The two reviewed language-specific entries together cover it exactly, preserving both quotations and attributions."
+  ]
+}

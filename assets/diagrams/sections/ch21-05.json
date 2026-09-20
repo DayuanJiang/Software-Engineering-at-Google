@@ -1,0 +1,21 @@
+{
+  "id": "ch21-05",
+  "chapter": 21,
+  "title": "gflags：等效假设怎样约束内部优化？",
+  "summary": "同一份代码按环境选择不同 flags 分叉，并依赖观察到的等效行为；只改内部实现后这一假设失效，跨环境构建与发布出错，从而推迟内部优化。",
+  "enabled": true,
+  "sourceSections": ["#### Example: open sourcing gflags  示例：开源 gflags"],
+  "afterParagraph": "海勒姆定律又一次影响了软件变更，这次甚至涉及由不同组织维护的分叉 API。",
+  "desktop": "assets/diagrams/sections/ch21-05.svg",
+  "mobile": "assets/diagrams/sections/ch21-05-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "外部分叉没有随内部优化一起改变，为什么仍会约束谷歌自己的 flags 优化？",
+    "expectedAnswer": "有些项目按构建环境切换内外分叉，使用共有API子集并依赖两处未承诺的行为等效。内部实现改变这类可观察行为后，跨环境用法的假设不再成立，相关构建与发布失败，优化因而被推迟。",
+    "visualEncoding": "同一份跨环境代码的两条使用路径指向内部flags与外部gflags列。前后两行只将内部b改为b′，外部b保持不变，相等关系变为不等；由此暴露项目继续要求两处等效时的矛盾。",
+    "sourceEvidence": "#### Example: open sourcing gflags  示例：开源 gflags：'根据环境选用 flags 库的不同分叉'、'可观察、却没有文档说明的部分'、'构建和发布突然失败'、'优化，被大幅推迟'。",
+    "beforeProblem": "旧图从库向使用方画箭头且未说明方向含义，容易误读为依赖方向；只显示分叉与共同API名称，内部优化前后到底哪项关系改变不直观。",
+    "whyBetter": "用固定外部状态、改变内部状态的对照呈现约束如何产生；不会误以为修改内部库自动改变外部库，也不再只凭组件名推出影响。",
+    "limits": "b/b′只是原文未具体指明的无文档可观察行为的符号，不编造gflags函数、返回值或故障机制；相等只指被依赖的这一行为，不表示整个分叉等同。此案例不说明开源必然拖慢优化。"
+  }
+}

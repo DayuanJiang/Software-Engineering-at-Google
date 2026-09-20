@@ -1,0 +1,21 @@
+{
+  "id": "ch18-01",
+  "chapter": 18,
+  "title": "互不依赖，就能安全并行吗？",
+  "summary": "B 与 C 虽无依赖边，却可能写同一状态文件；交换最后写入者即可得到不同结果。对照声明并隔离输出的两个动作，说明安全并行需要掌握资源读写，而不只是任务依赖图。",
+  "sourceSections": ["#### The dark side of task-based build systems 基于任务的构建系统的缺陷", "### Artifact-Based Build Systems 基于产物的构建系统", "### Other nifty Bazel tricks 其他巧妙的 Bazel 做法"],
+  "afterParagraph": "系统完全掌握何时运行哪些工具，因此能够作出更强的保证，在确保正确性的同时大幅提高效率。",
+  "desktop": "assets/diagrams/sections/ch18-01.svg",
+  "mobile": "assets/diagrams/sections/ch18-01-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "A 依赖 B 和 C，B 与 C 没有依赖边，为什么仍不能据此认定两者可以安全并行？",
+    "expectedAnswer": "任务可能访问图中未声明的共享资源。B、C 都写同一个状态文件时，最后写入者改变，结果也会改变；声明输入输出并隔离动作可以避免图示的共享文件冲突，但不能证明任意自定义动作都确定。",
+    "visualEncoding": "两行保留同样的 B、C 写入操作，只交换顺序，得到状态值 C 与 B。对照区让 B 只产出 b.jar、C 只产出 c.jar，两个输出不相连，显示移除的是共享写入冲突而非任务本身。",
+    "sourceEvidence": "The dark side of task-based build systems 基于任务的构建系统的缺陷：B 和 C 用同一个文件记录状态、结果依赖谁先完成；Other nifty Bazel tricks 其他巧妙的 Bazel 做法：隔离环境、无法阻止动作开发人员引入非确定性过程。",
+    "beforeProblem": "原图把两种模型分别排成三个结论框，箭头仅复述抽象论证，未展示隐藏资源，也无法从可见证据推导并行风险。",
+    "whyBetter": "只改变操作顺序便显示两个不同结果，提供了无依赖边不足以证明安全并行的具体反例；独立输出的对照明确展示约束解决了什么问题。",
+    "limits": "status.txt、B/C 写入值和 b.jar/c.jar 是对原文共享文件反例的示意实例，不是原文代码。时间行不表示耗时；隔离不保证任意动作确定。放置点保留，隔离机制是后文的具象预告。"
+  }
+}

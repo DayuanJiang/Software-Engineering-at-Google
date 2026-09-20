@@ -1,0 +1,21 @@
+{
+  "id": "ch20-01",
+  "chapter": 20,
+  "title": "两种误报，要用两类证据判断",
+  "summary": "保留技术正确性与积极行动的二维矩阵，并用原文 Hashtable.contains 示例提供意图、方法语义和实际修改三项证据，定位技术误报但非感知误报的格子。",
+  "enabled": true,
+  "sourceSections": ["### Focus on Developer Happiness  关注开发者的幸福感"],
+  "afterParagraph": "反过来，如果分析报告了真实缺陷，开发者却没有理解，因此未采取行动，这也算感知误报。",
+  "desktop": "assets/diagrams/sections/ch20-01.svg",
+  "mobile": "assets/diagrams/sections/ch20-01-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "怎样证明一条报告在技术上误报，却不算感知误报？",
+    "expectedAnswer": "如果开发者本来就想查值，Hashtable.contains 与 containsValue 等价，怀疑其本应查键的报告便是技术误报。但开发者仍改用 containsValue 来改善可读性，属于积极行动，因此不算感知误报。反之，真实缺陷若未被理解、没有促成积极行动，也算感知误报。",
+    "visualEncoding": "矩阵的行是技术判断、列是是否采取积极行动。例 A 先展示意图、方法语义和修改证据，再在技术误报且有积极行动的格子标出 A。移动版也保留二维行列，而不是把矩阵退化为四项列表。",
+    "sourceEvidence": "### Focus on Developer Happiness  关注开发者的幸福感：'即使开发者本来就想检查值，改用 containsValue 也更清楚'；'开发者却没有理解，因此未采取行动，这也算感知误报'。",
+    "beforeProblem": "原矩阵准确地区分了两条轴，值得保留，但只有分类结论，未展示据何判定技术正确性及积极行动；移动版失去了行列关系。",
+    "whyBetter": "读者可先用意图与 API 语义判断行，再用实际有益修改判断列，独立复核例 A 的位置。颜色仅辅助，文字完整保留两种不同判断。",
+    "limits": "例 A 按原文构造，不是额外实测案例。矩阵仅讨论已经发出的报告，不表示漏报率，也不把点击次数等同于积极行动。"
+  }
+}

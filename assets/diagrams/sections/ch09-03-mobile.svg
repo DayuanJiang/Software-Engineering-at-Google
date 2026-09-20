@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch09-03m-diagram" class="chapter-svg cg-ch09-03" role="img" aria-labelledby="ch09-03m-title ch09-03m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch09-03m-title">审查结束后，理由留在哪里？</title>
+<desc id="ch09-03m-desc">教学示例，不是书中实际代码。未来维护者问为什么新增空列表判断。只写修复缺陷的描述不回答这个问题。另一份描述写明空列表时提前返回，以及避免读取不存在首项的原因，留下了分支的理由。本章建议审查中形成新决定时更新变更描述或实现注释；此处不声称其他历史资料无法提供答案。</desc>
+<style>
+.cg-ch09-03#ch09-03m-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch09-03#ch09-03m-diagram .strong{font-weight:600}
+.cg-ch09-03#ch09-03m-diagram .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch09-03#ch09-03m-diagram .peer{fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch09-03#ch09-03m-diagram .author{fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch09-03#ch09-03m-diagram .danger{fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch09-03#ch09-03m-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch09-03#ch09-03m-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch09-03m-arrow)}
+</style>
+<defs><marker id="ch09-03m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect id="ch09-03m-box1" x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="39" class="strong" text-anchor="start">让后来者看见修改理由</text>
+<text x="24" y="68" class="small" text-anchor="start">示例：为空列表增加提前返回</text>
+<text x="24" y="107" class="strong" text-anchor="start">后来者：为什么先判断空列表？</text>
+<rect id="ch09-03m-box2" x="24" y="127" width="372" height="114" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="157" class="small" text-anchor="start" data-box="ch09-03m-box2">只写结果</text>
+<text x="40" y="188" class="strong" text-anchor="start" data-box="ch09-03m-box2">修复缺陷</text>
+<text x="40" y="220" class="small" text-anchor="start" data-box="ch09-03m-box2">仅凭描述，无法回答原因</text>
+<rect id="ch09-03m-box3" x="24" y="259" width="372" height="190" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="289" class="small" text-anchor="start" data-box="ch09-03m-box3">写清改动和原因</text>
+<text x="40" y="323" class="strong" text-anchor="start" data-box="ch09-03m-box3">修复空列表处理</text>
+<text x="40" y="355" class="" text-anchor="start" data-box="ch09-03m-box3">改动：空列表时提前返回</text>
+<text x="40" y="387" class="" text-anchor="start" data-box="ch09-03m-box3">原因：避免读取不存在的首项</text>
+<text x="40" y="429" class="small" text-anchor="start" data-box="ch09-03m-box3">这条描述提供了分支的理由</text>
+<text x="210" y="490" class="strong" text-anchor="middle">审查中形成新决定</text>
+<path d="M210 504 V527" class="arrow"/>
+<text x="210" y="554" class="strong" text-anchor="middle">更新变更描述或实现注释</text>
+<text x="24" y="583" class="small" text-anchor="start">内容为示例，不是原书中的代码案例</text>
+</svg>

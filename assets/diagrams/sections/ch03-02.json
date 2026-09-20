@@ -1,0 +1,21 @@
+{
+  "id": "ch03-02",
+  "chapter": 3,
+  "title": "流程变了，旧答案怎么办？",
+  "summary": "用明确标为示意的开发流程变化，展示群聊结论需要整理、旧邮件存档不能改写、问答答案可以主动编辑的不同结果。",
+  "enabled": true,
+  "sourceSections": ["### Group Chats 群聊", "### Mailing Lists 邮件列表", "### YAQS: Question-and-Answer Platform YAQS：问答平台"],
+  "afterParagraph": "另一些则演变为话题更广泛的讨论列表，不再那么侧重于解决问题。",
+  "desktop": "assets/diagrams/sections/ch03-02.svg",
+  "mobile": "assets/diagrams/sections/ch03-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "开发流程已经改变，群聊、旧邮件和问答中的答案怎样才能继续帮助后来的人？",
+    "expectedAnswer": "群聊中新结论要写成文档或邮件以便群外和后来读者引用；旧邮件存档不能改写，搜到的答案要判断时效；问答系统可以编辑已有问题和答案，但仍要有人实际更新。",
+    "visualEncoding": "固定同一项示意变化：从手工配置变为自动配置。三条横向关系分别展示新群聊结论变为可分享记录、旧邮件仍保留旧内容、问答旧答案经主动编辑变成新内容。手机端保留每条关系的起点和结果。",
+    "sourceEvidence": "### Group Chats 群聊：需要把信息分享给群外的人，或留作日后参考，就应该写成文档，或发送到邮件列表；### Mailing Lists 邮件列表：邮件存档无法修改；### YAQS: Question-and-Answer Platform YAQS：问答平台：用户也能编辑问题和答案。",
+    "beforeProblem": "旧图是媒介、交流方式、检索和维护特征的文字表；手机端退化成三个属性列表，读者看不到事实改变后哪项内容保持旧状态、哪项可以更新。",
+    "whyBetter": "相同的流程变更让三种媒介的维护差异变得可观察：旧内容被保留、被整理或被编辑，不再只依赖记住媒介标签。",
+    "limits": "手工配置到自动配置是教学示例，不是书中某系统的真实变更，也不是操作指导。不把可编辑等同于自动更新，不给媒介排名，不覆盖邮件的全部讨论优势。"
+  }
+}

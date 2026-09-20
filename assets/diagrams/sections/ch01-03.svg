@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch01-03" data-layout="desktop" role="img" aria-labelledby="ch01-03-title ch01-03-desc">
+  <title id="ch01-03-title">规模与人力：重复劳动还是共享能力</title>
+  <desc id="ch01-03-desc">组件升级的概念示例，团队数量仅用于说明，不代表实测规模或量化收益。左侧每个使用团队都重新学习、迁移、测试。右侧由专家统一理解问题，通过自动化迁移、统一 CI 及整合与一致性，把共同知识和流程用于多个团队。目标是减少重复的人力投入，而非消除所有工作；共享工具、测试和维护仍需投入。</desc>
+  <style>
+    .cg-ch01-03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-03[data-layout="desktop"] .strong {font-weight:600}
+    .cg-ch01-03[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-03[data-layout="desktop"] .share {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch01-03-arrow)}
+  </style>
+  <defs>
+    <marker id="ch01-03-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/>
+    </marker>
+  </defs>
+  <rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong">让重复工作随规模扩展</text>
+  <text x="928" y="42" text-anchor="end" class="small">概念示例：组件升级</text>
+  <text x="32" y="102" class="strong">各团队自行迁移</text>
+  <text x="514" y="102" class="strong">共享专业知识与自动化</text>
+  <path d="M480 88V385" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+
+  <rect x="32" y="144" width="416" height="52" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <rect x="32" y="219" width="416" height="52" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <rect x="32" y="294" width="416" height="52" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <path d="M136 152V188M136 227V263M136 302V338" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+  <text x="52" y="179">团队甲</text>
+  <text x="52" y="254">团队乙</text>
+  <text x="52" y="329">团队丙</text>
+  <text x="184" y="179" text-anchor="middle">学习</text>
+  <text x="286" y="179" text-anchor="middle">迁移</text>
+  <text x="388" y="179" text-anchor="middle">测试</text>
+  <text x="184" y="254" text-anchor="middle">学习</text>
+  <text x="286" y="254" text-anchor="middle">迁移</text>
+  <text x="388" y="254" text-anchor="middle">测试</text>
+  <text x="184" y="329" text-anchor="middle">学习</text>
+  <text x="286" y="329" text-anchor="middle">迁移</text>
+  <text x="388" y="329" text-anchor="middle">测试</text>
+  <text x="32" y="384" class="small">每增加团队，就重复学习与适配</text>
+
+  <ellipse cx="718" cy="210" rx="180" ry="80" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="718" y="182" text-anchor="middle" class="strong">专家统一理解问题</text>
+  <text x="718" y="216" text-anchor="middle">自动化迁移 / 统一 CI</text>
+  <text x="718" y="248" text-anchor="middle" class="small">整合与一致性限制变更范围</text>
+  <path d="M590 266C570 281 558 291 558 308" class="share"/>
+  <path d="M718 290V308" class="share"/>
+  <path d="M846 266C866 281 878 291 878 308" class="share"/>
+  <circle cx="558" cy="319" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
+  <circle cx="718" cy="319" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
+  <circle cx="878" cy="319" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
+  <text x="558" y="352" text-anchor="middle">团队甲</text>
+  <text x="718" y="352" text-anchor="middle">团队乙</text>
+  <text x="878" y="352" text-anchor="middle">团队丙</text>
+  <text x="514" y="384" class="small">把共同知识与流程用于多个团队</text>
+
+  <rect x="32" y="410" width="896" height="46" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="480" y="440" text-anchor="middle" class="small">目标是减少重复的人力投入；共享工具、测试与维护仍需投入</text>
+</svg>

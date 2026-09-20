@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22-02-root" class="chapter-svg cg-ch22-02" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch22-02-title ch22-02-desc">
+  <title id="ch22-02-title">合测的失败，如何归到分片？</title>
+  <desc id="ch22-02-desc">以三个分片和四个测试为示例，先跑受影响测试的并集；若 b 失败，甲、乙分别重跑 b，丙与失败集的交集为空。甲通过、乙失败的示例说明合测失败不能直接归罪于整批分片。 集合和结果为教学示例，不是性能测量；没有给出提速或总耗时。使用后文的分片交集规则，不将其冒充为前文 TAP 列车的完整五步流程；后者先随机抽样1000个测试，再对每个非 flaky 失败测试逐项复跑。图中假设分片独立、测试均非 flaky；不把忽略 flaky 的经验推广为通用规则。</desc>
+  <style>
+.cg-ch22-02#ch22-02-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:24px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22-02#ch22-02-root .small { font-size:20px; fill:var(--diagram-muted,#686868); }
+.cg-ch22-02#ch22-02-root .strong { font-weight:600; }
+.cg-ch22-02#ch22-02-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22-02#ch22-02-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22-02#ch22-02-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22-02#ch22-02-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22-02-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22-02-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22-02-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22-02-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22-02-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)" />
+  <text x="32" y="42" text-anchor="start" class="strong">合测的失败，如何归到分片？</text>
+  <text x="32" y="77" text-anchor="start" class="small">示意：先跑受影响测试的并集，再逐片重跑与首轮失败集的交集</text>
+  <text x="32" y="116" text-anchor="start" class="strong">受影响的测试集合</text>
+  <text x="32" y="147" text-anchor="start" class="small">实心圆 = 受影响；短横线 = 不在集合中</text>
+  <text x="195" y="179" text-anchor="middle" class="strong">a</text>
+  <text x="277" y="179" text-anchor="middle" class="strong">b</text>
+  <text x="359" y="179" text-anchor="middle" class="strong">c</text>
+  <text x="441" y="179" text-anchor="middle" class="strong">d</text>
+  <text x="50" y="222" text-anchor="start">甲</text>
+  <circle cx="195" cy="214" r="9" fill="var(--diagram-secondary,#2f6eac)" />
+  <circle cx="277" cy="214" r="9" fill="var(--diagram-secondary,#2f6eac)" />
+  <path d="M352 214L366 214" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <path d="M434 214L448 214" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="50" y="269" text-anchor="start">乙</text>
+  <path d="M188 261L202 261" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <circle cx="277" cy="261" r="9" fill="var(--diagram-secondary,#2f6eac)" />
+  <circle cx="359" cy="261" r="9" fill="var(--diagram-secondary,#2f6eac)" />
+  <path d="M434 261L448 261" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="50" y="316" text-anchor="start">丙</text>
+  <path d="M188 308L202 308" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <path d="M270 308L284 308" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <circle cx="359" cy="308" r="9" fill="var(--diagram-secondary,#2f6eac)" />
+  <circle cx="441" cy="308" r="9" fill="var(--diagram-secondary,#2f6eac)" />
+  <rect x="236" y="156" width="82" height="178" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-dasharray="7 5" />
+  <path d="M32 335L493 335" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="32" y="369" text-anchor="start" class="strong">合测</text>
+  <text x="195" y="369" text-anchor="middle" class="primary-ink">过</text>
+  <text x="277" y="369" text-anchor="middle" class="danger-ink">败</text>
+  <text x="359" y="369" text-anchor="middle" class="primary-ink">过</text>
+  <text x="441" y="369" text-anchor="middle" class="primary-ink">过</text>
+  <path d="M497 254L537 254" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch22-02-danger-arrow)" data-connector="[[497, 254], [537, 254]]" />
+  <text x="554" y="117" text-anchor="start" class="strong danger-ink">首轮失败集 F = {b}</text>
+  <text x="554" y="153" text-anchor="start" class="small">各片受影响集 ∩ F → 单片复跑</text>
+  <text x="554" y="211" text-anchor="start">甲：{a, b} ∩ F = {b}</text>
+  <text x="800" y="240" text-anchor="start" class="small primary-ink">b 通过</text>
+  <text x="554" y="272" text-anchor="start">乙：{b, c} ∩ F = {b}</text>
+  <text x="800" y="301" text-anchor="start" class="small danger-ink">b 失败</text>
+  <text x="554" y="333" text-anchor="start">丙：{c, d} ∩ F = ∅</text>
+  <text x="800" y="362" text-anchor="start" class="small muted-ink">无需复跑</text>
+  <path d="M32 398L928 398" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="32" y="430" text-anchor="start" class="strong">b 合测失败，不等于整批都有错；甲、乙得到不同的单片证据。</text>
+  <text x="32" y="463" text-anchor="start" class="small">示例测试均非 flaky；此图采用后文分片交集规则，不是 TAP 列车完整五步。</text>
+</svg>

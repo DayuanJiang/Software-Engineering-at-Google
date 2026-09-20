@@ -1,0 +1,21 @@
+{
+  "id": "ch17-02",
+  "chapter": 17,
+  "title": "没进候选，定义再相关也排不上",
+  "summary": "查询 Point 时，假设常规检索只取到 a.cc、b.cc 中的使用处；补充检索把 point.h 的定义加入，才有机会参与评分。",
+  "enabled": true,
+  "sourceSections": ["#### Query independent signals 查询无关信号", "#### Query dependent signals 查询相关信号", "#### Retrieval 检索"],
+  "afterParagraph": "只对检索阶段最有希望的文档作完整评估。",
+  "desktop": "assets/diagrams/sections/ch17-02.svg",
+  "mobile": "assets/diagrams/sections/ch17-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "Point 的定义明明更相关，为什么改进排序仍可能找不到 point.h？",
+    "expectedAnswer": "只有检索到的文件才能评分；常规检索若在使用处停止，定义就不在候选集中。专查定义和文件名的补充检索可加入遗漏文件，但并不保证其最终排名。",
+    "visualEncoding": "固定三份源码，逐行对照常规候选与补充后候选的成员关系；point.h 的未入选与新加入形成唯一改变，使候选变化而非评分变化成为可见原因。",
+    "sourceEvidence": "Retrieval 检索：只有检索到的文档才能参与评分；取得固定数量的结果后停止可能漏掉定义；补充查询只搜索定义和文件名。Query dependent signals 查询相关信号：符号和文件名匹配获加分。Query independent signals 查询无关信号：文档优先级。",
+    "beforeProblem": "原图用类名、常规检索、补充检索和评分的流程框重复正文，未列出候选集合或遗漏的具体文件。",
+    "whyBetter": "同一行文件在前后两个候选集合中的状态变化证明了补充检索的作用；读者能指出任何排序都无法挽救的那一个漏项。",
+    "limits": "三份文件和提前停止是明确标注的示例，不是固定候选数量；不提供虚构评分、固定权重或定义必排第一的保证。"
+  }
+}

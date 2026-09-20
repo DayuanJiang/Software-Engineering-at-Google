@@ -1,0 +1,21 @@
+{
+  "id": "ch04-03",
+  "chapter": 4,
+  "title": "旧岗位低评分，能否决定新岗位资格？",
+  "summary": "把旧岗位当期评级与新团队资格分开，展示书中调查的关键比较：转组后，曾获低评级与从无低评级的候选人获得满意或卓越评级的可能性相当。该案例不支持用历史低评级筛掉新岗位候选人，但评级仍可帮助审视当前岗位和支持需求。",
+  "sourceSections": ["## Challenge Established Processes 挑战既定流程"],
+  "afterParagraph": "这项分析确实占用了大量项目时间，但换来了更公平的内部流动流程。",
+  "desktop": "assets/diagrams/sections/ch04-03.svg",
+  "mobile": "assets/diagrams/sections/ch04-03-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "内部流动案例中，什么调查结果推翻了用旧岗位低评级判断新团队资格的理由，评级还有什么用途？",
+    "expectedAnswer": "书中调查发现，转组后曾获低评级与从无低评级的候选人获得满意或卓越评级的可能性相当。因此该案例不支持将旧岗位特定时期的评价外推为新岗位资格；仍可用评级审视当前岗位匹配与支持需要。",
+    "visualEncoding": "旧岗位记录与新岗位决策之间画断开的推断箭头并标明不能外推；下方两组候选人以共同括线连接同一个定性比较结果，不画虚构数值或等长概率条。另列仍可使用评级的当前岗位问题。",
+    "sourceEvidence": "Challenge Established Processes 挑战既定流程: “as soon as an internal transfer expressed interest”, “just as likely to receive a satisfactory or exemplary performance rating”, “indicative only of how a person is performing in their given role at the time”, “how to better support an internal candidate”.",
+    "beforeProblem": "原图主要重排预测效力、偏见、标准化三项问题；真正改变判断的两组比较被缩成页脚，无法从视觉上理解为何不能把旧岗位评级用于新岗位资格。",
+    "whyBetter": "将错误推断的起点与目标拆开，再把调查比较作为反证置于主要位置；既说明被拒绝的用途，也保留当前岗位支持这一允许的用途。",
+    "limits": "比较只转述本章内部流动案例，原文未给样本数、概率或研究设计。两组相当不保证某个人转组后的表现，也不说明所有组织的全部绩效指标都无预测价值。三项审视问题不是公平通行证。"
+  }
+}

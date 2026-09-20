@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch10-04" data-layout="desktop" role="img" aria-labelledby="ch10-04-title ch10-04-desc">
+<title id="ch10-04-title">按文档目的权衡质量</title>
+<desc id="ch10-04-desc">完整性、准确性和清晰性是需要权衡的维度，不是量化评分；概念文档省略罕见细节不等于故意写错。</desc>
+<style>
+.cg-ch10-04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch10-04[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch10-04[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<defs><marker id="ch10-04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" text-anchor="start" class="strong" data-font-size="24">质量取舍服从文档目的</text>
+<text x="32" y="76" text-anchor="start" class="small" data-font-size="20">关系示意，不是评分或定量模型</text>
+<path d="M115 158H391L253 353Z" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+<circle cx="115" cy="158" r="6" fill="var(--diagram-primary,#087f6d)"/>
+<circle cx="391" cy="158" r="6" fill="var(--diagram-primary,#087f6d)"/>
+<circle cx="253" cy="353" r="6" fill="var(--diagram-primary,#087f6d)"/>
+<text x="115" y="132" text-anchor="middle" class="" data-font-size="24">完整性</text>
+<text x="391" y="132" text-anchor="middle" class="" data-font-size="24">准确性</text>
+<text x="253" y="390" text-anchor="middle" class="" data-font-size="24">清晰性</text>
+<text x="253" y="249" text-anchor="middle" class="strong" data-font-size="24">预定任务</text>
+<text x="514" y="140" text-anchor="start" class="strong" data-font-size="24">按类型确定重点</text>
+<text x="514" y="181" text-anchor="start" class="small" data-font-size="20">参考：覆盖契约与边界</text>
+<text x="514" y="210" text-anchor="start" class="small" data-font-size="20">概念：帮助理解常见用法</text>
+<text x="514" y="239" text-anchor="start" class="small" data-font-size="20">入口：组织链接，少展开</text>
+<path d="M514 273H928" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+<text x="514" y="310" text-anchor="start" class="strong" data-font-size="24">技术 / 受众 / 写作评审</text>
+<text x="514" y="347" text-anchor="start" class="small" data-font-size="20">分别检查准确、清楚和一致</text>
+<text x="514" y="376" text-anchor="start" class="small" data-font-size="20">至少请另一位读者审阅</text>
+<text x="32" y="453" text-anchor="start" class="small" data-font-size="20">为清晰而省略罕见细节，不等于故意写得不准确。</text>
+</svg>

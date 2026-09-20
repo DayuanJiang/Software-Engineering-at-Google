@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-01m-root" class="chapter-svg cg-ch23-01" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch23-01m-title ch23-01m-desc">
+  <title id="ch23-01m-title">head 与 RC：测试证据属于哪个版本？</title>
+  <desc id="ch23-01m-desc">示意快照：r40 是 CB 已验证通过的最新版本，即 green head；r41 失败，r42 是最新已提交但仍在测试的 true head。两种 head 是同一仓库的指针，不是必须依次经历的状态。CD 通常从 green head 组装 RC-A，候选自身仍需测试。向 RC-A 拣选修复 F 后得到 RC-B，已有结果不能替代 RC-B 的测试证据。同一个候选在环境间推进时理想上不重建；并非每个候选都会进入生产。</desc>
+  <style>
+  .cg-ch23-01#ch23-01m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23-01#ch23-01m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23-01#ch23-01m-root .strong {font-weight:600}
+  .cg-ch23-01#ch23-01m-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23-01#ch23-01m-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23-01#ch23-01m-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-01m-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="36" class="strong" data-box="16,8,388,584">head 与 RC：证据属于哪个版本？</text>
+  <text x="24" y="69" class="small" data-box="16,8,388,584">CB = 持续构建：编译 + 相关测试</text>
+  <text x="24" y="102" class="small" data-box="16,8,388,584">快照示意：r40、r41、r42 依次提交</text>
+  <rect x="24" y="120" width="372" height="42" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="36" y="149" class="good" data-box="24,120,172,42">r40  通过</text>
+  <text x="210" y="149" class="strong" data-box="198,120,198,42">green head</text>
+  <rect x="24" y="166" width="372" height="42" fill="var(--diagram-danger-soft,#faecee)"/>
+  <text x="36" y="195" class="bad" data-box="24,166,172,42">r41  失败</text>
+  <text x="210" y="195" class="strong" data-box="198,166,198,42">已提交，未通过</text>
+  <rect x="24" y="212" width="372" height="42" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="36" y="241" class="pending" data-box="24,212,172,42">r42  运行中</text>
+  <text x="210" y="241" class="strong" data-box="198,212,198,42">true head</text>
+  <text x="24" y="283" class="small" data-box="16,8,388,584">CD 通常取 green head 组装候选</text>
+  <rect x="24" y="303" width="372" height="84" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="38" y="334" class="strong" data-box="24,303,372,84">RC-A = r40 + 配置 + 依赖</text>
+  <text x="38" y="368" class="" data-box="24,303,372,84">候选自身测试通过（示意）</text>
+  <path d="M60 388L60 424" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-01m-arrow)"/>
+  <text x="89" y="414" class="small" data-box="80,391,316,34">拣选修复 F，形成新候选</text>
+  <rect x="24" y="432" width="372" height="84" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="38" y="463" class="strong" data-box="24,432,372,84">RC-B = RC-A + 修复 F</text>
+  <text x="38" y="497" class="small" data-box="24,432,372,84">需取得属于 RC-B 的测试证据</text>
+  <text x="24" y="550" class="small" data-box="16,8,388,584">同一 RC 推进时，理想上不重建产物</text>
+  <text x="24" y="579" class="small" data-box="16,8,388,584">CD 不保证每个候选版本都进入生产</text>
+</svg>

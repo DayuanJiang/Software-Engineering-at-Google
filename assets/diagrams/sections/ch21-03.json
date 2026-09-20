@@ -1,0 +1,21 @@
+{
+  "id": "ch21-03",
+  "chapter": 21,
+  "title": "版本允许，不等于用法兼容",
+  "summary": "通过 Foo / Bar 的签名对照与无序流首项断言，展示声明版本范围和真实使用结果可向两个方向偏离；示意签名、数组和补丁编号均不冒充原文代码。",
+  "enabled": true,
+  "sourceSections": ["### SemVer Might Overconstrain  SemVer可能过度约束", "### SemVer Might Overpromise  SemVer可能过度承诺"],
+  "afterParagraph": "这时可能出现构建错误或运行时缺陷，其严重程度理论上没有上限。",
+  "desktop": "assets/diagrams/sections/ch21-03.svg",
+  "mobile": "assets/diagrams/sections/ch21-03-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "同样是更新 libbase，为什么可以出现版本范围拒绝实际可用组合，也可以允许会破坏调用方的组合？",
+    "expectedAnswer": "只有未被 liba/libb 使用的 Bar 变化时，1.x 约束排除 2.x，但 Foo 用法未变；无序流虽不承诺顺序，调用方仍可能依赖首项，补丁改变顺序会使断言失败，即使范围允许更新。",
+    "visualEncoding": "相同位置的 Foo 签名与被强调的 Bar 签名区分已用和未用接口；A/B 方块只交换顺序，首项高亮直接对应 assert(out[0] == 'A') 的通过与失败。显式写出两个版本范围，将解算结果与调用方结果分开。",
+    "sourceEvidence": "### SemVer Might Overconstrain  SemVer可能过度约束：'liba 和 libb 都只使用 Foo'、'变化的只有它们并未使用的 Bar'；### SemVer Might Overpromise  SemVer可能过度承诺：'改变某个“无序”结果生成方的输出顺序'、'只有结合具体用法才能判断'。",
+    "beforeProblem": "旧版选对了两类反例，但只是用三条文字说明各自结论；没有可比的 API 改动或实际顺序，失效用法仍需读者自行想象。",
+    "whyBetter": "读者可检查是否调用被改函数，并执行简单的首项断言，分别推导约束的过度限制与保护不足，而不依赖图内断言结论。",
+    "limits": "函数参数、数组与补丁编号是明确标注的具体化示意，不是原文代码或真实包版本。只改 Bar 的前提是本例假设，不说明所有主版本更新可忽略；断言依赖未承诺行为，也不暗示 SemVer 只关注语法。"
+  }
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch19-04" data-layout="desktop" role="img" aria-labelledby="ch19-04-title ch19-04-desc">
+<title id="ch19-04-title">四种评分状态，下一步各找谁？</title>
+<desc id="ch19-04-desc">四个独立评分案例每次只缺一项：缺 LGTM、缺所需批准、尚有未解决意见，分别对应不同的下一步；只有三项都满足时可启动提交，提交前检查失败仍不能入库。</desc>
+<style>.cg-ch19-04[data-layout=desktop] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19-04[data-layout=desktop] .small{font-size:20px;fill:var(--diagram-muted,#686868)}.cg-ch19-04[data-layout=desktop] .strong{font-weight:600}.cg-ch19-04[data-layout=desktop] .code{font-family:Menlo,Consolas,monospace}.cg-ch19-04[data-layout=desktop] .danger{fill:var(--diagram-danger,#b54750)}.cg-ch19-04[data-layout=desktop] .positive{fill:var(--diagram-primary,#087f6d)}</style>
+<defs><marker id="ch19-04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">四种评分状态，下一步各找谁？</text>
+<text x="32" y="76" class="small" text-anchor="start">基本规则的四个独立案例，不是先后步骤；团队可另设要求</text>
+<text x="58" y="126" class="small" text-anchor="start">案例</text>
+<text x="233" y="126" class="small" text-anchor="start">LGTM</text>
+<text x="394" y="126" class="small" text-anchor="start">所需批准</text>
+<text x="559" y="126" class="small" text-anchor="start">未解决</text>
+<text x="671" y="126" class="small" text-anchor="start">下一步</text>
+<path d="M32 143L928 143" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch19-04-region-1" x="32" y="155" width="896" height="53" rx="0" fill="var(--diagram-bg,#fff)"/>
+<rect id="ch19-04-region-2" x="220" y="155" width="111" height="53" rx="3" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="58" y="190" class="" text-anchor="start" data-owner="ch19-04-region-1">A</text>
+<text x="233" y="190" class="" text-anchor="start" data-owner="ch19-04-region-1">0</text>
+<text x="394" y="190" class="" text-anchor="start" data-owner="ch19-04-region-1">齐全</text>
+<text x="559" y="190" class="" text-anchor="start" data-owner="ch19-04-region-1">0</text>
+<text x="671" y="190" class="strong" text-anchor="start" data-owner="ch19-04-region-1">等审查者给 LGTM</text>
+<rect id="ch19-04-region-3" x="32" y="216" width="896" height="53" rx="0" fill="var(--diagram-bg,#fff)"/>
+<rect id="ch19-04-region-4" x="380" y="216" width="139" height="53" rx="3" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="58" y="251" class="" text-anchor="start" data-owner="ch19-04-region-3">B</text>
+<text x="233" y="251" class="" text-anchor="start" data-owner="ch19-04-region-3">1</text>
+<text x="394" y="251" class="" text-anchor="start" data-owner="ch19-04-region-3">缺一项</text>
+<text x="559" y="251" class="" text-anchor="start" data-owner="ch19-04-region-3">0</text>
+<text x="671" y="251" class="strong" text-anchor="start" data-owner="ch19-04-region-3">等审查者补批准</text>
+<rect id="ch19-04-region-5" x="32" y="277" width="896" height="53" rx="0" fill="var(--diagram-bg,#fff)"/>
+<rect id="ch19-04-region-6" x="545" y="277" width="105" height="53" rx="3" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="58" y="312" class="" text-anchor="start" data-owner="ch19-04-region-5">C</text>
+<text x="233" y="312" class="" text-anchor="start" data-owner="ch19-04-region-5">1</text>
+<text x="394" y="312" class="" text-anchor="start" data-owner="ch19-04-region-5">齐全</text>
+<text x="559" y="312" class="" text-anchor="start" data-owner="ch19-04-region-5">1</text>
+<text x="671" y="312" class="strong" text-anchor="start" data-owner="ch19-04-region-5">作者处理并解决意见</text>
+<rect id="ch19-04-region-7" x="32" y="338" width="896" height="53" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="58" y="373" class="" text-anchor="start" data-owner="ch19-04-region-7">D</text>
+<text x="233" y="373" class="" text-anchor="start" data-owner="ch19-04-region-7">1</text>
+<text x="394" y="373" class="" text-anchor="start" data-owner="ch19-04-region-7">齐全</text>
+<text x="559" y="373" class="" text-anchor="start" data-owner="ch19-04-region-7">0</text>
+<text x="671" y="373" class="strong" text-anchor="start" data-owner="ch19-04-region-7">可启动提交</text>
+<path d="M32 400L928 400" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="32" y="433" class="small" text-anchor="start">LGTM：认可代码质量；批准：把关人允许提交。</text>
+<text x="32" y="466" class="small" text-anchor="start">D 若提交前检查失败 → 仍未提交；通过后才入库。</text>
+</svg>

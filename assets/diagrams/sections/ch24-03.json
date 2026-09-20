@@ -1,0 +1,21 @@
+{
+  "id": "ch24-03",
+  "chapter": 24,
+  "title": "功能迟到，与质量阻塞不同",
+  "summary": "用按时就绪的 A 和迟到的 B 示意常规发车选择，再与书中因罕见方言搜索返回空白而延迟整个发布的实际案例对照。功能截止保护节奏，质量判断仍保护用户。",
+  "sourceSections": ["### No Binary Is Perfect 没有完美的二进制包", "### Meet Your Release Deadline 遵守发布截止时间", "## Changing Team Culture: Building Discipline into Deployment 改变团队文化：严格遵守部署流程"],
+  "afterParagraph": "这能减轻开发者的焦虑，也能大大改善发布工程师的工作与生活平衡。",
+  "desktop": "assets/diagrams/sections/ch24-03.svg",
+  "mobile": "assets/diagrams/sections/ch24-03-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "赶不上截止的新功能，与让少数用户搜索得到空白页的缺陷，应当怎样影响当前发布？",
+    "expectedAnswer": "常规情况下迟到的新功能等下一班，不拖累已就绪功能。书中搜索团队对罕见方言空白页缺陷则决定延迟整个发布并修复，即使受影响群体很小。截止时间不替代用户影响与明确指标阈值的质量判断。",
+    "visualEncoding": "上半部用两个有名的功能 A/B 和当前、下一班的落点表现纳入与延期的范围；下半部以书中案例和停止标记把后果改成整个发布延期。相同的发布压力，因为问题类型不同而得到不同决策。",
+    "sourceEvidence": "Meet Your Release Deadline 遵守发布截止时间：'错过截止时间后，无论开发者怎样恳求，也不能把功能加进当天的版本'；No Binary Is Perfect 没有完美的二进制包：'只会看到空白网页'、'于是，我们推迟了发布，修复了这个缺陷'；Changing Team Culture: Building Discipline into Deployment 改变团队文化：严格遵守部署流程：'绝不能凌驾于现有产品的用户体验之上'。",
+    "beforeProblem": "原图只画已就绪和迟到两类功能，质量门槛留在图底的抽象提醒中。读者看不到质量问题真的阻止当前发车的反例。",
+    "whyBetter": "对照通常只延期一个功能与实际延期整个发布，明确决策影响范围。用源文真实案例防止把按时发车误解为无条件发车。",
+    "limits": "A/B 是示意功能名，不是 A/B 实验。方言案例不推出所有缺陷都必须延期的规则；原文允许罕见截止例外，具体阈值、排期长度和例外审批机制未指定。"
+  }
+}

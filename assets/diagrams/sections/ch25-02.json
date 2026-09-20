@@ -1,0 +1,21 @@
+{
+  "id": "ch25-02",
+  "chapter": 25,
+  "title": "实例重建之后，还要补哪一步？",
+  "summary": "甲在 K2 未上报时终止，乙重领 K2，不重做已上报的 K1。另一个计划维护示例中，甲停止接受新请求并完成在途 Q1，负载均衡把新请求 Q2 转给乙。突然故障不一定有排空机会，实例重建不提供幂等效果。",
+  "enabled": true,
+  "sourceSections": ["### Architecting for Failure 为应对故障设计架构", "### Batch Versus Serving 批处理作业与服务作业", "#### Multitenancy for serving jobs 服务作业的多租户支持"],
+  "afterParagraph": "但要在故障率适中的情况下仍然平稳运行，还需要额外的设计和投入。",
+  "desktop": "assets/diagrams/sections/ch25-02.svg",
+  "mobile": "assets/diagrams/sections/ch25-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "worker 甲终止后该重做哪个块？计划迁移甲时，旧请求 Q1 与新请求 Q2 应分别去哪里？",
+    "expectedAnswer": "动态分块且逐块上报时，乙重做尚未上报的 K2，已上报 K1 不需要重做，K3 仍待领取。计划维护时提前通知甲拒接新请求、完成在途 Q1，负载均衡识别该状态并把新请求 Q2 送往其他副本。突然故障未必能排空。",
+    "visualEncoding": "K1、K2、K3 明示已上报、未上报、待领取，只有 K2 连向替代 worker；下方是独立的维护场景，甲拒接状态经负载均衡传递到乙承接新 Q2，旧 Q1 则留在甲完成。移动版分别重新排布两条因果链。",
+    "sourceEvidence": "Architecting for Failure 为应对故障设计架构：处理完一块，就上报结果，再领取下一块；停止接受新请求，同时利用剩余时间完成正在处理的请求。Multitenancy for serving jobs 服务作业的多租户支持：服务作业若被突然终止，一些用户请求可能收到错误。",
+    "beforeProblem": "原图只是批处理和服务两个文字容器，且描述写自动替换只保证能够恢复；没有给出故障发生点、实际重做范围或请求分流结果。",
+    "whyBetter": "读者能直接指认 K2 而非 K1 被重做，也能追踪旧 Q1 与新 Q2 的不同去向；明确计划排空不是突然故障或重建实例的自动保证。",
+    "limits": "K1 至 K3、Q1/Q2 是示意标识，不表示块数量、吞吐量或持续时间。省略任务领取协议、维护速率限制与负载容量；重复块的副作用另需幂等设计。"
+  }
+}

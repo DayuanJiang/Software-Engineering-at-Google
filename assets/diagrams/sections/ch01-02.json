@@ -1,0 +1,24 @@
+{
+  "id": "ch01-02",
+  "chapter": 1,
+  "title": "值没变，为什么调用方会坏？",
+  "summary": "沿用原文五个元素，把 RPC 响应的前两项换位：按集合比较的调用方仍通过，假定首项固定的调用方失效。新顺序与调用方判断均为演示。",
+  "enabled": true,
+  "sourceSections": [
+    "### Hyrum’s  Law 海勒姆定律",
+    "### Example: Hash Ordering 哈希遍历顺序"
+  ],
+  "afterParagraph": "例如，如果库把一组值序列化到远程过程调用（RPC）的响应中，调用方最终可能就会依赖这些值的排列顺序。",
+  "desktop": "assets/diagrams/sections/ch01-02.svg",
+  "mobile": "assets/diagrams/sections/ch01-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "RPC 返回的五个值一个都没变，为什么仍可能破坏调用方？",
+    "expectedAnswer": "调用方可能依赖契约没有承诺的排列顺序；库将顺序暴露在 RPC 中，就可能让下游建立这种隐式依赖。",
+    "visualEncoding": "两列具体响应保留相同五个值，只用交叉箭头交换 durian 与 carrot；两条调用方判断展示同一变更导致集合比较通过、首项假设失效。",
+    "sourceEvidence": "### Example: Hash Ordering 哈希遍历顺序：代码输出 'durian carrot apple eggplant banana'；'如果库把一组值序列化到远程过程调用（RPC）的响应中'；### Hyrum’s  Law 海勒姆定律：'每一种可观察行为都会被某些用户依赖'。",
+    "beforeProblem": "旧图用嵌套契约框和显式/隐式箭头说明分类，却未显示究竟哪个值改变位置、哪条具体判断因此失败。",
+    "whyBetter": "读者可直接对比五个值和首项，不必凭结论框相信破坏发生；同一输入变化对两种使用方式产生的不同结果可见。",
+    "limits": "旧顺序来自书中代码输出，新顺序及两个调用方为说明性构造，不是某语言版本的实测行为。未覆盖对随机性的反向依赖，也不承诺随机化能消除所有隐式依赖。"
+  }
+}

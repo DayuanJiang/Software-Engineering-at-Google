@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch25-04m-root" class="chapter-svg cg-ch25-04" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch25-04m-title ch25-04m-desc">
+<title id="ch25-04m-title">服务要收回资源，批处理会怎样？</title>
+<desc id="ch25-04m-desc">示例沿用书中的 Borg 策略：搜索服务平时未使用的预留资源可由日志分析批处理借用，但借用可被抢占。搜索请求增加、需要 CPU 时暂停批处理，计算不再推进但内存仍占用；需要 RAM 时终止批处理，释放内存而失去进程状态，重启后重做未上报的数据块。暂停并不释放内存；同一份服务预留余量不能再作为另一份不可抢占服务承诺。所有位置和形状只编码条件与状态，不代表容量、资源比例、费用或性能数据。</desc>
+<style>
+.cg-ch25-04#ch25-04m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch25-04#ch25-04m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch25-04#ch25-04m-root .strong {font-weight:600}
+.cg-ch25-04#ch25-04m-root .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch25-04m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch25-04m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch25-04m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch25-04m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch25-04m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
+<text x="20" y="38" text-anchor="start" class="strong">服务要收回资源，批处理会怎样？</text>
+<text x="20" y="74" text-anchor="start" class="small">Borg 借用策略示例；不是容量比例图</text>
+<rect x="20" y="98" width="380" height="76" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="none" stroke-width="1.5"/>
+<text x="36" y="129" text-anchor="start" class="strong" data-box="20,98,380,76">平时：日志分析借用余量</text>
+<text x="36" y="161" text-anchor="start" class="small" data-box="20,98,380,76">余量已为搜索服务预留</text>
+<path data-connector="true" d="M210 174V202" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch25-04m-warm-arrow)"/>
+<text x="210" y="234" text-anchor="middle" class="strong">搜索请求增加</text>
+<path data-connector="true" d="M210 248H12V446H24" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch25-04m-warm-arrow)"/>
+<path data-connector="true" d="M12 306H24" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch25-04m-warm-arrow)"/>
+<rect x="32" y="273" width="368" height="116" rx="0" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="307" text-anchor="start" class="strong" data-box="32,273,368,116">要 CPU：暂停日志分析</text>
+<text x="48" y="342" text-anchor="start" class="small" data-box="32,273,368,116">CPU 让给服务，内存仍占用</text>
+<text x="48" y="373" text-anchor="start" class="small" data-box="32,273,368,116">暂停期间不再推进计算</text>
+<rect x="32" y="415" width="368" height="123" rx="0" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="448" text-anchor="start" class="strong" data-box="32,415,368,123">要 RAM：终止日志分析</text>
+<text x="48" y="481" text-anchor="start" class="small" data-box="32,415,368,123">内存释放，进程状态丢失</text>
+<text x="48" y="515" text-anchor="start" class="small" data-box="32,415,368,123">重启后重做尚未上报的数据块</text>
+<text x="20" y="581" text-anchor="start" class="small">同一余量不能变成两份服务承诺。</text>
+</svg>

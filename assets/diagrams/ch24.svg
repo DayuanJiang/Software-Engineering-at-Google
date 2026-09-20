@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch24-root" class="chapter-svg cg-ch24" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch24-title ch24-desc">
+<title id="ch24-title">版本已就绪，用户就能用新功能吗？</title>
+<desc id="ch24-desc">以候选版本 v2 和新功能 F 为示例，对照暂不部署、部署但关闭功能、只为部分用户启用三种状态。可交付能力不要求立即部署；部署代码与启用功能分别改变产物位置和用户行为。</desc>
+<style>
+.cg-ch24#ch24-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch24#ch24-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch24#ch24-root .strong {font-weight:600}
+.cg-ch24#ch24-root .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+</style>
+<defs>
+<marker id="ch24-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch24-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch24-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch24-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start" data-box="12,8,936,544">版本已就绪，用户就能用新功能吗？</text>
+<text x="32" y="78" class="small" text-anchor="start" data-box="12,8,936,544">示例：v1 正在服务；v2 已可交付，包含旧路径和新功能 F。</text>
+<text x="32" y="122" class="strong" text-anchor="start" data-box="12,8,936,544">团队的选择</text>
+<text x="300" y="122" class="strong" text-anchor="start" data-box="12,8,936,544">实际运行</text>
+<text x="468" y="122" class="strong" text-anchor="start" data-box="12,8,936,544">F 的状态</text>
+<text x="668" y="122" class="strong" text-anchor="start" data-box="12,8,936,544">用户走哪条路径</text>
+<rect x="24" y="142" width="912" height="88" rx="0" fill="var(--diagram-bg,#fff)" stroke="none"/>
+<text x="40" y="180" class="" text-anchor="start" data-box="24,142,264,88">暂不部署</text>
+<rect x="296" y="161" width="106" height="48" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="349" y="193" class="strong" text-anchor="middle" data-box="296,161,106,48">v1</text>
+<text x="468" y="180" class="" text-anchor="start" data-box="444,142,210,88">未上线</text>
+<text x="716" y="180" class="small" text-anchor="start" data-box="656,142,280,88">全部：旧路径</text>
+<circle cx="688" cy="163" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
+<path d="M679 185V178Q688 168 697 178V185" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="3"/>
+<text x="40" y="210" class="small" text-anchor="start" data-box="24,142,912,88">仍然具备交付能力</text>
+<rect x="24" y="242" width="912" height="88" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="none"/>
+<text x="40" y="280" class="" text-anchor="start" data-box="24,242,264,88">部署 v2，不启用 F</text>
+<rect x="296" y="261" width="106" height="48" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="349" y="293" class="strong" text-anchor="middle" data-box="296,261,106,48">v2</text>
+<text x="468" y="280" class="" text-anchor="start" data-box="444,242,210,88">关闭</text>
+<text x="716" y="280" class="small" text-anchor="start" data-box="656,242,280,88">全部：旧路径</text>
+<circle cx="688" cy="263" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
+<path d="M679 285V278Q688 268 697 278V285" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="3"/>
+<text x="40" y="310" class="small" text-anchor="start" data-box="24,242,912,88">新代码到位，旧行为继续</text>
+<rect x="24" y="342" width="912" height="88" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="none"/>
+<text x="40" y="380" class="" text-anchor="start" data-box="24,342,264,88">只更新启用配置</text>
+<rect x="296" y="361" width="106" height="48" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="349" y="393" class="strong" text-anchor="middle" data-box="296,361,106,48">v2</text>
+<text x="468" y="380" class="" text-anchor="start" data-box="444,342,210,88">部分开启</text>
+<text x="716" y="380" class="small" text-anchor="start" data-box="656,342,280,88">选中用户：新路径</text>
+<circle cx="688" cy="363" r="5" fill="var(--diagram-primary,#087f6d)"/>
+<path d="M679 385V378Q688 368 697 378V385" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="3"/>
+<text x="40" y="410" class="small" text-anchor="start" data-box="24,342,912,88">二进制仍是同一个 v2</text>
+<circle cx="688" cy="394" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
+<path d="M679 416V409Q688 399 697 409V416" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="3"/>
+<text x="716" y="411" class="small" text-anchor="start" data-box="656,342,280,88">其余用户：旧路径</text>
+<path class="line" d="M32 454L928 454"/>
+<text x="32" y="487" class="" text-anchor="start" data-box="12,8,936,544">可部署不等于必须部署；频率按用户需求选择。</text>
+<text x="32" y="522" class="small" text-anchor="start" data-box="12,8,936,544">配置也须分阶段验证；标志关闭不代表代码保密或风险消失。</text>
+</svg>

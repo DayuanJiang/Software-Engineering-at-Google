@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch17-02" data-layout="desktop" role="img" aria-labelledby="ch17-02-title ch17-02-desc">
+<title id="ch17-02-title">没进候选，定义再相关也排不上</title>
+<desc id="ch17-02-desc">查询 Point 的教学示例。常规检索假设在 a.cc、b.cc 的使用处停止，未取到 point.h 的定义。补充检索定义和文件名后，a.cc、b.cc 仍在候选中，point.h 新加入；它此时才有机会参与评分。候选数量不是固定配额，不保证定义排第一。</desc>
+<style>
+.cg-ch17-02[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch17-02[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch17-02[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch17-02[data-layout="desktop"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.cg-ch17-02[data-layout="desktop"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch17-02[data-layout="desktop"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch17-02[data-layout="desktop"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
+.cg-ch17-02[data-layout="desktop"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch17-02[data-layout="desktop"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch17-02[data-layout="desktop"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
+.cg-ch17-02[data-layout="desktop"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch17-02[data-layout="desktop"] .danger{fill:var(--diagram-danger-soft,#faecee)}
+.cg-ch17-02[data-layout="desktop"] .danger-ink{fill:var(--diagram-danger,#b54750)}
+</style>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">没进候选，定义再相关也排不上</text>
+<text x="32" y="78" class="small" text-anchor="start">示例查询 Point，目标是类定义；假设常规检索在两个使用处停止，并非固定配额</text>
+<text x="48" y="127" class="small" text-anchor="start">文件</text>
+<text x="252" y="127" class="small" text-anchor="start">匹配的源码</text>
+<text x="650" y="127" class="small" text-anchor="middle">常规候选</text>
+<text x="826" y="127" class="small" text-anchor="middle">补充后候选</text>
+<g data-box="32,151,896,58">
+<rect x="32" y="151" width="896" height="58" class="secondary"/>
+<text x="48" y="189" class="code strong" text-anchor="start">a.cc</text>
+<text x="252" y="189" class="code" text-anchor="start">Point *p;</text>
+<text x="650" y="189" class="" text-anchor="middle">入选</text>
+<text x="826" y="189" class="" text-anchor="middle">仍在</text>
+</g>
+<g data-box="32,220,896,58">
+<rect x="32" y="220" width="896" height="58" class="secondary"/>
+<text x="48" y="258" class="code strong" text-anchor="start">b.cc</text>
+<text x="252" y="258" class="code" text-anchor="start">Point q;</text>
+<text x="650" y="258" class="" text-anchor="middle">入选</text>
+<text x="826" y="258" class="" text-anchor="middle">仍在</text>
+</g>
+<g data-box="32,289,896,58">
+<rect x="32" y="289" width="896" height="58" class="primary"/>
+<text x="48" y="327" class="code strong" text-anchor="start">point.h</text>
+<text x="252" y="327" class="code" text-anchor="start">class Point {};</text>
+<text x="650" y="327" class="danger-ink" text-anchor="middle">未入选</text>
+<text x="826" y="327" class="primary-ink" text-anchor="middle">新加入</text>
+</g>
+<text x="32" y="389" class="" text-anchor="start">补充检索定义和文件名，把 point.h 加入候选；排序本身不能补回漏项。</text>
+<text x="32" y="430" class="small" text-anchor="start">入选后再结合文档优先级与查询匹配信号；定义 / 文件名匹配可加分。</text>
+<text x="32" y="462" class="small" text-anchor="start">这里没有给出评分公式，也不保证定义最终排第一。</text>
+</svg>

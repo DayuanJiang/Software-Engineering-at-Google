@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch08-04-diagram" class="chapter-svg cg-ch08-04" role="img" aria-labelledby="ch08-04-title ch08-04-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch08-04-title">格式化替代了哪一轮审查？</title>
+<desc id="ch08-04-desc">同一配置下，比较提交内容 S 与格式化结果 F(S)。首次 x=1 不等于 x = 1，所以拒绝并提示修正；再次提交 x = 1，结果相同，仅通过格式检查。这移除了人工发现、评论和修正格式细节的往返，没有替代复杂性审查。原文反例：数百文件重复同一行修改可能易审，20行复杂逻辑可能难审。赋值代码为示意。</desc>
+<style>
+.cg-ch08-04#ch08-04-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch08-04#ch08-04-diagram .strong{font-weight:600}
+.cg-ch08-04#ch08-04-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch08-04#ch08-04-diagram .code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.cg-ch08-04#ch08-04-diagram .green{fill:var(--diagram-primary,#087f6d)}
+.cg-ch08-04#ch08-04-diagram .red{fill:var(--diagram-danger,#b54750)}
+.cg-ch08-04#ch08-04-diagram .blue{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch08-04#ch08-04-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch08-04#ch08-04-diagram .arrow{fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch08-04-arrow)}
+.cg-ch08-04#ch08-04-diagram .uncertain{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;stroke-dasharray:5 5}
+</style>
+<defs><marker id="ch08-04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong">格式化替代了哪一轮审查？</text>
+<text x="32" y="70" class="small">同一段代码，两次提交（示意）</text>
+<text x="32" y="119" class="strong">提交内容 S</text>
+<text x="344" y="119" class="strong">格式化结果 F(S)</text>
+<text x="690" y="119" class="strong">提交前比较</text>
+<text x="32" y="154" class="small">首次</text>
+<rect id="ch08-04-box1" x="32" y="167" width="229" height="59" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)"/>
+<rect id="ch08-04-box2" x="344" y="167" width="252" height="59" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="48" y="205" class="code" data-box="ch08-04-box1">x=1</text>
+<path class="arrow" d="M270 197H332"/>
+<text x="360" y="205" class="code" data-box="ch08-04-box2">x = 1</text>
+<text x="690" y="184" class="strong red">S ≠ F(S)</text>
+<text x="690" y="218" class="small">拒绝，提示修正</text>
+<path class="line" d="M32 246H928"/>
+<text x="32" y="276" class="small">修正后重检</text>
+<rect id="ch08-04-box3" x="32" y="289" width="229" height="59" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)"/>
+<rect id="ch08-04-box4" x="344" y="289" width="252" height="59" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="48" y="327" class="code" data-box="ch08-04-box3">x = 1</text>
+<path class="arrow" d="M270 319H332"/>
+<text x="360" y="327" class="code" data-box="ch08-04-box4">x = 1</text>
+<text x="690" y="306" class="strong green">S = F(S)</text>
+<text x="690" y="340" class="small">仅格式检查通过</text>
+<text x="32" y="383" class="small">省去：人工发现空格问题 → 评论 → 修正的审查往返</text>
+<path class="line" d="M32 400H928"/>
+<text x="32" y="437" class="strong">人仍需判断：</text>
+<text x="218" y="429" class="small">数百文件同一行修改：可能易审</text>
+<text x="218" y="460" class="small">20 行复杂副作用：可能难审</text>
+<text x="694" y="448" class="small blue">格式通过 ≠ 审查通过</text>
+</svg>

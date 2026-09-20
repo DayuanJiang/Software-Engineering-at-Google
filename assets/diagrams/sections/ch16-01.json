@@ -1,0 +1,21 @@
+{
+  "id": "ch16-01",
+  "chapter": 16,
+  "title": "本地已有提交，同事为何拿不到",
+  "summary": "在 DVCS 示例中，本地已有搜索提交 B 时，组织指定的 origin/main 仍只有 A；B 合入该主干后，从主干同步的同事才得到 B。",
+  "enabled": true,
+  "sourceSections": ["### Centralized VCS Versus Distributed VCS  集中式 VCS 与分布式 VCS", "### Source of Truth 权威来源"],
+  "afterParagraph": "工作进入该仓库的主干分支，才算“完成”。",
+  "desktop": "assets/diagrams/sections/ch16-01.svg",
+  "mobile": "assets/diagrams/sections/ch16-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "我已经在本地提交搜索功能 B，为什么从组织主干同步的同事还拿不到它？",
+    "expectedAnswer": "DVCS 允许本地仓库独立提交，不能因此推断组织主干已经包含该变更。组织以指定仓库的指定分支为权威；B 合入那里后，同事从该分支同步才得到 B。不同组织可以认定不同权威来源。",
+    "visualEncoding": "两个仓库的可见内容分别写为 A 与 A+B，前后状态保持对应；新增 B 首先只出现在本地，合入箭头才把它带到指定主干。明确写出同事同步的来源，避免把本地提交能力画成权威身份。",
+    "sourceEvidence": "#### Distributed VCS 分布式 VCS：修改后在本地提交，再把一组提交推送到另一个仓库；### Source of Truth 权威来源：明确指定某个仓库中的某个分支作为权威来源；不同组织可以认定不同的权威来源。",
+    "beforeProblem": "原图把集中式和分布式两个类别连接到权威来源，再列出新人起点等抽象用途，没有展示技术上成功提交但共享基线未变化的状态差异。",
+    "whyBetter": "可以直接比较两处内容，回答 B 在哪里、为什么同事还没有、哪个动作改变共享版本，而不只记忆 VCS 分类。",
+    "limits": "A、B、搜索功能和 origin/main 是说明性命名；origin/main 在这里指组织所指定的远端主干，不声称名为 origin 的仓库天然权威。省略具体 PR、审查和同步命令；合入不保证构建正确。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ch21-01",
+  "chapter": 21,
+  "title": "菱形冲突：哪个版本能同时满足？",
+  "summary": "将两条路径的声明范围逐一代入候选版本，显示迁移前无共同解；完成 libb 迁移并更新要求后才出现共同候选，不把约束通过当作 API 兼容证明。",
+  "enabled": true,
+  "sourceSections": ["### Conflicting Requirements and Diamond Dependencies  要求冲突与菱形依赖", "### Semantic Versioning  语义化版本管理"],
+  "afterParagraph": "只要某个上层节点通过两条路径，要求同一个底层节点同时使用两个不兼容的版本，就会出问题。",
+  "desktop": "assets/diagrams/sections/ch21-01.svg",
+  "mobile": "assets/diagrams/sections/ch21-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么 1.7 和 2.0 各能满足一条路径，却都不能同时满足 libuser 的两个依赖？libb 迁移后什么变了？",
+    "expectedAnswer": "示意中的 liba 要求 2≤v<3，旧 libb 要求 1≤v<2，交集为空；单一 libbase 版本无法满足两者。若 libb 完成迁移且把要求更新到 2≤v<3，2.0 才满足所有展示的约束，仍需验证实际用法。",
+    "visualEncoding": "迁移前后两个候选矩阵按相同的列排列 1.7 与 2.0，按行显示 liba、libb 及同时满足。只有 libb 的要求改变，2.0 列的最后一格才从否变可；颜色辅助文字而不是独立表达真假。",
+    "sourceEvidence": "### Conflicting Requirements and Diamond Dependencies  要求冲突与菱形依赖：'要求同一个底层节点同时使用两个不兼容的版本'、'尝试这些依赖的较新或较旧版本，找到兼容的组合'；### Semantic Versioning  语义化版本管理：'使所有版本约束都得到满足'。",
+    "beforeProblem": "旧图重复原书菱形结构，只标已更新与未更新，没有实际约束，读者不能验证为何没有共同候选。",
+    "whyBetter": "候选逐项代入范围即可推导无解与改变一条要求后的有解；相比原书拓扑图，增加可操作的约束计算，而非再画组件名称。",
+    "limits": "范围及候选为明确标注的教学示意，假定构建只用一个 libbase 版本。可仅指满足声明，不代表行为测试通过；迁移不等于只修改版本范围。未展开多版本隔离与跨版本类型传递问题。"
+  }
+}

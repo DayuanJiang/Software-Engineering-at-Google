@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch20-02" data-layout="mobile" role="img" aria-labelledby="ch20-02m-title ch20-02m-desc"><title id="ch20-02m-title">Tricorder 的请求、执行与结果</title><desc id="ch20-02m-desc">数据流展示变更元数据如何触发分析服务器读取相应版本的源文件与缓存构建产物，运行分析器并写入结果存储；Critique 展示每类最新结果和运行状态。</desc><style>.cg-ch20-02[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch20-02[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}.cg-ch20-02[data-layout="mobile"] .strong{font-weight:600}</style><defs>
+<marker id="ch20-02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch20-02m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch20-02m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch20-02m-box-1" x="0" y="0" width="420" height="600" rx="6" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">
+<tspan x="24" y="38">Tricorder 的请求、执行与结果</tspan>
+</text>
+<text x="24" y="76" class="small" text-anchor="start">
+<tspan x="24" y="76">请求与数据流；不表示固定运行时长</tspan>
+</text>
+<rect id="ch20-02m-box-2" x="24" y="108" width="372" height="70" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="138" class="strong" text-anchor="start" data-owner="ch20-02m-box-2">
+<tspan x="40" y="138">Tricorder 请求</tspan>
+</text>
+<text x="40" y="170" class="small" text-anchor="start" data-owner="ch20-02m-box-2">
+<tspan x="40" y="170">携带代码变更元数据</tspan>
+</text>
+<path d="M210 178V195" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch20-02m-primary-arrow)"/>
+<rect id="ch20-02m-box-3" x="24" y="197" width="372" height="70" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="227" class="strong" text-anchor="start" data-owner="ch20-02m-box-3">
+<tspan x="40" y="227">分析服务器</tspan>
+</text>
+<text x="40" y="259" class="small" text-anchor="start" data-owner="ch20-02m-box-3">
+<tspan x="40" y="259">运行各个分析器</tspan>
+</text>
+<rect id="ch20-02m-box-4" x="24" y="297" width="342" height="75" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="327" class="strong" text-anchor="start" data-owner="ch20-02m-box-4">
+<tspan x="40" y="327">输入来源</tspan>
+</text>
+<text x="40" y="359" class="small" text-anchor="start" data-owner="ch20-02m-box-4">
+<tspan x="40" y="359">FUSE 源文件、缓存构建产物</tspan>
+</text>
+<path d="M366 334H409V234H398" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch20-02m-warm-arrow)"/>
+<path d="M24 232H12V408H22" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch20-02m-primary-arrow)"/>
+<rect id="ch20-02m-box-5" x="24" y="389" width="372" height="68" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="419" class="strong" text-anchor="start" data-owner="ch20-02m-box-5">
+<tspan x="40" y="419">结果存储</tspan>
+</text>
+<text x="40" y="451" class="small" text-anchor="start" data-owner="ch20-02m-box-5">
+<tspan x="40" y="451">保存各分析器输出</tspan>
+</text>
+<path d="M210 457V475" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch20-02m-primary-arrow)"/>
+<rect id="ch20-02m-box-6" x="24" y="477" width="372" height="68" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="40" y="507" class="strong" text-anchor="start" data-owner="ch20-02m-box-6">
+<tspan x="40" y="507">Critique</tspan>
+</text>
+<text x="40" y="539" class="small" text-anchor="start" data-owner="ch20-02m-box-6">
+<tspan x="40" y="539">每类最新结果、运行状态</tspan>
+</text>
+<text x="24" y="581" class="small" text-anchor="start">
+<tspan x="24" y="581">状态更新让作者知道分析仍在运行。</tspan>
+</text>
+</svg>

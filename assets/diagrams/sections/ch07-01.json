@@ -1,0 +1,23 @@
+{
+  "id": "ch07-01",
+  "chapter": 7,
+  "title": "哪种研究结果会改变行动？",
+  "summary": "并列 Readability 的两种结果对应不同决策，与发布工具变更的大、小收益都汇入实施决定，解释何时生产力度量能为决策增添信息。",
+  "sourceSections": [
+    "## Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？"
+  ],
+  "afterParagraph": "最重要的是，Readability 团队有权作出这个决定。",
+  "enabled": true,
+  "desktop": "assets/diagrams/sections/ch07-01.svg",
+  "mobile": "assets/diagrams/sections/ch07-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么 Readability 值得研究，而发布工具团队的生产力收益度量可能不值得做？",
+    "expectedAnswer": "Readability 团队有权按语言行动：收益足以抵偿成本就公布研究，成本超收益或收益可忽略就取消流程。发布工具变更即使只有小幅生产力收益也仍会实施，因为性能与维护负担另有收益；衡量收益大小不会改变这项实施决定。",
+    "visualEncoding": "Readability 的两个结果各连到不同动作；发布工具的大小收益路径汇到同一个实施动作。分叉与汇合编码的是预先承诺的决策差异，不是测得的收益。",
+    "sourceEvidence": "Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？：'如果收益足以抵偿流程的成本'、'成本超过收益，或收益可以忽略不计，就取消这套流程'、'即使看起来不值得投入，你们仍会花资源实现这个功能吗？答案是肯定的'。",
+    "beforeProblem": "原图用通用问题方框作筛选，几乎照抄相邻列表；支路也未显示真实决策如何随结果改变。",
+    "whyBetter": "读者可以沿两组具体路径比较结果的决策价值，看清能测得收益不等于值得专门测量收益。",
+    "limits": "仅比较书中这些生产力研究请求，不主张取消发布工具的其他监测；发布案例没有负收益分支，不凭空增加。行动性不是研究的充分条件，仍需考虑成本、时效和证据适用性。"
+  }
+}

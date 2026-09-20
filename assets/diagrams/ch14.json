@@ -1,0 +1,26 @@
+{
+  "chapter": 14,
+  "title": "界面变了，后端测试也要失败吗？",
+  "summary": "用本章 UI/API 拆分案例对比两种测试入口：界面改样式可能打断贯穿 UI 的测试，而公共 API 可独立驱动后端；缩小 SUT 后不能声称已覆盖边界外行为。",
+  "enabled": true,
+  "sourceSections": [
+    "What Are Larger Tests? 什么是较大规模测试？",
+    "Common Gaps in Unit Tests 单元测试常见的覆盖缺口",
+    "The System Under Test 被测系统",
+    "Reducing the size of your SUT at problem boundaries 在难处理的边界处缩小 SUT",
+    "Browser and Device Testing 浏览器和设备测试"
+  ],
+  "kind": "dependency",
+  "desktop": "assets/diagrams/ch14.svg",
+  "mobile": "assets/diagrams/ch14-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "UI 只改了外观时，为什么贯穿 UI 的后端测试可能失败，怎样拆开验证入口？",
+    "expectedAnswer": "外观变化可能破坏 UI 测试而不改变底层行为。UI 单独测试，后端通过公共 API 驱动，能避免每个后端测试都依赖 UI；内存库和第三方替身缩小所需环境，但不验证真实存储、最新依赖契约或整条 UI 联动。",
+    "visualEncoding": "上下对照同一条测试路径；上方在 UI 标出外观变化造成的中断，下方让 UI 测试与 API 驱动互不连接。虚线只圈后端 SUT，替换的内存库和边界外替身分别标明。",
+    "sourceEvidence": "Reducing the size of your SUT at problem boundaries 在难处理的边界处缩小 SUT：UI 的外观和交互体验经常变化、通过公共 API 驱动、用内存数据库替换；Browser and Device Testing 浏览器和设备测试：通过前端操作应用，可以增加一层测试覆盖。",
+    "beforeProblem": "原图虽有 SUT 边界，但 UI 单独测试仍用箭头连接后端，难以看出拆分真正改变了什么；真实数据库的固定选择也未解释本章缩小环境的案例。",
+    "whyBetter": "同一外观变更在两种测试入口下产生不同影响，读者可沿路径判断失败究竟发生在哪里，同时看到缩小范围所失去的覆盖。",
+    "limits": "将本节 UI/API 拆分与图14-6的内存库、替身缩减组合为教学示意，不是某个 Google 产品的真实拓扑。API 入口不保证测试无缺陷或无不稳定性；scope 与 size 不是同义词。"
+  }
+}

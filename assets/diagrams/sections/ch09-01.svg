@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch09-01-diagram" class="chapter-svg cg-ch09-01" role="img" aria-labelledby="ch09-01-title ch09-01-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch09-01-title">收到意见后，是否还要再审？</title>
+<desc id="ch09-01-desc">四种情境不是连续步骤。FYI 仅供参考，不要求修改。尚无 LGTM 的修改请求，需要修改、上传快照并回复审查者。不同意时说明理由并讨论替代方案，双方表达前不标记已解决。另一位工程师给出 LGTM 并约定落实意见即可时，可以不再审一轮，但仍须落实意见且满足其他提交条件。作者自审不提供他人的 LGTM；不假定工具自动重置批准。</desc>
+<style>
+.cg-ch09-01#ch09-01-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch09-01#ch09-01-diagram .strong{font-weight:600}
+.cg-ch09-01#ch09-01-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch09-01#ch09-01-diagram .peer{fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch09-01#ch09-01-diagram .author{fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch09-01#ch09-01-diagram .danger{fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch09-01#ch09-01-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch09-01#ch09-01-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch09-01-arrow)}
+</style>
+<defs><marker id="ch09-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect id="ch09-01-box1" x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong" text-anchor="start">收到意见后，是否还要再审？</text>
+<text x="32" y="72" class="small" text-anchor="start">本章谷歌流程；四种独立的情境示例，不是四个先后步骤</text>
+<rect id="ch09-01-box2" x="32" y="96" width="280" height="66" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="46" y="138" class="strong" text-anchor="start" data-box="ch09-01-box2">FYI：仅供参考</text>
+<path d="M316 129 H344" class="arrow"/>
+<text x="360" y="138" class="" text-anchor="start">阅读参考信息</text>
+<path d="M615 129 H667" class="arrow"/>
+<text x="687" y="138" class="strong" text-anchor="start">无须为此修改</text>
+<rect id="ch09-01-box3" x="32" y="174" width="280" height="66" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="46" y="216" class="strong" text-anchor="start" data-box="ch09-01-box3">要求修改，尚无 LGTM</text>
+<path d="M316 207 H344" class="arrow"/>
+<text x="360" y="216" class="" text-anchor="start">修改、上传新快照</text>
+<path d="M615 207 H667" class="arrow"/>
+<text x="687" y="216" class="strong" text-anchor="start">回复并请对方再看</text>
+<rect id="ch09-01-box4" x="32" y="252" width="280" height="66" rx="0" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="46" y="294" class="strong" text-anchor="start" data-box="ch09-01-box4">不同意修改要求</text>
+<path d="M316 285 H344" class="arrow"/>
+<text x="360" y="294" class="" text-anchor="start">解释理由，提出替代</text>
+<path d="M615 285 H667" class="arrow"/>
+<text x="687" y="279" class="strong" text-anchor="start">先讨论</text>
+<text x="687" y="307" class="small" text-anchor="start">双方表达前不标已解决</text>
+<rect id="ch09-01-box5" x="32" y="330" width="280" height="66" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="46" y="372" class="strong" text-anchor="start" data-box="ch09-01-box5">LGTM：约定改完即可</text>
+<path d="M316 363 H344" class="arrow"/>
+<text x="360" y="372" class="" text-anchor="start">落实约定，处理意见</text>
+<path d="M615 363 H667" class="arrow"/>
+<text x="687" y="372" class="strong" text-anchor="start">可不再审一轮</text>
+<text x="32" y="435" class="small" text-anchor="start">处理意见不等于照单全收；FYI 不要求行动。</text>
+<text x="32" y="465" class="small" text-anchor="start">提交仍看全部批准与意见状态；不假设修改会自动撤销 LGTM。</text>
+</svg>

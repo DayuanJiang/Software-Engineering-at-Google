@@ -1,0 +1,165 @@
+{
+  "format": 2,
+  "sourceSha256": "a7afbe07ae471a5b59edf85e645c85d08365d25b213a18f64efc5914c3acfd36",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch05.html",
+  "textEdits": [
+    {
+      "source": "If you can help them to see this purpose in their work, you’ll see a tremendous increase in their motivation and productivity.14",
+      "replacement": "If you can help them to see this purpose in their work, you’ll see a tremendous increase in their motivation and productivity.",
+      "reason": "Source line 556 renders the legacy [14](#_bookmark464) reference as a trailing 14 rather than a recognized footnote marker. Remove only that obsolete reference label; englishAfter inserts the reviewed footnote at the same sentence."
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [116, 118],
+      "english": "Another difference that takes getting used to is that the things we do as managers typically pay off over a longer timeline.",
+      "chinese": "另一个需要适应的区别是，经理所做的工作通常要经过更长时间才会见效。",
+      "after": "不要明明在种香蕉，却还执着于数苹果。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [120, 122],
+      "english": "Yet another reason companies shouldn’t force people into management as part of a career path: if an engineer is able to write reams of great code and has no desire at all to manage people or lead a team, by forcing them into a management or TL role, you’re losing a great engineer and gaining a crappy manager. This is not only a bad idea, but it’s actively harmful.",
+      "chinese": "这也是公司不该强迫员工把管理岗位作为职业发展必经之路的另一个理由。如果一位工程师能写出大量优秀代码，却完全不想管理人员或带领团队，强行让他担任经理或 TL，就会失去一位优秀工程师，换来一位糟糕的经理。这不仅不明智，还会造成实际伤害。",
+      "after": "大多数人都遇到过无法胜任工作，或很不善于带人的经理；"
+    },
+    {
+      "id": "3",
+      "definitionLines": [155, 156],
+      "english": "For more fascinating information on optimizing the movements of factory workers, read up on Scientific Management or Taylorism, especially its effects on worker morale./",
+      "chinese": "关于如何优化工厂工人的动作，还有许多有趣的资料，可参阅科学管理或泰勒主义，尤其是它们对工人士气的影响。",
+      "after": "这种胡萝卜加大棒的管理方法，从工厂延续到了现代办公室。"
+    },
+    {
+      "id": "4",
+      "definitionLines": [171, 173],
+      "english": "If you have kids, the odds are good that you can remember with startling clarity the first time you said something to your child that made you stop and exclaim (perhaps even aloud), “Holy crap, I’ve become my mother.”",
+      "chinese": "如果你有孩子，很可能对这样一个瞬间记忆犹新：你第一次对孩子说出某句话，突然愣住，心想，甚至脱口而出：“天哪，我怎么变得跟我妈一样了！”",
+      "after": "结果，经理像家长一样行事，员工也像孩子一样回应。"
+    },
+    {
+      "id": "5",
+      "definitionLines": [192, 194],
+      "english": "Public criticism of an individual is not only ineffective (it puts people on the defense), but rarely necessary, and most often is just mean or cruel. You can be sure the rest of the team already knows when an individual has failed, so there’s no need to rub it in.",
+      "chinese": "公开批评个人不仅无效，会让人产生防御心理，而且很少有必要，更多时候只是刻薄，甚至残忍。某个人出了问题，团队其他成员肯定早已知道，没必要再让他难堪。",
+      "after": "个人遭遇失败，就私下提出建设性的批评。"
+    },
+    {
+      "id": "6",
+      "definitionLines": [344, 346],
+      "english": "See also “Rubber duck debugging.”",
+      "chinese": "另请参见“橡皮鸭调试”。",
+      "after": "这样通常能引导他找到答案，而且那是他自己的答案，也就回到了前文讨论的主人翁意识和责任。"
+    },
+    {
+      "id": "7",
+      "definitionLines": [358, 359],
+      "english": "Attempting to achieve 100% consensus can also be harmful. You need to be able to decide to proceed even if not everyone is on the same page or there is still some uncertainty.",
+      "chinese": "追求全体一致也可能有害。即使大家尚未完全达成一致，或仍有一些不确定性，你也需要能够决定继续推进。",
+      "after": "有职权时，你当然可以直接下令、指定方向，但总体效果不如建立共识。"
+    },
+    {
+      "id": "8",
+      "definitionLines": [446, 448],
+      "english": "Google also runs an annual employee survey called “Googlegeist” that rates employee happiness across many dimensions. This provides good feedback but isn’t what we would call “simple.”",
+      "chinese": "谷歌还通过名为“Googlegeist”的年度员工调查，从多个维度评估员工幸福感。这能提供有价值的反馈，但算不上我们这里所说的“简单”。",
+      "after": "每次一对一会谈结束时，问成员一句“你需要什么？”"
+    },
+    {
+      "id": "9",
+      "definitionLines": [520, 522],
+      "english": "To gain a better understanding of just how “undoable” technical changes can be, see Chapter 22.",
+      "chinese": "要更好地理解技术变更究竟可以有多“容易撤销”，参见第22章。",
+      "after": "你很容易就能答应：“好，试试看。”"
+    },
+    {
+      "id": "10",
+      "definitionLines": [560, 562],
+      "english": "See Dan’s fantastic TED talk on this subject.",
+      "chinese": "参见丹关于这一主题的精彩 TED 演讲。",
+      "after": "丹·平克在《驱动》中指出，要让人最快乐、最有生产力，靠的不是外部激励，比如砸下大笔奖金，而是增强内在动机。"
+    },
+    {
+      "id": "11",
+      "definitionLines": [564, 566],
+      "english": "This assumes that the people in question are being paid well enough that income is not a source of stress.",
+      "chinese": "前提是，这些人的薪酬已足以让收入不再成为压力来源。",
+      "after": "他认为，要做到这一点，需要给人三样东西：自主性、精进的机会，以及工作的意义。"
+    },
+    {
+      "id": "12",
+      "definitionLines": [568, 570],
+      "english": "This assumes that you have people on your team who don’t need micromanagement.",
+      "chinese": "前提是，你的团队中有不需要事无巨细管控的人。",
+      "after": "一个人能够独立行动，不需要别人事无巨细地管控，就具备自主性。"
+    },
+    {
+      "id": "13",
+      "definitionLines": [572, 574],
+      "english": "Of course, it also means they’re more valuable and marketable employees, so it’s easier for them to pick up and leave you if they’re not enjoying their work. See the pattern in “Track Happiness” on page 99.",
+      "chinese": "当然，这也意味着他们的价值更高，在人才市场上更有竞争力；如果对工作不满意，他们也更容易另谋高就。参见第99页“追踪幸福感”中的做法。",
+      "after": "充分提供这样的机会，不仅能增强动力，还能让成员不断成长，使团队更强。"
+    },
+    {
+      "id": "14",
+      "definitionLines": [576, 578],
+      "english": "Adam M. Grant, “The Significance of Task Significance: Job Performance Effects, Relational Mechanisms, and Boundary Conditions,” Journal of Applied Psychology, 93, No. 1 (2018), http://bit.ly/task_significance.",
+      "chinese": "Adam M.Grant，《任务重要性的重要性：对工作绩效的影响、关系机制与边界条件》，《应用心理学杂志》，第93卷第1期（2018年），http://bit.ly/task_significance.",
+      "after": "帮助成员看到工作意义后，你会发现他们的积极性和生产力显著提高。",
+      "englishAfter": "If you can help them to see this purpose in their work, you’ll see a tremendous increase in their motivation and productivity.",
+      "reason": "Source line 556 uses the legacy reference [14](#_bookmark464), not [^14]. The task-significance citation qualifies the explicit purpose/motivation claim immediately before that link; the Chinese sentence conveys the same claim."
+    }
+  ],
+  "proseCodeBlocks": [
+    {
+      "text": "You’re a solid member of the team and one of our smartest engineers. That being said, your code is convoluted and almost impossible for anyone else on the team to understand. But you’ve got great potential and a wicked cool T-shirt collection.",
+      "language": "en",
+      "reason": "Source line 403 is the spoken compliment-sandwich example, rendered as an indented code block."
+    },
+    {
+      "text": "你是团队可靠的一员，也是我们最聪明的工程师之一。话虽如此，你的代码很绕，团队里其他人几乎都看不懂。不过，你很有潜力，而且收藏的 T 恤也酷极了。",
+      "language": "zh",
+      "reason": "Source line 407 is the Chinese counterpart of the spoken example, not code."
+    },
+    {
+      "text": "We’re quite sure that you’re not aware of this, but the way that you’re interacting with the team is alienating and angering them, and if you want to be effective, you need to refine your communication skills, and we’re committed to helping you do that.",
+      "language": "en",
+      "reason": "Source line 415 is direct feedback quoted in the Tim anecdote. The existing Chinese counterpart on line 418 is already ordinary paragraph text."
+    },
+    {
+      "text": "Every time a decision is made, it’s like a train coming through town—when you jump in front of the train to stop it, you slow the train down and potentially annoy the engineer driving the train. A new train comes by every 15 minutes, and if you jump in front of every train, not only do you spend a lot of your time stopping trains, but eventually one of the engineers driving the train is going to get mad enough to run right over you. So, although it’s OK to jump in front of some trains, pick and choose the ones you want to stop to make sure you’re stopping only the trains that really matter.",
+      "language": "en",
+      "reason": "Source line 426 is a quoted metaphor about choosing disagreements, not executable code."
+    },
+    {
+      "text": "每作出一个决定，就像有一列火车驶过小镇。你跳到车前拦住它，就会让列车减速，还可能惹恼司机。每15分钟就有一列新火车经过；如果每列都拦，你不仅要花大量时间拦车，最后还会有某个司机气得直接从你身上碾过去。所以，拦下某些列车没有问题，但要有所选择，只拦那些真正重要的。",
+      "language": "zh",
+      "reason": "Source line 430 is the Chinese counterpart of the train metaphor, rendered as an indented code block."
+    }
+  ],
+  "translatorNotes": [
+    {
+      "text": "译者注：彼得原理的推论是，每个职位最终都会由无法胜任该职位的员工占据。层级组织中的工作，多半由尚未晋升到不胜任层级的员工完成。",
+      "title": "译者注：彼得原理",
+      "body": "彼得原理的推论是，每个职位最终都会由无法胜任该职位的员工占据。层级组织中的工作，多半由尚未晋升到不胜任层级的员工完成。",
+      "linkText": "",
+      "href": "",
+      "reason": "The blockquote at line 110 explicitly identifies itself as a translator note and has no paired English passage. The source supplies no reference URL."
+    }
+  ],
+  "pairedSources": [
+    {
+      "english": "Years ago, a colleague picked up a team member, Tim, from another manager who insisted that Tim was impossible to work with. He said that Tim never responded to feedback or criticism and instead just kept doing the same things he’d been told he shouldn’t do. Our colleague sat in on a few of the manager’s meetings with Tim to watch the interaction between the manager and Tim, and noticed that the manager made extensive use of the compliment sandwich so as not to hurt Tim’s feelings. When they brought Tim onto their team, they sat down with him and very clearly explained that Tim needed to make some changes to work more effectively with the team:",
+      "chinese": "几年前，一位同事从另一位经理那里接收了成员蒂姆。",
+      "reason": "Source line 413 is followed by a separate English quotation at line 415, already reviewed as proseCodeBlocks. The complete Chinese introduction and quotation share one paragraph at lines 417-418, so the English paragraph-plus-quotation structure cannot pair automatically with the single Chinese paragraph."
+    },
+    {
+      "english": "We’re quite sure that you’re not aware of this, but the way that you’re interacting with the team is alienating and angering them, and if you want to be effective, you need to refine your communication skills, and we’re committed to helping you do that.",
+      "chinese": "我们相信，你自己还没有意识到，但你与团队相处的方式正在让大家疏远你、对你感到愤怒。",
+      "reason": "Source line 415 is spoken feedback, already verified in proseCodeBlocks and converted from indentation into a quotation, not actual code. Its complete Chinese translation at line 418 remains inside the preceding Chinese paragraph, so the quotation and paragraph wrappers prevent automatic pairing."
+    }
+  ],
+  "translations": [],
+  "issues": []
+}

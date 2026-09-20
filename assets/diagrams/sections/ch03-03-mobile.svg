@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch03-03" data-layout="mobile" role="img" aria-labelledby="ch03-03m-title ch03-03m-desc">
+<title id="ch03-03m-title">哪些资料需要全公司统一？</title>
+<desc id="ch03-03m-desc">原文以基本开发工作流和本地 Frobber 实例作对比。多个团队查阅同一份由专家审核维护的全公司参考；Frobber 工程师查阅团队的本地运行指南。图示主要受众，而非访问权限；并非所有资料都要成为全员规范。</desc>
+<style>
+.cg-ch03-03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch03-03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch03-03[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch03-03[data-layout="mobile"] .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch03-03m-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch03-03m-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch03-03m-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" text-anchor="start" class="strong">哪些资料需要全公司统一？</text>
+<text x="24" y="69" text-anchor="start" class="small">原文中的两种指南</text>
+<text x="24" y="111" text-anchor="start" class="strong">基本开发工作流：跨团队共用</text>
+<g id="ch03-03m-node-1" data-box="24,136,118,56">
+<rect x="24" y="136" width="118" height="56" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="83.0" y="172" text-anchor="middle" class="">团队甲</text>
+</g>
+<g id="ch03-03m-node-2" data-box="24,214,118,56">
+<rect x="24" y="214" width="118" height="56" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="83.0" y="250" text-anchor="middle" class="">团队乙</text>
+</g>
+<path d="M148 164H210" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-03m-arrow-secondary)"/>
+<path d="M148 242H210" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-03m-arrow-secondary)"/>
+<g id="ch03-03m-node-3" data-box="216,136,180,134">
+<rect x="216" y="136" width="180" height="134" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="306.0" y="172" text-anchor="middle" class="strong">全公司参考</text>
+<text x="306.0" y="211" text-anchor="middle" class="small">专家审核</text>
+<text x="306.0" y="244" text-anchor="middle" class="small">主动维护</text>
+</g>
+<text x="24" y="306" text-anchor="start" class="small">共同需求，只维护一份统一参考</text>
+<path d="M24 328H396" class="rule" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
+<text x="24" y="362" text-anchor="start" class="strong">本地 Frobber 实例：特定团队</text>
+<g id="ch03-03m-node-4" data-box="24,394,138,92">
+<rect x="24" y="394" width="138" height="92" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="93.0" y="429" text-anchor="middle" class="strong">Frobber</text>
+<text x="93.0" y="462" text-anchor="middle" class="">工程师</text>
+</g>
+<path d="M168 440H210" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-03m-arrow-secondary)"/>
+<g id="ch03-03m-node-5" data-box="216,386,180,108">
+<rect x="216" y="386" width="180" height="108" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)"/>
+<text x="306.0" y="424" text-anchor="middle" class="strong">团队指南</text>
+<text x="306.0" y="462" text-anchor="middle" class="small">本地运行步骤</text>
+</g>
+<text x="24" y="532" text-anchor="start" class="small">受众不同，维护范围也不同</text>
+<text x="24" y="561" text-anchor="start" class="small">局部指南不必成为全员规范</text>
+<text x="24" y="590" text-anchor="start" class="small">范围表示主要受众，不是访问权限</text>
+</svg>

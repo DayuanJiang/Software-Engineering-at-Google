@@ -1,0 +1,21 @@
+{
+  "id": "ch14-03",
+  "chapter": 14,
+  "title": "日志没有这个请求，重放怎么办？",
+  "summary": "以地图请求为示意：提交后录制通过才保存请求/响应；开发时匹配东京请求才能返回已录制响应，大阪请求未匹配则不能通过，需运行录制模式。",
+  "enabled": true,
+  "sourceSections": ["## What Are Larger Tests? 什么是较大规模测试？", "#### Record/replay proxies 录制/重放代理"],
+  "afterParagraph": "因此，让录制模式测试易于运行、速度快且稳定，非常重要。",
+  "desktop": "assets/diagrams/sections/ch14-03.svg",
+  "mobile": "assets/diagrams/sections/ch14-03-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "日志只有东京的地图响应，客户端改为请求大阪时，重放测试为什么不能直接通过？",
+    "expectedAnswer": "重放用匹配器按请求选择已录制响应，不能凭日志覆盖之外的新请求生成正确响应。新增测试或客户端显著变化导致未匹配时，需要工程师运行录制模式；只有录制测试通过才生成新日志。",
+    "visualEncoding": "保留录制到日志到重放的主结构，用实际文字请求/响应对替换抽象日志框；匹配和未匹配分支分别到已录制响应与录制反馈路径，并明确重放不实时调用依赖。",
+    "sourceEvidence": "Record/replay proxies 录制/重放代理：只有测试通过，才会生成日志；通过匹配器匹配请求；请求可能无法再与已录制流量文件中的内容匹配。What Are Larger Tests? 什么是较大规模测试？：网站使用了谷歌地图 API。",
+    "beforeProblem": "原图的通过门槛和反馈环有价值，但没有可追踪的请求/响应对；移动版只有重新录制文字，没有回到录制模式的路径。",
+    "whyBetter": "只改变请求城市就能沿分支推导重放结果；两版都能看到新日志从何而来，以及保存前必须通过的门槛。",
+    "limits": "东京、大阪和响应 T 是教学示例，不是本书记录的真实请求或 Google Maps API 格式。匹配到日志不证明实时依赖的契约仍然正确；未匹配不自动证明客户端有缺陷。"
+  }
+}

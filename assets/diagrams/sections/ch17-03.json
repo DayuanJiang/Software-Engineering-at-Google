@@ -1,0 +1,21 @@
+{
+  "id": "ch17-03",
+  "chapter": 17,
+  "title": "首屏没显示，就不用改吗？",
+  "summary": "同一 OldApi 查询在两分片中有四个示例匹配：首屏仅列 a.cc、b.cc 并不排除 y.cc、z.cc；重构须明确请求各片全部结果。",
+  "enabled": true,
+  "sourceSections": ["### Completeness: All Versus Most-Relevant Results 完整性：所有结果与最相关结果", "### Completeness: Repository at Head 完整性：代码仓库的最新版本"],
+  "afterParagraph": "结果还可以按字母顺序返回，而不是按相关性排序，这对某些工具很有用。",
+  "desktop": "assets/diagrams/sections/ch17-03.svg",
+  "mobile": "assets/diagrams/sections/ch17-03-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "首屏只显示 a.cc 和 b.cc，能否据此断言 OldApi 的所有调用都已修改？",
+    "expectedAnswer": "不能。日常排序搜索通常优先考虑各片高优先级匹配，首屏不代表全集；重构或工具处理需要明确请求所有分片的全部匹配，完整性仍限于所选版本的已索引内容。",
+    "visualEncoding": "两个分片各以高、低优先级排列具体文件；同一文件行分别标出在示例首屏和全部结果中的出现情况，低优先级 y.cc、z.cc 仍保留 OldApi 的事实可直接读出。",
+    "sourceEvidence": "Completeness: All Versus Most-Relevant Results 完整性：所有结果与最相关结果：分片内文件按优先级排列，可以从每个分片获取全部结果；脚注16：避免响应过于庞大并保护系统。Completeness: Repository at Head 完整性：代码仓库的最新版本：未索引内容可能遗漏。",
+    "beforeProblem": "原图的分片只有匿名线条和圆点；所谓全部与高优先级没有对应到可检查的同一组结果。",
+    "whyBetter": "读者能准确点名只按首屏重构会漏掉哪些文件，并区分低优先级与不匹配。",
+    "limits": "两个分片、四个文件与首屏条目数仅为示例，不是实际分片或配额；全集不是不受资源约束，也不是未索引内容或其他版本的全集，文本匹配本身不授权机械替换。"
+  }
+}

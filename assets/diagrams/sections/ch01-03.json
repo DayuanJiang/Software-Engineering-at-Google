@@ -1,0 +1,26 @@
+{
+  "id": "ch01-03",
+  "chapter": 1,
+  "title": "规模与人力：重复劳动还是共享能力",
+  "summary": "对照各团队重复迁移与共享专家、自动化和统一 CI，说明如何减少重复人力投入；团队布局为概念示例。",
+  "enabled": true,
+  "sourceSections": [
+    "## Scale and Efficiency  规模和效率",
+    "### Policies That Don’t Scale 难以随规模扩展的策略",
+    "### Policies That Scale Well 适于规模扩展的策略",
+    "### Example: Compiler Upgrade 示例：编译器升级"
+  ],
+  "afterParagraph": "专业知识更能发挥规模效益。",
+  "desktop": "assets/diagrams/sections/ch01-03.svg",
+  "mobile": "assets/diagrams/sections/ch01-03-mobile.svg",
+  "pedagogy": {
+    "action": "keep",
+    "readerQuestion": "组件再增加一个使用团队时，为什么让每个团队自行迁移会重复学习成本？",
+    "expectedAnswer": "自行迁移让各团队重复学习与适配；维护方专家深入理解共同问题后，可用自动化及统一验证把知识用于各个使用方，减少重复人力而不消除维护投入。",
+    "visualEncoding": "三行团队各自重复学习、迁移、测试，与单个共享专家/工具中心连接同三个团队形成一对一对照；增加团队意味着左侧再复制整行，右侧复用已有共同知识。",
+    "sourceEvidence": "### Policies That Don’t Scale 难以随规模扩展的策略：'基础设施团队必须自行将内部用户迁移到新版本'、'专业知识更能发挥规模效益'；### Policies That Scale Well 适于规模扩展的策略：'统一 CI 系统'；### Example: Compiler Upgrade 示例：编译器升级：'自动化'、'整合与一致性'。",
+    "beforeProblem": "现有图并非只有主题标签：重复的三列工作和共享中心明确表示重复发生的位置，且尾注说明共享工具、测试和维护仍需投入。",
+    "whyBetter": "保留已有效的重复/共享拓扑，避免为换视觉而丢失组织扩展的核心关系；审查确认两种布局指向相同团队，没有以数量暗示实测收益。",
+    "limits": "三个团队为示意，不是规模阈值。箭头表示共享工作服务多个团队，不是依赖方向；不表示维护工作归零、保证次线性总成本或 CI 能发现所有问题。"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "chapter": 6,
+  "title": "离开一周，搜索延迟问题还会推进吗？",
+  "summary": "把搜索案例与休假检验并置：对比事事等你决策和子团队领导者持续判断取舍两种依赖关系，说明自主组织如何为更大职责保留时间、注意力与精力。",
+  "enabled": true,
+  "sourceSections": [
+    "Always Be Deciding 持续作出决策",
+    "Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题",
+    "Always Be Leaving  随时准备离开",
+    "Your Mission: Build a “Self-Driving” Team  你的任务：打造一个“自我驱动”的团队",
+    "Dividing the Problem Space  划分问题域",
+    "Delegating subproblems to leaders  将子问题交给子团队领导者负责",
+    "Adjusting and iterating  调整与迭代",
+    "Always Be Scaling  不断适应规模增长",
+    "Protecting Your Energy  保护你的精力"
+  ],
+  "kind": "dependency",
+  "desktop": "assets/diagrams/ch06.svg",
+  "mobile": "assets/diagrams/ch06-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "领导者休假一周时，同样的搜索延迟取舍为何在一种组织中停下、在另一种组织中仍能推进？",
+    "expectedAnswer": "如果每项取舍依赖领导者在场，缺席就暴露单点依赖；培养能独立判断并迭代的子团队领导者后，自己可专注整体方向与关键调整，为新问题和休息保留资源。",
+    "visualEncoding": "同一搜索工作下的对照路径：等待箭头指向虚线的缺席领导者；另一侧由子团队领导者完成判断与迭代回路。底部区分仍需承担的方向职责与腾出的个人资源。移动版上下重排，保留两种路径。",
+    "sourceEvidence": "Always Be Leaving  随时准备离开：last vacation you took that was at least a week long；Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题：quality-driven improvements / latency-driven damage；Adjusting and iterating  调整与迭代：minimum adjustments necessary to correct course。",
+    "beforeProblem": "原图以 A/B/C 三个同质子团队和上下反馈箭头概括授权，无法看出领导者不在时哪里会断，也无法判断所谓自主推进具体包括什么。",
+    "whyBetter": "以相同任务和相同缺席条件作反事实对照，让读者沿连接关系定位单点依赖，再从不经过领导者的决策回路推导离场条件，而非只记住授权口号。",
+    "limits": "将书中两个例子并置是教学示意，不是谷歌实际组织图，也不是已观察到的休假实验；不保证自主团队永不需要危机干预，不意味着领导者不再负责。"
+  }
+}

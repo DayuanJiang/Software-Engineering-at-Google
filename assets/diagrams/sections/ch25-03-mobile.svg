@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch25-03m-root" class="chapter-svg cg-ch25-03" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch25-03m-title ch25-03m-desc">
+<title id="ch25-03m-title">答复丢了，为什么不能重下单？</title>
+<desc id="ch25-03m-desc">依照书中的比萨订单例子：客户端创建订单时分配 P7，甲已将该订单写入外部持久存储，但答复丢失。客户端退避并加入抖动后，向乙重试同一 P7。接口查询已有订单，核对参数后返回成功而非再创建一份订单。重建乙本身不提供去重；去重约束业务效果，退避与抖动约束重试压力。图假定订单记录与订单写入保持一致，不展示并发控制，也不保证端到端恰好一次交付。</desc>
+<style>
+.cg-ch25-03#ch25-03m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch25-03#ch25-03m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch25-03#ch25-03m-root .strong {font-weight:600}
+.cg-ch25-03#ch25-03m-root .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch25-03m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch25-03m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch25-03m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch25-03m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch25-03m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
+<text x="20" y="38" text-anchor="start" class="strong">答复丢了，为什么不能重下单？</text>
+<text x="20" y="74" text-anchor="start" class="small">比萨订单示例：重试复用 P7</text>
+<text x="20" y="115" text-anchor="start" class="strong">客户端提交订单 P7</text>
+<rect x="20" y="139" width="380" height="102" rx="0" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="36" y="172" text-anchor="start" class="strong" data-box="20,139,380,102">甲已把 P7 写入外部存储</text>
+<text x="36" y="207" text-anchor="start" class="small danger" data-box="20,139,380,102">答复丢失，客户端无法确认成功</text>
+<path data-connector="true" d="M210 241V278" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch25-03m-danger-arrow)"/>
+<text x="234" y="267" text-anchor="start" class="small">退避＋抖动</text>
+<rect x="20" y="288" width="380" height="114" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="36" y="320" text-anchor="start" class="strong" data-box="20,288,380,114">客户端用同一 P7 向乙重试</text>
+<text x="36" y="353" text-anchor="start" class="small" data-box="20,288,380,114">乙查询外部记录：P7 已存在</text>
+<text x="36" y="386" text-anchor="start" class="small" data-box="20,288,380,114">核对订单后返回成功，不再创建</text>
+<rect x="20" y="456" width="380" height="62" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="36" y="495" text-anchor="start" class="" data-box="20,456,380,62">持久订单表：P7 | 同一份订单</text>
+<path data-connector="true" d="M92 456V412" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-03m-secondary-arrow)"/>
+<text x="116" y="438" text-anchor="start" class="small">读回已有订单</text>
+<text x="20" y="552" text-anchor="start" class="small">退避减少重试压力，不能防止重单。</text>
+<text x="20" y="583" text-anchor="start" class="small">去重记录与订单写入需保持一致。</text>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "id": "ch16-04",
+  "chapter": 16,
+  "title": "仓库有两版，新应用能任选吗",
+  "summary": "对照 v1、v2 升级前后的仓库存放状态与应用 A、B、C 的依赖。迁移中 A 暂留 v1、B 已用 v2，但新应用 C 不准再依赖 v1。",
+  "enabled": true,
+  "sourceSections": ["### One Version  单版本", "### The “One-Version” Rule  “单版本”规则"],
+  "afterParagraph": "能够更准确地传达这条规则的重要含义。",
+  "desktop": "assets/diagrams/sections/ch16-04.svg",
+  "mobile": "assets/diagrams/sections/ch16-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "迁移中仓库同时存放 v1 和 v2，新应用 C 是否可以像尚未迁出的 A 一样选择 v1？",
+    "expectedAnswer": "不可以。无法一次原子升级所有使用方时，旧版可暂供未迁出的存量使用方，新依赖只准选择指定新版，存量逐步迁完后回到稳定单版本状态。",
+    "visualEncoding": "以应用为行、升级阶段为列，实际填入 v1 或 v2；迁移列中 A 仍用 v1、B 已用 v2，C 的 v2 单元格配有禁止新增 v1 的明确标记。仓库保留行独立于应用依赖行，区分代码共存和选择规则。",
+    "sourceEvidence": "### One Version  单版本：在稳定状态下，仓库中只能检入该包的一个版本；脚注9：升级期间可能同时检入两个版本，新添依赖时只有一个版本可选；### The “One-Version” Rule  “单版本”规则：添加新依赖时限制可选版本；脚注11：禁止新使用方依赖旧版本，再逐步迁移。",
+    "beforeProblem": "原图只是三个阶段名称与段落摘要，无法追踪某个使用方的依赖，也未在视觉上分开仓库存放两版与新使用方拥有两个选项。",
+    "whyBetter": "可以逐行跟踪 A 和 B 何时改变版本，并用迁移列同时回答仓库中有什么、谁还在用旧版、谁被禁止新增旧依赖。",
+    "limits": "A、B、C、v1、v2 是说明性例子，不表示真实应用数量、版本号或固定迁移周期。C 在迁移中首次加入，完成后仍依赖 v2。仓库共存不保证同一程序能安全链接两版。"
+  }
+}

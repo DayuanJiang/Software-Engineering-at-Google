@@ -1,0 +1,21 @@
+{
+  "id": "ch13-05",
+  "chapter": 13,
+  "title": "只改版本号，姓名测试为什么会失败？",
+  "summary": "对照例13-18和13-19的 setText 验证：版本号从2.1改为2.2时，锁定全部参数的旧测试失败，只锁定姓名的测试仍通过；姓名真变错时，后者仍会失败。",
+  "enabled": true,
+  "sourceSections": ["### When Is Interaction Testing Appropriate? 什么时候适合进行交互测试？", "#### Avoid overspecification 避免过度限定"],
+  "afterParagraph": "每个测试只检查确认相应行为正确所必需的最少内容。",
+  "desktop": "assets/diagrams/sections/ch13-05.svg",
+  "mobile": "assets/diagrams/sections/ch13-05-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "问候语只升级版本号时，怎样让姓名测试不失败，又仍能发现姓名错误？",
+    "expectedAnswer": "姓名测试将 setText 第一参数限定为 eq(\"Fake User\")，其余参数用 any()。版本由2.1变2.2时不失败，但姓名变成其他值时仍失败。晨间问候与图标由独立晨间测试约束；减少限定并不是删除必要断言。",
+    "visualEncoding": "将旧的三参数精确验证与新的姓名参数验证对照，再用两行实际调用变动组成通过/失败矩阵：只改版本号、只改姓名。高亮变化参数及相应失败单元格，下方单列晨间测试仍要检查的参数与图标。",
+    "sourceEvidence": "#### Avoid overspecification 避免过度限定，例13-18 verify(userPrompt).setText(\"Fake User\", \"Good morning!\", \"Version 2.1\") 和 setIcon；例13-19 setText(eq(\"Fake User\"), any(), any()) 以及独立的晨间设置测试。",
+    "beforeProblem": "原图只有锁定所有字段到分开测试的文字框，没有真实的参数变化和断言结果，读者无法检查为什么重构后的测试既更聚焦又未放过姓名错误。",
+    "whyBetter": "一个无关变化与一个真实缺陷作为对照，展示两个测试的不同结果，解释 any() 放宽的范围以及仍保留的约束。",
+    "limits": "版本2.2和错误姓名 Other 是基于书中代码构造的明确示意变动，不是生产数据。图仅讨论必要交互测试的断言范围，不证明 UI 最终显示正确；优先状态测试的原则仍然适用。"
+  }
+}

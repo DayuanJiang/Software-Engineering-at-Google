@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21-04" data-layout="mobile" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch21-04m-title ch21-04m-desc">
+<title id="ch21-04m-title">为什么 MVS 有时也要选 1.8？</title>
+<desc id="ch21-04m-desc">本图限定同一主版本、只含最低版本要求，候选为 libbase 1.6、1.7、1.8。liba≥1.7 沿用原文，libb 是补充示意。当 libb≥1.6 时，1.7 是同时满足 liba 与 libb 的最低版本，已有 1.8 不是额外升级的理由。当 libb 抬高要求至≥1.8，1.7 不再满足全部要求，MVS 必须选择 1.8。框线标出满足全部要求的最低候选，不表示兼容性证明。完整选择还须纳入全图传递要求，随后运行组合测试。</desc>
+<style>
+.cg-ch21-04[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch21-04[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch21-04[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch21-04[data-layout="mobile"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch21-04[data-layout="mobile"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch21-04[data-layout="mobile"] .warm{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch21-04[data-layout="mobile"] .danger{fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch21-04m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch21-04m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch21-04m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch21-04m-shape-1" x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="20" y="36" class="strong" text-anchor="start">为什么 MVS 有时也要选 1.8？</text>
+<text x="20" y="67" class="small" text-anchor="start">同一主版本；libb 的最低要求为示意</text>
+<text x="20" y="106" class="strong" text-anchor="start">libb 只要求 ≥ 1.6</text>
+<text x="28" y="143" class="small" text-anchor="start">libbase</text>
+<text x="228" y="143" class="strong" text-anchor="middle">1.6</text>
+<text x="296" y="143" class="strong" text-anchor="middle">1.7</text>
+<text x="364" y="143" class="strong" text-anchor="middle">1.8</text>
+<rect id="ch21-04m-shape-2" x="20" y="159" width="380" height="38" rx="0" fill="none"/>
+<text x="28" y="185" class="" text-anchor="start" data-owner="ch21-04m-shape-2">liba ≥ 1.7</text>
+<text x="228" y="185" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-2">否</text>
+<text x="296" y="185" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-2">可</text>
+<text x="364" y="185" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-2">可</text>
+<rect id="ch21-04m-shape-3" x="20" y="199" width="380" height="38" rx="0" fill="none"/>
+<text x="28" y="225" class="" text-anchor="start" data-owner="ch21-04m-shape-3">libb ≥ 1.6</text>
+<text x="228" y="225" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-3">可</text>
+<text x="296" y="225" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-3">可</text>
+<text x="364" y="225" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-3">可</text>
+<rect id="ch21-04m-shape-4" x="20" y="239" width="380" height="38" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="28" y="265" class="strong" text-anchor="start" data-owner="ch21-04m-shape-4">全部满足</text>
+<text x="228" y="265" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-4">否</text>
+<text x="296" y="265" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-4">可</text>
+<text x="364" y="265" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-4">可</text>
+<rect id="ch21-04m-shape-5" x="267" y="119" width="58" height="163" rx="4" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="296" y="307" class="strong primary" text-anchor="middle">选 1.7</text>
+<text x="20" y="332" class="strong" text-anchor="start">libb 抬高要求至 ≥ 1.8</text>
+<text x="28" y="369" class="small" text-anchor="start">libbase</text>
+<text x="228" y="369" class="strong" text-anchor="middle">1.6</text>
+<text x="296" y="369" class="strong" text-anchor="middle">1.7</text>
+<text x="364" y="369" class="strong" text-anchor="middle">1.8</text>
+<rect id="ch21-04m-shape-6" x="20" y="385" width="380" height="38" rx="0" fill="none"/>
+<text x="28" y="411" class="" text-anchor="start" data-owner="ch21-04m-shape-6">liba ≥ 1.7</text>
+<text x="228" y="411" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-6">否</text>
+<text x="296" y="411" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-6">可</text>
+<text x="364" y="411" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-6">可</text>
+<rect id="ch21-04m-shape-7" x="20" y="425" width="380" height="38" rx="0" fill="none"/>
+<text x="28" y="451" class="" text-anchor="start" data-owner="ch21-04m-shape-7">libb ≥ 1.8</text>
+<text x="228" y="451" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-7">否</text>
+<text x="296" y="451" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-7">否</text>
+<text x="364" y="451" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-7">可</text>
+<rect id="ch21-04m-shape-8" x="20" y="465" width="380" height="38" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="28" y="491" class="strong" text-anchor="start" data-owner="ch21-04m-shape-8">全部满足</text>
+<text x="228" y="491" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-8">否</text>
+<text x="296" y="491" class="danger" text-anchor="middle" data-owner="ch21-04m-shape-8">否</text>
+<text x="364" y="491" class="primary" text-anchor="middle" data-owner="ch21-04m-shape-8">可</text>
+<rect id="ch21-04m-shape-9" x="335" y="345" width="58" height="163" rx="4" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="364" y="533" class="strong primary" text-anchor="middle">选 1.8</text>
+<text x="20" y="563" class="small" text-anchor="start">MVS 选满足全部要求的最低版本。</text>
+<text x="20" y="590" class="small" text-anchor="start">传递要求也要纳入；选完仍需测试。</text>
+</svg>

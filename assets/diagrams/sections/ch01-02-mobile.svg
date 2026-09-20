@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch01-02" data-layout="mobile" role="img" aria-labelledby="ch01-02m-title ch01-02m-desc">
+  <title id="ch01-02m-title">值没变，为什么调用方会坏？</title>
+  <desc id="ch01-02m-desc">基于原文五个元素及 RPC 序列化的示例。旧响应顺序取自原文，新响应仅为演示而交换 durian 和 carrot，其他三个值不变，并非实测新版本输出。此处假定契约只承诺返回同一组值，不承诺顺序。调用方甲比较值的集合，仍通过；调用方乙假定首项总是 durian，现读到 carrot，假设失效。箭头表示两个元素换位，不表示依赖方向。即使库不依赖顺序，RPC 使用方也可能依赖。</desc>
+  <style>
+    .cg-ch01-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-02[data-layout="mobile"] .strong {font-weight:600}
+    .cg-ch01-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-02[data-layout="mobile"] .metric {font-size:28px;font-weight:600}
+    .cg-ch01-02[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d)}
+    .cg-ch01-02[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750)}
+  </style>
+  <defs>
+    <marker id="ch01-02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch01-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch01-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+    <marker id="ch01-02m-line-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#b9c9c0)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="38" class="strong" text-anchor="start">值没变，为什么调用方会坏？</text>
+  <text x="24" y="70" class="small" text-anchor="start">RPC 响应示意：只交换前两项</text>
+  <text x="24" y="108" class="strong" text-anchor="start">旧响应</text>
+  <text x="240" y="108" class="strong" text-anchor="start">新响应</text>
+  <rect x="24" y="117" width="146" height="28" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="38" y="140" class="" text-anchor="start">durian</text>
+  <rect x="24" y="147" width="146" height="28" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="38" y="170" class="" text-anchor="start">carrot</text>
+  <text x="38" y="200" class="" text-anchor="start">apple</text>
+  <text x="38" y="230" class="" text-anchor="start">eggplant</text>
+  <text x="38" y="260" class="" text-anchor="start">banana</text>
+  <rect x="240" y="117" width="156" height="28" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="254" y="140" class="" text-anchor="start">carrot</text>
+  <rect x="240" y="147" width="156" height="28" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="254" y="170" class="" text-anchor="start">durian</text>
+  <text x="254" y="200" class="" text-anchor="start">apple</text>
+  <text x="254" y="230" class="" text-anchor="start">eggplant</text>
+  <text x="254" y="260" class="" text-anchor="start">banana</text>
+  <path d="M174 133C200 133 210 163 236 163" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch01-02m-warm-arrow)"/>
+  <path d="M174 163C200 163 210 133 236 133" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch01-02m-secondary-arrow)"/>
+  <path d="M24 282H396" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="24" y="316" class="strong" text-anchor="start">甲：比较值的集合</text>
+  <text x="24" y="348" class="good" text-anchor="start">同样五个值，仍通过</text>
+  <text x="24" y="393" class="strong" text-anchor="start">乙：假定首项总是 durian</text>
+  <text x="24" y="425" class="bad" text-anchor="start">读到 carrot，假设失效</text>
+  <rect x="24" y="452" width="372" height="76" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="40" y="482" class="" text-anchor="start">契约示意：返回同一组值</text>
+  <text x="40" y="512" class="" text-anchor="start">没有承诺排列顺序</text>
+  <text x="24" y="558" class="small" text-anchor="start">库不依赖顺序，RPC 使用方</text>
+  <text x="24" y="584" class="small" text-anchor="start">仍可能依赖；新顺序仅为演示</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch07-01m-diagram" class="chapter-svg cg-ch07-01" role="img" aria-labelledby="ch07-01m-title ch07-01m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch07-01m-title">哪种研究结果会改变行动？</title><desc id="ch07-01m-desc">Readability 团队按语言评估且有权行动，收益足以抵偿成本则公布研究，成本超过收益或收益可忽略则取消流程。发布工具变更无论生产力收益较大还是只有小幅收益都会实施，因为还改善性能并减轻维护负担。路径表示事前行动承诺，不是研究结果。</desc>
+<style>.cg-ch07-01#ch07-01m-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch07-01#ch07-01m-diagram .strong{font-weight:600}
+.cg-ch07-01#ch07-01m-diagram .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch07-01#ch07-01m-diagram .danger-text{fill:var(--diagram-danger,#b54750)}
+.cg-ch07-01#ch07-01m-diagram .primary{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch07-01#ch07-01m-diagram .secondary{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch07-01#ch07-01m-diagram .warm{fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch07-01#ch07-01m-diagram .empty{fill:var(--diagram-bg,#fff);stroke:var(--diagram-danger,#b54750);stroke-width:1.5;stroke-dasharray:6 5}
+.cg-ch07-01#ch07-01m-diagram .band{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch07-01#ch07-01m-diagram .blue-band{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch07-01#ch07-01m-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch07-01#ch07-01m-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch07-01m-arrow)}</style>
+<defs><marker id="ch07-01m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">哪种研究结果会改变行动？</text>
+<text x="24" y="69" class="small" text-anchor="start">书中案例：比较事前行动承诺</text>
+<text x="24" y="112" class="strong" text-anchor="start">Readability</text>
+<text x="24" y="141" class="small" text-anchor="start">按语言评估，团队有权行动</text>
+<text x="24" y="188" class="small" text-anchor="start">收益抵偿成本</text>
+<path d="M151 182H212" class="arrow"/>
+<text x="228" y="190" class="strong" text-anchor="start">公布研究与数据</text>
+<text x="24" y="235" class="small" text-anchor="start">成本超收益</text>
+<text x="24" y="261" class="small" text-anchor="start">或收益可忽略</text>
+<path d="M151 246H212" class="arrow"/>
+<text x="228" y="254" class="strong" text-anchor="start">取消流程</text>
+<text x="24" y="301" class="strong" text-anchor="start">结果不同，行动不同：值得研究</text>
+<path d="M24 318H396" class="line"/>
+<text x="24" y="351" class="strong" text-anchor="start">发布工具变更</text>
+<text x="24" y="380" class="small" text-anchor="start">另有性能与维护收益，仍会实施</text>
+<text x="24" y="421" class="" text-anchor="start">收益较大</text>
+<text x="24" y="470" class="" text-anchor="start">仅小幅收益</text>
+<path d="M155 414H199V440H229" class="arrow"/>
+<path d="M155 463H199V440" class="line"/>
+<rect id="ch07-01m-implement" x="238" y="414" width="158" height="54" rx="4" class="secondary"/>
+<text x="317" y="449" class="strong" text-anchor="middle" data-box="ch07-01m-implement">仍实施变更</text>
+<text x="24" y="514" class="strong" text-anchor="start">收益大小不改变这项实施决定</text>
+<text x="24" y="544" class="small" text-anchor="start">可能不值得专门度量生产力收益</text>
+<text x="24" y="582" class="small" text-anchor="start">还须考虑度量成本、时效与证据适用性</text>
+</svg>

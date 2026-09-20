@@ -1,0 +1,25 @@
+{
+  "chapter": 20,
+  "title": "编译通过，为何仍需要静态分析？",
+  "summary": "沿着原文哈希表达式比较 long 与 int：类型改变后，右移成为空操作，字段不再贡献哈希值。再区分作者修复当前代码与贡献检查、清理旧问题后防止同类缺陷再次出现。",
+  "enabled": true,
+  "sourceSections": [
+    "Empower Users to Contribute  让用户能够贡献分析",
+    "Make Static Analysis a Part of the Core Developer Workflow  使静态分析成为核心开发工作流程的一部分",
+    "Integrated Tools  集成工具",
+    "Compiler Integration 编译器集成"
+  ],
+  "kind": "worked-example",
+  "desktop": "assets/diagrams/ch20.svg",
+  "mobile": "assets/diagrams/ch20-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "同一段哈希代码仍能编译，为什么把字段类型从 long 改成 int 会产生缺陷，开发者又怎样防止同类缺陷再出现？",
+    "expectedAnswer": "原文的 Java 哈希表达式在 f 为 int 时右移 32 位是空操作，f 与自身异或为 0，字段不再影响结果。作者需要修复哈希实现；工程师可以贡献检查识别同类反模式。只有符合编译器检查准入要求、且清理全部既有实例后，才启用编译错误。",
+    "visualEncoding": "共享代码下的两个类型分支逐步展开同一表达式；int 分支显示 f >>> 32 = f、f ^ f = 0。下方将修复当前代码和贡献、推广检查分为不同动作，而不是用基础设施框代替缺陷机制。",
+    "sourceEvidence": "### Integrated Tools  集成工具：'现在假设 f 的类型是 int'、'不再影响最终结果'；### Empower Users to Contribute  让用户能够贡献分析：'防止同类缺陷在代码库其他地方再次出现'；### Compiler Integration 编译器集成：'必须先清理代码库中所有同类问题'。",
+    "beforeProblem": "旧总览与 ch20-03 重复两条反馈回路；读者看不到静态分析究竟检出什么，也无法从图中推导为什么编译成功不足以说明代码正确。",
+    "whyBetter": "类型是明确改变的输入，表达式求值是可检查的中间证据，字段贡献消失是具体后果；开发者和检查贡献者的后续动作也直接对应这些证据。",
+    "limits": "这是原文的 Java 语义示例，尽管 Markdown 代码围栏误标为 C++；未修改源文。long 分支表示取高低位混合的操作，不保证每个值产生非零结果。图不提供原文未给出的修复实现，也不把所有分析都视为可阻断构建。"
+  }
+}

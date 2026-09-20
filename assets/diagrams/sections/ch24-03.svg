@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch24-03-root" class="chapter-svg cg-ch24-03" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch24-03-title ch24-03-desc">
+<title id="ch24-03-title">功能迟到，与质量阻塞不同</title>
+<desc id="ch24-03-desc">用按时就绪的 A 和迟到的 B 示意常规发车选择，再与书中因罕见方言搜索返回空白而延迟整个发布的实际案例对照。功能截止保护节奏，质量判断仍保护用户。</desc>
+<style>
+.cg-ch24-03#ch24-03-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch24-03#ch24-03-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch24-03#ch24-03-root .strong {font-weight:600}
+.cg-ch24-03#ch24-03-root .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+</style>
+<defs>
+<marker id="ch24-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch24-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch24-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch24-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start" data-box="12,8,936,464">功能迟到，与质量阻塞不同</text>
+<text x="32" y="78" class="small" text-anchor="start" data-box="12,8,936,464">A、B 是示意功能名；下方是书中实际发布决策。</text>
+<text x="32" y="124" class="strong" text-anchor="start" data-box="12,8,936,464">常规：不为迟到功能等车</text>
+<text x="490" y="124" class="strong" text-anchor="start" data-box="12,8,936,464">当前班次</text>
+<text x="770" y="124" class="strong" text-anchor="start" data-box="12,8,936,464">下一班次</text>
+<path class="line" d="M328 140L328 272"/>
+<text x="328" y="295" class="small" text-anchor="middle" data-box="12,8,936,464">截止</text>
+<text x="32" y="176" class="" text-anchor="start" data-box="12,8,936,464">A：按时验收</text>
+<path data-connector="true" d="M210 169H472" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch24-03-primary-arrow)"/>
+<rect x="478" y="145" width="148" height="50" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="552" y="179" class="" text-anchor="middle" data-box="478,145,148,50">纳入 A</text>
+<text x="352" y="245" class="" text-anchor="start" data-box="12,8,936,464">B：截止后才交</text>
+<path data-connector="true" d="M530 238H752" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch24-03-warm-arrow)"/>
+<rect x="758" y="214" width="148" height="50" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="832" y="248" class="" text-anchor="middle" data-box="758,214,148,50">B 等下一班</text>
+<text x="474" y="295" class="small" text-anchor="start" data-box="12,8,936,464">当前版本不等 B</text>
+<path class="line" d="M32 316L928 316"/>
+<text x="32" y="351" class="strong" text-anchor="start" data-box="12,8,936,464">书中案例：罕见方言搜索返回空白</text>
+<text x="32" y="386" class="small" text-anchor="start" data-box="12,8,936,464">即使受影响群体很小，仍保护搜索体验</text>
+<path data-connector="true" d="M448 374H572" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<path data-connector="true" d="M574 357V391M582 357V391" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<text x="612" y="357" class="strong" text-anchor="start" data-box="12,8,936,464">整个发布延期</text>
+<text x="612" y="391" class="small" text-anchor="start" data-box="12,8,936,464">先修复空白结果</text>
+<text x="32" y="452" class="small" text-anchor="start" data-box="12,8,936,464">按时发车不是无条件发车：明确指标阈值，并判断实际用户影响。</text>
+</svg>

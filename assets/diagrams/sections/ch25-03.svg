@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch25-03-root" class="chapter-svg cg-ch25-03" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch25-03-title ch25-03-desc">
+<title id="ch25-03-title">答复丢了，为什么不能重下单？</title>
+<desc id="ch25-03-desc">依照书中的比萨订单例子：客户端创建订单时分配 P7，甲已将该订单写入外部持久存储，但答复丢失。客户端退避并加入抖动后，向乙重试同一 P7。接口查询已有订单，核对参数后返回成功而非再创建一份订单。重建乙本身不提供去重；去重约束业务效果，退避与抖动约束重试压力。图假定订单记录与订单写入保持一致，不展示并发控制，也不保证端到端恰好一次交付。</desc>
+<style>
+.cg-ch25-03#ch25-03-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch25-03#ch25-03-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch25-03#ch25-03-root .strong {font-weight:600}
+.cg-ch25-03#ch25-03-root .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch25-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch25-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch25-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch25-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch25-03-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
+<text x="32" y="42" text-anchor="start" class="strong">答复丢了，为什么不能重下单？</text>
+<text x="32" y="78" text-anchor="start" class="small">示例：比萨订单已落库，却没收到答复；重建副本不会自动去重</text>
+<rect x="32" y="122" width="218" height="96" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="157" text-anchor="start" class="strong" data-box="32,122,218,96">客户端</text>
+<text x="48" y="192" text-anchor="start" class="" data-box="32,122,218,96">创建订单 P7</text>
+<rect x="300" y="122" width="244" height="96" rx="0" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="316" y="157" text-anchor="start" class="strong" data-box="300,122,244,96">实例甲</text>
+<text x="316" y="192" text-anchor="start" class="small danger" data-box="300,122,244,96">已写订单，答复丢失</text>
+<path data-connector="true" d="M250 170H290" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-03-secondary-arrow)"/>
+<path data-connector="true" d="M544 170H640" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-03-secondary-arrow)"/>
+<text x="592" y="152" text-anchor="middle" class="small">写入</text>
+<rect x="650" y="122" width="278" height="268" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="670" y="157" text-anchor="start" class="strong" data-box="650,122,278,268">外部持久订单记录</text>
+<path data-connector="true" d="M670 179H908" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+<text x="670" y="217" text-anchor="start" class="small" data-box="650,122,278,268">ID</text>
+<text x="760" y="217" text-anchor="start" class="small" data-box="650,122,278,268">订单</text>
+<path data-connector="true" d="M670 235H908" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+<text x="670" y="274" text-anchor="start" class="strong" data-box="650,122,278,268">P7</text>
+<text x="760" y="274" text-anchor="start" class="" data-box="650,122,278,268">比萨订单</text>
+<text x="670" y="332" text-anchor="start" class="small" data-box="650,122,278,268">同一标识对应已有订单</text>
+<text x="670" y="369" text-anchor="start" class="small" data-box="650,122,278,268">不会因换实例而消失</text>
+<path data-connector="true" d="M140 218V302" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch25-03-danger-arrow)"/>
+<text x="160" y="267" text-anchor="start" class="small danger">超时后重试</text>
+<rect x="32" y="312" width="218" height="90" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="346" text-anchor="start" class="strong" data-box="32,312,218,90">重试同一 P7</text>
+<text x="48" y="379" text-anchor="start" class="small" data-box="32,312,218,90">退避并加入抖动</text>
+<rect x="300" y="312" width="244" height="90" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="316" y="346" text-anchor="start" class="strong" data-box="300,312,244,90">实例乙：查到 P7</text>
+<text x="316" y="379" text-anchor="start" class="small" data-box="300,312,244,90">返回成功，不再创建</text>
+<path data-connector="true" d="M250 356H290" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-03-secondary-arrow)"/>
+<path data-connector="true" d="M544 356H640" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch25-03-primary-arrow)"/>
+<text x="592" y="337" text-anchor="middle" class="small">查重</text>
+<text x="32" y="438" text-anchor="start" class="small">同一 ID 去重约束业务结果；退避与抖动约束重试压力。</text>
+<text x="32" y="469" text-anchor="start" class="small">前提：去重记录与订单写入保持一致；不是端到端恰好一次保证。</text>
+</svg>

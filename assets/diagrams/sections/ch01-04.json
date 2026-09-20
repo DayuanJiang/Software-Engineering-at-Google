@@ -1,0 +1,24 @@
+{
+  "id": "ch01-04",
+  "chapter": 1,
+  "title": "编译器升级：小步推进与长期积压",
+  "summary": "规律升级结合专业知识、自动化和一致性，让后续变更更可行；长期推迟则积累隐式依赖和集中升级的负担。",
+  "enabled": true,
+  "sourceSections": [
+    "## Time and Change 时间与变化",
+    "### Example: Compiler Upgrade 示例：编译器升级"
+  ],
+  "afterParagraph": "停滞不前也是一种选择，但往往并不明智。",
+  "desktop": "assets/diagrams/sections/ch01-04.svg",
+  "mobile": "assets/diagrams/sections/ch01-04-mobile.svg",
+  "pedagogy": {
+    "action": "keep",
+    "readerQuestion": "为什么一次长期积压后的痛苦升级，不能直接证明以后都应避免升级？",
+    "expectedAnswer": "首次大升级包含多年变更、隐式依赖和缺乏经验；规律处理较小跨度并投入专业知识、自动化、一致性和 CI 策略，可让后续升级更可行，首次经历不能直接外推。",
+    "visualEncoding": "重复的小标记与长空档后的集中标记，对照变更分布在多次处理还是集中处理；位于两轨之间的持续投入区明确说明能力需要建设，而非时间自行解决问题。",
+    "sourceEvidence": "## Time and Change 时间与变化：'很容易高估下一次升级的成本'、'一次补上几年的升级'；### Example: Compiler Upgrade 示例：编译器升级：'编译器大约五年没有更新过'、'首次升级也往往比后续升级昂贵得多'。",
+    "beforeProblem": "双轨时间线已经让长时间不处理与分散处理的差别可见，并标注首次升级效应和持续投入；不是单纯罗列四项能力。",
+    "whyBetter": "保留有解释作用的时间对照，且与 ch01-03 的跨团队共享不同：此处比较跨多次升级的经验和变更跨度，不重复团队拓扑。",
+    "limits": "点的数量、间隔、菱形面积不是测量数据，不表示总成本之和、固定频率或因果效应大小。规律升级本身不保证成功；原文强调配套技术和组织投入。"
+  }
+}

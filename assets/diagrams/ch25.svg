@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch25-root" class="chapter-svg cg-ch25" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch25-title ch25-desc">
+<title id="ch25-title">换一台机器，哪些东西要接上？</title>
+<desc id="ch25-desc">示例：订单服务从故障机器甲重新调度到乙。服务名保持不变，解析地址更新，客户端跟踪变化。甲的本地磁盘和进程状态不会自动复制到乙；若订单只在甲本地，新实例取不到。故障前写入外部持久存储的订单可以重新读取，可重建的本地缓存则从空开始，延迟可能上升。外部存储自身仍需复制与故障设计，实例恢复也不等于进度恢复、幂等效果或无中断服务。</desc>
+<style>
+.cg-ch25#ch25-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch25#ch25-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch25#ch25-root .strong {font-weight:600}
+.cg-ch25#ch25-root .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch25-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch25-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch25-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch25-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch25-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="960" height="560" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
+<text x="32" y="42" text-anchor="start" class="strong">换一台机器，哪些东西要接上？</text>
+<text x="32" y="78" text-anchor="start" class="small">示例：订单服务从故障机器甲迁到乙；迁移不是搬走本地磁盘</text>
+<rect x="32" y="104" width="896" height="70" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="none" stroke-width="1.5"/>
+<text x="48" y="133" text-anchor="start" class="strong" data-box="32,104,896,70">稳定服务名：订单服务</text>
+<text x="48" y="161" text-anchor="start" class="small" data-box="32,104,896,70">解析地址会更新；客户端持续跟踪</text>
+<text x="588" y="146" text-anchor="start" class="" data-box="32,104,896,70">主机甲</text>
+<path data-connector="true" d="M684 139H804" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-secondary-arrow)"/>
+<text x="822" y="146" text-anchor="start" class="" data-box="32,104,896,70">主机乙</text>
+<rect x="32" y="200" width="330" height="182" rx="0" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="52" y="232" text-anchor="start" class="strong" data-box="32,200,330,182">机器甲（故障）</text>
+<text x="52" y="272" text-anchor="start" class="" data-box="32,200,330,182">本地缓存、进程状态</text>
+<text x="52" y="309" text-anchor="start" class="small" data-box="32,200,330,182">若订单只在本地：</text>
+<text x="52" y="343" text-anchor="start" class="small danger" data-box="32,200,330,182">新实例取不到</text>
+<rect x="598" y="200" width="330" height="182" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="618" y="232" text-anchor="start" class="strong" data-box="598,200,330,182">机器乙（新实例）</text>
+<text x="618" y="272" text-anchor="start" class="" data-box="598,200,330,182">从镜像启动，缓存为空</text>
+<text x="618" y="309" text-anchor="start" class="small" data-box="598,200,330,182">订单重新读取；缓存可重建</text>
+<text x="618" y="343" text-anchor="start" class="small" data-box="598,200,330,182">缓存重建期间延迟可能上升</text>
+<text x="480" y="253" text-anchor="middle" class="small">重新放置</text>
+<path data-connector="true" d="M372 277H588" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch25-muted-arrow)"/>
+<text x="480" y="309" text-anchor="middle" class="small">不是复制本地状态</text>
+<rect x="260" y="420" width="440" height="80" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="280" y="451" text-anchor="start" class="strong" data-box="260,420,440,80">机器之外：持久订单记录</text>
+<text x="280" y="483" text-anchor="start" class="small" data-box="260,420,440,80">保存故障前已写入的订单</text>
+<path data-connector="true" d="M164 382V460H250" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-secondary-arrow)"/>
+<text x="32" y="417" text-anchor="start" class="small">故障前写入</text>
+<path data-connector="true" d="M700 460H764V392" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-secondary-arrow)"/>
+<text x="786" y="417" text-anchor="start" class="small">重新读取</text>
+<text x="32" y="538" text-anchor="start" class="small">能找到乙、能取回订单，仍不等于请求不会重复或中断。</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch16-02" data-layout="mobile" role="img" aria-labelledby="ch16-02m-title ch16-02m-desc">
+<title id="ch16-02m-title">两类分支的终点不同</title>
+<desc id="ch16-02m-desc">非比例概念时间线：开发分支最终会合回主干，发布分支只从主干按需选取少量修复，最终停止维护，不计划再合回。区别在使用策略而非分支技术。</desc>
+<style>
+.cg-ch16-02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch16-02[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch16-02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch16-02[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:2}
+.cg-ch16-02[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch16-02[data-layout="mobile"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch16-02m-primary-arrow)}
+.cg-ch16-02[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch16-02[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch16-02[data-layout="mobile"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch16-02m-secondary-arrow)}
+.cg-ch16-02[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch16-02[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch16-02[data-layout="mobile"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch16-02m-warm-arrow)}
+.cg-ch16-02[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch16-02[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch16-02[data-layout="mobile"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch16-02m-danger-arrow)}
+.cg-ch16-02[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch16-02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch16-02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch16-02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch16-02m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">两类分支的终点不同</text>
+<text x="24" y="72" class="small" text-anchor="start">区别在预期归宿，不在分支技术</text>
+<text x="24" y="113" class="strong" text-anchor="start">开发分支：最终合回主干</text>
+<path d="M40 150H380" class="secondary-path"/>
+<circle cx="79" cy="150" r="6" class="secondary-ink"/>
+<path d="M79 150L115 215H280L333 150" class="primary-path"/>
+<circle cx="333" cy="150" r="6" class="secondary-ink"/>
+<text x="140" y="199" class="small" text-anchor="start">待合入的开发</text>
+<text x="24" y="254" class="small" text-anchor="start">存续越久，合并与定位越困难</text>
+<path d="M24 280H396" class="guide"/>
+<text x="24" y="322" class="strong" text-anchor="start">发布分支：最终停止维护</text>
+<path d="M40 358H380" class="secondary-path"/>
+<circle cx="79" cy="358" r="6" class="secondary-ink"/>
+<path d="M79 358L116 436H352" class="warm-path"/>
+<path d="M233 358V434" class="warm-path" stroke-dasharray="6 5"/>
+<circle cx="233" cy="358" r="6" class="secondary-ink"/>
+<path d="M354 422V450" class="guide"/>
+<text x="24" y="486" class="small" text-anchor="start">主干修复按需选取；不计划合回</text>
+<rect x="24" y="524" width="372" height="60" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="210.0" y="549.0" class="small" text-anchor="middle">时间线是概念示例，不按比例</text>
+<text x="210.0" y="574.0" class="small" text-anchor="middle">主干依靠测试、CI 与审查保持稳定</text>
+</svg>

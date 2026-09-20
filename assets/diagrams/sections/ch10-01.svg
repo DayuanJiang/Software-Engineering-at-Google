@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch10-01-diagram" class="chapter-svg cg-ch10-01" role="img" aria-labelledby="ch10-01-title ch10-01-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch10-01-title">发现错误，怎样进入修复？</title>
+<desc id="ch10-01-desc">据 GooWiki 案例改绘。新人照着配置失败，却未必能确认文档错了，也缺少便捷报错途径；懂得修复的人已经不再查阅教程，虚线断点表示反馈未到达维护者。改进路径把读者提交的文档缺陷送到有负责人的权威来源，通过现有变更评审修正文档，让下一位读者找到同一份修订。路径可用不代表问题会自动修复。</desc>
+<style>
+.cg-ch10-01#ch10-01-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch10-01#ch10-01-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch10-01#ch10-01-diagram .heading{font-size:26px;font-weight:600}
+.cg-ch10-01#ch10-01-diagram .strong{font-weight:600}
+.cg-ch10-01#ch10-01-diagram .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+.cg-ch10-01#ch10-01-diagram .good{fill:var(--diagram-primary,#087f6d)}
+.cg-ch10-01#ch10-01-diagram .bad{fill:var(--diagram-danger,#b54750)}
+.cg-ch10-01#ch10-01-diagram .system{fill:var(--diagram-secondary,#2f6eac)}
+</style>
+<defs><marker id="ch10-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="43" class="heading" text-anchor="start">发现错误的人，如何找到能修的人？</text>
+<text x="32" y="79" class="small" text-anchor="start">据 GooWiki 案例改绘；对照反馈断点与可用的修复路径，不泛指所有维基。</text>
+<text x="32" y="119" class="strong bad" text-anchor="start">原先：使用者与修复者错开</text>
+<text x="520" y="119" class="strong good" text-anchor="start">改进后：接回同一工程工作流</text>
+<rect x="32" y="140" width="408" height="82" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="48" y="173" class="strong" text-anchor="start" data-bounds="48 148 376 66">新人：配置没有成功</text>
+<text x="48" y="205" class="small" text-anchor="start" data-bounds="48 148 376 66">知道失败，却未必能确认文档错了</text>
+<path d="M64 224V253M64 280V315" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-dasharray="5 5" data-connector="true"/>
+<path d="M56 258L72 274M72 258L56 274" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<text x="92" y="272" class="small bad" text-anchor="start">缺少便捷的报错途径</text>
+<rect x="32" y="320" width="408" height="82" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="353" class="strong" text-anchor="start" data-bounds="48 328 376 66">熟悉系统的人不再读教程</text>
+<text x="48" y="385" class="small" text-anchor="start" data-bounds="48 328 376 66">能修的人没有接到读者的问题</text>
+<text x="32" y="452" class="bad" text-anchor="start">失败经验没有变成文档修正</text>
+<rect x="520" y="140" width="408" height="70" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="536" y="170" class="strong" text-anchor="start" data-bounds="536 144 376 62">新人提交文档缺陷</text>
+<text x="536" y="199" class="small" text-anchor="start" data-bounds="536 144 376 62">沿用已有的缺陷跟踪系统</text>
+<path d="M724 212V234" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-01-arrow)" data-connector="true"/>
+<rect x="520" y="240" width="408" height="84" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="536" y="273" class="strong" text-anchor="start" data-bounds="536 248 376 68">权威来源 + 明确负责人</text>
+<text x="536" y="305" class="small" text-anchor="start" data-bounds="536 248 376 68">读者可提变更，由负责人接手</text>
+<path d="M724 326V348" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-01-arrow)" data-connector="true"/>
+<rect x="520" y="354" width="408" height="74" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="536" y="386" class="strong" text-anchor="start" data-bounds="536 358 376 66">修正文档并接受评审</text>
+<text x="536" y="415" class="small" text-anchor="start" data-bounds="536 358 376 66">随相关代码变更一起维护</text>
+<text x="520" y="459" class="small" text-anchor="start">下一位读者能找到同一份已修订文档</text>
+</svg>

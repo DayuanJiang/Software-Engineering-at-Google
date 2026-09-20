@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-03-root" class="chapter-svg cg-ch23-03" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch23-03-title ch23-03-desc">
+  <title id="ch23-03-title">录制／重放：什么变化应让缓存失配？</title>
+  <desc id="ch23-03-desc">假设请求 format=zip、trace=a 曾录得 ZIP 响应，应用解码器只支持 ZIP。如果请求改成 format=tar，过宽匹配仍重放 ZIP，会让测试通过，却漏掉真实 TAR 响应暴露的错误。若只改无业务意义的 trace，过严匹配会导致缓存失配、测试阻塞，刷新后仍得到 ZIP 并通过。若识别 format 的实质变化，更新响应为 TAR 后重跑仍失败，才获得有用的错误信号。录制阶段访问真实后端，重放阶段自包含；封闭性不消除时间、随机数和竞态。</desc>
+  <style>
+  .cg-ch23-03#ch23-03-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23-03#ch23-03-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23-03#ch23-03-root .strong {font-weight:600}
+  .cg-ch23-03#ch23-03-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23-03#ch23-03-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23-03#ch23-03-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-03-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong" data-box="16,8,928,464">录制／重放：什么变化应让缓存失配？</text>
+  <text x="32" y="78" class="small" data-box="16,8,928,464">假设例子：曾录制 format=zip, trace=a，缓存响应 ZIP；应用解码器只支持 ZIP。</text>
+  <text x="48" y="122" class="strong" data-box="16,8,928,464">请求变动</text>
+  <text x="324" y="122" class="strong" data-box="16,8,928,464">匹配与响应</text>
+  <text x="636" y="122" class="strong" data-box="16,8,928,464">测试信号</text>
+  <rect x="32" y="143" width="896" height="82" fill="var(--diagram-danger-soft,#faecee)"/>
+  <text x="48" y="174" class="strong" data-box="32,143,270,82">format 改为 tar</text>
+  <text x="48" y="207" class="small" data-box="32,143,270,82">会改变响应格式</text>
+  <text x="324" y="174" class="" data-box="310,143,288,82">匹配过宽，仍命中</text>
+  <text x="324" y="207" class="small" data-box="310,143,288,82">重放旧 ZIP</text>
+  <path d="M593 184L620 184" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-03-arrow)"/>
+  <text x="636" y="174" class="strong bad" data-box="625,143,303,82">通过，却漏报</text>
+  <text x="636" y="207" class="small" data-box="625,143,303,82">真实 TAR 会让解码失败</text>
+  <rect x="32" y="235" width="896" height="82" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="48" y="266" class="strong" data-box="32,235,270,82">只把 trace 改为 b</text>
+  <text x="48" y="299" class="small" data-box="32,235,270,82">假设不改变业务语义</text>
+  <text x="324" y="266" class="" data-box="310,235,288,82">匹配过严，缓存失配</text>
+  <text x="324" y="299" class="small" data-box="310,235,288,82">更新后仍是 ZIP</text>
+  <path d="M593 276L620 276" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-03-arrow)"/>
+  <text x="636" y="266" class="strong pending" data-box="625,235,303,82">无关阻塞</text>
+  <text x="636" y="299" class="small" data-box="625,235,303,82">刷新后通过；产生维护负担</text>
+  <rect x="32" y="327" width="896" height="82" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="358" class="strong" data-box="32,327,270,82">format 改为 tar</text>
+  <text x="48" y="391" class="small" data-box="32,327,270,82">同第一行的实质变化</text>
+  <text x="324" y="358" class="" data-box="310,327,288,82">识别变化，更新响应</text>
+  <text x="324" y="391" class="small" data-box="310,327,288,82">改用新 TAR 重跑</text>
+  <path d="M593 368L620 368" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-03-arrow)"/>
+  <text x="636" y="358" class="strong bad" data-box="625,327,303,82">仍失败：有用信号</text>
+  <text x="636" y="391" class="small" data-box="625,327,303,82">提示检查不兼容的解码器</text>
+  <text x="32" y="450" class="small" data-box="16,8,928,464">录制访问真实后端；重放在自包含环境中。时间、随机数、竞态仍需处理。</text>
+</svg>

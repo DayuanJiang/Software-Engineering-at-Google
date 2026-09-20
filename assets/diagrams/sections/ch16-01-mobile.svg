@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch16-01" data-layout="mobile" role="img" aria-labelledby="ch16-01m-title ch16-01m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch16-01m-title">本地已有提交，同事为何拿不到</title>
+<desc id="ch16-01m-desc">DVCS 说明性例子：A 为原有代码，B 是搜索功能提交。本地提交后本地仓库有 A+B，但组织指定的 origin/main 仍只有 A。B 合入指定主干后，该主干才有 A+B，从这里同步的同事才得到 B。origin/main 的权威身份是本例组织策略，不是名称决定的；不同组织可以认定不同的权威来源。</desc>
+<style>
+.cg-ch16-01[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch16-01[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch16-01[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch16-01[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch16-01[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch16-01[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch16-01[data-layout="mobile"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2.5}
+.cg-ch16-01[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch16-01[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch16-01[data-layout="mobile"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2.5}
+.cg-ch16-01[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch16-01[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch16-01[data-layout="mobile"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2.5}
+.cg-ch16-01[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch16-01[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch16-01[data-layout="mobile"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2.5}
+</style>
+<defs>
+<marker id="ch16-01m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch16-01m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch16-01m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch16-01m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">本地已有提交，同事为何拿不到？</text>
+<text x="24" y="72" class="small" text-anchor="start">DVCS 示例：B 是搜索；以指定主干为准</text>
+<text x="111" y="116" class="strong" text-anchor="middle">本地仓库</text>
+<text x="309" y="116" class="strong" text-anchor="middle">指定主干</text>
+<text x="24" y="157" class="small" text-anchor="start">① 本地提交后</text>
+<g data-box="24,177,174,66">
+<rect x="24" y="177" width="174" height="66" rx="4" class="secondary"/>
+<text x="111.0" y="218.0" class="strong" text-anchor="middle">A + B</text>
+</g>
+<g data-box="222,177,174,66">
+<rect x="222" y="177" width="174" height="66" rx="4" class="warm"/>
+<text x="309.0" y="218.0" class="strong" text-anchor="middle">A</text>
+</g>
+<path d="M111 243V280H309V352" class="primary-line" data-connector="true" marker-end="url(#ch16-01m-primary-arrow)"/>
+<text x="243" y="269" class="small" text-anchor="start">尚无 B</text>
+<text x="24" y="325" class="small" text-anchor="start">② B 合入指定主干</text>
+<g data-box="24,355,174,66">
+<rect x="24" y="355" width="174" height="66" rx="4" class="secondary"/>
+<text x="111.0" y="396.0" class="strong" text-anchor="middle">A + B</text>
+</g>
+<g data-box="222,355,174,66">
+<rect x="222" y="355" width="174" height="66" rx="4" class="primary"/>
+<text x="309.0" y="396.0" class="strong" text-anchor="middle">A + B</text>
+</g>
+<text x="24" y="460" class="" text-anchor="start">同事此时从指定主干取得 B</text>
+<path d="M24 487L396 487" class="guide"/>
+<text x="24" y="521" class="" text-anchor="start">本地提交能力是技术；</text>
+<text x="24" y="552" class="" text-anchor="start">哪一分支算权威是组织策略。</text>
+<text x="24" y="583" class="small" text-anchor="start">不同组织可以有不同权威来源</text>
+</svg>

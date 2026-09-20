@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch15" data-layout="mobile" role="img" aria-labelledby="ch15m-title ch15m-desc">
+<title id="ch15m-title">只剩一个用户，为什么还不能关？</title>
+<desc id="ch15m-desc">书中反例的示意：应用甲和乙依赖关键基础设施，关键基础设施是旧系统的最后一个直接用户。箭头指向被依赖方；关闭旧系统可能经关键基础设施连带影响应用。建议性弃用没有期限和专门迁移投入，不能指望用户自行全部迁出。强制性弃用通常有期限，需要专门团队、迁移帮助、充分告知和执行权限；关键依赖仍可能促使调整时间表。</desc>
+<style>
+.cg-ch15[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch15[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch15[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch15[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch15[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch15[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch15[data-layout="mobile"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+.cg-ch15[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch15[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch15[data-layout="mobile"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
+.cg-ch15[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch15[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch15[data-layout="mobile"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2}
+.cg-ch15[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch15[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch15[data-layout="mobile"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2}
+</style>
+<defs>
+<marker id="ch15m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch15m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch15m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch15m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">只剩一个用户，为什么还不能关？</text>
+<text x="24" y="70" class="small" text-anchor="start">书中关键基础设施反例的示意</text>
+<g data-box="24,94,150,50">
+<rect x="24" y="94" width="150" height="50" rx="5" class="secondary"/>
+<text x="99.0" y="126.0" class="strong" text-anchor="middle">应用甲</text>
+</g>
+<g data-box="246,94,150,50">
+<rect x="246" y="94" width="150" height="50" rx="5" class="secondary"/>
+<text x="321.0" y="126.0" class="strong" text-anchor="middle">应用乙</text>
+</g>
+<path d="M99 144V161H210V178" class="primary-line" data-connector="true" marker-end="url(#ch15m-primary-arrow)"/>
+<path d="M321 144V161H210" class="primary-line" data-connector="true"/>
+<g data-box="84,180,252,50">
+<rect x="84" y="180" width="252" height="50" rx="5" class="warm"/>
+<text x="210.0" y="212.0" class="strong" text-anchor="middle">关键基础设施</text>
+</g>
+<path d="M210 230V269" class="primary-line" data-connector="true" marker-end="url(#ch15m-primary-arrow)"/>
+<text x="226" y="256" class="small" text-anchor="start">依赖</text>
+<g data-box="124,271,172,50">
+<rect x="124" y="271" width="172" height="50" rx="5" class="danger"/>
+<text x="210.0" y="303.0" class="strong" text-anchor="middle">旧系统</text>
+</g>
+<text x="24" y="352" class="" text-anchor="start">箭头指向被依赖方；只剩一个</text>
+<text x="24" y="378" class="" text-anchor="start">直接用户，仍可能连带影响甲乙。</text>
+<path d="M24 394L396 394" class="guide"/>
+<text x="24" y="427" class="strong secondary-ink" text-anchor="start">只有建议性通知</text>
+<text x="24" y="456" class="" text-anchor="start">无期限、无专门迁移投入</text>
+<text x="24" y="483" class="" text-anchor="start">希望用户自迁，不等于全部迁出。</text>
+<path d="M24 500L396 500" class="guide"/>
+<text x="24" y="533" class="strong primary-ink" text-anchor="start">强制性：团队持续帮助迁移</text>
+<text x="24" y="562" class="" text-anchor="start">通常有期限；充分告知并帮助迁移</text>
+<text x="24" y="589" class="" text-anchor="start">后有权执行，不是只发最后通牒。</text>
+<rect x="24" y="610" width="372" height="50" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="642" class="small" text-anchor="start">关键依赖未解：时间表仍可能调整</text>
+</svg>

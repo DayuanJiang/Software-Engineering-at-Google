@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch18-05" data-layout="desktop" role="img" aria-labelledby="ch18-05-title ch18-05-desc"><title id="ch18-05-title">直接使用，就直接声明依赖</title><desc id="ch18-05-desc">固定 A 调用 C.f()，符号名为示意。箭头从使用方指向依赖。两侧的 B 到 C 边均被删除；左侧 A 失去 C 而失败，右侧 A 直接声明到 C 的边，仍保有 C，不受此次依赖删除影响。严格模式会更早要求 A 直接声明 C，即使 B 到 C 的边尚在。</desc><style>.cg-ch18-05[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch18-05[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}.cg-ch18-05[data-layout="desktop"] .strong{font-weight:600}</style><defs>
+<marker id="ch18-05-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18-05-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18-05-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18-05-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18-05-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch18-05-box-1" x="0" y="0" width="960" height="480" rx="6" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">
+<tspan x="32" y="42">直接使用，就直接声明依赖</tspan>
+</text>
+<text x="32" y="76" class="small" text-anchor="start">
+<tspan x="32" y="76">固定 A 的代码调用 C.f()（符号名为示意）；箭头：使用方 → 依赖</tspan>
+</text>
+<text x="32" y="126" class="strong" text-anchor="start">
+<tspan x="32" y="126">隐式借用传递依赖</tspan>
+</text>
+<circle cx="84" cy="230" r="32" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<text x="84" y="238" class="strong" text-anchor="middle">
+<tspan x="84" y="238">A</tspan>
+</text>
+<circle cx="240" cy="230" r="32" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2"/>
+<text x="240" y="238" class="strong" text-anchor="middle">
+<tspan x="240" y="238">B</tspan>
+</text>
+<circle cx="396" cy="230" r="32" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<text x="396" y="238" class="strong" text-anchor="middle">
+<tspan x="396" y="238">C</tspan>
+</text>
+<path d="M118 230H206" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch18-05-secondary-arrow)"/>
+<path d="M274 230H362" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch18-05-danger-arrow)" stroke-dasharray="7 5"/>
+<path d="M309 220L329 240M329 220L309 240" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="3"/>
+<text x="283" y="193" class="small" text-anchor="start">
+<tspan x="283" y="193">已移除</tspan>
+</text>
+<text x="32" y="362" class="small" text-anchor="start">
+<tspan x="32" y="362">A 没改，却失去 C：构建失败</tspan>
+</text>
+<text x="512" y="126" class="strong" text-anchor="start">
+<tspan x="512" y="126">显式声明</tspan>
+</text>
+<circle cx="564" cy="230" r="32" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<text x="564" y="238" class="strong" text-anchor="middle">
+<tspan x="564" y="238">A</tspan>
+</text>
+<circle cx="720" cy="230" r="32" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2"/>
+<text x="720" y="238" class="strong" text-anchor="middle">
+<tspan x="720" y="238">B</tspan>
+</text>
+<circle cx="876" cy="230" r="32" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<text x="876" y="238" class="strong" text-anchor="middle">
+<tspan x="876" y="238">C</tspan>
+</text>
+<path d="M598 230H686" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch18-05-secondary-arrow)"/>
+<path d="M754 230H842" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch18-05-danger-arrow)" stroke-dasharray="7 5"/>
+<path d="M789 220L809 240M809 220L789 240" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="3"/>
+<text x="763" y="193" class="small" text-anchor="start">
+<tspan x="763" y="193">已移除</tspan>
+</text>
+<path d="M564 263V312H876V263" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch18-05-primary-arrow)"/>
+<text x="512" y="362" class="small" text-anchor="start">
+<tspan x="512" y="362">A 仍保有 C：不受此次删除影响</tspan>
+</text>
+<rect id="ch18-05-box-2" x="32" y="416" width="896" height="48" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="443" class="small" text-anchor="start" data-owner="ch18-05-box-2">
+<tspan x="48" y="443">严格模式更早报错：即使 B → C 尚在，A 调用 C.f() 也必须声明 A → C。</tspan>
+</text>
+</svg>

@@ -1,0 +1,29 @@
+{
+  "chapter": 16,
+  "title": "主干修复不等于发布版自动更新",
+  "summary": "示例中搜索功能合回主干，发布版 C 只选择性接收修复 F，不带入新功能 N，最终弃用。提交的权威位置、依赖的指定版本与物理仓库数量是不同问题。",
+  "enabled": true,
+  "sourceSections": [
+    "Source of Truth 权威来源",
+    "Work in Progress Is Akin to a Branch  正在进行的工作类似于一个分支",
+    "Dev Branches  开发分支",
+    "Release Branches  发布分支",
+    "The “One-Version” Rule  “单版本”规则",
+    "(Nearly) No Long-Lived Branches  (几乎)没有长期存在的分支",
+    "What About Release Branches?  发布分支呢？",
+    "Monorepos    单体代码仓库"
+  ],
+  "kind": "flow",
+  "desktop": "assets/diagrams/ch16.svg",
+  "mobile": "assets/diagrams/ch16-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "修复进入主干后，已经发布的代码是否自动包含它？为什么开发分支合回而发布分支不合回？",
+    "expectedAnswer": "短期开发工作的目标是合入组织认可的主干。发布分支保留发布基线，按需从主干选择少量修复，不自动带入后续新功能，最终弃用而不计划整支合回。依赖的新版本选择和提交权威位置由策略明确，不由物理仓库数量决定。",
+    "visualEncoding": "用 A、B、C、F、N 标记示例状态；搜索工作的支线返回 B，发布支线从 C 离开主干，只有 F 的虚线进入该支线，C+F 状态后以端帽终止，N 留在主干。下方问题与答案分开指出权威位置、依赖选择、物理布局的关系。",
+    "sourceEvidence": "### Release Branches  发布分支：只做最小范围、有针对性的合并；#### What About Release Branches?  发布分支呢？：不要计划再合回主干；### Work in Progress Is Akin to a Branch  正在进行的工作类似于一个分支：每一项尚在进行的工作，都相当于一个分支；### Source of Truth 权威来源：工作进入该仓库的主干分支，才算完成；### The “One-Version” Rule  “单版本”规则：添加新依赖时限制可选版本；## Monorepos    单体代码仓库：关键不在于是否采用单体代码仓库。",
+    "beforeProblem": "原图用匿名提交和抽象原则说明分支，没有显示一次选择性合并究竟改变哪个版本、留下什么。其分支时间线与 ch16-02 重复。",
+    "whyBetter": "读者可以沿连接线判断发布版包含 C 和 F 而不包含 N，并对照开发支线的回归与发布支线的终止；概览承接分支解释后可退役重复的 ch16-02。",
+    "limits": "A、B、C、F、N 与搜索功能是说明性例子，不是书中的真实提交，也不表示时间或提交数量。图示按需使用发布分支的工作流，不要求持续部署团队创建发布分支；不保证合入主干即无缺陷。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ch23-02",
+  "chapter": 23,
+  "title": "两个提交前通过，为什么组合后失败？",
+  "summary": "假设配置变更 A 改用 v2，客户端变更 B 只保留 v1；两者在同一旧基线上各自通过同一测试，组合却失败。不同文件无文本冲突，不代表没有语义冲突；提交后必须检查实际组合并处置失败。",
+  "sourceSections": ["#### Why presubmit isn’t enough 为什么仅靠提交前测试还不够", "#### Presubmit versus post-submit 提交前测试与提交后测试"],
+  "afterParagraph": "只要有适当的处理机制，提交后测试就可以耗时更长，也可以容忍一定的不稳定性。",
+  "desktop": "assets/diagrams/sections/ch23-02.svg",
+  "mobile": "assets/diagrams/sections/ch23-02-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "改动不同文件且各自提交前通过的 A 和 B，为什么合在一起仍会失败？",
+    "expectedAnswer": "它们在同一旧基线上分别测试，实际提交的 A+B 未被这两次运行测试。配置改用 v2 与客户端删除 v2 支持单独均可通过，组合却要求客户端处理已删除的协议。",
+    "visualEncoding": "二维组合矩阵用配置版本作行、客户端支持集作列；旧基线、仅 A、仅 B 三格通过，A+B 一格失败。读者按行列交点可自行推导兼容性，而不必接受未解释的失败箭头。",
+    "sourceEvidence": "#### Why presubmit isn’t enough 为什么仅靠提交前测试还不够：两项变更修改的是完全不同的文件，组合起来也可能导致测试失败；较小代码仓库或项目的 CI 系统可以将提交串行化。#### Presubmit versus post-submit 提交前测试与提交后测试：只运行快速、可靠的测试。",
+    "beforeProblem": "原图只标记文件 A、文件 B 和语义不兼容，没有给出任何实际不兼容条件，读者无法从图中推导组合为何失败。",
+    "whyBetter": "使用同一个明确测试断言排除了以测试覆盖不同来解释结果的含混；矩阵显示未测组合，而不是暗示两个绿色结论可以相加。",
+    "limits": "协议及文件角色是解释空中碰撞的假设例子，不是 Google 的历史事故。例子假设两项测试针对同一旧基线且未串行复验。提交后也不自动证明根因，需要定位和处置。"
+  }
+}

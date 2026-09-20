@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22-04-root" class="chapter-svg cg-ch22-04" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch22-04-title ch22-04-desc">
+  <title id="ch22-04-title">谁审查，取决于缺什么证据</title>
+  <desc id="ch22-04-desc">以类型改名为例：符合既定替换模式的分片可由全局审批人的工具批准；冲突后出现额外行为修改时需人工核查；依赖项目特有行为时需本地所有者提供背景。迁移授权并不等于每个分片已获批准。 reset() 与析构时机依赖是根据原文异常和行为依赖概念构造的教学案例，不是原书报告的具体缺陷。图示并非穷尽所有审查路径，也不授权跳过测试或任意项目检查；全局审批人机制依赖原文的权限与专业知识条件。</desc>
+  <style>
+.cg-ch22-04#ch22-04-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:24px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22-04#ch22-04-root .small { font-size:20px; fill:var(--diagram-muted,#686868); }
+.cg-ch22-04#ch22-04-root .strong { font-weight:600; }
+.cg-ch22-04#ch22-04-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22-04#ch22-04-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22-04#ch22-04-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22-04#ch22-04-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22-04-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22-04-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22-04-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22-04-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22-04-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)" />
+  <text x="32" y="42" text-anchor="start" class="strong">谁审查，取决于缺什么证据</text>
+  <text x="32" y="78" text-anchor="start" class="small">示意：已建立别名，预期只把 scoped_ptr 改名为 std::unique_ptr</text>
+  <rect x="32" y="100" width="374" height="84" fill="var(--diagram-primary-soft,#e5f4ee)" />
+  <text x="48" y="132" text-anchor="start" class="strong" data-box="32,100,374,84">只改类型名称</text>
+  <text x="48" y="164" text-anchor="start" class="small" data-box="32,100,374,84">与预期替换模式一致</text>
+  <path d="M417 142L459 142" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch22-04-primary-arrow)" data-connector="[[417, 142], [459, 142]]" />
+  <text x="480" y="131" text-anchor="start" class="strong">全局审批人：模式核对</text>
+  <text x="480" y="164" text-anchor="start" class="small">专家与作者确定模式，匹配才自动批准</text>
+  <rect x="32" y="198" width="374" height="84" fill="var(--diagram-warm-soft,#fff3dc)" />
+  <text x="48" y="230" text-anchor="start" class="strong" data-box="32,198,374,84">冲突处理后多出 reset()</text>
+  <text x="48" y="262" text-anchor="start" class="small" data-box="32,198,374,84">已超出纯改名模式</text>
+  <path d="M417 240L459 240" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch22-04-warm-arrow)" data-connector="[[417, 240], [459, 240]]" />
+  <text x="480" y="229" text-anchor="start" class="strong">全局审批人：人工核查</text>
+  <text x="480" y="262" text-anchor="start" class="small">检查额外修改的原因，不能照单批准</text>
+  <rect x="32" y="296" width="374" height="84" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+  <text x="48" y="328" text-anchor="start" class="strong" data-box="32,296,374,84">项目依赖特定析构时机？</text>
+  <text x="48" y="360" text-anchor="start" class="small" data-box="32,296,374,84">仅懂库的规则还不够</text>
+  <path d="M417 338L459 338" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch22-04-secondary-arrow)" data-connector="[[417, 338], [459, 338]]" />
+  <text x="480" y="327" text-anchor="start" class="strong">本地所有者：核查行为背景</text>
+  <text x="480" y="360" text-anchor="start" class="small">需要项目知识，而不只是批准权限</text>
+  <path d="M32 399L928 399" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="32" y="430" text-anchor="start" class="strong">方案授权 ≠ 分片批准；作者回应审查意见，提交前仍要通过项目检查。</text>
+  <text x="32" y="464" text-anchor="start" class="small">项目的既有检查失败由本地所有者负责，不让迁移作者替每个项目清理。</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch01-04" role="img" aria-labelledby="ch01-04-title ch01-04-desc">
+  <title id="ch01-04-title">编译器升级：小步推进与长期积压</title>
+  <desc id="ch01-04-desc">双轨时间线对比规律的小步升级与长期推迟。反复升级结合专业知识、自动化、整合与一致性以及 CI 策略，可减少变更跨度和代码对实现细节的依赖。长期推迟会积累隐式依赖，缺少经验的团队还要集中处理多年变更。首次升级往往更昂贵；标记仅为示意，不代表实测成本、次数或固定频率。</desc>
+  <style>
+    .cg-ch01-04[viewBox="0 0 960 480"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-04[viewBox="0 0 960 480"] .strong {font-weight:600}
+    .cg-ch01-04[viewBox="0 0 960 480"] .minor {font-size:20px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-04[viewBox="0 0 960 480"] .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:2}
+    .cg-ch01-04[viewBox="0 0 960 480"] .regular {fill:var(--diagram-primary,#087f6d)}
+    .cg-ch01-04[viewBox="0 0 960 480"] .deferred {fill:var(--diagram-danger,#b54750)}
+  </style>
+  <defs>
+    <marker id="ch01-04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#b9c9c0)"/>
+    </marker>
+  </defs>
+  <rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="44" class="strong">编译器升级：小步推进与长期积压</text>
+  <text x="578" y="89" class="minor" text-anchor="middle">时间推移（示意）</text>
+  <path d="M240 107H912" class="line" marker-end="url(#ch01-04-arrow)"/>
+
+  <text x="32" y="167" class="strong">小步升级</text>
+  <text x="32" y="200" class="minor">规律采用新版本</text>
+  <path d="M250 170H904" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="3"/>
+  <g class="regular">
+    <circle cx="260" cy="170" r="10"/>
+    <circle cx="416" cy="170" r="10"/>
+    <circle cx="572" cy="170" r="10"/>
+    <circle cx="728" cy="170" r="10"/>
+    <circle cx="884" cy="170" r="10"/>
+  </g>
+  <text x="240" y="212" class="minor">相邻变更较少，代码更容易再次升级</text>
+  <text x="32" y="268" class="strong">持续投入</text>
+  <rect x="240" y="234" width="672" height="56" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="260" y="270">专业知识</text>
+  <text x="420" y="270">自动化</text>
+  <text x="552" y="270">整合与一致性</text>
+  <text x="760" y="270">CI 与策略</text>
+
+  <text x="32" y="349" class="strong">长期推迟</text>
+  <text x="32" y="382" class="minor">多年变更一起处理</text>
+  <text x="240" y="329" class="minor">隐式依赖积累 · 缺少升级经验</text>
+  <path d="M250 352H856" class="line" stroke-dasharray="8 7"/>
+  <path d="M878 330L900 352L878 374L856 352Z" class="deferred"/>
+  <text x="904" y="406" text-anchor="end" class="strong">集中升级更痛苦</text>
+  <path d="M32 427H928" class="line"/>
+  <text x="32" y="459" class="minor">首次升级往往更昂贵；图示不代表实测成本或固定升级频率。</text>
+</svg>

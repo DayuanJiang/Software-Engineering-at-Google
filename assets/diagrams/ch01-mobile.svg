@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch01" data-layout="mobile" role="img" aria-labelledby="ch01m-title ch01m-desc">
+  <title id="ch01m-title">有新版本，就该升级吗？</title>
+  <desc id="ch01m-desc">章节问题图。剩余维护生命周期与使用方适配工作共同影响升级取舍。当前价值值得成本时实施并验证；暂不值得时可推迟，但应明确递延成本。两条路径都以前提为基础：仍然具备变更能力。选择不升级不等于根本无法升级。新数据或寿命预期改变后应重审决策。这不是固定升级频率或项目价值排名。</desc>
+  <style>
+    .cg-ch01[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01[data-layout="mobile"] .strong {font-weight:600}
+    .cg-ch01[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01[data-layout="mobile"] .metric {font-size:28px;font-weight:600}
+    .cg-ch01[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d)}
+    .cg-ch01[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750)}
+  </style>
+  <defs>
+    <marker id="ch01m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch01m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch01m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+    <marker id="ch01m-line-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#b9c9c0)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="680" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="38" class="strong" text-anchor="start">有新版本，就该升级吗？</text>
+  <text x="24" y="70" class="small" text-anchor="start">先看使用期与适配成本</text>
+  <path d="M26 98V156" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="4"/>
+  <text x="44" y="119" class="strong" text-anchor="start">时间：还要维护多久？</text>
+  <text x="44" y="150" class="small" text-anchor="start">一次性脚本，还是长期服务？</text>
+  <path d="M26 184V242" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="4"/>
+  <text x="44" y="205" class="strong" text-anchor="start">规模：多少使用方要适配？</text>
+  <text x="44" y="236" class="small" text-anchor="start">各自迁移，还是共享自动化？</text>
+  <path d="M210 250V268" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch01m-primary-arrow)"/>
+  <path d="M24 334L210 270L396 334L210 398Z" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+  <text x="210" y="327" class="strong" text-anchor="middle">当前升级价值</text>
+  <text x="210" y="356" class="" text-anchor="middle">值得所需成本吗？</text>
+  <path d="M119 367L112 416" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch01m-primary-arrow)"/>
+  <path d="M301 367L308 416" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch01m-warm-arrow)"/>
+  <text x="90" y="410" class="small" text-anchor="end">是</text>
+  <text x="396" y="410" class="small" text-anchor="end">暂时不是</text>
+  <text x="112" y="458" class="strong" text-anchor="middle">实施并验证</text>
+  <text x="308" y="458" class="strong" text-anchor="middle">推迟并记成本</text>
+  <rect x="24" y="501" width="372" height="100" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="42" y="536" class="strong" text-anchor="start">前提是能改</text>
+  <text x="42" y="572" class="" text-anchor="start">选择不改 ≠ 根本改不了</text>
+  <text x="210" y="643" class="small" text-anchor="middle">新数据出现，再审视这次取舍</text>
+</svg>

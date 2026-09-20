@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch04-02" data-layout="desktop" role="img" aria-labelledby="ch04-02-title ch04-02-desc">
+<title id="ch04-02-title">同样改招聘，入职之后呢？</title>
+<desc id="ch04-02-desc">以书中希望招聘更多女性的经理为例，两条路径共用改善招聘渠道这一输入。若支持与成长机会的缺口没有改变，留任和晋升风险仍未解决。另一条路径将心理安全、支持与机会分配纳入审视，再跟踪实际留任与成长并修正做法。这是条件对照，不是实验结果，也不保证任何性别的表现、去留或晋升。</desc>
+<style>
+.cg-ch04-02[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch04-02[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch04-02[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<defs>
+<marker id="ch04-02-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch04-02-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch04-02-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch04-02-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" text-anchor="start" class="strong">同样改招聘，入职之后呢？</text>
+<text x="32" y="79" text-anchor="start" class="small">书中例子：经理希望招聘更多女性。两路的招聘改进起点相同。</text>
+<g id="ch04-02-shared-input" data-box="32,202,230,123">
+<rect x="32" y="202" width="230" height="123" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="147" y="240" text-anchor="middle" class="strong">改善招聘渠道</text>
+<text x="147" y="278" text-anchor="middle" class="small">识别优秀女性候选人</text>
+<text x="147" y="307" text-anchor="middle" class="small">还不等于解决留任</text>
+</g>
+<polyline data-connector="true" points="268,263 290,263 290,191 316,191" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-02-arrow-muted)"/>
+<polyline data-connector="true" points="290,263 290,374 316,374" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-02-arrow-muted)"/>
+<text x="322" y="120" text-anchor="start" class="strong">若只改入口</text>
+<g id="ch04-02-unchanged" data-box="322,142,294,103">
+<rect x="322" y="142" width="294" height="103" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="469" y="182" text-anchor="middle" class="">入职后仍缺支持</text>
+<text x="469" y="219" text-anchor="middle" class="">成长机会仍被忽视</text>
+</g>
+<polyline data-connector="true" points="622,191 673,191" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-02-arrow-danger)"/>
+<g id="ch04-02-unresolved" data-box="679,142,249,103">
+<rect x="679" y="142" width="249" height="103" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="803.5" y="182" text-anchor="middle" class="strong">留任、晋升风险</text>
+<text x="803.5" y="219" text-anchor="middle" class="">没有随招聘解决</text>
+</g>
+<text x="322" y="302" text-anchor="start" class="strong">把审视范围扩到入职后</text>
+<g id="ch04-02-expanded" data-box="322,325,294,103">
+<rect x="322" y="325" width="294" height="103" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="469" y="365" text-anchor="middle" class="">心理安全与团队支持</text>
+<text x="469" y="402" text-anchor="middle" class="">成长机会如何分配？</text>
+</g>
+<polyline data-connector="true" points="622,374 673,374" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-02-arrow-primary)"/>
+<g id="ch04-02-observe" data-box="679,325,249,103">
+<rect x="679" y="325" width="249" height="103" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="803.5" y="365" text-anchor="middle" class="strong">跟踪留任与成长</text>
+<text x="803.5" y="402" text-anchor="middle" class="">用结果修正做法</text>
+</g>
+<text x="32" y="465" text-anchor="start" class="small">条件对照，不预测任何性别的表现或去留；审视这些事项也不等于证明公平。</text>
+</svg>

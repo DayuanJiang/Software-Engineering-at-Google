@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch16-03" data-layout="mobile" role="img" aria-labelledby="ch16-03m-title ch16-03m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch16-03m-title">只新增库 B，为何拉入两版 Abseil</title>
+<desc id="ch16-03m-desc">示例依赖图：箭头从使用方指向依赖。应用原本经库 A 只引入 Abseil 原版。虚线是新增的应用到库 B 的依赖；B 依赖未改名的 Abseil 分叉。新增后同一程序拉入两版同名符号但实现不匹配的库，可能构建失败或出现运行时缺陷。这不是指仓库中暂时存放两个版本就一定会冲突。</desc>
+<style>
+.cg-ch16-03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch16-03[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch16-03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch16-03[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch16-03[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch16-03[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch16-03[data-layout="mobile"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2.5}
+.cg-ch16-03[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch16-03[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch16-03[data-layout="mobile"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2.5}
+.cg-ch16-03[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch16-03[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch16-03[data-layout="mobile"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2.5}
+.cg-ch16-03[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch16-03[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch16-03[data-layout="mobile"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2.5}
+</style>
+<defs>
+<marker id="ch16-03m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch16-03m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch16-03m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch16-03m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">只新增 B，为何拉入两版 Abseil？</text>
+<text x="24" y="72" class="small" text-anchor="start">示例；箭头从使用方指向依赖</text>
+<g data-box="90,100,240,58">
+<rect x="90" y="100" width="240" height="58" rx="4" class="warm"/>
+<text x="210.0" y="137.0" class="strong" text-anchor="middle">应用</text>
+</g>
+<path d="M153 158V181H111V238" class="secondary-line" data-connector="true" marker-end="url(#ch16-03m-secondary-arrow)"/>
+<path d="M267 158V181H374V238" class="danger-line" data-connector="true" marker-end="url(#ch16-03m-danger-arrow)" stroke-dasharray="6 5"/>
+<text x="28" y="218" class="small" text-anchor="start">原有依赖</text>
+<text x="224" y="218" class="small danger-ink" text-anchor="start">新增依赖 B</text>
+<g data-box="24,241,174,56">
+<rect x="24" y="241" width="174" height="56" rx="4" class="secondary"/>
+<text x="111.0" y="277.0" class="strong" text-anchor="middle">库 A</text>
+</g>
+<g data-box="222,241,174,56">
+<rect x="222" y="241" width="174" height="56" rx="4" class="danger"/>
+<text x="309.0" y="277.0" class="strong" text-anchor="middle">库 B</text>
+</g>
+<path d="M111 297V341" class="secondary-line" data-connector="true" marker-end="url(#ch16-03m-secondary-arrow)"/>
+<path d="M309 297V341" class="danger-line" data-connector="true" marker-end="url(#ch16-03m-danger-arrow)"/>
+<g data-box="24,344,174,86">
+<rect x="24" y="344" width="174" height="86" rx="4" class="secondary"/>
+<text x="111.0" y="387.0" class="strong" text-anchor="middle">Abseil 原版</text>
+<text x="111.0" y="416.0" class="small" text-anchor="middle">原有符号</text>
+</g>
+<g data-box="222,344,174,86">
+<rect x="222" y="344" width="174" height="86" rx="4" class="danger"/>
+<text x="309.0" y="387.0" class="strong" text-anchor="middle">Abseil 分叉</text>
+<text x="309.0" y="416.0" class="small" text-anchor="middle">名称未改</text>
+</g>
+<text x="24" y="467" class="small" text-anchor="start">新增前：只引入原版</text>
+<text x="24" y="497" class="small" text-anchor="start">新增后：同名符号有两种实现</text>
+<path d="M24 516L396 516" class="guide"/>
+<text x="24" y="547" class="" text-anchor="start">同一程序混用两版，可能</text>
+<text x="24" y="578" class="" text-anchor="start">构建失败或出现运行时缺陷。</text>
+</svg>

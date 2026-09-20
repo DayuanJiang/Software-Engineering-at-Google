@@ -1,0 +1,30 @@
+{
+  "chapter": 22,
+  "title": "同一项迁移，不是同一次提交",
+  "summary": "以已建立类型别名的迁移为示例：项目甲已改名，乙仍在审查，丙遇到冲突；各分片独立提交，整体迁移尚未完成。兼容别名支持中间态，但仍有旧引用时不能删除别名。",
+  "enabled": true,
+  "sourceSections": [
+    "What Is a Large-Scale Change? 什么是大规模变更？",
+    "Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr",
+    "Change Creation 变更创建",
+    "Sharding and Submitting  分片与提交",
+    "Testing 测试",
+    "Mailing reviewers  邮件送审",
+    "Reviewing 审查",
+    "Submitting 提交",
+    "Cleanup  清理"
+  ],
+  "kind": "state-map",
+  "desktop": "assets/diagrams/ch22.svg",
+  "mobile": "assets/diagrams/ch22-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "项目甲已提交而乙、丙仍未提交时，同一项迁移处于什么状态，旧别名能否删除？",
+    "expectedAnswer": "LSC 的修改逻辑相关，但实际无法作为单一原子单元提交。示例在旧类型已成为新类型别名之后，甲可改为新名，乙、丙可暂留旧名；各片独立推进不等于全局完成。此例以移除旧别名为目标，旧引用仍存在时不能收尾删除。",
+    "visualEncoding": "共同目标的括线覆盖三个项目行；每行单独列出主干上的名称和分片状态。新旧名称并存由共同别名条件支撑，乙、丙的旧名与底部不得删除别名的条件对应。行是分片，不是流水线阶段或耗时刻度。",
+    "sourceEvidence": "## What Is a Large-Scale Change? 什么是大规模变更？: 逻辑上相互关联，却无法在实际操作中作为一个原子单元提交。##### Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr: 先将 scoped_ptr 改为 std::unique_ptr 的类型别名。### Sharding and Submitting  分片与提交: 根据项目边界和代码所有权规则。### Cleanup  清理: 不同的大规模变更对完成的定义不同。",
+    "beforeProblem": "原图把三条相同的测试、送审、提交流水线并排展示，只在注释中要求独立性，没有显示部分提交后主干中的实际状态，也容易把一次迁移误读为一个同时完成的动作。",
+    "whyBetter": "读者可直接检查甲的成功、乙的待审、丙的冲突与各自主干代码，并推导为何局部成功不等于迁移完成，兼容性为何是分片独立推进的前提。",
+    "limits": "三个项目和状态是教学示意，不是原书的真实项目或进度数据。假设别名准备与行为兼容工作已完成、三个改名分片无相互依赖。不证明任意回滚都安全，也不要求所有 LSC 都清除全部旧引用。"
+  }
+}

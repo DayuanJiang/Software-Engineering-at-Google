@@ -1,0 +1,26 @@
+{
+  "chapter": 21,
+  "title": "依赖更新：谁能验证受影响的用法？",
+  "summary": "沿依赖的反向路径查找受影响测试，并用组织可见性边界区分上游能验证的用法与私有使用方必须补充的证据；本地通过不是下游兼容证明。",
+  "enabled": true,
+  "sourceSections": [
+    "Why Is Dependency Management So Difficult?  为什么依赖管理如此困难？",
+    "Conflicting Requirements and Diamond Dependencies  要求冲突与菱形依赖",
+    "Conclusion  总结",
+    "Live at Head  直接使用最新版本",
+    "Dependency Management with Infinite Resources  无限资源下的依赖管理"
+  ],
+  "kind": "dependency",
+  "desktop": "assets/diagrams/ch21.svg",
+  "mobile": "assets/diagrams/ch21-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "libbase 本地测试通过后，为什么还要查找 liba 与私有 libuser 的测试，谁能运行它们？",
+    "expectedAnswer": "改动的影响取决于下游具体用法。上游可沿反向依赖查找可见使用方并运行测试，但无法从自身测试推断私有使用方兼容；使用方需要补充验证，必要变更还需迁移协调或工具。Live at Head 依赖这些条件，不是普适的最新版本策略。",
+    "visualEncoding": "实线从使用方指向依赖，节点明确写出调用 Foo 和经 liba 使用结果；反向虚线把候选改动连回受影响使用方。虚线边界把私有用法与上游可见项目分开，下方比较本地证据与下游证据。",
+    "sourceEvidence": "### Live at Head  直接使用最新版本：'通过测试和 CI，对能够看到的依赖方进行实际验证'、'这类工具对闭源的下游使用方至关重要'；## Dependency Management with Infinite Resources  无限资源下的依赖管理：'不提供反向边，也就是哪些项目依赖它'。",
+    "beforeProblem": "旧概览用仅接受 v1/v2 的菱形重复原书图21-1和章节图，未展示如何取得使用方证据，也未呈现可见性对更新责任的影响。",
+    "whyBetter": "可从箭头方向和组织边界读出验证范围及责任缺口；本地测试与受影响使用方测试的差异不再只是一句测试建议。",
+    "limits": "这是组织可见性的示意网络，不声称所有开源依赖只形成一条链。Foo 仅为调用示意；测试受覆盖率与可见性限制，不构成全生态兼容证明，也不证明 Live at Head 可跨组织普适运作。"
+  }
+}

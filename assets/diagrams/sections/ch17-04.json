@@ -1,0 +1,21 @@
+{
+  "id": "ch17-04",
+  "chapter": 17,
+  "title": "工作区结果不是基线与改动的并集",
+  "summary": "查询 OldApi 的示例中，基线中的 a.cc 被修改、d.cc 被删除，只有未修改的 b.cc 和新增的 c.cc 命中；更新的 head 也不能替代同步快照。",
+  "enabled": true,
+  "sourceSections": ["### 搜索索引", "### Completeness: Head Versus Branches Versus All History Versus Workspaces 完整性：最新版本、分支、完整历史与工作区"],
+  "afterParagraph": "工作区索引必须准确反映工作区的当前状态，才有价值。",
+  "desktop": "assets/diagrams/sections/ch17-04.svg",
+  "mobile": "assets/diagrams/sections/ch17-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "工作区把 a.cc 改成 NewApi、删除 d.cc、增加 c.cc 后，为什么搜索 OldApi 只该返回 b.cc 和 c.cc？",
+    "expectedAnswer": "历史索引只负责工作区同步快照中未修改的文件；本地改动按当前状态搜索。修改替代基线内容，删除不再命中，新增可命中，更新的 head 不能混入该工作区。",
+    "visualEncoding": "每个文件逐行对照同步快照、工作区覆盖状态和最终命中；a.cc、d.cc 的旧命中被排除，b.cc 保留、c.cc 加入；独立提示 head 新增 h.cc 不在同步快照中。",
+    "sourceEvidence": "搜索索引：未修改的文档通过历史索引搜索，范围隐式限定在工作区所同步的代码仓库状态；修改通过监听文件变更保持同步并采用暴力搜索。Completeness: Head Versus Branches Versus All History Versus Workspaces 完整性：最新版本、分支、完整历史与工作区：工作区索引必须准确反映当前状态。",
+    "beforeProblem": "原图以加号或两条合流箭头表示基线加改动，却没有说明修改和删除应遮蔽旧匹配，容易让人误以为结果直接求并集。",
+    "whyBetter": "四种文件状态给出能手工验证的结果集合，并用 head 独有文件作为混错版本的反例。",
+    "limits": "文件名、API 名及快照 S 为示例；覆盖规则是从只查未修改基线及当前工作区状态推导的行为，不声称某种内部合并算法；未承诺语义交叉引用也与工作区同步。"
+  }
+}

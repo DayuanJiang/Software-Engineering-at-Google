@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch01-04" role="img" aria-labelledby="ch01-04m-title ch01-04m-desc">
+  <title id="ch01-04m-title">编译器升级：小步推进与长期积压</title>
+  <desc id="ch01-04m-desc">上方时间线表示经常进行小步升级，相邻变更更少；专业知识、自动化、整合与一致性和 CI 策略支撑反复升级，代码更少依赖实现细节。下方虚线表示长期推迟，隐式依赖积累且经验不足，多年变更集中处理更痛苦。首次升级往往更昂贵。标记仅为示意，不表示实测成本、次数或固定频率。</desc>
+  <style>
+    .cg-ch01-04[viewBox="0 0 420 600"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-04[viewBox="0 0 420 600"] .strong {font-weight:600}
+    .cg-ch01-04[viewBox="0 0 420 600"] .minor {font-size:19px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-04[viewBox="0 0 420 600"] .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:2}
+    .cg-ch01-04[viewBox="0 0 420 600"] .regular {fill:var(--diagram-primary,#087f6d)}
+  </style>
+  <rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="40" class="strong">编译器升级：小步与积压</text>
+  <path d="M24 64H396" class="line"/>
+  <text x="24" y="103" class="strong">经常小步升级</text>
+  <text x="24" y="135" class="minor">相邻升级的变更更少</text>
+  <path d="M34 175H382" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="3"/>
+  <g class="regular">
+    <circle cx="44" cy="175" r="9"/>
+    <circle cx="126" cy="175" r="9"/>
+    <circle cx="208" cy="175" r="9"/>
+    <circle cx="290" cy="175" r="9"/>
+    <circle cx="372" cy="175" r="9"/>
+  </g>
+  <text x="210" y="212" text-anchor="middle" class="minor">时间推移（示意）</text>
+  <rect x="24" y="235" width="372" height="101" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="44" y="270">专业知识</text>
+  <text x="246" y="270">自动化</text>
+  <text x="44" y="309">整合与一致性</text>
+  <text x="246" y="309">CI 与策略</text>
+  <text x="24" y="369">代码更少依赖实现细节</text>
+  <path d="M24 390H396" class="line"/>
+  <text x="24" y="427" class="strong">长期推迟升级</text>
+  <path d="M34 460H352" class="line" stroke-dasharray="8 7"/>
+  <path d="M372 440L392 460L372 480L352 460Z" fill="var(--diagram-danger,#b54750)"/>
+  <text x="24" y="507" class="minor">隐式依赖积累，升级经验不足</text>
+  <text x="24" y="538" class="minor">多年变更集中处理，更痛苦</text>
+  <path d="M24 554H396" class="line"/>
+  <text x="24" y="582" class="minor">首次升级往往比后续升级更昂贵</text>
+</svg>

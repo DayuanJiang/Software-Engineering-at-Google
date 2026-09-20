@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22m-root" class="chapter-svg cg-ch22" width="420" height="680" viewBox="0 0 420 680" role="img" aria-labelledby="ch22m-title ch22m-desc">
+  <title id="ch22m-title">同一项迁移，不是同一次提交</title>
+  <desc id="ch22m-desc">以已建立类型别名的迁移为示例：项目甲已改名，乙仍在审查，丙遇到冲突；各分片独立提交，整体迁移尚未完成。兼容别名支持中间态，但仍有旧引用时不能删除别名。 三个项目和状态是教学示意，不是原书的真实项目或进度数据。假设别名准备与行为兼容工作已完成、三个改名分片无相互依赖。不证明任意回滚都安全，也不要求所有 LSC 都清除全部旧引用。</desc>
+  <style>
+.cg-ch22#ch22m-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:22px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22#ch22m-root .small { font-size:19px; fill:var(--diagram-muted,#686868); }
+.cg-ch22#ch22m-root .strong { font-weight:600; }
+.cg-ch22#ch22m-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22#ch22m-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22#ch22m-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22#ch22m-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22m-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22m-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22m-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22m-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22m-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="680" fill="var(--diagram-bg,#fff)" />
+  <text x="24" y="38" text-anchor="start" class="strong">同一项迁移，不是同一次提交</text>
+  <text x="24" y="70" text-anchor="start" class="small">示意快照：迁移到标准类型名</text>
+  <rect x="24" y="90" width="372" height="117" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+  <text x="38" y="121" text-anchor="start" class="strong" data-box="24,90,372,117">前提：行为准备与别名已就绪</text>
+  <text x="38" y="154" text-anchor="start" data-box="24,90,372,117">scoped_ptr 是</text>
+  <text x="38" y="185" text-anchor="start" data-box="24,90,372,117">std::unique_ptr 的别名</text>
+  <text x="24" y="240" text-anchor="start" class="strong">共同目标：移除旧名称</text>
+  <path d="M34 261L24 261L24 515L34 515" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" />
+  <rect x="46" y="259" width="350" height="78" fill="var(--diagram-primary-soft,#e5f4ee)" />
+  <text x="58" y="288" text-anchor="start" class="strong" data-box="46,259,350,78">甲：已原子提交</text>
+  <text x="58" y="320" text-anchor="start" data-box="46,259,350,78">主干：std::unique_ptr</text>
+  <rect x="46" y="347" width="350" height="78" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+  <text x="58" y="376" text-anchor="start" class="strong" data-box="46,347,350,78">乙：审查中，尚未提交</text>
+  <text x="58" y="408" text-anchor="start" data-box="46,347,350,78">主干：scoped_ptr</text>
+  <rect x="46" y="435" width="350" height="78" fill="var(--diagram-warm-soft,#fff3dc)" />
+  <text x="58" y="464" text-anchor="start" class="strong" data-box="46,435,350,78">丙：冲突，需重新生成</text>
+  <text x="58" y="496" text-anchor="start" data-box="46,435,350,78">主干：scoped_ptr</text>
+  <text x="24" y="549" text-anchor="start" class="small">每片各自测试、审查、提交。</text>
+  <text x="24" y="577" text-anchor="start" class="small">乙、丙仍用旧名，迁移尚未完成；</text>
+  <text x="24" y="605" text-anchor="start" class="strong">兼容别名此时不能删除。</text>
+  <path d="M24 621L396 621" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="24" y="649" text-anchor="start" class="small">迁移期间还需检查新增旧用法。</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch17-01" data-layout="desktop" role="img" aria-labelledby="ch17-01-title ch17-01-desc">
+<title id="ch17-01-title">搜得到，为什么引用列表还没变？</title>
+<desc id="ch17-01-desc">教学示例：已有 api.h 中的 Send 定义，新提交在 worker.cc 新增 Send 调用。文本索引已纳入该提交，但交叉引用仍使用上次构建，所以文本搜索找到 worker.cc，Send 使用位置列表却可能没有它。语义图纳入提交后才会出现。每日构建是书中历史实现，非当前服务承诺。</desc>
+<style>
+.cg-ch17-01[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch17-01[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch17-01[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch17-01[data-layout="desktop"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.cg-ch17-01[data-layout="desktop"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch17-01[data-layout="desktop"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch17-01[data-layout="desktop"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
+.cg-ch17-01[data-layout="desktop"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch17-01[data-layout="desktop"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch17-01[data-layout="desktop"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
+.cg-ch17-01[data-layout="desktop"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch17-01[data-layout="desktop"] .danger{fill:var(--diagram-danger-soft,#faecee)}
+.cg-ch17-01[data-layout="desktop"] .danger-ink{fill:var(--diagram-danger,#b54750)}
+</style>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">搜得到，为什么引用列表还没变？</text>
+<text x="32" y="78" class="small" text-anchor="start">示例：api.h 已定义 Send；一次新提交在 worker.cc 增加调用</text>
+<g data-box="32,98,896,57">
+<rect x="32" y="98" width="896" height="57" class="secondary"/>
+<text x="48" y="135" class="strong" text-anchor="start">新增调用</text>
+<text x="210" y="135" class="code" text-anchor="start">worker.cc: Send();</text>
+</g>
+<g data-box="32,178,432,184">
+<rect x="32" y="178" width="432" height="184" class="primary"/>
+<text x="48" y="215" class="strong" text-anchor="start">文本索引：已含新提交</text>
+<text x="48" y="259" class="" text-anchor="start">查询 Send</text>
+<text x="48" y="297" class="code" text-anchor="start">结果中有 worker.cc</text>
+<text x="48" y="341" class="small" text-anchor="start">按改动文件增量更新</text>
+</g>
+<g data-box="488,178,440,184">
+<rect x="488" y="178" width="440" height="184" class="warm"/>
+<text x="504" y="215" class="strong" text-anchor="start">交叉引用图：仍是上次构建</text>
+<text x="504" y="259" class="" text-anchor="start">查看 Send 的使用处</text>
+<text x="504" y="297" class="code danger-ink" text-anchor="start">列表中缺 worker.cc</text>
+<text x="504" y="341" class="small" text-anchor="start">构建分析语义，不是只更新该文件</text>
+</g>
+<text x="32" y="404" class="" text-anchor="start">语义图纳入该提交后，worker.cc 才能出现在 Send 的使用位置列表。</text>
+<text x="32" y="445" class="small" text-anchor="start">书中 Kythe 每日构建，期间可能错位；这是历史实现描述，不是当前服务的时效承诺。</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch17-03" data-layout="mobile" role="img" aria-labelledby="ch17-03m-title ch17-03m-desc">
+<title id="ch17-03m-title">首屏没显示，就不用改吗？</title>
+<desc id="ch17-03m-desc">查询 OldApi 的教学示例：分片 A 中 a.cc 优先级较高，z.cc 较低；分片 B 中 b.cc 较高，y.cc 较低，四个文件都匹配 OldApi。示例首屏只显示 a.cc、b.cc，全部模式返回四个文件，所以只按首屏重构会漏掉 y.cc、z.cc。首屏条目数不是固定配额；全部仍限于所选版本已索引范围，大响应需要资源保护。</desc>
+<style>
+.cg-ch17-03[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch17-03[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch17-03[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch17-03[data-layout="mobile"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.cg-ch17-03[data-layout="mobile"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch17-03[data-layout="mobile"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch17-03[data-layout="mobile"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
+.cg-ch17-03[data-layout="mobile"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch17-03[data-layout="mobile"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch17-03[data-layout="mobile"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
+.cg-ch17-03[data-layout="mobile"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch17-03[data-layout="mobile"] .danger{fill:var(--diagram-danger-soft,#faecee)}
+.cg-ch17-03[data-layout="mobile"] .danger-ink{fill:var(--diagram-danger,#b54750)}
+</style>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">首屏没显示，就不用改吗？</text>
+<text x="24" y="72" class="small" text-anchor="start">查询 OldApi；下列文件都含该调用</text>
+<text x="24" y="106" class="small" text-anchor="start">示例：分片 A / B 内按优先级排列</text>
+<text x="24" y="151" class="small" text-anchor="start">分片 / 文件</text>
+<text x="278" y="151" class="small" text-anchor="middle">首屏</text>
+<text x="366" y="151" class="small" text-anchor="middle">全部</text>
+<g data-box="24,170,372,57">
+<rect x="24" y="170" width="372" height="57" class="secondary"/>
+<text x="36" y="206" class="small" text-anchor="start">A 高</text>
+<text x="108" y="206" class="code" text-anchor="start">a.cc</text>
+<text x="278" y="206" class="small" text-anchor="middle">显示</text>
+<text x="366" y="206" class="small primary-ink" text-anchor="middle">返回</text>
+</g>
+<g data-box="24,236,372,57">
+<rect x="24" y="236" width="372" height="57" class="warm"/>
+<text x="36" y="272" class="small" text-anchor="start">A 低</text>
+<text x="108" y="272" class="code" text-anchor="start">z.cc</text>
+<text x="278" y="272" class="small" text-anchor="middle">未显示</text>
+<text x="366" y="272" class="small primary-ink" text-anchor="middle">返回</text>
+</g>
+<g data-box="24,302,372,57">
+<rect x="24" y="302" width="372" height="57" class="secondary"/>
+<text x="36" y="338" class="small" text-anchor="start">B 高</text>
+<text x="108" y="338" class="code" text-anchor="start">b.cc</text>
+<text x="278" y="338" class="small" text-anchor="middle">显示</text>
+<text x="366" y="338" class="small primary-ink" text-anchor="middle">返回</text>
+</g>
+<g data-box="24,368,372,57">
+<rect x="24" y="368" width="372" height="57" class="warm"/>
+<text x="36" y="404" class="small" text-anchor="start">B 低</text>
+<text x="108" y="404" class="code" text-anchor="start">y.cc</text>
+<text x="278" y="404" class="small" text-anchor="middle">未显示</text>
+<text x="366" y="404" class="small primary-ink" text-anchor="middle">返回</text>
+</g>
+<text x="24" y="461" class="strong" text-anchor="start">只改首屏，会漏掉 y.cc、z.cc。</text>
+<text x="24" y="493" class="" text-anchor="start">全集：a.cc、b.cc、y.cc、z.cc</text>
+<text x="24" y="529" class="small" text-anchor="start">示例首屏条目数不是固定配额。</text>
+<text x="24" y="559" class="small" text-anchor="start">“全部”限所选版本的已索引范围；</text>
+<text x="24" y="589" class="small" text-anchor="start">大响应仍受资源保护。</text>
+</svg>

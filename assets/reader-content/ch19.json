@@ -1,0 +1,34 @@
+{
+  "format": 2,
+  "sourceSha256": "53d756dff8b44b251b98b560abf730801887d382e6ea4d620957a6ff3dfaf5f8",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch19.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [318, 320],
+      "english": "Centralized “global” reviewers for large-scale changes (LSCs) are particularly prone to customizing this dashboard to avoid flooding it during an LSC (see Chapter 22).",
+      "chinese": "集中负责大规模变更（LSCs）的“全局”审查者尤其倾向于自定义仪表板，以免在进行大规模变更时，仪表板被相关变更淹没（见第22章）。",
+      "after": "又不会影响核心体验，就像每个人整理邮件的方式各不相同。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [428, 430],
+      "english": "Although most changes are small (fewer than 100 lines), Critique is sometimes used to review large refactoring changes that can touch hundreds or thousands of files, especially for LSCs that must be executed atomically (see Chapter 22).",
+      "chinese": "大多数变更都很小，不到100行，但 Critique 有时也用于审查涉及数百甚至数千个文件的大型重构变更，尤其是必须以原子方式执行的大规模变更（LSCs，见第22章）。",
+      "after": "Critique 必须快速加载，并能处理异常庞大的变更等特殊情况。"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [
+    {"english": "Figure 19-1. The code review flow", "chinese": "图19-1. 代码审查流程"},
+    {"english": "Figure 19-4. Analysis results", "chinese": "图19-4. 分析结果"},
+    {"english": "Figure 19-5. Requesting reviewers", "chinese": "图19-5. 请求审查者"},
+    {"english": "Figure 19-8. Dashboard view", "chinese": "图19-8. 仪表盘视图"},
+    {"english": "Figure 19-2. Intraline diffing showing character-level differences", "chinese": "图19-2. 行内差异：显示字符级变化"},
+    {"english": "Figure 19-3. Change summary and diff view", "chinese": "图19-3. 变更摘要和差异视图"},
+    {"english": "Figure 19-6. Commenting on the diff view", "chinese": "图19-6. 在差异视图中发表评论"},
+    {"english": "Figure 19-7. Preparing comments to the author", "chinese": "图19-7. 准备提交给作者的评论"}
+  ],
+  "issues": []
+}

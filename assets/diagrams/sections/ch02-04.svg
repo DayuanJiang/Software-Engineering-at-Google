@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch02-04" data-layout="desktop" role="img" aria-labelledby="ch02-04-title ch02-04-desc">
+<title id="ch02-04-title">无责复盘：从原因到改变</title>
+<desc id="ch02-04-desc">教学示例而非书中事故：配置变更造成服务中断，调查指出缺少配置校验。原因导出修复配置与补充校验两类行动，需实际落实。记录另一路共享给后来者。箭头表示依据，不是强制处理顺序；提出行动不等于已经完成。</desc>
+<style>
+.cg-ch02-04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch02-04[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch02-04[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch02-04[data-layout="desktop"] .primary {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch02-04[data-layout="desktop"] .secondary {fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch02-04[data-layout="desktop"] .danger {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch02-04[data-layout="desktop"] .warm {fill:var(--diagram-warm,#a56a1f);font-weight:600}
+</style>
+<defs>
+<marker id="ch02-04-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch02-04-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch02-04-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch02-04-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+<marker id="ch02-04-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong" text-anchor="start">无责复盘：从原因到改变</text>
+<text x="32" y="76" class="small" text-anchor="start">示意事件（非书中案例）：配置变更后服务中断</text>
+<g id="ch02-04-record" data-box="32,103,290,208">
+<rect x="32" y="103" width="290" height="208" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="48" y="136" class="strong" text-anchor="start">记录事实与分析</text>
+<text x="48" y="171" class="small" text-anchor="start">时间线：发现、调查、恢复</text>
+<text x="48" y="203" class="small" text-anchor="start">影响：服务无法访问</text>
+<text x="48" y="244" class="strong" text-anchor="start">查明原因</text>
+<text x="48" y="282" class="" text-anchor="start">缺少对该配置的校验</text>
+</g>
+<path d="M328 265H364V159H396" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-04-primary-arrow)"/>
+<path d="M364 265V288H396" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-04-primary-arrow)"/>
+<text x="404" y="101" class="small" text-anchor="start">由原因提出行动，不等于已完成</text>
+<g id="ch02-04-repair" data-box="402,117,300,84">
+<rect x="402" y="117" width="300" height="84" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="552.0" y="151.0" class="" text-anchor="middle">立即修复配置</text>
+<text x="552.0" y="183.0" class="" text-anchor="middle">负责人 A</text>
+</g>
+<g id="ch02-04-prevent" data-box="402,246,300,84">
+<rect x="402" y="246" width="300" height="84" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="552.0" y="280.0" class="" text-anchor="middle">补上该配置的校验</text>
+<text x="552.0" y="312.0" class="" text-anchor="middle">负责人 B · 预防复发</text>
+</g>
+<path d="M708 159H741V221H778" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-04-primary-arrow)"/>
+<path d="M708 288H741V221" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round"/>
+<g id="ch02-04-follow-through" data-box="784,172,144,98">
+<rect x="784" y="172" width="144" height="98" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="856.0" y="213.0" class="" text-anchor="middle">实际落实</text>
+<text x="856.0" y="245.0" class="" text-anchor="middle">两类行动</text>
+</g>
+<path d="M177 317V369H396" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-04-secondary-arrow)"/>
+<g id="ch02-04-share" data-box="402,349,526,68">
+<rect x="402" y="349" width="526" height="68" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="665.0" y="391.0" class="" text-anchor="middle">共享事实、原因、教训，让后来者能查阅</text>
+</g>
+<text x="32" y="457" class="small" text-anchor="start">写下原因不等于改变已经发生；道歉、借口、指责不能替代落实与共享。</text>
+</svg>

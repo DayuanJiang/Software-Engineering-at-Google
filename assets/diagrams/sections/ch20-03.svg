@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch20-03" data-layout="desktop" role="img" aria-labelledby="ch20-03-title ch20-03-desc">
+<title id="ch20-03-title">诊断正确，为什么仍被认为无用？</title>
+<desc id="ch20-03-desc">用 Guava 只支持 %s 的原文案例，对照用户和分析器对占位符的不同计数，再展示无用反馈如何促成诊断改写，并与请修复的处理对象区分。 格式串、参数和简短提示均为按原文构造或意译，不是精确 API 调用或诊断原文；不推广到所有 Guava 函数。点击无用本身既不证明技术误报，也不表示必然禁用分析器。</desc>
+<style>
+.cg-ch20-03[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20-03[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch20-03[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch20-03[data-layout="desktop"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20-03[data-layout="desktop"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20-03[data-layout="desktop"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20-03[data-layout="desktop"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20-03[data-layout="desktop"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20-03[data-layout="desktop"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">诊断正确，为什么仍被认为无用？</text>
+<text x="32" y="76" class="small" text-anchor="start">Guava 原文案例；输入为示意，提示为意译</text>
+<rect id="ch20-03-shape-1" x="32" y="96" width="896" height="59" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="52" y="134" class="" text-anchor="start" data-owner="ch20-03-shape-1">格式串 &quot;n=%d&quot;，参数 7</text>
+<path class="connector secondary-edge" d="M248 155V177" marker-end="url(#ch20-03-secondary-arrow)"/>
+<path class="connector secondary-edge" d="M712 155V177" marker-end="url(#ch20-03-secondary-arrow)"/>
+<rect id="ch20-03-shape-2" x="32" y="183" width="432" height="86" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch20-03-shape-3" x="496" y="183" width="432" height="86" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="52" y="215" class="strong" text-anchor="start" data-owner="ch20-03-shape-2">用户按 printf 习惯数</text>
+<text x="52" y="249" class="small" text-anchor="start" data-owner="ch20-03-shape-2">1 个占位符，1 个参数：以为数量相等</text>
+<text x="516" y="215" class="strong" text-anchor="start" data-owner="ch20-03-shape-3">分析器按该函数规则数</text>
+<text x="516" y="249" class="small" text-anchor="start" data-owner="ch20-03-shape-3">0 个 %s，1 个参数：参数确实过多</text>
+<text x="480" y="297" class="small" text-anchor="middle">“无用”反馈给分析器作者，促使其改写提示</text>
+<rect id="ch20-03-shape-4" x="32" y="313" width="432" height="87" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch20-03-shape-5" x="496" y="313" width="432" height="87" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="52" y="345" class="strong" text-anchor="start" data-owner="ch20-03-shape-4">旧提示：“参数过多”</text>
+<text x="52" y="379" class="small" text-anchor="start" data-owner="ch20-03-shape-4">用户可点“无用”，提交缺陷报告</text>
+<text x="516" y="345" class="strong" text-anchor="start" data-owner="ch20-03-shape-5">改后：“仅接受 %s 占位符”</text>
+<text x="516" y="379" class="small" text-anchor="start" data-owner="ch20-03-shape-5">本例可把 n=%d 改成 n=%s</text>
+<path class="connector primary-edge" d="M464 356H490" marker-end="url(#ch20-03-primary-arrow)"/>
+<text x="32" y="432" class="small" text-anchor="start">原文观察：改提示后，这类“无用”报告不再涌入。</text>
+<text x="32" y="463" class="small" text-anchor="start">“请修复”找变更作者；高“无用”率且不改进的分析器可被禁用。</text>
+</svg>

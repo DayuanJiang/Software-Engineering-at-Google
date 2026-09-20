@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21-05" data-layout="desktop" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch21-05-title ch21-05-desc">
+<title id="ch21-05-title">gflags：等效假设怎样约束内部优化？</title>
+<desc id="ch21-05-desc">同一份跨环境项目代码，在内部与外部构建时分别选择内部 flags 与外部 gflags 分叉，并使用共有 API 子集。图中 b 与 b′ 仅代表原文未具体指明的一项无文档可观察行为。长期使用时两处行为被观察为等效；内部优化改动该行为后，外部分叉仍保留旧行为，依赖两处等效的项目构建与发布出错，内部优化因而推迟。相等符号仅比较这项被依赖的行为，不声称两个库整体等同，也不补写真实 gflags 的接口或返回值。</desc>
+<style>
+.cg-ch21-05[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch21-05[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch21-05[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch21-05[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch21-05[data-layout="desktop"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch21-05[data-layout="desktop"] .warm{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch21-05[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch21-05-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch21-05-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch21-05-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch21-05-shape-1" x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">gflags：等效假设怎样约束内部优化？</text>
+<text x="32" y="76" class="small" text-anchor="start">b / b′ 仅代表原文未指明的一项无文档可观察行为，不指代具体 API</text>
+<rect id="ch21-05-shape-2" x="336" y="107" width="288" height="58" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="480.0" y="144.0" class="strong" text-anchor="middle" data-owner="ch21-05-shape-2">同一份代码：用共有 API</text>
+<path data-connector="true" d="M416 167V186H302V206" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-05-secondary-arrow)"/>
+<path data-connector="true" d="M544 167V186H752V206" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-05-secondary-arrow)"/>
+<text x="302" y="236" class="strong" text-anchor="middle">内部 flags</text>
+<text x="752" y="236" class="strong" text-anchor="middle">外部 gflags</text>
+<rect id="ch21-05-shape-3" x="32" y="253" width="896" height="56" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="288" class="small" text-anchor="start" data-owner="ch21-05-shape-3">长期使用时</text>
+<text x="302" y="288" class="strong primary" text-anchor="middle" data-owner="ch21-05-shape-3">b</text>
+<text x="528" y="288" class="primary" text-anchor="middle" data-owner="ch21-05-shape-3">=（观察到等效）</text>
+<text x="752" y="288" class="strong primary" text-anchor="middle" data-owner="ch21-05-shape-3">b</text>
+<rect id="ch21-05-shape-4" x="32" y="326" width="896" height="56" rx="0" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="48" y="362" class="small" text-anchor="start" data-owner="ch21-05-shape-4">内部优化后</text>
+<text x="302" y="362" class="strong danger" text-anchor="middle" data-owner="ch21-05-shape-4">b′</text>
+<text x="528" y="362" class="danger" text-anchor="middle" data-owner="ch21-05-shape-4">≠（内侧变了）</text>
+<text x="752" y="362" class="strong danger" text-anchor="middle" data-owner="ch21-05-shape-4">b</text>
+<text x="32" y="422" class="small" text-anchor="start">项目用法仍要求两处等效：跨环境构建与发布出错，内部优化被推迟。</text>
+<text x="32" y="458" class="small" text-anchor="start">图中只比较这项行为；曾经等效，不等于长期兼容承诺。</text>
+</svg>

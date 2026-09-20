@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch15-04" data-layout="desktop" role="img" aria-labelledby="ch15-04-title ch15-04-desc">
+<title id="ch15-04-title">迁移与收紧许可，缺一不可</title>
+<desc id="ch15-04-desc">构建依赖和可见性白名单的示意前后对照。迁移前甲乙都指向旧系统，白名单为甲乙。甲经 LSC 变更、审查和测试迁到新系统后，工具定期把甲从旧目标的可见性白名单中移除，名单只剩乙。此时甲回退或新用户丙新增旧目标依赖都被构建规则拒绝；乙仍使用旧系统，尚不能据此删除它。Tricorder 另在符号层提醒新增旧调用，提醒不等于构建目标的拒绝规则。</desc>
+<style>
+.cg-ch15-04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch15-04[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch15-04[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch15-04[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch15-04[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch15-04[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch15-04[data-layout="desktop"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+.cg-ch15-04[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch15-04[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch15-04[data-layout="desktop"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
+.cg-ch15-04[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch15-04[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch15-04[data-layout="desktop"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2}
+.cg-ch15-04[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch15-04[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch15-04[data-layout="desktop"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2}
+</style>
+<defs>
+<marker id="ch15-04-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch15-04-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch15-04-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch15-04-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">迁移与收紧许可，缺一不可</text>
+<text x="32" y="78" class="small" text-anchor="start">构建目标依赖与可见性白名单的示意；箭头指向被依赖方</text>
+<text x="32" y="118" class="strong" text-anchor="start">迁移前</text>
+<g data-box="32,143,104,52">
+<rect x="32" y="143" width="104" height="52" rx="5" class="secondary"/>
+<text x="84.0" y="177.0" class="strong" text-anchor="middle">甲</text>
+</g>
+<g data-box="32,239,104,52">
+<rect x="32" y="239" width="104" height="52" rx="5" class="secondary"/>
+<text x="84.0" y="273.0" class="strong" text-anchor="middle">乙</text>
+</g>
+<g data-box="254,190,156,54">
+<rect x="254" y="190" width="156" height="54" rx="5" class="danger"/>
+<text x="332.0" y="225.0" class="strong" text-anchor="middle">旧系统</text>
+</g>
+<path d="M136 169H201V217H252" class="primary-line" data-connector="true" marker-end="url(#ch15-04-primary-arrow)"/>
+<path d="M136 265H201V217" class="primary-line" data-connector="true"/>
+<text x="32" y="332" class="strong" text-anchor="start">旧目标白名单：{甲, 乙}</text>
+<path d="M447 103L447 350" class="guide"/>
+<text x="484" y="118" class="strong" text-anchor="start">甲迁出后，定期删去甲的许可</text>
+<g data-box="484,143,104,52">
+<rect x="484" y="143" width="104" height="52" rx="5" class="secondary"/>
+<text x="536.0" y="177.0" class="strong" text-anchor="middle">甲</text>
+</g>
+<g data-box="772,142,156,54">
+<rect x="772" y="142" width="156" height="54" rx="5" class="primary"/>
+<text x="850.0" y="177.0" class="strong" text-anchor="middle">新系统</text>
+</g>
+<path d="M588 169H770" class="primary-line" data-connector="true" marker-end="url(#ch15-04-primary-arrow)"/>
+<g data-box="484,239,104,52">
+<rect x="484" y="239" width="104" height="52" rx="5" class="secondary"/>
+<text x="536.0" y="273.0" class="strong" text-anchor="middle">乙</text>
+</g>
+<g data-box="772,238,156,54">
+<rect x="772" y="238" width="156" height="54" rx="5" class="danger"/>
+<text x="850.0" y="273.0" class="strong" text-anchor="middle">旧系统</text>
+</g>
+<path d="M588 265H770" class="primary-line" data-connector="true" marker-end="url(#ch15-04-primary-arrow)"/>
+<text x="484" y="332" class="strong" text-anchor="start">旧目标白名单：{乙}</text>
+<rect x="32" y="355" width="896" height="46" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="52" y="386" class="small" text-anchor="start">甲回退或新增丙再依赖旧目标：构建规则拒绝；乙仍在使用，不能据此删旧系统。</text>
+<text x="32" y="433" class="" text-anchor="start">甲的引用由 LSC 等工具更新，经审查与测试核对行为；乙的迁移仍是剩余工作。</text>
+<text x="32" y="461" class="" text-anchor="start">Tricorder 另在符号级提醒新增旧调用；迁移与防倒退同时推进。</text>
+</svg>

@@ -1,0 +1,22 @@
+{
+  "id": "ch03-01",
+  "chapter": 3,
+  "enabled": false,
+  "removalReason": "与章首图重复呈现专家、文档、学习者的互补关系，没有独立的推理任务。修订后的章首图已用排障场景解释同一关系；保留本组 SVG 供追溯，不再作为启用的章节插图。",
+  "title": "专家与文档相互补充",
+  "summary": "专家帮助判断问题背景和适用资料，文档支持跨团队与跨时间共享，学习者通过提问和更新把经验回馈；心理安全感是共同基础。",
+  "sourceSections": ["## Philosophy  理念", "## Setting the Stage: Psychological Safety 奠定基础：心理安全感"],
+  "afterParagraph": "培养自己的专家队伍：工程专业知识永远不嫌多。",
+  "desktop": "assets/diagrams/sections/ch03-01.svg",
+  "mobile": "assets/diagrams/sections/ch03-01-mobile.svg",
+  "pedagogy": {
+    "action": "retire",
+    "readerQuestion": "已经有文档后，为什么还要向专家求助？",
+    "expectedAnswer": "文档扩大可复用范围，专家帮助判断背景、资料的适用性和时效，两者互补。",
+    "visualEncoding": "旧图以专家、文档、学习者三个框和循环箭头表达互补；该任务已由修订的章首图中的先查资料、必要时求助两段路径承担。",
+    "sourceEvidence": "## Philosophy  理念：口头知识与书面知识相辅相成；专家能够判断哪些信息适合提问者的具体场景。",
+    "beforeProblem": "与章首图几乎完全重复，箭头连接的是原则框，没有具体问题或状态变化。手机端的回路也未解释专家怎样回应学习者。",
+    "whyBetter": "停用重复插图，保留原文论述和更具体的章首排障对照；不再要求读者为同一个结论解读第二个抽象回路。",
+    "limits": "原 SVG 原样保留，属于停用的历史图而非本次认可的教学图。是否隐藏取决于后续共享构建和读者界面对 enabled 的处理，本任务不修改这些文件。"
+  }
+}

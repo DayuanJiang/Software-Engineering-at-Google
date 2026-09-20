@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch16-04" data-layout="mobile" role="img" aria-labelledby="ch16-04m-title ch16-04m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch16-04m-title">仓库有两版，新应用能任选吗</title>
+<desc id="ch16-04m-desc">说明性阶段表，v1、v2 是版本代号。升级前仓库只有 v1，应用 A、B 都依赖 v1，C 尚未加入。迁移中仓库暂存 v1 和 v2，A 仍用 v1，B 已改用 v2；新加入的 C 只准依赖 v2，不准新增对 v1 的依赖。完成后 A、B、C 都用 v2，旧版退出。仓库共存不保证同一程序能安全混用两版，不表示固定迁移时长。</desc>
+<style>
+.cg-ch16-04[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch16-04[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch16-04[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch16-04[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch16-04[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch16-04[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch16-04[data-layout="mobile"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2.5}
+.cg-ch16-04[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch16-04[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch16-04[data-layout="mobile"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2.5}
+.cg-ch16-04[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch16-04[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch16-04[data-layout="mobile"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2.5}
+.cg-ch16-04[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch16-04[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch16-04[data-layout="mobile"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2.5}
+</style>
+<defs>
+<marker id="ch16-04m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch16-04m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch16-04m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch16-04m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">仓库有两版，新应用能任选吗？</text>
+<text x="24" y="72" class="small" text-anchor="start">示例：C 在迁移中加入；版本代号 v1/v2</text>
+<rect x="212" y="155" width="90" height="287" rx="4" class="warm"/>
+<text x="163" y="137" class="small strong" text-anchor="middle">升级前</text>
+<text x="257" y="137" class="small strong" text-anchor="middle">迁移中</text>
+<text x="351" y="137" class="small strong" text-anchor="middle">完成后</text>
+<path d="M24 155L396 155" class="guide"/>
+<text x="24" y="207" class="" text-anchor="start">仓库保留</text>
+<text x="163" y="207" class="" text-anchor="middle">v1</text>
+<text x="257" y="207" class="" text-anchor="middle">v1+v2</text>
+<text x="351" y="207" class="primary-ink" text-anchor="middle">v2</text>
+<path d="M24 231L396 231" class="guide"/>
+<text x="24" y="271" class="" text-anchor="start">A 的依赖</text>
+<text x="163" y="271" class="" text-anchor="middle">v1</text>
+<text x="257" y="271" class="" text-anchor="middle">v1</text>
+<text x="351" y="271" class="primary-ink" text-anchor="middle">v2</text>
+<path d="M24 295L396 295" class="guide"/>
+<text x="24" y="335" class="" text-anchor="start">B 的依赖</text>
+<text x="163" y="335" class="" text-anchor="middle">v1</text>
+<text x="257" y="335" class="primary-ink" text-anchor="middle">v2</text>
+<text x="351" y="335" class="primary-ink" text-anchor="middle">v2</text>
+<path d="M24 359L396 359" class="guide"/>
+<text x="24" y="399" class="" text-anchor="start">新应用 C</text>
+<text x="163" y="399" class="small" text-anchor="middle">未加入</text>
+<text x="257" y="399" class="primary-ink" text-anchor="middle">v2</text>
+<text x="351" y="399" class="primary-ink" text-anchor="middle">v2</text>
+<path d="M24 423L396 423" class="guide"/>
+<text x="257" y="467" class="small danger-ink" text-anchor="middle">× 不准新增 v1</text>
+<text x="24" y="506" class="" text-anchor="start">迁移中：C 只能选 v2</text>
+<path d="M24 524L396 524" class="guide"/>
+<text x="24" y="551" class="small" text-anchor="start">仓库暂存两版，不等于</text>
+<text x="24" y="581" class="small" text-anchor="start">同一程序可以安全混用两版。</text>
+</svg>

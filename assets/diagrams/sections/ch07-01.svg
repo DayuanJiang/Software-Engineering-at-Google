@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch07-01-diagram" class="chapter-svg cg-ch07-01" role="img" aria-labelledby="ch07-01-title ch07-01-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch07-01-title">哪种研究结果会改变行动？</title><desc id="ch07-01-desc">Readability 团队按语言评估且有权行动，收益足以抵偿成本则公布研究，成本超过收益或收益可忽略则取消流程。发布工具变更无论生产力收益较大还是只有小幅收益都会实施，因为还改善性能并减轻维护负担。路径表示事前行动承诺，不是研究结果。</desc>
+<style>.cg-ch07-01#ch07-01-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch07-01#ch07-01-diagram .strong{font-weight:600}
+.cg-ch07-01#ch07-01-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch07-01#ch07-01-diagram .danger-text{fill:var(--diagram-danger,#b54750)}
+.cg-ch07-01#ch07-01-diagram .primary{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch07-01#ch07-01-diagram .secondary{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch07-01#ch07-01-diagram .warm{fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch07-01#ch07-01-diagram .empty{fill:var(--diagram-bg,#fff);stroke:var(--diagram-danger,#b54750);stroke-width:1.5;stroke-dasharray:6 5}
+.cg-ch07-01#ch07-01-diagram .band{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch07-01#ch07-01-diagram .blue-band{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch07-01#ch07-01-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch07-01#ch07-01-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch07-01-arrow)}</style>
+<defs><marker id="ch07-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong" text-anchor="start">哪种研究结果会改变行动？</text>
+<text x="32" y="72" class="small" text-anchor="start">同问生产力收益，行动承诺却不同（书中案例）</text>
+<path d="M490 99V412" class="line"/>
+<text x="32" y="116" class="strong" text-anchor="start">Readability</text>
+<text x="32" y="146" class="small" text-anchor="start">按语言评估，团队有权行动</text>
+<text x="526" y="116" class="strong" text-anchor="start">发布工具变更</text>
+<text x="526" y="146" class="small" text-anchor="start">生产力收益只是附带效果</text>
+<text x="32" y="207" class="small" text-anchor="start">收益足以抵偿成本</text>
+<path d="M222 200H268" class="arrow"/>
+<text x="286" y="208" class="strong" text-anchor="start">公布研究与数据</text>
+<text x="32" y="274" class="small" text-anchor="start">成本超过收益</text>
+<text x="32" y="302" class="small" text-anchor="start">或收益可忽略</text>
+<path d="M222 286H268" class="arrow"/>
+<text x="286" y="294" class="strong" text-anchor="start">取消流程</text>
+<text x="526" y="207" class="" text-anchor="start">收益较大</text>
+<text x="526" y="293" class="" text-anchor="start">仅小幅收益</text>
+<path d="M664 200H706V246H744" class="arrow"/>
+<path d="M664 286H706V246" class="line"/>
+<rect id="ch07-01-implement" x="752" y="210" width="176" height="72" rx="4" class="secondary"/>
+<text x="840" y="254" class="strong" text-anchor="middle" data-box="ch07-01-implement">仍实施变更</text>
+<rect id="ch07-01-readability-outcome" x="32" y="342" width="442" height="72" rx="4" class="band"/>
+<text x="48" y="372" class="strong" text-anchor="start" data-box="ch07-01-readability-outcome">结果不同，行动不同</text>
+<text x="48" y="400" class="small" text-anchor="start" data-box="ch07-01-readability-outcome">值得进入研究设计</text>
+<rect id="ch07-01-release-outcome" x="510" y="342" width="418" height="72" rx="4" class="blue-band"/>
+<text x="526" y="372" class="strong" text-anchor="start" data-box="ch07-01-release-outcome">收益大小不改变实施决定</text>
+<text x="526" y="400" class="small" text-anchor="start" data-box="ch07-01-release-outcome">可能不值得专门度量生产力收益</text>
+<text x="32" y="453" class="small" text-anchor="start">行动性还不是充分条件：仍需考虑度量成本、时效与证据适用性。</text>
+</svg>

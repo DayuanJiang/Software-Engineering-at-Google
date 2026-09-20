@@ -1,0 +1,27 @@
+{
+  "chapter": 7,
+  "title": "审查更快，等于生产力更高？",
+  "summary": "用取消代码审查的书中反例揭示速度指标与质量目标的区别，再对照 Readability 研究实际采用的日志、自述体验和行动；不把单项代理当作总体收益或因果证明。",
+  "sourceSections": [
+    "Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？",
+    "Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
+    "Goals  目标",
+    "Metrics  指标",
+    "Using Data to Validate Metrics  使用数据验证指标",
+    "Taking Action and Tracking Results  采取行动并跟踪结果"
+  ],
+  "kind": "counterexample-and-evidence",
+  "enabled": true,
+  "desktop": "assets/diagrams/ch07.svg",
+  "mobile": "assets/diagrams/ch07-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "取消代码审查也能让审查更快，为什么不能据此断言生产力提高？Readability 研究实际如何作判断？",
+    "expectedAnswer": "速度代理不能替代代码质量等目标。书中假设用取消审查暴露这一缺口；实际 Readability 研究结合日志中的审查和提交速度、取得资格者的满意度和学习自述，判断流程总体值得，并改进工具与透明度。代码质量仍只收集自评，未采用不理想的客观定量代理。",
+    "visualEncoding": "左侧假设中，取消审查连到审查更快，但不等号阻断速度到质量的推论；右侧两个独立证据带汇入书中综合判断，再连接行动。移动版把反例与实际研究上下分开，避免把假设误认成研究结果。",
+    "sourceEvidence": "Goals  目标：'直接取消代码审查就行'；Metrics  指标：'决定不将代码质量纳入定量度量'；Taking Action and Tracking Results  采取行动并跟踪结果：'总体上值得投入'、'即使考虑到取得资格后所需审查者减少这一因素'、'提高速度和透明度'。",
+    "beforeProblem": "原图只是 GSM 定义和改进循环，读者无法用实际例子区分速度代理、生产力目标与研究判断；与两个节图重复。",
+    "whyBetter": "把能改善单项速度表现却漏掉质量目标的反例，与书中实际证据和行动直接对照，读者可看出单项指标为何不足以决定流程价值。",
+    "limits": "假设不是实测。实际结果不展示数值、效应大小或独立因果证明；取得资格者的自述不代表未完成者。图不重列全部目标和指标，也不评价个人绩效。"
+  }
+}

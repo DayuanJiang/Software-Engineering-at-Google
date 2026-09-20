@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch18" data-layout="mobile" role="img" aria-labelledby="ch18m-title ch18m-desc" viewBox="0 0 420 680" width="420" height="680">
+<title id="ch18m-title">同一目标，何时能复用旧产物？</title>
+<desc id="ch18m-desc">以原文 mylib 为例。源文件 MyLibrary.java、MyHelper.java，依赖 common、otherlib、Guava，以及编译器、工具链平台和构建选项均属于输入。S、D、T、O 和 hA、hB、hC 是示意标记，不是真实哈希。相同目标和完整输入可以命中旧缓存；源文件或工具改变后查询不同的键，不能只按目标名复用旧结果。键未命中才构建并回填。未声明输入或非确定性动作会破坏这一推理。</desc>
+<style>
+.cg-ch18[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch18[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch18[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch18[data-layout="mobile"] .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+</style><defs>
+<marker id="ch18m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" class="strong" text-anchor="start">同一目标，何时能复用旧产物？</text>
+<text x="24" y="66" class="small" text-anchor="start">mylib 示例；字母与哈希均为示意</text>
+<rect id="ch18m-box-1" x="24" y="88" width="372" height="80" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="40" y="116" class="strong" text-anchor="start" data-owner="ch18m-box-1">源码 S1</text>
+<text x="40" y="145" class="small" text-anchor="start" data-owner="ch18m-box-1">MyLibrary.java / MyHelper.java</text>
+<rect id="ch18m-box-2" x="24" y="180" width="372" height="70" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="40" y="208" class="strong" text-anchor="start" data-owner="ch18m-box-2">依赖产物 D1</text>
+<text x="40" y="236" class="small" text-anchor="start" data-owner="ch18m-box-2">common / otherlib / Guava JAR</text>
+<rect id="ch18m-box-3" x="24" y="262" width="372" height="70" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="40" y="290" class="strong" text-anchor="start" data-owner="ch18m-box-3">工具 T1 + 构建选项 O1</text>
+<text x="40" y="318" class="small" text-anchor="start" data-owner="ch18m-box-3">javac、工具链平台也是输入</text>
+<path class="edge" d="M24 128H10V344H210V354" stroke="var(--diagram-secondary,#2f6eac)" marker-end="url(#ch18m-secondary-arrow)"/>
+<path class="edge" d="M24 215H10" stroke="var(--diagram-secondary,#2f6eac)"/>
+<path class="edge" d="M24 297H10" stroke="var(--diagram-secondary,#2f6eac)"/>
+<rect id="ch18m-box-4" x="24" y="356" width="372" height="68" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="40" y="384" class="strong" text-anchor="start" data-owner="ch18m-box-4">(mylib, hA) 对应 R_A</text>
+<text x="40" y="412" class="small" text-anchor="start" data-owner="ch18m-box-4">hA = S1 + D1 + T1 + O1 的哈希</text>
+<text x="24" y="458" class="small" text-anchor="start">换机器，S1 / D1 / T1 / O1 未变</text>
+<text x="24" y="486" class="strong" text-anchor="start">hA 命中：复用 R_A</text>
+<text x="24" y="520" class="small" text-anchor="start">只改 MyHelper.java：S1 变 S2</text>
+<text x="24" y="548" class="strong" text-anchor="start">查新键 hB，不用旧键</text>
+<text x="24" y="582" class="small" text-anchor="start">只换编译器：T1 变 T2，查 hC</text>
+<path d="M24 602H396" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="24" y="630" class="small" text-anchor="start">新键未命中才构建并回填。</text>
+<text x="24" y="658" class="small" text-anchor="start">前提：不漏输入，动作输出确定。</text>
+</svg>

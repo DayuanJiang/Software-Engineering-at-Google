@@ -1,0 +1,21 @@
+{
+  "id": "ch12-02",
+  "chapter": 12,
+  "title": "同一次创建，两种断言，两类错误",
+  "summary": "固定createUser调用，对比原始写入、等价替代API和写后误删；交互断言分别产生误报与漏报，而最终状态断言区分用户存在与不存在。",
+  "enabled": true,
+  "sourceSections": ["### Test via Public APIs  通过公共API进行测试", "### Test State, Not Interactions  测试状态，而不是交互"],
+  "afterParagraph": "我们就倾向于使用真实对象，而不是模拟对象。",
+  "desktop": "assets/diagrams/sections/ch12-02.svg",
+  "mobile": "assets/diagrams/sections/ch12-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "只确认put被调用，会在什么具体变更下误报失败，又会漏掉什么缺陷？",
+    "expectedAnswer": "改用另一API写入等价用户时，原put验证失败但用户仍存在；put之后误删用户时，put验证仍通过但用户已不存在。getUser非空的状态断言在这两种情况下给出与创建用户契约一致的结果。",
+    "visualEncoding": "固定公共调用，三行显示内部步骤与最终状态，两列独立显示交互和状态断言结果；失败误报、通过漏报有文字标签，颜色不是唯一编码。",
+    "sourceEvidence": "Test State, Not Interactions  测试状态，而不是交互：例12-4的verify(database).put与例12-5的getUser非空；定位语deleted from the database shortly after it was written及slightly different API to write an equivalent record。",
+    "beforeProblem": "旧图虽提到两个正确反例，但主要是公共API流程与文字框；没有对同一变更同时展示两种测试结果。",
+    "whyBetter": "读者可以逐行根据是否调用put和最终是否有用户自行核对两个判定，直接推导假阳性与假阴性的差别。",
+    "limits": "insert只是原文所说等价写入API的示意名称；这里比较的是这两条具体断言，不宣称所有交互验证错误、所有状态验证完备，亦不把测试替身种类与断言策略混同。"
+  }
+}

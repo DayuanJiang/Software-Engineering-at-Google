@@ -1,0 +1,21 @@
+{
+  "id": "ch17-01",
+  "chapter": 17,
+  "title": "搜得到，为什么引用列表还没变？",
+  "summary": "新增 worker.cc 中的 Send 调用后，文本查询已显示它，旧交叉引用图却还未包含这次调用；两种结果使用的索引状态不同。",
+  "enabled": true,
+  "sourceSections": ["### Scale 规模", "### Index Latency 索引延迟"],
+  "afterParagraph": "两者不同步，会引发一些虽不常见、却反复出现的用户问题。",
+  "desktop": "assets/diagrams/sections/ch17-01.svg",
+  "mobile": "assets/diagrams/sections/ch17-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "刚提交的 worker.cc: Send() 能搜到，为什么 Send 的使用位置列表仍可能没有它？",
+    "expectedAnswer": "文本搜索可以按改动文件增量更新；书中交叉引用图需要构建分析且每日生成，所以在文本已更新而语义图尚未更新的示例时刻，新调用可能尚未进入使用位置列表。",
+    "visualEncoding": "同一新增调用位于顶部；并列或上下排列的索引状态分别明确标记已含新提交和上次构建，输出中 worker.cc 的出现与缺席可以直接对照；后续状态注明语义图纳入该提交才可出现。",
+    "sourceEvidence": "Scale 规模：搜索索引即时更新，交叉引用索引却每日更新；脚注8：局部交叉引用图合并为全局图；Index Latency 索引延迟：只能保留一个版本的交叉引用索引。",
+    "beforeProblem": "原图展示两条构建流水线，虽写明更新节奏不同，却没有一处新代码或两种矛盾的可见结果。",
+    "whyBetter": "具体指出哪个调用已经能搜到、在哪个列表中仍缺席，以及索引包含该提交后结果如何改变。",
+    "limits": "示例只说明可能的过渡状态，不保证每次提交都出现此问题；每日构建是书中历史实现，不代表当前服务，也不承诺精确等待时间。"
+  }
+}

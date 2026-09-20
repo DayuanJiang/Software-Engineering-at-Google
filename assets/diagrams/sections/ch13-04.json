@@ -1,0 +1,21 @@
+{
+  "id": "ch13-04",
+  "chapter": 13,
+  "title": "同一 ID 保存两次，fake 也必须报错",
+  "summary": "将书中的重复 ID 契约变为并排执行轨迹：从空库开始，首次 save(id) 成功并改变状态，第二次必须报错；只测首次成功会漏掉允许重复保存的 fake。",
+  "enabled": true,
+  "sourceSections": ["### The Fidelity of Fakes 伪实现的保真度", "### Fakes Should Be Tested  伪实现也需要测试", "### When Should Fakes Be Written? 何时应该编写伪实现？"],
+  "afterParagraph": "但只需由伪实现的维护者运行，因此额外负担可以控制在较小范围内。",
+  "desktop": "assets/diagrams/sections/ch13-04.svg",
+  "mobile": "assets/diagrams/sections/ch13-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "只测试新 ID 能保存，为什么还不能证明 fake 遵守真实数据库的契约？",
+    "expectedAnswer": "在书中给定的契约下，新 ID 首次保存成功，而重复 ID 必须报错。同一套公开接口测试应分别运行于真实实现与 fake。一个重复保存也成功的 fake 会通过首次保存测试，但在重复保存断言上失败。",
+    "visualEncoding": "真实实现与 fake 使用对齐的空集合、第一次 save(id)、含 id 状态、第二次 save(id)、报错五步轨迹。下方反例高亮第二次错误地成功的 fake 与 expect error 的冲突，明确哪条新增断言能揭示偏离。",
+    "sourceEvidence": "### The Fidelity of Fakes 伪实现的保真度，database.save(itemId) 在 ID 不存在时成功，在已存在时报错；### Fakes Should Be Tested  伪实现也需要测试，针对公开接口的同一套测试分别运行于真实实现和伪实现。",
+    "beforeProblem": "原图只把抽象契约测试分叉到磁盘与内存实现，未显示输入序列、状态变化和导致失败的具体差异。",
+    "whyBetter": "通过第二次保存这一最小变化，显示单次成功测试遗漏的契约分支；读者能指出偏离发生在哪一步，而非只记住 fake 也要测试。",
+    "limits": "重复 ID 报错是书中此数据库的示例契约，不是所有数据库 save/upsert API 的通用规则。示意未指定异常类，不证明持久化、并发或性能；真实性能应使用真实实现测试。"
+  }
+}

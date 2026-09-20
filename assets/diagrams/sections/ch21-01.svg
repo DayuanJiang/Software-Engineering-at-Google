@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21-01" data-layout="desktop" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch21-01-title ch21-01-desc">
+<title id="ch21-01-title">菱形冲突：哪个版本能同时满足？</title>
+<desc id="ch21-01-desc">示意假设 libuser 同时使用 liba 与 libb，构建只选择一个 libbase 版本。候选为 1.7 与 2.0。迁移前 liba 要求 2≤v&lt;3，libb 要求 1≤v&lt;2，两个候选都不能同时满足。如果 libb 完成迁移并将要求改为 2≤v&lt;3，则 2.0 满足两个声明。矩阵的可与否仅表示满足版本约束，不能证明实际 API 用法兼容，也不主张只改约束即可迁移。</desc>
+<style>
+.cg-ch21-01[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch21-01[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch21-01[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch21-01[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch21-01[data-layout="desktop"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch21-01[data-layout="desktop"] .warm{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch21-01[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch21-01-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch21-01-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch21-01-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch21-01-shape-1" x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">菱形冲突：哪个版本能同时满足？</text>
+<text x="32" y="76" class="small" text-anchor="start">示意：libuser 同时使用 liba、libb；一次构建只选一个 libbase 版本</text>
+<text x="32" y="123" class="strong danger" text-anchor="start">迁移前：两个范围没有交集</text>
+<text x="496" y="123" class="strong primary" text-anchor="start">libb 迁移并更新要求后</text>
+<text x="40" y="174" class="small" text-anchor="start">libbase 候选</text>
+<text x="316" y="174" class="strong" text-anchor="middle">1.7</text>
+<text x="414" y="174" class="strong" text-anchor="middle">2.0</text>
+<rect id="ch21-01-shape-2" x="32" y="190" width="432" height="38" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="40" y="216" class="" text-anchor="start" data-owner="ch21-01-shape-2">liba: 2 ≤ v &lt; 3</text>
+<text x="316" y="216" class="danger" text-anchor="middle" data-owner="ch21-01-shape-2">否</text>
+<text x="414" y="216" class="primary" text-anchor="middle" data-owner="ch21-01-shape-2">可</text>
+<rect id="ch21-01-shape-3" x="32" y="230" width="432" height="38" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="40" y="256" class="" text-anchor="start" data-owner="ch21-01-shape-3">libb: 1 ≤ v &lt; 2</text>
+<text x="316" y="256" class="primary" text-anchor="middle" data-owner="ch21-01-shape-3">可</text>
+<text x="414" y="256" class="danger" text-anchor="middle" data-owner="ch21-01-shape-3">否</text>
+<rect id="ch21-01-shape-4" x="32" y="270" width="432" height="38" rx="0" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="40" y="296" class="strong" text-anchor="start" data-owner="ch21-01-shape-4">同时满足</text>
+<text x="316" y="296" class="danger" text-anchor="middle" data-owner="ch21-01-shape-4">否</text>
+<text x="414" y="296" class="danger" text-anchor="middle" data-owner="ch21-01-shape-4">否</text>
+<path d="M32 186h432" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" fill="none"/>
+<text x="504" y="174" class="small" text-anchor="start">libbase 候选</text>
+<text x="780" y="174" class="strong" text-anchor="middle">1.7</text>
+<text x="878" y="174" class="strong" text-anchor="middle">2.0</text>
+<rect id="ch21-01-shape-5" x="496" y="190" width="432" height="38" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="504" y="216" class="" text-anchor="start" data-owner="ch21-01-shape-5">liba: 2 ≤ v &lt; 3</text>
+<text x="780" y="216" class="danger" text-anchor="middle" data-owner="ch21-01-shape-5">否</text>
+<text x="878" y="216" class="primary" text-anchor="middle" data-owner="ch21-01-shape-5">可</text>
+<rect id="ch21-01-shape-6" x="496" y="230" width="432" height="38" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="504" y="256" class="" text-anchor="start" data-owner="ch21-01-shape-6">libb: 2 ≤ v &lt; 3</text>
+<text x="780" y="256" class="danger" text-anchor="middle" data-owner="ch21-01-shape-6">否</text>
+<text x="878" y="256" class="primary" text-anchor="middle" data-owner="ch21-01-shape-6">可</text>
+<rect id="ch21-01-shape-7" x="496" y="270" width="432" height="38" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="504" y="296" class="strong" text-anchor="start" data-owner="ch21-01-shape-7">同时满足</text>
+<text x="780" y="296" class="danger" text-anchor="middle" data-owner="ch21-01-shape-7">否</text>
+<text x="878" y="296" class="primary" text-anchor="middle" data-owner="ch21-01-shape-7">可</text>
+<path d="M496 186h432" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" fill="none"/>
+<text x="32" y="375" class="" text-anchor="start">2.0 满足 liba 却不满足旧 libb；1.7 刚好相反。</text>
+<text x="32" y="413" class="" text-anchor="start">完成迁移并更新 libb 的要求后，2.0 才满足两条路径。</text>
+<text x="32" y="454" class="small" text-anchor="start">表中“可”只指版本约束；不能从版本号推出 API 用法兼容，仍须组合测试。</text>
+</svg>

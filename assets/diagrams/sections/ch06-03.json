@@ -1,0 +1,23 @@
+{
+  "id": "ch06-03",
+  "chapter": 6,
+  "title": "20 分钟能修好，为什么还要交给别人？",
+  "summary": "以书中20分钟可修好的老问题，对照亲自动手的本次效率与授权辅导带来的独立练习；明确他人能做且不刻不容缓这一前提。",
+  "enabled": true,
+  "sourceSections": [
+    "#### Delegating subproblems to leaders  将子问题交给子团队领导者负责"
+  ],
+  "afterParagraph": "你持续描绘森林的全貌，再把砍树的工作交给别人。",
+  "desktop": "assets/diagrams/sections/ch06-03.svg",
+  "mobile": "assets/diagrams/sections/ch06-03-mobile.svg",
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "一个老问题自己20分钟就能解决、别人却会更慢，为什么书中仍建议授权？",
+    "expectedAnswer": "若并非只有自己能做、也并非刻不容缓，授权并按需辅导能让其他领导者通过失败和重试练习独立处理，减少长期依赖；亲自动手可能更快，却失去这次培养机会。",
+    "visualEncoding": "固定同一任务及前提，左右并列本次执行者和下次独立承担的机会；自己路径以虚线表示仍可能依赖的风险，授权路径连接辅导重试和独立练习。移动版保留并列，避免把两条路径画成连续步骤。",
+    "sourceEvidence": "Delegating subproblems to leaders  将子问题交给子团队领导者负责：put 20 minutes aside to fix a longstanding and nagging issue；Am I really the only one；Unless the task is truly time sensitive and on fire；Coach them on the work if need be。",
+    "beforeProblem": "原图的条件分流基本准确，却把授权的核心效率取舍藏在结尾提示中，没有呈现原文的20分钟情境以及本次和长期的不同目标。",
+    "whyBetter": "把抽象分流改为同一工作两种处理方式的对照：可以直接看出授权为何可能当下更慢仍值得做，并在醒目位置读到不能机械套用的例外条件。",
+    "limits": "20分钟是作者的设问，不是实测效率；没有编造其他领导者所需时间或成长成功率。真正紧急时原文未规定唯一执行者，图中也不推导必须亲自处理。"
+  }
+}

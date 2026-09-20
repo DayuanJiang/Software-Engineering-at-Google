@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch11-01" data-layout="desktop" role="img" aria-labelledby="ch11-01-title ch11-01-desc">
+<title id="ch11-01-title">同一测试：写好、失败、修复后</title>
+<desc id="ch11-01-desc">沿用例11-1的 subtract(2, 5) 与预期 -3，比较未运行、返回错误值 3、修复后返回 -3 三种状态。写好不等于取得反馈，发现失败也不等于处理了失败。这是基于书中计算器测试的示意状态，不是所有失败都由产品代码导致；通过这一断言不代表所有行为正确，也不代表以后无需再运行。</desc>
+<style>
+.cg-ch11-01[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch11-01[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch11-01[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch11-01[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+.cg-ch11-01[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch11-01[data-layout="desktop"] .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
+<defs><marker id="ch11-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">同一测试：写好、失败、修复后</text>
+<text x="32" y="76" class="small" text-anchor="start">例11-1的输入与预期不变；运行结果为示意</text>
+<rect x="32" y="99" width="896" height="56" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="135" class="strong" text-anchor="start" data-region="32 99 896 56">固定断言：subtract(2, 5) 应返回 -3</text>
+<text x="48" y="195" class="small" text-anchor="start">状态</text>
+<text x="324" y="195" class="small" text-anchor="start">本次观测</text>
+<text x="614" y="195" class="small" text-anchor="start">能作出的判断</text>
+<rect x="32" y="215" width="896" height="58" rx="4" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="48" y="252" class="" text-anchor="start" data-region="40 215 252 58">只写好，未运行</text>
+<text x="324" y="252" class="" text-anchor="start" data-region="316 215 266 58">尚无实际值</text>
+<text x="614" y="252" class="strong " text-anchor="start" data-region="606 215 298 58">本次结果未知</text>
+<rect x="32" y="293" width="896" height="58" rx="4" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="48" y="330" class="" text-anchor="start" data-region="40 293 252 58">运行后</text>
+<text x="324" y="330" class="" text-anchor="start" data-region="316 293 266 58">实际值 3 ≠ -3</text>
+<text x="614" y="330" class="strong danger" text-anchor="start" data-region="606 293 298 58">失败已发现，待处理</text>
+<rect x="32" y="389" width="896" height="58" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="426" class="" text-anchor="start" data-region="40 389 252 58">修复后重跑</text>
+<text x="324" y="426" class="" text-anchor="start" data-region="316 389 266 58">实际值 -3 = -3</text>
+<text x="614" y="426" class="strong primary" text-anchor="start" data-region="606 389 298 58">本例通过，继续运行</text>
+<path d="M480 351V383" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-01-arrow)"/>
+<text x="499" y="376" class="small" text-anchor="start">定位本例缺陷并修复</text>
+<text x="32" y="473" class="small" text-anchor="start">示意缺陷的实际值为 3；修复后预期仍为 -3。本例通过不代表全部行为正确。</text>
+</svg>

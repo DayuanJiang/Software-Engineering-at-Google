@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch14" data-layout="mobile" role="img" aria-labelledby="ch14m-title ch14m-desc" viewBox="0 0 420 680" width="420" height="680">
+<title id="ch14m-title">界面变了，后端测试也要失败吗？</title>
+<desc id="ch14m-desc">本章 UI/API 边界案例与图14-6缩减方案的教学组合，不是实际产品拓扑。原先从界面驱动的测试可能因外观变化而在执行后端前失败；拆开后 UI 单独测试，公共 API 独立驱动后端。虚线是后端 SUT 的关注范围而非机器边界；内存数据库和第三方替身不验证真实存储和依赖的新行为，也不替代整条界面联动覆盖。</desc>
+<style>
+.cg-ch14[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch14[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch14[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch14[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch14[data-layout="mobile"] .boundary {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;stroke-dasharray:7 5}
+.cg-ch14[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch14[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch14[data-layout="mobile"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch14m-primary-arrow)}
+.cg-ch14[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch14[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch14[data-layout="mobile"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch14m-secondary-arrow)}
+.cg-ch14[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch14[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch14[data-layout="mobile"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch14m-warm-arrow)}
+.cg-ch14[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch14[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch14[data-layout="mobile"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch14m-danger-arrow)}
+</style><defs>
+<marker id="ch14m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch14m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch14m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch14m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="22" y="34" class="strong" text-anchor="start">界面变了，后端测试</text>
+<text x="22" y="64" class="strong" text-anchor="start">也要失败吗？</text>
+<text x="22" y="97" class="small" text-anchor="start">本章 UI/API 边界案例（简化）</text>
+<text x="22" y="134" class="strong" text-anchor="start">原来：经 UI 驱动后端</text>
+<g data-box="22,154,128,56"><rect x="22" y="154" width="128" height="56" rx="6" class="secondary"/>
+<text x="86.0" y="190" class="" text-anchor="middle">UI 操作</text>
+</g>
+<g data-box="208,154,190,56"><rect x="208" y="154" width="190" height="56" rx="6" class="danger"/>
+<text x="303.0" y="190" class="" text-anchor="middle">界面改样式</text>
+</g>
+<path d="M150 182H206" class="danger-path" data-connector="true"/>
+<text x="22" y="244" class="small" text-anchor="start">定位失效，尚未执行后端</text>
+<text x="22" y="272" class="small" text-anchor="start">界面脆弱不等于后端错误</text>
+<path d="M22 290H398" class="guide"/>
+<text x="22" y="323" class="strong" text-anchor="start">拆开入口</text>
+<g data-box="22,341,142,56"><rect x="22" y="341" width="142" height="56" rx="6" class="secondary"/>
+<text x="93.0" y="377" class="" text-anchor="middle">UI 单独测</text>
+</g>
+<text x="188" y="360" class="small" text-anchor="start">不再驱动下面</text>
+<text x="188" y="387" class="small" text-anchor="start">每个后端场景</text>
+<rect x="174" y="406" width="224" height="163" rx="6" class="boundary"/>
+<text x="194" y="431" class="small" text-anchor="start">后端 SUT 范围</text>
+<g data-box="22,448,128,54"><rect x="22" y="448" width="128" height="54" rx="6" class="secondary"/>
+<text x="86.0" y="483" class="" text-anchor="middle">API 驱动</text>
+</g>
+<g data-box="196,448,180,54"><rect x="196" y="448" width="180" height="54" rx="6" class="primary"/>
+<text x="286.0" y="483" class="" text-anchor="middle">真实后端</text>
+</g>
+<g data-box="196,518,180,42"><rect x="196" y="518" width="180" height="42" rx="6" class="warm"/>
+<text x="286.0" y="547" class="" text-anchor="middle">内存数据库</text>
+</g>
+<path d="M150 475H194" class="primary-path" data-connector="true"/>
+<path d="M286 502V516" class="primary-path" data-connector="true"/>
+<g data-box="196,608,180,50"><rect x="196" y="608" width="180" height="50" rx="6" class="warm"/>
+<text x="286.0" y="641" class="" text-anchor="middle">第三方替身</text>
+</g>
+<path d="M376 475H387V590H286V606" class="warm-path" data-connector="true"/>
+<text x="22" y="596" class="small" text-anchor="start">仍需另测：</text>
+<text x="22" y="624" class="small" text-anchor="start">界面联动</text>
+<text x="22" y="652" class="small" text-anchor="start">存储与依赖</text>
+<text x="22" y="538" class="small" text-anchor="start">范围 ≠ 规模</text>
+<text x="22" y="565" class="small" text-anchor="start">虚线非机器</text>
+</svg>

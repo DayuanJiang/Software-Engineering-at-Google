@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22-01-root" class="chapter-svg cg-ch22-01" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch22-01-title ch22-01-desc">
+  <title id="ch22-01-title">分片边界不能切断配套修改</title>
+  <desc id="ch22-01-desc">示意把函数返回类型从 int 改为 long：若先提交头文件，声明与旧实现不一致；把头文件与实现放进同一分片，才能形成可独立提交的变更。另一项目的独立修改不必捆绑提交。 函数 f、文件 api.h/api.cc 和项目名均为教学示例。假设 api.cc 包含 api.h，且没有其他必须同步修改的调用方；现实中若有更多依赖，应继续合并或先建立兼容路径。这里只比较声明与定义，不证明完整程序的行为正确性。</desc>
+  <style>
+.cg-ch22-01#ch22-01-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:24px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22-01#ch22-01-root .small { font-size:20px; fill:var(--diagram-muted,#686868); }
+.cg-ch22-01#ch22-01-root .strong { font-weight:600; }
+.cg-ch22-01#ch22-01-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22-01#ch22-01-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22-01#ch22-01-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22-01#ch22-01-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22-01-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22-01-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22-01-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22-01-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22-01-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)" />
+  <text x="32" y="42" text-anchor="start" class="strong">分片边界不能切断配套修改</text>
+  <text x="32" y="77" text-anchor="start" class="small">示意：int 改为 long；api.cc 包含 api.h；无其他需同步修改的调用方</text>
+  <text x="48" y="124" text-anchor="start" class="strong danger-ink">错误：按文件拆开提交</text>
+  <text x="536" y="124" text-anchor="start" class="strong primary-ink">可行：按项目保留配套修改</text>
+  <rect x="32" y="144" width="408" height="68" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="2" />
+  <rect x="32" y="241" width="408" height="68" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="48" y="173" text-anchor="start" class="small" data-box="32,144,408,68">api.h（先提交）</text>
+  <text x="48" y="201" text-anchor="start" data-box="32,144,408,68">long f();</text>
+  <path d="M32 226L440 226" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-dasharray="6 5" />
+  <text x="48" y="269" text-anchor="start" class="small" data-box="32,241,408,68">api.cc（仍是旧实现）</text>
+  <text x="48" y="298" text-anchor="start" data-box="32,241,408,68">int f() { ... }</text>
+  <text x="48" y="345" text-anchor="start" class="danger-ink">声明与定义不一致，不能独立提交</text>
+  <rect x="520" y="144" width="408" height="165" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="536" y="176" text-anchor="start" class="small" data-box="520,144,408,165">分片甲：项目甲 / 同一所有权范围</text>
+  <text x="536" y="223" text-anchor="start" data-box="520,144,408,165">api.h:   long f();</text>
+  <text x="536" y="272" text-anchor="start" data-box="520,144,408,165">api.cc: long f() { ... }</text>
+  <text x="536" y="345" text-anchor="start" class="primary-ink">声明与定义一起改变，一次原子提交</text>
+  <path d="M32 368L928 368" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="32" y="401" text-anchor="start">分片乙：项目乙的独立修改，可另交；不必因同属一次迁移而捆绑。</text>
+  <text x="32" y="438" text-anchor="start" class="small">边界先看项目与所有权，再检查依赖；有更多配套修改就合并或先做兼容。</text>
+  <text x="32" y="466" text-anchor="start" class="small">每片仍需测试、审查与项目检查；本图只展示声明和定义的一致性。</text>
+</svg>

@@ -1,0 +1,24 @@
+{
+  "chapter": 19,
+  "title": "获批后，为什么还不能提交？",
+  "summary": "同一条命名意见的前后对照：LGTM 和所需批准不变，作者修改代码并回复 Done 后，未解决意见从 1 变为 0，才满足基本审查条件；提交前检查仍须通过。",
+  "sourceSections": [
+    "Code Review Flow 代码审查流程",
+    "Commenting 提出审查意见",
+    "Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）"
+  ],
+  "kind": "before-after",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "已有 LGTM 和所需批准，为什么 v1 仍不能提交，而作者处理命名意见后的 v2 可以启动提交？",
+    "expectedAnswer": "本例 v1 还有一条未解决意见。作者改名并回复 Done 后将其解决，LGTM 和所需批准保持有效，因而满足基本审查条件；工具不要求反复获得 LGTM，但仍须通过提交前检查。",
+    "visualEncoding": "左右（手机上下）并列同一变更的两个快照。代码由 n 变为 count，未解决计数由 1 变为 0；两个快照相同的 LGTM 与批准行把不变条件固定下来。连接箭头明确标为作者修改、回复，结尾区分可启动提交与已入库。",
+    "sourceEvidence": "Code Review Flow 代码审查流程：意见须发布、作者修改回复、提交前检查；Commenting 提出审查意见：Done 表示已处理并解决讨论串；Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）：至少一个 LGTM、所需批准齐全、没有未解决意见；工具不要求反复给出 LGTM。",
+    "beforeProblem": "原图把作者、审查者和提交门连成抽象循环，与原书图19-1及原 ch19-01 重复；看不到一次具体修改改变了哪项条件，也难以辨别是否必须重获批准。",
+    "whyBetter": "读者可直接比较同一变更前后的代码、意见和评分，推导阻塞项为何消失，而不是只记住流程名称。",
+    "limits": "命名代码与意见是教学示例，不是原书实际变更或 Critique 截图。本例假定审查者未撤销 LGTM 或批准；不呈现团队追加策略、紧急强制提交或意见是否真正妥善处理的自动证明。"
+  },
+  "desktop": "assets/diagrams/ch19.svg",
+  "mobile": "assets/diagrams/ch19-mobile.svg"
+}

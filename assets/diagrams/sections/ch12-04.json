@@ -1,0 +1,21 @@
+{
+  "id": "ch12-04",
+  "chapter": 12,
+  "title": "DAMP：显露真正的预期",
+  "summary": "展开论坛通用验证helper里的布尔表达式，看到NORMAL和BANNED的注册预期都写反了；再与显式状态、动作、false断言及有意义的共享边界对照。",
+  "enabled": true,
+  "sourceSections": ["## Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY", "### Shared  Values  共享值", "### Shared  Helpers  and  Validation  共享辅助方法和验证", "### Defining Test Infrastructure  定义测试基础设施"],
+  "afterParagraph": "而不只是为了减少重复。",
+  "desktop": "assets/diagrams/sections/ch12-04.svg",
+  "mobile": "assets/diagrams/sections/ch12-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "论坛的通用验证helper藏了什么错误？拆开它是否意味着所有辅助方法都不该共享？",
+    "expectedAnswer": "把注册状态与state == BANNED比较，使普通用户预期未注册、被禁用户预期已注册，正好反了。直接展示BANNED、注册尝试、未注册false就能看清契约；无关默认值以及只断言能否访问账户这一概念事实的helper仍可共享。",
+    "visualEncoding": "真值对照表把两种用户、helper算出的预期和正确契约按列对齐；右侧或下方给出禁止注册的显式given/when/then。底部用具体helper的职责区分默认值、单一事实和混杂验证。",
+    "sourceEvidence": "Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY：例12-19中isEqualTo(user.getState() == State.BANNED)与例12-20的isFalse；Shared  Helpers  and  Validation  共享辅助方法和验证：例12-25的assertUserHasAccessToAccount；Defining Test Infrastructure  定义测试基础设施：must always have its own tests。",
+    "beforeProblem": "旧图只有相关细节留在主体、无关细节放helper的二分框；没有展示原文helper中的真实逻辑错误，而且不足以解释有循环的聚焦断言helper为何仍有意义。",
+    "whyBetter": "两行真值表能直接复算并发现反向预期，显式测试展示修正后的契约；共享边界以具体概念职责判断，而不是把增加重复本身说成学习益处。",
+    "limits": "图中注册步骤为语义简写，省略原例对BannedUserException的捕获；false指未注册而非没有异常。权限helper只表达单一访问事实，并非证明全部权限系统正确；跨套件基础设施仍须独立测试。"
+  }
+}

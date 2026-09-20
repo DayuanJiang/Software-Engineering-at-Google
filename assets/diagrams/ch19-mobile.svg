@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch19" data-layout="mobile" role="img" aria-labelledby="ch19m-title ch19m-desc">
+<title id="ch19m-title">获批后，为什么还不能提交？</title>
+<desc id="ch19m-desc">同一条命名意见的前后对照：LGTM 和所需批准不变，作者修改代码并回复 Done 后，未解决意见从 1 变为 0，才满足基本审查条件；提交前检查仍须通过。</desc>
+<style>.cg-ch19[data-layout=mobile] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19[data-layout=mobile] .small{font-size:19px;fill:var(--diagram-muted,#686868)}.cg-ch19[data-layout=mobile] .strong{font-weight:600}.cg-ch19[data-layout=mobile] .code{font-family:Menlo,Consolas,monospace}.cg-ch19[data-layout=mobile] .danger{fill:var(--diagram-danger,#b54750)}.cg-ch19[data-layout=mobile] .positive{fill:var(--diagram-primary,#087f6d)}</style>
+<defs><marker id="ch19m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">获批后，为什么还不能提交？</text>
+<text x="24" y="74" class="small" text-anchor="start">Critique · 命名意见示例</text>
+<rect id="ch19m-region-1" x="24" y="100" width="372" height="196" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch19m-region-2" x="24" y="100" width="372" height="44" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="130" class="strong" text-anchor="start" data-owner="ch19m-region-2">v1 · 意见已发布</text>
+<text x="40" y="176" class="code" text-anchor="start" data-owner="ch19m-region-1">n = size()</text>
+<text x="40" y="206" class="" text-anchor="start" data-owner="ch19m-region-1">“请把 n 改成 count”</text>
+<text x="40" y="240" class="small" text-anchor="start" data-owner="ch19m-region-1">LGTM 1 · 所需批准齐全</text>
+<text x="40" y="276" class="strong danger" text-anchor="start" data-owner="ch19m-region-1">未解决 1：仍不能提交</text>
+<rect id="ch19m-region-3" x="24" y="348" width="372" height="196" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch19m-region-4" x="24" y="348" width="372" height="44" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="378" class="strong" text-anchor="start" data-owner="ch19m-region-4">v2 · 作者处理意见后</text>
+<text x="40" y="424" class="code" text-anchor="start" data-owner="ch19m-region-3">count = size()</text>
+<text x="40" y="454" class="" text-anchor="start" data-owner="ch19m-region-3">Done：已改名</text>
+<text x="40" y="488" class="small" text-anchor="start" data-owner="ch19m-region-3">LGTM 1 · 所需批准齐全</text>
+<text x="40" y="524" class="strong positive" text-anchor="start" data-owner="ch19m-region-3">未解决 0：可启动提交</text>
+<path class="connector" d="M210 299V339" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch19m-arrow)"/>
+<text x="232" y="324" class="small" text-anchor="start">作者修改、回复</text>
+<text x="24" y="580" class="small" text-anchor="start">LGTM 与批准只能由审查者给出。</text>
+<text x="24" y="606" class="small" text-anchor="start">本例 LGTM 和批准均未撤销；</text>
+<text x="24" y="632" class="small" text-anchor="start">工具不要求再获一次 LGTM。</text>
+<text x="24" y="658" class="small" text-anchor="start">提交前检查通过后，才真正入库。</text>
+</svg>

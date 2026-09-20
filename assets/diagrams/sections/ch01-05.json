@@ -1,0 +1,25 @@
+{
+  "id": "ch01-05",
+  "chapter": 1,
+  "title": "省下 2000 个 CPU，就值得改吗？",
+  "summary": "把原文的假设方案拆成 CPU 节省、额外 RAM 与两周工程师投入；资源数量并不足以决定净收益，还须比较相对成本与机会成本。",
+  "enabled": true,
+  "sourceSections": [
+    "## Trade-offs and Costs 权衡和成本",
+    "### Inputs to Decision Making 决策依据",
+    "## Revisiting Decisions, Making Mistakes 重审决策与犯错"
+  ],
+  "afterParagraph": "还取决于人力成本（一名软件工程师两周的投入）和机会成本（他用这两周还能完成什么）。",
+  "desktop": "assets/diagrams/sections/ch01-05.svg",
+  "mobile": "assets/diagrams/sections/ch01-05-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "已知一种改写能省下 2000 个 CPU，为什么还不能决定是否实施？",
+    "expectedAnswer": "同一方案还增加 5 GiB RAM、耗费两周工程师时间。必须比较 CPU/RAM 的相对成本、人力成本和其他工作的机会成本；仅凭节省的 CPU 数量不能判定净收益。",
+    "visualEncoding": "三行带单位的资源增减构成同一方案的差额账，颜色区分节省与额外投入；桌面逐行指向缺失的估值输入，移动版将三个输入接在差额账下方。",
+    "sourceEvidence": "### Inputs to Decision Making 决策依据：'生产环境会多占用5 GiB 的 RAM，但能节省两千个 CPU'、'他用这两周还能完成什么'；## Revisiting Decisions, Making Mistakes 重审决策与犯错：'新数据出现、情境改变或假设被推翻'。",
+    "beforeProblem": "旧图让数据、证据、假设、先例和论据围绕一个权衡椭圆，读者只能复述输入分类，无法看出具体决策尚缺什么。",
+    "whyBetter": "改用书中的完整假设方案，明确已有数量与缺失估值的边界，并让机会成本对应到同一段两周时间。",
+    "limits": "所有数值均为原文假设，不是实测性能或新造的收益估计。未提供单价、持续时长或其他工作估值，因此不计算盈亏、不声称方案值得实施；难量化因素仍需正文中的判断。"
+  }
+}

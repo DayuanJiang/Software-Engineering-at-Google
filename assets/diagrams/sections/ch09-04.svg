@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch09-04-diagram" class="chapter-svg cg-ch09-04" role="img" aria-labelledby="ch09-04-title ch09-04-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch09-04-title">机器生成，不等于免审</title>
+<desc id="ch09-04-desc">本章自动重构与大规模变更流程有两类判断。选择审查者时，被认定为低风险的变更交给有全库批准权限的指定审查者；可能有风险或需要领域知识时，可以请相关工程师审查。处理疑问时，本地正确性和适用性问题在具体变更中提出，底层工具或 LSC 流程问题另向 LSC 监督小组升级反馈。单项审查不否决已审过的生成流程，也不顺带扩大范围。</desc>
+<style>
+.cg-ch09-04#ch09-04-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch09-04#ch09-04-diagram .strong{font-weight:600}
+.cg-ch09-04#ch09-04-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch09-04#ch09-04-diagram .peer{fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch09-04#ch09-04-diagram .author{fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch09-04#ch09-04-diagram .danger{fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch09-04#ch09-04-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch09-04#ch09-04-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch09-04-arrow)}
+</style>
+<defs><marker id="ch09-04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect id="ch09-04-box1" x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong" text-anchor="start">机器生成，不等于免审</text>
+<text x="32" y="72" class="small" text-anchor="start">本章的自动重构与大规模变更流程；下面是两组独立判断</text>
+<text x="32" y="112" class="strong" text-anchor="start">选择审查者：取决于风险与领域知识</text>
+<text x="32" y="300" class="strong" text-anchor="start">处理疑问：取决于问题针对什么</text>
+<rect id="ch09-04-box2" x="32" y="130" width="344" height="52" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="164" class="" text-anchor="start" data-box="ch09-04-box2">被认定为低风险</text>
+<path d="M380 156 H431" class="arrow"/>
+<text x="451" y="164" class="" text-anchor="start">有全库批准权限的指定审查者</text>
+<rect id="ch09-04-box3" x="32" y="204" width="344" height="52" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="48" y="238" class="" text-anchor="start" data-box="ch09-04-box3">可能有风险 / 需领域知识</text>
+<path d="M380 230 H431" class="arrow"/>
+<text x="451" y="238" class="" text-anchor="start">可请相关工程师审查</text>
+<rect id="ch09-04-box4" x="32" y="316" width="344" height="52" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="350" class="" text-anchor="start" data-box="ch09-04-box4">本地代码的正确性、适用性</text>
+<path d="M380 342 H431" class="arrow"/>
+<text x="451" y="350" class="" text-anchor="start">在该变更中提出</text>
+<rect id="ch09-04-box5" x="32" y="378" width="344" height="52" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="412" class="" text-anchor="start" data-box="ch09-04-box5">底层工具或 LSC 流程</text>
+<path d="M380 404 H431" class="arrow"/>
+<text x="451" y="412" class="" text-anchor="start">另向 LSC 监督小组升级反馈</text>
+<text x="32" y="466" class="small" text-anchor="start">单项审查不否决已审过的生成流程，也不顺带扩大变更范围。</text>
+</svg>

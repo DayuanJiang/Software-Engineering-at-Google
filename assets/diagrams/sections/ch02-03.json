@@ -1,0 +1,21 @@
+{
+  "id": "ch02-03",
+  "chapter": 2,
+  "title": "同样建议 xyzzy，措辞改变了什么？",
+  "summary": "完整并列原文中控制流与 xyzzy 的坏反馈、较好反馈，逐项连接具体措辞与互动变化：从判错转向理解困难，从要求从众转向可拒绝的提议，从服从标准转向清晰和维护目标。",
+  "sourceSections": ["### The Three Pillars of Social Interaction社交互动的三大支柱", "#### Learn to give and take criticism 学会提出和接受建设性批评"],
+  "afterParagraph": "讨论就始终围绕代码本身，而不是任何人的价值或编程能力。",
+  "desktop": "assets/diagrams/sections/ch02-03.svg",
+  "mobile": "assets/diagrams/sections/ch02-03-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "两句话都建议采用 xyzzy 模式，为什么后一种更利于讨论代码？",
+    "expectedAnswer": "后一种先承认自己的理解困难，再以问题形式提出建议，并给出清晰性与维护性的目标；合作者有解释或拒绝的空间。前一种断言错误、要求修改并诉诸从众，容易引向反击。",
+    "visualEncoding": "完整原文引语在桌面左右对照、移动端上下对照；着重标出判错、命令从众和理解困难、会不会、维护目标。下方逐项将后一段中的真实短语对应到可解释、可拒绝、可讨论的互动空间，不用原则名代替例子。",
+    "sourceEvidence": "#### Learn to give and take criticism 学会提出和接受建设性批评：'伙计，你把那个方法的控制流完全搞错了'和'嘿，这部分的控制流我有些没看懂'；紧随解释指出合作者可以平和拒绝，讨论围绕代码。该节 Joe 的经历提醒反馈还取决于团队文化。",
+    "beforeProblem": "旧图只将谦逊、尊重、信任列入彩色盒子，并再次列举行为；缺少两段原文反馈，读者不能观察同一技术建议如何改变互动。",
+    "whyBetter": "保留同一技术对象和建议，直接比较变动的措辞，再把每个短语连接到具体互动空间；读者无需根据抽象原则自行猜测怎么说。",
+    "limits": "引语采用本章现有中文译文。xyzzy 是原文占位模式，不是技术正确性的证明；礼貌措辞不保证建议被采纳，也不能替代对团队文化的了解。"
+  }
+}

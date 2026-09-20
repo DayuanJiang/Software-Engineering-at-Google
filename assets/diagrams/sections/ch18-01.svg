@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch18-01" data-layout="desktop" role="img" aria-labelledby="ch18-01-title ch18-01-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch18-01-title">互不依赖，就能安全并行吗？</title>
+<desc id="ch18-01-desc">原文反例：A 依赖 B 和 C，B 与 C 无依赖边，但都写同一个状态文件。示意文件 status.txt 最后的值取决于谁最后写入，因此缺少依赖边不能证明能安全并行。对照声明输入输出且彼此隔离的动作 B、C，各自产出 b.jar、c.jar，避免此处的共享文件冲突；并不保证任意自定义动作确定。</desc>
+<style>
+.cg-ch18-01[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch18-01[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch18-01[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch18-01[data-layout="desktop"] .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+</style><defs>
+<marker id="ch18-01-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18-01-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18-01-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18-01-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18-01-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">互不依赖，就能安全并行吗？</text>
+<text x="32" y="76" class="small" text-anchor="start">原文共享状态文件反例；文件名、写入值与产物名为示意</text>
+<text x="32" y="120" class="strong" text-anchor="start">已知：A 依赖 B、C；B 与 C 无依赖边</text>
+<text x="32" y="153" class="small" text-anchor="start">隐藏的共享写入：B 与 C 都写 status.txt</text>
+<rect id="ch18-01-box-1" x="32" y="186" width="132" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="98" y="222" class="" text-anchor="middle" data-owner="ch18-01-box-1">B 写 B</text>
+<path class="edge" d="M164 215H196" stroke="var(--diagram-secondary,#2f6eac)" marker-end="url(#ch18-01-secondary-arrow)"/>
+<rect id="ch18-01-box-2" x="198" y="186" width="132" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="264" y="222" class="" text-anchor="middle" data-owner="ch18-01-box-2">C 写 C</text>
+<path class="edge" d="M330 215H364" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch18-01-danger-arrow)"/>
+<rect id="ch18-01-box-3" x="366" y="186" width="156" height="58" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="444" y="222" class="" text-anchor="middle" data-owner="ch18-01-box-3">最终值 C</text>
+<rect id="ch18-01-box-4" x="32" y="286" width="132" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="98" y="322" class="" text-anchor="middle" data-owner="ch18-01-box-4">C 写 C</text>
+<path class="edge" d="M164 315H196" stroke="var(--diagram-secondary,#2f6eac)" marker-end="url(#ch18-01-secondary-arrow)"/>
+<rect id="ch18-01-box-5" x="198" y="286" width="132" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="264" y="322" class="" text-anchor="middle" data-owner="ch18-01-box-5">B 写 B</text>
+<path class="edge" d="M330 315H364" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch18-01-danger-arrow)"/>
+<rect id="ch18-01-box-6" x="366" y="286" width="156" height="58" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="444" y="322" class="" text-anchor="middle" data-owner="ch18-01-box-6">最终值 B</text>
+<text x="32" y="382" class="small" text-anchor="start">相同任务，不同写入顺序，得到不同结果。</text>
+<text x="580" y="120" class="strong" text-anchor="start">声明输出，并隔离动作</text>
+<rect id="ch18-01-box-7" x="580" y="186" width="142" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="651" y="222" class="" text-anchor="middle" data-owner="ch18-01-box-7">动作 B</text>
+<path class="edge" d="M722 215H768" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch18-01-primary-arrow)"/>
+<rect id="ch18-01-box-8" x="770" y="186" width="158" height="58" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="849" y="222" class="" text-anchor="middle" data-owner="ch18-01-box-8">b.jar</text>
+<rect id="ch18-01-box-9" x="580" y="286" width="142" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="651" y="322" class="" text-anchor="middle" data-owner="ch18-01-box-9">动作 C</text>
+<path class="edge" d="M722 315H768" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch18-01-primary-arrow)"/>
+<rect id="ch18-01-box-10" x="770" y="286" width="158" height="58" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="849" y="322" class="" text-anchor="middle" data-owner="ch18-01-box-10">c.jar</text>
+<text x="580" y="382" class="small" text-anchor="start">各写各的产物，不争用状态文件。</text>
+<path d="M24 408H936" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="32" y="437" class="small" text-anchor="start">箭头为执行／产物流，不是依赖边；并行需要已知输入输出与隔离。</text>
+<text x="32" y="465" class="small" text-anchor="start">隔离不保证任意自定义动作确定。</text>
+</svg>

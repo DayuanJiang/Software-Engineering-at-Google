@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch15-02" data-layout="desktop" role="img" aria-labelledby="ch15-02-title ch15-02-desc">
+<title id="ch15-02-title">静态清单之外，谁还在用？</title>
+<desc id="ch15-02-desc">示意服务甲的依赖由尚未识别到被发现。代码搜索和 Kythe 查库或瘦客户端的静态引用；问号不代表不存在依赖。生产日志与运行采样补动态线索；预告、逐步延长的临时停服发现服务失效，从而揭示运行依赖。发现新用法后协助迁移或调整时间表。测试还需使用方提供充分覆盖，不能把未见失效当作无依赖的证明。</desc>
+<style>
+.cg-ch15-02[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch15-02[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch15-02[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch15-02[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch15-02[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch15-02[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch15-02[data-layout="desktop"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+.cg-ch15-02[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch15-02[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch15-02[data-layout="desktop"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
+.cg-ch15-02[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch15-02[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch15-02[data-layout="desktop"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2}
+.cg-ch15-02[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch15-02[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch15-02[data-layout="desktop"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2}
+</style>
+<defs>
+<marker id="ch15-02-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch15-02-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch15-02-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch15-02-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">静态清单之外，谁还在用？</text>
+<text x="32" y="78" class="small" text-anchor="start">示意：服务甲从未识别到被发现；不是一次真实事故记录</text>
+<text x="32" y="122" class="strong" text-anchor="start">静态视图：Code Search / Kythe</text>
+<g data-box="32,149,198,58">
+<rect x="32" y="149" width="198" height="58" rx="5" class="secondary"/>
+<text x="131.0" y="186.0" class="strong" text-anchor="middle">库／瘦客户端</text>
+</g>
+<g data-box="290,149,164,58">
+<rect x="290" y="149" width="164" height="58" rx="5" class="danger"/>
+<text x="372.0" y="186.0" class="strong" text-anchor="middle">旧系统</text>
+</g>
+<path d="M230 178H288" class="primary-line" data-connector="true" marker-end="url(#ch15-02-primary-arrow)"/>
+<text x="32" y="252" class="strong warm-ink" text-anchor="start">服务甲  ?</text>
+<text x="32" y="287" class="small" text-anchor="start">尚未识别它的运行依赖</text>
+<path d="M482 105L482 306" class="guide"/>
+<text x="514" y="122" class="strong" text-anchor="start">补充运行证据</text>
+<text x="514" y="158" class="small" text-anchor="start">日志／采样 + 预告的渐进停服</text>
+<g data-box="514,192,158,58">
+<rect x="514" y="192" width="158" height="58" rx="5" class="warm"/>
+<text x="593.0" y="229.0" class="strong" text-anchor="middle">服务甲</text>
+</g>
+<g data-box="770,192,158,58">
+<rect x="770" y="192" width="158" height="58" rx="5" class="danger"/>
+<text x="849.0" y="229.0" class="strong" text-anchor="middle">旧系统</text>
+</g>
+<path d="M672 221H768" class="danger-line" data-connector="true" marker-end="url(#ch15-02-danger-arrow)" stroke-dasharray="6 5"/>
+<text x="514" y="282" class="small danger-ink" text-anchor="start">观察到失效</text>
+<text x="777" y="282" class="small danger-ink" text-anchor="start">临时停服</text>
+<text x="514" y="318" class="small" text-anchor="start">虚线：新识别的运行依赖</text>
+<rect x="32" y="342" width="896" height="56" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="52" y="379" class="strong" text-anchor="start">新证据改变计划：协助服务甲迁移，或与依赖方共同调整时间表。</text>
+<text x="32" y="430" class="" text-anchor="start">计划停服须预告并逐步延长；测试还需使用方提供充分覆盖。</text>
+<text x="32" y="458" class="" text-anchor="start">静态未找到不等于不存在运行依赖；这些证据也不是完全无遗漏的保证。</text>
+</svg>

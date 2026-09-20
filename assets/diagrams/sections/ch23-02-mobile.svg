@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-02m-root" class="chapter-svg cg-ch23-02" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch23-02m-title ch23-02m-desc">
+  <title id="ch23-02m-title">两个提交前通过，为什么组合后失败？</title>
+  <desc id="ch23-02m-desc">用于解释空中碰撞的假设例子，不是书中的具体故障。原配置使用 v1，原客户端支持 v1 与 v2。变更 A 修改配置文件，改用 v2；变更 B 修改客户端文件，只保留 v1。测试要求客户端能处理配置指定的协议。同一旧基线上，A 和 B 各自通过该测试；并发提交后 A+B 的配置使用 v2，客户端却只支持 v1，测试失败。提交前结果不保证未经测试的组合安全；提交后补测和处置仍然必要。</desc>
+  <style>
+  .cg-ch23-02#ch23-02m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23-02#ch23-02m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23-02#ch23-02m-root .strong {font-weight:600}
+  .cg-ch23-02#ch23-02m-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23-02#ch23-02m-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23-02#ch23-02m-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-02m-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="36" class="strong" data-box="16,8,388,584">两个提交前通过，</text>
+  <text x="24" y="66" class="strong" data-box="16,8,388,584">为什么组合后失败？</text>
+  <text x="24" y="100" class="small" data-box="16,8,388,584">假设例子：A 改配置；B 改客户端</text>
+  <text x="24" y="129" class="small" data-box="16,8,388,584">测试：能处理配置指定的协议</text>
+  <text x="188" y="175" class="small strong" data-box="112,149,138,58" text-anchor="middle">原客户端</text>
+  <text x="188" y="201" class="small" data-box="112,149,138,58" text-anchor="middle">v1、v2</text>
+  <text x="330" y="175" class="small strong" data-box="258,149,138,58" text-anchor="middle">B 客户端</text>
+  <text x="330" y="201" class="small" data-box="258,149,138,58" text-anchor="middle">只支持 v1</text>
+  <text x="24" y="252" class="small strong" data-box="20,218,87,85">原配置</text>
+  <text x="24" y="282" class="small" data-box="20,218,87,85">用 v1</text>
+  <text x="24" y="345" class="small strong" data-box="20,311,87,85">A 配置</text>
+  <text x="24" y="375" class="small" data-box="20,311,87,85">用 v2</text>
+  <rect x="112" y="218" width="138" height="85" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="181" y="251" class="strong" data-box="112,218,138,85" text-anchor="middle">旧基线</text>
+  <text x="181" y="284" class="good" data-box="112,218,138,85" text-anchor="middle">通过</text>
+  <rect x="258" y="218" width="138" height="85" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="327" y="251" class="strong" data-box="258,218,138,85" text-anchor="middle">仅 B</text>
+  <text x="327" y="284" class="good" data-box="258,218,138,85" text-anchor="middle">通过</text>
+  <rect x="112" y="311" width="138" height="85" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="181" y="344" class="strong" data-box="112,311,138,85" text-anchor="middle">仅 A</text>
+  <text x="181" y="377" class="good" data-box="112,311,138,85" text-anchor="middle">通过</text>
+  <rect x="258" y="311" width="138" height="85" fill="var(--diagram-danger-soft,#faecee)"/>
+  <text x="327" y="344" class="strong" data-box="258,311,138,85" text-anchor="middle">A + B</text>
+  <text x="327" y="377" class="bad" data-box="258,311,138,85" text-anchor="middle">失败</text>
+  <text x="24" y="434" class="strong" data-box="16,8,388,584">A + B：要用 v2，却只支持 v1</text>
+  <text x="24" y="468" class="small" data-box="16,8,388,584">提交前各自基于旧版，没测过这组组合</text>
+  <text x="24" y="510" class="small" data-box="16,8,388,584">提交后：补测实际组合，定位与处置</text>
+  <text x="24" y="543" class="small" data-box="16,8,388,584">提交前优先快且可靠，不保证组合安全</text>
+  <text x="24" y="576" class="small" data-box="16,8,388,584">较小项目可串行提交，避开这类竞态</text>
+</svg>

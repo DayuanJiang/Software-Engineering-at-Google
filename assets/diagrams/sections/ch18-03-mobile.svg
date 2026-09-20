@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch18-03" data-layout="mobile" role="img" aria-labelledby="ch18-03m-title ch18-03m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch18-03m-title">哈希能拒绝错文件，不能找回文件</title>
+<desc id="ch18-03m-desc">Guava 是章中外部 JAR 示例；S1、H1、H2 是示意提交与哈希。检出 S1 后清单要求 H1：第三方给 H2 则拒绝；第三方不可用但自控镜像仍有 H1 则校验后接受；所有副本均不可用则失败。有意升级到 H2 需批准并提交新清单，检出旧提交仍要求 H1。哈希匹配验证内容身份，不证明依赖本身无漏洞，也不保证镜像始终可用。</desc>
+<style>
+.cg-ch18-03[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch18-03[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch18-03[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch18-03[data-layout="mobile"] .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+</style><defs>
+<marker id="ch18-03m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18-03m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18-03m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18-03m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18-03m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" class="strong" text-anchor="start">哈希能拒绝错文件</text>
+<text x="24" y="66" class="strong" text-anchor="start">不能找回文件</text>
+<text x="24" y="98" class="small" text-anchor="start">Guava 示例；S1、H1、H2 为示意</text>
+<rect id="ch18-03m-box-1" x="24" y="120" width="372" height="66" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="40" y="148" class="strong" text-anchor="start" data-owner="ch18-03m-box-1">检出 S1 的清单</text>
+<text x="40" y="175" class="small" text-anchor="start" data-owner="ch18-03m-box-1">要求 Guava JAR 的哈希为 H1</text>
+<text x="24" y="222" class="small" text-anchor="start">第三方给另一份 JAR，哈希 H2</text>
+<rect id="ch18-03m-box-2" x="24" y="238" width="372" height="42" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="40" y="267" class="" text-anchor="start" data-owner="ch18-03m-box-2">H2 ≠ H1：拒绝，构建失败</text>
+<text x="24" y="316" class="small" text-anchor="start">第三方宕机，镜像仍有旧 JAR</text>
+<rect id="ch18-03m-box-3" x="24" y="332" width="372" height="42" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="40" y="361" class="" text-anchor="start" data-owner="ch18-03m-box-3">H1 = H1：接受镜像副本</text>
+<text x="24" y="410" class="small" text-anchor="start">第三方、镜像、本地均无副本</text>
+<rect id="ch18-03m-box-4" x="24" y="426" width="372" height="42" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="40" y="455" class="" text-anchor="start" data-owner="ch18-03m-box-4">无文件：失败，不擅自换新版</text>
+<text x="24" y="502" class="small" text-anchor="start">有意升级：批准并提交 S2 接受 H2。</text>
+<text x="24" y="530" class="small" text-anchor="start">检出 S1 仍要求 H1。</text>
+<path d="M24 548H396" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="24" y="580" class="small" text-anchor="start">哈希核对内容，不证明依赖无漏洞。</text>
+</svg>

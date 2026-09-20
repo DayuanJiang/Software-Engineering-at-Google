@@ -1,0 +1,21 @@
+{
+  "id": "ch21-02",
+  "chapter": 21,
+  "title": "OWNERS 没变，使用范围变了",
+  "summary": "以同一个 third_party 包的前后使用路径对比：从演示引入到搜索的传递依赖，登记未更新而人员已转岗；删除会破坏构建，升级又缺乏维护经验。",
+  "enabled": true,
+  "sourceSections": ["### How Google Handles Importing Dependencies  Google如何引入依赖"],
+  "afterParagraph": "结果就是，Alice 和这个包的其他使用方将面临一次昂贵而艰难的升级",
+  "desktop": "assets/diagrams/sections/ch21-02.svg",
+  "mobile": "assets/diagrams/sections/ch21-02-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "既然 Alice 和 Bob 已登记为 OWNERS，为什么安全升级时仍可能无人具备维护能力，也不能直接删包？",
+    "expectedAnswer": "原文引入流程只要求登记两位维护者，不要求实现或升级经验。随后搜索经 Charlie 的模块传递依赖同一个包，人员转岗但登记未变；删包会破坏搜索构建，升级则需不熟悉实现的人跨过许多发布。",
+    "visualEncoding": "引入时的演示到包的短路径，与后来搜索到 Charlie 模块再到同一包的路径相对照；前后 OWNERS 的姓名相同但人员状态改变。箭头从使用方指向依赖，删除包的影响可沿路径回查。",
+    "sourceEvidence": "### How Google Handles Importing Dependencies  Google如何引入依赖：'两人都不必有维护 third_party 包的经验'、'Charlie 却在搜索基础设施的内部深处引入了它'、'OWNERS 文件却一直没人更新'、'直接删除就会破坏搜索团队'。",
+    "beforeProblem": "旧图把四段事件装入编号文字框，既看不到新增的传递路径，也不能从图中推导为什么删除不可行；时间箭头还可能被读成必然生命周期。",
+    "whyBetter": "把实际使用范围变化与静止的登记文件放在一起，具体显示名义责任、维护能力与删除影响为何脱节；没有虚构阶段时长或成本量级。",
+    "limits": "沿用原文假想场景，不声称所有外部包必然经历相同过程。图中省略其他使用方，不以节点个数代表使用量，也不主张登记两名 OWNERS 是充分或普适的维护政策。"
+  }
+}

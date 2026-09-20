@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch25-02-root" class="chapter-svg cg-ch25-02" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch25-02-title ch25-02-desc">
+<title id="ch25-02-title">实例重建之后，还要补哪一步？</title>
+<desc id="ch25-02-desc">示例中甲在数据块 K2 尚未上报时终止。K1 已上报，K3 尚待领取；动态分块让替代 worker 乙重做 K2，而不用重做 K1。另一个独立示例是计划维护：通知甲停止接收新请求，甲完成在途 Q1 后退出，负载均衡识别拒接状态并把新请求 Q2 发往乙。突然故障未必有排空机会；图不保证无中断，也不保证重复执行没有额外效果。</desc>
+<style>
+.cg-ch25-02#ch25-02-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch25-02#ch25-02-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch25-02#ch25-02-root .strong {font-weight:600}
+.cg-ch25-02#ch25-02-root .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch25-02-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch25-02-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch25-02-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch25-02-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch25-02-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
+<text x="32" y="42" text-anchor="start" class="strong">实例重建之后，还要补哪一步？</text>
+<text x="32" y="78" text-anchor="start" class="small">文档分块与计划维护示例；两类作业处理的是不同损失</text>
+<text x="32" y="124" text-anchor="start" class="strong">批处理：甲处理 K2 时终止</text>
+<rect x="32" y="145" width="150" height="82" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="107" y="177" text-anchor="middle" class="strong" data-box="32,145,150,82">K1</text>
+<text x="107" y="209" text-anchor="middle" class="small" data-box="32,145,150,82">已上报</text>
+<rect x="200" y="145" width="150" height="82" rx="0" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="275" y="177" text-anchor="middle" class="strong" data-box="200,145,150,82">K2</text>
+<text x="275" y="209" text-anchor="middle" class="small" data-box="200,145,150,82">未上报</text>
+<rect x="368" y="145" width="150" height="82" rx="0" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="443" y="177" text-anchor="middle" class="strong" data-box="368,145,150,82">K3</text>
+<text x="443" y="209" text-anchor="middle" class="small" data-box="368,145,150,82">待领取</text>
+<rect x="618" y="145" width="310" height="82" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="636" y="177" text-anchor="start" class="strong" data-box="618,145,310,82">替代 worker 乙</text>
+<text x="636" y="209" text-anchor="start" class="small" data-box="618,145,310,82">重做 K2，不重做 K1</text>
+<path data-connector="true" d="M275 227V265H772V237" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch25-02-danger-arrow)"/>
+<text x="532" y="250" text-anchor="middle" class="small">只重领未上报块</text>
+<text x="32" y="311" text-anchor="start" class="strong">计划维护：甲先收到通知</text>
+<rect x="32" y="329" width="282" height="88" rx="0" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="362" text-anchor="start" class="strong" data-box="32,329,282,88">甲停止接受新请求</text>
+<text x="48" y="394" text-anchor="start" class="small" data-box="32,329,282,88">在途 Q1 完成后退出</text>
+<rect x="362" y="329" width="238" height="88" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="380" y="362" text-anchor="start" class="strong" data-box="362,329,238,88">负载均衡</text>
+<text x="380" y="394" text-anchor="start" class="small" data-box="362,329,238,88">识别拒接状态</text>
+<rect x="648" y="329" width="280" height="88" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="666" y="362" text-anchor="start" class="strong" data-box="648,329,280,88">新请求 Q2 送往乙</text>
+<text x="666" y="394" text-anchor="start" class="small" data-box="648,329,280,88">由其他副本承接</text>
+<path data-connector="true" d="M314 374H352" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch25-02-warm-arrow)"/>
+<path data-connector="true" d="M600 374H638" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch25-02-primary-arrow)"/>
+<text x="32" y="459" text-anchor="start" class="small">突然宕机未必能排空；替换实例不会自动消除重复请求。</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch02-01" data-layout="mobile" role="img" aria-labelledby="ch02-01m-title ch02-01m-desc">
+<title id="ch02-01m-title">同一个设计缺陷，何时才能被看见？</title>
+<desc id="ch02-01m-desc">原文变速器故事中，原型一直保密，数月后邻居才有机会指出简单缺陷。书中反事实是早些展示，也许第一周就能解决。两条路径比较检查入口，不表示实测工期。</desc>
+<style>
+.cg-ch02-01[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch02-01[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch02-01[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch02-01[data-layout="mobile"] .primary {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch02-01[data-layout="mobile"] .secondary {fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch02-01[data-layout="mobile"] .danger {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch02-01[data-layout="mobile"] .warm {fill:var(--diagram-warm,#a56a1f);font-weight:600}
+</style>
+<defs>
+<marker id="ch02-01m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch02-01m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch02-01m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch02-01m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+<marker id="ch02-01m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" class="strong" text-anchor="start">同一个设计缺陷，</text>
+<text x="24" y="66" class="strong" text-anchor="start">何时才能被看见？</text>
+<text x="24" y="106" class="danger" text-anchor="start">原文变速器故事：一直保密</text>
+<g id="ch02-01m-hidden-prototype" data-box="24,126,154,88">
+<rect x="24" y="126" width="154" height="88" rx="4" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="101.0" y="163.5" class="" text-anchor="middle">原型已有</text>
+<text x="101.0" y="192.5" class="" text-anchor="middle">简单缺陷</text>
+</g>
+<g id="ch02-01m-private-work" data-box="242,126,154,88">
+<rect x="242" y="126" width="154" height="88" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="319.0" y="163.5" class="" text-anchor="middle">独自试做</text>
+<text x="319.0" y="192.5" class="" text-anchor="middle">数月仍不成</text>
+</g>
+<path d="M184 170H236" class="connector" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M319 220V244H218" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-01m-secondary-arrow)"/>
+<text x="24" y="277" class="secondary" text-anchor="start">最后展示，邻居才指出缺陷</text>
+<path d="M24 300H396" class="connector" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
+<text x="24" y="335" class="primary" text-anchor="start">书中反事实：如果早些展示</text>
+<g id="ch02-01m-shown-prototype" data-box="24,355,154,88">
+<rect x="24" y="355" width="154" height="88" rx="4" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="101.0" y="392.5" class="" text-anchor="middle">同一原型</text>
+<text x="101.0" y="421.5" class="" text-anchor="middle">同样缺陷</text>
+</g>
+<g id="ch02-01m-early-check" data-box="242,355,154,88">
+<rect x="242" y="355" width="154" height="88" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="319.0" y="392.5" class="" text-anchor="middle">邻居检查</text>
+<text x="319.0" y="421.5" class="" text-anchor="middle">不等到完美</text>
+</g>
+<path d="M184 399H236" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-01m-primary-arrow)"/>
+<path d="M319 449V473H218" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-01m-primary-arrow)"/>
+<text x="24" y="506" class="primary" text-anchor="start">也许第一周就能解决</text>
+<text x="24" y="550" class="small" text-anchor="start">顺序示意，不是实测工期。</text>
+<text x="24" y="578" class="small" text-anchor="start">方向未明时，太多早期反馈也有风险。</text>
+</svg>

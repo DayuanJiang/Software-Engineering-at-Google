@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch05-04" data-layout="mobile" role="img" aria-labelledby="ch05-04m-title ch05-04m-desc">
+  <title id="ch05-04m-title">不知怎么做，还是不知为何做？</title>
+  <desc id="ch05-04m-desc">两种支持缺口需要不同信息。方向不清时，领导把工作拆成可管理任务，让下一步可执行。意义不清时，原书经理把客户描述产品帮助的邮件转发给工程团队，让团队看见谁从产品受益。成员可能同时需要两者，图不是人格分类，也不保证产出增加；内在激励的讨论以薪酬不构成压力为前提。</desc>
+  <style>
+.cg-ch05-04[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch05-04[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch05-04[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch05-04[data-layout="mobile"] .connector {fill:none;stroke-width:2;stroke-linejoin:round}
+</style>
+  <defs>
+    <marker id="ch05-04m-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch05-04m-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch05-04m-arrow-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch05-04m-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)" />
+  <g id="ch05-04m-heading" data-box="24,12,372,72">
+    <text x="24" y="38" class="strong" text-anchor="start">不知怎么做，还是不知为何做？</text>
+    <text x="24" y="72" class="small" text-anchor="start">要补足的信息不同，提供的帮助也不同</text>
+  </g>
+  <g id="ch05-04m-row-0" data-box="24,96,372,188">
+    <rect x="24" y="96" width="372" height="188" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+    <text x="40" y="125" class="strong" text-anchor="start">方向缺口</text>
+    <text x="64" y="167" class="" text-anchor="start">不知道下一步做什么</text>
+    <text x="64" y="215" class="" text-anchor="start">拆成可管理任务</text>
+    <text x="64" y="263" class="" text-anchor="start">可执行的下一步</text>
+  </g>
+  <polyline points="43,160 43,209" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-04m-arrow-secondary)" />
+  <polyline points="43,220 43,257" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-04m-arrow-secondary)" />
+  <g id="ch05-04m-row-1" data-box="24,302,372,208">
+    <rect x="24" y="302" width="372" height="208" fill="var(--diagram-warm-soft,#fff3dc)" />
+    <text x="40" y="331" class="strong" text-anchor="start">意义缺口</text>
+    <text x="64" y="373" class="" text-anchor="start">看不到产品帮助了谁</text>
+    <text x="64" y="421" class="" text-anchor="start">转发客户受益邮件</text>
+    <text x="64" y="469" class="" text-anchor="start">用户如何受益</text>
+    <text x="64" y="497" class="small" text-anchor="start">原书客户邮件案例</text>
+  </g>
+  <polyline points="43,366 43,415" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04m-arrow-warm)" />
+  <polyline points="43,426 43,463" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04m-arrow-warm)" />
+  <g id="ch05-04m-limits" data-box="24,522,372,76">
+    <text x="24" y="548" class="small" text-anchor="start">两种帮助可以同时需要，不是人格分类</text>
+    <text x="24" y="579" class="small" text-anchor="start">内在激励前提：薪酬不构成压力</text>
+  </g>
+</svg>

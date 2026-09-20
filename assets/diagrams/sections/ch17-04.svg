@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch17-04" data-layout="desktop" role="img" aria-labelledby="ch17-04-title ch17-04-desc">
+<title id="ch17-04-title">工作区结果不是基线与改动的并集</title>
+<desc id="ch17-04-desc">查询 OldApi 的示例工作区同步于快照 S。a.cc 从 OldApi 改为 NewApi，所以不匹配；b.cc 未修改，保留快照 S 的 OldApi；c.cc 在工作区新增 OldApi，所以匹配；d.cc 从工作区删除，不再匹配。最终结果仅 b.cc、c.cc。比 S 更新的 head 新增 h.cc，即使包含 OldApi 也不应混入该工作区。这说明当前文件覆盖基线的结果语义，并未指定内部合并算法，也不保证语义交叉引用同步。</desc>
+<style>
+.cg-ch17-04[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch17-04[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch17-04[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch17-04[data-layout="desktop"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
+.cg-ch17-04[data-layout="desktop"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch17-04[data-layout="desktop"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch17-04[data-layout="desktop"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
+.cg-ch17-04[data-layout="desktop"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch17-04[data-layout="desktop"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch17-04[data-layout="desktop"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
+.cg-ch17-04[data-layout="desktop"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch17-04[data-layout="desktop"] .danger{fill:var(--diagram-danger-soft,#faecee)}
+.cg-ch17-04[data-layout="desktop"] .danger-ink{fill:var(--diagram-danger,#b54750)}
+</style>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">工作区结果不是基线与改动的并集</text>
+<text x="32" y="78" class="small" text-anchor="start">示例：查询 OldApi；工作区同步于快照 S，修改 / 删除必须遮蔽旧匹配</text>
+<text x="48" y="123" class="small" text-anchor="start">文件</text>
+<text x="220" y="123" class="small" text-anchor="start">同步快照 S</text>
+<text x="449" y="123" class="small" text-anchor="start">工作区当前</text>
+<text x="761" y="123" class="small" text-anchor="start">最终匹配</text>
+<g data-box="32,145,896,47">
+<rect x="32" y="145" width="896" height="47" class="danger"/>
+<text x="48" y="177" class="code strong" text-anchor="start">a.cc</text>
+<text x="220" y="177" class="code" text-anchor="start">OldApi()</text>
+<text x="449" y="177" class="" text-anchor="start">改为 NewApi()</text>
+<text x="761" y="177" class="" text-anchor="start">不命中</text>
+</g>
+<g data-box="32,199,896,47">
+<rect x="32" y="199" width="896" height="47" class="primary"/>
+<text x="48" y="231" class="code strong" text-anchor="start">b.cc</text>
+<text x="220" y="231" class="code" text-anchor="start">OldApi()</text>
+<text x="449" y="231" class="" text-anchor="start">未改，保留 OldApi()</text>
+<text x="761" y="231" class="" text-anchor="start">命中</text>
+</g>
+<g data-box="32,253,896,47">
+<rect x="32" y="253" width="896" height="47" class="primary"/>
+<text x="48" y="285" class="code strong" text-anchor="start">c.cc</text>
+<text x="220" y="285" class="code" text-anchor="start">不存在</text>
+<text x="449" y="285" class="" text-anchor="start">新增 OldApi()</text>
+<text x="761" y="285" class="" text-anchor="start">命中</text>
+</g>
+<g data-box="32,307,896,47">
+<rect x="32" y="307" width="896" height="47" class="danger"/>
+<text x="48" y="339" class="code strong" text-anchor="start">d.cc</text>
+<text x="220" y="339" class="code" text-anchor="start">OldApi()</text>
+<text x="449" y="339" class="" text-anchor="start">已删除</text>
+<text x="761" y="339" class="" text-anchor="start">不命中</text>
+</g>
+<text x="32" y="397" class="strong" text-anchor="start">结果只有 b.cc、c.cc：未改文件查 S 的历史索引，改动按当前状态搜索。</text>
+<text x="32" y="432" class="small" text-anchor="start">反例：HEAD 后来新增的 h.cc 即使含 OldApi，也不属于这个工作区。</text>
+<text x="32" y="463" class="small" text-anchor="start">修改不是再添加一次旧命中；文本视图准确也不保证语义交叉引用同步。</text>
+</svg>

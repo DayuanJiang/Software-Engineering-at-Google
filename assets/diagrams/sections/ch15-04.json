@@ -1,0 +1,21 @@
+{
+  "id": "ch15-04",
+  "chapter": 15,
+  "title": "迁移与收紧许可，缺一不可",
+  "summary": "甲迁到新系统后，从旧系统可见性白名单中删去甲，保留尚未迁出的乙；新增丙和甲的回退都不再获准依赖旧目标。",
+  "sourceSections": ["### Milestones  制定里程碑", "#### Discovery  发现使用者", "#### Migration  迁移", "#### Preventing backsliding  防止新增旧系统依赖"],
+  "afterParagraph": "自动化工具会定期检查白名单，随着各个依赖方迁出旧系统，逐步删减相应条目。",
+  "desktop": "assets/diagrams/sections/ch15-04.svg",
+  "mobile": "assets/diagrams/sections/ch15-04-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "甲已经迁出、乙仍在使用时，旧系统的依赖和可见性白名单应如何变化？",
+    "expectedAnswer": "迁移工具更新甲的引用并通过审查与测试核对行为；白名单在甲迁出后定期删去甲，留下乙。构建规则阻止名单外用户新增旧目标依赖；Tricorder 在符号级提醒新增旧调用。乙仍在使用意味着甲的迁出不等于整个旧系统已可移除。",
+    "visualEncoding": "前后两个拓扑保持甲乙身份不变：甲的边由旧系统转向新系统，乙的边仍指向旧系统。白名单从 {甲,乙} 变为 {乙}，并明确显示甲与新增丙再接旧系统会被拒绝。变更边和集合成员共同表达迁移及防倒退。",
+    "sourceEvidence": "Preventing backsliding  防止新增旧系统依赖：'随着各个依赖方迁出旧系统，逐步删减相应条目'、'Tricorder 会在代码审查时提示'；Migration  迁移：'将代码库中的引用实际改为新的库或运行时服务'；Discovery  发现使用者：'充分的测试'；Milestones  制定里程碑：'具体的阶段性里程碑'。",
+    "beforeProblem": "旧图重复总览的发现、迁移、防倒退流程；箭头还容易暗示防倒退必须等迁移结束才开始。没有显示白名单究竟删谁、为什么尚不能删旧系统。",
+    "whyBetter": "前后边与集合差异让读者可直接判定迁移成果、剩余工作和新依赖的准入结果，展示防倒退与迁移并行发生。",
+    "limits": "甲乙丙和集合是示意，不是谷歌实际名单或构建语法。白名单控制构建目标依赖，不等于自动发现所有运行时使用或自动迁移用户；删许可发生在迁出之后。"
+  }
+}

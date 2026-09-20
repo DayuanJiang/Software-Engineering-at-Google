@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch19-02" data-layout="desktop" role="img" aria-labelledby="ch19-02-title ch19-02-desc"><title id="ch19-02-title">集成入口，不把所有工具塞进审查</title><desc id="ch19-02-desc">以 Critique 为审查中心，分别标示编辑、搜索和发布的链接入口，以及在审查界面中显示的分析结果和覆盖率，体现原文的关注点分离。</desc><style>.cg-ch19-02[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19-02[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}.cg-ch19-02[data-layout="desktop"] .strong{font-weight:600}</style><defs>
+<marker id="ch19-02-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch19-02-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch19-02-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch19-02-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch19-02-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch19-02-box-1" x="0" y="0" width="960" height="480" rx="6" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">
+<tspan x="32" y="42">集成入口，不把所有工具塞进审查</tspan>
+</text>
+<text x="32" y="76" class="small" text-anchor="start">
+<tspan x="32" y="76">链接与内嵌结果的职责不同</tspan>
+</text>
+<text x="32" y="116" class="strong" text-anchor="start">
+<tspan x="32" y="116">链接到独立工具</tspan>
+</text>
+<text x="662" y="116" class="strong" text-anchor="start">
+<tspan x="662" y="116">在审查中呈现</tspan>
+</text>
+<rect id="ch19-02-box-2" x="32" y="142" width="264" height="64" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="48" y="172" class="strong" text-anchor="start" data-owner="ch19-02-box-2">
+<tspan x="48" y="172">Cider：编辑</tspan>
+</text>
+<rect id="ch19-02-box-3" x="32" y="235" width="264" height="64" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="48" y="265" class="strong" text-anchor="start" data-owner="ch19-02-box-3">
+<tspan x="48" y="265">Code Search：浏览</tspan>
+</text>
+<rect id="ch19-02-box-4" x="32" y="328" width="264" height="64" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="48" y="358" class="strong" text-anchor="start" data-owner="ch19-02-box-4">
+<tspan x="48" y="358">Rapid：发布</tspan>
+</text>
+<rect id="ch19-02-box-5" x="360" y="217" width="232" height="102" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="476.0" y="247" class="strong" text-anchor="middle" data-owner="ch19-02-box-5">
+<tspan x="476.0" y="247">Critique</tspan>
+</text>
+<text x="476.0" y="282" class="small" text-anchor="middle" data-owner="ch19-02-box-5">
+<tspan x="476.0" y="282">专注代码审查</tspan>
+</text>
+<path d="M360 250H328V174H298" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch19-02-secondary-arrow)"/>
+<path d="M360 267H298" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch19-02-secondary-arrow)"/>
+<path d="M360 284H328V360H298" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch19-02-secondary-arrow)"/>
+<rect id="ch19-02-box-6" x="662" y="153" width="266" height="87" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="678" y="183" class="strong" text-anchor="start" data-owner="ch19-02-box-6">
+<tspan x="678" y="183">分析结果</tspan>
+</text>
+<text x="678" y="218" class="small" text-anchor="start" data-owner="ch19-02-box-6">
+<tspan x="678" y="218">问题与修复建议</tspan>
+</text>
+<rect id="ch19-02-box-7" x="662" y="295" width="266" height="87" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1"/>
+<text x="678" y="325" class="strong" text-anchor="start" data-owner="ch19-02-box-7">
+<tspan x="678" y="325">测试覆盖率</tspan>
+</text>
+<text x="678" y="360" class="small" text-anchor="start" data-owner="ch19-02-box-7">
+<tspan x="678" y="360">显示在 diff 行号栏</tspan>
+</text>
+<path d="M662 196H628V248H594" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch19-02-primary-arrow)"/>
+<path d="M662 337H628V286H594" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch19-02-primary-arrow)"/>
+<rect id="ch19-02-box-8" x="32" y="416" width="896" height="48" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="443" class="small" text-anchor="start" data-owner="ch19-02-box-8">
+<tspan x="48" y="443">跨工具导航优先使用链接；少量上下文直接呈现，不牺牲审查的简洁性。</tspan>
+</text>
+</svg>

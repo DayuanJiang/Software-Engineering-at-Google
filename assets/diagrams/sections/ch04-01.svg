@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch04-01" data-layout="desktop" role="img" aria-labelledby="ch04-01-title ch04-01-desc">
+<title id="ch04-01-title">数据覆盖不足，测试也未拦截</title>
+<desc id="ch04-01-desc">2015 年 Google Photos 案例。按本章解释，照片数据未代表实际人群，识别输出将黑人朋友的照片误标为大猩猩；测试未发现这些错误，最终由用户发现并承受伤害。测试拦截线的缺口表示漏检，不表示误差率。团队代表性不足可能影响数据收集与设计，但人员代表性不保证训练集无偏差。</desc>
+<style>
+.cg-ch04-01[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch04-01[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch04-01[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<defs>
+<marker id="ch04-01-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch04-01-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch04-01-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch04-01-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" text-anchor="start" class="strong">数据覆盖不足，测试也未拦截</text>
+<text x="32" y="78" text-anchor="start" class="small">2015 年 Google Photos 案例；机制按本章解释归纳</text>
+<g id="ch04-01-perspectives" data-box="32,99,896,49">
+<rect x="32" y="99" width="896" height="49" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="480" y="132" text-anchor="middle" class="">团队代表性不足，可能影响数据收集与设计判断</text>
+</g>
+<polyline data-connector="true" points="150,151 150,188" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-01-arrow-muted)" stroke-dasharray="6 5"/>
+<text x="625" y="184" text-anchor="middle" class="small">发布前测试</text>
+<g id="ch04-01-data" data-box="32,196,240,104">
+<rect x="32" y="196" width="240" height="104" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="152" y="234" text-anchor="middle" class="strong">照片数据</text>
+<text x="152" y="275" text-anchor="middle" class="">未代表实际人群</text>
+</g>
+<polyline data-connector="true" points="277,249 316,249" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-01-arrow-secondary)"/>
+<g id="ch04-01-output" data-box="322,196,244,104">
+<rect x="322" y="196" width="244" height="104" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="444" y="234" text-anchor="middle" class="">黑人朋友的照片</text>
+<text x="444" y="275" text-anchor="middle" class="strong">误标为“大猩猩”</text>
+</g>
+<polyline data-connector="true" points="572,249 678,249" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-01-arrow-danger)"/>
+<polyline data-connector="true" points="625,197 625,229" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+<polyline data-connector="true" points="625,269 625,300" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+<text x="625" y="332" text-anchor="middle" class="small">漏检</text>
+<g id="ch04-01-users" data-box="684,196,244,104">
+<rect x="684" y="196" width="244" height="104" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="806" y="234" text-anchor="middle" class="strong">用户发现错误</text>
+<text x="806" y="275" text-anchor="middle" class="">并承受伤害</text>
+</g>
+<g id="ch04-01-boundary" data-box="32,365,896,65">
+<rect x="32" y="365" width="896" height="65" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="480" y="406" text-anchor="middle" class="">只改变人员构成，不能代替对数据和测试覆盖的核查。</text>
+</g>
+<text x="32" y="462" text-anchor="start" class="small">缺口表示测试未拦截此错误，不表示样本构成、错误比例或量化因果效果。</text>
+</svg>

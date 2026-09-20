@@ -1,0 +1,21 @@
+{
+  "id": "ch22-01",
+  "chapter": 22,
+  "title": "分片边界不能切断配套修改",
+  "summary": "示意把函数返回类型从 int 改为 long：若先提交头文件，声明与旧实现不一致；把头文件与实现放进同一分片，才能形成可独立提交的变更。另一项目的独立修改不必捆绑提交。",
+  "enabled": true,
+  "sourceSections": ["## What Is a Large-Scale Change? 什么是大规模变更？", "### Sharding and Submitting  分片与提交", "#### Testing 测试"],
+  "afterParagraph": "本章后面会详细讨论原子变更可能遇到的障碍。",
+  "desktop": "assets/diagrams/sections/ch22-01.svg",
+  "mobile": "assets/diagrams/sections/ch22-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么不能把同一函数的头文件和实现分开提交，却可以把另一个项目的独立修改另分一片？",
+    "expectedAnswer": "按项目和所有权分片还必须满足可独立提交。示例中头文件先改为 long 而实现仍为 int，会产生声明与定义不一致；两处修改必须同片。没有其他同步依赖时，另一项目可以独立分片，并分别接受测试、审查和项目检查。",
+    "visualEncoding": "左右或上下对照同一函数：错误边界穿过头文件与实现，显示 long/int 混合状态和不一致结果；正确边界包围 long/long 两处修改。另一个项目置于边界外，表明它不是该原子提交的必要成员。",
+    "sourceEvidence": "### Sharding and Submitting  分片与提交: 根据项目边界和代码所有权规则。#### Testing 测试: 分片机制能够把存在依赖的修改归到同一分片，例如对头文件及其实现的修改。## What Is a Large-Scale Change? 什么是大规模变更？: 逻辑上相互关联。",
+    "beforeProblem": "原图仅把头文件与实现写进一个方框，再接通用的测试审查提交方框，没有展示拆错时实际破坏什么；也与概览重复。",
+    "whyBetter": "long/int 与 long/long 的可见差异让读者从声明和实现的对应关系推导分片边界，而不是只记住有依赖就合并的口号。",
+    "limits": "函数 f、文件 api.h/api.cc 和项目名均为教学示例。假设 api.cc 包含 api.h，且没有其他必须同步修改的调用方；现实中若有更多依赖，应继续合并或先建立兼容路径。这里只比较声明与定义，不证明完整程序的行为正确性。"
+  }
+}

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22-03m-root" class="chapter-svg cg-ch22-03" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch22-03m-title ch22-03m-desc">
+  <title id="ch22-03m-title">别名怎样解开 API 与调用方的绑定？</title>
+  <desc id="ch22-03m-desc">用新旧类型的兼容矩阵比较别名前后：没有转换适配时，新旧类型不同会卡住混合迁移；旧名成为新类型别名后，API 和调用方即使分批改名，也指向同一类型。行为准备仍是前提，旧引用清完才删除别名。 S/U 为图中缩写，均指同一模板参数 T；不是可直接复制的 C++ 语法。图仅比较类型一致性，假设别名前无额外转换适配，不展示移动语义、细微行为依赖或所有长尾修复；同型不等于完整程序已被证明正确。</desc>
+  <style>
+.cg-ch22-03#ch22-03m-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:22px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22-03#ch22-03m-root .small { font-size:19px; fill:var(--diagram-muted,#686868); }
+.cg-ch22-03#ch22-03m-root .strong { font-weight:600; }
+.cg-ch22-03#ch22-03m-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22-03#ch22-03m-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22-03#ch22-03m-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22-03#ch22-03m-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22-03m-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22-03m-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22-03m-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22-03m-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22-03m-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)" />
+  <text x="24" y="36" text-anchor="start" class="strong">别名怎样解开 API</text>
+  <text x="24" y="65" text-anchor="start" class="strong">与调用方的绑定？</text>
+  <text x="24" y="97" text-anchor="start" class="small">S = scoped_ptr&lt;T&gt;</text>
+  <text x="24" y="123" text-anchor="start" class="small">U = std::unique_ptr&lt;T&gt;；同一个 T</text>
+  <text x="24" y="150" text-anchor="start" class="small">先做行为准备；图中只比较类型。</text>
+  <text x="24" y="184" text-anchor="start" class="strong">别名前：无额外转换适配</text>
+  <text x="209" y="214" text-anchor="middle" class="small">API: S</text>
+  <text x="329" y="214" text-anchor="middle" class="small">API: U</text>
+  <text x="24" y="254" text-anchor="start">调用 S</text>
+  <rect x="161" y="227" width="96" height="34" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="209.0" y="252.0" text-anchor="middle" class="primary-ink" data-box="161,227,96,34">同型</text>
+  <rect x="281" y="227" width="96" height="34" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="2" />
+  <text x="329.0" y="252.0" text-anchor="middle" class="danger-ink" data-box="281,227,96,34">不同</text>
+  <text x="24" y="296" text-anchor="start">调用 U</text>
+  <rect x="161" y="269" width="96" height="34" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="2" />
+  <text x="209.0" y="294.0" text-anchor="middle" class="danger-ink" data-box="161,269,96,34">不同</text>
+  <rect x="281" y="269" width="96" height="34" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="329.0" y="294.0" text-anchor="middle" class="primary-ink" data-box="281,269,96,34">同型</text>
+  <text x="24" y="342" text-anchor="start" class="strong">建立别名后：S 就是 U</text>
+  <text x="209" y="372" text-anchor="middle" class="small">API: S</text>
+  <text x="329" y="372" text-anchor="middle" class="small">API: U</text>
+  <text x="24" y="412" text-anchor="start">调用 S</text>
+  <rect x="161" y="385" width="96" height="34" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="209.0" y="410.0" text-anchor="middle" class="primary-ink" data-box="161,385,96,34">同型</text>
+  <rect x="281" y="385" width="96" height="34" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="329.0" y="410.0" text-anchor="middle" class="primary-ink" data-box="281,385,96,34">同型</text>
+  <text x="24" y="454" text-anchor="start">调用 U</text>
+  <rect x="161" y="427" width="96" height="34" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="209.0" y="452.0" text-anchor="middle" class="primary-ink" data-box="161,427,96,34">同型</text>
+  <rect x="281" y="427" width="96" height="34" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" />
+  <text x="329.0" y="452.0" text-anchor="middle" class="primary-ink" data-box="281,427,96,34">同型</text>
+  <path d="M24 481L396 481" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="24" y="512" text-anchor="start" class="strong">混合格也同型，才可分批改名。</text>
+  <text x="24" y="544" text-anchor="start" class="small">旧引用清完，才能删除 S 别名。</text>
+  <text x="24" y="577" text-anchor="start" class="small">同型不证明行为正确，仍需测试。</text>
+</svg>

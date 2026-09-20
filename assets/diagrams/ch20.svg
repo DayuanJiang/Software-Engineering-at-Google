@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch20" data-layout="desktop" role="img" aria-labelledby="ch20-title ch20-desc">
+<title id="ch20-title">编译通过，为何仍需要静态分析？</title>
+<desc id="ch20-desc">沿着原文哈希表达式比较 long 与 int：类型改变后，右移成为空操作，字段不再贡献哈希值。再区分作者修复当前代码与贡献检查、清理旧问题后防止同类缺陷再次出现。 这是原文的 Java 语义示例，尽管 Markdown 代码围栏误标为 C++；未修改源文。long 分支表示取高低位混合的操作，不保证每个值产生非零结果。图不提供原文未给出的修复实现，也不把所有分析都视为可阻断构建。</desc>
+<style>
+.cg-ch20[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch20[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch20[data-layout="desktop"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20[data-layout="desktop"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20[data-layout="desktop"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20[data-layout="desktop"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20[data-layout="desktop"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20[data-layout="desktop"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">编译通过，为何仍需要静态分析？</text>
+<text x="32" y="76" class="small" text-anchor="start">原文 Java 示例：改变字段类型后，代码仍能编译</text>
+<rect id="ch20-shape-1" x="32" y="96" width="896" height="62" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="52" y="136" class="code" text-anchor="start" data-owner="ch20-shape-1">result = 31 * result + (int) (f ^ (f &gt;&gt;&gt; 32));</text>
+<path class="connector secondary-edge" d="M248 158V192" marker-end="url(#ch20-secondary-arrow)"/>
+<path class="connector secondary-edge" d="M712 158V192" marker-end="url(#ch20-secondary-arrow)"/>
+<rect id="ch20-shape-2" x="32" y="198" width="432" height="170" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch20-shape-3" x="496" y="198" width="432" height="170" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="52" y="232" class="strong" text-anchor="start" data-owner="ch20-shape-2">f 是 long（64 位）</text>
+<text x="52" y="273" class="" text-anchor="start" data-owner="ch20-shape-2">f &gt;&gt;&gt; 32 取高 32 位</text>
+<text x="52" y="309" class="" text-anchor="start" data-owner="ch20-shape-2">再与 f 异或，混合高低位</text>
+<text x="52" y="343" class="small" text-anchor="start" data-owner="ch20-shape-2">这是混合操作，不保证每个值都非零</text>
+<text x="516" y="232" class="strong" text-anchor="start" data-owner="ch20-shape-3">f 改为 int（32 位）</text>
+<text x="516" y="273" class="code" text-anchor="start" data-owner="ch20-shape-3">f &gt;&gt;&gt; 32 = f</text>
+<text x="516" y="309" class="code" text-anchor="start" data-owner="ch20-shape-3">f ^ f = 0</text>
+<text x="516" y="343" class="small" text-anchor="start" data-owner="ch20-shape-3">字段 f 不再影响哈希结果</text>
+<text x="32" y="402" class="strong" text-anchor="start">发现这一缺陷之后，开发者能做什么？</text>
+<rect id="ch20-shape-4" x="32" y="418" width="272" height="108" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="448" class="strong" text-anchor="start" data-owner="ch20-shape-4">修复当前代码</text>
+<text x="48" y="480" class="small" text-anchor="start" data-owner="ch20-shape-4">检查 f 的类型</text>
+<text x="48" y="508" class="small" text-anchor="start" data-owner="ch20-shape-4">修改哈希实现</text>
+<rect id="ch20-shape-5" x="344" y="418" width="272" height="108" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="360" y="448" class="strong" text-anchor="start" data-owner="ch20-shape-5">贡献检查</text>
+<text x="360" y="480" class="small" text-anchor="start" data-owner="ch20-shape-5">识别同类反模式</text>
+<text x="360" y="508" class="small" text-anchor="start" data-owner="ch20-shape-5">在代码审查中反馈</text>
+<rect id="ch20-shape-6" x="656" y="418" width="272" height="108" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="672" y="448" class="strong" text-anchor="start" data-owner="ch20-shape-6">符合严格准入时</text>
+<text x="672" y="480" class="small" text-anchor="start" data-owner="ch20-shape-6">先清理全库旧问题</text>
+<text x="672" y="508" class="small" text-anchor="start" data-owner="ch20-shape-6">再启用编译错误</text>
+<path class="connector secondary-edge" d="M304 472H338" marker-end="url(#ch20-secondary-arrow)"/>
+<path class="connector secondary-edge" d="M616 472H650" marker-end="url(#ch20-secondary-arrow)"/>
+<text x="32" y="552" class="small" text-anchor="start">静态分析也用于可读性与最佳实践；不是每项检查都能阻断构建。</text>
+</svg>

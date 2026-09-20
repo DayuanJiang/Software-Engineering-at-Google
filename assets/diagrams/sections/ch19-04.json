@@ -1,0 +1,21 @@
+{
+  "id": "ch19-04",
+  "chapter": 19,
+  "title": "四种评分状态，下一步各找谁？",
+  "summary": "四个独立评分案例每次只缺一项：缺 LGTM、缺所需批准、尚有未解决意见，分别对应不同的下一步；只有三项都满足时可启动提交，提交前检查失败仍不能入库。",
+  "sourceSections": ["## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）", "## Stage 6: Commiting a Change 阶段6：提交变更", "## Code Review Flow 代码审查流程", "## Conclusion 总结"],
+  "afterParagraph": "主动信任他人，也有助于建立信任、增强团队凝聚力。",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "批准齐全却没有 LGTM、已有 LGTM 却缺批准、尚有意见未解决，下一步分别由谁处理？全满足就已提交了吗？",
+    "expectedAnswer": "基本规则要求至少一个 LGTM、所需批准齐全、没有未解决意见。缺前两项要由审查者给出，意见可由作者处理并解决。全满足只能启动提交，提交前检查仍可能阻止提交；团队可追加要求。",
+    "visualEncoding": "A/B/C 三个独立案例分别只缺一项，突出该单元格并在同一行给出负责人的下一步；D 三项满足标为可启动提交。手机按案例重排成横条，保留全部具体值和结论，不把表缩小。",
+    "sourceEvidence": "Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）：每项变更都需要一个 LGTM；LGTM 和批准只能由审查者给出；作者可以在回复时自行标记已解决。Code Review Flow 代码审查流程：提交前检查未发现问题才提交。Conclusion 总结：团队可要求多位审查者给出 LGTM。",
+    "beforeProblem": "旧图把三个条件接到一个且门，只说明都需要，却不能让读者从一组具体状态判断还缺什么、由谁处理；手机汇合线也容易退化成泛化工作流。",
+    "whyBetter": "通过只改变一项输入的反例，直接检验 LGTM 与批准不可互换、软性意见仍需处理，以及审查就绪和实际入库之间的区别。",
+    "limits": "四行是独立教学案例而非按序发生的阶段；不指定批准者人数、所有权或语言政策，不引入 GitHub/Gerrit 规则；展示基本正常流程，未展开紧急强制提交和团队特有检查。"
+  },
+  "desktop": "assets/diagrams/sections/ch19-04.svg",
+  "mobile": "assets/diagrams/sections/ch19-04-mobile.svg"
+}

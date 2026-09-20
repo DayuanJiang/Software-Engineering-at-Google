@@ -1,0 +1,21 @@
+{
+  "id": "ch12-03",
+  "chapter": 12,
+  "title": "一个方法，拆出两项行为测试",
+  "summary": "显示商品名和低余额警告虽在同一个方法内，却是两项保证；删去警告的示意变更只让警告测试失败。转账的两个余额断言则共同描述一个行为。",
+  "enabled": true,
+  "sourceSections": ["### Test Behaviors, Not Methods  测试行为，而不是方法", "#### Structure tests to emphasize behaviors  用测试结构突出行为"],
+  "afterParagraph": "而不是不断往已有方法里堆内容。",
+  "desktop": "assets/diagrams/sections/ch12-03.svg",
+  "mobile": "assets/diagrams/sections/ch12-03-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "一个方法显示两条消息，为什么应有两项行为测试，而转账的两个余额断言却可以放在一起？",
+    "expectedAnswer": "商品名显示和低余额警告是不同条件下的不同保证，分别测试可以显示删去警告时哪项保证失效。转账后付款和收款余额共同描述一次转账的结果，因此单一行为不等于单一断言。",
+    "visualEncoding": "同一方法名连接两个有具体given/then的测试栏，对同一删除警告变更给出通过与失败对照；底部以150/20转100后为50/120的双断言反例限定拆分原则。",
+    "sourceEvidence": "Test Behaviors, Not Methods  测试行为，而不是方法：例12-8的user.getBalance() < LOW_BALANCE_THRESHOLD及例12-10的两个命名测试；Structure tests to emphasize behaviors  用测试结构突出行为：例12-11的两个余额断言。",
+    "beforeProblem": "旧转账图的数值正确，也明确了多个断言可以属于一个行为；但方法与行为多对多只出现在桌面页脚，移动版根本看不到两者区别。",
+    "whyBetter": "两个布局都能从相同被测方法下不同条件、预期与变更后结果辨别行为边界，而转账小对照保留旧图最有解释力的限制条件。",
+    "limits": "例12-9/10使用阈值加2及交易3，但例12-8片段没有扣款；本图明确按片段设置余额低于阈值，不推测未展示的扣款。删除警告是示意变更；不暗示一个行为只能调用一个方法或只能有一条断言。"
+  }
+}

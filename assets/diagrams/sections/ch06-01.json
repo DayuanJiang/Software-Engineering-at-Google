@@ -1,0 +1,26 @@
+{
+  "id": "ch06-01",
+  "chapter": 6,
+  "title": "结果更丰富，为什么还不能直接上线？",
+  "summary": "沿一次搜索质量改动追踪短期参与度收益、延迟带来的长期损失和服务容量代价，再把收益与损失接入共同指标，显出旧决策遗漏的因素。",
+  "enabled": true,
+  "sourceSections": [
+    "### Identify the Blinders  找出思维盲点",
+    "## Identify the Key Trade-Offs  确定关键的权衡要素",
+    "### Decide, Then Iterate  做决定，然后持续迭代",
+    "#### Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题"
+  ],
+  "afterParagraph": "我们持续判断质量、延迟和容量方面的变化是否平衡，并每月迭代这些决策。",
+  "desktop": "assets/diagrams/sections/ch06-01.svg",
+  "mobile": "assets/diagrams/sections/ch06-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "给搜索结果页增加图片和视频，即使提升了质量，为什么也不能直接据此决定上线？",
+    "expectedAnswer": "同一改动可能带来短期参与度收益，同时增加传输和渲染延迟、损害长期参与度，并增加服务器 CPU 成本。延迟原先未被同等纳入，现在要与质量和容量一起权衡，依指标判断是否发布并反复调整。",
+    "visualEncoding": "一个候选改动分出三条有明确中间机制的作用路径；括线将短期收益与长期损失连接到同一参与度指标，容量成本另列并显式保留。旧盲点条指出原来未同等对待的延迟。",
+    "sourceEvidence": "Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题：images, videos / more bytes / more-complex HTML；never treated latency as a full citizen；quality-driven improvements to short-term user engagement against latency-driven damage to long-term user engagement。",
+    "beforeProblem": "原图只是找盲点、看取舍、先尝试三个建议框和反馈环；没有呈现一个真实假设、代价承担者或需要改选方案的原因。",
+    "whyBetter": "读者可以从新增内容沿三条路径推导不能只看质量的原因，并看到决策新增了哪项证据；不同于原书图6-1的三个抽象指标三角形。",
+    "limits": "是原文案例的定性作用图，不是代价等量关系或收益减损失公式；没有给出权重、阈值、具体改动的实测值或上线结论。"
+  }
+}

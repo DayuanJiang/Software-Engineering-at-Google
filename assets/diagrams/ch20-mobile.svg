@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch20" data-layout="mobile" role="img" aria-labelledby="ch20m-title ch20m-desc">
+<title id="ch20m-title">编译通过，为何仍需要静态分析？</title>
+<desc id="ch20m-desc">沿着原文哈希表达式比较 long 与 int：类型改变后，右移成为空操作，字段不再贡献哈希值。再区分作者修复当前代码与贡献检查、清理旧问题后防止同类缺陷再次出现。 这是原文的 Java 语义示例，尽管 Markdown 代码围栏误标为 C++；未修改源文。long 分支表示取高低位混合的操作，不保证每个值产生非零结果。图不提供原文未给出的修复实现，也不把所有分析都视为可阻断构建。</desc>
+<style>
+.cg-ch20[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch20[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch20[data-layout="mobile"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20[data-layout="mobile"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20[data-layout="mobile"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20[data-layout="mobile"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20[data-layout="mobile"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20[data-layout="mobile"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">编译通过，为何仍需要静态分析？</text>
+<text x="24" y="70" class="small" text-anchor="start">原文 Java 哈希片段；代码仍能编译</text>
+<rect id="ch20m-shape-1" x="24" y="88" width="372" height="70" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="116" class="code" text-anchor="start" data-owner="ch20m-shape-1">result = 31 * result</text>
+<text x="40" y="145" class="code" text-anchor="start" data-owner="ch20m-shape-1">  + (int) (f ^ (f &gt;&gt;&gt; 32));</text>
+<rect id="ch20m-shape-2" x="24" y="178" width="372" height="112" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="207" class="strong" text-anchor="start" data-owner="ch20m-shape-2">f 是 long（64 位）</text>
+<text x="40" y="240" class="" text-anchor="start" data-owner="ch20m-shape-2">f &gt;&gt;&gt; 32 取高 32 位</text>
+<text x="40" y="272" class="" text-anchor="start" data-owner="ch20m-shape-2">再与 f 异或，混合高低位</text>
+<rect id="ch20m-shape-3" x="24" y="310" width="372" height="118" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="40" y="341" class="strong" text-anchor="start" data-owner="ch20m-shape-3">f 改为 int（32 位）</text>
+<text x="40" y="375" class="code" text-anchor="start" data-owner="ch20m-shape-3">f &gt;&gt;&gt; 32 = f; f ^ f = 0</text>
+<text x="40" y="409" class="" text-anchor="start" data-owner="ch20m-shape-3">字段 f 不再影响哈希结果</text>
+<path class="rule" d="M24 448L396 448"/>
+<text x="24" y="477" class="strong" text-anchor="start">作者：检查类型，修复哈希实现</text>
+<text x="24" y="504" class="small" text-anchor="start">在当前变更的代码审查中处理</text>
+<text x="24" y="543" class="strong" text-anchor="start">贡献者：把反模式写成检查</text>
+<text x="24" y="570" class="small" text-anchor="start">让相同检查覆盖其他代码</text>
+<text x="24" y="609" class="strong" text-anchor="start">符合准入：清理全库后启用错误</text>
+<text x="24" y="636" class="small" text-anchor="start">同类问题再出现时，构建就会失败</text>
+<text x="24" y="668" class="small" text-anchor="start">可读性等建议，不一定能阻断构建。</text>
+</svg>

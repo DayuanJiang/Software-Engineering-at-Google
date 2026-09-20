@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch13-03" data-layout="mobile" role="img" aria-labelledby="ch13-03m-title ch13-03m-desc">
+<title id="ch13-03m-title">数据库不可用于测试时，替换哪一层？</title>
+<desc id="ch13-03m-desc">示意保留真实的两个调用者，只在无法用于测试的数据库 API 边界提供共享 fake；写入调用改变 fake 状态，另一调用者读回该状态，而非为每个调用者分别写 fake。 A/B 是说明替换边界的示意调用者，不是书中新增的类；假定先保存再读取、同一实例、支持该契约，不暗示并发、持久性或事务保证。图不是所有依赖选择的完整决策树。</desc>
+<style>
+.cg-ch13-03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch13-03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch13-03[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch13-03[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch13-03[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch13-03[data-layout="mobile"] .rule {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch13-03[data-layout="mobile"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch13-03m-arrow)}
+</style>
+<defs><marker id="ch13-03m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9 Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect id="ch13-03m-region-1" x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" text-anchor="start" class="strong">数据库不可用：替换哪一层？</text>
+<text x="24" y="69" text-anchor="start" class="small">示意：A/B 为真实调用者，顺序执行</text>
+<rect id="ch13-03m-region-2" x="24" y="100" width="174" height="100" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<rect id="ch13-03m-region-3" x="222" y="100" width="174" height="100" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="40" y="134" text-anchor="start" class="strong" data-fit="ch13-03m-region-2">真实调用者 A</text>
+<text x="40" y="170" text-anchor="start" class="small" data-fit="ch13-03m-region-2">保存记录</text>
+<text x="238" y="134" text-anchor="start" class="strong" data-fit="ch13-03m-region-3">真实调用者 B</text>
+<text x="238" y="170" text-anchor="start" class="small" data-fit="ch13-03m-region-3">读取记录</text>
+<text x="32" y="236" text-anchor="start" class="small">1. save(item)</text>
+<text x="244" y="236" text-anchor="start" class="small">2. get(id)</text>
+<path class="arrow" d="M111 249 L111 273"/>
+<path class="arrow" d="M309 249 L309 273"/>
+<path class="rule" d="M111 200 L111 210"/>
+<path class="rule" d="M309 200 L309 210"/>
+<rect id="ch13-03m-region-4" x="24" y="282" width="372" height="206" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="40" y="315" text-anchor="start" class="strong" data-fit="ch13-03m-region-4">只替换数据库 API</text>
+<text x="40" y="346" text-anchor="start" class="small" data-fit="ch13-03m-region-4">两个调用者共享一个 fake</text>
+<text x="48" y="383" text-anchor="start" class="">{}</text>
+<path class="arrow" d="M91 375 L137 375"/>
+<text x="158" y="383" text-anchor="start" class="">{id: item}</text>
+<text x="40" y="421" text-anchor="start" class="" data-fit="ch13-03m-region-4">1. 保存：空状态变为含记录</text>
+<text x="40" y="460" text-anchor="start" class="" data-fit="ch13-03m-region-4">2. 读取：返回 item</text>
+<text x="24" y="530" text-anchor="start" class="good">断言 B 读回 item</text>
+<text x="24" y="565" text-anchor="start" class="small">不为 A/B 分别写 fake；</text>
+<text x="24" y="592" text-anchor="start" class="small">真实数据库仍需另外测试。</text>
+</svg>

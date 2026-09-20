@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch24-01" data-layout="desktop" role="img" aria-labelledby="ch24-01-title ch24-01-desc">
+  <title id="ch24-01-title">持续交付不等于持续部署</title>
+  <desc id="ch24-01-desc">持续交付让团队维持随时可部署的状态；持续部署进一步让符合条件的变更自动进入生产。创建可发布版本的频率、实际部署频率和用户收到更新的频率可以分别选择。</desc>
+  <style>.cg-ch24-01[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch24-01[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch24-01[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}</style>
+  <defs>
+    <marker id="ch24-01-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch24-01-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch24-01-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch24-01-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" />
+  <text x="32" y="42" text-anchor="start" class="strong">持续交付不等于持续部署</text>
+  <text x="32" y="78" text-anchor="start" class="small">把部署能力与实际推送决策分开</text>
+  <rect x="32" y="142" width="246" height="152" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" />
+  <text x="46" y="173" text-anchor="start" class="strong" data-box="32,142,246,152">持续生成候选版本</text>
+  <text x="46" y="210" text-anchor="start" class="small" data-box="32,142,246,152">自动化构建与测试</text>
+  <text x="46" y="237" text-anchor="start" class="small" data-box="32,142,246,152">小批量变更</text>
+  <path d="M278 218H326" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch24-01-primary-arrow)" />
+  <rect x="326" y="142" width="286" height="152" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" />
+  <text x="340" y="173" text-anchor="start" class="strong" data-box="326,142,286,152">持续交付</text>
+  <text x="340" y="210" text-anchor="start" class="small" data-box="326,142,286,152">维持随时可部署的状态</text>
+  <text x="340" y="237" text-anchor="start" class="small" data-box="326,142,286,152">可选择暂不向用户推送</text>
+  <path d="M612 218H660" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch24-01-secondary-arrow)" stroke-dasharray="6 5" />
+  <rect x="660" y="142" width="268" height="152" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" />
+  <text x="674" y="173" text-anchor="start" class="strong" data-box="660,142,268,152">持续部署</text>
+  <text x="674" y="210" text-anchor="start" class="small" data-box="660,142,268,152">符合条件的变更</text>
+  <text x="674" y="237" text-anchor="start" class="small" data-box="660,142,268,152">自动进入生产环境</text>
+  <text x="328" y="349" text-anchor="start" class="small">能力已经具备</text>
+  <text x="660" y="349" text-anchor="start" class="small">是否采用另作选择</text>
+  <rect x="32" y="412" width="896" height="48" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="none" />
+  <text x="480.0" y="443" text-anchor="middle" data-box="32,412,896,48">版本生成频率与用户接收频率可分离</text>
+</svg>

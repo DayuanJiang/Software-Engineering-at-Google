@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch23-root" class="chapter-svg cg-ch23" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch23-title ch23-desc">
+  <title id="ch23-title">CI：把不同问题放进合适的反馈回路</title>
+  <desc id="ch23-desc">Takeout 的两个反馈回路。实例启动测试由夜间部署后提前到提交前，在临时沙盒中组合二进制与各实例配置。完整归档测试因测试账户的安全限制，放在已审代码的提交后环境，每两小时从 green head 组装 RC 后运行。启动成功不代表端到端成功。CI 决定何时测试何种系统，CB 验证 head，CD 组装并推进测试候选版本；候选版本不一定进入生产。</desc>
+  <style>
+  .cg-ch23#ch23-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+  .cg-ch23#ch23-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+  .cg-ch23#ch23-root .strong {font-weight:600}
+  .cg-ch23#ch23-root .good {fill:var(--diagram-primary,#087f6d)}
+  .cg-ch23#ch23-root .bad {fill:var(--diagram-danger,#b54750)}
+  .cg-ch23#ch23-root .pending {fill:var(--diagram-warm,#a56a1f)}
+  </style>
+  <defs><marker id="ch23-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+  <rect x="0" y="0" width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong" data-box="16,8,928,544">CI：把不同问题放进合适的反馈回路</text>
+  <text x="32" y="78" class="small" data-box="16,8,928,544">Takeout 案例：实例启动与完整归档，不能只等夜间部署后才检查</text>
+  <text x="48" y="124" class="strong" data-box="16,8,928,544">被测组合</text>
+  <text x="418" y="124" class="strong" data-box="16,8,928,544">原先</text>
+  <text x="640" y="124" class="strong" data-box="16,8,928,544">改进后的反馈入口</text>
+  <rect x="32" y="145" width="896" height="135" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="48" y="180" class="strong" data-box="32,145,328,135">各实例启动</text>
+  <text x="48" y="218" class="" data-box="32,145,328,135">二进制 + Drive 配置</text>
+  <text x="48" y="256" class="small" data-box="32,145,328,135">同一二进制 + Gmail 配置 …</text>
+  <text x="394" y="211" class="" data-box="380,145,170,135">夜间部署后</text>
+  <path d="M560 211L614 211" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-arrow)"/>
+  <text x="640" y="180" class="strong" data-box="625,145,303,135">提交前：临时沙盒</text>
+  <text x="640" y="218" class="" data-box="625,145,303,135">逐实例检查能否启动</text>
+  <text x="640" y="256" class="small" data-box="625,145,303,135">仍未验证完整归档</text>
+  <rect x="32" y="295" width="896" height="135" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="330" class="strong" data-box="32,295,328,135">完整归档输出</text>
+  <text x="48" y="368" class="" data-box="32,295,328,135">RC + 测试账户</text>
+  <text x="48" y="406" class="small" data-box="32,295,328,135">测试账户受安全与隐私保护</text>
+  <text x="394" y="361" class="" data-box="380,295,170,135">夜间部署后</text>
+  <path d="M560 361L614 361" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-arrow)"/>
+  <text x="640" y="330" class="strong" data-box="625,295,303,135">提交后：每两小时</text>
+  <text x="640" y="368" class="small" data-box="625,295,303,135">从 green head 组装 RC</text>
+  <text x="640" y="406" class="small" data-box="625,295,303,135">代码已审，可用测试账户</text>
+  <text x="32" y="473" class="strong" data-box="16,8,928,544">CI 决定：何时测什么，以及怎样组建被测系统（SUT）</text>
+  <text x="32" y="509" class="small" data-box="16,8,928,544">CB 验证 head 的构建与测试；CD 组装、推进并测试 RC。</text>
+  <text x="32" y="543" class="small" data-box="16,8,928,544">两小时是案例频率，不是时限保证；RC 不一定进入生产。</text>
+</svg>

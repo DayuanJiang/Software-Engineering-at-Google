@@ -1,0 +1,21 @@
+{
+  "id": "ch11-05",
+  "chapter": 11,
+  "title": "识别了不稳定测试，就算完成了吗？",
+  "summary": "用书中 Test Certified 的第1级与第5级检查一个示意项目：持续构建、覆盖率跟踪、规模分类、快速测试与 flake 清单满足起步条件，但已识别而未消除的非确定性仍不满足第5级。",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "一个项目已建立持续构建、跟踪覆盖率、分类测试规模、拥有快速测试，并识别了不稳定测试但未修复，是否已经满足 Test Certified 第5级？",
+    "expectedAnswer": "没有。这些是第1级的起步要求，其中识别不稳定测试并不要求立即修复。第5级还要求所有测试自动化、每次提交前运行快速测试、消除所有非确定性，并覆盖每种行为。",
+    "visualEncoding": "左侧或上方是同一项目的可观察证据；右侧或下方逐项映射到第5级要求，用问号表示未提供证据，用叉号表示明确不满足。没有把未知项当作失败，也没有凭单项指标评分。",
+    "sourceEvidence": "### Test Certified  测试认证：'识别不稳定测试，但不一定要修复'；'到第五级时，所有测试都已自动化'；### Testing Culture Today  当今的测试文化：pH 是替代测试认证计划的多指标工具。",
+    "beforeProblem": "旧图是培训、认证、专栏三组标题汇入日常开发，缺少可检验的具体行动，还容易让认证等级与后来的 pH 评分混在一起。",
+    "whyBetter": "把泛化的文化传播摘要换成一个能逐项判断的历史认证案例，明确识别与消除、已有快速测试与每次提交前运行、未知与不满足的差异。",
+    "limits": "仅演示书中历史 Test Certified 的第1级与第5级要求，不能推断第2至第4级，也不是当前谷歌政策或 pH 评分算法。"
+  },
+  "sourceSections": ["### Test Certified  测试认证", "### Testing Culture Today  当今的测试文化"],
+  "afterParagraph": "没过多久，团队之间就开始竞相提升等级。",
+  "desktop": "assets/diagrams/sections/ch11-05.svg",
+  "mobile": "assets/diagrams/sections/ch11-05-mobile.svg"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ch04-02",
+  "chapter": 4,
+  "title": "同样改招聘，入职之后呢？",
+  "summary": "沿用书中经理希望招聘更多女性的例子，在相同的招聘改进起点下对照两种审视范围：只改入口，支持和成长机会的缺口仍未解决；同时检查心理安全、支持与机会分配，再依据留任和成长结果修正做法。",
+  "sourceSections": ["## Making Diversity Actionable 将多样性付诸行动", "## Reject Singular Approaches 摒弃单一方法"],
+  "afterParagraph": "投入资源培养团队的多元文化能力，让新成员感到受欢迎。",
+  "desktop": "assets/diagrams/sections/ch04-02.svg",
+  "mobile": "assets/diagrams/sections/ch04-02-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "经理已经改善招聘渠道，为什么仍不能据此认为留任与晋升问题得到解决？",
+    "expectedAnswer": "招聘只涉及入口；如果入职后的支持和成长机会分配没有改变，相关问题并不会因招聘改善而消失。本章要求同时关注心理安全、多元文化能力、留任和晋升，检查实际机会与结果。",
+    "visualEncoding": "共用一个招聘改进起点，分出两条条件路径。上路明确保留支持与机会缺口，终点是未解决的风险；下路扩展审视范围，终点是跟踪结果并修正，而非保证留任或晋升成功。",
+    "sourceEvidence": "Reject Singular Approaches 摒弃单一方法: “if you are an engineering manager who wants to hire more women, don't just focus on building a pipeline”, “psychological safety”, “progression and retention”; Making Diversity Actionable 将多样性付诸行动: “what opportunities for growth have you provided, and is the distribution of opportunities equitable?”.",
+    "beforeProblem": "原图是招聘、留任、晋升三框的单向流程，暗示自然推进，却没有说明改善前一项为何不足以修复后两项；多元文化能力的横幅只是补充口号。",
+    "whyBetter": "固定招聘改进这一共同起点，只改变入职后制度是否被审视，让读者看出“入口改善”与“支持、机会问题已解决”是不同判断。",
+    "limits": "两条路径是基于书中经理例子的条件对照，不是已执行的实验或统计结果；不预测女性或其他群体的表现、去留或晋升概率，也不承诺检查这些事项即可实现公平。"
+  }
+}

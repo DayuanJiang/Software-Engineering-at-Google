@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch12-03" data-layout="desktop" role="img" aria-labelledby="ch12-03-title ch12-03-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch12-03-title">一个方法，拆出两项行为测试</title>
+<desc id="ch12-03-desc">按例12-8的代码条件分别测试商品消息和低余额警告。两测试各自调用displayTransactionResults。示意删除警告时，商品名测试仍通过，低余额警告测试失败；方法名本身不能区分这两项行为。低余额直接设为小于阈值，不沿用例12-9/10与方法片段不一致的加2再花3设置。例12-11的转账需要同时断言两个账户余额，说明单一行为不等于单一断言。</desc>
+<style>
+.cg-ch12-03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0}
+.cg-ch12-03[data-layout="desktop"] .small {font-size:20px}
+.cg-ch12-03[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 896">一个方法，拆出两项行为测试</text>
+<text x="32" y="76" class="small" text-anchor="start" fill="var(--diagram-muted,#686868)" data-font-size="20" data-lane="32 896">例12-8/10：按片段中明确的条件，直接设置余额低于阈值</text>
+<text x="32" y="118" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="32 896">两项测试各自调用 displayTransactionResults(...)</text>
+<rect x="32" y="140" width="896" height="53" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" data-region="true"/>
+<text x="48" y="175" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 864">示意变更：删去低余额警告，但保留商品消息</text>
+<rect x="32" y="215" width="432" height="172" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="48" y="249" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 400">行为 A：显示商品名</text>
+<text x="48" y="288" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 400">给定：商品 Some Item</text>
+<text x="48" y="326" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="48 400">则：消息包含 Some Item</text>
+<text x="48" y="365" class="strong" text-anchor="start" fill="var(--diagram-primary,#087f6d)" data-font-size="24" data-lane="48 400">变更后：通过</text>
+<rect x="496" y="215" width="432" height="172" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
+<text x="512" y="249" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="512 400">行为 B：低余额警告</text>
+<text x="512" y="288" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="512 400">给定：余额 &lt; 阈值</text>
+<text x="512" y="326" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="24" data-lane="512 400">则：消息包含余额不足警告</text>
+<text x="512" y="365" class="strong" text-anchor="start" fill="var(--diagram-danger,#b54750)" data-font-size="24" data-lane="512 400">变更后：失败</text>
+<text x="32" y="425" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="32 896">一项方法容纳两项行为，失败应指出哪项保证被破坏，而不只报告方法名。</text>
+<text x="32" y="463" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="20" data-lane="32 896">例12-11：转账 100，余额 150 / 20 变为 50 / 120；两条断言仍验证一个行为。</text>
+</svg>

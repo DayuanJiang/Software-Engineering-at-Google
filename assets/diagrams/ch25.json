@@ -1,0 +1,24 @@
+{
+  "chapter": 25,
+  "title": "换一台机器，哪些东西要接上？",
+  "summary": "以订单服务从故障机器甲迁到乙为例：服务名稳定但地址会更新；本地状态不会随重建自动复制，持久订单要从外部重新读取，缓存则可重建。实例恢复、进度恢复、安全重试与平稳服务是不同要求。",
+  "enabled": true,
+  "sourceSections": [
+    "Architecting for Failure 为应对故障设计架构",
+    "Managing State 管理状态",
+    "Connecting to a Service 连接到服务"
+  ],
+  "kind": "state-transition",
+  "desktop": "assets/diagrams/ch25.svg",
+  "mobile": "assets/diagrams/ch25-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "订单服务换到新机器后，为什么启动成功仍不代表旧订单、地址与请求都恢复了？",
+    "expectedAnswer": "调度重建实例，不搬运原机器本地状态。客户端要跟踪服务名对应的新地址，需要保留的订单应提前写到外部持久存储；缓存可重新构建，但冷缓存可能增加延迟。安全重试和维护排空还需单独设计。",
+    "visualEncoding": "服务名横带保持不变而地址由甲改乙；旧机与新机对照，中间箭头明确只表示重新放置。持久订单画在两台机器之外，用故障前写入和新实例读取连接；甲仅本地保存的订单与乙空缓存构成失败反例。",
+    "sourceEvidence": "Architecting for Failure 为应对故障设计架构：还需要额外的设计和投入。Managing State 管理状态：真正需要保存的数据则必须存放在别处；缓存层丢失后延迟会更高。Connecting to a Service 连接到服务：即使具体的后端实例重启，这个标识符也保持不变。",
+    "beforeProblem": "原总览以共享池和借还箭头重复 ch25-04；持久状态只在图脚出现，读者无法判断换机器后哪些内容仍在、哪些会丢。",
+    "whyBetter": "把机器边界、持久存储边界、地址更新和空缓存画成同一次替换的不同后果，为后续隔离、恢复、重试和资源回收例子提供问题框架。",
+    "limits": "订单与机器甲乙是教学示例。没有展示存储的复制、共识、容量配置与客户端实现，也不保证外部存储永不失败或重建服务无中断。"
+  }
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch02" data-layout="mobile" role="img" aria-labelledby="ch02m-title ch02m-desc">
+<title id="ch02m-title">团队协作，不必采用同一种工作方式</title>
+<desc id="ch02m-desc">原文作者喜欢自下而上快速试验，Karl 喜欢自上而下先理解全貌。强行同步结对引起冲突；改为共同确认缺陷、分头分析、汇合发现，保留了不同方式和团队协作。</desc>
+<style>
+.cg-ch02[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch02[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch02[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch02[data-layout="mobile"] .primary {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch02[data-layout="mobile"] .secondary {fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch02[data-layout="mobile"] .danger {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch02[data-layout="mobile"] .warm {fill:var(--diagram-warm,#a56a1f);font-weight:600}
+</style>
+<defs>
+<marker id="ch02m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch02m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch02m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch02m-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+<marker id="ch02m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+</defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" class="strong" text-anchor="start">团队协作，不必采用</text>
+<text x="24" y="66" class="strong" text-anchor="start">同一种工作方式</text>
+<text x="24" y="99" class="small" text-anchor="start">原文：作者与 Karl 调试转换工具</text>
+<text x="24" y="138" class="danger" text-anchor="start">强行同步：下一步做什么？</text>
+<g id="ch02m-before-author" data-box="24,155,176,72">
+<rect x="24" y="155" width="176" height="72" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="112.0" y="184.5" class="" text-anchor="middle">作者先试验</text>
+<text x="112.0" y="213.5" class="" text-anchor="middle">自下而上</text>
+</g>
+<g id="ch02m-before-karl" data-box="220,155,176,72">
+<rect x="220" y="155" width="176" height="72" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="308.0" y="184.5" class="" text-anchor="middle">Karl 先看全貌</text>
+<text x="308.0" y="213.5" class="" text-anchor="middle">自上而下</text>
+</g>
+<path d="M112 233V248H174" class="connector" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02m-danger-arrow)"/>
+<path d="M308 233V248H246" class="connector" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02m-danger-arrow)"/>
+<text x="210" y="286" class="small" text-anchor="middle">争执、受挫，无法继续结对</text>
+<path d="M24 308H396" class="connector" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
+<text x="24" y="344" class="primary" text-anchor="start">调整后：协调交接点</text>
+<g id="ch02m-shared-bug" data-box="104,364,212,50">
+<rect x="104" y="364" width="212" height="50" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="210.0" y="397.0" class="" text-anchor="middle">一起确认缺陷</text>
+</g>
+<path d="M210 420V438H112V452" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02m-primary-arrow)"/>
+<path d="M210 438H308V452" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02m-primary-arrow)"/>
+<g id="ch02m-author" data-box="24,458,176,74">
+<rect x="24" y="458" width="176" height="74" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="112.0" y="488.5" class="" text-anchor="middle">作者快速试验</text>
+<text x="112.0" y="517.5" class="" text-anchor="middle">自下而上</text>
+</g>
+<g id="ch02m-karl" data-box="220,458,176,74">
+<rect x="220" y="458" width="176" height="74" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="308.0" y="488.5" class="" text-anchor="middle">Karl 看调用栈</text>
+<text x="308.0" y="517.5" class="" text-anchor="middle">自上而下</text>
+</g>
+<path d="M112 538V554H210V570" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02m-primary-arrow)"/>
+<path d="M308 538V554H210" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round"/>
+<g id="ch02m-findings" data-box="104,576,212,50">
+<rect x="104" y="576" width="212" height="50" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="210.0" y="609.0" class="" text-anchor="middle">带着发现重新汇合</text>
+</g>
+<text x="210" y="660" class="small" text-anchor="middle">独立探索，但不隐藏问题与发现</text>
+</svg>

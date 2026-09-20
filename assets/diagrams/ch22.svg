@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch22-root" class="chapter-svg cg-ch22" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch22-title ch22-desc">
+  <title id="ch22-title">同一项迁移，不是同一次提交</title>
+  <desc id="ch22-desc">以已建立类型别名的迁移为示例：项目甲已改名，乙仍在审查，丙遇到冲突；各分片独立提交，整体迁移尚未完成。兼容别名支持中间态，但仍有旧引用时不能删除别名。 三个项目和状态是教学示意，不是原书的真实项目或进度数据。假设别名准备与行为兼容工作已完成、三个改名分片无相互依赖。不证明任意回滚都安全，也不要求所有 LSC 都清除全部旧引用。</desc>
+  <style>
+.cg-ch22#ch22-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:24px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
+.cg-ch22#ch22-root .small { font-size:20px; fill:var(--diagram-muted,#686868); }
+.cg-ch22#ch22-root .strong { font-weight:600; }
+.cg-ch22#ch22-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
+.cg-ch22#ch22-root .danger-ink { fill:var(--diagram-danger,#b54750); }
+.cg-ch22#ch22-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
+.cg-ch22#ch22-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
+</style>
+  <defs>
+    <marker id="ch22-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch22-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch22-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch22-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+    <marker id="ch22-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="560" fill="var(--diagram-bg,#fff)" />
+  <text x="32" y="43" text-anchor="start" class="strong">同一项迁移，不是同一次提交</text>
+  <text x="32" y="78" text-anchor="start" class="small">示意快照：把各项目的旧类型名迁到标准类型名</text>
+  <rect x="32" y="101" width="896" height="76" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+  <text x="48" y="131" text-anchor="start" class="strong" data-box="32,101,896,76">前提：已完成行为准备，并建立兼容别名</text>
+  <text x="48" y="161" text-anchor="start" data-box="32,101,896,76">scoped_ptr 与 std::unique_ptr 现在指向同一类型</text>
+  <text x="90" y="216" text-anchor="start" class="strong">一个逻辑目标：移除旧名称</text>
+  <path d="M65 237L47 237L47 441L65 441" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" />
+  <text x="96" y="250" text-anchor="start" class="small">项目 / 分片</text>
+  <text x="315" y="250" text-anchor="start" class="small">主干中的类型名</text>
+  <text x="665" y="250" text-anchor="start" class="small">该分片的提交状态</text>
+  <rect x="80" y="265" width="848" height="52" fill="var(--diagram-primary-soft,#e5f4ee)" />
+  <text x="96" y="299" text-anchor="start" data-box="80,265,848,52">项目甲</text>
+  <text x="315" y="299" text-anchor="start" data-box="80,265,848,52">std::unique_ptr</text>
+  <text x="665" y="299" text-anchor="start" data-box="80,265,848,52">已原子提交</text>
+  <rect x="80" y="325" width="848" height="52" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+  <text x="96" y="359" text-anchor="start" data-box="80,325,848,52">项目乙</text>
+  <text x="315" y="359" text-anchor="start" data-box="80,325,848,52">scoped_ptr</text>
+  <text x="665" y="359" text-anchor="start" data-box="80,325,848,52">审查中，尚未提交</text>
+  <rect x="80" y="385" width="848" height="52" fill="var(--diagram-warm-soft,#fff3dc)" />
+  <text x="96" y="419" text-anchor="start" data-box="80,385,848,52">项目丙</text>
+  <text x="315" y="419" text-anchor="start" data-box="80,385,848,52">scoped_ptr</text>
+  <text x="665" y="419" text-anchor="start" data-box="80,385,848,52">冲突，需重新生成</text>
+  <text x="80" y="472" text-anchor="start" class="small">一行是一片，各自测试、审查与提交；甲不必等乙、丙一起提交。</text>
+  <path d="M32 488L928 488" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
+  <text x="32" y="519" text-anchor="start" class="strong">但乙、丙还用旧名：本次迁移未完成，不能删除旧别名。</text>
+  <text x="32" y="548" text-anchor="start" class="small">本例目标是清除旧引用；迁移期间还需检查新增旧用法，避免回流。</text>
+</svg>

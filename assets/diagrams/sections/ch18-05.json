@@ -1,0 +1,21 @@
+{
+  "id": "ch18-05",
+  "chapter": 18,
+  "title": "直接使用，就直接声明依赖",
+  "summary": "固定 A 调用 C.f() 的示例，只比较是否声明 A → C。两侧都移除 B → C 后，借用传递依赖的一侧失去 C，而显式声明的一侧仍保有 C；严格模式能在移除前就发现缺少的直接依赖。",
+  "sourceSections": ["#### Internal dependencies 内部依赖"],
+  "afterParagraph": "工程师可以移除不再需要的依赖项，无需担心破坏依赖自己目标的其他目标。",
+  "desktop": "assets/diagrams/sections/ch18-05.svg",
+  "mobile": "assets/diagrams/sections/ch18-05-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "A 的代码没改，为什么移除 B → C 仍会使 A 失败；补哪一条声明可以避免这种破坏？",
+    "expectedAnswer": "若 A 直接使用 C 的符号却仅经 B 获得 C，删除 B → C 就会切断这种偶然可用性。A 必须直接声明 A → C；严格模式会在使用未直接声明的符号时报告错误。",
+    "visualEncoding": "保留两侧同构的 A/B/C 图和右侧新增的 A → C 边。顶部把 A 的实际使用具体化为 C.f()；两侧 B → C 边都画删除叉，使读者可沿剩余依赖边判断 A 能否继续获得 C。",
+    "sourceEvidence": "Internal dependencies 内部依赖：A 使用 C 中定义的类；B 重构并移除对 C 的依赖会破坏 A；严格传递依赖模式报错并给出补依赖命令。",
+    "beforeProblem": "原图已经把删除依赖的反例与显式声明对照画出，明显超出原书图18-5的单纯传递链，值得保留。缺点是实际使用只写成抽象短语，虚线移除边容易被误读为仍存在的边。",
+    "whyBetter": "具体的符号使用和删除标记补足原图的推理前提，剩余的直接边足以说明为什么 A 在右侧不再受此次依赖删除影响。",
+    "limits": "C.f() 是原文类/符号使用的示意写法，不是原文代码。不保证 B 的任意重构都不会影响 A；只讨论删除 B → C 这条依赖。严格模式先报错的时间点已明确，不把左侧当成严格模式下的合法构建。"
+  }
+}

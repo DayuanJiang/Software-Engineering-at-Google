@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch01-05" data-layout="mobile" role="img" aria-labelledby="ch01-05m-title ch01-05m-desc">
+  <title id="ch01-05m-title">省下 2000 个 CPU，就值得改吗？</title>
+  <desc id="ch01-05m-desc">原文假设场景：花两周把链表改成性能更高的数据结构，生产 RAM 多占 5 GiB，节省 2000 个 CPU。三个带单位的增减量是同一个方案的变化，不是测量结果、可直接相加的数值或按面积编码的成本。CPU 节省只是收益端，决策还需 RAM 和 CPU 的相对成本、两周工程师投入、以及这两周本可完成其他工作的机会成本。图中不提供价格，因此无法据此断言净收益；新数据出现后需重审。</desc>
+  <style>
+    .cg-ch01-05[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-05[data-layout="mobile"] .strong {font-weight:600}
+    .cg-ch01-05[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-05[data-layout="mobile"] .metric {font-size:28px;font-weight:600}
+    .cg-ch01-05[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d)}
+    .cg-ch01-05[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750)}
+  </style>
+  <defs>
+    <marker id="ch01-05m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch01-05m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch01-05m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+    <marker id="ch01-05m-line-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#b9c9c0)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="38" class="strong" text-anchor="start">省下 2000 个 CPU，</text>
+  <text x="24" y="69" class="strong" text-anchor="start">就值得改吗？</text>
+  <text x="24" y="102" class="small" text-anchor="start">原文假设：两周改写链表数据结构</text>
+  <rect x="24" y="123" width="372" height="62" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="40" y="160" class="" text-anchor="start">CPU</text>
+  <text x="380" y="163" class="metric good" text-anchor="end">−2000 个</text>
+  <rect x="24" y="198" width="372" height="62" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="40" y="235" class="" text-anchor="start">RAM</text>
+  <text x="380" y="238" class="metric" text-anchor="end">+5 GiB</text>
+  <rect x="24" y="273" width="372" height="62" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="40" y="310" class="" text-anchor="start">工程师投入</text>
+  <text x="380" y="313" class="metric" text-anchor="end">2 周</text>
+  <text x="24" y="364" class="small" text-anchor="start">同一方案的增减，不能直接相加</text>
+  <path d="M24 383H396" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="24" y="417" class="strong" text-anchor="start">判断仍缺什么？</text>
+  <text x="24" y="453" class="" text-anchor="start">CPU / RAM 的相对成本</text>
+  <text x="24" y="487" class="" text-anchor="start">两周人力成本</text>
+  <text x="24" y="521" class="" text-anchor="start">这两周还能完成什么？</text>
+  <text x="24" y="578" class="small" text-anchor="start">换算后再决定；新数据出现再重审</text>
+</svg>

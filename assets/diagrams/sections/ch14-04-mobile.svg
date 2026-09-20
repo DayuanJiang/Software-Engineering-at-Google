@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch14-04" data-layout="mobile" role="img" aria-labelledby="ch14-04m-title ch14-04m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch14-04m-title">响应不同，何时才能说 B 错了？</title>
+<desc id="ch14-04m-desc">用本章 xyzzy 搜索断言构造示意对照，不是实测结果。同一查询发送给两套真实程序，A 的响应含 Colossal Cave，B 不含。A/B 比较只揭示变化，需人核对预期，基准不是正确答案。若明确采用结果必须包含 Colossal Cave 的断言，则 B 不满足该断言。A-A 示例中同版本两次也出现有和无，是调查非确定性和噪声的线索。无差异也可能两个版本都错。</desc>
+<style>
+.cg-ch14-04[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch14-04[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch14-04[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch14-04[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch14-04[data-layout="mobile"] .boundary {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;stroke-dasharray:7 5}
+.cg-ch14-04[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch14-04[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch14-04[data-layout="mobile"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch14-04m-primary-arrow)}
+.cg-ch14-04[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch14-04[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch14-04[data-layout="mobile"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch14-04m-secondary-arrow)}
+.cg-ch14-04[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch14-04[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch14-04[data-layout="mobile"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch14-04m-warm-arrow)}
+.cg-ch14-04[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch14-04[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch14-04[data-layout="mobile"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch14-04m-danger-arrow)}
+</style><defs>
+<marker id="ch14-04m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch14-04m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch14-04m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch14-04m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="22" y="34" class="strong" text-anchor="start">响应不同，何时才能说 B 错了？</text>
+<text x="22" y="69" class="small" text-anchor="start">用本章 xyzzy 查询构造对照</text>
+<text x="22" y="96" class="small" text-anchor="start">以下响应为示意，非实测</text>
+<g data-box="82,113,256,48"><rect x="82" y="113" width="256" height="48" rx="6" class="warm"/>
+<text x="210.0" y="145" class="" text-anchor="middle">同一查询：xyzzy</text>
+</g>
+<g data-box="22,195,178,88"><rect x="22" y="195" width="178" height="88" rx="6" class="secondary"/>
+<text x="111.0" y="224" class="strong" text-anchor="middle">A 基准</text>
+<text x="111.0" y="249" class="small" text-anchor="middle">含</text>
+<text x="111.0" y="273" class="small" text-anchor="middle">Colossal Cave</text>
+</g>
+<g data-box="220,195,178,88"><rect x="220" y="195" width="178" height="88" rx="6" class="primary"/>
+<text x="309.0" y="224" class="strong" text-anchor="middle">B 候选</text>
+<text x="309.0" y="249" class="small" text-anchor="middle">不含</text>
+<text x="309.0" y="273" class="small" text-anchor="middle">Colossal Cave</text>
+</g>
+<path d="M210 161V178H111V193" class="primary-path" data-connector="true"/>
+<path d="M210 178H309V193" class="primary-path" data-connector="true"/>
+<g data-box="22,327,376,66"><rect x="22" y="327" width="376" height="66" rx="6" class="warm"/>
+<text x="210.0" y="355" class="strong" text-anchor="middle">比较只知有变化</text>
+<text x="210.0" y="382" class="small" text-anchor="middle">仍需人核对预期</text>
+</g>
+<path d="M111 283V306H172V325" class="primary-path" data-connector="true"/>
+<path d="M309 283V306H248V325" class="primary-path" data-connector="true"/>
+<text x="22" y="428" class="strong" text-anchor="start">若要求：含 Colossal Cave</text>
+<text x="22" y="460" class="strong danger-ink" text-anchor="start">B 才是不满足该断言</text>
+<path d="M22 480H398" class="guide"/>
+<text x="22" y="513" class="small" text-anchor="start">A-A 也出现「有 / 无」？</text>
+<text x="22" y="541" class="small" text-anchor="start">同版也会变，先查噪声</text>
+<text x="22" y="583" class="small" text-anchor="start">A/B 无差异也不证明二者正确</text>
+</svg>

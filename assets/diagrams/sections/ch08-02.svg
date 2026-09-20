@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch08-02-diagram" class="chapter-svg cg-ch08-02" role="img" aria-labelledby="ch08-02-title ch08-02-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch08-02-title">局部惯例，何时优先？何时不行？</title>
+<desc id="ch08-02-desc">两种冲突不能用同一条无条件优先级解决。若指南允许局部选择，示意文件已有 const int，团队偏好 int const，新增声明沿用文件。反例中两个头文件把 LIMIT 分别定义为 8 和 16，宏名发生冲突。只为项目一致申请去掉项目前缀会被拒绝，A_LIMIT 和 B_LIMIT 展示前缀区分名称的作用。代码与名称均为示意。真正全局用途的宏仍可能获仲裁者批准例外。</desc>
+<style>
+.cg-ch08-02#ch08-02-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch08-02#ch08-02-diagram .strong{font-weight:600}
+.cg-ch08-02#ch08-02-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch08-02#ch08-02-diagram .code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.cg-ch08-02#ch08-02-diagram .green{fill:var(--diagram-primary,#087f6d)}
+.cg-ch08-02#ch08-02-diagram .red{fill:var(--diagram-danger,#b54750)}
+.cg-ch08-02#ch08-02-diagram .blue{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch08-02#ch08-02-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch08-02#ch08-02-diagram .arrow{fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch08-02-arrow)}
+.cg-ch08-02#ch08-02-diagram .uncertain{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;stroke-dasharray:5 5}
+</style>
+<defs><marker id="ch08-02-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong">局部惯例，何时优先？何时不行？</text>
+<text x="32" y="70" class="small">两种冲突对照；代码与名称为示意</text>
+<text x="32" y="113" class="strong green">局部约定先形成，且指南允许选择：沿用文件</text>
+<text x="32" y="153" class="small">文件已有</text>
+<text x="336" y="153" class="small">团队偏好</text>
+<text x="672" y="153" class="small">新增：跟随文件</text>
+<text x="32" y="186" class="code">const int k = 1;</text>
+<text x="336" y="186" class="code">int const k = 1;</text>
+<rect id="ch08-02-box1" x="658" y="164" width="270" height="40" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="672" y="192" class="code" data-box="ch08-02-box1">const int n = 2;</text>
+<text x="32" y="234" class="small">仅在这种情境下：文件 &gt; 团队 &gt; 项目 &gt; 代码库；并非要求全部旧代码同时改写。</text>
+<path class="line" d="M32 255H928"/>
+<text x="32" y="290" class="strong red">全局命名风险：项目一致性不能成为取消宏前缀的理由</text>
+<text x="32" y="329" class="small">头文件 A</text>
+<text x="336" y="329" class="small">头文件 B</text>
+<text x="32" y="362" class="code">#define LIMIT 8</text>
+<text x="336" y="362" class="code">#define LIMIT 16</text>
+<path class="line" d="M32 376V390H583V376"/>
+<text x="672" y="330" class="strong">保留项目前缀</text>
+<text x="672" y="363" class="code green">A_LIMIT / B_LIMIT</text>
+<text x="150" y="419" class="strong red">同名、不同定义：冲突</text>
+<path class="arrow" d="M437 411H651V378"/>
+<text x="32" y="461" class="small">数值为示意；只为名称长度或项目一致而请求省略前缀，原文明确说会被拒绝。</text>
+</svg>

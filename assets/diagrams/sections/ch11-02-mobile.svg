@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch11-02" data-layout="mobile" role="img" aria-labelledby="ch11-02m-title ch11-02m-desc">
+<title id="ch11-02m-title">依赖搬到哪里，测试需要多大？</title>
+<desc id="ch11-02m-desc">保持请求校验这一验证目标不变：依赖在进程内、移到本机独立进程、再移到远程机器，分别显示小型可行、中型起、大型起的运行边界。是运行边界的示意，不保证本机测试一定中型或进程内测试一定小型；时间、内存和其他约束仍须满足。不是性能测量，也不证明替身能验证真实数据库交互。</desc>
+<style>
+.cg-ch11-02[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch11-02[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch11-02[data-layout="mobile"] .strong{font-weight:600}
+.cg-ch11-02[data-layout="mobile"] .danger{fill:var(--diagram-danger,#b54750)}
+.cg-ch11-02[data-layout="mobile"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch11-02[data-layout="mobile"] .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
+<defs><marker id="ch11-02m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">依赖搬到哪里，测试需要多大？</text>
+<text x="24" y="68" class="small" text-anchor="start">示意：验证目标始终是请求校验结果</text>
+<text x="24" y="120" class="strong" text-anchor="start">A  进程内依赖 → 小型可行</text>
+<rect x="24" y="133" width="372" height="54" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="40" y="168" class="" text-anchor="start" data-region="24 133 372 54">测试 + 请求校验 + 替身</text>
+<text x="24" y="212" class="small" text-anchor="start">同一进程；无磁盘/网络、休眠、阻塞</text>
+<text x="24" y="247" class="strong" text-anchor="start">B  本机独立进程 → 至少中型</text>
+<rect x="24" y="261" width="372" height="68" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="34" y="278" width="118" height="38" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect x="279" y="278" width="107" height="38" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="93" y="304" class="" text-anchor="middle" data-region="34 278 118 38">测试/校验</text>
+<text x="332" y="304" class="" text-anchor="middle" data-region="279 278 107 38">数据库</text>
+<path d="M158 299H273" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-02m-arrow)"/>
+<text x="215" y="286" class="small" text-anchor="middle">localhost</text>
+<text x="24" y="370" class="strong" text-anchor="start">C  远程依赖 → 至少大型</text>
+<rect x="24" y="389" width="133" height="56" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<rect x="263" y="389" width="133" height="56" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="90" y="424" class="" text-anchor="middle" data-region="24 389 133 56">测试/校验</text>
+<text x="329" y="424" class="" text-anchor="middle" data-region="263 389 133 56">数据库</text>
+<path d="M164 418H256" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-02m-arrow)"/>
+<text x="210" y="404" class="small" text-anchor="middle">远程</text>
+<text x="90" y="470" class="small" text-anchor="middle">机器 A</text>
+<text x="329" y="470" class="small" text-anchor="middle">机器 B</text>
+<text x="24" y="510" class="small" text-anchor="start">小型可用隔离的内存文件系统。</text>
+<text x="24" y="544" class="small" text-anchor="start">所有规模都应尽量封闭、自足。</text>
+<text x="24" y="578" class="small" text-anchor="start">书中大型多数指内部的超大型。</text>
+</svg>

@@ -1,0 +1,22 @@
+{
+  "id": "ch04-04",
+  "chapter": 4,
+  "title": "与用户共同设计和改进",
+  "summary": "将弱势用户参与、从困难用例开始、衡量系统公平性和持续调整组成概念回路。价值观与投入不自动等于公平结果，需要反馈和专业知识。",
+  "sourceSections": ["## Values Versus Outcomes 价值观与结果", "## Stay Curious, Push Forward 保持好奇，继续前行"],
+  "afterParagraph": "改变会让人不适，追求高绩效的过程也可能痛苦，但凭借协作和创造力，我们能够做到。",
+  "desktop": "assets/diagrams/sections/ch04-04.svg",
+  "mobile": "assets/diagrams/sections/ch04-04-mobile.svg",
+  "enabled": false,
+  "removalReason": "四项抽象行动的循环重复原章节总览和相邻条目，没有具体对象、状态变化或新的关系可供推导。修订总览已保留产品共建、组织环境与结果核查的联系，本节文字足以说明持续改进；保留 SVG 文件供追溯。",
+  "pedagogy": {
+    "action": "retire",
+    "readerQuestion": "价值观与投入为什么不能替代用户参与和实际结果的核查？",
+    "expectedAnswer": "本章指出执行可能偏离价值观，应与弱势用户共建、关注困难用例、和领域专家衡量系统结果，并为失败承担责任、持续修正。",
+    "visualEncoding": "原图是用户参与、困难用例、衡量、改进的四框循环；顺序并非原文规定，箭头没有额外解释可观察的变化。退出读者展示，不增画另一个同义循环。",
+    "sourceEvidence": "Values Versus Outcomes 价值观与结果: “Build with everyone”, “Don't assume equity; measure equity throughout your systems”; Stay Curious, Push Forward 保持好奇，继续前行: “Continuous Improvement and owning our failures”.",
+    "beforeProblem": "与原 ch04 总览几乎同义，也只是重复紧邻正文的行动清单。循环形状容易把开放的持续学习误读成固定流程。",
+    "whyBetter": "退役消除重复和不必要的流程暗示，让保留的图片各自回答不同的因果、条件或适用范围问题。原 SVG 不删除，可检查历史版本。",
+    "limits": "退役不否定用户参与或持续改进的重要性。enabled:false 是本任务规定的消费端排除信号；本次不修改共享构建器、清单或阅读器。"
+  }
+}

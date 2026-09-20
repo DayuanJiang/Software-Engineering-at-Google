@@ -1,0 +1,22 @@
+{
+  "id": "ch11-03",
+  "chapter": 11,
+  "title": "规模与范围：相关但不等同",
+  "summary": "用源文中的服务器端点和日期选择器两个反例，分别定位小型但广范围、中型但窄范围的测试；范围指验证目标，不是执行过的代码。",
+  "enabled": false,
+  "removalReason": "与保留并补齐证据的 ch11 概览矩阵重复：同样使用服务器端点与日期选择器两个反例，回答同一个规模与范围问题。保留文件以供追溯，不再重复插入正文。",
+  "pedagogy": {
+    "action": "retire",
+    "readerQuestion": "小型是否一定是单元测试，中型是否一定是集成测试？",
+    "expectedAnswer": "不是。服务器端点可以小型但广范围，日期选择器可以中型但窄范围；实际执行依赖不自动扩大验证范围。",
+    "visualEncoding": "原桌面矩阵把两例放在小型且广范围、中型且窄范围的格子里，移动版按相同两例堆叠。它的正确关系已由启用的概览矩阵承担。",
+    "sourceEvidence": "### Test Scope  测试范围：'范围较窄的测试往往属于小型测试'之后的服务器端点和日期选择器反例。",
+    "beforeProblem": "内容准确，但与概览的两个案例、两个维度和结论重合，没有独立的读者问题。",
+    "whyBetter": "停止重复展示同一推理，保留概览中完整的两轴反例和可见证据；原 SVG 不删除，方便比较。",
+    "limits": "退役不是否定图中分类；仅减少重复。原两个布局保留，不再作为读者可见插图使用。"
+  },
+  "sourceSections": ["### Test Scope  测试范围"],
+  "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
+  "desktop": "assets/diagrams/sections/ch11-03.svg",
+  "mobile": "assets/diagrams/sections/ch11-03-mobile.svg"
+}

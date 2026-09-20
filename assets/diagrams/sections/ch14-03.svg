@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch14-03" data-layout="desktop" role="img" aria-labelledby="ch14-03-title ch14-03-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch14-03-title">日志没有这个请求，重放怎么办？</title>
+<desc id="ch14-03-desc">地图请求为教学示意，不是 Google Maps 真实 API 格式。录制模式在提交后调用真实依赖，只有测试通过才保存东京请求和响应 T。开发或提交前重放时，东京请求匹配后返回 T；大阪新请求没有匹配项，重放不能通过，需要工程师运行录制模式。重放不实时调用依赖，日志匹配不证明依赖当前契约正确。</desc>
+<style>
+.cg-ch14-03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch14-03[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch14-03[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch14-03[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch14-03[data-layout="desktop"] .boundary {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;stroke-dasharray:7 5}
+.cg-ch14-03[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch14-03[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch14-03[data-layout="desktop"] .primary-path {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch14-03-primary-arrow)}
+.cg-ch14-03[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch14-03[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch14-03[data-layout="desktop"] .secondary-path {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2;marker-end:url(#ch14-03-secondary-arrow)}
+.cg-ch14-03[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch14-03[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch14-03[data-layout="desktop"] .warm-path {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2;marker-end:url(#ch14-03-warm-arrow)}
+.cg-ch14-03[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch14-03[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch14-03[data-layout="desktop"] .danger-path {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2;marker-end:url(#ch14-03-danger-arrow)}
+</style><defs>
+<marker id="ch14-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch14-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch14-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch14-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">日志没有这个请求，重放怎么办？</text>
+<text x="32" y="78" class="small" text-anchor="start">借用本章地图 API 场景；以下城市和响应为示意，非真实 API 格式</text>
+<text x="32" y="118" class="strong" text-anchor="start">录制 · 提交后</text>
+<g data-box="32,142,210,76"><rect x="32" y="142" width="210" height="76" rx="6" class="secondary"/>
+<text x="137.0" y="188" class="" text-anchor="middle">地图请求：东京</text>
+</g>
+<g data-box="318,142,228,76"><rect x="318" y="142" width="228" height="76" rx="6" class="primary"/>
+<text x="432.0" y="188" class="" text-anchor="middle">调用真实依赖</text>
+</g>
+<g data-box="626,142,302,76"><rect x="626" y="142" width="302" height="76" rx="6" class="warm"/>
+<text x="777.0" y="172" class="strong" text-anchor="middle">日志：东京 → 响应 T</text>
+<text x="777.0" y="203" class="small" text-anchor="middle">测试通过才保存</text>
+</g>
+<path d="M242 180H316" class="primary-path" data-connector="true"/>
+<path d="M546 180H624" class="primary-path" data-connector="true"/>
+<text x="32" y="255" class="small" text-anchor="start">重放不实时调用依赖；匹配日志不证明当前契约正确。</text>
+<text x="32" y="296" class="strong" text-anchor="start">重放 · 开发 / 提交前</text>
+<g data-box="32,317,246,58"><rect x="32" y="317" width="246" height="58" rx="6" class="secondary"/>
+<text x="155.0" y="354" class="" text-anchor="middle">东京（已录制）</text>
+</g>
+<g data-box="32,391,246,58"><rect x="32" y="391" width="246" height="58" rx="6" class="secondary"/>
+<text x="155.0" y="428" class="" text-anchor="middle">大阪（新请求）</text>
+</g>
+<g data-box="360,328,240,80"><rect x="360" y="328" width="240" height="80" rx="6" class="warm"/>
+<text x="480.0" y="361" class="strong" text-anchor="middle">按请求匹配</text>
+<text x="480.0" y="391" class="small" text-anchor="middle">从日志选择响应</text>
+</g>
+<path d="M777 218V294H480V326" class="warm-path" data-connector="true"/>
+<path d="M278 346H358" class="primary-path" data-connector="true"/>
+<path d="M278 420H316V384H358" class="danger-path" data-connector="true"/>
+<g data-box="686,320,242,60"><rect x="686" y="320" width="242" height="60" rx="6" class="primary"/>
+<text x="807.0" y="359" class="" text-anchor="middle">匹配：返回响应 T</text>
+</g>
+<g data-box="686,402,242,50"><rect x="686" y="402" width="242" height="50" rx="6" class="danger"/>
+<text x="807.0" y="435" class="" text-anchor="middle">无匹配：不能通过</text>
+</g>
+<path d="M600 350H684" class="primary-path" data-connector="true"/>
+<path d="M600 386H628V427H684" class="danger-path" data-connector="true"/>
+<path d="M807 452V468H18V180H30" class="danger-path" data-connector="true" stroke-dasharray="6 5"/>
+<text x="328" y="451" class="small danger-ink" text-anchor="start">工程师重新录制</text>
+</svg>

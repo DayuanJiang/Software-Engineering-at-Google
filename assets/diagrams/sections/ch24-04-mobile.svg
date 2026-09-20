@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch24-04m-root" class="chapter-svg cg-ch24-04" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch24-04m-title ch24-04m-desc">
+<title id="ch24-04m-title">更新后指标变了，原因是什么？</title>
+<desc id="ch24-04m-desc">旧版重发与新版同时经历更新，用对照区分更新本身与版本差异。以非实测的同向变化说明为什么不能仅凭更新前后归因，并区分证据充分且护栏达标、证据不足、护栏恶化三种发布后果。</desc>
+<style>
+.cg-ch24-04#ch24-04m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch24-04#ch24-04m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch24-04#ch24-04m-root .strong {font-weight:600}
+.cg-ch24-04#ch24-04m-root .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+</style>
+<defs>
+<marker id="ch24-04m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch24-04m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch24-04m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch24-04m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start" data-box="12,8,396,584">更新后指标变了，</text>
+<text x="24" y="66" class="strong" text-anchor="start" data-box="12,8,396,584">原因是什么？</text>
+<text x="24" y="101" class="small" text-anchor="start" data-box="12,8,396,584">同时推出；用户相似且数量足够。</text>
+<rect x="24" y="120" width="176" height="104" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="none"/>
+<text x="34" y="149" class="strong" text-anchor="start" data-box="24,120,176,104">A：旧版重发</text>
+<text x="34" y="181" class="small" text-anchor="start" data-box="24,120,176,104">同样经历更新</text>
+<text x="34" y="211" class="small" text-anchor="start" data-box="24,120,176,104">旧代码（安慰剂）</text>
+<rect x="220" y="120" width="176" height="104" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="none"/>
+<text x="230" y="149" class="strong" text-anchor="start" data-box="220,120,176,104">B：新版</text>
+<text x="230" y="181" class="small" text-anchor="start" data-box="220,120,176,104">同样经历更新</text>
+<text x="230" y="211" class="small" text-anchor="start" data-box="220,120,176,104">新代码</text>
+<text x="24" y="255" class="strong" text-anchor="start" data-box="12,8,396,584">崩溃率：A ↑、B ↑（示意）</text>
+<text x="24" y="281" class="small" text-anchor="start" data-box="12,8,396,584">非实测；不能仅凭同向变化归因。</text>
+<text x="24" y="308" class="small" text-anchor="start" data-box="12,8,396,584">应比较两组差异，不只看更新前后。</text>
+<rect x="24" y="336" width="372" height="41" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="none"/>
+<text x="32" y="364" class="small" text-anchor="start" data-box="24,336,372,41">充分且护栏达标</text>
+<path data-connector="true" d="M190 357H236" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch24-04m-primary-arrow)"/>
+<text x="251" y="364" class="" text-anchor="start" data-box="24,336,372,41">扩大流量</text>
+<rect x="24" y="385" width="372" height="41" rx="0" fill="var(--diagram-warm-soft,#fff3dc)" stroke="none"/>
+<text x="32" y="413" class="small" text-anchor="start" data-box="24,385,372,41">证据不足</text>
+<path data-connector="true" d="M190 406H236" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch24-04m-warm-arrow)"/>
+<text x="251" y="413" class="" text-anchor="start" data-box="24,385,372,41">继续观察</text>
+<rect x="24" y="434" width="372" height="41" rx="0" fill="var(--diagram-danger-soft,#faecee)" stroke="none"/>
+<text x="32" y="462" class="small" text-anchor="start" data-box="24,434,372,41">护栏恶化</text>
+<path data-connector="true" d="M190 455H236" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch24-04m-danger-arrow)"/>
+<text x="251" y="462" class="" text-anchor="start" data-box="24,434,372,41">暂停、调查</text>
+<text x="24" y="515" class="small" text-anchor="start" data-box="12,8,396,584">用户量不足：新功能先关闭。</text>
+<text x="24" y="543" class="small" text-anchor="start" data-box="12,8,396,584">先做不改变功能行为的发布，</text>
+<text x="24" y="571" class="small" text-anchor="start" data-box="12,8,396,584">验证部署稳定性，不证明功能价值。</text>
+</svg>

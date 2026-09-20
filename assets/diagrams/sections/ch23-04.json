@@ -1,0 +1,21 @@
+{
+  "id": "ch23-04",
+  "chapter": 23,
+  "title": "Takeout：用成对结果缩小排查范围",
+  "summary": "新二进制与生产二进制运行相同测试、连接相同真实后端。四种假设结果组合给出不同排查方向；结果对照不是根因证明。录制／重放在 Takeout 案例中仍是未来改进。",
+  "sourceSections": ["#### Scenario #3: Debugging “all of Google” 场景3：调试“整个谷歌”"],
+  "afterParagraph": "提交后 CI 使用新构建的二进制文件，但与生产环境连接相同的真实后端。",
+  "desktop": "assets/diagrams/sections/ch23-04.svg",
+  "mobile": "assets/diagrams/sections/ch23-04-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "revise",
+    "readerQuestion": "同一项归档测试在新构建和生产上的成对结果，分别支持从哪里开始排查？",
+    "expectedAnswer": "仅 CI 失败可优先查新构建及环境差异；双方失败说明生产也有问题，可查共享因素；仅生产失败应查生产侧差异；双方通过只说明此项本次通过。任何一组红绿结果都不能自动证明根因。",
+    "visualEncoding": "保留两个二进制汇向相同真实后端的真实拓扑，在其下增加四行具体归档测试的成对状态；CI 与生产列固定，最右列与每种观察直接对应。红绿同时以文字标明，不靠颜色独立表达。",
+    "sourceEvidence": "#### Scenario #3: Debugging “all of Google” 场景3：调试“整个谷歌”：在生产环境中持续运行与提交后 CI 完全相同的测试套件；提交后 CI 使用新构建的二进制文件，但与生产环境连接相同的真实后端。Future improvement: try hermetic testing with record/replay。",
+    "beforeProblem": "原拓扑有价值，但结果只是一组没有具体测试对象的两条文字，且桌面可见图漏掉移动端的录制重放未来状态说明。",
+    "whyBetter": "成对结果表让读者比较四种实际可观察状态，补足仅生产失败与双通过的边界；两种布局都明确假设结果与未实施的未来改进，避免把线索误读为责任证明。",
+    "limits": "四项测试的具体红绿组合是解释用假设，不是案例运行记录；生产失败不能单凭此对照归责上游。同后端不代表账户、配置、时刻完全受控，仍需日志、历史和进一步复验；原文未给出完整四格决策算法。"
+  }
+}

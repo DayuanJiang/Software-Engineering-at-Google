@@ -187,7 +187,7 @@ class ArtifactTests(unittest.TestCase):
         baseline = json.loads((audit.DEFAULT_OUT / "baseline.json").read_text())
         if (audit.DEFAULT_OUT / "chapters").exists():
             import book_review
-            result = book_review.verify_all(final=True)
+            result = book_review.verify_all(final=True, check_reader_config=False, write_artifacts=False)
             self.assertEqual(result["verified_documents"], 28)
         elif (audit.DEFAULT_OUT / "chapter-01" / "edits.json").exists():
             import chapter_pilot

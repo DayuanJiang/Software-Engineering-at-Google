@@ -1,0 +1,21 @@
+{
+  "id": "ch11-04",
+  "chapter": 11,
+  "title": "执行过，不等于验证过",
+  "summary": "同一个错误实现把 subtract(2, 5) 算成 3：只调用方法与断言结果的测试，都执行了同一条功能代码，但只有断言 3 == -3 的测试暴露错误。",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "两个测试都执行了 subtract 的同一行代码，为什么一个没有报错，另一个却失败？",
+    "expectedAnswer": "行覆盖率记录代码是否执行，不记录是否检查了返回结果。对于图中的错误值 3，没有结果断言的调用无法据此发现错误；检查结果必须等于 -3 的断言会失败。",
+    "visualEncoding": "同一错误实现和返回值分成两个测试分支；两个分支均标出该行已覆盖，但只有第二分支经过相等比较并显示失败。相同覆盖证据与不同检测结果直接对照。",
+    "sourceEvidence": "### A Note on Code Coverage  关于代码覆盖率的注意事项：'代码覆盖率只记录某行是否执行过，并不衡量执行结果'；### Write, Run, React  编写、运行、处理失败：例11-1 的输入 2、5 与预期 -3。",
+    "beforeProblem": "旧图用不等号连接两组抽象问题，没有展示覆盖率相同却漏检缺陷的实际反例。",
+    "whyBetter": "读者可以根据可见的错误返回值和断言预测两个测试的不同结果，而不是仅记住覆盖率不等于质量这一口号。",
+    "limits": "错误实现及无断言分支为示意，不是新增书中代码。仅比较所示功能行的行覆盖率；不是整个程序覆盖率，也不证明一个断言已覆盖所有行为。"
+  },
+  "sourceSections": ["### A Note on Code Coverage  关于代码覆盖率的注意事项", "### Write, Run, React  编写、运行、处理失败"],
+  "afterParagraph": "却不能代替对系统测试充分程度的审慎判断。",
+  "desktop": "assets/diagrams/sections/ch11-04.svg",
+  "mobile": "assets/diagrams/sections/ch11-04-mobile.svg"
+}

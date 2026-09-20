@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch15-01" data-layout="mobile" role="img" aria-labelledby="ch15-01m-title ch15-01m-desc">
+<title id="ch15-01m-title">存在已久，不等于已经过时</title>
+<desc id="ch15-01m-desc">LaTeX 已经改进几十年，年龄本身不是弃用理由。另一侧是原文并存情境的示意：用户直接依赖新系统，同时经组件继续依赖旧系统。采用新系统没有消除旧依赖，维护与兼容成本仍需计入。应权衡保留成本与迁移移除投入，原地演进通常比彻底替换更容易。</desc>
+<style>
+.cg-ch15-01[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch15-01[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch15-01[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch15-01[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch15-01[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch15-01[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch15-01[data-layout="mobile"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+.cg-ch15-01[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch15-01[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch15-01[data-layout="mobile"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
+.cg-ch15-01[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch15-01[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch15-01[data-layout="mobile"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2}
+.cg-ch15-01[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch15-01[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch15-01[data-layout="mobile"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2}
+</style>
+<defs>
+<marker id="ch15-01m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch15-01m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch15-01m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch15-01m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">存在已久，不等于已经过时</text>
+<text x="24" y="71" class="small" text-anchor="start">原文反例：LaTeX 已改进几十年</text>
+<rect x="24" y="89" width="372" height="76" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="40" y="121" class="strong" text-anchor="start">多年改进，变更已较少</text>
+<text x="40" y="150" class="small" text-anchor="start">不能仅因年龄而认定该弃用</text>
+<text x="24" y="203" class="strong" text-anchor="start">另一情境：新旧并存（示意）</text>
+<g data-box="24,226,112,54">
+<rect x="24" y="226" width="112" height="54" rx="5" class="secondary"/>
+<text x="80.0" y="260.0" class="strong" text-anchor="middle">用户</text>
+</g>
+<g data-box="256,226,140,54">
+<rect x="256" y="226" width="140" height="54" rx="5" class="primary"/>
+<text x="326.0" y="260.0" class="strong" text-anchor="middle">新系统</text>
+</g>
+<path d="M136 253H254" class="primary-line" data-connector="true" marker-end="url(#ch15-01m-primary-arrow)"/>
+<path d="M80 280V306H122V328" class="primary-line" data-connector="true" marker-end="url(#ch15-01m-primary-arrow)"/>
+<g data-box="66,330,112,54">
+<rect x="66" y="330" width="112" height="54" rx="5" class="secondary"/>
+<text x="122.0" y="364.0" class="strong" text-anchor="middle">组件</text>
+</g>
+<g data-box="256,330,140,54">
+<rect x="256" y="330" width="140" height="54" rx="5" class="danger"/>
+<text x="326.0" y="364.0" class="strong" text-anchor="middle">旧系统</text>
+</g>
+<path d="M178 357H254" class="primary-line" data-connector="true" marker-end="url(#ch15-01m-primary-arrow)"/>
+<text x="24" y="418" class="small" text-anchor="start">箭头表示依赖：用新系统 ≠ 已迁出</text>
+<path d="M24 437L396 437" class="guide"/>
+<text x="24" y="468" class="" text-anchor="start">旧系统仍有维护与兼容负担</text>
+<text x="24" y="496" class="" text-anchor="start">要与迁移、移除的投入一起权衡。</text>
+<rect x="24" y="514" width="372" height="70" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="544" class="" text-anchor="start">过时且有相当替代品，再评估弃用</text>
+<text x="40" y="570" class="" text-anchor="start">原地演进通常比彻底替换更容易</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch16-05" data-layout="desktop" role="img" aria-labelledby="ch16-05-title ch16-05-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch16-05-title">拆开仓库不必拆成多个依赖版本</title>
+<desc id="ch16-05-desc">示例中 A 和 B 都依赖公共库 L。左侧或上方一个边框是一个物理仓库；右侧或下方三个独立边框分别是 A、B、L 仓库。两种布局都只有一个指定的 L，依赖箭头从使用方指向 L，不因仓库拆分而复制 L。跨仓库仍须统一逻辑主干、提交先后并描述依赖，权限可以分开管理；单仓库也须防止同名分叉。不表示所有跨仓库工具自动实现这些策略或提供原子提交。</desc>
+<style>
+.cg-ch16-05[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch16-05[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch16-05[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch16-05[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch16-05[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch16-05[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
+.cg-ch16-05[data-layout="desktop"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2.5}
+.cg-ch16-05[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch16-05[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch16-05[data-layout="desktop"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2.5}
+.cg-ch16-05[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch16-05[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
+.cg-ch16-05[data-layout="desktop"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2.5}
+.cg-ch16-05[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
+.cg-ch16-05[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
+.cg-ch16-05[data-layout="desktop"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2.5}
+</style>
+<defs>
+<marker id="ch16-05-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch16-05-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch16-05-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch16-05-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">把仓库拆开，会必然多出版本选择吗？</text>
+<text x="32" y="78" class="small" text-anchor="start">示例：A、B 都依赖公共库 L；箭头从使用方指向依赖。</text>
+<text x="32" y="119" class="strong" text-anchor="start">一个物理仓库</text>
+<text x="516" y="119" class="strong" text-anchor="start">三个物理仓库，统一逻辑主干</text>
+<rect x="32" y="139" width="408" height="217" rx="4" class="secondary"/>
+<text x="90" y="193" class="strong" text-anchor="middle">A</text>
+<text x="90" y="311" class="strong" text-anchor="middle">B</text>
+<g data-box="296,216,100,62">
+<rect x="296" y="216" width="100" height="62" rx="4" class="primary"/>
+<text x="346.0" y="255.0" class="strong" text-anchor="middle">L</text>
+</g>
+<path d="M115 185L293 239" class="primary-line" data-connector="true" marker-end="url(#ch16-05-primary-arrow)"/>
+<path d="M115 303L293 256" class="primary-line" data-connector="true" marker-end="url(#ch16-05-primary-arrow)"/>
+<g data-box="516,148,126,70">
+<rect x="516" y="148" width="126" height="70" rx="4" class="secondary"/>
+<text x="579.0" y="191.0" class="strong" text-anchor="middle">A 仓库</text>
+</g>
+<g data-box="516,277,126,70">
+<rect x="516" y="277" width="126" height="70" rx="4" class="secondary"/>
+<text x="579.0" y="320.0" class="strong" text-anchor="middle">B 仓库</text>
+</g>
+<g data-box="800,213,128,70">
+<rect x="800" y="213" width="128" height="70" rx="4" class="primary"/>
+<text x="864.0" y="256.0" class="strong" text-anchor="middle">L 仓库</text>
+</g>
+<path d="M642 183L797 237" class="primary-line" data-connector="true" marker-end="url(#ch16-05-primary-arrow)"/>
+<path d="M642 312L797 259" class="primary-line" data-connector="true" marker-end="url(#ch16-05-primary-arrow)"/>
+<text x="236" y="391" class="strong" text-anchor="middle">都选 L 的指定版本</text>
+<text x="725" y="391" class="strong" text-anchor="middle">仍都选 L 的指定版本</text>
+<path d="M32 409L928 409" class="guide"/>
+<text x="32" y="438" class="small" text-anchor="start">跨仓库仍须统一主干、提交先后，并描述依赖；权限可以分开管理。</text>
+<text x="32" y="467" class="small" text-anchor="start">反过来：同处一个仓库却放任同名分叉，也会违反单版本规则。</text>
+</svg>

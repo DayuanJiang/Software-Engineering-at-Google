@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch01-06" data-layout="desktop" role="img" aria-labelledby="ch01-06-title ch01-06-desc">
+  <title id="ch01-06-title">同一漏洞，修复要经过哪些地方？</title>
+  <desc id="ch01-06-desc">概念示例：共享库和两个分叉均含有同一漏洞，数量只用于展示拓扑。复用时修复共享库，还要更新两个使用方。分叉时先识别所有受影响的副本，分别修复分叉甲和乙，再更新各自使用方。箭头表示修复推进到使用方，不是依赖箭头。分叉能换取本地适配和变更控制；短生命周期且可证明影响范围有限时风险较小。应避免分叉跨时间或项目边界的接口，例如序列化格式和网络协议。图不假定所有现实分叉均受影响，也不保证共享库修复会自动部署到使用方。</desc>
+  <style>
+    .cg-ch01-06[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-06[data-layout="desktop"] .strong {font-weight:600}
+    .cg-ch01-06[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-06[data-layout="desktop"] .metric {font-size:32px;font-weight:600}
+    .cg-ch01-06[data-layout="desktop"] .good {fill:var(--diagram-primary,#087f6d)}
+    .cg-ch01-06[data-layout="desktop"] .bad {fill:var(--diagram-danger,#b54750)}
+  </style>
+  <defs>
+    <marker id="ch01-06-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch01-06-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch01-06-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+    <marker id="ch01-06-line-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#b9c9c0)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong" text-anchor="start">同一漏洞，修复要经过哪些地方？</text>
+  <text x="928" y="42" class="small" text-anchor="end">概念示例：两份分叉均受影响</text>
+  <text x="32" y="99" class="strong" text-anchor="start">复用：修库后仍须更新使用方</text>
+  <text x="530" y="99" class="strong" text-anchor="start">分叉：先找全受影响副本</text>
+  <path d="M490 80V340" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <rect x="135" y="138" width="200" height="52" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="235" y="173" class="" text-anchor="middle">修复共享库</text>
+  <path d="M195 194L125 261" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch01-06-primary-arrow)"/>
+  <path d="M275 194L365 261" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch01-06-primary-arrow)"/>
+  <text x="125" y="300" class="" text-anchor="middle">更新使用方甲</text>
+  <text x="365" y="300" class="" text-anchor="middle">更新使用方乙</text>
+  <rect x="530" y="138" width="182" height="52" rx="4" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <rect x="746" y="138" width="182" height="52" rx="4" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="621" y="173" class="" text-anchor="middle">修复分叉甲</text>
+  <text x="837" y="173" class="" text-anchor="middle">修复分叉乙</text>
+  <path d="M621 194V261" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch01-06-warm-arrow)"/>
+  <path d="M837 194V261" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch01-06-warm-arrow)"/>
+  <text x="621" y="300" class="" text-anchor="middle">更新使用方甲</text>
+  <text x="837" y="300" class="" text-anchor="middle">更新使用方乙</text>
+  <text x="32" y="348" class="small" text-anchor="start">箭头表示修复推进到使用方，不是依赖方向</text>
+  <path d="M32 368H928" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="32" y="404" class="strong" text-anchor="start">分叉的收益：本地适配、控制变更</text>
+  <text x="928" y="404" class="small" text-anchor="end">短期且范围有限：风险较小</text>
+  <text x="32" y="449" class="small" text-anchor="start">应避免分叉跨时间或项目边界的接口，例如序列化格式、网络协议</text>
+</svg>

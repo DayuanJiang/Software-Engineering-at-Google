@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch24-02-root" class="chapter-svg cg-ch24-02" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="ch24-02-title ch24-02-desc">
+<title id="ch24-02-title">关掉功能，不等于移除代码</title>
+<desc id="ch24-02-desc">对照同一 v2 的运行时关闭与开启状态，以及构建时剔除新代码的另一产物。关闭只改变所走路径；不存在的代码不能仅靠配置启用。动态配置仍需谨慎发布，已部署的关闭代码仍可能被提取。</desc>
+<style>
+.cg-ch24-02#ch24-02-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch24-02#ch24-02-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch24-02#ch24-02-root .strong {font-weight:600}
+.cg-ch24-02#ch24-02-root .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+</style>
+<defs>
+<marker id="ch24-02-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch24-02-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch24-02-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch24-02-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start" data-box="12,8,936,464">关掉功能，不等于移除代码</text>
+<text x="32" y="78" class="small" text-anchor="start" data-box="12,8,936,464">示例：前两种状态部署的是同一个 v2；第三种产物已剔除新代码。</text>
+<text x="32" y="123" class="strong" text-anchor="start" data-box="12,8,936,464">运行时关闭</text>
+<rect x="32" y="145" width="272" height="174" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="177" class="small" text-anchor="start" data-box="32,145,272,174">v2：新旧代码都在</text>
+<text x="168" y="211" class="small" text-anchor="middle" data-box="32,145,272,174">请求</text>
+<rect x="48" y="257" width="104" height="44" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect x="184" y="257" width="104" height="44" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="100" y="287" class="" text-anchor="middle" data-box="48,257,104,44">旧路径</text>
+<text x="236" y="287" class="" text-anchor="middle" data-box="184,257,104,44">新路径</text>
+<path data-connector="true" d="M168 219V235H100V255" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch24-02-secondary-arrow)"/>
+<text x="32" y="352" class="" text-anchor="start" data-box="12,8,936,464">用户仍走旧路径</text>
+<text x="344" y="123" class="strong" text-anchor="start" data-box="12,8,936,464">运行时开启</text>
+<rect x="344" y="145" width="272" height="174" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="360" y="177" class="small" text-anchor="start" data-box="344,145,272,174">v2：新旧代码都在</text>
+<text x="480" y="211" class="small" text-anchor="middle" data-box="344,145,272,174">请求</text>
+<rect x="360" y="257" width="104" height="44" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect x="496" y="257" width="104" height="44" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="412" y="287" class="" text-anchor="middle" data-box="360,257,104,44">旧路径</text>
+<text x="548" y="287" class="" text-anchor="middle" data-box="496,257,104,44">新路径</text>
+<path data-connector="true" d="M480 219V235H548V255" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch24-02-primary-arrow)"/>
+<text x="344" y="352" class="" text-anchor="start" data-box="12,8,936,464">用户改走新路径</text>
+<text x="656" y="123" class="strong" text-anchor="start" data-box="12,8,936,464">构建时剔除</text>
+<rect x="656" y="145" width="272" height="174" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="672" y="177" class="small" text-anchor="start" data-box="656,145,272,174">产物 R：没有新代码</text>
+<text x="792" y="211" class="small" text-anchor="middle" data-box="656,145,272,174">请求</text>
+<rect x="672" y="257" width="104" height="44" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect x="808" y="257" width="104" height="44" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="724" y="287" class="" text-anchor="middle" data-box="672,257,104,44">旧路径</text>
+<text x="860" y="287" class="" text-anchor="middle" data-box="808,257,104,44">缺失</text>
+<path data-connector="true" d="M792 219V235H724V255" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch24-02-warm-arrow)"/>
+<text x="656" y="352" class="" text-anchor="start" data-box="12,8,936,464">单改配置无法启用</text>
+<path data-connector="true" d="M484 370V392H168V370" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" marker-end="url(#ch24-02-danger-arrow)"/>
+<text x="510" y="397" class="small" text-anchor="start" data-box="12,8,936,464">异常时关标志：旧路径须仍可用</text>
+<path class="line" d="M32 417L928 417"/>
+<text x="32" y="445" class="small" text-anchor="start" data-box="12,8,936,464">运行时关闭仍可提取代码；配置须分阶段发布。构建剔除取决于语言与工具。</text>
+</svg>

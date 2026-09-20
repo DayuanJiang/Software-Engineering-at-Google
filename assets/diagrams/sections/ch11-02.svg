@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch11-02" data-layout="desktop" role="img" aria-labelledby="ch11-02-title ch11-02-desc">
+<title id="ch11-02-title">依赖搬到哪里，测试需要多大？</title>
+<desc id="ch11-02-desc">保持请求校验这一验证目标不变：依赖在进程内、移到本机独立进程、再移到远程机器，分别显示小型可行、中型起、大型起的运行边界。是运行边界的示意，不保证本机测试一定中型或进程内测试一定小型；时间、内存和其他约束仍须满足。不是性能测量，也不证明替身能验证真实数据库交互。</desc>
+<style>
+.cg-ch11-02[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch11-02[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch11-02[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch11-02[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+.cg-ch11-02[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch11-02[data-layout="desktop"] .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
+<defs><marker id="ch11-02-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">依赖搬到哪里，测试需要多大？</text>
+<text x="32" y="76" class="small" text-anchor="start">示意：只验证请求校验结果；验证目标不随依赖位置自动扩大。</text>
+<rect x="32" y="100" width="650" height="80" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="48" y="128" class="small" text-anchor="start" data-region="32 100 650 80">A  同一进程</text>
+<text x="48" y="162" class="" text-anchor="start" data-region="32 100 650 80">测试 + 请求校验 + 进程内替身</text>
+<text x="728" y="132" class="strong primary" text-anchor="start">小型可行</text>
+<text x="728" y="166" class="small" text-anchor="start">须满足其余限制</text>
+<rect x="32" y="192" width="650" height="90" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="48" y="217" class="small" text-anchor="start">B  同一台机器</text>
+<rect x="48" y="231" width="248" height="40" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect x="470" y="231" width="196" height="40" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="62" y="259" class="" text-anchor="start" data-region="48 231 248 40">测试 + 请求校验</text>
+<text x="568" y="259" class="" text-anchor="middle" data-region="470 231 196 40">数据库进程</text>
+<path d="M304 252H461" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-02-arrow)"/>
+<text x="382" y="237" class="small" text-anchor="middle">localhost</text>
+<text x="728" y="236" class="strong" text-anchor="start">至少中型</text>
+<text x="728" y="269" class="small" text-anchor="start">多进程，未出本机</text>
+<rect x="32" y="302" width="284" height="79" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<rect x="470" y="302" width="212" height="79" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="48" y="328" class="small" text-anchor="start" data-region="32 302 284 79">C  机器 A</text>
+<text x="48" y="364" class="" text-anchor="start" data-region="32 302 284 79">测试 + 请求校验</text>
+<text x="486" y="328" class="small" text-anchor="start" data-region="470 302 212 79">机器 B</text>
+<text x="486" y="364" class="" text-anchor="start" data-region="470 302 212 79">数据库进程</text>
+<path d="M324 354H461" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-02-arrow)"/>
+<text x="392" y="338" class="small" text-anchor="middle">远程网络</text>
+<text x="728" y="340" class="strong" text-anchor="start">至少大型</text>
+<text x="728" y="373" class="small" text-anchor="start">跨机器，越过本机限制</text>
+<text x="32" y="411" class="small" text-anchor="start">小型还禁止磁盘/网络、休眠和阻塞；隔离的内存文件系统例外。</text>
+<text x="32" y="440" class="small" text-anchor="start">所有规模都应尽量封闭、自足；图示不保证速度或确定性。</text>
+<text x="32" y="469" class="small" text-anchor="start">书中“大型”的多数描述对应谷歌内部“超大型”。</text>
+</svg>

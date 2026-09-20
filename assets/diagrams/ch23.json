@@ -1,0 +1,25 @@
+{
+  "chapter": 23,
+  "title": "CI：把不同问题放进合适的反馈回路",
+  "summary": "Takeout 将逐实例启动检查提前到提交前沙盒，将完整归档测试提前到每两小时运行的提交后环境。不同被测组合有不同安全与覆盖边界；CI 决定测试安排，CB 验证 head，CD 组装并推进测试 RC。",
+  "sourceSections": [
+    "第二十三章 持续集成",
+    "Continuous Build 持续构建",
+    "Continuous Delivery 持续交付",
+    "Scenario #1: Continuously broken dev deploys 场景1：开发环境部署频频失败"
+  ],
+  "kind": "comparison",
+  "desktop": "assets/diagrams/ch23.svg",
+  "mobile": "assets/diagrams/ch23-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "Takeout 为什么把实例启动与完整归档放进不同的反馈回路，而不是都留到夜间部署后或都移到提交前？",
+    "expectedAnswer": "各实例的临时沙盒可在提交前检查配置与启动；端到端测试使用受安全保护的账户，团队将它们放到已审代码的提交后环境，每两小时从 green head 组装 RC 后运行。启动检查不替代完整归档验证。",
+    "visualEncoding": "两行以不同被测组合为主轴，各自从相同的夜间部署后入口指向不同的新入口；配置、账户和审查状态说明为什么两个箭头终点不同。底部明确 CI、CB、CD 的职责而不画通用交付流水线。",
+    "sourceEvidence": "#### Scenario #1: Continuously broken dev deploys 场景1：开发环境部署频频失败：团队为每个实例创建了临时的小型沙盒环境；提交后 CI 每两小时从 green head 取出最新代码和配置。#### Continuous Build 持续构建；#### Continuous Delivery 持续交付。",
+    "beforeProblem": "原总览重复图23-1及图23-2的阶段推进结构，列出各阶段原则，却没有显示测试内容或约束改变时如何作出不同安排。",
+    "whyBetter": "读者可沿同一测试组合的前后位置直接看出何种反馈被提前、提前到哪里，以及为什么不能把完整归档的保障归给启动检查。",
+    "limits": "是书中 Takeout 的具体安排，不是所有团队的推荐频率或两小时完成保证；未复述案例百分比，未覆盖 TAP 调度与全部生产探针。CD 不保证每个 RC 进入生产。"
+  }
+}

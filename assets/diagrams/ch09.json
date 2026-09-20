@@ -1,0 +1,24 @@
+{
+  "chapter": 9,
+  "title": "三项批准，不等于三位审查者",
+  "summary": "用三种具体组合比较批准状态：合格的另一位审查者兼任三项、作者凭资格满足后两项、作者仅自审而缺少他人 LGTM。三项批准齐全且所有审查意见已处理，才满足本章的常规提交条件。",
+  "enabled": true,
+  "sourceSections": [
+    "Code Review Flow  代码审查流程",
+    "How Code Review Works at Google  谷歌如何开展代码审查",
+    "Keep Reviewers to a Minimum  尽量减少审查者人数"
+  ],
+  "kind": "comparison",
+  "desktop": "assets/diagrams/ch09.svg",
+  "mobile": "assets/diagrams/ch09-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "作者已经是代码所有者且有语言资格，还需要谁批准？三项批准是否要找三个人？",
+    "expectedAnswer": "本章谷歌流程要求另一位工程师的 LGTM、相应代码所有者批准和相应语言 Readability 批准。作者以外的一位合格审查者可以兼任三项；作者可凭所有权和语言资格满足后两项，但自审不能提供他人的 LGTM。三项齐全仍须处理全部审查意见。",
+    "visualEncoding": "桌面矩阵的三列是批准要求，三行是人员资格组合；同一名字重复出现表示一人兼任，不是三人。第三行只把他人 LGTM 改为缺少，结果随之变成不可提交。移动版按同样的三个情境重排，并显式列出每项由甲或乙满足。底部另列意见处理条件。",
+    "sourceEvidence": "## How Code Review Works at Google  谷歌如何开展代码审查：'作者也可以兼任后两种角色'、'上述三个权限位可以由不同的角色组合来满足'；## Code Review Flow  代码审查流程：'处理所有审查意见'；### Keep Reviewers to a Minimum  尽量减少审查者人数：'可以由同一个人满足'。",
+    "beforeProblem": "原图的三支批准汇合表达 AND 尚准确，但与 ch09-02 重复；角色可兼任主要靠结尾文字，读者不能直接比较有资格的作者、外部审查者与仅自审三种状态。",
+    "whyBetter": "用同一组批准列保持条件不变，仅改变提供批准的人和是否存在他人 LGTM，读者能直接定位缺项；批准齐全与可以提交也被明确分开。",
+    "limits": "仅解释书中谷歌常规流程，不代表其他平台的自批准规则，也不声称批准证明代码无缺陷。示例假定对应目录及语言资格有效，不展开跨目录、多语言、例外流程或工具自动撤销批准的行为。"
+  }
+}

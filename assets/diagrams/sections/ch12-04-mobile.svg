@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch12-04" data-layout="mobile" role="img" aria-labelledby="ch12-04m-title ch12-04m-desc" viewBox="0 0 420 600" width="420" height="600">
+<title id="ch12-04m-title">DAMP：显露真正的预期</title>
+<desc id="ch12-04m-desc">例12-19的通用validateForumAndUsers将注册状态与state等于BANNED比较，使NORMAL用户的期望成false、BANNED用户的期望成true，均与例12-20的契约相反。显式写出BANNED、注册尝试和未注册false，暴露这个错误。newUser的无关默认值仍可共享；例12-25的权限helper只断言一个概念事实，不应与混查可达性和注册状态的通用验证混同。跨套件测试基础设施仍需自己的测试。</desc>
+<style>
+.cg-ch12-04[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0}
+.cg-ch12-04[data-layout="mobile"] .small {font-size:19px}
+.cg-ch12-04[data-layout="mobile"] .strong {font-weight:600}
+</style>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">DAMP：显露真正的预期</text>
+<text x="24" y="68" class="small" text-anchor="start" fill="var(--diagram-muted,#686868)" data-font-size="19" data-lane="24 372">例12-19/20：通用 helper 把预期写反</text>
+<text x="24" y="104" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">helper 的注册预期：</text>
+<text x="24" y="137" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">(user.state == BANNED)</text>
+<text x="40" y="179" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 109">用户</text>
+<text x="220" y="179" class="small" text-anchor="middle" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="164.0 112">helper 期望</text>
+<text x="342" y="179" class="small" text-anchor="middle" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="292.0 100">契约期望</text>
+<rect x="164" y="188" width="112" height="37" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
+<rect x="292" y="188" width="100" height="37" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="40" y="214" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 109">NORMAL</text>
+<text x="220" y="214" class="strong" text-anchor="middle" fill="var(--diagram-danger,#b54750)" data-font-size="22" data-lane="172.0 96">false</text>
+<text x="342" y="214" class="strong" text-anchor="middle" fill="var(--diagram-primary,#087f6d)" data-font-size="22" data-lane="300.0 84">true</text>
+<rect x="164" y="231" width="112" height="37" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
+<rect x="292" y="231" width="100" height="37" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="40" y="257" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 109">BANNED</text>
+<text x="220" y="257" class="strong" text-anchor="middle" fill="var(--diagram-danger,#b54750)" data-font-size="22" data-lane="172.0 96">true</text>
+<text x="342" y="257" class="strong" text-anchor="middle" fill="var(--diagram-primary,#087f6d)" data-font-size="22" data-lane="300.0 84">false</text>
+<rect x="24" y="288" width="372" height="131" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="40" y="319" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">Given：user.state = BANNED</text>
+<text x="40" y="355" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">When：尝试注册该用户</text>
+<text x="40" y="391" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">Then：断言未注册（false）</text>
+<text x="24" y="454" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">可共享：newUser 的无关默认值</text>
+<text x="24" y="486" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">权限 helper：只断言能否访问</text>
+<text x="24" y="524" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">不要混查可达性、注册等多个事实。</text>
+<text x="24" y="563" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">跨套件基础设施须有自己的测试。</text>
+</svg>

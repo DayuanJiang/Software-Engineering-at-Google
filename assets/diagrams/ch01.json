@@ -1,0 +1,25 @@
+{
+  "chapter": 1,
+  "title": "有新版本，就该升级吗？",
+  "summary": "用一次升级的决策问题连接时间、规模和权衡：评估使用期与适配成本，可以明确选择推迟，但必须保留变更能力，并随新数据重审。",
+  "enabled": true,
+  "sourceSections": [
+    "## Time and Change 时间与变化",
+    "## Scale and Efficiency  规模和效率",
+    "## Trade-offs and Costs 权衡和成本",
+    "## Revisiting Decisions, Making Mistakes 重审决策与犯错"
+  ],
+  "kind": "decision",
+  "desktop": "assets/diagrams/ch01.svg",
+  "mobile": "assets/diagrams/ch01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "有新版本时，为何既不能只看眼前功能，也不必每次都升级？",
+    "expectedAnswer": "应综合剩余维护期、使用方适配工作、当前价值和成本；可以明确推迟并承担递延成本，但必须保留实施必要变更的能力。新数据会要求重审。",
+    "visualEncoding": "时间与规模的两个问题汇入同一个价值/成本判断菱形，分出实施和推迟两条路径；横跨两条路径的能力前提区分选择不改与根本不能改。",
+    "sourceEvidence": "## Time and Change 时间与变化：'取决于升级的成本、它带来的价值，以及项目的预期生命周期'；## Scale and Efficiency  规模和效率：'下一次，你是否还能找到足够的人手'；## Trade-offs and Costs 权衡和成本：'说明自己的判断依据'；## Revisiting Decisions, Making Mistakes 重审决策与犯错：'数据会随时间改变'。",
+    "beforeProblem": "旧图把编程经时间箭头变成软件工程，再展开三个主题名；没有可推导的决策，也可能让人误以为项目仅因时间推移就自动完成工程化。",
+    "whyBetter": "同一次升级在价值或适配成本不同的条件下可以走不同分支，同时两种选择都必须满足变更能力这个前提。",
+    "limits": "问题图不是净收益计算器、升级频率建议或项目价值排名；它没有覆盖所有技术、业务和社会成本，也不保证升级成功。"
+  }
+}

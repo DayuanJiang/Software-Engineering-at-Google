@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch01-05" data-layout="desktop" role="img" aria-labelledby="ch01-05-title ch01-05-desc">
+  <title id="ch01-05-title">省下 2000 个 CPU，就值得改吗？</title>
+  <desc id="ch01-05-desc">原文假设场景：花两周把链表改成性能更高的数据结构，生产 RAM 多占 5 GiB，节省 2000 个 CPU。三个带单位的增减量是同一个方案的变化，不是测量结果、可直接相加的数值或按面积编码的成本。CPU 节省只是收益端，决策还需 RAM 和 CPU 的相对成本、两周工程师投入、以及这两周本可完成其他工作的机会成本。图中不提供价格，因此无法据此断言净收益；新数据出现后需重审。</desc>
+  <style>
+    .cg-ch01-05[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-05[data-layout="desktop"] .strong {font-weight:600}
+    .cg-ch01-05[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-05[data-layout="desktop"] .metric {font-size:32px;font-weight:600}
+    .cg-ch01-05[data-layout="desktop"] .good {fill:var(--diagram-primary,#087f6d)}
+    .cg-ch01-05[data-layout="desktop"] .bad {fill:var(--diagram-danger,#b54750)}
+  </style>
+  <defs>
+    <marker id="ch01-05-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch01-05-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch01-05-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+    <marker id="ch01-05-line-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#b9c9c0)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="42" class="strong" text-anchor="start">省下 2000 个 CPU，就值得改吗？</text>
+  <text x="32" y="76" class="small" text-anchor="start">原文假设场景：用两周把链表改成性能更高的数据结构</text>
+  <text x="32" y="119" class="strong" text-anchor="start">同一方案的变化</text>
+  <text x="538" y="119" class="strong" text-anchor="start">判断还需要的输入</text>
+  <rect x="32" y="140" width="428" height="60" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+  <text x="48" y="179" class="" text-anchor="start">CPU</text>
+  <text x="440" y="182" class="metric good" text-anchor="end">−2000 个</text>
+  <path d="M470 170H520" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" marker-end="url(#ch01-05-line-arrow)"/>
+  <text x="538" y="178" class="" text-anchor="start">CPU 节省折合多少成本？</text>
+  <rect x="32" y="218" width="428" height="60" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+  <text x="48" y="257" class="" text-anchor="start">RAM</text>
+  <text x="440" y="260" class="metric" text-anchor="end">+5 GiB</text>
+  <path d="M470 248H520" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" marker-end="url(#ch01-05-line-arrow)"/>
+  <text x="538" y="256" class="" text-anchor="start">新增 RAM 折合多少成本？</text>
+  <rect x="32" y="296" width="428" height="60" rx="0" fill="var(--diagram-warm-soft,#fff3dc)"/>
+  <text x="48" y="335" class="" text-anchor="start">工程师投入</text>
+  <text x="440" y="338" class="metric" text-anchor="end">2 周</text>
+  <path d="M470 326H520" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" marker-end="url(#ch01-05-line-arrow)"/>
+  <text x="538" y="334" class="" text-anchor="start">人力成本 + 放弃其他工作的价值</text>
+  <path d="M32 380H928" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="32" y="417" class="strong" text-anchor="start">只知道资源数量，还不能判断净收益</text>
+  <text x="32" y="452" class="small" text-anchor="start">先按共同成本口径比较；新价格、数据或机会出现后，再重审取舍</text>
+</svg>

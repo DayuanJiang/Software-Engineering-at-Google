@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch05-02" data-layout="desktop" role="img" aria-labelledby="ch05-02-title ch05-02-desc">
+  <title id="ch05-02-title">用限期指导，让差距可见</title>
+  <desc id="ch05-02-desc">发现表现未达预期后，若只等待且问题未改善，同伴仍需补位。另一条路径是约定期限及小、递进、可衡量目标，每周比较实际进展与预定目标；达标后明确下一里程碑，未达标时双方尽早看见差距。两个月只是原书示例，不是自动离职规则。</desc>
+  <style>
+.cg-ch05-02[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch05-02[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch05-02[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch05-02[data-layout="desktop"] .connector {fill:none;stroke-width:2;stroke-linejoin:round}
+</style>
+  <defs>
+    <marker id="ch05-02-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch05-02-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch05-02-arrow-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch05-02-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)" />
+  <g id="ch05-02-heading" data-box="32,12,896,72">
+    <text x="32" y="42" class="strong" text-anchor="start">用限期指导，让差距可见</text>
+    <text x="32" y="77" class="small" text-anchor="start">起点：已经发现表现未达预期</text>
+  </g>
+  <g id="ch05-02-waiting" data-box="32,108,280,292">
+    <rect x="32" y="108" width="280" height="292" fill="var(--diagram-danger-soft,#faecee)" />
+    <text x="52" y="145" class="strong" text-anchor="start">等待自行改善</text>
+    <text x="52" y="238" class="" text-anchor="start">若问题持续</text>
+    <text x="52" y="280" class="" text-anchor="start">其他成员替其补位</text>
+    <text x="52" y="367" class="small" text-anchor="start">没有共同检查点</text>
+  </g>
+  <polyline points="172,165 172,204" class="connector" stroke="var(--diagram-danger,#b54750)" data-connector="true" marker-end="url(#ch05-02-arrow-danger)" />
+  <g id="ch05-02-goals" data-box="370,108,558,86">
+    <rect x="370" y="108" width="558" height="86" fill="var(--diagram-primary-soft,#e5f4ee)" />
+    <text x="394" y="142" class="strong" text-anchor="start">约定期限（如两个月）</text>
+    <text x="394" y="177" class="small" text-anchor="start">目标要小、递进、可衡量</text>
+  </g>
+  <polyline points="649,199 649,224" class="connector" stroke="var(--diagram-primary,#087f6d)" data-connector="true" marker-end="url(#ch05-02-arrow-primary)" />
+  <g id="ch05-02-check" data-box="370,230,558,92">
+    <rect x="370" y="230" width="558" height="92" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+    <text x="649" y="264" class="strong" text-anchor="middle">每周：实际进展 vs 预定目标</text>
+    <text x="649" y="303" class="small" text-anchor="middle">双方依据同一个里程碑判断</text>
+  </g>
+  <polyline points="649,327 649,343 502,343 502,359" class="connector" stroke="var(--diagram-primary,#087f6d)" data-connector="true" marker-end="url(#ch05-02-arrow-primary)" />
+  <polyline points="649,343 797,343 797,359" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-02-arrow-warm)" />
+  <g id="ch05-02-met" data-box="370,365,264,66">
+    <rect x="370" y="365" width="264" height="66" fill="var(--diagram-primary-soft,#e5f4ee)" />
+    <text x="502.0" y="391" class="strong" text-anchor="middle">达标</text>
+    <text x="502.0" y="419" class="small" text-anchor="middle">明确下个里程碑</text>
+  </g>
+  <g id="ch05-02-unmet" data-box="664,365,264,66">
+    <rect x="664" y="365" width="264" height="66" fill="var(--diagram-warm-soft,#fff3dc)" />
+    <text x="796.0" y="391" class="strong" text-anchor="middle">未达标</text>
+    <text x="796.0" y="419" class="small" text-anchor="middle">双方尽早看清差距</text>
+  </g>
+  <polyline points="370,397 343,397 343,276 364,276" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-02-arrow-secondary)" />
+  <g id="ch05-02-limits" data-box="32,438,896,38">
+    <text x="32" y="465" class="small" text-anchor="start">两个月是原书示例；细致指导须限期且尊重对方，未达标不等于自动离职。</text>
+  </g>
+</svg>

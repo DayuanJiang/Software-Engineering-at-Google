@@ -1,0 +1,24 @@
+{
+  "id": "ch06-04",
+  "chapter": 6,
+  "title": "再回一封急邮件，谁来做团队战略？",
+  "summary": "用原文中的消息、会议和战略工作，对照被动等空闲与主动预留至少两小时的注意力安排，说明哪些关键工作会被持续响应挤掉。",
+  "enabled": true,
+  "sourceSections": [
+    "### Important Versus Urgent   重要和紧急",
+    "### Learn to Drop Balls  学会放下任务"
+  ],
+  "afterParagraph": "才能让有限的时间和注意力覆盖团队不断扩大的职责范围。",
+  "desktop": "assets/diagrams/sections/ch06-04.svg",
+  "mobile": "assets/diagrams/sections/ch06-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "一直先处理眼前急消息，再等空闲做团队战略，会挤掉什么？主动保护时间改变了什么？",
+    "expectedAnswer": "不断响应会挤掉团队战略、领导者职业路径和跨团队协作等重要但不紧急的工作。原文建议预留至少两小时专注处理，可交他人的急事授权，非关键事项主动放下，而非试图完成所有工作。",
+    "visualEncoding": "同样待办下，一行被连续消息占据且战略仍在等待；另一行先保留完整的关键工作时段。实际任务名让读者识别被挤掉的工作，不借未经证实的饼图比例说明资源限制。",
+    "sourceEvidence": "Important Versus Urgent   重要和紧急：always easier to respond to that next urgent email；block out two hours or more；team strategy, career paths for your leaders, or ... neighboring teams。Learn to Drop Balls  学会放下任务：critical things that only you can do。",
+    "beforeProblem": "原图用三类任务各连一个动作，本质上是一张清单，并与授权图重复；没有显示被急事挤占的具体工作或主动放下能保护什么。",
+    "whyBetter": "在相同待办下对比两种注意力安排，让没有截止期限的重要工作是否获得时段成为可见差异；保留授权与主动放下作为腾出空间的具体动作。",
+    "limits": "时间条是教学示意，不是实际日程、任务数量或工时分布；不把原文20/60/20的整理比喻当统计，不判定所有急事都不重要，不保证被放下的事必有人接手。"
+  }
+}

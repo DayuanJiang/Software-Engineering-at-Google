@@ -1,0 +1,21 @@
+{
+  "id": "ch03-03",
+  "chapter": 3,
+  "title": "哪些资料需要全公司统一？",
+  "summary": "用原文的基本开发工作流与本地 Frobber 实例两个例子，展示不同团队查阅同一份权威指南和特定团队使用局部指南的区别，并标明更广泛资料的维护责任。",
+  "enabled": true,
+  "sourceSections": ["### Establishing Canonical Sources of Information 建立权威信息源"],
+  "afterParagraph": "你所在的产品领域？还是所有工程师？",
+  "desktop": "assets/diagrams/sections/ch03-03.svg",
+  "mobile": "assets/diagrams/sections/ch03-03-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "基本开发工作流与本地 Frobber 实例运行指南，都应该成为全公司统一的资料吗？",
+    "expectedAnswer": "基本开发工作流对所有工程师相关，适合集中成共同参考并由专家主动维护；本地 Frobber 实例的指南主要服务 Frobber 工程师，不必把所有局部内容都提升为组织级规范。",
+    "visualEncoding": "多个团队的查阅箭头汇聚到同一个全公司参考；Frobber 工程师的箭头指向团队指南。不同的读者集合而不是任意大小决定共享范围，权威参考上直接标明专家审核与维护。",
+    "sourceEvidence": "### Establishing Canonical Sources of Information 建立权威信息源：搭建基本开发工作流的指南应成为统一的参考依据，而在本地运行 Frobber 实例的指南，主要与从事 Frobber 开发的工程师有关；必须由相关领域的专家主动维护和审核。",
+    "beforeProblem": "旧图是写下、找到、反馈、更新的泛化循环，没有展示受众改变怎样影响权威化决策；虽列 go/links 为依据，却没有画出短链接机制。",
+    "whyBetter": "读者可以沿查阅箭头比较两份指南服务谁，直接回答何时需要统一参考。使用原文的反例限制了全组织共享并非越多越好的误读。",
+    "limits": "团队甲乙是示意标记，不代表组织人数、成本比例或访问控制。团队资料也可以被外部团队读取；图示只讨论主要受众，不表示必须限制访问。"
+  }
+}

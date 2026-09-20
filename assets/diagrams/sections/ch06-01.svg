@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch06-01" data-layout="desktop" role="img" aria-labelledby="ch06-01-title ch06-01-desc">
+  <title id="ch06-01-title">结果更丰富，为什么还不能直接上线？</title>
+  <desc id="ch06-01-desc">搜索案例中的候选改动是在结果页增加图片、视频等内容。分支展示同一改动的不同影响：质量提升带来短期参与度收益；更多传输和渲染增加延迟，损害长期参与度；服务端生成更多数据消耗更多 CPU 时间，形成服务容量代价。旧盲点是只权衡质量和容量，把延迟留到事后救火。连接短期收益与长期损失的括线指向共同的参与度指标，据此判断是否发布，并每月重新平衡。图中没有数值权重，也没有断言该改动应当发布。</desc>
+  <style>
+    .cg-ch06-01[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424);}
+    .cg-ch06-01[data-layout="desktop"] .strong {font-weight:600;}
+    .cg-ch06-01[data-layout="desktop"] .heading {font-size:28px;font-weight:600;}
+    .cg-ch06-01[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868);}
+    .cg-ch06-01[data-layout="desktop"] .good {fill:var(--diagram-primary,#087f6d);}
+    .cg-ch06-01[data-layout="desktop"] .bad {fill:var(--diagram-danger,#b54750);}
+    .cg-ch06-01[data-layout="desktop"] .cost {fill:var(--diagram-warm,#a56a1f);}
+    .cg-ch06-01[data-layout="desktop"] .blue {fill:var(--diagram-secondary,#2f6eac);}
+    .cg-ch06-01[data-layout="desktop"] .edge {fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;}
+  </style>
+  <defs>
+    <marker id="ch06-01-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch06-01-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch06-01-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+    <marker id="ch06-01-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="32" y="40" text-anchor="start" class="heading">结果更丰富，为什么还不能直接上线？</text>
+  <rect x="32" y="64" width="896" height="44" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-01-blinder"/>
+  <text x="48" y="93" text-anchor="start" class="small" data-box="ch06-01-blinder">旧盲点：只权衡质量与容量，把延迟当作事后救火的问题</text>
+  <rect x="32" y="146" width="218" height="158" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" id="ch06-01-change" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2"/>
+  <text x="141" y="180" text-anchor="middle" class="small" data-box="ch06-01-change">候选改动</text>
+  <text x="141" y="222" text-anchor="middle" class="strong" data-box="ch06-01-change">结果页新增</text>
+  <text x="141" y="261" text-anchor="middle" class="strong" data-box="ch06-01-change">图片、视频等</text>
+  <path d="M250 225H282V147H306" class="edge" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch06-01-primary)"/>
+  <path d="M282 225H306" class="edge" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch06-01-danger)"/>
+  <path d="M282 225V303H306" class="edge" stroke="var(--diagram-warm,#a56a1f)" marker-end="url(#ch06-01-warm)"/>
+  <text x="318" y="156" text-anchor="start" class="strong good">质量提升</text>
+  <path d="M570 147H614" class="edge" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch06-01-primary)"/>
+  <text x="630" y="156" text-anchor="start" class="strong good">短期参与度收益</text>
+  <text x="318" y="234" text-anchor="start" class="strong bad">传输、渲染更多</text>
+  <path d="M570 225H614" class="edge" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch06-01-danger)"/>
+  <text x="630" y="234" text-anchor="start" class="strong bad">变慢：长期参与度损失</text>
+  <text x="318" y="312" text-anchor="start" class="cost">服务端多耗 CPU 时间</text>
+  <path d="M570 303H614" class="edge" stroke="var(--diagram-warm,#a56a1f)" marker-end="url(#ch06-01-warm)"/>
+  <text x="630" y="312" text-anchor="start" class="cost">服务容量代价</text>
+  <path d="M908 147H938V225H908" class="edge" stroke="var(--diagram-secondary,#2f6eac)"/>
+  <path d="M938 186V352H480V366" class="edge" stroke="var(--diagram-secondary,#2f6eac)" marker-end="url(#ch06-01-secondary)"/>
+  <text x="920" y="343" text-anchor="end" class="small">收益与损失一起衡量</text>
+  <rect x="32" y="374" width="896" height="60" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" id="ch06-01-metric" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+  <text x="480" y="412" text-anchor="middle" class="strong" data-box="ch06-01-metric">纳入同一参与度指标，决定是否发布；每月再平衡</text>
+  <text x="32" y="466" text-anchor="start" class="small">容量也需兼顾；箭头不是数值模型，没有给定权重或某次改动的上线结论</text>
+</svg>

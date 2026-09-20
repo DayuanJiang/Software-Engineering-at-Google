@@ -1,0 +1,21 @@
+{
+  "id": "ch25-01",
+  "chapter": 25,
+  "title": "装箱解决放置，隔离约束越界",
+  "summary": "日志分析与搜索服务共用健康机器时，仅声明 CPU、RAM 不能约束实际超用。调度排除故障机器，隔离机制执行资源边界；CPU 争抢会影响邻居延迟，整机 RAM 耗尽可能终止进程或引起交换延迟。",
+  "enabled": true,
+  "sourceSections": ["#### Automated scheduling 自动调度", "### Containerization and Multitenancy 容器化和多租户", "#### My neighbor’s dog barks in my RAM 邻居家的狗在我的内存中吠叫"],
+  "afterParagraph": "这是一种轻量级机制，基于 cgroups",
+  "desktop": "assets/diagrams/sections/ch25-01.svg",
+  "mobile": "assets/diagrams/sections/ch25-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "把日志分析和搜索服务成功放到同一台健康机器后，为什么只声明资源还不够？",
+    "expectedAnswer": "调度按需求和健康状况放置作业，却不能仅凭声明阻止作业超用。CPU 争抢会影响同机搜索延迟；RAM 耗尽还可能使进程被终止或因磁盘交换变慢。需要实际执行隔离边界。",
+    "visualEncoding": "上方分开故障甲被排除与健康乙被选中；下方保持相同的日志分析和搜索端点，红色越界箭头直达搜索变慢，对照下一行被资源边界截住的箭头。位置不代表资源比例。",
+    "sourceEvidence": "Automated scheduling 自动调度：避免将任何任务调度到这些机器上。Containerization and Multitenancy 容器化和多租户：指定 CPU、RAM 和磁盘空间需求。My neighbor’s dog barks in my RAM 邻居家的狗在我的内存中吠叫：CPU 不足会使同机服务作业的延迟出现短时波动；RAM 不足则会触发内核因内存耗尽而终止进程。",
+    "beforeProblem": "原图画两台机器和若干无差别副本，只在页脚声称共享需边界，没有画出超用者、受害者或任何越界后果。",
+    "whyBetter": "同一对工作负载的有无约束对照，使读者能从箭头是否跨越资源边界解释调度与隔离为什么不是同一职责。",
+    "limits": "示例不规定 cgroups 的配置、限额、隔离强度或容器安全保证；资源边界只是需要实际执行的约束，不能推导出完全零干扰。"
+  }
+}

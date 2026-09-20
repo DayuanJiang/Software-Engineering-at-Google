@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21" data-layout="desktop" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch21-title ch21-desc">
+<title id="ch21-title">依赖更新：谁能验证受影响的用法？</title>
+<desc id="ch21-desc">示意网络中，私有 libuser 经 liba 使用结果，liba 调用 libbase 的 Foo。实线从使用方指向依赖方；libbase 的候选改动需要沿虚线反向查找 liba 和 libuser 的受影响测试。上游能运行可见使用方的测试，但不能据本地测试通过推断私有用法可用。私有使用方要补充验证，必要变更还需迁移协调或工具。Live at Head 依赖测试、可见性和责任安排，不是普适的无条件选最新版策略。</desc>
+<style>
+.cg-ch21[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch21[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch21[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch21[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
+.cg-ch21[data-layout="desktop"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch21[data-layout="desktop"] .warm{fill:var(--diagram-warm,#a56a1f)}
+.cg-ch21[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
+</style><defs>
+<marker id="ch21-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch21-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch21-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect id="ch21-shape-1" x="0" y="0" width="960" height="560" rx="0" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">依赖更新：谁能验证受影响的用法？</text>
+<text x="32" y="76" class="small" text-anchor="start">实线：使用方指向依赖方；虚线：沿反向依赖查找受影响测试</text>
+<rect id="ch21-shape-2" x="32" y="106" width="246" height="224" rx="0" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="48" y="139" class="small" text-anchor="start">使用方组织（私有）</text>
+<rect id="ch21-shape-3" x="310" y="106" width="618" height="224" rx="0" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="330" y="139" class="small" text-anchor="start">上游可见项目（示意）</text>
+<rect id="ch21-shape-4" x="50" y="174" width="208" height="98" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
+<text x="154.0" y="215.0" class="strong" text-anchor="middle" data-owner="ch21-shape-4">libuser</text>
+<text x="154.0" y="247.0" class="small" text-anchor="middle" data-owner="ch21-shape-4">经 liba 使用结果</text>
+<rect id="ch21-shape-5" x="338" y="174" width="230" height="98" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="453.0" y="215.0" class="strong" text-anchor="middle" data-owner="ch21-shape-5">liba</text>
+<text x="453.0" y="247.0" class="small" text-anchor="middle" data-owner="ch21-shape-5">调用 Foo()</text>
+<rect id="ch21-shape-6" x="656" y="174" width="252" height="98" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="782.0" y="215.0" class="strong" text-anchor="middle" data-owner="ch21-shape-6">libbase</text>
+<text x="782.0" y="247.0" class="small" text-anchor="middle" data-owner="ch21-shape-6">候选：改动 Foo()</text>
+<path data-connector="true" d="M260 222H336" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-secondary-arrow)"/>
+<path data-connector="true" d="M570 222H654" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-secondary-arrow)"/>
+<path data-connector="true" d="M782 274V308H453V275" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch21-warm-arrow)" stroke-dasharray="6 5"/>
+<path data-connector="true" d="M453 308H154V275" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch21-warm-arrow)" stroke-dasharray="6 5"/>
+<text x="48" y="379" class="strong" text-anchor="start">libbase 本地测试通过</text>
+<text x="400" y="379" class="" text-anchor="start">只验证了测试覆盖到的本地用法</text>
+<path d="M32 400h896" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" fill="none"/>
+<text x="48" y="437" class="strong" text-anchor="start">再测 liba / libuser</text>
+<text x="400" y="437" class="" text-anchor="start">调用方式与结果假设才进入验证</text>
+<text x="32" y="492" class="small" text-anchor="start">看不到私有用法？使用方补测试；必要变更还需迁移协调或工具。</text>
+<text x="32" y="530" class="small" text-anchor="start">Live at Head 依赖这些责任与条件，不是无条件选最新版本。</text>
+</svg>

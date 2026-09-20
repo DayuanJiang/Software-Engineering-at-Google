@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch10-02-diagram" class="chapter-svg cg-ch10-02" role="img" aria-labelledby="ch10-02-title ch10-02-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch10-02-title">重名时，还会返回记录 ID 吗？</title>
+<desc id="ch10-02-desc">保留原文 AddCustomer 函数声明。删减对照只说创建客户，不能回答重名时的结果。按原注释推演，没有同名记录时创建记录并返回 ID；已有同名记录时抛出 DuplicateEntryError。两条条件分支不是先后步骤。图说明参数、条件、返回值与异常为何要连在一起，不描述内部检测重复的方法，也不扩展其他错误情形。函数声明仅展示，未执行。</desc>
+<style>
+.cg-ch10-02#ch10-02-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch10-02#ch10-02-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch10-02#ch10-02-diagram .heading{font-size:26px;font-weight:600}
+.cg-ch10-02#ch10-02-diagram .strong{font-weight:600}
+.cg-ch10-02#ch10-02-diagram .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+.cg-ch10-02#ch10-02-diagram .good{fill:var(--diagram-primary,#087f6d)}
+.cg-ch10-02#ch10-02-diagram .bad{fill:var(--diagram-danger,#b54750)}
+.cg-ch10-02#ch10-02-diagram .system{fill:var(--diagram-secondary,#2f6eac)}
+</style>
+<defs><marker id="ch10-02-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="43" class="heading" text-anchor="start">“创建客户”还不够：重名时会怎样？</text>
+<text x="32" y="79" class="small" text-anchor="start">按原文 AddCustomer 注释推演；短句是为比较而作的删减，不是原书的错误注释。</text>
+<rect x="32" y="102" width="896" height="58" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="139" class="code" text-anchor="start" data-bounds="48 108 864 46">int AddCustomer(string name, string address);</text>
+<text x="32" y="204" class="small strong bad" text-anchor="start">删掉条件之后</text>
+<rect x="32" y="220" width="256" height="178" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="48" y="257" class="strong" text-anchor="start" data-bounds="48 230 224 158">“创建客户”</text>
+<text x="48" y="300" class="small" text-anchor="start" data-bounds="48 230 224 158">重名也会返回 ID 吗？</text>
+<text x="48" y="340" class="" text-anchor="start" data-bounds="48 230 224 158">仅凭这句</text>
+<text x="48" y="375" class="strong bad" text-anchor="start" data-bounds="48 230 224 158">无法判断</text>
+<text x="330" y="204" class="small strong" text-anchor="start">保留条件与结果：同名记录是否已存在？</text>
+<rect x="330" y="233" width="222" height="62" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="346" y="272" class="" text-anchor="start" data-bounds="346 239 190 50">没有同名记录</text>
+<path d="M560 265H602" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-02-arrow)" data-connector="true"/>
+<rect x="618" y="233" width="310" height="62" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="634" y="272" class="strong" text-anchor="start" data-bounds="634 239 278 50">创建记录，返回 ID</text>
+<rect x="330" y="338" width="222" height="62" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="346" y="377" class="" text-anchor="start" data-bounds="346 344 190 50">已有同名记录</text>
+<path d="M560 369H602" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-02-arrow)" data-connector="true"/>
+<rect x="618" y="322" width="310" height="88" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="634" y="357" class="strong" text-anchor="start" data-bounds="634 330 278 72">抛出异常</text>
+<text x="634" y="390" class="code small bad" text-anchor="start" data-bounds="634 330 278 72">DuplicateEntryError</text>
+<text x="32" y="456" class="small" text-anchor="start">条件、返回值与异常要连着写；内部如何检测重复，不是这条调用契约的重点。</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch12" data-layout="mobile" role="img" aria-labelledby="ch12m-title ch12m-desc" viewBox="0 0 420 680" width="420" height="680">
+<title id="ch12m-title">测试要守住契约，也要解释失败</title>
+<desc id="ch12m-desc">以例12-6/7的加法测试连接本章的两个维护性问题。隐藏计算输入使期望5的来源不明；以代码简写隐藏无关构造、显露2加3等于5。对同一测试施加两种示意变化：行为不变的内部重构不应要求修改测试，错误地返回6则应报告期望5、实际6。示意结果不是实测数据。</desc>
+<style>
+.cg-ch12[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0}
+.cg-ch12[data-layout="mobile"] .small {font-size:19px}
+.cg-ch12[data-layout="mobile"] .strong {font-weight:600}
+</style>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">测试要守住契约，也要解释失败</text>
+<text x="24" y="68" class="small" text-anchor="start" fill="var(--diagram-muted,#686868)" data-font-size="19" data-lane="24 372">例12-6/7；代码简写与示意变更</text>
+<rect x="24" y="91" width="372" height="108" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
+<text x="40" y="122" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">newTestCalculation()</text>
+<text x="40" y="153" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 340">期待 5，却看不到输入 2 和 3</text>
+<text x="40" y="182" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 340">无关构造细节反而留在测试里</text>
+<text x="24" y="236" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">改写：显露加法行为</text>
+<rect x="24" y="251" width="372" height="149" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
+<text x="40" y="282" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">calc = newCalculator()</text>
+<text x="40" y="317" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">result = calc.calculate(2, PLUS, 3)</text>
+<text x="40" y="352" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">assert(result == 5)</text>
+<text x="40" y="383" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 340">简写：隐藏构造，显露输入与期望</text>
+<rect x="24" y="421" width="372" height="85" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" data-region="true"/>
+<text x="40" y="452" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">只重构内部，2 + 3 仍为 5</text>
+<text x="40" y="486" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">同一测试不改，继续通过</text>
+<rect x="24" y="525" width="372" height="85" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" data-region="true"/>
+<text x="40" y="556" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">示意缺陷：2 + 3 返回 6</text>
+<text x="40" y="590" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">测试失败：期望 5，实际 6</text>
+<text x="24" y="642" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">无害改动不改测试；</text>
+<text x="24" y="669" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">失败能说清具体输入、预期与实际。</text>
+</svg>

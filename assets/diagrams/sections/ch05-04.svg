@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch05-04" data-layout="desktop" role="img" aria-labelledby="ch05-04-title ch05-04-desc">
+  <title id="ch05-04-title">不知怎么做，还是不知为何做？</title>
+  <desc id="ch05-04-desc">两种支持缺口需要不同信息。方向不清时，领导把工作拆成可管理任务，让下一步可执行。意义不清时，原书经理把客户描述产品帮助的邮件转发给工程团队，让团队看见谁从产品受益。成员可能同时需要两者，图不是人格分类，也不保证产出增加；内在激励的讨论以薪酬不构成压力为前提。</desc>
+  <style>
+.cg-ch05-04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch05-04[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch05-04[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch05-04[data-layout="desktop"] .connector {fill:none;stroke-width:2;stroke-linejoin:round}
+</style>
+  <defs>
+    <marker id="ch05-04-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
+    </marker>
+    <marker id="ch05-04-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)" />
+    </marker>
+    <marker id="ch05-04-arrow-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)" />
+    </marker>
+    <marker id="ch05-04-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="480" fill="var(--diagram-bg,#fff)" />
+  <g id="ch05-04-heading" data-box="32,12,896,72">
+    <text x="32" y="42" class="strong" text-anchor="start">不知怎么做，还是不知为何做？</text>
+    <text x="32" y="77" class="small" text-anchor="start">要补足的信息不同，提供的帮助也不同</text>
+  </g>
+  <g id="ch05-04-columns" data-box="32,94,896,38">
+    <text x="48" y="122" class="small" text-anchor="start">缺少的信息</text>
+    <text x="374" y="122" class="small" text-anchor="start">领导的动作</text>
+    <text x="718" y="122" class="small" text-anchor="start">变得可见</text>
+  </g>
+  <g id="ch05-04-row-0" data-box="32,144,896,120">
+    <rect x="32" y="144" width="896" height="120" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+    <text x="48" y="176" class="strong" text-anchor="start">方向缺口</text>
+    <text x="48" y="219" class="" text-anchor="start">不知道下一步做什么</text>
+    <text x="374" y="219" class="" text-anchor="start">拆成可管理任务</text>
+    <text x="718" y="219" class="" text-anchor="start">可执行的下一步</text>
+    <text x="374" y="250" class="small" text-anchor="start">据本章方向指引</text>
+  </g>
+  <polyline points="294,210 357,210" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-04-arrow-secondary)" />
+  <polyline points="611,210 701,210" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-04-arrow-secondary)" />
+  <g id="ch05-04-row-1" data-box="32,282,896,120">
+    <rect x="32" y="282" width="896" height="120" fill="var(--diagram-warm-soft,#fff3dc)" />
+    <text x="48" y="314" class="strong" text-anchor="start">意义缺口</text>
+    <text x="48" y="357" class="" text-anchor="start">看不到产品帮助了谁</text>
+    <text x="374" y="357" class="" text-anchor="start">转发客户受益邮件</text>
+    <text x="718" y="357" class="" text-anchor="start">用户如何受益</text>
+    <text x="374" y="388" class="small" text-anchor="start">原书客户邮件案例</text>
+  </g>
+  <polyline points="294,348 357,348" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04-arrow-warm)" />
+  <polyline points="611,348 701,348" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04-arrow-warm)" />
+  <g id="ch05-04-limits" data-box="32,415,896,62">
+    <text x="32" y="441" class="small" text-anchor="start">两种帮助可以同时需要；这些是支持需求，不是给人贴固定标签。</text>
+    <text x="32" y="470" class="small" text-anchor="start">内在激励的讨论前提：薪酬已足以让收入不构成压力。</text>
+  </g>
+</svg>

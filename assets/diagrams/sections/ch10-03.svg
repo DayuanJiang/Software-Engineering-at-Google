@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch10-03-diagram" class="chapter-svg cg-ch10-03" role="img" aria-labelledby="ch10-03-title ch10-03-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch10-03-title">下一步，究竟轮到谁操作？</title>
+<desc id="ch10-03-desc">对照原书教程第3至7步，省略下载与复制两步。原第3步执行脚本；第4、5步认证和建 baz 是系统响应，并入改后第3步的从属说明，不再编号。原第6步测试 baz 和第7步输入 SQL 是一次用户操作，合并为改后第4步。只给用户动作编号，命令单独列行。显示的 cd ~; foobar.sh 和 CREATE DATABASE my_foobar_db; 是原书片段，仅作为文字展示，未执行。图不是完整可执行指南；如果描述服务器生命周期，编号视角可以不同。</desc>
+<style>
+.cg-ch10-03#ch10-03-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch10-03#ch10-03-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch10-03#ch10-03-diagram .heading{font-size:26px;font-weight:600}
+.cg-ch10-03#ch10-03-diagram .strong{font-weight:600}
+.cg-ch10-03#ch10-03-diagram .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+.cg-ch10-03#ch10-03-diagram .good{fill:var(--diagram-primary,#087f6d)}
+.cg-ch10-03#ch10-03-diagram .bad{fill:var(--diagram-danger,#b54750)}
+.cg-ch10-03#ch10-03-diagram .system{fill:var(--diagram-secondary,#2f6eac)}
+</style>
+<defs><marker id="ch10-03-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="43" class="heading" text-anchor="start">下一步，究竟轮到谁操作？</text>
+<text x="32" y="79" class="small" text-anchor="start">原例第3至7步的编号对照；下载与复制两步略。括线表示合并，不是额外步骤。</text>
+<text x="32" y="120" class="strong bad" text-anchor="start">原例：编号混进系统响应</text>
+<text x="488" y="120" class="strong good" text-anchor="start">改后：只给用户动作编号</text>
+<text x="48" y="164" class="" text-anchor="start" data-bounds="48 134 350 268">3. 执行脚本</text>
+<text x="48" y="217" class="system" text-anchor="start" data-bounds="48 134 350 268">4. 系统联系认证服务</text>
+<text x="48" y="256" class="system" text-anchor="start" data-bounds="48 134 350 268">5. 系统初始化 baz</text>
+<text x="48" y="332" class="" text-anchor="start" data-bounds="48 134 350 268">6. 在命令行测试 baz</text>
+<text x="48" y="371" class="" text-anchor="start" data-bounds="48 134 350 268">7. 输入 SQL 命令</text>
+<path d="M396 157H470" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-03-arrow)" data-connector="true"/>
+<path d="M400 209H422V250H400M422 230H507" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch10-03-arrow)" data-connector="true"/>
+<path d="M400 324H442V365H400M442 345H470" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-03-arrow)" data-connector="true"/>
+<circle cx="494" cy="155" r="16" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="494" y="162" class="strong good" text-anchor="middle" data-bounds="478 139 32 32">3</text>
+<text x="520" y="163" class="strong" text-anchor="start">执行脚本（用户操作）</text>
+<text x="520" y="192" class="code small" text-anchor="start">cd ~; foobar.sh</text>
+<rect x="520" y="209" width="408" height="76" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="536" y="239" class="system" text-anchor="start" data-bounds="536 215 376 64">系统响应：认证后初始化 baz</text>
+<text x="536" y="270" class="small" text-anchor="start" data-bounds="536 215 376 64">并打开输入 shell；此处无需操作</text>
+<path d="M494 178V276H511" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" data-connector="true"/>
+<circle cx="494" cy="335" r="16" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="494" y="342" class="strong good" text-anchor="middle" data-bounds="478 319 32 32">4</text>
+<text x="520" y="343" class="strong" text-anchor="start">输入 SQL（一次用户操作）</text>
+<text x="520" y="374" class="code small" text-anchor="start">baz:$</text>
+<text x="520" y="404" class="code small" text-anchor="start">CREATE DATABASE my_foobar_db;</text>
+<text x="32" y="420" class="small bad" text-anchor="start">4、5 要我做吗？6、7 是两次吗？</text>
+<text x="32" y="459" class="small" text-anchor="start">只给用户动作编号，系统响应从属说明。命令为原书展示片段，未执行。</text>
+</svg>

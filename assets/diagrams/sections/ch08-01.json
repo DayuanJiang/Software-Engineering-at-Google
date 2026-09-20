@@ -1,0 +1,23 @@
+{
+  "id": "ch08-01",
+  "chapter": 8,
+  "title": "读完这一行，谁拥有 Foo？",
+  "summary": "并列原文的 Foo* 与按值 unique_ptr 参数声明、调用代码和所有权关系。普通指针调用不能单独回答所有权问题；按值 unique_ptr 参数接收 std::move(my_foo) 时，所有权由调用方转交。",
+  "enabled": true,
+  "sourceSections": [
+    "#### Optimize for the reader   为读者优化"
+  ],
+  "afterParagraph": "就能清楚地理解调用处发生了什么。",
+  "desktop": "assets/diagrams/sections/ch08-01.svg",
+  "mobile": "assets/diagrams/sections/ch08-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "看到 TakeFoo(my_foo) 或 TakeFoo(std::move(my_foo))，结合各自参数声明，读者能确定什么？",
+    "expectedAnswer": "Foo* 参数和调用表达式不能表明是否转交所有权；原文按值接收 std::unique_ptr<Foo> 的调用会转交独占所有权，my_foo 不再拥有原对象。不能由此推断整个函数契约或对象最终何时销毁。",
+    "visualEncoding": "并列可读的参数声明与调用代码，用同色代码区把 std::move 和按值参数联系起来；普通指针一侧保留带问号的两种可能，unique_ptr 一侧以单向箭头显示从 my_foo 到 arg 的所有权变化。移动端保留完整声明并纵向比较。",
+    "sourceEvidence": "#### Optimize for the reader   为读者优化：两个 TakeFoo 代码块，以及“凭 API 提供的信息推断交互方式”“就能清楚地理解调用处发生了什么”。",
+    "beforeProblem": "旧图用“传入 Foo*”“std::unique_ptr + std::move”等概括替代了真正的调用和参数声明，读者看不到支持推理的代码证据，且容易把 move 单独当作转移保证。",
+    "whyBetter": "显示推断所需的类型和表达式，并区分无法确定的所有权与明确转交的所有权；图内说明按值接收这一条件，避免把 std::move 本身等同于转移。",
+    "limits": "代码摘自原文并仅重排换行，省略对象创建。图只说明本例独占所有权的转交，不声称所有裸指针都转交或都不转交，不声称移动后的变量不能重新赋值，也不推断原对象何时销毁。"
+  }
+}

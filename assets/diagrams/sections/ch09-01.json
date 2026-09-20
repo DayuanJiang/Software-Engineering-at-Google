@@ -1,0 +1,25 @@
+{
+  "id": "ch09-01",
+  "chapter": 9,
+  "title": "收到意见后，是否还要再审？",
+  "summary": "对照 FYI、尚未获 LGTM 的修改要求、不同意意见，以及约定落实意见即可的 LGTM 四种状态，显示作者下一步和是否再审的区别。",
+  "enabled": true,
+  "sourceSections": [
+    "## Code Review Flow  代码审查流程",
+    "### Knowledge Sharing  知识共享",
+    "### Be Polite and Professional  保持礼貌和专业"
+  ],
+  "afterParagraph": "应把每条审查意见都当作一个 TODO 待办项：不必无条件接受，但至少要作出回应。如果不同意，就说明自己的看法和理由；在双方都有机会提出替代方案之前，不要将评论标记为已解决。作者与审查者意见不同时，一种常见的礼貌做法是提出替代方案，再请审查者 PTAL（请再看一下）。记住，代码审查是双方学习的机会，这种认识往往有助于减少分歧。",
+  "desktop": "assets/diagrams/sections/ch09-01.svg",
+  "mobile": "assets/diagrams/sections/ch09-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "收到一条评论，是否必须改代码、再审一轮，或者可以直接标记已解决？",
+    "expectedAnswer": "FYI 仅供参考而不要求行动；普通修改请求在尚无 LGTM 时应修改、上传快照并回复审查者。不同意时应解释理由并讨论替代方案，双方表达前不标已解决。本章还描述了附带约定的 LGTM：落实意见后可不再审一轮，但全部提交条件仍须满足。",
+    "visualEncoding": "四条独立、带条件的横向路径把评论状态与作者行为、后续状态一一对应；移动版保持四条路径，改为每条内部纵向排列。LGTM 未给出与已经约定改完即可形成对照，FYI 与争议意见不再被画成同一种修改循环。",
+    "sourceEvidence": "## Code Review Flow  代码审查流程：步骤3至6；### Knowledge Sharing  知识共享：'仅供参考'、'无须作者采取行动'；### Be Polite and Professional  保持礼貌和专业：'提出意见的同时给出 LGTM'、'无须再审一轮'、'双方都有机会提出替代方案之前'。",
+    "beforeProblem": "原图把所有评论串入作者修改与重新审查的同一路径，未说明 FYI 不要求修改，也未显示有争议时的处理边界或附带约定的 LGTM 可以不再审一轮。",
+    "whyBetter": "评论内容与批准状态改变时，下一步在图上也改变；这比无条件的六框循环更能回答作者当下该做什么。图移到专业沟通段落后，紧接争议处理规则。",
+    "limits": "四种情境是对原文的示例化概括，不是工具按钮操作说明，也不是全部可能状态。没有假定任何平台在每次修改后自动重置 LGTM，更不把无须再审等同于无须处理意见。"
+  }
+}

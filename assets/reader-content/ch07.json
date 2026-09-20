@@ -1,0 +1,81 @@
+{
+  "format": 2,
+  "sourceSha256": "35076cfa13a4f7d76d1739a5e3206e33e4db01f9aa960ab951a17b2eb5998675",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch07.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [46, 48],
+      "english": "Frederick P. Brooks, The Mythical Man-Month: Essays on Software Engineering (New York: Addison-Wesley, 1995).",
+      "chinese": "Frederick P. Brooks，《人月神话：软件工程随笔》（纽约：Addison-Wesley，1995）。",
+      "after": "然而，组织规模线性增长时，沟通成本却按平方增长。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [132, 134],
+      "english": "It’s worth pointing out here that our industry currently disparages “anecdata,” and everyone has a goal of being “data driven.” Yet anecdotes continue to exist because they are powerful. An anecdote can provide context and narrative that raw numbers cannot; it can provide a deep explanation that resonates with others because it mirrors personal experience. Although our researchers do not make decisions on anecdotes, we do use and encourage techniques such as structured interviews and case studies to deeply understand phenomena and provide context to quantitative data.",
+      "chinese": "值得指出的是，业界目前往往轻视“轶事数据”，人人都以“数据驱动”为目标。然而，轶事仍有其地位，因为它们很有说服力。轶事能够提供原始数字无法呈现的背景和叙事，也能给出深入的解释，因贴近个人经历而引发共鸣。我们的研究人员虽然不依据轶事作出决策，但确实使用并鼓励结构化访谈、案例研究等方法，以深入理解现象，为定量数据提供背景。",
+      "after": "他们是否倾向于从访谈故事中产生共鸣，并据此决策？"
+    },
+    {
+      "id": "3",
+      "definitionLines": [136, 138],
+      "english": "Java and C++ have the greatest amount of tooling support. Both have mature formatters and static analysis tools that catch common mistakes. Both are also heavily funded internally. Even though other language teams, like Python, were interested in the results, clearly there was not going to be a benefit for Python to remove readability if we couldn’t even show the same benefit for Java or C++.",
+      "chinese": "Java 和 C++ 获得的工具支持最多，两者都有成熟的格式化和静态分析工具，能发现常见错误，也都获得了大量内部资金支持。Python 等其他语言团队虽然也对结果感兴趣，但很显然，如果连 Java 或 C++ 都无法证明取消 Readability 流程有益，Python 就更不会从中受益。",
+      "after": "其他团队则想先看看这两种语言的研究结果。"
+    },
+    {
+      "id": "4",
+      "definitionLines": [174, 176],
+      "english": "“From there it is only a small step to measuring ‘programmer productivity’ in terms of ‘number of lines of code produced per month.’ This is a very costly measuring unit because it encourages the writing of insipid code, but today I am less interested in how foolish a unit it is from even a pure business point of view. My point today is that, if we wish to count lines of code, we should not regard them as ‘lines produced’ but as ‘lines spent’: the current conventional wisdom is so foolish as to book that count on the wrong side of the ledger.” Edsger Dijkstra, on the cruelty of really teaching computing science, EWD Manuscript 1036.",
+      "chinese": "“由此再往前走一小步，就会用‘每月产出的代码行数’来度量‘程序员生产力’。这种度量单位代价高昂，因为它鼓励人们编写乏善可陈的代码。不过，今天我不想着重讨论，即使仅从商业角度看，这种单位也有多么愚蠢。我今天要说的是，如果要统计代码行数，就不应把它们视为‘产出的行数’，而应视为‘耗费的行数’：当下通行的观念竟愚蠢到把这个数字记在了账本错误的一侧。”Edsger Dijkstra，《论真正教授计算机科学的残酷性》，EWD 手稿1036。",
+      "after": "显然，代码行数（LOC）不合适，"
+    },
+    {
+      "id": "5",
+      "definitionLines": [315, 317],
+      "english": "It has routinely been our experience at Google that when the quantitative and qualitative metrics disagree, it was because the quantitative metrics were not capturing the expected result.",
+      "chinese": "在谷歌，我们经常遇到这样的情况：定量指标与定性指标不一致，是因为定量指标没有捕捉到预期要反映的结果。",
+      "after": "于是，我们调整指标，排除了这类构建。"
+    },
+    {
+      "id": "6",
+      "definitionLines": [383, 385],
+      "english": "Recall bias is the bias from memory. People are more likely to recall events that are particularly interesting or frustrating.",
+      "chinese": "回忆偏差是由记忆造成的偏差。人们更容易想起那些特别有趣或令人沮丧的事件。",
+      "after": "这样有望避免回忆偏差，"
+    },
+    {
+      "id": "7",
+      "definitionLines": [387, 389],
+      "english": "Recency bias is another form of bias from memory in which people are biased toward their most recent experience. In this case, as they just successfully completed the process, they might be feeling particularly good about it.",
+      "chinese": "近因偏差是另一种由记忆造成的偏差，人们会更看重最近的经历。在这个案例中，工程师刚刚顺利完成流程，因此可能对它感觉格外良好。",
+      "after": "却也引入了近因偏差"
+    },
+    {
+      "id": "8",
+      "definitionLines": [391, 393],
+      "english": "Because we asked only those people who completed the process, we aren’t capturing the opinions of those who did not complete the process.",
+      "chinese": "由于我们只询问了完成流程的人，因此没有收集到未完成流程者的意见。",
+      "after": "和抽样偏差。"
+    },
+    {
+      "id": "9",
+      "definitionLines": [395, 397],
+      "english": "There is a temptation to use such metrics to evaluate individual engineers, or perhaps even to identify high and low performers. Doing so would be counterproductive, though. If productivity metrics are used for performance reviews, engineers will be quick to game the metrics, and they will no longer be useful for measuring and improving productivity across the organization. The only way to make these measurements work is to let go of the idea of measuring individuals and embrace measuring the aggregate effect.",
+      "chinese": "人们很容易想用这些指标评价单个工程师，甚至区分高绩效和低绩效人员，但这样做会适得其反。如果把生产力指标用于绩效评估，工程师很快就会学会操弄指标，使其不再能用于度量和提高整个组织的生产力。要让这些度量发挥作用，唯一的办法是放弃度量个人的想法，转而度量总体效果。",
+      "after": "了解日志所记录的工程师完成特定任务的耗时。"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [],
+  "pairedTables": [
+    {"englishIndex": 0, "chineseIndex": 1, "reason": "Reviewed the goals/signals table; both versions retain the source's merged final row."},
+    {"englishIndex": 2, "chineseIndex": 3, "reason": "Reviewed matching QUANTS goals, signals and metrics rows; preserve all source entries and their existing grouping."}
+  ],
+  "issues": [
+    "Source lines 277 and 284 merge several goals and signals into one table row and repeat the mentoring goal. The supplied English and Chinese tables are both preserved; diagrams do not invent a corrected row mapping.",
+    "The Chinese sentence at line 325 combines three separately footnoted bias terms. Notes 6, 7 and 8 therefore use distinct clause/term endings in that same sentence to preserve the semantic attachment."
+  ]
+}

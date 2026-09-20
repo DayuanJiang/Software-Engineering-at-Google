@@ -1,0 +1,21 @@
+{
+  "id": "ch25-05",
+  "chapter": 25,
+  "title": "Bash 换成 ash，为何反而告警？",
+  "summary": "书中团队曾在文件系统覆盖层里把 Bash 路径换成极简执行程序。平台改用 ash 后，绕开既有定制，开始承担真正 shell 的开销，内存反而增加并触发告警、回滚。平台迁移必须检查实际依赖，不仅是新二进制是否存在。",
+  "enabled": true,
+  "sourceSections": ["## Choosing a Compute Service 选择计算服务"],
+  "afterParagraph": "迫使团队回滚变更，也引起了一些不满。",
+  "desktop": "assets/diagrams/sections/ch25-05.svg",
+  "mobile": "assets/diagrams/sections/ch25-05-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "平台本想把 Bash 换成更轻的 ash，为什么有些团队的内存却增加并迫使回滚？",
+    "expectedAnswer": "那些团队早已用覆盖层将 Bash 路径替换为极简执行程序；改调用 ash 绕开该定制，反而开始承担 shell 开销。实际依赖的是路径与覆盖层行为，而不是表面上的 Bash。更换计算服务还涉及外围工具与隐式依赖。",
+    "visualEncoding": "变更前后分别展开调用路径到实际执行程序，左边命中自定义覆盖层，右边绕开它启动真正 ash；只有后者接到新增开销、告警、回滚链。移动版按同一变更的先后顺序重排。",
+    "sourceEvidence": "Choosing a Compute Service 选择计算服务：在自定义的文件系统覆盖层中，用一段自行编写的执行第二个参数的代码替换 Bash 命令；内存使用反而增加，触发了告警，迫使团队回滚变更。其后：围绕它最终会形成庞大的辅助服务生态。",
+    "beforeProblem": "原图把常驻容器和无服务器的相邻文字改写成表格，选择结论仍只是按需求选择；迁移路径没有实例，而且会诱发把书中模型读成当前云产品能力表。",
+    "whyBetter": "用书中实际反例代替通用类别清单，将平台意图、真实运行路径与失败结果连接起来。它解释为什么抽象背后的隐式依赖会提高迁移难度，而不仅提醒要考虑迁移。",
+    "limits": "这是书中历史案例，不是 Bash 与 ash 的实测性能比较，也不是当前 Borg 或云提供商保证。保留相邻正文对抽象选择的讨论，不将单个失败例子推广成禁止更换基础设施。"
+  }
+}

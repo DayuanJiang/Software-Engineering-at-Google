@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch03-02" data-layout="desktop" role="img" aria-labelledby="ch03-02-title ch03-02-desc">
+<title id="ch03-02-title">流程变了，旧答案怎么办？</title>
+<desc id="ch03-02-desc">示意开发流程从手工配置变为自动配置。群聊里发现的新结论需写成文档或邮件；旧邮件不可改写，必须核对时效；问答中的旧答案可以由人编辑为新结论。可编辑并非自动更新。</desc>
+<style>
+.cg-ch03-02[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch03-02[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch03-02[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch03-02[data-layout="desktop"] .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch03-02-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch03-02-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch03-02-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" text-anchor="start" class="strong">流程变了，旧答案怎么办？</text>
+<text x="32" y="77" text-anchor="start" class="small">示意：开发流程原需手工配置，现在已自动配置</text>
+<text x="32" y="153" text-anchor="start" class="strong">群聊</text>
+<g id="ch03-02-node-1" data-box="180,107,240,88">
+<rect x="180" y="107" width="240" height="88" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="300.0" y="141" text-anchor="middle" class="strong">群内新结论</text>
+<text x="300.0" y="175" text-anchor="middle" class="small">现已自动配置</text>
+</g>
+<path d="M426 152H568" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-02-arrow-primary)"/>
+<text x="498" y="132" text-anchor="middle" class="small">整理并分享</text>
+<g id="ch03-02-node-2" data-box="576,107,352,88">
+<rect x="576" y="107" width="352" height="88" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="752.0" y="141" text-anchor="middle" class="strong">写成文档或邮件</text>
+<text x="752.0" y="175" text-anchor="middle" class="small">群外与后来读者可以引用</text>
+</g>
+<text x="32" y="269" text-anchor="start" class="strong">旧邮件</text>
+<g id="ch03-02-node-3" data-box="180,223,240,88">
+<rect x="180" y="223" width="240" height="88" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)"/>
+<text x="300.0" y="257" text-anchor="middle" class="strong">原邮件存档</text>
+<text x="300.0" y="291" text-anchor="middle" class="small">仍写着：手工配置</text>
+</g>
+<path d="M426 268H568" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-02-arrow-secondary)"/>
+<text x="498" y="248" text-anchor="middle" class="small">后来搜到</text>
+<text x="600" y="256" text-anchor="start" class="strong">原存档无法改写</text>
+<text x="600" y="291" text-anchor="start" class="small">找到旧答案，仍须核对时效</text>
+<text x="32" y="385" text-anchor="start" class="strong">问答平台</text>
+<g id="ch03-02-node-4" data-box="180,339,240,88">
+<rect x="180" y="339" width="240" height="88" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)"/>
+<text x="300.0" y="373" text-anchor="middle" class="strong">同一条旧答案</text>
+<text x="300.0" y="407" text-anchor="middle" class="small">手工配置</text>
+</g>
+<path d="M426 384H568" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-02-arrow-secondary)"/>
+<text x="498" y="364" text-anchor="middle" class="small">主动编辑</text>
+<g id="ch03-02-node-5" data-box="576,339,352,88">
+<rect x="576" y="339" width="352" height="88" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="752.0" y="373" text-anchor="middle" class="strong">更新这条答案</text>
+<text x="752.0" y="407" text-anchor="middle" class="small">现已自动配置</text>
+</g>
+<text x="32" y="467" text-anchor="start" class="small">可编辑不等于自动更新；这里比较维护差异，不给媒介排名。</text>
+</svg>

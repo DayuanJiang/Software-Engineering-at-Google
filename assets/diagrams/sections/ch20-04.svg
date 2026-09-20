@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch20-04" data-layout="desktop" role="img" aria-labelledby="ch20-04-title ch20-04-desc">
+<title id="ch20-04-title">跳过清理，会让谁的构建失败？</title>
+<desc id="ch20-04-desc">对照先开错误导致旧项目失败与先扫描、自动修复、测试提交清理后再启用错误的推广顺序，同时保留严格准入条件和提交前后发现失败的区别。 不声称启用后所有问题都在提交前发现，也不保证其他原因不会令旧项目构建失败。图不规定扫描时长；不满足准入的检查可在审查中展示或被屏蔽，不能自动升级为构建错误。</desc>
+<style>
+.cg-ch20-04[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch20-04[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch20-04[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch20-04[data-layout="desktop"] .code{font-family:Menlo,Consolas,monospace}
+.cg-ch20-04[data-layout="desktop"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
+.cg-ch20-04[data-layout="desktop"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch20-04[data-layout="desktop"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
+.cg-ch20-04[data-layout="desktop"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
+.cg-ch20-04[data-layout="desktop"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
+</style>
+<defs><marker id="ch20-04-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch20-04-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch20-04-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">跳过清理，会让谁的构建失败？</text>
+<text x="32" y="76" class="small" text-anchor="start">谷歌的推广顺序；不是所有分析都适合阻断构建</text>
+<rect id="ch20-04-shape-1" x="32" y="95" width="896" height="67" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="123" class="small" text-anchor="start" data-owner="ch20-04-shape-1">准入：快、易修复、无感知误报，且只报告影响正确性的问题。</text>
+<text x="48" y="150" class="small" text-anchor="start" data-owner="ch20-04-shape-1">部署收益还须值得修复全库的既有问题。</text>
+<text x="32" y="203" class="strong" text-anchor="start">若跳过清理</text>
+<rect id="ch20-04-shape-2" x="208" y="183" width="200" height="83" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="224" y="214" class="strong" text-anchor="start" data-owner="ch20-04-shape-2">旧问题仍在</text>
+<text x="224" y="246" class="small" text-anchor="start" data-owner="ch20-04-shape-2">没有引入新问题</text>
+<rect id="ch20-04-shape-3" x="454" y="183" width="190" height="83" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="470" y="214" class="strong" text-anchor="start" data-owner="ch20-04-shape-3">先开 ERROR</text>
+<text x="470" y="246" class="small" text-anchor="start" data-owner="ch20-04-shape-3">编译器变严格</text>
+<rect id="ch20-04-shape-4" x="690" y="183" width="238" height="83" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="706" y="214" class="strong" text-anchor="start" data-owner="ch20-04-shape-4">既有项目失败</text>
+<text x="706" y="246" class="small" text-anchor="start" data-owner="ch20-04-shape-4">旧问题触发编译错误</text>
+<path class="connector danger-edge" d="M408 224H448" marker-end="url(#ch20-04-danger-arrow)"/>
+<path class="connector danger-edge" d="M644 224H684" marker-end="url(#ch20-04-danger-arrow)"/>
+<text x="32" y="309" class="strong" text-anchor="start">先清理，再启用</text>
+<rect id="ch20-04-shape-5" x="32" y="328" width="200" height="99" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="48" y="358" class="strong" text-anchor="start" data-owner="ch20-04-shape-5">1  扫描全库</text>
+<text x="48" y="390" class="small" text-anchor="start" data-owner="ch20-04-shape-5">自动生成修复</text>
+<rect id="ch20-04-shape-6" x="264" y="328" width="200" height="99" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="280" y="358" class="strong" text-anchor="start" data-owner="ch20-04-shape-6">2  测试并提交</text>
+<text x="280" y="390" class="small" text-anchor="start" data-owner="ch20-04-shape-6">清空全部既有问题</text>
+<rect id="ch20-04-shape-7" x="496" y="328" width="200" height="99" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="512" y="358" class="strong" text-anchor="start" data-owner="ch20-04-shape-7">3  启用 ERROR</text>
+<text x="512" y="390" class="small" text-anchor="start" data-owner="ch20-04-shape-7">将规则设为错误</text>
+<rect id="ch20-04-shape-8" x="728" y="328" width="200" height="99" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="744" y="358" class="strong" text-anchor="start" data-owner="ch20-04-shape-8">若再次引入</text>
+<text x="744" y="390" class="small" text-anchor="start" data-owner="ch20-04-shape-8">同类问题</text>
+<text x="744" y="417" class="small" text-anchor="start" data-owner="ch20-04-shape-8">就会导致构建失败</text>
+<path class="connector primary-edge" d="M232 375H258" marker-end="url(#ch20-04-primary-arrow)"/>
+<path class="connector primary-edge" d="M464 375H490" marker-end="url(#ch20-04-primary-arrow)"/>
+<path class="connector danger-edge" d="M696 375H722" marker-end="url(#ch20-04-danger-arrow)"/>
+<text x="32" y="464" class="small" text-anchor="start">发现时点：预提交检查可在提交前发现；CI 也可能在提交后发现构建失败。</text>
+</svg>

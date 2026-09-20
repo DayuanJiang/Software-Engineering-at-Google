@@ -1,0 +1,21 @@
+{
+  "id": "ch12-01",
+  "chapter": 12,
+  "title": "换了存储格式，哪条测试不该失败？",
+  "summary": "沿用交易示例，把内部记录的逗号换成竖线作为纯重构示意；相同余额不变，内部字符串断言却从通过变为失败，显露测试对实现的意外依赖。",
+  "enabled": true,
+  "sourceSections": ["### Strive for Unchanging Tests  力求让测试无需改动", "## Preventing Brittle Tests  避免脆弱测试", "### Test via Public APIs  通过公共API进行测试"],
+  "afterParagraph": "但若要让测试只在系统发生实质性变化时才失败，这是最重要的一步。",
+  "desktop": "assets/diagrams/sections/ch12-01.svg",
+  "mobile": "assets/diagrams/sections/ch12-01-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "交易余额没有改变，只换内部序列化格式，为什么一个测试会失败而另一个不变？",
+    "expectedAnswer": "断言内部记录恰好等于me,you,100依赖了用户不依赖的存储细节；公开余额50与120的断言表达交易契约。读写同步换格式且行为不变时，只有前者因旧格式假设失败，这叫脆弱而非不稳定。",
+    "visualEncoding": "上方并置重构前后记录，公开余额重复在对应位置以明确控制变量；下方以相同断言为行、变更前后为列显示结果，唯一变化的失败格对应内部格式断言。",
+    "sourceEvidence": "Test via Public APIs  通过公共API进行测试：例12-2的shouldSaveSerializedData及例12-3的shouldTransferFunds；定位语changing the serialization format。Preventing Brittle Tests  避免脆弱测试：脚注1区分flaky。",
+    "beforeProblem": "原图只是给四类变更加彩色行，与原文列表及概览重复；无法直接指出哪个断言隐含了脆弱依赖。",
+    "whyBetter": "同一交易、同一公开余额和同一测试构成受控对照，具体显示一个无害变更如何传播到内部断言。移动版保留该对照而不缩小桌面表格。",
+    "limits": "竖线格式为明确标注的示意，假定读写同步更新且公开行为不变；不是建议忽略真实契约变更或永不修改测试。两个余额及原逗号格式来自原文，非测量数据。"
+  }
+}

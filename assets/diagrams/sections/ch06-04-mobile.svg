@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch06-04" data-layout="mobile" role="img" aria-labelledby="ch06-04m-title ch06-04m-desc">
+  <title id="ch06-04m-title">再回一封急邮件，谁来做团队战略？</title>
+  <desc id="ch06-04m-desc">按本章任务例子排列的注意力示意，不是实际日程或工时分布。被动响应路径中，邮件、聊天、会议之后仍有下一封急邮件，等待空闲的战略工作继续被推迟。主动保护路径先留出至少两小时，处理团队战略、领导者职业路径与跨团队协作等重要但不紧急的工作。可交给他人的急事授权，非关键事项有意识地放下。图示不把所有紧急事项判为不重要，不采用原文整理比喻中的比例作统计，也不保证放下的事项必有人接手。</desc>
+  <style>
+    .cg-ch06-04[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424);}
+    .cg-ch06-04[data-layout="mobile"] .strong {font-weight:600;}
+    .cg-ch06-04[data-layout="mobile"] .heading {font-size:22px;font-weight:600;}
+    .cg-ch06-04[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868);}
+    .cg-ch06-04[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);}
+    .cg-ch06-04[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);}
+    .cg-ch06-04[data-layout="mobile"] .cost {fill:var(--diagram-warm,#a56a1f);}
+    .cg-ch06-04[data-layout="mobile"] .blue {fill:var(--diagram-secondary,#2f6eac);}
+    .cg-ch06-04[data-layout="mobile"] .edge {fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;}
+  </style>
+  <defs>
+    <marker id="ch06-04m-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+    <marker id="ch06-04m-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+    <marker id="ch06-04m-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+    <marker id="ch06-04m-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+  </defs>
+  <rect x="0" y="0" width="420" height="600" rx="0" fill="var(--diagram-bg,#fff)"/>
+  <text x="24" y="38" text-anchor="start" class="heading">再回一封急邮件，</text>
+  <text x="24" y="68" text-anchor="start" class="heading">谁来做团队战略？</text>
+  <text x="24" y="99" text-anchor="start" class="small">原文任务的注意力安排示意</text>
+  <text x="24" y="125" text-anchor="start" class="small">不表示实际日程或工时分布</text>
+  <text x="24" y="169" text-anchor="start" class="strong bad">被动响应：等空闲再规划</text>
+  <rect x="24" y="189" width="120" height="57" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-04m-email" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="84" y="225" text-anchor="middle" data-box="ch06-04m-email">邮件</text>
+  <rect x="150" y="189" width="120" height="57" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-04m-chat" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="210" y="225" text-anchor="middle" data-box="ch06-04m-chat">聊天</text>
+  <rect x="276" y="189" width="120" height="57" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-04m-meeting" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="336" y="225" text-anchor="middle" data-box="ch06-04m-meeting">会议</text>
+  <rect x="24" y="266" width="164" height="50" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06-04m-again" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
+  <text x="106" y="298" text-anchor="middle" data-box="ch06-04m-again">又一封邮件</text>
+  <path d="M188 291H212" class="edge" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch06-04m-danger)"/>
+  <text x="228" y="298" text-anchor="start" class="bad">战略继续等待</text>
+  <path d="M24 338H396" class="edge" stroke="var(--diagram-line,#b9c9c0)"/>
+  <text x="24" y="373" text-anchor="start" class="strong good">主动保护：关键工作先占位</text>
+  <rect x="24" y="394" width="372" height="119" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" id="ch06-04m-protected" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+  <text x="40" y="426" text-anchor="start" class="strong" data-box="ch06-04m-protected">预留至少 2 小时</text>
+  <text x="40" y="463" text-anchor="start" class="small" data-box="ch06-04m-protected">团队战略、领导者职业路径</text>
+  <text x="40" y="494" text-anchor="start" class="small" data-box="ch06-04m-protected">跨团队协作</text>
+  <text x="24" y="551" text-anchor="start" class="small">可交他人的急事：授权</text>
+  <text x="24" y="582" text-anchor="start" class="small">非关键事项：有意识地放下</text>
+</svg>

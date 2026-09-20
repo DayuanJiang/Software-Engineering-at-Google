@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch08-01-diagram" class="chapter-svg cg-ch08-01" role="img" aria-labelledby="ch08-01-title ch08-01-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch08-01-title">读完这一行，谁拥有 Foo？</title>
+<desc id="ch08-01-desc">左侧或上侧是原文 Foo* 参数及调用，无法单凭它确定所有权。右侧或下侧是原文按值 std::unique_ptr&lt;Foo&gt; 参数及 std::move(my_foo) 调用：独占所有权由 my_foo 交给 arg。my_foo 不再拥有原对象，但这不说明原对象何时销毁或函数全部行为。std::move 单独出现不是转移保证。</desc>
+<style>
+.cg-ch08-01#ch08-01-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch08-01#ch08-01-diagram .strong{font-weight:600}
+.cg-ch08-01#ch08-01-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch08-01#ch08-01-diagram .code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.cg-ch08-01#ch08-01-diagram .green{fill:var(--diagram-primary,#087f6d)}
+.cg-ch08-01#ch08-01-diagram .red{fill:var(--diagram-danger,#b54750)}
+.cg-ch08-01#ch08-01-diagram .blue{fill:var(--diagram-secondary,#2f6eac)}
+.cg-ch08-01#ch08-01-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch08-01#ch08-01-diagram .arrow{fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch08-01-arrow)}
+.cg-ch08-01#ch08-01-diagram .uncertain{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;stroke-dasharray:5 5}
+</style>
+<defs><marker id="ch08-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="40" class="strong">读完这一行，谁拥有 Foo？</text>
+<text x="32" y="70" class="small">原文代码摘录：差别不只是多敲几个字，而是多留下了什么证据</text>
+<text x="32" y="114" class="strong">A  普通指针：缺少所有权契约</text>
+<text x="512" y="114" class="strong">B  按值 unique_ptr：转移可见</text>
+<rect id="ch08-01-box1" x="32" y="133" width="416" height="159" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)"/>
+<rect id="ch08-01-box2" x="512" y="133" width="416" height="159" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="48" y="165" class="code" data-box="ch08-01-box1">void TakeFoo(Foo* arg);</text>
+<text x="48" y="251" class="code" data-box="ch08-01-box1">TakeFoo(my_foo);</text>
+<text x="528" y="164" class="code" data-box="ch08-01-box2">void TakeFoo(</text>
+<text x="528" y="195" class="code" data-box="ch08-01-box2"> std::unique_ptr&lt;Foo&gt; arg);</text>
+<text x="528" y="247" class="code" data-box="ch08-01-box2">TakeFoo(</text>
+<text x="528" y="278" class="code" data-box="ch08-01-box2"> std::move(my_foo));</text>
+<path class="uncertain" d="M240 294V315H127V331"/>
+<path class="uncertain" d="M240 315H352V331"/>
+<text x="52" y="359">调用方保留？</text>
+<text x="273" y="359">对方接管？</text>
+<text x="512" y="359" class="code">my_foo</text>
+<path class="arrow" d="M622 350H816"/>
+<text x="720" y="338" class="small" text-anchor="middle">独占所有权</text>
+<text x="849" y="359" class="code">arg</text>
+<text x="32" y="402" class="small">还需查明函数契约，不能靠猜。</text>
+<text x="512" y="402" class="small">my_foo 不再拥有原对象。</text>
+<path class="line" d="M32 425H928"/>
+<text x="32" y="458" class="small">此处由按值参数接收所有权；std::move 本身不执行转移，也不说明对象最终何时销毁。</text>
+</svg>

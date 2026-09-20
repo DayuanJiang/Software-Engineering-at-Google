@@ -1,0 +1,27 @@
+{
+  "chapter": 4,
+  "title": "产品伤害为何也会影响团队建设？",
+  "summary": "以照片误分类造成的伤害为起点，展示本章提出的风险联系：求职者也可能失去对组织包容性的信任，使代表性招聘目标更难实现。产品共建与组织内的招聘、留任、成长需要共同审视，人员构成不保证公平结果。",
+  "sourceSections": [
+    "Bias Is the Default 偏见是默认状态",
+    "Building Multicultural Capacity 培养多元文化能力",
+    "Reject Singular Approaches 摒弃单一方法",
+    "Challenge Established Processes 挑战既定流程",
+    "Values Versus Outcomes 价值观与结果",
+    "Stay Curious, Push Forward 保持好奇，继续前行"
+  ],
+  "kind": "risk-and-response-map",
+  "enabled": true,
+  "desktop": "assets/diagrams/ch04.svg",
+  "mobile": "assets/diagrams/ch04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么伤害用户的产品失误，也可能妨碍建设更有代表性的工程团队？",
+    "expectedAnswer": "本章将有害输出与信任受损联系起来，并指出求职者可能因而怀疑组织的包容性，妨碍代表性招聘目标。产品内要让弱势用户参与并衡量结果，组织内还要审视留任与成长；人员代表性不能保证数据无偏差。",
+    "visualEncoding": "上方风险链以照片误分类为具体起点，两段虚线箭头均标明“可能”，连接产品伤害、求职者信任与招聘目标。下方并列产品侧和组织侧的审视问题；不画通往“公平成功”的箭头。",
+    "sourceEvidence": "Bias Is the Default 偏见是默认状态: “applicants could lose faith in Google ... undermining Google's goal of improving representation in hiring”; Building Multicultural Capacity 培养多元文化能力: “Even when we do have representation, a training set can still be biased”; Reject Singular Approaches 摒弃单一方法: “progression and retention”; Values Versus Outcomes 价值观与结果: “Build with everyone” and “measure equity throughout your systems”.",
+    "beforeProblem": "原图以四个抽象行动组成循环，与 ch04-04 重复；即使去掉箭头，也几乎不损失信息，没有说明产品结果与组织建设为何相关。",
+    "whyBetter": "将容易被分开理解的产品伤害和招聘代表性连接起来，区分实际案例起点与可能的后续影响，并让读者定位产品侧、组织侧各自需要检查的范围。",
+    "limits": "虚线是书中讨论的可能联系，不是测量出的因果效应、当前公司现状或任何群体的必然行为。两侧实践不是充分条件，团队代表性也不能消除所有数据偏差。"
+  }
+}

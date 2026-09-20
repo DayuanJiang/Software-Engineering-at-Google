@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch19-01" data-layout="mobile" role="img" aria-labelledby="ch19-01m-title ch19-01m-desc">
+<title id="ch19-01m-title">新快照清除哪些已审查标记？</title>
+<desc id="ch19-01m-desc">示例中甲、乙都看过 v1，v2 只把 a.cc 的 n 改为 count：a.cc 对两人的已审查勾选都被清除，未变的 b.cc 保留勾选。文件已审查标记不同于 LGTM。</desc>
+<style>.cg-ch19-01[data-layout=mobile] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19-01[data-layout=mobile] .small{font-size:19px;fill:var(--diagram-muted,#686868)}.cg-ch19-01[data-layout=mobile] .strong{font-weight:600}.cg-ch19-01[data-layout=mobile] .code{font-family:Menlo,Consolas,monospace}.cg-ch19-01[data-layout=mobile] .danger{fill:var(--diagram-danger,#b54750)}.cg-ch19-01[data-layout=mobile] .positive{fill:var(--diagram-primary,#087f6d)}</style>
+<defs><marker id="ch19-01m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start">只清除改过文件的审查标记</text>
+<text x="24" y="74" class="small" text-anchor="start">示例：甲乙都看过 v1，v2 只改 a.cc</text>
+<rect id="ch19-01m-region-1" x="24" y="101" width="372" height="76" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="40" y="129" class="small" text-anchor="start" data-owner="ch19-01m-region-1">v1 · a.cc</text>
+<text x="40" y="161" class="code" text-anchor="start" data-owner="ch19-01m-region-1">n = size()</text>
+<rect id="ch19-01m-region-2" x="24" y="203" width="372" height="76" rx="4" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="231" class="small" text-anchor="start" data-owner="ch19-01m-region-2">v2 · a.cc</text>
+<text x="40" y="263" class="code" text-anchor="start" data-owner="ch19-01m-region-2">count = size()</text>
+<path class="connector" d="M210 181V199" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch19-01m-arrow)"/>
+<text x="24" y="319" class="small" text-anchor="start">文件</text>
+<text x="217" y="313" class="strong" text-anchor="middle">v1</text>
+<text x="333" y="313" class="strong" text-anchor="middle">v2</text>
+<text x="195" y="342" class="small" text-anchor="middle">甲</text>
+<text x="239" y="342" class="small" text-anchor="middle">乙</text>
+<text x="311" y="342" class="small" text-anchor="middle">甲</text>
+<text x="355" y="342" class="small" text-anchor="middle">乙</text>
+<path d="M24 355L396 355" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<rect id="ch19-01m-region-3" x="286" y="363" width="94" height="42" rx="4" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="392" class="code" text-anchor="start">a.cc</text>
+<rect x="185" y="375" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<path d="M189 385l4 5 9-11" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
+<rect x="229" y="375" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<path d="M233 385l4 5 9-11" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
+<rect x="301" y="375" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-muted,#686868)" stroke-width="2"/>
+<rect x="345" y="375" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-muted,#686868)" stroke-width="2"/>
+<text x="40" y="445" class="code" text-anchor="start">b.cc</text>
+<rect x="185" y="428" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<path d="M189 438l4 5 9-11" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
+<rect x="229" y="428" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<path d="M233 438l4 5 9-11" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
+<rect x="301" y="428" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<path d="M305 438l4 5 9-11" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
+<rect x="345" y="428" width="20" height="20" rx="2" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
+<path d="M349 438l4 5 9-11" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
+<path d="M24 464L396 464" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="24" y="495" class="" text-anchor="start">a.cc 两人的勾选都清除；</text>
+<text x="24" y="526" class="" text-anchor="start">b.cc 未改，勾选保持。</text>
+<text x="24" y="559" class="small" text-anchor="start">勾选不是 LGTM；工具不要求</text>
+<text x="24" y="585" class="small" text-anchor="start">每次修改都重新获得 LGTM。</text>
+</svg>

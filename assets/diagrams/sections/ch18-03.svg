@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch18-03" data-layout="desktop" role="img" aria-labelledby="ch18-03-title ch18-03-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch18-03-title">哈希能拒绝错文件，不能找回文件</title>
+<desc id="ch18-03-desc">Guava 是章中外部 JAR 示例；S1、H1、H2 是示意提交与哈希。检出 S1 后清单要求 H1：第三方给 H2 则拒绝；第三方不可用但自控镜像仍有 H1 则校验后接受；所有副本均不可用则失败。有意升级到 H2 需批准并提交新清单，检出旧提交仍要求 H1。哈希匹配验证内容身份，不证明依赖本身无漏洞，也不保证镜像始终可用。</desc>
+<style>
+.cg-ch18-03[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch18-03[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch18-03[data-layout="desktop"] .strong{font-weight:600}
+.cg-ch18-03[data-layout="desktop"] .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+</style><defs>
+<marker id="ch18-03-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch18-03-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch18-03-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch18-03-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+<marker id="ch18-03-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
+</defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" class="strong" text-anchor="start">哈希能拒绝错文件，不能找回文件</text>
+<text x="32" y="76" class="small" text-anchor="start">Guava 为章中依赖；S1、H1、H2 均为示意</text>
+<rect id="ch18-03-box-1" x="32" y="100" width="896" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
+<text x="52" y="137" class="strong" text-anchor="start" data-owner="ch18-03-box-1">检出提交 S1：清单要求 Guava JAR 的哈希为 H1</text>
+<text x="32" y="202" class="small" text-anchor="start">获取到的内容</text>
+<text x="448" y="202" class="small" text-anchor="start">与 S1 清单比较</text>
+<text x="728" y="202" class="small" text-anchor="start">本次结果</text>
+<text x="32" y="242" class="" text-anchor="start">第三方给了另一份 JAR</text>
+<text x="448" y="242" class="" text-anchor="start">H2 ≠ H1</text>
+<rect id="ch18-03-box-2" x="704" y="212" width="224" height="44" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="720" y="242" class="small" text-anchor="start" data-owner="ch18-03-box-2">拒绝，构建失败</text>
+<text x="32" y="306" class="" text-anchor="start">第三方宕机，镜像仍有旧 JAR</text>
+<text x="448" y="306" class="" text-anchor="start">H1 = H1</text>
+<rect id="ch18-03-box-3" x="704" y="276" width="224" height="44" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
+<text x="720" y="306" class="small" text-anchor="start" data-owner="ch18-03-box-3">接受镜像副本</text>
+<text x="32" y="370" class="" text-anchor="start">第三方、镜像、本地均无副本</text>
+<text x="448" y="370" class="" text-anchor="start">无文件可校验</text>
+<rect id="ch18-03-box-4" x="704" y="340" width="224" height="44" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)" stroke-width="1.5"/>
+<text x="720" y="370" class="small" text-anchor="start" data-owner="ch18-03-box-4">失败，不换新版</text>
+<path d="M24 398H936" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
+<text x="32" y="428" class="small" text-anchor="start">有意更新：批准并提交 S2 清单，才接受 H2；检出 S1 仍要求 H1。</text>
+<text x="32" y="458" class="small" text-anchor="start">镜像缓解来源不可用；哈希匹配只核对内容身份，不证明依赖本身无漏洞。</text>
+</svg>

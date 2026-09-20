@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch24-03m-root" class="chapter-svg cg-ch24-03" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="ch24-03m-title ch24-03m-desc">
+<title id="ch24-03m-title">功能迟到，与质量阻塞不同</title>
+<desc id="ch24-03m-desc">用按时就绪的 A 和迟到的 B 示意常规发车选择，再与书中因罕见方言搜索返回空白而延迟整个发布的实际案例对照。功能截止保护节奏，质量判断仍保护用户。</desc>
+<style>
+.cg-ch24-03#ch24-03m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch24-03#ch24-03m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch24-03#ch24-03m-root .strong {font-weight:600}
+.cg-ch24-03#ch24-03m-root .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+</style>
+<defs>
+<marker id="ch24-03m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch24-03m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch24-03m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
+<marker id="ch24-03m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="38" class="strong" text-anchor="start" data-box="12,8,396,584">功能迟到，与质量阻塞不同</text>
+<text x="24" y="74" class="small" text-anchor="start" data-box="12,8,396,584">示例 A、B：功能名，不是 A/B 实验。</text>
+<text x="24" y="115" class="strong" text-anchor="start" data-box="12,8,396,584">常规：迟到功能等下一班</text>
+<text x="24" y="153" class="" text-anchor="start" data-box="12,8,396,584">A 按时验收</text>
+<path data-connector="true" d="M165 146H242" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" marker-end="url(#ch24-03m-primary-arrow)"/>
+<rect x="250" y="126" width="146" height="44" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="323" y="156" class="" text-anchor="middle" data-box="250,126,146,44">本班纳入 A</text>
+<text x="24" y="213" class="" text-anchor="start" data-box="12,8,396,584">B 截止后才交</text>
+<path data-connector="true" d="M184 206H242" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch24-03m-warm-arrow)"/>
+<rect x="250" y="186" width="146" height="44" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
+<text x="323" y="216" class="" text-anchor="middle" data-box="250,186,146,44">B 等下一班</text>
+<text x="24" y="266" class="small" text-anchor="start" data-box="12,8,396,584">当前版本不为 B 延期（通常如此）。</text>
+<path class="line" d="M24 286L396 286"/>
+<text x="24" y="322" class="strong" text-anchor="start" data-box="12,8,396,584">书中案例：小群体也应受保护</text>
+<text x="24" y="357" class="" text-anchor="start" data-box="12,8,396,584">罕见方言搜索只返回空白网页</text>
+<path data-connector="true" d="M210 372V399" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<path data-connector="true" d="M191 401H229M191 407H229" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2"/>
+<rect x="24" y="424" width="372" height="64" rx="0" fill="var(--diagram-danger-soft,#faecee)" stroke="none"/>
+<text x="210" y="450" class="strong" text-anchor="middle" data-box="24,424,372,64">整个发布延期</text>
+<text x="210" y="477" class="small" text-anchor="middle" data-box="24,424,372,64">先修复空白结果</text>
+<text x="24" y="531" class="" text-anchor="start" data-box="12,8,396,584">按时发车不是无条件发车。</text>
+<text x="24" y="565" class="small" text-anchor="start" data-box="12,8,396,584">按明确指标阈值与用户影响判断。</text>
+</svg>

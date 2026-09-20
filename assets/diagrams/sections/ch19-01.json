@@ -1,0 +1,21 @@
+{
+  "id": "ch19-01",
+  "chapter": 19,
+  "title": "新快照清除哪些已审查标记？",
+  "summary": "示例中甲、乙都看过 v1，v2 只把 a.cc 的 n 改为 count：a.cc 对两人的已审查勾选都被清除，未变的 b.cc 保留勾选。文件已审查标记不同于 LGTM。",
+  "sourceSections": ["### Diffing 差异比较", "### Commenting 提出审查意见", "## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）"],
+  "afterParagraph": "当作者修改文件、更新最新快照后，系统会清除所有审查者对该文件的“已审查”勾选。",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "v2 只修改 a.cc，甲和乙对 a.cc、b.cc 的已审查勾选各会怎样？",
+    "expectedAnswer": "被修改的 a.cc 对所有审查者都清除已审查勾选；本例未修改的 b.cc 保持原有勾选。读者可以比较 v1、v2 查看修改；已审查勾选不是 LGTM，工具不要求每次修改都重获 LGTM。",
+    "visualEncoding": "实际的 n 到 count 的代码变化与 v1/v2 标题对应。按文件和审查者排列的前后矩阵显示 a.cc 的两枚勾变成空框，而 b.cc 的两枚勾保持；着色只突出发生变化的单元格。",
+    "sourceEvidence": "Diffing 差异比较：拖放选择要比较的版本；Commenting 提出审查意见：清除所有审查者对该文件的“已审查”勾选；Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）：工具都不要求反复给出 LGTM。",
+    "beforeProblem": "原六步流程几乎复述原书图19-1和编号列表；快照只是框内名词，没有展示快照变化怎样影响审查者。",
+    "whyBetter": "同一文件跨版本、同一版本跨审查者的比较同时可见，能推导重新检查的范围，而不是误以为整项变更的所有勾选或 LGTM 都重置。",
+    "limits": "文件名、代码与两位审查者的初始勾选为教学示例。不展示差异算法、是否真正读过代码的证明或批准覆盖范围。"
+  },
+  "desktop": "assets/diagrams/sections/ch19-01.svg",
+  "mobile": "assets/diagrams/sections/ch19-01-mobile.svg"
+}

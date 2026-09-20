@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch13-05" data-layout="mobile" role="img" aria-labelledby="ch13-05m-title ch13-05m-desc">
+<title id="ch13-05m-title">只改版本号，姓名测试为什么会失败？</title>
+<desc id="ch13-05m-desc">对照例13-18和13-19的 setText 验证：版本号从2.1改为2.2时，锁定全部参数的旧测试失败，只锁定姓名的测试仍通过；姓名真变错时，后者仍会失败。 版本2.2和错误姓名 Other 是基于书中代码构造的明确示意变动，不是生产数据。图仅讨论必要交互测试的断言范围，不证明 UI 最终显示正确；优先状态测试的原则仍然适用。</desc>
+<style>
+.cg-ch13-05[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch13-05[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch13-05[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch13-05[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch13-05[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch13-05[data-layout="mobile"] .rule {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch13-05[data-layout="mobile"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch13-05m-arrow)}
+</style>
+<defs><marker id="ch13-05m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9 Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect id="ch13-05m-region-1" x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" text-anchor="start" class="strong">只改版本号，姓名测试却失败？</text>
+<text x="24" y="68" text-anchor="start" class="small">例13-18/19：verify 的 setText 参数</text>
+<rect id="ch13-05m-region-2" x="24" y="94" width="372" height="104" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="126" text-anchor="start" class="strong" data-fit="ch13-05m-region-2">旧测试：三个参数全匹配</text>
+<text x="40" y="159" text-anchor="start" class="small" data-fit="ch13-05m-region-2">&quot;Fake User&quot;, &quot;Good morning!&quot;,</text>
+<text x="40" y="185" text-anchor="start" class="small" data-fit="ch13-05m-region-2">&quot;Version 2.1&quot;</text>
+<rect id="ch13-05m-region-3" x="24" y="211" width="372" height="83" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="243" text-anchor="start" class="strong" data-fit="ch13-05m-region-3">新姓名测试：只匹配姓名</text>
+<text x="40" y="277" text-anchor="start" class="small" data-fit="ch13-05m-region-3">eq(&quot;Fake User&quot;), any(), any()</text>
+<text x="32" y="328" text-anchor="start" class="small">实际调用只改…</text>
+<text x="250" y="328" text-anchor="start" class="strong">旧</text>
+<text x="341" y="328" text-anchor="start" class="strong">新</text>
+<path class="rule" d="M24 342 L396 342"/>
+<text x="32" y="372" text-anchor="start" class="small">版本 2.1 → 2.2</text>
+<text x="239" y="372" text-anchor="start" class="bad">失败</text>
+<text x="330" y="372" text-anchor="start" class="good">通过</text>
+<path class="rule" d="M24 387 L396 387"/>
+<text x="32" y="417" text-anchor="start" class="small">Fake User → Other</text>
+<text x="239" y="417" text-anchor="start" class="bad">失败</text>
+<text x="330" y="417" text-anchor="start" class="bad">失败</text>
+<text x="24" y="451" text-anchor="start" class="small">2.2 / Other 为示意；其他参数不变。</text>
+<text x="24" y="486" text-anchor="start" class="strong">晨间测试单独查：</text>
+<text x="24" y="516" text-anchor="start" class="small">Good morning! + IMAGE_SUNSHINE</text>
+<text x="24" y="544" text-anchor="start" class="small">版本参数仍用 any()。</text>
+<text x="24" y="582" text-anchor="start" class="small">验证调用不等于验证最终显示。</text>
+</svg>

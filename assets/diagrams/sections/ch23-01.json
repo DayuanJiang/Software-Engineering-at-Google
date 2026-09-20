@@ -1,0 +1,21 @@
+{
+  "id": "ch23-01",
+  "chapter": 23,
+  "title": "head 与 RC：测试证据属于哪个版本？",
+  "summary": "同一仓库快照中，最新提交可领先于 CB 最新验证通过的提交。CD 通常取 green head 组装候选，候选本身仍需测试；拣选修复形成新候选后，必须取得与新候选关联的测试证据。",
+  "sourceSections": ["#### Continuous Build 持续构建", "#### Continuous Delivery 持续交付", "#### Release candidate testing 候选发布版本测试"],
+  "afterParagraph": "减少生产环境中的意外。",
+  "desktop": "assets/diagrams/sections/ch23-01.svg",
+  "mobile": "assets/diagrams/sections/ch23-01-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "最新提交、最新验证通过的提交和拣选修复后的候选版本，可以共用一份通过证据吗？",
+    "expectedAnswer": "不能。true head 与 green head 是不同含义的版本指针；CD 通常取 green head，但 RC 仍需自己的测试。拣选修复使候选偏离 CB 已测试的代码，必须获取对应候选的证据。",
+    "visualEncoding": "并列的 r40/r41/r42 快照分别给出通过、失败、运行中及 head 指针；下方 RC-A 到 RC-B 的唯一变动是拣选修复 F，显示产物变化如何使原证据不足。",
+    "sourceEvidence": "#### Continuous Build 持续构建：true head，即已提交的最新变更；green head，即 CB 已验证通过的最新变更。#### Release candidate testing 候选发布版本测试：支持拣选提交；为了便于审计。#### Continuous Delivery 持续交付：理想情况下，不应重新编译或重建其中的产物。",
+    "beforeProblem": "原图用 true head 指向 green head 的单线流程，可能误示两者总是前后阶段，且将 true head 固定标为验证中；没有解释 RC 为什么还需要自己的结果。",
+    "whyBetter": "同一时刻的三版本状态可解释 green head 落后于 true head；拣选前后对照让证据与版本的绑定成为可检查的关系，而不只是术语定义。",
+    "limits": "提交号、修复 F、候选号与测试结果均为示意。通常取 green head 并非普遍硬规则，正文还允许紧急推送取 true head；图不展示该例外的详细策略。配置可随环境略有差异。"
+  }
+}

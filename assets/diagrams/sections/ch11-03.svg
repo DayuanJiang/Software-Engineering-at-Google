@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" class="chapter-svg cg-ch11-03" data-layout="desktop" role="img" aria-labelledby="ch11-03-title ch11-03-desc">
+<title id="ch11-03-title">规模与范围：相关但不等同</title>
+<desc id="ch11-03-desc">用源文中的服务器端点和日期选择器两个反例，分别定位小型但广范围、中型但窄范围的测试；范围指验证目标，不是执行过的代码。</desc>
+<style>
+.cg-ch11-03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch11-03[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch11-03[data-layout="desktop"] .strong {font-weight:600}
+</style>
+<defs><marker id="ch11-03-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="42" text-anchor="start" class="strong" data-font-size="24">规模与范围是两个维度</text>
+<text x="32" y="76" text-anchor="start" class="small" data-font-size="20">范围看验证目标，不看执行了多少代码</text>
+<text x="380" y="125" text-anchor="middle" class="strong" data-font-size="24">窄范围</text>
+<text x="746" y="125" text-anchor="middle" class="strong" data-font-size="24">广范围</text>
+<text x="32" y="203" text-anchor="start" class="strong" data-font-size="24">小型</text>
+<text x="32" y="330" text-anchor="start" class="strong" data-font-size="24">中型</text>
+<rect x="194" y="148" width="344" height="112" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" />
+<rect x="560" y="148" width="368" height="112" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" />
+<rect x="194" y="279" width="344" height="112" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+<rect x="560" y="279" width="368" height="112" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" />
+<text x="210" y="182" text-anchor="start" class="" data-font-size="24">常见：小型单元测试</text>
+<text x="210" y="219" text-anchor="start" class="small" data-font-size="20">这不是唯一组合</text>
+<text x="576" y="180" text-anchor="start" class="strong" data-font-size="24">服务器端点</text>
+<text x="576" y="216" text-anchor="start" class="small" data-font-size="20">验证解析、请求校验、业务逻辑</text>
+<text x="576" y="245" text-anchor="start" class="small" data-font-size="20">进程外依赖全部由替身替代</text>
+<text x="210" y="312" text-anchor="start" class="strong" data-font-size="24">日期选择器</text>
+<text x="210" y="348" text-anchor="start" class="small" data-font-size="20">验证一条路径</text>
+<text x="210" y="377" text-anchor="start" class="small" data-font-size="20">也可能需要整个浏览器</text>
+<text x="576" y="314" text-anchor="start" class="" data-font-size="24">两种维度可以组合</text>
+<text x="576" y="351" text-anchor="start" class="small" data-font-size="20">范围并不决定运行规模</text>
+<text x="32" y="442" text-anchor="start" class="small" data-font-size="20">表格用于区分概念，不表示测试分布比例；执行真实依赖不自动扩大验证范围。</text>
+</svg>

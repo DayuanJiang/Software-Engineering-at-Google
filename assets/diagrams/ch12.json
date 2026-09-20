@@ -1,0 +1,25 @@
+{
+  "chapter": 12,
+  "title": "测试要守住契约，也要解释失败",
+  "summary": "用加法测试连接两个维护性问题：无害重构不应要求修改测试，错误结果应能用具体输入、预期与实际解释。隐藏无关构造，显露2加3应为5。",
+  "enabled": true,
+  "sourceSections": [
+    "The Importance of Maintainability  可维护性的重要性",
+    "Strive for Unchanging Tests  力求让测试无需改动",
+    "Make Your Tests Complete and Concise  让测试完整且简洁",
+    "Write Clear Failure Messages  给出清晰的失败信息"
+  ],
+  "kind": "worked-comparison",
+  "desktop": "assets/diagrams/ch12.svg",
+  "mobile": "assets/diagrams/ch12-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "同一个加法测试，怎样既经得起内部重构，又能说明失败原因？",
+    "expectedAnswer": "用helper隐藏无关构造，但把2、PLUS、3和期望5留在测试中。行为不变的内部重构不应要求修改测试；返回6的缺陷则应失败，并显露期望与实际的差异。",
+    "visualEncoding": "上方反例把隐藏输入与显露无关细节并置，中部把改写后的代码行对应到构造、输入和期望，底部将同一测试置于两种明确标为示意的变更下。移动版按相同关系重新纵向排版。",
+    "sourceEvidence": "The Importance of Maintainability  可维护性的重要性：brittle与unclear两类问题；Make Your Tests Complete and Concise  让测试完整且简洁：例12-6/7的newTestCalculation与newCalculation(2, Operation.PLUS, 3)；Strive for Unchanging Tests  力求让测试无需改动：pure refactorings；Write Clear Failure Messages  给出清晰的失败信息：desired outcome, actual outcome。",
+    "beforeProblem": "原概览重复分节中的given/when/then和变更类型列表，没有把维护性中的不脆弱与清晰这两项要求联系到可检查的测试上。",
+    "whyBetter": "读者可以从同一段测试的可见输入与期望推导两种变更后的结果，而不是只读原则名称；对照也直接显露旧helper遮住的关键信息。",
+    "limits": "返回6为教学用的示意缺陷，不是书中实测结果；两个布局的代码均为标明的简写，省略Calculation构建语法。该图不证明使用helper或公共API就能排除所有脆弱性，也不穷尽本章技术。"
+  }
+}

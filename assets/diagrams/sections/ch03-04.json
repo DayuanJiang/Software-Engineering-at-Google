@@ -1,0 +1,21 @@
+{
+  "id": "ch03-04",
+  "chapter": 3,
+  "title": "有资格后，还需代码审查吗？",
+  "summary": "对照同一语言的作者有无 Readability 资格时，本项批准由具资格审查者明确给予还是由作者资格隐含满足；两条路径都保留代码审查要求，并展示引用准则的教学反馈。",
+  "enabled": true,
+  "sourceSections": ["### What Is the Readability Process?  什么是可读性认证流程？", "### Why Have This Process? 为什么需要这一流程？"],
+  "afterParagraph": "权威准则和语言使用建议都有全面的文档记录，这当然是好事；但资料数量太多",
+  "desktop": "assets/diagrams/sections/ch03-04.svg",
+  "mobile": "assets/diagrams/sections/ch03-04-mobile.svg",
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "作者取得某语言的 Readability 资格后，CL 是否不再需要代码审查？",
+    "expectedAnswer": "仍需要代码审查。没有该语言资格时，须由具资格的审查者明确给予 Readability 批准；有资格的作者隐含满足自己 CL 的这一项批准。指导过程中应引用准则并解释理由，但资格不等于全部批准。",
+    "visualEncoding": "固定 CL 与本项批准这两个端点，改变作者是否有该语言资格。无资格路径经过审查者且有解释理由的反馈回路；有资格路径直接满足本项批准。两条路径下方明确保留同一个代码审查要求。",
+    "sourceEvidence": "### What Is the Readability Process?  什么是可读性认证流程？：如果作者本人已有资格，其 CL 就隐含地满足这一项批准要求；否则，必须由一名或多名具备资格的审查者明确给予 Readability 批准；审查者会为意见提供相关出处；### Why Have This Process? 为什么需要这一流程？：脚注20和21的单体仓库范围与短期代码豁免。",
+    "beforeProblem": "旧图把提交、反馈、改进连成通用循环，未画出作者资格实际改变的批准路径；尤其手机图省略了不能等同于免除代码审查的关键边界。",
+    "whyBetter": "两种作者状态控制住其他输入，让读者能定位改变的是哪一项批准，并看到代码审查没有消失。将插入点移至流程说明末尾，紧邻规则和教学机制。",
+    "limits": "描述本书中的 Google 单体仓库制度，不声称是现行全球规则。不绘制完整提交流程或审查先后顺序；明确短期使用的代码可有豁免。取得语言资格不自动等于成为集中认证项目的专职审查者。"
+  }
+}

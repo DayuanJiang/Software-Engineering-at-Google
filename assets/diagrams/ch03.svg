@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch03" data-layout="desktop" role="img" aria-labelledby="ch03-title ch03-desc">
+<title id="ch03-title">专家休假后，同类故障还能排查吗？</title>
+<desc id="ch03-desc">对比反复向唯一专家求助，与记录排查步骤后的路径。没有记录时，专家休假会使求助受阻。记录并维护知识后，同事能先查资料，不适用或仍有疑问时再向有经验的同事求助。仍须培养专家并允许坦诚提问。</desc>
+<style>
+.cg-ch03[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch03[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch03[data-layout="desktop"] .strong {font-weight:600}
+.cg-ch03[data-layout="desktop"] .danger {fill:var(--diagram-danger,#b54750)}
+</style>
+<defs>
+<marker id="ch03-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
+<marker id="ch03-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
+<marker id="ch03-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
+</defs>
+<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
+<text x="32" y="44" text-anchor="start" class="strong">专家休假后，同类故障还能排查吗？</text>
+<text x="32" y="78" text-anchor="start" class="small">书中场景：同事反复请同一位专家排查某类生产故障</text>
+<text x="32" y="124" text-anchor="start" class="strong danger">只靠口头经验：问题汇聚到一个人</text>
+<g id="ch03-node-1" data-box="32,149,200,64">
+<rect x="32" y="149" width="200" height="64" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="132.0" y="189" text-anchor="middle" class="">同事甲遇到故障</text>
+</g>
+<g id="ch03-node-2" data-box="32,245,200,64">
+<rect x="32" y="245" width="200" height="64" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="132.0" y="285" text-anchor="middle" class="">同事乙同类故障</text>
+</g>
+<path d="M238 181H284V224H328" class="connector" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-arrow-danger)"/>
+<path d="M238 277H284V224" class="rule" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
+<g id="ch03-node-3" data-box="334,178,252,94">
+<rect x="334" y="178" width="252" height="94" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)"/>
+<text x="460.0" y="215" text-anchor="middle" class="strong">唯一专家</text>
+<text x="460.0" y="250" text-anchor="middle" class="small">休假或调组</text>
+</g>
+<path d="M592 224H674" class="rule" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path d="M669 214L689 234M689 214L669 234" class="rule" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
+<text x="714" y="215" text-anchor="start" class="strong">没有记录可查</text>
+<text x="714" y="250" text-anchor="start" class="small">同类问题也会受阻</text>
+<path d="M32 327H928" class="rule" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
+<text x="32" y="361" text-anchor="start" class="strong">记录知识后：先查资料，必要时再请人帮助</text>
+<g id="ch03-node-4" data-box="32,390,180,88">
+<rect x="32" y="390" width="180" height="88" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="122.0" y="427" text-anchor="middle" class="strong">后来同事</text>
+<text x="122.0" y="460" text-anchor="middle" class="small">遇到同类故障</text>
+</g>
+<path d="M218 434H326" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-arrow-primary)"/>
+<text x="272" y="412" text-anchor="middle" class="small">先查</text>
+<g id="ch03-node-5" data-box="332,378,266,112">
+<rect x="332" y="378" width="266" height="112" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
+<text x="465.0" y="416" text-anchor="middle" class="strong">共享排查步骤</text>
+<text x="465.0" y="454" text-anchor="middle" class="small">可找到，并持续维护</text>
+</g>
+<path d="M604 434H722" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03-arrow-secondary)"/>
+<text x="664" y="412" text-anchor="middle" class="small">仍不适用时</text>
+<g id="ch03-node-6" data-box="728,390,200,88">
+<rect x="728" y="390" width="200" height="88" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
+<text x="828.0" y="427" text-anchor="middle" class="strong">有经验的同事</text>
+<text x="828.0" y="460" text-anchor="middle" class="small">判断具体背景</text>
+</g>
+<text x="32" y="536" text-anchor="start" class="small">前提：让人敢于提问，并培养更多专家；文档不能替代所有人工帮助。</text>
+</svg>

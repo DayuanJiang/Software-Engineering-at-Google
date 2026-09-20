@@ -1,0 +1,21 @@
+{
+  "id": "ch23-03",
+  "chapter": 23,
+  "title": "录制／重放：什么变化应让缓存失配？",
+  "summary": "假设 ZIP 解码器面对请求变化：忽略格式变动会重放旧响应并漏报；只因追踪字段变化就失配会引入无关维护；识别实质变化、刷新响应后仍失败，才获得有用信号。封闭性仍不消除所有非确定性。",
+  "sourceSections": ["### Hermetic Testing  封闭测试"],
+  "afterParagraph": "要判断请求是否发生了实质变化，可能极其困难。",
+  "desktop": "assets/diagrams/sections/ch23-03.svg",
+  "mobile": "assets/diagrams/sections/ch23-03-mobile.svg",
+  "enabled": true,
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么同一个录制响应，既可能掩盖真实缺陷，也可能导致无关的测试阻塞？",
+    "expectedAnswer": "匹配过宽会让有实质变化的请求复用旧响应，遗漏真实新响应暴露的错误；匹配过严会让无业务意义的变化失配。理想情况下，实质变化触发更新，确有问题时用新响应重跑仍失败。",
+    "visualEncoding": "固定旧录制 ZIP 与仅支持 ZIP 的解码器，用三行请求/匹配/结果对照改变 format 或 trace。第一和第三行使用相同 format 变化，只改变匹配与响应更新，显示漏报如何变成可行动的失败。",
+    "sourceEvidence": "### Hermetic Testing  封闭测试：缓存命中过多，遗漏了获取新响应时才会暴露的问题；缓存命中太少，需要更新响应；作者用更新后的响应重跑测试时，仍会看到失败。",
+    "beforeProblem": "原图是封闭方案清单加宽严匹配风险标签，没有录制内容、请求变化或刷新后结果，未说明何为有实质意义的变化。",
+    "whyBetter": "固定解码器和录制值后，读者可以对比缓存返回 ZIP 与真实响应 TAR，自己推出为什么绿色可能漏报、为什么失配不总是产品缺陷。",
+    "limits": "format、trace、ZIP/TAR 与仅支持 ZIP 的解码器是假设例子，不是 Takeout 的实现。trace 无业务语义是例子前提，不是普遍事实。图聚焦录制重放，未穷举伪实现与整栈沙盒；封闭性不消除时间、随机数和竞态。"
+  }
+}

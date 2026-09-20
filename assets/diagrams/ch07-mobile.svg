@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch07m-diagram" class="chapter-svg cg-ch07" role="img" aria-labelledby="ch07m-title ch07m-desc" viewBox="0 0 420 680" width="420" height="680">
+<title id="ch07m-title">审查更快，等于生产力更高？</title><desc id="ch07m-desc">书中假设取消代码审查可以让审查更快，但速度不能代表代码质量。实际 Readability 研究结合日志中的审查和提交速度与取得资格者的满意、学习自述，判断流程总体值得，继而改进工具和透明度。质量仍只自评；图不提供数值或因果证明。</desc>
+<style>.cg-ch07#ch07m-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch07#ch07m-diagram .strong{font-weight:600}
+.cg-ch07#ch07m-diagram .small{font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch07#ch07m-diagram .danger-text{fill:var(--diagram-danger,#b54750)}
+.cg-ch07#ch07m-diagram .primary{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
+.cg-ch07#ch07m-diagram .secondary{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
+.cg-ch07#ch07m-diagram .warm{fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
+.cg-ch07#ch07m-diagram .empty{fill:var(--diagram-bg,#fff);stroke:var(--diagram-danger,#b54750);stroke-width:1.5;stroke-dasharray:6 5}
+.cg-ch07#ch07m-diagram .band{fill:var(--diagram-primary-soft,#e5f4ee)}
+.cg-ch07#ch07m-diagram .blue-band{fill:var(--diagram-secondary-soft,#eaf1fa)}
+.cg-ch07#ch07m-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch07#ch07m-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch07m-arrow)}</style>
+<defs><marker id="ch07m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
+<text x="24" y="36" class="strong" text-anchor="start">审查更快，等于生产力更高？</text>
+<text x="24" y="68" class="small" text-anchor="start">Readability 的指标、目标与决策</text>
+<text x="24" y="106" class="strong" text-anchor="start">反例（书中假设）</text>
+<rect id="ch07m-remove" x="24" y="124" width="166" height="48" rx="4" class="warm"/>
+<text x="107" y="155" class="" text-anchor="middle" data-box="ch07m-remove">取消代码审查</text>
+<path d="M194 148H240" class="arrow"/>
+<rect id="ch07m-faster" x="248" y="124" width="148" height="48" rx="4" class="warm"/>
+<text x="322" y="155" class="" text-anchor="middle" data-box="ch07m-faster">审查更快</text>
+<text x="24" y="213" class="strong danger-text" text-anchor="start">耗时更短 ≠ 代码质量更好</text>
+<text x="24" y="244" class="small" text-anchor="start">只跟踪速度和满意度，</text>
+<text x="24" y="271" class="small" text-anchor="start">会漏掉质量这一目标。</text>
+<path d="M24 288H396" class="line"/>
+<text x="24" y="321" class="strong" text-anchor="start">实际研究（书中报告）</text>
+<rect id="ch07m-logs" x="24" y="340" width="372" height="68" rx="4" class="secondary"/>
+<text x="40" y="369" class="strong" text-anchor="start" data-box="ch07m-logs">日志：审查和提交更快</text>
+<text x="40" y="396" class="small" text-anchor="start" data-box="ch07m-logs">已考虑审查者数量减少</text>
+<rect id="ch07m-survey" x="24" y="422" width="372" height="68" rx="4" class="secondary"/>
+<text x="40" y="451" class="strong" text-anchor="start" data-box="ch07m-survey">取得资格者：满意、有收获</text>
+<text x="40" y="478" class="small" text-anchor="start" data-box="ch07m-survey">这是工程师自述的体验</text>
+<path d="M398 373H409V508H210V518" class="arrow"/>
+<path d="M398 456H409" class="line"/>
+<text x="24" y="546" class="strong" text-anchor="start">综合判断：流程总体值得投入</text>
+<text x="24" y="578" class="strong" text-anchor="start">行动：改进工具与透明度</text>
+<text x="24" y="620" class="small" text-anchor="start">质量仅自评；未设客观定量代理。</text>
+<text x="24" y="650" class="small" text-anchor="start">速度代理不等于总体收益或因果证明。</text>
+</svg>
