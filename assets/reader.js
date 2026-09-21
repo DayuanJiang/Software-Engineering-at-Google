@@ -565,7 +565,8 @@
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-controls", "reader-note-popover");
     trigger.setAttribute("aria-expanded", "false");
-    trigger.innerHTML = '<span class="note-dot" aria-hidden="true"></span>';
+    // Footnotes show their number; translator notes show 注.
+    trigger.innerHTML = '<span class="note-mark" aria-hidden="true">' + (/^\d+$/.test(String(id)) ? id : "注") + '</span>';
     bindNote(trigger); marker.append(trigger);
     return marker;
   }

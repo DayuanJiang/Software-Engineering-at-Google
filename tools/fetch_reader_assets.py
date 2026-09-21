@@ -15,11 +15,14 @@ def fetch(url, target):
     subprocess.run(["curl", "-fsSL", "--retry", "2", url, "-o", str(target)], check=True)
 
 
-def strip_remote_font_import():
+def patch_theme():
+    """Drop the theme's remote font import and its rule that shrinks code inside prose; the reader sets both itself."""
     path = VENDOR / "docsify-vue.css"
     text = path.read_text()
     if text.startswith('@import url("https://fonts.googleapis.com/'):
-        path.write_text(text.partition(";")[2])
+        text = text.partition(";")[2]
+    text = text.replace(".markdown-section>:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) code{font-size:.8rem}", "")
+    path.write_text(text)
 
 
 def main():
@@ -39,7 +42,7 @@ def main():
     }
     for name, url in sources.items():
         fetch(url, VENDOR / name)
-    strip_remote_font_import()
+    patch_theme()
     sprite = ET.Element(f"{{{NS}}}svg")
     names = ["menu", "sun", "moon", "minus", "plus", "maximize-2", "minimize-2",
              "download", "x", "list", "book-open", "github", "chevron-left", "chevron-right",

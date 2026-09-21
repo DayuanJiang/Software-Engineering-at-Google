@@ -28,6 +28,18 @@ class ReaderAssetsTests(unittest.TestCase):
             before = subprocess.check_output(["git", "-C", str(reader.ROOT), "show", "translation-polish:" + relative])
             self.assertEqual(path.read_bytes(), before, relative)
 
+    def test_book_font_subset_covers_every_book_character(self):
+        import build_fonts
+        fonts = reader.ROOT / "assets/fonts"
+        covered = set((fonts / "charset.txt").read_text())
+        missing = sorted(set(build_fonts.book_characters()) - covered)
+        self.assertEqual(missing, [], "rebuild the font subset: tools/build_fonts.py")
+        for name in build_fonts.FACES:
+            self.assertGreater((fonts / f"{name}.woff2").stat().st_size, 100_000, name)
+        css = (reader.ROOT / "assets/reader.css").read_text()
+        self.assertIn('src: url("fonts/NotoSerifSC-Regular.woff2")', css)
+        self.assertIn('src: url("fonts/NotoSerifSC-SemiBold.woff2")', css)
+
     def test_lucide_sprite_contains_required_controls(self):
         root = ET.parse(reader.ROOT / "assets/reader-icons.svg").getroot()
         ids = {node.get("id") for node in root}

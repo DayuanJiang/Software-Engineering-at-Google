@@ -94,7 +94,7 @@ def stamp_index():
     """Append a content hash to the reader's script and stylesheet URLs so browsers never serve stale copies."""
     index = ROOT / "index.html"
     html = index.read_text()
-    for name in ("assets/reader.css", "assets/reader.js"):
+    for name in ("assets/reader.css", "assets/reader.js", "assets/vendor/docsify-vue.css"):
         digest = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()[:8]
         html = re.sub(re.escape(name) + r'(\?v=[0-9a-f]+)?"', f'{name}?v={digest}"', html)
     if html != index.read_text():

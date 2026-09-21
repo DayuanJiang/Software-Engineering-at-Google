@@ -2,8 +2,8 @@
   color-scheme: light;
   --page: #e7eae6;
   --rail: #dde2dc;
-  --ink: #303630;
-  --muted: #5c645d;
+  --ink: #1c201d;
+  --muted: #4a524b;
   --line: #c6cdc6;
   --accent: #a33e36;
   --accent-soft: #e9dad6;
@@ -13,7 +13,7 @@
   --sidebar-width: 236px;
   --header-height: 52px;
   --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --book-font: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  --book-font: "Noto Serif SC", "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
   --diagram-bg: var(--page);
   --diagram-ink: var(--ink);
   --diagram-muted: var(--muted);
@@ -51,7 +51,24 @@
   --diagram-danger: #f0a1a8;
   --diagram-danger-soft: #462c33;
 }
-* { box-sizing: border-box; }
+/* Chinese body face: Noto Serif SC (思源宋体), subset to the characters the book uses (tools/build_fonts.py).
+   Songti stays in the stack as the fallback while the file loads and for any glyph outside the subset. */
+@font-face {
+  font-family: "Noto Serif SC";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/NotoSerifSC-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Serif SC";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/NotoSerifSC-SemiBold.woff2") format("woff2");
+}
+/* The Docsify theme sets antialiased smoothing on every element, which thins text on macOS; restore the default. */
+* { box-sizing: border-box; -webkit-font-smoothing: auto; }
 html { background: var(--page); scroll-padding-top: calc(var(--header-height) + 24px); }
 body {
   margin: 0;
@@ -59,6 +76,7 @@ body {
   color: var(--ink);
   font-family: var(--ui-font);
   letter-spacing: 0;
+  -moz-osx-font-smoothing: auto;
 }
 body > main { z-index: auto; }
 button, input, output, select { font: inherit; }
@@ -140,7 +158,8 @@ body .sidebar .sidebar-nav li.active > a { background: var(--accent-soft); color
 .content { position: relative; left: 0 !important; transform: none !important; margin-left: var(--sidebar-width); padding: 102px 48px 80px; }
 body.close .reader-topbar { left: 0; }
 body.close .content { margin-left: 0; }
-.markdown-section { max-width: 680px; margin: 0 auto; padding: 0; color: var(--ink); font-family: var(--book-font); font-size: var(--reading-size); line-height: 1.95; overflow-wrap: break-word; }
+/* text-autospace adds the conventional gap between Chinese and Latin letters or digits where the text has none. */
+.markdown-section { max-width: 680px; margin: 0 auto; padding: 0; color: var(--ink); font-family: var(--book-font); font-size: var(--reading-size); line-height: 1.95; overflow-wrap: break-word; text-autospace: normal; }
 .markdown-section p, .markdown-section ul, .markdown-section ol { line-height: inherit; word-spacing: normal; }
 .markdown-section p, .markdown-section ul, .markdown-section ol, .markdown-section table { margin: 0 0 1.25em; }
 .markdown-section ul, .markdown-section ol { padding-left: 1.5em; }
@@ -169,6 +188,8 @@ body.close .content { margin-left: 0; }
 .markdown-section .chapter-credit { display: inline-block; margin: 0 16px 12px 0; color: var(--muted); font-family: var(--ui-font); font-size: 11px; }
 .markdown-section .chapter-credit strong { font-weight: 400; color: inherit; }
 .markdown-section .english-prose { color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: calc(var(--reading-size) - 1px); line-height: 1.8; }
+/* Pull each translation up to its source paragraph so the pair reads as one unit. */
+.markdown-section p.english-prose:has(+ p:not(.english-prose)) { margin-bottom: .45em; }
 .markdown-section .reader-caption { font-family: var(--ui-font); color: var(--muted); font-size: 13px; line-height: 1.7; margin: 12px 0 24px; }
 .markdown-section .reader-attribution { font-family: var(--ui-font); color: var(--muted); font-size: 12px; text-align: right; }
 .markdown-section .reader-subheading { margin-top: 30px; font-weight: 600; }
@@ -196,15 +217,14 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 .note-reference::before { content: "\2060"; }
 .note-trigger {
   display: inline-flex; position: relative; align-items: center; justify-content: center;
-  width: 8px; height: 12px; vertical-align: .45em; padding: 0; margin: 0;
-  border: 0; border-radius: 50%; background: transparent;
+  min-width: 14px; height: 14px; vertical-align: super; padding: 0 2px; margin: 0 1px;
+  border: 0; border-radius: 3px; background: transparent;
+  font-family: var(--ui-font); font-size: 11px; line-height: 1; font-weight: 600; color: var(--accent);
 }
-/* Preserve the hit area without adding space between sentences. */
-.note-trigger::before { content: ""; position: absolute; inset: -6px -7px; }
-.note-dot { display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--muted); opacity: .8; }
-.note-trigger:hover .note-dot,
-.note-trigger:focus-visible .note-dot,
-.note-trigger[aria-expanded="true"] .note-dot { background: var(--accent); opacity: 1; }
+/* Enlarge the hit area without adding space between sentences. */
+.note-trigger::before { content: ""; position: absolute; inset: -6px -5px; }
+.note-mark { display: block; }
+.note-trigger:hover, .note-trigger:focus-visible, .note-trigger[aria-expanded="true"] { background: var(--accent-soft); }
 .note-popover {
   position: fixed; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   color: var(--ink); background: var(--page); border: 1px solid var(--line); border-radius: 8px;
@@ -234,7 +254,7 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 .markdown-section code { color: var(--accent); background: var(--code-bg); font-size: .86em; padding: 2px 5px; border-radius: 3px; }
 .markdown-section pre > code {
   padding: 0; border-radius: 0; color: var(--ink); font-size: 14px; line-height: 1.7; background: none;
-  white-space: pre-wrap; overflow-wrap: anywhere;
+  white-space: pre-wrap; overflow-wrap: normal;
 }
 /* Language tabs in the corner of translated examples replace the theme's plain language label. */
 .markdown-section pre.has-lang-tabs::after { display: none; }
@@ -255,17 +275,17 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 .reader-settings .mode-switch button { min-height: 30px; padding: 4px 12px; font-size: 13px; }
 /* Syntax highlighting: one palette for light, one for dark, applied to every language. */
 .markdown-section .token.comment, .markdown-section .token.prolog, .markdown-section .token.doctype,
-.markdown-section .token.cdata { color: #74807a; font-style: italic; }
-.markdown-section .token.punctuation { color: #5e6a62; }
-.markdown-section .token.operator { color: #0a7ea4; }
-.markdown-section .token.keyword { color: #a626a4; }
-.markdown-section .token.boolean, .markdown-section .token.number { color: #986801; }
+.markdown-section .token.cdata { color: #586359; font-style: italic; }
+.markdown-section .token.punctuation { color: #4f5a52; }
+.markdown-section .token.operator { color: #086a8a; }
+.markdown-section .token.keyword { color: #8f2190; }
+.markdown-section .token.boolean, .markdown-section .token.number { color: #7f5600; }
 .markdown-section .token.string, .markdown-section .token.char, .markdown-section .token.attr-value,
-.markdown-section .token.triple-quoted-string { color: #3f8f3e; }
-.markdown-section .token.function { color: #3b6fd6; }
-.markdown-section .token.class-name { color: #a86b00; }
-.markdown-section .token.builtin { color: #0a7ea4; }
-.markdown-section .token.decorator, .markdown-section .token.annotation { color: #986801; }
+.markdown-section .token.triple-quoted-string { color: #2a6f29; }
+.markdown-section .token.function { color: #2f5db8; }
+.markdown-section .token.class-name { color: #875600; }
+.markdown-section .token.builtin { color: #086a8a; }
+.markdown-section .token.decorator, .markdown-section .token.annotation { color: #7f5600; }
 .markdown-section .token.string-interpolation .token.interpolation { color: var(--ink); }
 .markdown-section .token.namespace { opacity: .8; }
 :root[data-theme="dark"] .markdown-section .token.comment, :root[data-theme="dark"] .markdown-section .token.prolog,
@@ -373,7 +393,8 @@ body.diagram-open { overflow: hidden; }
   body.close .sidebar { transform: translateX(0); }
   body.close .sidebar-scrim { display: block; position: fixed; inset: 56px 0 0; background: rgb(0 0 0 / .3); border: 0; z-index: 50; }
   .content, body.close .content { margin-left: 0 !important; padding: 90px 22px 56px; }
-  .markdown-section { max-width: 680px; }
+  .markdown-section { max-width: 680px; line-height: 1.8; }
+  .markdown-section .english-prose { line-height: 1.7; }
   .markdown-section h1 { font-size: 26px; }
   .markdown-section h2 { font-size: 22px; margin-top: 40px; }
   .markdown-section h3 { font-size: 20px; }
