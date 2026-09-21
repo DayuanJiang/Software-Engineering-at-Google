@@ -4,6 +4,32 @@
   const asset = (path) => new URL(path, base).href;
   const storageKey = "sweg-reader-preferences-v1";
   const han = /[\u3400-\u9fff]/;
+
+  // Split a bilingual heading into its English and Chinese halves. The source separates them with two spaces,
+  // one space, or none at all ("Interaction社交互动"); the Chinese half may open with a Latin acronym that also
+  // appears in the English half ("CI Concepts CI概念"); a few headings are written "中文 (English)".
+  function bilingualHeading(text) {
+    text = text.trim();
+    const first = text.search(han);
+    if (first < 0) return null;
+    if (first === 0) {
+      const wrapped = text.match(/^(.+?)\s*[（(]([^()（）]*[A-Za-z][^()（）]*)[)）]$/);
+      if (!wrapped || /[A-Za-z]/.test(wrapped[1])) return null;
+      return { english: wrapped[2].trim(), chinese: wrapped[1].trim() };
+    }
+    let english = text.slice(0, first);
+    if (!/\s$/.test(english)) {
+      const gap = text.search(/\s{2,}/);
+      const tail = english.match(/\S+$/)[0];
+      const head = english.slice(0, -tail.length);
+      const word = tail.match(/^[A-Za-z0-9-]+/);
+      if (gap > 0 && gap < first) english = text.slice(0, gap);
+      else if (!word || new RegExp("\\b" + word[0] + "\\b").test(head)) english = head;
+    }
+    english = english.trim();
+    if (!/[A-Za-z]/.test(english)) return null;
+    return { english, chinese: text.slice(english.length).trim() };
+  }
   let preferences = { mode: "bilingual", size: 19, code: "original",
     theme: matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" };
   try {
@@ -367,14 +393,13 @@
     });
     main.querySelectorAll("h2,h3,h4").forEach((heading) => {
       const label = heading.querySelector(".anchor > span") || heading;
-      const text = label.textContent;
-      const split = text.search(han);
-      if (split <= 0 || !/[a-zA-Z]/.test(text.slice(0, split)) || !/\s$/.test(text.slice(0, split))) return;
+      const parts = bilingualHeading(label.textContent);
+      if (!parts) return;
       const original = document.createElement("span");
       original.className = "heading-original"; original.lang = "en";
-      original.textContent = text.slice(0, split).trim() + " ";
+      original.textContent = parts.english + " ";
       const translated = document.createElement("span");
-      translated.lang = "zh-CN"; translated.textContent = text.slice(split);
+      translated.lang = "zh-CN"; translated.textContent = parts.chinese;
       label.replaceChildren(original, translated);
     });
     let next = (title || main.querySelector(":scope > h1"))?.nextElementSibling;
@@ -1039,7 +1064,8 @@
       const link = document.createElement("a");
       const text = heading.textContent.trim();
       const firstHan = text.search(han);
-      link.textContent = firstHan >= 0 ? text.slice(firstHan) : text;
+      const translated = heading.querySelector('[lang="zh-CN"]');
+      link.textContent = translated ? translated.textContent.trim() : firstHan >= 0 ? text.slice(firstHan) : text;
       link.href = "#" + (currentPage?.route || "/") + "?id=" + encodeURIComponent(heading.id);
       link.dataset.heading = heading.id;
       link.dataset.depth = heading.tagName.slice(1);
