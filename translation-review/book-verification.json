@@ -3,7 +3,7 @@
   "held_chinese_lines": 0,
   "reviewed_chinese_lines": 3990,
   "total_documents": 28,
-  "changed_chinese_lines": 3401,
+  "changed_chinese_lines": 3407,
   "asset_errors": [],
   "site_errors": [],
   "documents": [
@@ -11,7 +11,7 @@
       "id": "foreword",
       "file": "zh-cn/Foreword.md",
       "status": "verified",
-      "after_sha256": "b6616df21c59578ea0d741306dc0f46ef7a87721d8be6351c2d8eb85ee18874d",
+      "after_sha256": "5d63af1fde0155e7bbda062a55fb934f2e4191061947875ca21085facfbdb32a",
       "reviewed_chinese_lines": 7,
       "changed_lines": 6,
       "english_lines": 7,
@@ -24,13 +24,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "preface",
       "file": "zh-cn/Preface.md",
       "status": "verified",
-      "after_sha256": "5e7f8bf1410e0e06a06ed332a434f108d3949fc1f20c568d6dcdceb3ad621534",
+      "after_sha256": "fa928a1c43472f2000507884ef75cf086c567c694fdc39f58b769d627e7a9298",
       "reviewed_chinese_lines": 31,
       "changed_lines": 22,
       "english_lines": 27,
@@ -43,13 +44,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch01",
       "file": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
       "status": "verified",
-      "changed_lines": 135,
+      "changed_lines": 136,
       "reviewed_chinese_lines": 159,
       "held_line_count": 0,
       "holds": [],
@@ -74,7 +76,7 @@
       "id": "ch02",
       "file": "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md",
       "status": "verified",
-      "after_sha256": "7cfdcdca320b006d4bf6ec1aa1aa824f33375ff6f92a94c9693697aad2520f07",
+      "after_sha256": "f065e906c9243bb0314be7c2d212fc739b6537adb699b1d85f8a7a0c53d20d3f",
       "reviewed_chinese_lines": 157,
       "changed_lines": 125,
       "english_lines": 142,
@@ -87,13 +89,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch03",
       "file": "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
       "status": "verified",
-      "after_sha256": "a47f4fd18b1967b0c0bcee9706a26fb3f3bc1d91db24f75ea8f8316962c12934",
+      "after_sha256": "d451452852c8004aa414750484bbc194479d2a1b03a924fca0e78a22d8e20fd0",
       "reviewed_chinese_lines": 218,
       "changed_lines": 181,
       "english_lines": 182,
@@ -106,7 +109,39 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 23,
+          "before": "  - **Information fragmentation**",
+          "after": "  - **Information fragmentation**  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 25,
+          "before": "  - **Information duplication**",
+          "after": "  - **Information duplication**  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 27,
+          "before": "  - **Information skew**",
+          "after": "  - **Information skew**  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 29,
+          "before": "- *Single point of failure (SPOF)*",
+          "after": "- *Single point of failure (SPOF)*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 32,
+          "before": "- *All-or-nothing expertise*",
+          "after": "- *All-or-nothing expertise*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch04",
@@ -125,13 +160,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch05",
       "file": "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md",
       "status": "verified",
-      "after_sha256": "a7afbe07ae471a5b59edf85e645c85d08365d25b213a18f64efc5914c3acfd36",
+      "after_sha256": "9b3a06cf9cb02e804e2b045c3c06ae44a138d9545bb96139179e3b86d75aeeb4",
       "reviewed_chinese_lines": 168,
       "changed_lines": 141,
       "english_lines": 133,
@@ -163,7 +199,15 @@
         }
       ],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 475,
+          "before": "- *Seek to replace yourself*",
+          "after": "- *Seek to replace yourself*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch06",
@@ -193,13 +237,14 @@
         }
       ],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch07",
       "file": "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
       "status": "verified",
-      "after_sha256": "35076cfa13a4f7d76d1739a5e3206e33e4db01f9aa960ab951a17b2eb5998675",
+      "after_sha256": "a3f12e93b0bf2f97f12420ab742c02cb75db175866bcf28233e90de73adeff6f",
       "reviewed_chinese_lines": 137,
       "changed_lines": 122,
       "english_lines": 128,
@@ -212,13 +257,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch08",
       "file": "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md",
       "status": "verified",
-      "after_sha256": "ceaa20d7075b29afcf52f508756fef8d93768de1b24f6cbdcf92fe77bb67a663",
+      "after_sha256": "360ab276ca0379d5e7da0178455502e026944cae8c47fee8f02c59ae2c560775",
       "reviewed_chinese_lines": 165,
       "changed_lines": 138,
       "english_lines": 138,
@@ -231,7 +277,16 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 618,
+          "kind": "heading",
+          "before": "## TL;DRs(Too long;Don't read)  内容提要",
+          "after": "## TL;DRs  内容提要",
+          "reason": "删去原译者加在标题里的英文注解，与其他 24 章的“## TL;DRs  内容提要”统一；中文不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch09",
@@ -250,15 +305,16 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch10",
       "file": "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md",
       "status": "verified",
-      "after_sha256": "c858e9094bc7fca551b6c9572008a4f8e48866b4cf77549764bb1e7b4f2ddd5c",
+      "after_sha256": "b9f80efba38f81675e8ddd873ed35aa73930aae269cf54678a7ca88b09a154ac",
       "reviewed_chinese_lines": 174,
-      "changed_lines": 147,
+      "changed_lines": 149,
       "english_lines": 151,
       "english_segments": 171,
       "code_items": 13,
@@ -269,13 +325,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch11",
       "file": "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md",
       "status": "verified",
-      "after_sha256": "933abdca0aa319a72a2d0d83466a74e0e3c0197b569bea4fcb89a6a112125159",
+      "after_sha256": "f1d11e9a19ed5add81a6986bb85326e607b467c282d1bbe719b781925382ba1e",
       "reviewed_chinese_lines": 173,
       "changed_lines": 147,
       "english_lines": 150,
@@ -288,16 +345,17 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch12",
       "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
       "status": "verified",
-      "after_sha256": "f38e63c2cee62c61e6a3d1a6a7672cf5457e2f84976cf0a22d2480f41c7b4d95",
+      "after_sha256": "694115063cb14d01d1a93c946d6a146efa6f239e72c6feee96a91d5be4a811ec",
       "reviewed_chinese_lines": 168,
       "changed_lines": 131,
-      "english_lines": 129,
+      "english_lines": 128,
       "english_segments": 142,
       "code_items": 37,
       "links": 11,
@@ -307,16 +365,25 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 923,
+          "kind": "heading",
+          "before": "## Conclusion",
+          "after": "## Conclusion 总结",
+          "reason": "补上小标题的中文，与其他各章的“## Conclusion 总结”一致；英文文字不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch13",
       "file": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
       "status": "verified",
-      "after_sha256": "55725ed0fa5e7c12697f4dc6830e4b06d279b902880b0fa1783e7b426e56699c",
+      "after_sha256": "3b64a5f191581577923565de4a140d11fc9f7b02c276859d6c024c23f1fc94ac",
       "reviewed_chinese_lines": 179,
-      "changed_lines": 155,
-      "english_lines": 161,
+      "changed_lines": 156,
+      "english_lines": 160,
       "english_segments": 192,
       "code_items": 28,
       "links": 54,
@@ -335,16 +402,37 @@
           "after": "eb99f23c3233362169370385d5bba2b9ed4d0c7ba6b8dd1114fc5e0a3ce29471",
           "reason": "第 836 行“改变状态”由普通段落改为列表项，与第 843 行“不改变状态”一致；英文原文两项均为列表项。2026-09-21 排版修正。"
         }
+      ],
+      "english_format_exceptions": [
+        {
+          "line": 129,
+          "kind": "heading",
+          "before": "### Seams",
+          "after": "### Seams 接缝",
+          "reason": "补上小标题的中文，与本章其他小标题的中英并排写法一致，“接缝”为本章既定译法；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 821,
+          "before": "- *State-changing*",
+          "after": "- *State-changing*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 828,
+          "before": "- *Non-state-changing*",
+          "after": "- *Non-state-changing*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+        }
       ]
     },
     {
       "id": "ch14",
       "file": "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
       "status": "verified",
-      "after_sha256": "074911f350c72c649b47493e39cab7d1103574b1078878983f0f7ae343041324",
+      "after_sha256": "7fc8c620ae82272d88d415c6fb4f87fbe70d571110a299ab2ade2f305cba6a72",
       "reviewed_chinese_lines": 316,
       "changed_lines": 270,
-      "english_lines": 287,
+      "english_lines": 286,
       "english_segments": 286,
       "code_items": 4,
       "links": 31,
@@ -354,7 +442,16 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 692,
+          "kind": "heading",
+          "before": "### UAT",
+          "after": "### UAT 用户验收测试",
+          "reason": "补上小标题的中文，与本章其他小标题一致，正文写作“用户验收测试（UAT）”；英文文字不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch15",
@@ -373,13 +470,14 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch16",
       "file": "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md",
       "status": "verified",
-      "after_sha256": "4304f8dc8715ebbba5f3b2dbed7c321d4b2c1e31d8ef82266a7cd72b10ff708d",
+      "after_sha256": "59b9dc82d52c1fb4e5c0a1fb0d5e086daab283992bd758eb56f23ff36a089d35",
       "reviewed_chinese_lines": 147,
       "changed_lines": 129,
       "english_lines": 126,
@@ -402,7 +500,8 @@
         }
       ],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch17",
@@ -421,15 +520,16 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch18",
       "file": "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
       "status": "verified",
-      "after_sha256": "39a197e05eac1fa2d189062ae699de9d89e31af83a50e4bcc1832c490abfe022",
+      "after_sha256": "362b683173b7f5ef9ec27e8702053f7c8b567f9a015877612a5d48301a4a62ec",
       "reviewed_chinese_lines": 168,
-      "changed_lines": 152,
+      "changed_lines": 153,
       "english_lines": 157,
       "english_segments": 172,
       "code_items": 11,
@@ -440,13 +540,27 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 28,
+          "before": "*Fast*",
+          "after": "*Fast*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 31,
+          "before": "*Correct*",
+          "after": "*Correct*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch19",
       "file": "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md",
       "status": "verified",
-      "after_sha256": "53d756dff8b44b251b98b560abf730801887d382e6ea4d620957a6ff3dfaf5f8",
+      "after_sha256": "673897c723a40b1fe14487f6ebacd6f087fbf4a6675a71b789d0d5e73ee4fbb2",
       "reviewed_chinese_lines": 126,
       "changed_lines": 109,
       "english_lines": 126,
@@ -459,17 +573,18 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch20",
       "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
       "status": "verified",
-      "after_sha256": "6ad7f2ef15fce33f467b1c8c13e525d7ccc5385975d9da3661168566930a7238",
+      "after_sha256": "86518862010dd564cfe6a1638dee2cae8e9bccf21f41c90308f8a0738a4fed01",
       "reviewed_chinese_lines": 83,
       "changed_lines": 64,
       "english_lines": 69,
-      "english_segments": 78,
+      "english_segments": 79,
       "code_items": 10,
       "links": 12,
       "footnote_markers": 16,
@@ -478,7 +593,16 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 281,
+          "kind": "heading",
+          "before": "## 内容提要",
+          "after": "## TL;DRs  内容提要",
+          "reason": "补回其他 24 章共有的英文“TL;DRs”，中文不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch21",
@@ -510,7 +634,8 @@
           "reason": "Repair full-width Markdown brackets; intended visible URL unchanged."
         }
       ],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch22",
@@ -529,16 +654,17 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch23",
       "file": "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md",
       "status": "verified",
-      "after_sha256": "e2b22ec3217a0a4e5cb87ab892f8b3b6f5e54aa4361a26ccb75db5761e27dc5a",
+      "after_sha256": "466c29d4e1d45ed49926a3e2d0710a315a78b8daaeef678d879819448c96c67e",
       "reviewed_chinese_lines": 204,
-      "changed_lines": 190,
-      "english_lines": 185,
+      "changed_lines": 191,
+      "english_lines": 184,
       "english_segments": 196,
       "code_items": 6,
       "links": 15,
@@ -576,7 +702,34 @@
         }
       ],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": [
+        {
+          "line": 7,
+          "before": "**Written by Rachel Tannenbaum**",
+          "after": "**Written by Rachel Tannenbaum**  ",
+          "reason": "作者行补两个行尾空格作硬换行，使编辑行另起一行，与其他各章的作者、编辑两行显示一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 365,
+          "kind": "heading",
+          "before": "### CI Challenges",
+          "after": "### CI Challenges 持续集成的挑战",
+          "reason": "补上小标题的中文，沿用阅读器此前在显示时采用的“持续集成的挑战”，正文第 719 行的引用同步改为该名称；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 437,
+          "before": "*False positives*",
+          "after": "*False positives*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+        },
+        {
+          "line": 440,
+          "before": "*False negatives*",
+          "after": "*False negatives*  ",
+          "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+        }
+      ]
     },
     {
       "id": "ch24",
@@ -605,13 +758,14 @@
         }
       ],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "ch25",
       "file": "zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md",
       "status": "verified",
-      "after_sha256": "cb3a3cfdae7c592d97548ede5ade9f4a84c805e6e465b7c60ab76fe18e2e9e2b",
+      "after_sha256": "f4049a7a956a4fcb914f4af24b7800177312568dd604d16effb9c5651fbfcb6c",
       "reviewed_chinese_lines": 206,
       "changed_lines": 186,
       "english_lines": 181,
@@ -624,7 +778,8 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     },
     {
       "id": "afterword",
@@ -643,7 +798,8 @@
       "held_line_count": 0,
       "prose_code_exceptions": [],
       "link_syntax_exceptions": [],
-      "structure_exceptions": []
+      "structure_exceptions": [],
+      "english_format_exceptions": []
     }
   ],
   "workflow": "chapter-scoped Codex subagents and parent editing; offline verification"

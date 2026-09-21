@@ -75,7 +75,7 @@ In some software groups, the same result plays out when management views the job
 
 In addition to allowing separate storage and reference to versions over time, version control helps us bridge the gap between single-developer and multideveloper processes. In practical terms, this is why version control is so critical to software engineering, because it allows us to scale up teams and organizations, even though we use it only infrequently as an “undo” button. Development is inherently a branch-and- merge process, both when coordinating between multiple developers or a single developer at different points in time. A VCS removes the question of “which is more recent?” Use of modern version control automates error-prone operations like tracking which set of changes have been applied. Version control is how we coordinate between multiple developers and/or multiple points in time.
 
-版本控制不仅能分别存储和引用不同时期的版本，还能帮助我们从单人开发过渡到多人协作。这正是它对软件工程至关重要的实际原因：即使很少把它当作“撤销”按钮，它仍能支持团队和组织扩大规模。**开发本质上是一个创建分支再合并的过程，无论要协调的是多个开发者，还是同一开发者在不同时间所做的工作。**VCS 让我们不必再争论“哪个版本更新”。现代版本控制可以自动完成跟踪已应用变更等容易出错的操作，帮助我们协调多人之间、不同时点之间，或兼具这两个维度的工作。
+版本控制不仅能分别存储和引用不同时期的版本，还能帮助我们从单人开发过渡到多人协作。这正是它对软件工程至关重要的实际原因：即使很少把它当作“撤销”按钮，它仍能支持团队和组织扩大规模。开发本质上是一个创建分支再合并的过程，无论要协调的是多个开发者，还是同一开发者在不同时间所做的工作。VCS 让我们不必再争论“哪个版本更新”。现代版本控制可以自动完成跟踪已应用变更等容易出错的操作，帮助我们协调多人之间、不同时点之间，或兼具这两个维度的工作。
 
 Because VCS has become so thoroughly embedded in the process of software engineering, even legal and regulatory practices have caught up. VCS allows a formal record of every change to every line of code, which is increasingly necessary for satisfying audit requirements. When mixing between in-house development and appropriate use of third-party sources, VCS helps track provenance and origination for every line of code.
 

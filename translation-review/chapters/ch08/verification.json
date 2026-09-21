@@ -2,7 +2,7 @@
   "id": "ch08",
   "file": "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md",
   "status": "verified",
-  "after_sha256": "ceaa20d7075b29afcf52f508756fef8d93768de1b24f6cbdcf92fe77bb67a663",
+  "after_sha256": "360ab276ca0379d5e7da0178455502e026944cae8c47fee8f02c59ae2c560775",
   "reviewed_chinese_lines": 165,
   "changed_lines": 138,
   "english_lines": 138,
@@ -15,5 +15,14 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 618,
+      "kind": "heading",
+      "before": "## TL;DRs(Too long;Don't read)  内容提要",
+      "after": "## TL;DRs  内容提要",
+      "reason": "删去原译者加在标题里的英文注解，与其他 24 章的“## TL;DRs  内容提要”统一；中文不变。2026-09-21 排版修正。"
+    }
+  ]
 }

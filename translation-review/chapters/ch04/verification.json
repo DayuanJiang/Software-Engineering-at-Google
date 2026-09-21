@@ -15,5 +15,6 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": []
 }

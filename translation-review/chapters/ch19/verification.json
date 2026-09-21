@@ -2,7 +2,7 @@
   "id": "ch19",
   "file": "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md",
   "status": "verified",
-  "after_sha256": "53d756dff8b44b251b98b560abf730801887d382e6ea4d620957a6ff3dfaf5f8",
+  "after_sha256": "673897c723a40b1fe14487f6ebacd6f087fbf4a6675a71b789d0d5e73ee4fbb2",
   "reviewed_chinese_lines": 126,
   "changed_lines": 109,
   "english_lines": 126,
@@ -15,5 +15,6 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": []
 }

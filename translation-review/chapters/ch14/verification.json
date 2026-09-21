@@ -2,10 +2,10 @@
   "id": "ch14",
   "file": "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
   "status": "verified",
-  "after_sha256": "074911f350c72c649b47493e39cab7d1103574b1078878983f0f7ae343041324",
+  "after_sha256": "7fc8c620ae82272d88d415c6fb4f87fbe70d571110a299ab2ade2f305cba6a72",
   "reviewed_chinese_lines": 316,
   "changed_lines": 270,
-  "english_lines": 287,
+  "english_lines": 286,
   "english_segments": 286,
   "code_items": 4,
   "links": 31,
@@ -15,5 +15,14 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 692,
+      "kind": "heading",
+      "before": "### UAT",
+      "after": "### UAT 用户验收测试",
+      "reason": "补上小标题的中文，与本章其他小标题一致，正文写作“用户验收测试（UAT）”；英文文字不变。2026-09-21 排版修正。"
+    }
+  ]
 }

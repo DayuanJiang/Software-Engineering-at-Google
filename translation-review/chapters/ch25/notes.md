@@ -80,3 +80,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-25_Compute_as
 ```
 
 `verify.py --write-artifacts` 仅在全部检查通过后，机械生成本目录的 `edits.json` 和 `verification.json`；默认模式只复核已有产物。未运行全仓断言、全站浏览器检查或外链可达性检查。
+
+## 2026-09-21 排版修正（第二轮）
+
+- 第 393 行 `要求在*/bin/foo/bar*处存在` 改为 `要求在 */bin/foo/bar* 处存在`。开头星号前是汉字、后是标点 `/`，不被识别为强调标记而原样显示；加空格后与本章中英文混排两侧留空格的惯例一致。阅读器原先在显示层替换掉裸露星号，该条目已从 `assets/reader-content/ch25.json` 删除。

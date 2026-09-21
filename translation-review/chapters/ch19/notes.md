@@ -67,3 +67,7 @@ assert manifest["baseline_sha256"] == audit.digest(before)
 print(review.validate(source, before, (audit.ROOT / source).read_bytes(), manifest))
 PY
 ```
+
+## 2026-09-21 排版修正（第二轮）
+
+- 第 75 行 `**提出审查意见。**审查者……` 改为 `**提出审查意见。** 审查者……`，与同一列表其他五项的写法一致。原写法闭合 `**` 前是句号、后紧跟汉字，不被识别为闭合符，星号原样显示。

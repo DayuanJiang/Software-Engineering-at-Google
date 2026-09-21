@@ -56,3 +56,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-3_Knowledge_S
 ```
 
 `verify.py` 默认只读，并确认已落盘的 `edits.json` 和 `verification.json` 与当前章节一致。`--record` 仅用于首次机械生成本目录产物，拒绝覆盖已有清单；不修改章节、共享工具或基线。未运行要求其他并行工作文件保持不变的全仓库断言。
+
+## 2026-09-21 排版修正
+
+- 第 23、25、27、29、32 行的英文术语行（Information fragmentation、Information duplication、Information skew、Single point of failure (SPOF)、All-or-nothing expertise）行尾补两个空格作硬换行，使说明文字另起一行，与同一列表其他项一致。英文文字不变；这类只改行尾空白的英文行登记在 `translation-review/english-format-exceptions.json`，由 `tools/book_review.py` 校验。

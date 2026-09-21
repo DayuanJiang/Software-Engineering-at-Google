@@ -55,3 +55,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-10_Documentat
 ```
 
 `verify.py` 默认只读。`--write-report` 仅更新本目录的 `verification.json`；`--write-manifest` 根据已人工审定的逐行改动及固定保留／挂起清单生成本目录的 `edits.json`，写入前同样执行全部保护校验。未运行全站浏览器测试或外链可达性检查。
+
+## 2026-09-21 排版修正（第二轮）
+
+- 第 268 行 `**File comments 文件注释**` 与第 521 行案例研究标题行补两个行尾空格作硬换行，其后的英文正文另起一行，不再与加粗小标题排在同一行。两行原登记为“已审阅、未改动”，现转入修改清单。

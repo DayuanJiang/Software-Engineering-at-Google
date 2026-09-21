@@ -68,6 +68,51 @@ def plain(children) -> str:
     return "".join(parts)
 
 
+def term_lines_without_break(source: str) -> list[int]:
+    """1-based lines made only of emphasized text (a term or run-in label) that end in a soft line break.
+
+    The next line then renders on the same line as the term, while siblings written with a hard
+    break (two trailing spaces) do not. Lists and plain paragraphs are checked in both languages.
+    """
+    lines = []
+    for token in MD.parse(source):
+        if token.type != "inline" or not token.map:
+            continue
+        line, depth, emphasized, pure = token.map[0] + 1, 0, False, True
+        for child in token.children or []:
+            if child.type in {"softbreak", "hardbreak"}:
+                if child.type == "softbreak" and pure and emphasized and depth == 0:
+                    lines.append(line)
+                line, emphasized, pure = line + 1, False, True
+            elif child.type in {"em_open", "strong_open"}:
+                depth += 1
+                emphasized = True
+            elif child.type in {"em_close", "strong_close"}:
+                depth -= 1
+            elif depth == 0 and not (child.type == "text" and not child.content.strip()):
+                pure = False
+    return lines
+
+
+def literal_emphasis_markers(source: str) -> list[int]:
+    """1-based lines where an asterisk survives parsing as plain text: an emphasis marker that did not pair.
+
+    CommonMark pairs a closing ``*`` or ``**`` that follows punctuation only when whitespace or
+    punctuation comes next, so ``**标题。**正文`` shows its asterisks. Code spans are not text.
+    """
+    lines = []
+    for token in MD.parse(source):
+        if token.type != "inline" or not token.map:
+            continue
+        line = token.map[0] + 1
+        for child in token.children or []:
+            if child.type in {"softbreak", "hardbreak"}:
+                line += 1
+            elif child.type == "text" and "*" in child.content and line not in lines:
+                lines.append(line)
+    return lines
+
+
 def language_runs(text: str, heading: bool = False) -> list[tuple[str, str]]:
     """Language detection is a heuristic; mixed non-heading lines remain Chinese context."""
     runs = []

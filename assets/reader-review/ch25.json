@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "sourceSha256": "cb3a3cfdae7c592d97548ede5ade9f4a84c805e6e465b7c60ab76fe18e2e9e2b",
+  "sourceSha256": "f4049a7a956a4fcb914f4af24b7800177312568dd604d16effb9c5651fbfcb6c",
   "sourceUrl": "https://abseil.io/resources/swe-book/html/ch25.html",
   "footnotes": [
     {
@@ -293,11 +293,6 @@
     }
   ],
   "textEdits": [
-    {
-      "source": "*/bin/foo/bar*",
-      "replacement": "/bin/foo/bar",
-      "reason": "Remove the exposed emphasis delimiters around the path in the display copy; preserve the actual filesystem path."
-    },
     {
       "source": "专用存储方案13",
       "replacement": "专用存储方案",

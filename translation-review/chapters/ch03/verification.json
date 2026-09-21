@@ -2,7 +2,7 @@
   "id": "ch03",
   "file": "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
   "status": "verified",
-  "after_sha256": "a47f4fd18b1967b0c0bcee9706a26fb3f3bc1d91db24f75ea8f8316962c12934",
+  "after_sha256": "d451452852c8004aa414750484bbc194479d2a1b03a924fca0e78a22d8e20fd0",
   "reviewed_chinese_lines": 218,
   "changed_lines": 181,
   "english_lines": 182,
@@ -15,5 +15,37 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 23,
+      "before": "  - **Information fragmentation**",
+      "after": "  - **Information fragmentation**  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 25,
+      "before": "  - **Information duplication**",
+      "after": "  - **Information duplication**  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 27,
+      "before": "  - **Information skew**",
+      "after": "  - **Information skew**  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 29,
+      "before": "- *Single point of failure (SPOF)*",
+      "after": "- *Single point of failure (SPOF)*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 32,
+      "before": "- *All-or-nothing expertise*",
+      "after": "- *All-or-nothing expertise*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ]
 }

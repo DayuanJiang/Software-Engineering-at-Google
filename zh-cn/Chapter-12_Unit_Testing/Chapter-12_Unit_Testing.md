@@ -68,7 +68,7 @@ Brittle tests cause pain in codebases of any size, but they become particularly 
 
 Before talking about patterns for avoiding brittle tests, we need to answer a question: just how often should we expect to need to change a test after writing it? Any time spent updating old tests is time that can’t be spent on more valuable work. Therefore, *the ideal test is unchanging*: after it’s written, it never needs to change unless the requirements of the system under test change.
 
-在讨论如何避免脆弱测试之前，需要先回答一个问题：测试写好后，我们预期多久需要修改一次？更新旧测试占用的时间，就无法用于更有价值的工作。因此，*理想的测试无需改动：*一旦写好，除非被测系统的需求发生变化，否则就不必再改。
+在讨论如何避免脆弱测试之前，需要先回答一个问题：测试写好后，我们预期多久需要修改一次？更新旧测试占用的时间，就无法用于更有价值的工作。因此，*理想的测试无需改动*：一旦写好，除非被测系统的需求发生变化，否则就不必再改。
 
 What does this look like in practice? We need to think about the kinds of changes that engineers make to production code and how we should expect tests to respond to those changes. Fundamentally, there are four kinds of changes:
 
@@ -920,7 +920,7 @@ Of course, most of the test infrastructure that most engineers use comes in the 
 
 当然，多数工程师使用的测试基础设施，主要是JUnit等知名第三方库。这类库选择很多，组织应尽早、尽可能全面地统一选型。例如，Google多年前就规定，新增Java测试只能使用Mockito作为模拟框架，不得使用其他模拟框架。当时，一些习惯了其他框架的人颇有怨言；但如今，大家普遍认为这是正确的决定，让测试更容易理解和维护。
 
-## Conclusion
+## Conclusion 总结
 
 Unit tests are one of the most powerful tools that we as software engineers have to make sure that our systems keep working over time in the face of unanticipated changes. But with great power comes great responsibility, and careless use of unit testing can result in a system that requires much more effort to maintain and takes much more effort to change without actually improving our confidence in said system.
 

@@ -1,0 +1,2 @@
+# Recorded unified diffs reproduce book lines verbatim; do not report their whitespace.
+translation-review/**/*.diff -whitespace

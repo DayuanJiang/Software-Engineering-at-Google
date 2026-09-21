@@ -73,3 +73,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-8_Style_Guide
 保留既有硬换行空格，因此空白检查关闭了 `blank-at-eol`；逐行校验仍严格要求尾随空白与基线完全一致。
 本次仅校验本章，未运行全库断言，也未将结构检查视为语义质量的自动证明。
 最终读回时，`verification.json` 已被外部进程改写为汇总格式，其章节哈希和修改计数与本轮一致。本轮保留该文件，将详细结果另存为 `verification-detailed.json`，上述命令只重建详细报告。
+
+## 2026-09-21 排版修正
+
+- 第 618 行标题 `## TL;DRs(Too long;Don't read)  内容提要` 改为 `## TL;DRs  内容提要`，删去原译者加在标题里的英文注解，与其他 24 章统一。此行原登记为“已审阅、未改动”，现改由 `translation-review/english-format-exceptions.json` 以整行前后文字登记，校验要求标题层级不变。

@@ -20,16 +20,16 @@ Sharing expertise across an organization is not an easy task. Without a strong c
     An environment in which people are afraid to take risks or make mistakes in front of others because they fear being punished for it. This often manifests as a culture of fear or a tendency to avoid transparency. 
 - *Information islands*  
     Knowledge fragmentation that occurs in different parts of an organization that don’t communicate with one another or use shared resources. In such anenvironment, each group develops its own way of doing things.[^1] This often leads to the following:  
-  - **Information fragmentation**
+  - **Information fragmentation**  
   	Each island has an incomplete picture of the bigger whole.  
-  - **Information duplication**
+  - **Information duplication**  
   	Each island has reinvented its own way of doing something.  
-  - **Information skew**
+  - **Information skew**  
   	Each island has its own ways of doing the same thing, and these might or might not conflict.   
-- *Single point of failure (SPOF)*
+- *Single point of failure (SPOF)*  
     A bottleneck that occurs when critical information is available from only a single person. This is related to bus factor, which is discussed in more detail in Chapter 2.  
     SPOFs can arise out of good intentions: it can be easy to fall into a habit of “Let me take care of that for you.” But this approach optimizes for short-term efficiency (“It’s faster for me to do it”) at the cost of poor long-term scalability (the team never learns how to do whatever it is that needs to be done). This mindset also tends to lead to all-or-nothing expertise.  
-- *All-or-nothing expertise*
+- *All-or-nothing expertise*  
     A group of people that is split between people who know “everything” and novices, with little middle ground. This problem often reinforces itself if experts always do everything themselves and don’t take the time to develop new experts through mentoring or documentation. In this scenario, knowledge and responsibilities continue to accumulate on those who already have expertise, and new team members or novices are left to fend for themselves and ramp up more slowly.  
 - *Parroting*   
     Mimicry without understanding. This is typically characterized by mindlessly copying patterns or code without understanding their purpose, often under the assumption that said code is needed for unknown reasons.

@@ -71,3 +71,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-14_Larger_Tes
 ```
 
 `edits.json` 由实际逐行差异生成完整替换行，再与人工审定的保留行清单、空的 held 清单交叉验证。首次生成使用 `verify.py --record --write-report`；常规复核不会重建清单或基线。
+
+## 2026-09-21 排版修正
+
+- 第 692 行 `### UAT` 补为 `### UAT 用户验收测试`。这是本章 40 个小标题里唯一没有中文的一个，2022 年首次上传时即如此；正文写作“用户验收测试（UAT）”。英文行改动登记于 `translation-review/english-format-exceptions.json`。

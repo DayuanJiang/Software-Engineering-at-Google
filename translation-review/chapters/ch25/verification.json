@@ -2,7 +2,7 @@
   "id": "ch25",
   "file": "zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md",
   "status": "verified",
-  "after_sha256": "cb3a3cfdae7c592d97548ede5ade9f4a84c805e6e465b7c60ab76fe18e2e9e2b",
+  "after_sha256": "f4049a7a956a4fcb914f4af24b7800177312568dd604d16effb9c5651fbfcb6c",
   "reviewed_chinese_lines": 206,
   "changed_lines": 186,
   "english_lines": 181,
@@ -15,5 +15,6 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": []
 }

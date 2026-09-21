@@ -630,7 +630,7 @@
  
  Sameer Ajmani
  
-@@ -550,70 +550,70 @@
+@@ -550,72 +550,72 @@
  
  Google released the Go programming language as open source on November 10, 2009. Since then, Go has grown as a language for developing services, tools, cloud infrastructure, and open source software.[^14]
  
@@ -716,10 +716,14 @@
  For any organization, but especially for an organization as large as Google’s engineering force, rules help us to manage complexity and build a maintainable codebase. A shared set of rules frames the engineering processes so that they can scale up and keep growing, keeping both the codebase and the organization sustainable for the long term.
  
 -对于任何组织，尤其是像 Google 的工程师团队这样大的组织，规则帮助我们管理复杂性并建立一个可维护的代码库。一组共享的规则框定了工程流程，以便它们可以扩大规模并保持增长，从而保持代码库和组织的长期可持续性。
+-
+-## TL;DRs(Too long;Don't read)  内容提要
 +对任何组织，尤其是谷歌这样规模庞大的工程组织，规则都有助于管理复杂性、建立可维护的代码库。一套共同遵守的规则为工程流程提供了框架，使其能够随规模扩展、持续发展，从而让代码库和组织都保持长期可持续性。
++
++## TL;DRs  内容提要
  
- ## TL;DRs(Too long;Don't read)  内容提要
- 
+ - Rules and guidance should aim to support resilience to time and scaling.
+ - Know the data so that rules can be adjusted.
 @@ -623,8 +623,8 @@
  - Consistency is key.
  - Automate enforcement when possible.

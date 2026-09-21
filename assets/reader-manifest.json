@@ -1475,7 +1475,7 @@
           "summary": "由构造函数传入同一 CreditCardService 接口的替身，再跟踪 makePayment 的过期判断：过期卡直接返回 false，未调用扣款；有效卡才调用始终返回 true 的替身。",
           "enabled": true,
           "sourceSections": [
-            "### Seams",
+            "### Seams 接缝",
             "### An Example Test Double 测试替身示例"
           ],
           "afterParagraph": "通常需要先重构或重写，才能补上适当的测试。",

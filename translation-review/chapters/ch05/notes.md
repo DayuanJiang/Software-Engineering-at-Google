@@ -51,3 +51,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-5_How_to_Lead
 ```
 
 验证只覆盖本章，不执行要求其他工作线程文件保持不变的全库断言。`verify.py --record` 仅用于首次派生本目录审校产物，已有清单时会拒绝覆盖；普通验证只读，不重新写入章节。
+
+## 2026-09-21 排版修正
+
+- 第 475 行英文术语行 `- *Seek to replace yourself*` 行尾补两个空格作硬换行，使说明文字另起一行，与同一列表其他五项一致。英文文字不变，登记在 `translation-review/english-format-exceptions.json`。

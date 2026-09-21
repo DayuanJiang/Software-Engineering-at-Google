@@ -2,9 +2,9 @@
   "id": "ch18",
   "file": "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
   "status": "verified",
-  "after_sha256": "39a197e05eac1fa2d189062ae699de9d89e31af83a50e4bcc1832c490abfe022",
+  "after_sha256": "362b683173b7f5ef9ec27e8702053f7c8b567f9a015877612a5d48301a4a62ec",
   "reviewed_chinese_lines": 168,
-  "changed_lines": 152,
+  "changed_lines": 153,
   "english_lines": 157,
   "english_segments": 172,
   "code_items": 11,
@@ -15,5 +15,19 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 28,
+      "before": "*Fast*",
+      "after": "*Fast*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 31,
+      "before": "*Correct*",
+      "after": "*Correct*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ]
 }

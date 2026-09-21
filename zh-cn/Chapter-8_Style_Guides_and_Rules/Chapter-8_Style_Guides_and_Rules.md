@@ -615,7 +615,7 @@ For any organization, but especially for an organization as large as Google’s 
 
 对任何组织，尤其是谷歌这样规模庞大的工程组织，规则都有助于管理复杂性、建立可维护的代码库。一套共同遵守的规则为工程流程提供了框架，使其能够随规模扩展、持续发展，从而让代码库和组织都保持长期可持续性。
 
-## TL;DRs(Too long;Don't read)  内容提要
+## TL;DRs  内容提要
 
 - Rules and guidance should aim to support resilience to time and scaling.
 - Know the data so that rules can be adjusted.

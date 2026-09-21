@@ -47,3 +47,12 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-12_Unit_Testi
 ```
 
 `verify.py` 默认只读本章、原始快照、清单和基线；`--write-artifacts` 仅在校验通过后重新生成本目录的 `edits.json` 与 `verification.json`，不会修改章节。未运行示例代码或全站浏览器测试。
+
+## 2026-09-21 排版修正（第二轮）
+
+- 第 71 行 `*理想的测试无需改动：*一旦……` 改为 `*理想的测试无需改动*：一旦……`，冒号移到强调之外，与英文 `*the ideal test is unchanging*:` 一致；原写法闭合星号前是冒号、后紧跟汉字，星号原样显示。
+- 第 115 行中英对照例题标题中，英文 `*A transaction API *` 闭合星号前有空格，星号原样显示。这是受保护的英文文字，本轮未改，登记为已知问题。
+
+## 2026-09-21 排版修正
+
+- 第 923 行 `## Conclusion` 补为 `## Conclusion 总结`，与其他各章一致。此前阅读器在显示时替换该标题，源文补上中文后，`assets/reader-content/ch12.json` 中对应的标题翻译条目已删除。英文行改动登记于 `translation-review/english-format-exceptions.json`。

@@ -72,3 +72,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-20_Static_Ana
 ```
 
 详细结果见 `verification.json`，完整补丁见 `changes.diff`。结论为中文复核完成、保护校验通过，受保护的既有问题仍待后续处理。
+
+## 2026-09-21 排版修正
+
+- 第 281 行 `## 内容提要` 改为 `## TL;DRs  内容提要`，补回其他 24 章共有的英文标题，中文不变。此行原登记为“已审阅、未改动”，现改由 `translation-review/english-format-exceptions.json` 以整行前后文字登记。

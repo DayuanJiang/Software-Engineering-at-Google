@@ -25,17 +25,17 @@ If you ask Google engineers what they like most about working at Google (besides
 
 Fundamentally, all build systems have a straightforward purpose: they transform the source code written by engineers into executable binaries that can be read by machines. A good build system will generally try to optimize for two important properties:
 
-*Fast*
+*Fast*  
     A developer should be able to type a single command to run the build and get back the resulting binary, often in as little as a few seconds.
 
-*Correct*
+*Correct*  
     Every time any developer runs a build on any machine, they should get the same result (assuming that the source files and other inputs are the same).
 
 从根本上说，所有构建系统的目的都很直接：将工程师编写的源代码转化为机器可以读取的可执行二进制文件。好的构建系统通常会着力优化两个重要属性：
 
-*快速*
-    开发人员应该只需输入一条命令就能执行构建，得到生成的二进制文件，而且通常只需几秒钟。
-*正确*
+*快速*  
+    开发人员应该只需输入一条命令就能执行构建，得到生成的二进制文件，而且通常只需几秒钟。  
+*正确*  
     任何开发人员在任何机器上执行构建，每次都应得到相同的结果，前提是源文件和其他输入相同。
 
 Many older build systems attempt to make trade-offs between speed and correctness by taking shortcuts that can lead to inconsistent builds. Bazel’s main objective is to avoid having to choose between speed and correctness, providing a build system structured to ensure that it’s always possible to build code efficiently and consistently.
@@ -244,11 +244,11 @@ Because these tools essentially let engineers define any script as a task, they 
 
 **Difficulty of parallelizing build steps.** Modern development workstations are typically quite powerful, with multiple cores that should theoretically be capable of executing several build steps in parallel. But task-based systems are often unable to parallelize task execution even when it seems like they should be able to. Suppose that task A depends on tasks B and C. Because tasks B and C have no dependency on each other, is it safe to run them at the same time so that the system can more quickly get to task A? Maybe, if they don’t touch any of the same resources. But maybe not—perhaps both use the same file to track their statuses and running them at the same time will cause a conflict. There’s no way in general for the system to know, so either it has to risk these conflicts (leading to rare but very difficult-to-debug build problems), or it has to restrict the entire build to running on a single thread in a single process. This can be a huge waste of a powerful developer machine, and it completely rules out the possibility of distributing the build across multiple machines.
 
-**难以并行执行构建步骤。** 现代开发工作站通常性能强大，拥有多个内核，理论上能够并行执行多个构建步骤。但基于任务的系统常常无法并行执行任务，即使看起来应该可以。假设任务 A 依赖 B 和 C，而 B 与 C 互不依赖，能否安全地同时运行它们，让 A 更早开始？如果两者不访问任何相同的资源，也许可以。但如果它们用同一个文件记录状态，同时运行就可能发生冲突。系统通常无法判断，只能冒着冲突风险，接受偶发却极难调试的构建问题，或者把整个构建限制在单个进程的单个线程中。这会严重浪费开发机器的强大性能，也完全排除了在多台机器上分布式执行构建的可能性。
+**难以并行执行构建步骤**。现代开发工作站通常性能强大，拥有多个内核，理论上能够并行执行多个构建步骤。但基于任务的系统常常无法并行执行任务，即使看起来应该可以。假设任务 A 依赖 B 和 C，而 B 与 C 互不依赖，能否安全地同时运行它们，让 A 更早开始？如果两者不访问任何相同的资源，也许可以。但如果它们用同一个文件记录状态，同时运行就可能发生冲突。系统通常无法判断，只能冒着冲突风险，接受偶发却极难调试的构建问题，或者把整个构建限制在单个进程的单个线程中。这会严重浪费开发机器的强大性能，也完全排除了在多台机器上分布式执行构建的可能性。
 
 **Difficulty performing incremental builds**. A good build system will allow engineers to perform reliable incremental builds such that a small change doesn’t require the entire codebase to be rebuilt from scratch. This is especially important if the build system is slow and unable to parallelize build steps for the aforementioned reasons. But unfortunately, task-based build systems struggle here, too. Because tasks can do anything, there’s no way in general to check whether they’ve already been done. Many tasks simply take a set of source files and run a compiler to create a set of binaries; thus, they don’t need to be rerun if the underlying source files haven’t changed. But without additional information, the system can’t say this for sure—maybe the task downloads a file that could have changed, or maybe it writes a timestamp that could be different on each run. To guarantee correctness, the system typically must rerun every task during each build.
 
-**难以执行增量构建。** 好的构建系统应支持可靠的增量构建，不必为一处小改动就从头构建整个代码库。如果系统因上述原因速度缓慢，又无法并行执行构建步骤，这一点尤其重要。遗憾的是，基于任务的构建系统在这方面也有困难。任务可以执行任意逻辑，系统通常无法判断某项工作是否已经完成、无需重做。许多任务只是接收一组源文件，运行编译器，生成一组二进制文件；只要源文件没变，就不必重跑。但没有额外信息，系统无法确信这一点：任务也许会下载内容可能已变化的文件，或写入每次运行都可能不同的时间戳。为了保证正确性，系统通常只能在每次构建时重新运行所有任务。
+**难以执行增量构建**。好的构建系统应支持可靠的增量构建，不必为一处小改动就从头构建整个代码库。如果系统因上述原因速度缓慢，又无法并行执行构建步骤，这一点尤其重要。遗憾的是，基于任务的构建系统在这方面也有困难。任务可以执行任意逻辑，系统通常无法判断某项工作是否已经完成、无需重做。许多任务只是接收一组源文件，运行编译器，生成一组二进制文件；只要源文件没变，就不必重跑。但没有额外信息，系统无法确信这一点：任务也许会下载内容可能已变化的文件，或写入每次运行都可能不同的时间戳。为了保证正确性，系统通常只能在每次构建时重新运行所有任务。
 
 Some build systems try to enable incremental builds by letting engineers specify the conditions under which a task needs to be rerun. Sometimes this is feasible, but often it’s a much trickier problem than it appears. For example, in languages like C++ that allow files to be included directly by other files, it’s impossible to determine the entire set of files that must be watched for changes without parsing the input sources. Engineers will often end up taking shortcuts, and these shortcuts can lead to rare and frustrating problems where a task result is reused even when it shouldn’t be. When this happens frequently, engineers get into the habit of running clean before every build to get a fresh state, completely defeating the purpose of having an incremental build in the first place. Figuring out when a task needs to be rerun is surprisingly subtle, and is a job better handled by machines than humans.
 
@@ -444,7 +444,7 @@ Of course, for there to be any benefit from a remote cache, downloading an artif
 
 Remote caching isn’t a true distributed build. If the cache is lost or if you make a low- level change that requires everything to be rebuilt, you still need to perform the entire build locally on your machine. The true goal is to support *remote execution*, in which the actual work of doing the build can be spread across any number of workers. Figure 18-3 depicts a remote execution system.
 
-远程缓存还不是真正的分布式构建。一旦缓存丢失，或某个底层变更要求重新构建所有内容，仍需在本地机器上完成整个构建。真正的目标是支持*远程执行*，将实际的构建工作分配给任意数量的工作节点。[图18-3]（#_bookmark1676）展示了一个远程执行系统。
+远程缓存还不是真正的分布式构建。一旦缓存丢失，或某个底层变更要求重新构建所有内容，仍需在本地机器上完成整个构建。真正的目标是支持*远程执行*，将实际的构建工作分配给任意数量的工作节点。图18-3展示了一个远程执行系统。
 
 ![Figure 18-3](./images/Figure%2018-3.png)
 
@@ -464,7 +464,7 @@ For this to work, all of the parts of the artifact-based build systems described
 
 **Distributed builds at Google.** Since 2008, Google has been using a distributed build system that employs both remote caching and remote execution, which is illustrated in Figure 18-4.
 
-**谷歌的分布式构建。**自2008年以来，谷歌一直使用同时支持远程缓存与远程执行的分布式构建系统，如[图18-4]（#_bookmark1678）所示。
+**谷歌的分布式构建**。自2008年以来，谷歌一直使用同时支持远程缓存与远程执行的分布式构建系统，如图18-4所示。
 
 ![Figure 18-4](./images/Figure%2018-4.png)
 
@@ -578,7 +578,7 @@ If a dependency isn’t internal, it must be external. External dependencies are
 
  **Automatic versus manual dependency management.** Build systems can allow the versions of external dependencies to be managed either manually or automatically. When managed manually, the buildfile explicitly lists the version it wants to download from the artifact repository, often using [a semantic version string](https://semver.org/)such as “1.1.4”. When managed automatically, the source file specifies a range of acceptable versions, and the build system always downloads the latest one. For example, Gradle allows a dependency version to be declared as “1.+” to specify that any minor or patch version of a dependency is acceptable so long as the major version is 1.
 
- **自动管理与手动管理依赖。**构建系统可以支持手动或自动管理外部依赖项的版本。手动管理时，构建文件会明确列出要从产物仓库下载的版本，通常使用[语义版本字符串](https://semver.org/)，例如 "1.1.4"。自动管理时，源文件指定可接受的版本范围，构建系统总是下载该范围内的最新版本。例如，Gradle 允许将依赖版本声明为 "1.+"，表示只要主版本号为1，任何次版本或补丁版本都可以接受。
+ **自动管理与手动管理依赖**。构建系统可以支持手动或自动管理外部依赖项的版本。手动管理时，构建文件会明确列出要从产物仓库下载的版本，通常使用[语义版本字符串](https://semver.org/)，例如 "1.1.4"。自动管理时，源文件指定可接受的版本范围，构建系统总是下载该范围内的最新版本。例如，Gradle 允许将依赖版本声明为 "1.+"，表示只要主版本号为1，任何次版本或补丁版本都可以接受。
 
 Automatically managed dependencies can be convenient for small projects, but they’re usually a recipe for disaster on projects of nontrivial size or that are being worked on by more than one engineer. The problem with automatically managed dependencies is that you have no control over when the version is updated. There’s no way to guarantee that external parties won’t make breaking updates (even when they claim to use semantic versioning), so a build that worked one day might be broken the next with no easy way to detect what changed or to roll it back to a working state. Even if the build doesn’t break, there can be subtle behavior or performance changes that are impossible to track down.
 
@@ -590,7 +590,7 @@ In contrast, because manually managed dependencies require a change in source co
 
 **The One-Version Rule.** Different versions of a library are usually represented by different artifacts, so in theory there’s no reason that different versions of the same external dependency couldn’t both be declared in the build system under different names. That way, each target could choose which version of the dependency it wanted to use. Google has found this to cause a lot of problems in practice, so we enforce a strict [*One-Version Rule*](https://oreil.ly/OFa9V)for all third-party dependencies in our internal codebase.
 
-**单版本规则。**同一个库的不同版本通常对应不同产物，因此理论上可以在构建系统中用不同名称声明同一外部依赖项的多个版本，让各个目标自行选择。谷歌发现，这在实践中会造成许多问题，因此对内部代码库中的所有第三方依赖项严格执行单版本规则。
+**单版本规则**。同一个库的不同版本通常对应不同产物，因此理论上可以在构建系统中用不同名称声明同一外部依赖项的多个版本，让各个目标自行选择。谷歌发现，这在实践中会造成许多问题，因此对内部代码库中的所有第三方依赖项严格执行单版本规则。
 
 The biggest problem with allowing multiple versions is the *diamond dependency* issue. Suppose that target A depends on target B and on v1 of an external library. If target B is later refactored to add a dependency on v2 of the same external library, target A will break because it now depends implicitly on two different versions of the same library. Effectively, it’s never safe to add a new dependency from a target to any third-party library with multiple versions, because any of that target’s users could already be depending on a different version. Following the One-Version Rule makes this conflict impossible—if a target adds a dependency on a third-party library, any existing dependencies will already be on that same version, so they can happily coexist.
 
@@ -602,7 +602,7 @@ We’ll examine this further in the context of a large monorepo in Chapter 21.
 
  **Transitive external dependencies.** Dealing with the transitive dependencies of an external dependency can be particularly difficult. Many artifact repositories such as Maven Central allow artifacts to specify dependencies on particular versions of other artifacts in the repository. Build tools like Maven or Gradle will often recursively download each transitive dependency by default, meaning that adding a single dependency in your project could potentially cause dozens of artifacts to be downloaded in total.
 
- **外部依赖项的传递依赖。**处理外部依赖项所带来的传递依赖，可能格外困难。Maven Central 等许多产物仓库允许产物声明对仓库中其他产物特定版本的依赖。Maven、Gradle 等构建工具通常默认递归下载所有传递依赖项，因此项目中只添加一个依赖项，就可能总共下载数十个产物。
+ **外部依赖项的传递依赖**。处理外部依赖项所带来的传递依赖，可能格外困难。Maven Central 等许多产物仓库允许产物声明对仓库中其他产物特定版本的依赖。Maven、Gradle 等构建工具通常默认递归下载所有传递依赖项，因此项目中只添加一个依赖项，就可能总共下载数十个产物。
 
 This is very convenient: when adding a dependency on a new library, it would be a big pain to have to track down each of that library’s transitive dependencies and add them all manually. But there’s also a huge downside: because different libraries can depend on different versions of the same third-party library, this strategy necessarily violates the One-Version Rule and leads to the diamond dependency problem. If your target depends on two external libraries that use different versions of the same dependency, there’s no telling which one you’ll get. This also means that updating an external dependency could cause seemingly unrelated failures throughout the codebase if the new version begins pulling in conflicting versions of some of its dependencies.
 
@@ -618,7 +618,7 @@ Yet again, the choice here is one between convenience and scalability. Small pro
 
 **Caching build results using external dependencies.** External dependencies are most often provided by third parties that release stable versions of libraries, perhaps without providing source code. Some organizations might also choose to make some of their own code available as artifacts, allowing other pieces of code to depend on them as third- party rather than internal dependencies. This can theoretically speed up builds if artifacts are slow to build but quick to download.
 
-**通过外部依赖缓存构建结果。**外部依赖项通常由第三方提供，以库的稳定版本发布，而且未必包含源代码。有些组织也会把自己的部分代码以产物形式发布，让其他代码把它们当作第三方依赖，而不是内部依赖。如果这些产物构建慢、下载快，理论上就能加快构建速度。
+**通过外部依赖缓存构建结果**。外部依赖项通常由第三方提供，以库的稳定版本发布，而且未必包含源代码。有些组织也会把自己的部分代码以产物形式发布，让其他代码把它们当作第三方依赖，而不是内部依赖。如果这些产物构建慢、下载快，理论上就能加快构建速度。
 
 However, this also introduces a lot of overhead and complexity: someone needs to be responsible for building each of those artifacts and uploading them to the artifact repository, and clients need to ensure that they stay up to date with the latest version. Debugging also becomes much more difficult because different parts of the system will have been built from different points in the repository, and there is no longer a consistent view of the source tree.
 
@@ -630,7 +630,7 @@ A better way to solve the problem of artifacts taking a long time to build is to
 
 **Security and reliability of external dependencies.** Depending on artifacts from third- party sources is inherently risky. There’s an availability risk if the third-party source (e.g., an artifact repository) goes down, because your entire build might grind to a halt if it’s unable to download an external dependency. There’s also a security risk: if the third-party system is compromised by an attacker, the attacker could replace the referenced artifact with one of their own design, allowing them to inject arbitrary code into your build.
 
-**外部依赖的安全性和可靠性。**依赖第三方提供的产物，本身就有风险。首先是可用性风险：产物仓库等第三方来源一旦宕机，依赖项可能无法下载，整个构建也可能因此停摆。其次是安全风险：如果第三方系统遭到入侵，攻击者就能用自己制作的产物替换被引用的产物，向你的构建中注入任意代码。
+**外部依赖的安全性和可靠性**。依赖第三方提供的产物，本身就有风险。首先是可用性风险：产物仓库等第三方来源一旦宕机，依赖项可能无法下载，整个构建也可能因此停摆。其次是安全风险：如果第三方系统遭到入侵，攻击者就能用自己制作的产物替换被引用的产物，向你的构建中注入任意代码。
 
 Both problems can be mitigated by mirroring any artifacts you depend on onto servers you control and blocking your build system from accessing third-party artifact repositories like Maven Central. The trade-off is that these mirrors take effort and resources to maintain, so the choice of whether to use them often depends on the scale of the project. The security issue can also be completely prevented with little overhead by requiring the hash of each third-party artifact to be specified in the source repository, causing the build to fail if the artifact is tampered with.
 
@@ -656,7 +656,7 @@ We took this insight and used it to create a whole new type of *artifact-based* 
 
 The remainder of this chapter explored how to manage dependencies in an artifact- based world. We came to the conclusion that *fine-grained modules scale better than coarse-grained modules*. We also discussed the difficulties of managing dependency versions, describing the O*ne-Version Rule* and the observation that all dependencies should be *versioned manually and explicitly*. Such practices avoid common pitfalls like the diamond dependency issue and allow a codebase to achieve Google’s scale of billions of lines of code in a single repository with a unified build system.
 
-本章的后半部分探讨了如何在基于产物的系统中管理依赖。我们的结论是：*细粒度模块比粗粒度模块更适合规模扩展。我们还讨论了依赖版本管理的困难，介绍了*“单版本规则”*，并指出所有依赖项的版本都应*手动、显式地指定*。这些做法能够避免菱形依赖等常见问题，让代码库在单一仓库、统一构建系统下，达到谷歌数十亿行代码的规模。
+本章的后半部分探讨了如何在基于产物的系统中管理依赖。我们的结论是：*细粒度模块比粗粒度模块更适合规模扩展*。我们还讨论了依赖版本管理的困难，介绍了“*单版本规则*”，并指出所有依赖项的版本都应*手动、显式地指定*。这些做法能够避免菱形依赖等常见问题，让代码库在单一仓库、统一构建系统下，达到谷歌数十亿行代码的规模。
 
 ## TL;DRs  内容提要
 

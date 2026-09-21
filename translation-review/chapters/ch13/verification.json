@@ -2,10 +2,10 @@
   "id": "ch13",
   "file": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
   "status": "verified",
-  "after_sha256": "55725ed0fa5e7c12697f4dc6830e4b06d279b902880b0fa1783e7b426e56699c",
+  "after_sha256": "3b64a5f191581577923565de4a140d11fc9f7b02c276859d6c024c23f1fc94ac",
   "reviewed_chinese_lines": 179,
-  "changed_lines": 155,
-  "english_lines": 161,
+  "changed_lines": 156,
+  "english_lines": 160,
   "english_segments": 192,
   "code_items": 28,
   "links": 54,
@@ -23,6 +23,27 @@
       "before": "1bffb9589e7994b558532eed08f88627742c7c2b8259bff8dd2a755973dac5c4",
       "after": "eb99f23c3233362169370385d5bba2b9ed4d0c7ba6b8dd1114fc5e0a3ce29471",
       "reason": "第 836 行“改变状态”由普通段落改为列表项，与第 843 行“不改变状态”一致；英文原文两项均为列表项。2026-09-21 排版修正。"
+    }
+  ],
+  "english_format_exceptions": [
+    {
+      "line": 129,
+      "kind": "heading",
+      "before": "### Seams",
+      "after": "### Seams 接缝",
+      "reason": "补上小标题的中文，与本章其他小标题的中英并排写法一致，“接缝”为本章既定译法；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 821,
+      "before": "- *State-changing*",
+      "after": "- *State-changing*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 828,
+      "before": "- *Non-state-changing*",
+      "after": "- *Non-state-changing*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
     }
   ]
 }

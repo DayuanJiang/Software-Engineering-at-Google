@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "sourceSha256": "f38e63c2cee62c61e6a3d1a6a7672cf5457e2f84976cf0a22d2480f41c7b4d95",
+  "sourceSha256": "694115063cb14d01d1a93c946d6a146efa6f239e72c6feee96a91d5be4a811ec",
   "sourceUrl": "https://abseil.io/resources/swe-book/html/ch12.html",
   "footnotes": [
     {
@@ -92,14 +92,7 @@
   ],
   "proseCodeBlocks": [],
   "translatorNotes": [],
-  "translations": [
-    {
-      "kind": "heading",
-      "english": "Conclusion",
-      "chinese": "总结",
-      "chineseHtml": "<p>总结</p>\n"
-    }
-  ],
+  "translations": [],
   "textEdits": [
     {
       "source": "如例12-3所示（注2）。",

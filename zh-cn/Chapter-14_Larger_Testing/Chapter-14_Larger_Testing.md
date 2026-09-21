@@ -689,7 +689,7 @@ Diff testing does introduce a few challenges to solve:
 - *配置*  
 	配置和维护一套 SUT 已经很有挑战。同时创建两套可能使复杂性翻倍，尤其是在两套系统存在共享依赖或相互依赖时。
 
-### UAT
+### UAT 用户验收测试
 
 Tests of these type have the following characteristics:
 

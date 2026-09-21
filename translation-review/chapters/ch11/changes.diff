@@ -378,7 +378,7 @@
  **Test sizes in practice.** Having precise definitions of test sizes has allowed us to create tools to enforce them. Enforcement enables us to scale our test suites and still make certain guarantees about speed, resource utilization, and stability. The extent to which these definitions are enforced at Google varies by language. For example, we run all Java tests using a custom security manager that will cause all tests tagged as small to fail if they attempt to do something prohibited, such as establish a network connection.
  
 -**测试规模的实践。**有了测试规模的精确定义，我们就可以创建工具来执行它们。强制执行使我们能够扩展我们的测试套件，并仍然对速度、资源利用和稳定性做出一定的保证。在谷歌，这些定义的执行程度因语言而异。例如，我们使用一个自定义的安全管理器来运行所有的Java测试，如果它们试图做一些被禁止的事情，如建立网络连接，就会导致所有被标记为小型测试失败。
-+**测试规模在实践中的应用。**有了精确的规模定义，就能创建工具来强制落实这些约束。这样，即使测试套件不断扩大，我们仍能对运行速度、资源利用和稳定性作出一定保证。在谷歌，约束的执行程度因语言而异。例如，所有 Java 测试都会在自定义安全管理器下运行；任何标记为小型的测试，只要尝试建立网络连接等被禁止的操作，就会被判定为失败。
++**测试规模在实践中的应用**。有了精确的规模定义，就能创建工具来强制落实这些约束。这样，即使测试套件不断扩大，我们仍能对运行速度、资源利用和稳定性作出一定保证。在谷歌，约束的执行程度因语言而异。例如，所有 Java 测试都会在自定义安全管理器下运行；任何标记为小型的测试，只要尝试建立网络连接等被禁止的操作，就会被判定为失败。
  
  ### Test Scope  测试范围
  

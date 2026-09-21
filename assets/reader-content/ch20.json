@@ -1,60 +1,84 @@
 {
   "format": 2,
-  "sourceSha256": "6ad7f2ef15fce33f467b1c8c13e525d7ccc5385975d9da3661168566930a7238",
+  "sourceSha256": "86518862010dd564cfe6a1638dee2cae8e9bccf21f41c90308f8a0738a4fed01",
   "sourceUrl": "https://abseil.io/resources/swe-book/html/ch20.html",
   "footnotes": [
     {
       "id": "1",
-      "definitionLines": [19, 21],
+      "definitionLines": [
+        19,
+        21
+      ],
       "english": "See `http://errorprone.info/bugpatterns`.",
       "chinese": "查阅 `http://errorprone.info/bugpatterns`。",
       "after": "以及日志语句中会导致程序在执行时崩溃的无效格式字符串。"
     },
     {
       "id": "2",
-      "definitionLines": [23, 25],
+      "definitionLines": [
+        23,
+        25
+      ],
       "english": "Caitlin Sadowski et al. Tricorder: Building a Program Analysis Ecosystem, International Conference on Software Engineering (ICSE), May 2015.",
       "chinese": "Caitlin Sadowski 等人，《Tricorder：构建程序分析生态系统》，国际软件工程会议（ICSE），2015年5月。",
       "after": "表明静态分析检查能够帮助开发者学习，并确实防止反模式进入代码库。"
     },
     {
       "id": "3",
-      "definitionLines": [27, 29],
+      "definitionLines": [
+        27,
+        29
+      ],
       "english": "A good academic reference for static analysis theory is: Flemming Nielson et al. Principles of Program Analysis (Gernamy: Springer, 2004)",
       "chinese": "关于静态分析理论，一份很好的学术参考资料是 Flemming Nielson 等人所著的《程序分析原理》（Gernamy: Springer, 2004）。",
       "after": "以及我们如何将这些最佳实践落实到静态分析工具和流程中。"
     },
     {
       "id": "4",
-      "definitionLines": [81, 83],
+      "definitionLines": [
+        81,
+        83
+      ],
       "english": "Note that there are some specific analyses for which reviewers might be willing to tolerate a much higher false-positive rate: one example is security analyses that identify critical problems.",
       "chinese": "对某些特定分析，审查者可能愿意容忍高得多的误报率，例如用于发现严重问题的安全分析。",
       "after": "谁愿意在数百条误报中费力寻找少数几条真实问题呢？"
     },
     {
       "id": "5",
-      "definitionLines": [91, 93],
+      "definitionLines": [
+        91,
+        93
+      ],
       "english": "See later in this chapter for more information on additional integration points when editing and browsing code.",
       "chinese": "关于如何在编辑和浏览代码时集成静态分析，详见本章后文。",
       "after": "代码审查是展示分析结果的理想环节。"
     },
     {
       "id": "6",
-      "definitionLines": [105, 107],
+      "definitionLines": [
+        105,
+        107
+      ],
       "english": "Louis Wasserman, “Scalable, Example-Based Refactorings with Refaster.” Workshop on Refactoring Tools, 2013.",
       "chinese": "Louis Wasserman，“使用 Refaster 进行可扩展的、基于示例的重构”，重构工具研讨会，2013年。",
       "after": "说明分析器预期执行的变换，就能编写分析器。"
     },
     {
       "id": "7",
-      "definitionLines": [149, 151],
+      "definitionLines": [
+        149,
+        151
+      ],
       "english": "Caitlin Sadowski, Jeffrey van Gogh, Ciera Jaspan, Emma Söderberg, and Collin Winter, Tricorder: Building a Program Analysis Ecosystem, International Conference on Software Engineering (ICSE), May 2015.",
       "chinese": "Caitlin Sadowski, Jeffrey van Gogh, Ciera Jaspan, Emma Söderberg, and Collin Winter, 《Tricorder：构建程序分析生态系统》，国际软件工程会议（ICSE），2015年5月。",
       "after": "我们的静态分析平台 Tricorder 是谷歌静态分析工作的核心组成部分。"
     },
     {
       "id": "8",
-      "definitionLines": [153, 155],
+      "definitionLines": [
+        153,
+        155
+      ],
       "english": "Caitlin Sadowski, Edward Aftandilian, Alex Eagle, Liam Miller-Cushon, and Ciera Jaspan, “Lessons from Building Static Analysis Tools at Google”, Communications of the ACM, 61 No. 4 (April 2018): 58–66, `https://cacm.acm.org/magazines/2018/4/226371-lessons-from-building-static-analysis-tools-at-google/fulltext`.",
       "chinese": "Caitlin Sadowski, Edward Aftandilian, Alex Eagle, Liam Miller-Cushon, and Ciera Jaspan, “Lessons from Building Static Analysis Tools at Google”, 《ACM 通讯》，61 No. 4 (April 2018): 58–66, `https:// cacm.acm.org/magazines/2018/4/226371-lessons-from-building-static-analysis-tools-at-google/fulltext`。",
       "after": "在多次尝试将静态分析融入开发者工作流而未能成功之后，我们开发了 Tricorder。"
@@ -79,12 +103,18 @@
   "translations": [],
   "issues": [
     {
-      "sourceLines": [153, 155],
+      "sourceLines": [
+        153,
+        155
+      ],
       "blocking": false,
       "reason": "脚注8的既有中文在 https:// 后含空格，英文 URL 无此空格。按脚注原样保留要求未修正，不能将该中文地址视为已验证可用链接。"
     },
     {
-      "sourceLines": [165, 173],
+      "sourceLines": [
+        165,
+        173
+      ],
       "blocking": false,
       "reason": "两个哈希代码块在源 Markdown 中标为 C++，但 >>> 运算符及相邻 Error Prone 说明指向 Java 示例。它们是真实代码，不属于 proseCodeBlocks；本任务不更改源码或语言标签。"
     }

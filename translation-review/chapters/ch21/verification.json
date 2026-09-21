@@ -28,5 +28,6 @@
       "reason": "Repair full-width Markdown brackets; intended visible URL unchanged."
     }
   ],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": []
 }

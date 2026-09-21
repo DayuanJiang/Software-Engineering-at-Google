@@ -281,7 +281,7 @@
  
  ### Compiler Integration 编译器集成
  
-@@ -248,35 +248,35 @@
+@@ -248,42 +248,42 @@
  - Produce no effective false positives (the analysis should never stop the build for correct code)
  - Report issues affecting only correctness rather than style or best practices
  
@@ -325,11 +325,13 @@
  Static analysis can be a great tool to improve a codebase, find bugs early, and allow more expensive processes (such as human review and testing) to focus on issues that are not mechanically verifiable. By improving the scalability and usability of our static analysis infrastructure, we have made static analysis an effective component of software development at Google.
  
 -静态分析是一个很好的工具，可以改进代码库，尽早发现错误，并允许成本更高的过程（如人工审查和测试）聚焦在无法通过机器方式验证的问题。通过提高静态分析基础设施的可扩展性和可用性，我们使静态分析成为 Google 软件开发的有效组成部分。
+-
+-## 内容提要
 +静态分析能够有效改善代码库、尽早发现缺陷，让人工审查和测试等成本更高的流程专注于无法机械验证的问题。通过提高静态分析基础设施的可扩展性和可用性，我们让静态分析在谷歌的软件开发中切实发挥作用。
++
++## TL;DRs  内容提要
  
- ## 内容提要
- 
-@@ -284,6 +284,6 @@
+ - *Focus on developer happiness*. We have invested considerable effort in building feedback channels between analysis users and analysis writers in our tools, and aggressively tune analyses to reduce the number of false positives.
  - *Make static analysis part of the core developer workflow*. The main integration point for static analysis at Google is through code review, where analysis tools provide fixes and involve reviewers. However, we also integrate analyses at additional points (via compiler checks, gating code commits, in IDEs, and when browsing code).
  - *Empower users to contribute*. We can scale the work we do building and maintaining analysis tools and platforms by leveraging the expertise of domain experts. Developers are continuously adding new analyses and checks that make their lives easier and our codebase better.
  

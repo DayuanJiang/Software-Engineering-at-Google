@@ -66,3 +66,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-16_Version_Co
 ```
 
 机器结果见 `verification.json`；`verify.py` 只读本章及共享基线，生成模式也只写本章指定范围，不修改其他章节或共享审校工具。
+
+## 2026-09-21 排版修正（第二轮）
+
+- 第 78 行删去 `**开发本质上……所做的工作。**` 两侧的加粗标记。英文原文没有强调；原写法闭合 `**` 后紧跟字母 V，标记不生效而原样显示。

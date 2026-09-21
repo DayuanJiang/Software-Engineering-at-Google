@@ -126,7 +126,7 @@ The following sections in this chapter will discuss how to make use of test doub
 
 本章后续各节将讨论如何在更复杂的情况下使用测试替身。
 
-### Seams
+### Seams 接缝
 
 ```txt
 Seams是可以更改程序中的行为而无需在指定位置进行编辑的地方。
@@ -818,14 +818,14 @@ When performing interaction testing, following these practices can reduce some o
 #### Prefer to perform interaction testing only for state-changing functions  尽量只对改变状态的函数进行交互测试
 
 When a system under test calls a function on a dependency, that call falls into one of two categories:
-- *State-changing*
+- *State-changing*  
     Functions that have side effects on the world outside the system under test. Examples: 
 
 ```java
 sendEmail(), saveRecord(), logAccess().
 ```
 
-- *Non-state-changing*
+- *Non-state-changing*  
 Functions that don’t have side effects; they return information about the world outside the system under test and don’t modify anything. Examples: 
 ```java
 getUser(), findResults(), readFile().
@@ -833,14 +833,14 @@ getUser(), findResults(), readFile().
 
 被测系统调用依赖中的函数时，调用可分为两类：
 
-- *改变状态*
+- *改变状态*  
 	会对被测系统之外的环境产生副作用的函数。例如：
 
 ```java
 sendEmail(), saveRecord(), logAccess().
 ```
 
-- *不改变状态*
+- *不改变状态*  
 没有副作用的函数：返回被测系统之外的信息，但不作任何修改。例如：
 
 ```java

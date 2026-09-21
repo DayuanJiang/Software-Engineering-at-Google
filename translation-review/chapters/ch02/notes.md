@@ -56,3 +56,7 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-2_How_to_Work
 ```
 
 `verify.py --write-artifacts` 仅机械生成本目录的 `edits.json` 与 `verification.json`，不修改章节或共享文件。
+
+## 2026-09-21 排版修正（第二轮）
+
+- 第 322 行引文末尾多出一个 `*`，英文原文没有强调，页面上原样显示星号，删去。

@@ -815,7 +815,7 @@
  
  #### Limitations  局限性
  
-@@ -678,16 +678,16 @@
+@@ -678,18 +678,18 @@
  - *Setup*  
  	Configuring and maintaining one SUT is fairly challenging. Creating two at a time can double the complexity, especially if these share interdependencies.
  
@@ -836,9 +836,13 @@
 +	为差异测试生成足够的有效流量并不容易。测试数据必须覆盖足够多的场景，才能发现边角情况中的差异，但这类数据很难靠人工挑选和维护。
  - *配置*  
 -	配置和维护一个SUT是相当具有挑战性的。一次创建两个可以使复杂性加倍，特别是如果这些共享相互依赖关系。
+-
+-### UAT
 +	配置和维护一套 SUT 已经很有挑战。同时创建两套可能使复杂性翻倍，尤其是在两套系统存在共享依赖或相互依赖时。
++
++### UAT 用户验收测试
  
- ### UAT
+ Tests of these type have the following characteristics:
  
 @@ -697,23 +697,23 @@
  - Data: handcrafted

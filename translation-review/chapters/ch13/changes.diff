@@ -118,15 +118,19 @@
  
  *Example 13-3. Using the test double*
  
-@@ -124,7 +124,7 @@
+@@ -124,9 +124,9 @@
  
  The following sections in this chapter will discuss how to make use of test doubles in more complex situations than this one.
  
 -本章下面的章节将讨论如何在比这更复杂的情况下使用测试替代。
+-
+-### Seams
 +本章后续各节将讨论如何在更复杂的情况下使用测试替身。
++
++### Seams 接缝
  
- ### Seams
- 
+ ```txt
+ Seams是可以更改程序中的行为而无需在指定位置进行编辑的地方。
 @@ -134,15 +134,15 @@
  
  Code is said to be [*testable* ](https://oreil.ly/yssV2)if it is written in a way that makes it possible to write unit tests for the code. A [*seam* ](https://oreil.ly/pFSFf)is a way to make code testable by allowing for the use of test doubles—it makes it possible to use different dependencies for the system under test rather than the dependencies used in a production environment.
@@ -760,7 +764,7 @@
  
  ```java
  verify(databaseReader, atMostOnce()).selectRecords();
-@@ -807,15 +807,15 @@
+@@ -807,41 +807,41 @@
  
  Interaction testing is not a complete replacement for state testing. If you are not able to perform state testing in a unit test, strongly consider supplementing your test suite with larger-scoped tests that do perform state testing. For instance, if you have a unit test that validates usage of a database through interaction testing, consider adding an integration test that can perform state testing against a real database. Larger-scope testing is an important strategy for risk mitigation, and we discuss it in the next chapter.
  
@@ -779,8 +783,18 @@
 +#### Prefer to perform interaction testing only for state-changing functions  尽量只对改变状态的函数进行交互测试
  
  When a system under test calls a function on a dependency, that call falls into one of two categories:
- - *State-changing*
-@@ -831,17 +831,17 @@
+-- *State-changing*
++- *State-changing*  
+     Functions that have side effects on the world outside the system under test. Examples: 
+ 
+ ```java
+ sendEmail(), saveRecord(), logAccess().
+ ```
+ 
+-- *Non-state-changing*
++- *Non-state-changing*  
+ Functions that don’t have side effects; they return information about the world outside the system under test and don’t modify anything. Examples: 
+ ```java
  getUser(), findResults(), readFile().
  ```
  
@@ -790,15 +804,16 @@
 -	对被测系统以外的范围有副作用的函数。例子：
 +被测系统调用依赖中的函数时，调用可分为两类：
 +
-+- *改变状态*
++- *改变状态*  
 +	会对被测系统之外的环境产生副作用的函数。例如：
  
  ```java
  sendEmail(), saveRecord(), logAccess().
  ```
  
- - *不改变状态*
+-- *不改变状态*
 -没有副作用的函数；它们返回关于被测系统以外的范围的信息，但不进行任何修改。例如：
++- *不改变状态*  
 +没有副作用的函数：返回被测系统之外的信息，但不作任何修改。例如：
  
  ```java

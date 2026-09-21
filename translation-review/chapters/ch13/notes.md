@@ -77,3 +77,10 @@ git -c core.whitespace=-blank-at-eol diff --check -- zh-cn/Chapter-13_Test_Doubl
 ## 2026-09-21 结构修正
 
 - 第 836 行 `*改变状态*` 改为 `- *改变状态*`，与其后的 `- *不改变状态*` 一致，使两类函数在译文中同为列表项，与英文原文结构对应。阅读器随后按列表渲染，不再出现一段为普通段落、一段为项目符号的情况。
+
+- 第 836 行 `- *改变状态*` 与第 843 行 `- *不改变状态*` 行尾补两个空格作硬换行，说明文字另起一行；第 843 行由“已审阅、未改动”转入修改清单。
+- 第 821 行 `- *State-changing*`、第 828 行 `- *Non-state-changing*` 两处英文术语行同样补硬换行，英文文字不变，登记在 `translation-review/english-format-exceptions.json`。
+
+## 2026-09-21 排版修正
+
+- 第 129 行 `### Seams` 补为 `### Seams 接缝`，与本章其他小标题的中英并排写法一致，“接缝”沿用本章术语表。阅读器原先在显示时替换该标题，`assets/reader-content/ch13.json` 中对应条目已删除。英文行改动登记于 `translation-review/english-format-exceptions.json`。

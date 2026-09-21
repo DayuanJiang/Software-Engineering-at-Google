@@ -390,7 +390,7 @@ Let’s discuss two examples of how a containerized abstraction allows an organi
 
 A *filesystem abstraction* provides a way to incorporate software that was not written in the company without the need to manage custom machine configurations. This might be open source software an organization runs in its datacenter, or acquisitions that it wants to onboard onto its CaaS. Without a filesystem abstraction, onboarding a binary that expects a different filesystem layout (e.g., expecting a helper binary at */bin/foo/bar*) would require either modifying the base layout of all machines in the fleet, or fragmenting the fleet, or modifying the software (which might be difficult, or even impossible due to licence considerations).
 
-*文件系统抽象*让组织能够接入并非由本公司编写的软件，而不必管理定制的机器配置。这些软件可能是在数据中心运行的开源软件，也可能来自被收购的公司，需要迁入本组织的 CaaS。如果没有文件系统抽象，要接入一个依赖不同文件系统布局的二进制程序，例如要求在*/bin/foo/bar*处存在辅助程序，就必须修改机群中所有机器的基本布局，或将机群拆成不同部分，或修改软件本身；而修改软件可能很难，甚至因许可证限制而无法进行。
+*文件系统抽象*让组织能够接入并非由本公司编写的软件，而不必管理定制的机器配置。这些软件可能是在数据中心运行的开源软件，也可能来自被收购的公司，需要迁入本组织的 CaaS。如果没有文件系统抽象，要接入一个依赖不同文件系统布局的二进制程序，例如要求在 */bin/foo/bar* 处存在辅助程序，就必须修改机群中所有机器的基本布局，或将机群拆成不同部分，或修改软件本身；而修改软件可能很难，甚至因许可证限制而无法进行。
 
 Even though these solutions might be feasible if importing an external piece of software is something that happens once in a lifetime, it is not a sustainable solution if importing software becomes a common (or even only-somewhat-rare) practice.
 

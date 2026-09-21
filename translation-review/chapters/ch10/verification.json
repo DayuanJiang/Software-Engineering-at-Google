@@ -2,9 +2,9 @@
   "id": "ch10",
   "file": "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md",
   "status": "verified",
-  "after_sha256": "c858e9094bc7fca551b6c9572008a4f8e48866b4cf77549764bb1e7b4f2ddd5c",
+  "after_sha256": "b9f80efba38f81675e8ddd873ed35aa73930aae269cf54678a7ca88b09a154ac",
   "reviewed_chinese_lines": 174,
-  "changed_lines": 147,
+  "changed_lines": 149,
   "english_lines": 151,
   "english_segments": 171,
   "code_items": 13,
@@ -15,5 +15,6 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": []
 }

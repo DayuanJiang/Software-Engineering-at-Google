@@ -2,7 +2,7 @@
   "id": "foreword",
   "file": "zh-cn/Foreword.md",
   "status": "verified",
-  "after_sha256": "b6616df21c59578ea0d741306dc0f46ef7a87721d8be6351c2d8eb85ee18874d",
+  "after_sha256": "5d63af1fde0155e7bbda062a55fb934f2e4191061947875ca21085facfbdb32a",
   "reviewed_chinese_lines": 7,
   "changed_lines": 6,
   "english_lines": 7,
@@ -15,5 +15,6 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": []
 }

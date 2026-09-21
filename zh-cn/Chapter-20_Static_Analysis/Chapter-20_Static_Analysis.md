@@ -278,7 +278,7 @@ Static analysis can be a great tool to improve a codebase, find bugs early, and 
 
 静态分析能够有效改善代码库、尽早发现缺陷，让人工审查和测试等成本更高的流程专注于无法机械验证的问题。通过提高静态分析基础设施的可扩展性和可用性，我们让静态分析在谷歌的软件开发中切实发挥作用。
 
-## 内容提要
+## TL;DRs  内容提要
 
 - *Focus on developer happiness*. We have invested considerable effort in building feedback channels between analysis users and analysis writers in our tools, and aggressively tune analyses to reduce the number of false positives.
 - *Make static analysis part of the core developer workflow*. The main integration point for static analysis at Google is through code review, where analysis tools provide fixes and involve reviewers. However, we also integrate analyses at additional points (via compiler checks, gating code commits, in IDEs, and when browsing code).

@@ -2,10 +2,10 @@
   "id": "ch12",
   "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
   "status": "verified",
-  "after_sha256": "f38e63c2cee62c61e6a3d1a6a7672cf5457e2f84976cf0a22d2480f41c7b4d95",
+  "after_sha256": "694115063cb14d01d1a93c946d6a146efa6f239e72c6feee96a91d5be4a811ec",
   "reviewed_chinese_lines": 168,
   "changed_lines": 131,
-  "english_lines": 129,
+  "english_lines": 128,
   "english_segments": 142,
   "code_items": 37,
   "links": 11,
@@ -15,5 +15,14 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 923,
+      "kind": "heading",
+      "before": "## Conclusion",
+      "after": "## Conclusion 总结",
+      "reason": "补上小标题的中文，与其他各章的“## Conclusion 总结”一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ]
 }

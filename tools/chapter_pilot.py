@@ -141,8 +141,8 @@ def verify(check_other_sources: bool = True) -> dict:
     }
 
 
-def write_report():
-    result = verify()
+def write_report(check_other_sources: bool = True):
+    result = verify(check_other_sources)
     manifest, _, original, expected = load()
     before = original.decode("utf-8").splitlines()
     after = expected.decode("utf-8").splitlines()
@@ -182,7 +182,7 @@ def main():
     elif args.command == "verify":
         print(json.dumps(verify(check_other_sources=not args.chapter_only), ensure_ascii=False, indent=2))
     else:
-        write_report()
+        write_report(check_other_sources=not args.chapter_only)
 
 
 if __name__ == "__main__":

@@ -265,7 +265,7 @@ We all know that code comments are essential to a well-documented API. But what 
 
 我们都知道，API 要有完善的文档，代码注释必不可少。但怎样的注释才算“好”？前面区分了参考文档的两类主要读者：查找者和浏览者。前者知道自己需要什么，后者则不清楚。对查找者而言，最有帮助的是代码库中一致的注释格式，让他们能快速浏览 API，找到所需信息。对浏览者而言，最重要的是明确说明 API 的用途，通常应放在文件开头的注释中。下面几个小节会具体介绍代码注释。这里的指南针对 C++，谷歌对其他语言也有类似规则。
 
-**File comments 文件注释**
+**File comments 文件注释**  
 Almost all code files at Google must contain a file comment. (Some header files that contain only one utility function, etc., might deviate from this standard.) File comments should begin with a header of the following form:
 
 谷歌几乎所有代码文件都必须包含文件注释；只含一个工具函数的头文件等情况可能例外。文件注释应以下列形式开头：
@@ -518,7 +518,7 @@ Importantly, if documentation is tied into the engineering workflow, it will oft
 重要的是，文档一旦融入工程工作流，往往就会随着时间推移不断改进。谷歌现在的大多数文档实际上都会经历受众评审：读者迟早会使用文档，而我们希望，他们发现文档不管用时，会通过缺陷报告或其他反馈途径告诉作者。
 
 ---
-**Case Study: The Developer Guide Library 案例研究：开发者指南库**
+**Case Study: The Developer Guide Library 案例研究：开发者指南库**  
 As mentioned earlier, there were problems associated with having most (almost all) engineering documentation contained within a shared wiki: little ownership of important documentation, competing documentation, obsolete information, and difficulty in filing bugs or issues with documentation. But this problem was not seen in some documents: the Google C++ style guide was owned by a select group of senior engineers (style arbiters) who managed it. The document was kept in good shape because certain people cared about it. They implicitly owned that document. The document was also canonical: there was only one C++ style guide.
 
 前面提到，把大多数乃至几乎所有工程文档都放在共享维基中，会带来一些问题：重要文档缺乏负责人，同一主题存在相互竞争的文档，信息过时，文档错误或问题也难以报告。但有些文档没有这些问题。例如，谷歌的 C++ 风格指南由一组选定的资深工程师，也就是风格仲裁者负责管理。有人关心这份文档，它就一直保持着良好状态。这些人实际上承担了负责人的职责。它也具有权威性，因为 C++ 风格指南只有一份。

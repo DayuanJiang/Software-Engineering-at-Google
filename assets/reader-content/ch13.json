@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "sourceSha256": "55725ed0fa5e7c12697f4dc6830e4b06d279b902880b0fa1783e7b426e56699c",
+  "sourceSha256": "3b64a5f191581577923565de4a140d11fc9f7b02c276859d6c024c23f1fc94ac",
   "sourceUrl": "https://abseil.io/resources/swe-book/html/ch13.html",
   "footnotes": [],
   "proseCodeBlocks": [
@@ -29,11 +29,6 @@
     }
   ],
   "translations": [
-    {
-      "kind": "heading",
-      "english": "Seams",
-      "chinese": "接缝"
-    },
     {
       "english": "Example 13-1. A credit card service",
       "chinese": "例13-1：信用卡服务"

@@ -1,16 +1,15 @@
 {
   "source": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
   "baseline_sha256": "4eb5bb46155111e62dcfd23cb256a73f19a8ae9a1fc8fa27bb08c313c29b6bb8",
-  "current_sha256": "9b95b492a2296b5d8600c7f49385e78ff45c6813976554ead04f62193abccfc7",
+  "current_sha256": "688a72a834ec947385d6c5678482a1a22168fb98285ab5235b24430ffa1e5fc1",
   "reviewed_chinese_lines": 159,
-  "edited_chinese_lines": 135,
+  "edited_chinese_lines": 136,
   "unchanged_reviewed_lines": [
     6,
     71,
     122,
     218,
     288,
-    329,
     331,
     333,
     337,
@@ -30,7 +29,8 @@
     539,
     558
   ],
-  "other_source_files_unchanged": 31,
+  "other_source_files_unchanged": null,
+  "scope": "chapter_only",
   "images_unchanged": 42,
   "punctuation_residuals": 0,
   "english_lines": 145,

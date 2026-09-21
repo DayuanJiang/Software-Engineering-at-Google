@@ -377,10 +377,12 @@
      We have processes and policies like the Beyoncé Rule. The net effect of these processes is that upgrades remain feasible because infrastructure teams do not need to worry about every unknown usage, only the ones that are visible in our CI systems.
  
 -通过这些和其他经验，我们发现了许多影响代码库灵活性的因素：
-+这些经历让我们认识到，代码库的灵活性受许多因素影响：
- 
- - *专业知识*
+-
+-- *专业知识*
 -    我们知道如何做到这一点；对于某些语言，我们现在已经在许多平台上进行了数百次编译器升级。
++这些经历让我们认识到，代码库的灵活性受许多因素影响：
++
++- *专业知识*  
 +    我们已经掌握了方法。对于某些语言，我们在多个平台上累计完成了数百次编译器升级。
  - *稳定性*  
 -    版本之间的更改更少，因为我们更有规律的采用版本；对于某些语言，我们现在每一到两周进行一次编译器升级部署。

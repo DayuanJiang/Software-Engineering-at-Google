@@ -2,7 +2,7 @@
   "id": "ch05",
   "file": "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md",
   "status": "verified",
-  "after_sha256": "a7afbe07ae471a5b59edf85e645c85d08365d25b213a18f64efc5914c3acfd36",
+  "after_sha256": "9b3a06cf9cb02e804e2b045c3c06ae44a138d9545bb96139179e3b86d75aeeb4",
   "reviewed_chinese_lines": 168,
   "changed_lines": 141,
   "english_lines": 133,
@@ -34,5 +34,13 @@
     }
   ],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 475,
+      "before": "- *Seek to replace yourself*",
+      "after": "- *Seek to replace yourself*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ]
 }

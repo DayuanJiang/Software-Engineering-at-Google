@@ -1,0 +1,140 @@
+{
+  "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md": [
+    {
+      "line": 23,
+      "before": "  - **Information fragmentation**",
+      "after": "  - **Information fragmentation**  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 25,
+      "before": "  - **Information duplication**",
+      "after": "  - **Information duplication**  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 27,
+      "before": "  - **Information skew**",
+      "after": "  - **Information skew**  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 29,
+      "before": "- *Single point of failure (SPOF)*",
+      "after": "- *Single point of failure (SPOF)*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 32,
+      "before": "- *All-or-nothing expertise*",
+      "after": "- *All-or-nothing expertise*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md": [
+    {
+      "line": 475,
+      "before": "- *Seek to replace yourself*",
+      "after": "- *Seek to replace yourself*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md": [
+    {
+      "line": 129,
+      "kind": "heading",
+      "before": "### Seams",
+      "after": "### Seams 接缝",
+      "reason": "补上小标题的中文，与本章其他小标题的中英并排写法一致，“接缝”为本章既定译法；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 821,
+      "before": "- *State-changing*",
+      "after": "- *State-changing*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 828,
+      "before": "- *Non-state-changing*",
+      "after": "- *Non-state-changing*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与同一列表其他项一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md": [
+    {
+      "line": 28,
+      "before": "*Fast*",
+      "after": "*Fast*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 31,
+      "before": "*Correct*",
+      "after": "*Correct*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md": [
+    {
+      "line": 7,
+      "before": "**Written by Rachel Tannenbaum**",
+      "after": "**Written by Rachel Tannenbaum**  ",
+      "reason": "作者行补两个行尾空格作硬换行，使编辑行另起一行，与其他各章的作者、编辑两行显示一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 365,
+      "kind": "heading",
+      "before": "### CI Challenges",
+      "after": "### CI Challenges 持续集成的挑战",
+      "reason": "补上小标题的中文，沿用阅读器此前在显示时采用的“持续集成的挑战”，正文第 719 行的引用同步改为该名称；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 437,
+      "before": "*False positives*",
+      "after": "*False positives*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+    },
+    {
+      "line": 440,
+      "before": "*False negatives*",
+      "after": "*False negatives*  ",
+      "reason": "术语行补两个行尾空格作硬换行，使说明文字另起一行，与中文对应行一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md": [
+    {
+      "line": 618,
+      "kind": "heading",
+      "before": "## TL;DRs(Too long;Don't read)  内容提要",
+      "after": "## TL;DRs  内容提要",
+      "reason": "删去原译者加在标题里的英文注解，与其他 24 章的“## TL;DRs  内容提要”统一；中文不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": [
+    {
+      "line": 923,
+      "kind": "heading",
+      "before": "## Conclusion",
+      "after": "## Conclusion 总结",
+      "reason": "补上小标题的中文，与其他各章的“## Conclusion 总结”一致；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md": [
+    {
+      "line": 692,
+      "kind": "heading",
+      "before": "### UAT",
+      "after": "### UAT 用户验收测试",
+      "reason": "补上小标题的中文，与本章其他小标题一致，正文写作“用户验收测试（UAT）”；英文文字不变。2026-09-21 排版修正。"
+    }
+  ],
+  "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md": [
+    {
+      "line": 281,
+      "kind": "heading",
+      "before": "## 内容提要",
+      "after": "## TL;DRs  内容提要",
+      "reason": "补回其他 24 章共有的英文“TL;DRs”，中文不变。2026-09-21 排版修正。"
+    }
+  ]
+}

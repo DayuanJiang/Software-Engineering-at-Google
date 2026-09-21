@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "sourceSha256": "7cfdcdca320b006d4bf6ec1aa1aa824f33375ff6f92a94c9693697aad2520f07",
+  "sourceSha256": "f065e906c9243bb0314be7c2d212fc739b6537adb699b1d85f8a7a0c53d20d3f",
   "sourceUrl": "https://abseil.io/resources/swe-book/html/ch02.html",
   "textEdits": [
     {
@@ -17,14 +17,20 @@
   "footnotes": [
     {
       "id": "1",
-      "definitionLines": [50, 51],
+      "definitionLines": [
+        50,
+        51
+      ],
       "english": "Ben Collins-Sussman, also an author within this book.",
       "chinese": "Ben Collins-Sussman，也是本书的作者之一。",
       "after": "过去20年里，我和同事 Ben 在许多编程会议上做过演讲。"
     },
     {
       "id": "2",
-      "definitionLines": [166, 167],
+      "definitionLines": [
+        166,
+        167
+      ],
       "english": "Literally, if you are, in fact, a bike designer.",
       "chinese": "如果你真的是自行车设计师，这里的“造轮子”就不是比喻了。",
       "after": "早期很容易犯根本性的设计错误，也可能重复造轮子。",
@@ -33,7 +39,10 @@
     },
     {
       "id": "3",
-      "definitionLines": [169, 170],
+      "definitionLines": [
+        169,
+        170
+      ],
       "english": "I should note that sometimes it’s dangerous to get too much feedback too early in the process if you’re still unsure of your general direction or goal.",
       "chinese": "这里要提醒一句：如果你还不确定总体方向或目标，过早获得太多反馈有时也会带来风险。",
       "after": "在早期征求的反馈越多，这种风险就越低。",
@@ -42,28 +51,40 @@
     },
     {
       "id": "4",
-      "definitionLines": [232, 233],
+      "definitionLines": [
+        232,
+        233
+      ],
       "english": "I do, however, acknowledge that serious introverts likely need more peace, quiet, and alone time than most people and might benefit from a quieter environment, if not their own office.",
       "chinese": "不过，我也承认，性格非常内向的人可能比大多数人更需要安宁、静谧和独处的时间。即使没有独立办公室，更安静的环境也可能对他们有益。",
       "after": "我认为，对大多数工程师而言，独立办公室不仅没有必要，甚至相当危险。"
     },
     {
       "id": "5",
-      "definitionLines": [307, 308],
+      "definitionLines": [
+        307,
+        308
+      ],
       "english": "This is incredibly difficult if you’ve been burned in the past by delegating to incompetent people.",
       "chinese": "如果你过去曾因把工作交给不称职的人而吃过亏，做到这一点就会格外困难。",
       "after": "你相信他人有能力，也会做正确的事，并且愿意在适当的时候让他们主导。"
     },
     {
       "id": "6",
-      "definitionLines": [399, 400],
+      "definitionLines": [
+        399,
+        400
+      ],
       "english": "You can find a dozen variants of this legend on the web, attributed to different famous managers.",
       "chinese": "网上能找到这个传闻的十几种版本，分别被说成是不同知名经理人的故事。",
       "after": "我刚花了1000万美元培训你！”"
     },
     {
       "id": "7",
-      "definitionLines": [402, 403],
+      "definitionLines": [
+        402,
+        403
+      ],
       "english": "By the same token, if you do the same thing over and over and keep failing, it’s not failure, it’s incompetence.",
       "chinese": "同样的道理，如果你一次又一次地做同样的事情，却不断失败，那不是失败，而是无能。",
       "after": "失败是学习的宝贵机会，能帮助我们在下次尝试时做得更好。"

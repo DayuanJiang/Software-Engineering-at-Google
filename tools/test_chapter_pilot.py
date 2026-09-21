@@ -51,7 +51,7 @@ class PilotTests(unittest.TestCase):
     def test_chapter_matches_reviewed_manifest(self):
         result = pilot.verify(check_other_sources=False)
         self.assertEqual(result["reviewed_chinese_lines"], 159)
-        self.assertEqual(result["edited_chinese_lines"], 135)
+        self.assertEqual(result["edited_chinese_lines"], 136)
         self.assertEqual(result["scope"], "chapter_only")
         self.assertIsNone(result["other_source_files_unchanged"])
         self.assertEqual(result["punctuation_residuals"], 0)
@@ -74,10 +74,14 @@ class PilotTests(unittest.TestCase):
 
     def test_trailing_spaces_only_preserve_existing_markdown_breaks(self):
         _, _, original, expected = pilot.load()
-        for before, after in zip(original.decode().splitlines(), expected.decode().splitlines()):
+        added_breaks = set()
+        for number, (before, after) in enumerate(zip(original.decode().splitlines(), expected.decode().splitlines()), 1):
             if after.endswith(" ") and before != after:
-                self.assertTrue(before.endswith("  "))
                 self.assertTrue(after.endswith("  "))
+                if not before.endswith("  "):
+                    added_breaks.add(number)
+        # Line 329 "专业知识" gained the hard break its sibling list terms already had (2026-09-21).
+        self.assertEqual(added_breaks, {329})
 
 
 if __name__ == "__main__":

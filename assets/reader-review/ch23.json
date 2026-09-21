@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "sourceSha256": "e2b22ec3217a0a4e5cb87ab892f8b3b6f5e54aa4361a26ccb75db5761e27dc5a",
+  "sourceSha256": "466c29d4e1d45ed49926a3e2d0710a315a78b8daaeef678d879819448c96c67e",
   "sourceUrl": "https://abseil.io/resources/swe-book/html/ch23.html",
   "footnotes": [
     {
@@ -212,12 +212,6 @@
   ],
   "translatorNotes": [],
   "translations": [
-    {
-      "kind": "heading",
-      "english": "CI Challenges",
-      "chinese": "持续集成的挑战",
-      "chineseHtml": "<p>持续集成的挑战</p>\n"
-    },
     {
       "english": "Figure 23-1. Life of a code change",
       "chinese": "图23-1. 代码变更的生命周期",

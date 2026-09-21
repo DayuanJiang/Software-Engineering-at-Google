@@ -2,11 +2,11 @@
   "id": "ch20",
   "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
   "status": "verified",
-  "after_sha256": "6ad7f2ef15fce33f467b1c8c13e525d7ccc5385975d9da3661168566930a7238",
+  "after_sha256": "86518862010dd564cfe6a1638dee2cae8e9bccf21f41c90308f8a0738a4fed01",
   "reviewed_chinese_lines": 83,
   "changed_lines": 64,
   "english_lines": 69,
-  "english_segments": 78,
+  "english_segments": 79,
   "code_items": 10,
   "links": 12,
   "footnote_markers": 16,
@@ -15,5 +15,14 @@
   "held_line_count": 0,
   "prose_code_exceptions": [],
   "link_syntax_exceptions": [],
-  "structure_exceptions": []
+  "structure_exceptions": [],
+  "english_format_exceptions": [
+    {
+      "line": 281,
+      "kind": "heading",
+      "before": "## 内容提要",
+      "after": "## TL;DRs  内容提要",
+      "reason": "补回其他 24 章共有的英文“TL;DRs”，中文不变。2026-09-21 排版修正。"
+    }
+  ]
 }

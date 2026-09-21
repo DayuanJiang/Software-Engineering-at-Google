@@ -40,7 +40,13 @@ def original(file, baseline):
     return raw
 
 
-def reconstruct(raw, replacements):
+def english_format_fixes(file):
+    """Registered English lines whose only change is trailing whitespace (Markdown hard breaks)."""
+    path = audit.DEFAULT_OUT / "english-format-exceptions.json"
+    return json.loads(path.read_text()).get(file, []) if path.exists() else []
+
+
+def reconstruct(raw, replacements, format_fixes=()):
     lines = raw.decode("utf-8").splitlines(keepends=True)
     for number, text in replacements.items():
         number = int(number)
@@ -52,11 +58,27 @@ def reconstruct(raw, replacements):
             raise ValueError(f"Not a Chinese single-line edit: {number}")
         ending = "\r\n" if old.endswith("\r\n") else "\n" if old.endswith("\n") else ""
         lines[number - 1] = text + ending
+    for fix in format_fixes:
+        number = fix["line"]
+        old = lines[number - 1].rstrip("\r\n")
+        if old != fix["before"]:
+            raise ValueError(f"Registered line fix does not match the file: {number}")
+        if fix.get("kind") == "heading":
+            # A registered heading edit (Chinese title added, or shared wording restored) keeps the heading level.
+            levels = [re.match(r"#{1,6}(?= )", text) for text in (old, fix["after"])]
+            if not all(levels) or levels[0][0] != levels[1][0]:
+                raise ValueError(f"Not a same-level heading edit: {number}")
+        elif fix["before"].rstrip() != fix["after"].rstrip() or audit.HAN.search(old):
+            raise ValueError(f"Not a trailing-whitespace edit of an English line: {number}")
+        lines[number - 1] = fix["after"] + lines[number - 1][len(old):]
     return "".join(lines).encode("utf-8")
 
 
 def validate(file, before, after, manifest):
-    old = audit.parse_document(file, before.decode("utf-8"))
+    format_fixes = english_format_fixes(file)
+    # Registered fixes are pinned line by line in reconstruct(); everything else is compared with them already applied.
+    reference = reconstruct(before, {}, format_fixes) if format_fixes else before
+    old = audit.parse_document(file, reference.decode("utf-8"))
     new = audit.parse_document(file, after.decode("utf-8"))
     a, b = audit.protected(old), audit.protected(new)
     exceptions_path = audit.DEFAULT_OUT / "prose-code-exceptions.json"
@@ -105,9 +127,11 @@ def validate(file, before, after, manifest):
     held = {int(i) for i in holds} if isinstance(holds, dict) else {
         int(i["line"] if isinstance(i, dict) else i) for i in holds
     }
-    if changed & unchanged or changed & held or (changed | unchanged | held) != chinese:
-        raise ValueError(f"{file}: incomplete/overlapping review coverage; missing {sorted(chinese - changed - unchanged - held)}")
-    if reconstruct(before, manifest["replacements"]) != after:
+    fixed = {fix["line"] for fix in format_fixes}
+    if (changed & unchanged or changed & held or fixed & (changed | unchanged | held)
+            or (changed | unchanged | held | (fixed & chinese)) != chinese):
+        raise ValueError(f"{file}: incomplete/overlapping review coverage; missing {sorted(chinese - changed - unchanged - held - fixed)}")
+    if reconstruct(before, manifest["replacements"], format_fixes) != after:
         raise ValueError(f"{file}: file does not match the edit manifest")
     return {
         "reviewed_chinese_lines": len(chinese), "changed_lines": len(changed),
@@ -116,6 +140,7 @@ def validate(file, before, after, manifest):
         "footnote_markers": len(a["footnotes"]), "structural_items": len(a["structures"]),
         "holds": holds, "held_line_count": len(held), "prose_code_exceptions": exceptions,
         "link_syntax_exceptions": link_exceptions, "structure_exceptions": structure_exceptions,
+        "english_format_exceptions": format_fixes,
     }
 
 
@@ -206,11 +231,17 @@ def apply_manifest(name):
     manifest = json.loads((DIRECTORY / name / "edits.json").read_text())
     file = manifest["source"]
     before = original(file, baseline)
-    after = reconstruct(before, manifest["replacements"])
+    after = reconstruct(before, manifest["replacements"], english_format_fixes(file))
     validate(file, before, after, manifest)
     target = audit.ROOT / file
-    if target.read_bytes() not in {before, after}:
-        raise ValueError("Refusing to overwrite changes not represented by this manifest.")
+    current = target.read_bytes()
+    if current != before:
+        # An earlier application of this manifest may differ from `after` only on lines the manifest edits.
+        edited = {int(k) for k in manifest["replacements"]} | {f["line"] for f in english_format_fixes(file)}
+        old_lines, new_lines = current.decode("utf-8").splitlines(), after.decode("utf-8").splitlines()
+        differing = {i + 1 for i, (a, b) in enumerate(zip(old_lines, new_lines)) if a != b}
+        if len(old_lines) != len(new_lines) or differing - edited:
+            raise ValueError("Refusing to overwrite changes not represented by this manifest.")
     target.write_bytes(after)
 
 
@@ -395,6 +426,9 @@ def summary():
         "- 已有有效链接的目标保持不变。第21章一处全角括号损坏的链接语法已单独修复，原可见目标网址未变；解析差异记录于 `link-syntax-exceptions.json`。",
         "- 42个图片资源逐字节保持不变。侧栏仅同步章节链接文字；第10章文件更名后链接目标随之更新。README 已于 2026 年 9 月 21 日改写为项目说明，不再作为导航文件校验。",
         "- 第13章第836行“改变状态”由普通段落改为列表项，与英文原文及后一项结构一致；此结构修正登记于 `structure-exceptions.json`。",
+        "- 2026 年 9 月 21 日为 11 处列表术语行补上行尾两个空格的 Markdown 硬换行，使说明文字另起一行，与同一列表其他项一致。第1章第329行、第13章第836和843行是中文行，记入各章清单；第3章、第5章、第13章的 8 处英文行只增加行尾空白，英文文字不变，登记于 `english-format-exceptions.json`。",
+        "- 2026 年 9 月 21 日第二轮排版校样：修正 28 行中文的强调标记（闭合星号紧贴中文标点或汉字时不生效、书名号外多余的星号、多出的加粗标记，含第 18 章第 247、251 行为同组外观统一而改写），第 18 章两处全角括号伪链接改为普通文字；为第 7、10、18、23 章 15 行中文术语行及第 18、23 章 5 行英文行补硬换行。英文行只增加行尾空白，登记于 `english-format-exceptions.json`。",
+        "- 同日补上 4 个此前只有英文的小标题的中文（第 12 章 Conclusion、第 13 章 Seams、第 14 章 UAT、第 23 章 CI Challenges），第 20 章内容提要标题补回其他各章共有的“TL;DRs”，第 8 章该标题删去原译者加的英文注解；六处均以整行前后文字登记于 `english-format-exceptions.json`，校验要求标题层级不变。",
         "- 结构检查不能证明语义正确；各章完成逐段语义审阅，父任务另做交叉复核和保留项处理。",
         "- 原文缺损、未译英文、错误章号、损坏链接、代码样例的既有缺陷和不明确措辞，见各章说明；未把这些问题冒称为已修复。",
         "- 第18章原第337行、第23章原第673行有既有英文缺译，本轮未添加新段落。第4章原文逻辑歧义、第25章延迟方向疑点已明确加译注。第一章缺句的中文已按官方版校正，但本地英文未补写。",
