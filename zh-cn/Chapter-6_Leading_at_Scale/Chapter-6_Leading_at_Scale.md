@@ -1,334 +1,172 @@
-
-**CHAPTER 6**
-
-# Leading at Scale
-
 # 第六章 领导大规模团队
-
-In Chapter 5, we talked about what it means to go from being an “individual contributor” to being an explicit leader of a team. It’s a natural progression to go from leading one team to leading a set of related teams, and this chapter talks about how to be effective as you continue along the path of engineering leadership.
 
 第五章讨论了从“个人贡献者”转向明确承担团队领导职责意味着什么。从领导一个团队，到领导多个相互关联的团队，是很自然的发展过程。本章将讨论，随着你在工程领导岗位上继续发展，如何有效地发挥作用。
 
-As your role evolves, all the best practices still apply. You’re still a “servant leader”; you’re just serving a larger group. That said, the scope of problems you’re solving becomes larger and more abstract. You’re gradually forced to become “higher level.” That is, you’re less and less able to get into the technical or engineering details of things, and you’re being pushed to go “broad” rather than “deep.” At every step, this process is frustrating: you mourn the loss of these details, and you come to realize that your prior engineering expertise is becoming less and less relevant to your job. Instead, your effectiveness depends more than ever on your general technical intuition and ability to galvanize engineers to move in good directions.
-
 随着角色变化，之前的最佳实践仍然适用。你依然是“服务型领导者”，只是服务的群体更大了。不过，你要解决的问题也会涉及更大的范围，变得更加抽象。你逐渐不得不站到“更高的层次”：越来越难深入技术或工程细节，工作重心也被推向广度，而非深度。这个过程的每一步都令人沮丧：你会为远离这些细节而失落，也逐渐意识到，过去的工程专长与当前工作的关系越来越小。相应地，你能否有效履职，比以往更依赖整体技术直觉，以及激励工程师朝正确方向前进的能力。
-
-The process is often demoralizing—until one day you notice that you’re actually having much more impact as a leader than you ever had as an individual contributor. It’s a satisfying but bittersweet realization.
 
 这个过程往往让人气馁，直到有一天，你发现自己作为领导者的影响力，实际上远远超过了过去作为个人贡献者的时候。这样的领悟令人欣慰，却也苦乐参半。
 
-So, assuming that we understand the basics of leadership, what it does it take to scale yourself into a really good leader? That’s what we talk about here, using what we call “the three Always of leadership”: Always Be Deciding, Always Be Leaving, Always Be Scaling.
-
 假设我们已经掌握领导力的基本原则，那么，如何提升自身能力，成为能够应对更大规模的优秀领导者？本章将围绕我们所说的“领导力的三个始终”展开：持续作出决策、随时准备离开、不断适应规模增长。
 
-## Always Be Deciding 持续作出决策
-
-Managing a team of teams means making ever more decisions at ever-higher levels. Your job becomes more about high-level strategy rather than how to solve any specific engineering task. At this level, most of the decisions you’ll make are about finding the correct set of trade-offs.
+## 持续作出决策
 
 管理由多个团队组成的组织，意味着要在越来越高的层面上作出越来越多的决策。你的工作更多是制定高层战略，而非解决具体的工程任务。在这一层面，大多数决策都在于找到恰当的权衡取舍。
 
-### The Parable of the Airplane 飞机故事的启示
-
-Lindsay Jones is a friend of ours who is a professional theatrical sound designer and composer. He spends his life flying around the United States, hopping from production to production, and he’s full of crazy (and true) stories about air travel. Here’s one of our favorite stories:
+### 飞机故事的启示
 
 我们的朋友 Lindsay Jones 是一位专业的戏剧音效设计师兼作曲家。他常年乘飞机往返美国各地，参与一部又一部剧目的制作，积累了许多离奇却真实的飞行见闻。下面这个故事是我们最喜欢的故事之一：
 
-> It’s 6 a.m., we’re all boarded on the plane and ready to go. The captain comes on the PA system and explains to us that, somehow, someone has overfilled the fuel tank by 10,000 gallons. Now, I’ve flown on planes for a long time, and I didn’t know that such a thing was possible. I mean, if I overfill my car by a gallon, I’m gonna have gas all over my shoes, right?
->
 > 早上6点，我们都已登机，准备出发。机长通过广播告诉我们，不知怎么回事，有人给飞机油箱多加了10,000加仑燃油。我坐了这么多年飞机，还真不知道竟然会发生这种事。我是说，给我的汽车多加1加仑汽油，油不就全洒在鞋上了吗？
-> 
-> Well, so anyway, the captain then says that we have two options: we can either wait for the truck to come suck the fuel back out of the plane, which is going to take over an hour, or twenty people have to get off the plane right now to even out the weight.
-> No one moves.
-> 
+
 > 总之，机长接着说，我们有两个选择：要么等抽油车来把多余的燃油抽走，这得花一个多小时；要么现在就有20名乘客下飞机，以抵消多加燃油的重量。
 > 没有人动。
-> 
-> Now, there’s this guy across the aisle from me in first class, and he is absolutely livid. He reminds me of Frank Burns on M*A*S*H; he’s just super indignant and sputtering everywhere, demanding to know who’s responsible. It’s an amazing showcase, it’s like he’s Margaret Dumont in the Marx Brothers movies.
-> 
-> 头等舱里，坐在我过道对面的那个人已经气坏了。他让我想起了 **MASH** 里的 Frank Burns，满脸愤怒，气急败坏地嚷嚷着，非要知道到底是谁的责任。那场面真是精彩，简直像 Marx Brothers 电影里的 Margaret Dumont。
-> 
-> So, he grabs his wallet and pulls out this massive wad of cash! And he’s like “I cannot be late for this meeting!! I will give $40 to any person who gets off this plane right now!”
-> 
-> 接着，他掏出钱包，抽出厚厚一沓钞票，说：“我开这个会绝不能迟到！现在谁下飞机，我就给谁40美元！”
-> 
-> Sure enough, people take him up on it. He gives out $40 to 20 people (which is $800 in cash, by the way!) and they all leave.
-> 
-> 果然，有人接受了这个提议。他给了20个人每人40美元，整整800美元现金！这些人都下了飞机。
-> 
-> So, now we’re all set and we head out to the runway, and the captain comes back on the PA again. The plane’s computer has stopped working. No one knows why. Now we gotta get towed back to the gate.
-> 
-> 这下总算准备好了，我们开始前往跑道。机长却又打开了广播：飞机的计算机停止工作了，没人知道原因。现在，飞机得被拖回登机口。
-> 
-> Frank Burns is apoplectic. I mean, seriously, I thought he was gonna have a stroke. He’s cursing and screaming. Everyone else is just looking at each other.
-> 
-> 这位“Frank Burns”简直气炸了。说真的，我都以为他要气得中风了。他又骂又叫，其他人只能面面相觑。
-> 
-> We get back to the gate and this guy is demanding another flight. They offer to book him on the 9:30, which is too late. He’s like, “Isn’t there another flight before 9:30?”
-> 
-> 回到登机口后，这个人要求改乘其他航班。工作人员提议帮他订9点半的航班，但那已经太晚了。他问：“9点半之前就没有别的航班了吗？”
-> 
-> The gate agent is like, “Well, there was another flight at 8, but it’s all full now. They’re closing the doors now.”
-> 
-> 登机口工作人员说：“嗯，8点有一班，但现在已经满了，正准备关舱门。”
-> 
-> And he’s like, “Full?! Whaddya mean it’s full? There’s not one open seat on that plane?!?!?!”
-> 
-> 他问：“满了？！什么叫满了？那架飞机上连一个空位都没有了吗？！”
-> 
-> The gate agent is like, “No sir, that plane was wide open until 20 passengers showed up out of nowhere and took all the seats. They were the happiest passengers I’ve ever seen, they were laughing all the way down the jet bridge.”
-> 
-> 登机口工作人员说：“没有了，先生。那班飞机原本有很多空位，可不知从哪儿突然来了20名乘客，把空位全坐满了。他们是我见过最开心的乘客，沿着登机廊桥一路笑着上了飞机。”
-> 
-> It was a very quiet ride on the 9:30 flight.
-> 
-> 后来9点半的这趟航班一路上都很安静。
 
-This story is, of course, about trade-offs. Although most of this book focuses on various technical trade-offs in engineering systems, it turns out that trade-offs also apply to human behaviors. As a leader, you need to make decisions about what your teams should do each week. Sometimes the trade-offs are obvious (“if we work on this project, it delays that other one...”); sometimes the trade-offs have unforeseeable consequences that can come back to bite you, as in the preceding story.
+> 头等舱里，坐在我过道对面的那个人已经气坏了。他让我想起了 **MASH** 里的 Frank Burns，满脸愤怒，气急败坏地嚷嚷着，非要知道到底是谁的责任。那场面真是精彩，简直像 Marx Brothers 电影里的 Margaret Dumont。
+
+> 接着，他掏出钱包，抽出厚厚一沓钞票，说：“我开这个会绝不能迟到！现在谁下飞机，我就给谁40美元！”
+
+> 果然，有人接受了这个提议。他给了20个人每人40美元，整整800美元现金！这些人都下了飞机。
+
+> 这下总算准备好了，我们开始前往跑道。机长却又打开了广播：飞机的计算机停止工作了，没人知道原因。现在，飞机得被拖回登机口。
+
+> 这位“Frank Burns”简直气炸了。说真的，我都以为他要气得中风了。他又骂又叫，其他人只能面面相觑。
+
+> 回到登机口后，这个人要求改乘其他航班。工作人员提议帮他订9点半的航班，但那已经太晚了。他问：“9点半之前就没有别的航班了吗？”
+
+> 登机口工作人员说：“嗯，8点有一班，但现在已经满了，正准备关舱门。”
+
+> 他问：“满了？！什么叫满了？那架飞机上连一个空位都没有了吗？！”
+
+> 登机口工作人员说：“没有了，先生。那班飞机原本有很多空位，可不知从哪儿突然来了20名乘客，把空位全坐满了。他们是我见过最开心的乘客，沿着登机廊桥一路笑着上了飞机。”
+
+> 后来9点半的这趟航班一路上都很安静。
 
 这个故事讲的当然是权衡（Trade-Offs）。本书大部分内容关注工程系统中的各种技术权衡，但权衡同样适用于人的行为。作为领导者，你需要决定各个团队每周该做什么。有时，取舍很明显：“如果做这个项目，另一个项目就会推迟……”有时，取舍却会带来难以预料的后果，最终让自己吃亏，就像前面的故事一样。
 
-At the highest level, your job as a leader—either of a single team or a larger organization—is to guide people toward solving difficult, ambiguous problems. By ambiguous, we mean that the problem has no obvious solution and might even be unsolvable. Either way, the problem needs to be explored, navigated, and (hopefully) wrestled into a state in which it’s under control. If writing code is analogous to chopping down trees, your job as a leader is to “see the forest through the trees” and find a workable path through that forest, directing engineers toward the important trees. There are three main steps to this process. First, you need to identify the blinders; next, you need to identify the trade-offs; and then you need to decide and iterate on a solution.
-
 从最高层面看，无论领导一个团队还是更大的组织，你的职责都是引导大家解决棘手而模糊的问题。这里的“模糊”，是指问题没有显而易见的解法，甚至可能根本无解。无论如何，都需要探索问题、寻找应对路径，并争取通过努力使局面得到控制。如果把写代码比作砍树，领导者就要“既见树木，也见森林”，找到一条可行的穿越路径，引导工程师处理重要的树木。这个过程有三个主要步骤：先找出思维盲点，再明确需要权衡的因素，最后选定解决方案并持续迭代。
 
-### Identify the Blinders  找出思维盲点
-
-When you first approach a problem, you’ll often discover that a group of people has already been wrestling with it for years. These folks have been steeped in the problem for so long that they’re wearing “blinders”—that is, they’re no longer able to see the forest. They make a bunch of assumptions about the problem (or solution) without realizing it. “This is how we’ve always done it,” they’ll say, having lost the ability to consider the status quo critically. Sometimes, you’ll discover bizarre coping mechanisms or rationalizations that have evolved to justify the status quo. This is where you —with fresh eyes—have a great advantage. You can see these blinders, ask questions, and then consider new strategies. (Of course, being unfamiliar with the problem isn’t a requirement for good leadership, but it’s often an advantage.)
+### 找出思维盲点
 
 初次接触一个问题时，你往往会发现，已经有人为它苦苦摸索了多年。他们沉浸其中太久，仿佛戴上了限制视野的*眼罩*，再也看不见整片森林。他们对问题或解决方案作出了许多假设，却没有意识到这一点。他们会说：“我们一直都是这么做的。”此时，他们已经无法批判性地审视现状。有时，你还会发现一些古怪的应对机制或自圆其说的解释，都是为了证明现状合理而逐渐形成的。这时，你的新视角就成了很大的优势：你能看出这些思维盲点，提出问题，再考虑新的策略。（当然，不熟悉问题并不是优秀领导者的必要条件，但往往是一种优势。）
 
-## Identify the Key Trade-Offs  确定关键的权衡要素
-
-By definition, important and ambiguous problems do not have magic “silver bullet” solutions. There’s no answer that works forever in all situations. There is only the best answer for the moment, and it almost certainly involves making trade-offs in one direction or another. It’s your job to call out the trade-offs, explain them to everyone, and then help decide how to balance them.
+## 确定关键的权衡要素
 
 重要而模糊的问题，本就没有神奇的“银弹”解法。没有哪个答案能够永远适用于所有情况，只有当前最合适的答案，而它几乎必然涉及某种取舍。你的职责是明确指出这些取舍，向所有人解释清楚，再帮助大家决定如何平衡。
 
-### Decide, Then Iterate  做决定，然后持续迭代
-
-After you understand the trade-offs and how they work, you’re empowered. You can use this information to make the best decision for this particular month. Next month, you might need to reevaluate and rebalance the trade-offs again; it’s an iterative process. This is what we mean when we say Always Be Deciding.
+### 做决定，然后持续迭代
 
 理解了需要权衡的因素及其相互关系，你就有了作出决策的依据。你可以据此作出最适合本月的决定；到了下个月，可能又需要重新评估和调整取舍。这是一个持续迭代的过程，也正是“持续作出决策”的含义。
 
-There’s a risk here. If you don’t frame your process as continuous rebalancing of trade-offs, your teams are likely to fall into the trap of searching for the perfect solution, which can then lead to what some call “analysis paralysis.” You need to make your teams comfortable with iteration. One way of doing this is to lower the stakes and calm nerves by explaining: “We’re going to try this decision and see how it goes. Next month, we can undo the change or make a different decision.” This keeps folks flexible and in a state of learning from their choices.
-
 这里也有风险。如果你没有把这个过程明确界定为持续调整权衡，团队就容易陷入寻找完美方案的误区，进而出现所谓的“分析瘫痪”。你需要让团队安心接受迭代。一种做法是说明决策可以调整，降低大家对决策后果的压力，缓解紧张：“我们先试试这个决定，看看效果。下个月可以撤销这次变更，也可以作出别的决定。”这样，大家才能保持灵活，不断从自己的选择中学习。
 
------
-
-#### Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题
-
-In managing a team of teams, there’s a natural tendency to move away from a single product and to instead own a whole “class” of products, or perhaps a broader problem that crosses products. A good example of this at Google has to do with our oldest product, Web Search.
+#### 案例研究：解决网页搜索的“延迟”问题
 
 管理多个团队时，职责往往会自然地从单一产品扩展到一整“类”产品，或者覆盖一个跨产品的、更广泛的问题。谷歌最早的产品网页搜索，就是一个很好的例子。
 
-For years, thousands of Google engineers have worked on the general problem of making search results better—improving the “quality” of the results page. But it turns out that this quest for quality has a side effect: it gradually makes the product slower. Once upon a time, Google’s search results were not much more than a page of 10 blue links, each representing a relevant website. Over the past decade, however, thousands of tiny changes to improve “quality” have resulted in ever-richer results: images, videos, boxes with Wikipedia facts, even interactive UI elements. This means the servers need to do much more work to generate information: more bytes are being sent over the wire; the client (usually a phone) is being asked to render ever-more-complex HTML and data. Even though the speed of networks and computers have markedly increased over a decade, the speed of the search page has become slower and slower: its latency has increased. This might not seem like a big deal, but the latency of a product has a direct effect (in aggregate) on users’ engagement and how often they use it. Even increases in rendering time as small as 10 ms matter. Latency creeps up slowly. This is not the fault of a specific engineering team, but rather represents a long, collective poisoning of the commons. At some point, the overall latency of Web Search grows until its effect begins to cancel out the improvements in user engagement that came from the improvements to the “quality” of the results.
-
 多年来，数千名谷歌工程师一直致力于改善搜索结果，也就是提高结果页的“质量”。但对质量的追求有一个副作用：产品逐渐变慢了。曾经，谷歌搜索结果页基本上只有10条蓝色链接，每条指向一个相关网站。过去十年间，为提升“质量”而作出的数千项小改动，让搜索结果越来越丰富：图片、视频、展示维基百科知识的信息框，甚至还有交互式 UI 元素。这意味着服务器需要做更多工作来生成信息，网络需要传输更多字节，客户端（通常是手机）也需要渲染越来越复杂的 HTML 和数据。尽管十年来网络和计算机的速度显著提高，搜索页却越来越慢，延迟不断增加。这看起来也许不算大事，但从总体上看，产品延迟会直接影响用户参与度和使用频率。渲染时间哪怕只增加10毫秒，也会产生影响。延迟是逐渐累积起来的，并非某个工程团队的过错，而是各方长期共同损害公共资源的结果。到了一定程度，网页搜索的总延迟带来的负面影响，就会开始抵消结果“质量”提升所带来的用户参与度收益。
 
-A number of leaders struggled with this issue over the years but failed to address the problem systematically. The blinders everyone wore assumed that the only way to deal with latency was to declare a latency “code yellow”[^1] every two or three years, during which everyone dropped everything to optimize code and speed up the product. Although this strategy would work temporarily, the latency would begin creeping up again just a month or two later, and soon return to its prior levels.
+多年来，多位领导者都曾努力处理这个问题，却未能从系统上解决。大家受思维盲点所限，认为应对延迟的唯一办法，就是每隔两三年针对延迟宣布一次“黄色警报”：所有人放下手头工作，集中优化代码，为产品提速。[^1]这种策略虽然能暂时奏效，但仅仅一两个月后，延迟就会再次缓慢上升，很快回到原来的水平。
 
-多年来，多位领导者都曾努力处理这个问题，却未能从系统上解决。大家受思维盲点所限，认为应对延迟的唯一办法，就是每隔两三年针对延迟宣布一次“黄色警报”：所有人放下手头工作，集中优化代码，为产品提速。这种策略虽然能暂时奏效，但仅仅一两个月后，延迟就会再次缓慢上升，很快回到原来的水平。
+后来发生了什么变化？我们终于退后一步，找出思维盲点，全面重新评估了这些取舍。原来，追求“质量”并非只付出一种代价，而是两种。第一种由用户承担：质量越高，通常要传输的数据就越多，延迟也越大。第二种由谷歌承担：质量越高，生成数据所需的工作就越多，消耗的服务器 CPU 时间也越多，这就是我们所说的“服务容量”。管理层一直谨慎权衡质量与容量，却从未把延迟作为同等重要的因素纳入考量。正如那句老笑话：“好、快、便宜，只能选两个。”[^t1]用一个三角形，就能简单地表示好（质量）、快（延迟）和便宜（容量）之间的制约关系，如图6-1所示。
 
-So what changed? At some point, we took a step back, identified the blinders, and did a full reevaluation of the trade-offs. It turns out that the pursuit of “quality” has not one, but two different costs. The first cost is to the user: more quality usually means more data being sent out, which means more latency. The second cost is to Google: more quality means doing more work to generate the data, which costs more CPU time in our servers—what we call “serving capacity.” Although leadership had often trodden carefully around the trade-off between quality and capacity, it had never treated latency as a full citizen in the calculus. As the old joke goes, “Good, Fast, Cheap—pick two.” A simple way to depict the trade-offs is to draw a triangle of tension between Good (Quality), Fast (Latency), and Cheap (Capacity), as illustrated in Figure 6-1.
-
-![Figure 6-1](./images/Figure%206-1.png)
-Figure 6-1. Trade-offs within Web Search; pick two!  图6-1：网页搜索中的权衡，只能选两个！
-
-后来发生了什么变化？我们终于退后一步，找出思维盲点，全面重新评估了这些取舍。原来，追求“质量”并非只付出一种代价，而是两种。第一种由用户承担：质量越高，通常要传输的数据就越多，延迟也越大。第二种由谷歌承担：质量越高，生成数据所需的工作就越多，消耗的服务器 CPU 时间也越多，这就是我们所说的“服务容量”。管理层一直谨慎权衡质量与容量，却从未把延迟作为同等重要的因素纳入考量。正如那句老笑话：“好、快、便宜，只能选两个。”（译注：鱼和熊掌不可兼得？）用一个三角形，就能简单地表示好（质量）、快（延迟）和便宜（容量）之间的制约关系，如图6-1所示。
-
-That’s exactly what was happening here. It’s easy to improve any one of these traits by deliberately harming at least one of the other two. For example, you can improve quality by putting more data on the search results page—but doing so will hurt capacity and latency. You can also do a direct trade-off between latency and capacity by changing the traffic load on your serving cluster. If you send more queries to the cluster, you get increased capacity in the sense that you get better utilization of the CPUs—more bang for your hardware buck. But higher load increases resource contention within a computer, making the average latency of a query worse. If you deliberately decrease a cluster’s traffic (run it “cooler”), you have less serving capacity overall, but each query becomes faster.
+*图6-1：网页搜索中的权衡，只能选两个！*
 
 这里的情况正是如此。只要有意牺牲另外两个方面中的至少一个，就很容易改善其中一个。例如，在搜索结果页提供更多数据可以提升质量，却会占用更多容量并增加延迟。调整服务集群的流量负载，也能直接在延迟与容量之间作取舍。向集群发送更多查询，可以提高 CPU 利用率，让同样的硬件投入处理更多请求，从这个意义上说，就是提高了容量。但负载越高，计算机内部的资源争用就越严重，查询的平均延迟也会越大。如果有意减少集群流量，让它“低负载”运行，总体服务容量会下降，但每次查询都会更快。
 
-The main point here is that this insight—a better understanding of all the trade-offs—allowed us to start experimenting with new ways of balancing. Instead of treating latency as an unavoidable and accidental side effect, we could now treat it as a first-class goal along with our other goals. This led to new strategies for us. For example, our data scientists were able to measure exactly how much latency hurt user engagement. This allowed them to construct a metric that pitted quality-driven improvements to short-term user engagement against latency-driven damage to long-term user engagement. This approach allows us to make more data-driven decisions about product changes. For example, if a small change improves quality but also hurts latency, we can quantitatively decide whether the change is worth launching or not. We are always deciding whether our quality, latency, and capacity changes are in balance, and iterating on our decisions every month.
-
 关键在于，对所有取舍有了更完整的理解，我们才开始尝试新的平衡方式。延迟不再是一个不可避免的意外副作用，而是与其他目标同等重要的目标。这也带来了新的策略。例如，数据科学家能够准确衡量延迟对用户参与度的损害，据此构建一个指标，将质量提升带来的短期用户参与度收益，与延迟增加带来的长期用户参与度损失放在一起权衡。这样，我们就能更多地依据数据决定如何改动产品。例如，某个小改动既提升质量又增加延迟时，可以定量判断它是否值得发布。我们持续判断质量、延迟和容量方面的变化是否平衡，并每月迭代这些决策。
 
------
-
-> [^1]: “Code yellow” is Google’s term for “emergency hackathon to fix a critical problem.” Affected teams are expected to suspend all work and focus 100% attention on the problem until the state of emergency is declared over.
->
-> 1 “Code yellow”（黄色警报）是谷歌的术语，指为解决关键问题而开展的紧急黑客马拉松。相关团队必须暂停其他所有工作，将100%的注意力投入这个问题，直到宣布紧急状态结束。
-
-## Always Be Leaving  随时准备离开
-
-At face value, Always Be Leaving sounds like terrible advice. Why would a good leader be trying to leave? In fact, this is a famous quote from Bharat Mediratta, a former Google engineering director. What he meant was that it’s not just your job to solve an ambiguous problem, but to get your organization to solve it by itself, without you present. If you can do that, it frees you up to move to a new problem (or new organization), leaving a trail of self-sufficient success in your wake.
+## 随时准备离开
 
 乍看之下，“随时准备离开”似乎是个糟糕的建议。优秀的领导者为什么要设法离开呢？其实，这是谷歌前工程总监 Bharat Mediratta 的一句名言。他的意思是，你的职责不只是解决模糊难题，更是让组织在你不在场时，也能自行解决问题。做到这一点，你就能腾出手来处理新问题，或转到新组织，同时让身后的团队继续独立运作、取得成功。
 
-The antipattern here, of course, is a situation in which you’ve set yourself up to be a single point of failure (SPOF). As we noted earlier in this book, Googlers have a term for that, the bus factor: the number of people that need to get hit by a bus before your project is completely doomed.
-
 与之相反的做法，是让自己成为单点故障（SPOF）。正如本书前面所说，谷歌员工用“巴士因子”来描述这种风险：有多少人被巴士撞倒，就会让项目彻底陷入绝境。
-
-Of course, the “bus” here is just a metaphor. People become sick; they switch teams or companies; they move away. As a litmus test, think about a difficult problem that your team is making good progress on. Now imagine that you, the leader, disappear. Does your team keep going? Does it continue to be successful? Here’s an even simpler test: think about the last vacation you took that was at least a week long. Did you keep checking your work email? (Most leaders do.) Ask yourself why. Will things fall apart if you don’t pay attention? If so, you have very likely made yourself an SPOF. You need to fix that.
 
 当然，这里的“巴士”只是比喻。人们会生病，会换团队、换公司，也会搬走。不妨做个检验：想一想团队正在推进且进展不错的一道难题，再假设作为领导者的你突然不在了。团队还能继续推进吗？还能继续取得成功吗？更简单的检验是，回想上一次至少一周的假期：你是否一直在查工作邮件？大多数领导者都会如此。问问自己为什么：没有你盯着，事情就会失控吗？如果是，你很可能已经让自己成为单点故障，需要解决这个问题。
 
-### Your Mission: Build a “Self-Driving” Team  你的任务：打造一个“自我驱动”的团队
-
-Coming back to Bharat’s quote: being a successful leader means building an organization that is able to solve the difficult problem by itself. That organization needs to have a strong set of leaders, healthy engineering processes, and a positive, self-perpetuating culture that persists over time. Yes, this is difficult; but it gets back to the fact that leading a team of teams is often more about organizing people rather than being a technical wizard. Again, there are three main parts to constructing this sort of self-sufficient group: dividing the problem space, delegating subproblems, and iterating as needed.
+### 你的任务：打造一个“自我驱动”的团队
 
 回到 Bharat 的话：成功的领导者要建立一个能够自行解决难题的组织。它需要一批有能力的领导者、健康的工程流程，以及积极、能够自我延续并长期保持的文化。这确实很难，但也再次说明，领导多个团队，往往更重在组织人员，而不是充当技术高手。建立这种能够独立运作的组织，同样有三个主要环节：划分问题域、把子问题交给他人负责，以及按需迭代。
 
-### Dividing the Problem Space  划分问题域
-
-Challenging problems are usually composed of difficult subproblems. If you’re leading a team of teams, an obvious choice is to put a team in charge of each subproblem. The risk, however, is that the subproblems can change over time, and rigid team boundaries won’t be able to notice or adapt to this fact. If you’re able, consider an organizational structure that is looser—one in which subteams can change size, individuals can migrate between subteams, and the problems assigned to subteams can morph over time. This involves walking a fine line between “too rigid” and “too vague.” On the one hand, you want your subteams to have a clear sense of problem, purpose, and steady accomplishment; on the other hand, people need the freedom to change direction and try new things in response to a changing environment.
+### 划分问题域
 
 棘手的问题通常由若干同样棘手的子问题组成。管理多个团队时，一个显而易见的选择是让每个团队负责一个子问题。但风险在于，子问题会随时间变化，僵化的团队边界可能让人无法察觉或适应这些变化。条件允许时，可以考虑更灵活的组织结构：子团队可以调整规模，成员可以在子团队之间流动，各团队负责的问题也可以逐步变化。这需要在“过于僵化”和“过于模糊”之间谨慎把握。一方面，子团队需要明确自己要解决的问题、工作目的，并感受到持续取得的成果；另一方面，成员也需要自由调整方向、尝试新事物，以应对环境变化。
 
-####  Example: Subdividing the “latency problem” of Google Search  示例：拆分谷歌搜索的“延迟问题”
-
-When approaching the problem of Search latency, we realized that the problem could, at a minimum, be subdivided into two general spaces: work that addressed the symptoms of latency, and different work that addressed the causes of latency. It was obvious that we needed to staff many projects to optimize our codebase for speed, but focusing only on speed wouldn’t be enough. There were still thousands of engineers increasing the complexity and “quality” of search results, undoing the speed improvements as quickly as they landed, so we also needed people to focus on a parallel problem space of preventing latency in the first place. We discovered gaps in our metrics, in our latency analysis tools, and in our developer education and documentation. By assigning different teams to work on latency causes and symptoms at the same time, we were able to systematically control latency over the long term. (Also, notice how these teams owned the problems, not specific solutions!)
+#### 示例：拆分谷歌搜索的“延迟问题”
 
 着手解决搜索延迟时，我们意识到，这个问题至少可以分为两大类：一类处理延迟的症状，另一类处理延迟的成因。显然，我们需要为许多项目配备人员，通过优化代码库来提速，但只关注速度还不够。数千名工程师仍在不断提高搜索结果的复杂度和“质量”，提速改进刚上线，收益就被抵消了。因此，还需要有人并行处理另一个问题域：从源头上预防延迟。我们发现，指标、延迟分析工具、开发者培训和文档都存在不足。让不同团队同时处理延迟的成因与症状后，我们才能从系统上长期控制延迟。（还要注意，这些团队负责的是问题，而不是特定的解决方案！）
 
-#### Delegating subproblems to leaders  将子问题交给子团队领导者负责
-
-It’s essentially a cliché for management books to talk about “delegation,” but there’s a reason for that: delegation is really difficult to learn. It goes against all our instincts for efficiency and achievement. That difficulty is the reason for the adage, “If you want something done right, do it yourself.”
+#### 将子问题交给子团队领导者负责
 
 管理书籍谈“授权”，几乎已是老生常谈，但这是有原因的：授权确实很难学会。它违背了我们追求效率和成就的本能。正因为如此，才会有那句老话：“想把事情做好，就得亲自动手。”
 
-That said, if you agree that your mission is to build a self-driving organization, the main mechanism of teaching is through delegation. You must build a set of self-sufficient leaders, and delegation is absolutely the most effective way to train them. You give them an assignment, let them fail, and then try again and try again. Silicon Valley has well-known mantras about “failing fast and iterating.” That philosophy doesn’t just apply to engineering design, but to human learning as well.
-
 不过，如果你认同自己的使命是建立一个自我驱动的组织，那么培养人的主要方式就是授权。你必须培养一批能够独当一面的领导者，而授权无疑是最有效的训练方式：交给他们任务，允许他们失败，再一次次尝试。硅谷常说“快速失败，持续迭代”。这一理念不仅适用于工程设计，也适用于人的学习。
-
-As a leader, your plate is constantly filling up with important tasks that need to be done. Most of these tasks are things that are fairly easy for you do. Suppose that you’re working diligently through your inbox, responding to problems, and then you decide to put 20 minutes aside to fix a longstanding and nagging issue. But before you carry out the task, be mindful and stop yourself. Ask this critical question: Am I really the only one who can do this work?
 
 作为领导者，你手头总会不断出现必须完成的重要任务，其中大多数对你来说并不难。假设你正在认真处理邮件、回应各种问题，随后决定抽出20分钟，解决一个长期令人烦恼的问题。但在动手前，先有意识地停下来，问自己一个关键问题：这项工作真的只有我能做吗？
 
-Sure, it might be most efficient for you to do it, but then you’re failing to train your leaders. You’re not building a self-sufficient organization. Unless the task is truly time sensitive and on fire, bite the bullet and assign the work to someone else—presumably someone who you know can do it but will probably take much longer to finish. Coach them on the work if need be. You need to create opportunities for your leaders to grow; they need to learn to “level up” and do this work themselves so that you’re no longer in the critical path.
-
 由你来做，确实可能效率最高，但这样就错过了培养下属领导者的机会，也无助于建立能够独立运作的组织。除非任务确实刻不容缓，否则就要克服心里的不情愿，把它交给别人，通常是你知道有能力完成、但可能要多花许多时间的人。必要时给予指导。你需要为下属领导者创造成长机会，让他们提升能力，学会独立完成这些工作，这样你才不再是任务推进过程中不可缺少的一环。
-
-The corollary here is that you need to be mindful of your own purpose as a leader of leaders. If you find yourself deep in the weeds, you’re doing a disservice to your organization. When you get to work each day, ask yourself a different critical question: What can I do that nobody else on my team can do?
 
 由此可见，作为其他领导者的领导者，你需要时刻记住自己的职责。如果你深陷具体细节，反而会对组织不利。每天开始工作时，不妨再问自己一个关键问题：有哪些事是我能做、而团队中其他人做不了的？
 
-There are a number of good answers. For example, you can protect your teams from organizational politics; you can give them encouragement; you can make sure everyone is treating one another well, creating a culture of humility, trust, and respect. It’s also important to “manage up,” making sure your management chain understands what your group is doing and staying connected to the company at large. But often the most common and important answer to this question is: “I can see the forest through the trees.” In other words, you can define a high-level strategy. Your strategy needs to cover not just overall technical direction, but an organizational strategy as well. You’re building a blueprint for how the ambiguous problem is solved and how your organization can manage the problem over time. You’re continuously mapping out the forest, and then assigning the tree-cutting to others.
-
 这个问题有不少好答案。你可以保护团队，免受组织政治的干扰；可以鼓励他们；也可以确保大家善待彼此，营造谦逊、信任和尊重的文化。“向上管理”同样重要：让汇报链上的各级管理者了解团队正在做什么，并与整个公司保持联系。不过，最常见也最重要的答案往往是：“我能既见树木，也见森林。”换句话说，你可以制定高层战略。这既要涵盖整体技术方向，也要涵盖组织策略。你要勾画出一幅蓝图，说明如何解决模糊难题，以及组织如何长期应对这个问题。你持续描绘森林的全貌，再把砍树的工作交给别人。
 
-#### Adjusting and iterating  调整与迭代
-
-Let’s assume that you’ve now reached the point at which you’ve built a self-sustaining machine. You’re no longer an SPOF. Congratulations! What do you do now?
+#### 调整与迭代
 
 假设你已经建立了一个能够自行运转的组织，不再是它的单点故障。恭喜！接下来该做什么呢？
 
-Before answering, note that you have actually liberated yourself—you now have the freedom to “Always Be Leaving.” This could be the freedom to tackle a new, adjacent problem, or perhaps you could even move yourself to a whole new department and problem space, making room for the careers of the leaders you’ve trained. This is a great way of avoiding personal burnout.
-
 回答之前，先意识到你其实已经解放了自己，现在有了“随时准备离开”的自由。你可以着手处理一个新的相关问题，甚至转到全新的部门和问题域，为自己培养的领导者腾出职业发展空间。这也是避免个人职业倦怠的好办法。
 
-The simple answer to “what now?” is to direct this machine and keep it healthy. But unless there’s a crisis, you should use a gentle touch. The book Debugging Teams[^2] has a parable about making mindful adjustments:
+“接下来怎么办？”简单说，就是为这个组织指明方向，让它保持健康运转。但除非出现危机，你的干预应当轻而有度。《进化：从孤胆极客到高效团队》用下面的故事说明，如何作出审慎的调整：[^2]
 
-“接下来怎么办？”简单说，就是为这个组织指明方向，让它保持健康运转。但除非出现危机，你的干预应当轻而有度。《进化：从孤胆极客到高效团队》用下面的故事说明，如何作出审慎的调整：
+> 有位精通机械的大师退休多年后，原公司遇到了无人能解决的故障，便请他回来帮忙。大师检查机器，仔细听了听，最后拿出一截旧粉笔，在机器侧面画了一个小叉。他告诉技术员，那个位置有根电线松了，需要修好。技术员打开机器，紧固电线，故障就排除了。公司收到10,000美元的账单后，CEO 十分恼火：不过画了一个粉笔记号，怎么能收这么高的费用？他要求提供明细。大师又寄来一张账单：画记号的粉笔，1美元；知道该在哪里画，9,999美元。
 
-    There’s a story about a Master of all things mechanical who had long since retired. His former company was having a problem that no one could fix, so they called in the Master to see if he could help find the problem. The Master examined the machine, listened to it, and eventually pulled out a worn piece of chalk and made a small X on the side of the machine. He informed the technician that there was a loose wire that needed repair at that very spot. The technician opened the machine and tightened the loose wire, thus fixing the problem. When the Master’s invoice arrived for $10,000, the irate CEO wrote back demanding a breakdown for this ridiculously high charge for a simple chalk mark! The Master responded with another invoice, showing a $1 cost for the chalk to make the mark, and $9,999 for knowing where to put it.
-    
-    有位精通机械的大师退休多年后，原公司遇到了无人能解决的故障，便请他回来帮忙。大师检查机器，仔细听了听，最后拿出一截旧粉笔，在机器侧面画了一个小叉。他告诉技术员，那个位置有根电线松了，需要修好。技术员打开机器，紧固电线，故障就排除了。公司收到10,000美元的账单后，CEO 十分恼火：不过画了一个粉笔记号，怎么能收这么高的费用？他要求提供明细。大师又寄来一张账单：画记号的粉笔，1美元；知道该在哪里画，9,999美元。
-    
-    To us, this is a story about wisdom: that a single, carefully considered adjustment can have gigantic effects. We use this technique when managing people. We imagine our team as flying around in a great blimp, headed slowly and surely in a certain direction. Instead of micromanaging and trying to make continuous course corrections, we spend most of the week carefully watching and listening. At the end of the week we make a small chalk mark in a precise location on the blimp, then give a small but critical “tap” to adjust the course.
-    
-    在我们看来，这个故事讲的是智慧：一次经过深思熟虑的细微调整，也能产生巨大影响。管理人员时，我们也采用这种方法。可以把团队想象成一艘巨大的飞艇，正缓慢而稳当地朝某个方向前进。我们不事无巨细地干预，也不持续修正航向，而是用一周的大部分时间仔细观察、倾听。到周末，再在飞艇的一个准确位置画上小小的粉笔记号，然后轻轻一推，作出关键的航向调整。
-
-This is what good management is about: 95% observation and listening, and 5% making critical adjustments in just the right place. Listen to your leaders and skip-reports. Talk to your customers, and remember that often (especially if your team builds engineering infrastructure), your “customers” are not end users out in the world, but your coworkers. Customers’ happiness requires just as much intense listening as your reports’ happiness. What’s working and what isn’t? Is this self-driving blimp headed in the proper direction? Your direction should be iterative, but thoughtful and minimal, making the minimum adjustments necessary to correct course. If you regress into micromanagement, you risk becoming an SPOF again! “Always Be Leaving” is a call to macromanagement.
+> 在我们看来，这个故事讲的是智慧：一次经过深思熟虑的细微调整，也能产生巨大影响。管理人员时，我们也采用这种方法。可以把团队想象成一艘巨大的飞艇，正缓慢而稳当地朝某个方向前进。我们不事无巨细地干预，也不持续修正航向，而是用一周的大部分时间仔细观察、倾听。到周末，再在飞艇的一个准确位置画上小小的粉笔记号，然后轻轻一推，作出关键的航向调整。
 
 这就是良好的管理：95%用于观察和倾听，5%用于在恰当的位置作出关键调整。倾听下属领导者，以及他们的直接下属的意见。也要与客户交流，并记住，客户往往不是外部的最终用户，而是你的同事，尤其当团队负责构建工程基础设施时。要让客户满意，与让下属满意一样，都需要认真倾听。哪些做法有效，哪些无效？这艘自我驱动的飞艇是否朝着正确方向前进？你的指导应当持续迭代，但要经过深思熟虑，尽量少作干预，只作修正航向所必需的调整。如果又回到事无巨细的微观管理，你就可能再次成为单点故障！“随时准备离开”倡导的是宏观管理。
 
-> [^2]: Brian W. Fitzpatrick and Ben Collins-Sussman, Debugging Teams: Better Productivity through Collaboration(Boston: O’Reilly, 2016).
->
-> 2 Brian W. Fitzpatrick 和 Ben Collins-Sussman，《进化：从孤胆极客到高效团队》（波士顿：O'Reilly，2016）。
-
-#### Take care in anchoring a team’s identity   谨慎地确定团队的定位
-
-A common mistake is to put a team in charge of a specific product rather than a general problem. A product is a solution to a problem. The life expectancy of solutions can be short, and products can be replaced by better solutions. However, a problem — if chosen well—can be evergreen. Anchoring a team identity to a specific solution (“We are the team that manages the Git repositories”) can lead to all sorts of angst over time. What if a large percentage of your engineers want to switch to a new version control system? The team is likely to “dig in,” defend its solution, and resist change, even if this is not the best path for the organization. The team clings to its blinders, because the solution has become part of the team’s identity and self-worth. If the team instead owns the problem (e.g., “We are the team that provides version control to the company”), it is freed up to experiment with different solutions over time.
+#### 谨慎地确定团队的定位
 
 一个常见错误是让团队负责某个特定产品，而不是一类问题。产品是问题的一种解决方案，方案的寿命可能很短，产品也可能被更好的方案取代。但只要选得恰当，问题本身可以长期存在。如果把团队的身份认同绑定在特定方案上，比如“我们是管理 Git 仓库的团队”，日后就可能产生各种焦虑。假如很大一部分工程师想换用新的版本控制系统，怎么办？团队很可能固守立场，捍卫原方案、抵制变化，哪怕这并不是对组织最有利的选择。团队不愿摘下限制视野的眼罩，因为方案已成为其身份认同和自我价值的一部分。反之，如果团队负责的是问题，例如“我们为公司提供版本控制”，就能在今后自由尝试不同方案。
 
-## Always Be Scaling  不断适应规模增长
-
-A lot of leadership books talk about “scaling” in the context of learning to “maximize your impact”—strategies to grow your team and influence. We’re not going to discuss those things here beyond what we’ve already mentioned. It’s probably obvious that building a self-driving organization with strong leaders is already a great recipe for growth and success.
+## 不断适应规模增长
 
 许多领导力书籍谈到“规模扩展”时，着眼于如何“最大化影响力”，也就是壮大团队、扩大影响力的策略。除前面已经提到的内容外，本章不再展开这些话题。大概不难看出，建立一个拥有出色领导者、能够自我驱动的组织，本身就是实现增长和成功的良方。
 
-Instead, we’re going to discuss team scaling from a defensive and personal point of view rather than an offensive one. As a leader, your most precious resource is your limited pool of time, attention, and energy. If you aggressively build out your teams’ responsibilities and power without learning to protect your personal sanity in the process, the scaling is doomed to fail. And so we’re going to talk about how to effectively scale yourself through this process.
-
 这里，我们要从自我保护和个人的角度，而非主动扩张的角度，讨论团队规模增长。作为领导者，你最宝贵的资源是有限的时间、注意力和精力。如果一味扩大团队的职责和权力，却没有学会在过程中维持自身良好的状态，这种扩展注定会失败。因此，接下来要讨论的是，如何让自身能力有效适应这一增长过程。
 
-### The Cycle of Success  成功的循环
-
-When a team tackles a difficult problem, there’s a standard pattern that emerges, a particular cycle. It looks like this:
-
-- *Analysis*  
-    First, you receive the problem and start to wrestle with it. You identify the blinders, find all the trade-offs, and build consensus about how to manage them.
-- *Struggle*  
-    You start moving on the work, whether or not your team thinks it’s ready. You prepare for failures, retries, and iteration. At this point, your job is mostly about herding cats. Encourage your leaders and experts on the ground to form opinions and then listen carefully and devise an overall strategy, even if you have to “fake it” at first.[^3]
-- *Traction*  
-    Eventually your team begins to figure things out. You’re making smarter decisions, and real progress is made. Morale improves. You’re iterating on trade-offs, and the organization is beginning to drive itself around the problem. Nice job!
-- *Reward*  
-    Something unexpected happens. Your manager takes you aside and congratulates you on your success. You discover your reward isn’t just a pat on the back, but a whole new problem to tackle. That’s right: the reward for success is more work... and more responsibility! Often, it’s a problem that is similar or adjacent to the first one, but equally difficult.
+### 成功的循环
 
 团队处理难题时，往往会出现一种典型模式，形成如下循环：
 
 - *分析*  
     首先，接手问题并开始探索。找出思维盲点，明确所有需要权衡的因素，再就如何处理这些取舍达成共识。
 - *挣扎*  
-    无论团队是否认为自己已经准备好，都要开始推进工作，并做好失败、重试和迭代的准备。此时，你的主要工作是协调各有主见、难以统一行动的人。鼓励一线领导者和专家形成自己的看法，再仔细倾听，制定整体策略，哪怕起初你不得不“先装作自己知道该怎么做”。
+    无论团队是否认为自己已经准备好，都要开始推进工作，并做好失败、重试和迭代的准备。此时，你的主要工作是协调各有主见、难以统一行动的人。鼓励一线领导者和专家形成自己的看法，再仔细倾听，制定整体策略，哪怕起初你不得不“先装作自己知道该怎么做”。[^3]
 - *取得进展*  
     团队终于开始摸清门道，决策越来越明智，工作也取得了实质性进展，士气随之提升。你不断调整取舍，组织开始自行推进问题的解决。干得不错！
 - *奖励*  
     意想不到的事发生了。上级把你叫到一旁，祝贺你取得成功。你发现，奖励不只是拍肩称赞，还有一道全新的难题要处理。没错，成功的奖励就是更多工作，以及更多责任！新问题往往与原来的问题相似或相关，但同样棘手。
 
-So now you’re in a pickle. You’ve been given a new problem, but (usually) not more people. Somehow you need to solve both problems now, which likely means that the original problem still needs to be managed with half as many people in half the time. You need the other half of your people to tackle the new work! We refer to this final step as the compression stage: you’re taking everything you’ve been doing and compressing it down to half the size.
-
 这时，你就陷入了两难：接到了新问题，却通常没有增加人手。你必须设法同时应对两个问题，这很可能意味着，要用一半的人力和一半的时间继续处理原来的问题，因为另一半人手得去承担新工作！我们把最后这一步称为“压缩阶段”：把一直在做的全部工作，压缩到原来一半的规模。
-
-So really, the cycle of success is more of a spiral (see Figure 6-2). Over months and years, your organization is scaling by tackling new problems and then figuring out how to compress them so that it can take on new, parallel struggles. If you’re lucky, you’re allowed to hire more people as you go. More often than not, though, your hiring doesn’t keep pace with the scaling. Larry Page, one of Google’s founders, would probably refer to this spiral as “uncomfortably exciting.”
 
 因此，成功的循环其实更像螺旋，如图6-2所示。经年累月，组织通过承担新问题来扩展，再想办法压缩处理这些问题所需的投入，以便同时承担新的挑战。运气好的话，你可以在此过程中增聘人手，但招聘速度往往赶不上职责扩展的速度。谷歌联合创始人 Larry Page 大概会把这种螺旋称为“令人不安，却又令人兴奋”。
 
-![Figure 6-2](./images/Figure%206-2.png)  
-Figure 6-2. The spiral of success  图6-2：成功的螺旋
-
-The spiral of success is a conundrum—it’s something that’s difficult to manage, and yet it’s the main paradigm for scaling a team of teams. The act of compressing a problem isn’t just about figuring out how to maximize your team’s efficiency, but also about learning to scale your own time and attention to match the new breadth of responsibility.
+*图6-2：成功的螺旋*
 
 成功的螺旋是个难题：它很难管理，却又是扩大多团队组织的主要模式。压缩处理问题所需的投入，不只是要想办法最大化团队效率，还要学会调整自己的时间和注意力分配，以适应更广泛的职责。
 
-> [^3]: It’s easy for imposter syndrome to kick in at this point. One technique for fighting the feeling that you don’t know what you’re doing is to simply pretend that some expert out there knows exactly what to do, and that they’re simply on vacation and you’re temporarily subbing in for them. It’s a great way to remove the personal stakes and give yourself permission to fail and learn.
->
->3  此时很容易出现“冒名顶替综合征”。如果你觉得自己根本不知道该怎么做，可以试试这样想：有一位专家完全知道该怎么办，只是正在休假，而你暂时代班而已。这样有助于减轻对个人得失的担忧，允许自己在失败中学习。
-
-### Important Versus Urgent   重要和紧急
-
-Think back to a time when you weren’t yet a leader, but still a carefree individual contributor. If you used to be a programmer, your life was likely calmer and more panicfree. You had a list of work to do, and each day you’d methodically work down your list, writing code and debugging problems. Prioritizing, planning, and executing your work was straightforward.
+### 重要和紧急
 
 回想还没有担任领导者的时候，你还是个无忧无虑的个人贡献者（IC）。如果曾经是程序员，你的工作生活很可能更平静，也少些慌乱。手头有一份待办清单，每天按部就班地写代码、调试问题，逐项推进。安排优先级、制定计划和执行工作，都比较直接。
 
-As you moved into leadership, though, you might have noticed that your main mode of work became less predictable and more about firefighting. That is, your job became less proactive and more reactive. The higher up in leadership you go, the more escalations you receive. You are the “finally” clause in a long list of code blocks! All of your means of communication—email, chat rooms, meetings—begin to feel like a Denial-of-Service attack against your time and attention. In fact, if you’re not mindful, you end up spending 100% of your time in reactive mode. People are throwing balls at you, and you’re frantically jumping from one ball to the next, trying not to let any of them hit the ground.
-
 走上领导岗位后，你可能发现，工作越来越难以预测，也越来越像在救火：主动安排减少，被动应对增多。领导层级越高，升级到你这里处理的问题就越多。你仿佛成了一长串代码块中负责最后收尾的“finally”子句！邮件、聊天室、会议等所有沟通渠道，都开始像是在对你的时间和注意力发起拒绝服务攻击。如果不留心，你最终会把100%的时间都用于被动响应。别人不断把球抛给你，你则手忙脚乱地接完一个又接一个，尽量不让任何一个落地。
-
-A lot of books have discussed this problem. The management author Stephen Covey is famous for talking about the idea of distinguishing between things that are important versus things that are urgent. In fact, it was US President Dwight D. Eisenhower who popularized this idea in a famous 1954 quote:
-
-    I have two kinds of problems, the urgent and the important. The urgent are not important, and the important are never urgent.
 
 许多书都讨论过这个问题。管理学作家 Stephen Covey 以强调区分重要事项与紧急事项而闻名。实际上，让这一观点广为人知的，是美国总统德怀特·D. 艾森豪威尔1954年的一句名言：
 
-    我有两类问题，紧急的问题和重要的问题。紧急的并不重要，重要的也从不紧急。
-
-This tension is one of the biggest dangers to your effectiveness as a leader. If you let yourself slip into pure reactive mode (which happens almost automatically), you spend every moment of your life on urgent things, but almost none of those things are important in the big picture. Remember that your job as a leader is to do things that only you can do, like mapping a path through the forest. Building that meta- strategy is incredibly important, but almost never urgent. It’s always easier to respond to that next urgent email.
+> 我有两类问题，紧急的问题和重要的问题。紧急的并不重要，重要的也从不紧急。
 
 重要与紧急之间的冲突，是领导者有效履职面临的最大风险之一。如果任由自己滑入纯粹被动响应的模式，而这几乎会自然而然地发生，你就会把每一刻都花在紧急事项上，其中却几乎没有什么对全局真正重要。记住，领导者要做的是只有自己能做的事，比如规划穿越森林的路线。制定这种全局策略极其重要，却几乎从不紧急。相比之下，回复下一封紧急邮件总是更容易。
 
-So how can you force yourself to work mostly on important things, rather than urgent things? Here are a few key techniques:
-
-- *Delegate*  
-    Many of the urgent things you see can be delegated back to other leaders in your organization. You might feel guilty if it’s a trivial task; or you might worry that handing off an issue is inefficient because it might take those other leaders longer to fix. But it’s good training for them, and it frees up your time to work on important things that only you can do.
-- *Schedule dedicated time*  
-    Regularly block out two hours or more to sit quietly and work only on important- but-not-urgent things—things like team strategy, career paths for your leaders, or how you plan to collaborate with neighboring teams.
-- *Find a tracking system that works*  
-    There are dozens of systems for tracking and prioritizing work. Some are software based (e.g., specific “to-do” tools), some are pen-and-paper based (the “Bullet Journal” method), and some systems are agnostic to implementation. In this last category, David Allen’s book, Getting Things Done, is quite popular among engineering managers; it’s an abstract algorithm for working through tasks and maintaining a prized “inbox zero.” The point here is to try these different systems and determine what works for you. Some of them will click with you and some will not, but you definitely need to find something more effective than tiny Post- It notes decorating your computer screen.
-
-那么，怎样才能让自己主要处理重要事项，而非紧急事项呢？以下是几个关键技巧：  
+那么，怎样才能让自己主要处理重要事项，而非紧急事项呢？以下是几个关键技巧：
 
 - *授权*  
     遇到的许多紧急事项，都可以交回给组织中的其他领导者处理。任务太琐碎时，你可能会感到内疚；也可能担心他们花的时间更长，交出去反而降低效率。但这对他们是很好的锻炼，也能让你腾出时间，处理那些只有你能做的重要工作。
@@ -337,100 +175,65 @@ So how can you force yourself to work mostly on important things, rather than ur
 - *找到适合自己的任务跟踪系统*  
     跟踪工作和安排优先级的系统有很多种。有些依赖软件，例如专门的待办工具；有些使用纸笔，例如“Bullet Journal”方法；还有些不限定实现方式。最后一类中，David Allen 的《搞定Ⅰ：无压工作的艺术》在工程管理者中颇受欢迎，它给出了一套处理任务、维持“收件箱清零”的抽象算法。关键是尝试不同系统，找出适合自己的。有些会让你用得顺手，有些则不会，但无论如何，都需要找到比在电脑屏幕四周贴满小便签更有效的办法。
 
-### Learn to Drop Balls  学会放下任务
-
-There’s one more key technique for managing your time, and on the surface it sounds radical. For many, it contradicts years of engineering instinct. As an engineer, you pay attention to detail; you make lists, you check things off lists, you’re precise, and you finish what you start. That’s why it feels so good to close bugs in a bug tracker, or whittle your email down to inbox zero. But as a leader of leaders, your time and attention are under constant attack. No matter how much you try to avoid it, you end up dropping balls on the floor—there are just too many of them being thrown at you. It’s overwhelming, and you probably feel guilty about this all the time.
+### 学会放下任务
 
 还有一种关键的时间管理技巧，乍看相当激进。对许多人来说，它违背了多年形成的工程师本能。工程师注重细节，列出清单、逐项完成，讲求精确、有始有终。所以，在缺陷跟踪系统里关闭一个 bug，或把邮件处理到收件箱清零，都会让人感觉很好。但作为其他领导者的领导者，你的时间和注意力不断受到冲击。不管多努力地避免，总会有球接不住而落地，因为抛向你的球实在太多。这让人不堪重负，你很可能因此一直感到内疚。
 
-So, at this point, let’s step back and take a frank look at the situation. If dropping some number of balls is inevitable, isn’t it better to drop certain balls deliberately rather than accidentally? At least then you have some semblance of control.
-
 这时，不妨退后一步，坦然审视现状。既然有些球注定接不住，有意识地选择放掉哪些，不是比无意间漏接更好吗？至少这样还能保留几分主动权。
-
-Here’s a great way to do that.
 
 下面这个方法很有用。
 
-Marie Kondo is an organizational consultant and the author of the extremely popular book The Life-Changing Magic of Tidying Up. Her philosophy is about effectively decluttering all of the junk from your house, but it works for abstract clutter as well.
-
 Marie Kondo 是一位整理顾问，也是畅销书《怦然心动的人生整理魔法》（The Life-Changing Magic of Tidying Up）的作者。她的理念是有效清理家中的杂物，但也适用于清理抽象的杂务。
-
-Think of your physical possessions as living in three piles. About 20% of your things are just useless—things that you literally never touch anymore, and all very easy to throw away. About 60% of your things are somewhat interesting; they vary in importance to you, and you sometimes use them, sometimes not. And then about 20% of your possessions are exceedingly important: these are the things you use all the time, that have deep emotional meaning, or, in Ms. Kondo’s words, spark deep “joy” just holding them. The thesis of her book is that most people declutter their lives incorrectly: they spend time tossing the bottom 20% in the garbage, but the remaining 80% still feels too cluttered. She argues that the true work of decluttering is about identifying the top 20%, not the bottom 20%. If you can identify only the critical things, you should then toss out the other 80%. It sounds extreme, but it’s quite effective. It is greatly freeing to declutter so radically.
 
 设想把自己的物品分成三堆。约20%毫无用处，你已经完全不会再碰，丢掉也很容易。约60%还有些吸引力，对你的重要程度各不相同，有时会用，有时不会。还有约20%极其重要：你经常使用，或对你有深厚的情感意义，又或者用 Kondo 女士的话说，只要拿在手里，就会由衷地感到“喜悦”。她在书中的核心观点是，大多数人整理生活的方式不对：花时间扔掉最没用的20%，剩下的80%却依然显得杂乱。她认为，整理的关键是找出最重要的20%，而不是最没用的20%。只要辨认出真正关键的物品，就应该扔掉其余80%。这听上去极端，却相当有效；如此彻底地清理，会让人感到极大的解脱。
 
-It turns out that you can also apply this philosophy to your inbox or task list—the barrage of balls being thrown at you. Divide your pile of balls into three groups: the bottom 20% are probably neither urgent nor important and very easy to delete or ignore. There’s a middle 60%, which might contain some bits of urgency or importance, but it’s a mixed bag. At the top, there’s 20% of things that are absolutely, critically important.
-
 这一理念同样适用于收件箱或任务清单，也就是接连抛向你的那些球。把它们分成三组：最底层的20%大概既不紧急也不重要，很容易删除或忽略；中间的60%可能带有一些紧急性或重要性，但情况混杂；最上层的20%则是真正至关重要的事。
-
-And so now, as you work through your tasks, do not try to tackle the top 80%—you’ll still end up overwhelmed and mostly working on urgent-but-not-important tasks. Instead, mindfully identify the balls that strictly fall in the top 20%—critical things that only you can do—and focus strictly on them. Give yourself explicit permission to drop the other 80%.
 
 因此，处理任务时，不要试图包揽排在前80%的事项，否则依然会不堪重负，而且大部分时间都花在紧急但不重要的事情上。相反，要有意识地找出严格属于最重要20%的任务，也就是那些只有你能做的关键工作，并把注意力集中在它们上面。明确允许自己放下其余80%。
 
-It might feel terrible to do so at first, but as you deliberately drop so many balls, you’ll discover two amazing things. First, even if you don’t delegate that middle 60% of tasks, your subleaders often notice and pick them up automatically. Second, if something in that middle bucket is truly critical, it ends up coming back to you anyway, eventually migrating up into the top 20%. You simply need to trust that things below your top-20% threshold will either be taken care of or evolve appropriately. Meanwhile, because you’re focusing only on the critically important things, you’re able to scale your time and attention to cover your group’s ever-growing responsibilities.
-
 起初，这样做可能让你很难受，但有意识地放下这么多任务后，你会发现两件令人惊讶的事。第一，即使没有明确分派，中间那60%的任务也常会被下属领导者注意到，并主动接手。第二，如果其中某件事确实至关重要，它最终还是会回到你这里，进入最重要的20%。你需要相信，未达到这一门槛的事项，要么会有人处理，要么会随着情况变化得到相应调整。与此同时，只专注于关键工作，才能让有限的时间和注意力覆盖团队不断扩大的职责范围。
 
-### Protecting Your Energy  保护你的精力
-
-We’ve talked about protecting your time and attention—but your personal energy is the other piece of the equation. All of this scaling is simply exhausting. In an environment like this, how do you stay charged and optimistic?
+### 保护你的精力
 
 前面讨论了如何保护时间和注意力，但个人精力也是必须考虑的一环。应对这些规模增长实在令人疲惫。在这样的环境中，怎样才能保持精力充沛和乐观呢？
 
-Part of the answer is that over time, as you grow older, your overall stamina builds up. Early in your career, working eight hours a day in an office can feel like a shock; you come home tired and dazed. But just like training for a marathon, your brain and body build up larger reserves of stamina over time.
-
 部分原因在于，随着时间推移、年龄增长，你的整体耐力会逐渐增强。职业生涯初期，每天在办公室工作八小时可能让人很不适应，回家后又累又恍惚。但就像训练马拉松一样，大脑和身体也会逐渐积累更充足的耐力储备。
-
-The other key part of the answer is that leaders gradually learn to manage their energy more intelligently. It’s something they learn to pay constant attention to. Typically, this means being aware of how much energy you have at any given moment,and making deliberate choices to “recharge” yourself at specific moments, in specific ways. Here are some great examples of mindful energy management:
-
-- *Take real vacations*  
-    A weekend is not a vacation. It takes at least three days to “forget” about your work; it takes at least a week to actually feel refreshed. But if you check your work email or chats, you ruin the recharge. A flood of worry comes back into your mind, and all of the benefit of psychological distancing dissipates. The vacation recharges only if you are truly disciplined about disconnecting.[^4] And, of course, this is possible only if you’ve built a self-driving organization.
-- *Make it trivial to disconnect*  
-    When you disconnect, leave your work laptop at the office. If you have work communications on your phone, remove them. For example, if your company uses G Suite (Gmail, Google Calendar, etc.), a great trick is to install these apps in a “work profile” on your phone. This causes a second set of work-badged apps to appear on your phone. For example, you’ll now have two Gmail apps: one for personal email, one for work email. On an Android phone, you can then press a single button to disable the entire work profile at once. All the work apps gray out, as if they were uninstalled, and you can’t “accidentally” check work messages until you re-enable the work profile.
-- *Take real weekends, too*  
-    A weekend isn’t as effective as a vacation, but it still has some rejuvenating power. Again, this recharge works only if you disconnect from work communications. Try truly signing out on Friday night, spend the weekend doing things you love, and then sign in again on Monday morning when you’re back in the office.
-- *Take breaks during the day*  
-    Your brain operates in natural 90-minute cycles.[^5]Use the opportunity to get up and walk around the office, or spend 10 minutes walking outside. Tiny breaks like this are only tiny recharges, but they can make a tremendous difference in your stress levels and how you feel over the next two hours of work.
-- *Give yourself permission to take a mental health day*  
-    Sometimes, for no reason, you just have a bad day. You might have slept well, eaten well, exercised—and yet you are still in a terrible mood anyway. If you’re a leader, this is an awful thing. Your bad mood sets the tone for everyone around you, and it can lead to terrible decisions (emails you shouldn’t have sent, overly harsh judgements, etc.). If you find yourself in this situation, just turn around and go home, declaring a sick day. Better to get nothing done that day than to do active damage.
 
 另一个关键原因是，领导者逐渐学会更明智地管理精力，并时刻留意自己的状态。通常，这意味着知道自己当下还有多少精力，有意识地选择在特定时刻、用特定方式为自己“充电”。以下是一些主动管理精力的好方法：
 
 - *给自己真正放个假*  
-    周末不算休假。至少要三天，才能“忘掉”工作；至少要一周，才能真正恢复精神。但一查工作邮件或聊天消息，充电过程就被打断了。忧虑重新涌入脑海，在心理上远离工作带来的好处也随之消散。只有严格要求自己真正断开工作联系，休假才能恢复精力。当然，前提是你已经建立了一个自我驱动的组织。
-- *让断开工作联系变得轻而易举（译注：主要指消息模式切换）*  
+    周末不算休假。至少要三天，才能“忘掉”工作；至少要一周，才能真正恢复精神。但一查工作邮件或聊天消息，充电过程就被打断了。忧虑重新涌入脑海，在心理上远离工作带来的好处也随之消散。只有严格要求自己真正断开工作联系，休假才能恢复精力。[^4]当然，前提是你已经建立了一个自我驱动的组织。
+- *让断开工作联系变得轻而易举[^t2]*  
     断开工作联系时，把工作笔记本电脑留在办公室。手机上若有工作通信应用，也把它们移除。例如，公司使用 G Suite（Gmail、Google Calendar 等）时，一个实用技巧是把这些应用安装到手机的“工作资料”中。这样，手机上就会出现另一组带有工作标记的应用。比如，你会有两个 Gmail 应用，一个处理私人邮件，一个处理工作邮件。在安卓手机上，只需按一个按钮，就能一次停用整个工作资料。所有工作应用都会变灰，仿佛已卸载；在重新启用工作资料之前，你也就无法“不小心”查看工作消息。
 - *也要享受真正的周末*  
     周末不如休假有效，但也能恢复一些精力。同样，只有断开工作通信，这种充电才会奏效。试着在周五晚上真正退出工作账号，周末做自己喜欢的事，等周一早上回到办公室再登录。
 - *工作日中也要适时休息*  
-    大脑会按90分钟的自然周期运转。利用这个节律，起身在办公室走走，或到室外散步10分钟。这样的小休息虽然只能补充少量精力，却能显著影响压力水平，以及接下来两小时工作时的感受。
+    大脑会按90分钟的自然周期运转。[^5]利用这个节律，起身在办公室走走，或到室外散步10分钟。这样的小休息虽然只能补充少量精力，却能显著影响压力水平，以及接下来两小时工作时的感受。
 - *允许自己休一天心理健康假*  
     有时，你会无缘无故地状态很差。也许睡得好、吃得好，也锻炼了，却仍然情绪低落。对领导者来说，这很不利：你的坏心情会影响周围所有人的情绪，也可能导致糟糕的决定，例如发出不该发的邮件，或作出过于严厉的评价。发现自己处于这种状态时，就请一天病假，转身回家。当天一事无成，也好过造成实际伤害。
 
-In the end, managing your energy is just as important as managing your time. If you learn to master these things, you’ll be ready to tackle the broader cycle of scaling responsibility and building a self-sufficient team.
-
 归根结底，管理精力与管理时间同样重要。掌握这些方法，才能准备好应对那个更大的循环：职责不断扩展，同时建立能够独立运作的团队。
 
-> [^4]: You need to plan ahead and build around the assumption that your work simply won’t get done during vacation. Working hard (or smart) just before and after your vacation mitigates this issue.
->
-> 4 你需要提前规划，以自己负责的工作在休假期间不会推进为前提作出安排。休假前后多努力一些，或更高效地工作，可以缓解这个问题。
->
-> [^5]: You can read more about BRAC at https://en.wikipedia.org/wiki/Basic_rest-activity_cycle.
->
-> 5 你可以在 https://en.wikipedia.org/wiki/Basic_rest-activity_cycle，了解更多关于BRAC的信息。
-
-## Conclusion  总结
-
-Successful leaders naturally take on more responsibility as they progress (and that’s a good and natural thing). Unless they effectively come up with techniques to properly make decisions quickly, delegate when needed, and manage their increased responsibility, they might end up feeling overwhelmed. Being an effective leader doesn’t mean that you need to make perfect decisions, do everything yourself, or work twice as hard. Instead, strive to always be deciding, always be leaving, and always be scaling.
+## 总结
 
 成功的领导者在成长过程中，自然会承担更多责任，这既正常，也是好事。如果没有掌握有效的方法，迅速作出恰当决策、适时授权，并应对不断增加的职责，就可能不堪重负。有效履职不意味着决策必须完美、凡事亲力亲为，或付出双倍努力。应当努力做到的是：持续作出决策、随时准备离开、不断适应规模增长。
 
-## TL;DRs  内容提要
-
-- Always Be Deciding: Ambiguous problems have no magic answer; they’re all about finding the right trade-offs of the moment, and iterating.
-- Always Be Leaving: Your job, as a leader, is to build an organization that automatically solves a class of ambiguous problems—over time—without  you needing to be present.
-- Always Be Scaling: Success generates more responsibility over time, and you must proactively manage the scaling of this work in order to protect your scarce resources of personal time, attention, and energy.
+## 内容提要
 
 - 持续作出决策：模糊难题没有神奇的答案，关键是找到当前恰当的取舍，并持续迭代。
 - 随时准备离开：领导者的职责，是建立一个无需自己在场，也能长期自主解决一类模糊难题的组织。
 - 不断适应规模增长：成功会逐渐带来更多责任。你必须主动管理这些不断扩展的工作，保护个人有限的时间、注意力和精力。
+
+[^1]: “Code yellow”（黄色警报）是谷歌的术语，指为解决关键问题而开展的紧急黑客马拉松。相关团队必须暂停其他所有工作，将100%的注意力投入这个问题，直到宣布紧急状态结束。
+
+[^2]: Brian W. Fitzpatrick 和 Ben Collins-Sussman，《进化：从孤胆极客到高效团队》（波士顿：O'Reilly，2016）。
+
+[^3]: 此时很容易出现“冒名顶替综合征”。如果你觉得自己根本不知道该怎么做，可以试试这样想：有一位专家完全知道该怎么办，只是正在休假，而你暂时代班而已。这样有助于减轻对个人得失的担忧，允许自己在失败中学习。
+
+[^4]: 你需要提前规划，以自己负责的工作在休假期间不会推进为前提作出安排。休假前后多努力一些，或更高效地工作，可以缓解这个问题。
+
+[^5]: 你可以在 https://en.wikipedia.org/wiki/Basic_rest-activity_cycle，了解更多关于BRAC的信息。
+
+[^t1]: **译者补充：取舍的比喻（非原书内容）** 鱼和熊掌不可兼得？
+
+[^t2]: **译者补充：断开工作联系（非原书内容）** 主要指消息模式切换

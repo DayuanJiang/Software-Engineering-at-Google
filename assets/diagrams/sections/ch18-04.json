@@ -3,7 +3,10 @@
   "chapter": 18,
   "title": "缓存共享结果，远程执行共享算力",
   "summary": "远程缓存复用已经存在的产物，未命中仍需执行构建；远程执行把动作调度到工作节点，依赖就绪后通过缓存共享中间产物。本图退役，相关流程由正文与原书图18-2、18-3保留。",
-  "sourceSections": ["### Remote caching 远程缓存", "### Remote execution 远程执行"],
+  "sourceSections": [
+    "Remote caching",
+    "Remote execution"
+  ],
   "afterParagraph": "基于任务的系统很难提供这些保证，因此，在它之上实现可靠的远程执行系统几乎不可能。",
   "desktop": "assets/diagrams/sections/ch18-04.svg",
   "mobile": "assets/diagrams/sections/ch18-04-mobile.svg",

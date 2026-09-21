@@ -5,8 +5,8 @@
   "summary": "用原文中的消息、会议和战略工作，对照被动等空闲与主动预留至少两小时的注意力安排，说明哪些关键工作会被持续响应挤掉。",
   "enabled": true,
   "sourceSections": [
-    "### Important Versus Urgent   重要和紧急",
-    "### Learn to Drop Balls  学会放下任务"
+    "Important Versus Urgent",
+    "Learn to Drop Balls"
   ],
   "afterParagraph": "才能让有限的时间和注意力覆盖团队不断扩大的职责范围。",
   "desktop": "assets/diagrams/sections/ch06-04.svg",

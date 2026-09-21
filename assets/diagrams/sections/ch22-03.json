@@ -4,7 +4,10 @@
   "title": "别名怎样解开 API 与调用方的绑定？",
   "summary": "用新旧类型的兼容矩阵比较别名前后：没有转换适配时，新旧类型不同会卡住混合迁移；旧名成为新类型别名后，API 和调用方即使分批改名，也指向同一类型。行为准备仍是前提，旧引用清完才删除别名。",
   "enabled": true,
-  "sourceSections": ["##### Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr", "### Language Support  编程语言支持"],
+  "sourceSections": [
+    "Case Study: scoped_ptr to std::unique_ptr",
+    "Language Support"
+  ],
   "afterParagraph": "最后删除旧的 scoped_ptr 别名，完成了迁移。",
   "desktop": "assets/diagrams/sections/ch22-03.svg",
   "mobile": "assets/diagrams/sections/ch22-03-mobile.svg",

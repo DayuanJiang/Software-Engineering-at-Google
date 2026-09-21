@@ -4,7 +4,11 @@
   "title": "换了存储格式，哪条测试不该失败？",
   "summary": "沿用交易示例，把内部记录的逗号换成竖线作为纯重构示意；相同余额不变，内部字符串断言却从通过变为失败，显露测试对实现的意外依赖。",
   "enabled": true,
-  "sourceSections": ["### Strive for Unchanging Tests  力求让测试无需改动", "## Preventing Brittle Tests  避免脆弱测试", "### Test via Public APIs  通过公共API进行测试"],
+  "sourceSections": [
+    "Strive for Unchanging Tests",
+    "Preventing Brittle Tests",
+    "Test via Public APIs"
+  ],
   "afterParagraph": "但若要让测试只在系统发生实质性变化时才失败，这是最重要的一步。",
   "desktop": "assets/diagrams/sections/ch12-01.svg",
   "mobile": "assets/diagrams/sections/ch12-01-mobile.svg",

@@ -3,7 +3,9 @@
   "chapter": 4,
   "title": "旧岗位低评分，能否决定新岗位资格？",
   "summary": "把旧岗位当期评级与新团队资格分开，展示书中调查的关键比较：转组后，曾获低评级与从无低评级的候选人获得满意或卓越评级的可能性相当。该案例不支持用历史低评级筛掉新岗位候选人，但评级仍可帮助审视当前岗位和支持需求。",
-  "sourceSections": ["## Challenge Established Processes 挑战既定流程"],
+  "sourceSections": [
+    "Challenge Established Processes"
+  ],
   "afterParagraph": "这项分析确实占用了大量项目时间，但换来了更公平的内部流动流程。",
   "desktop": "assets/diagrams/sections/ch04-03.svg",
   "mobile": "assets/diagrams/sections/ch04-03-mobile.svg",

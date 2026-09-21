@@ -4,7 +4,10 @@
   "title": "有资格后，还需代码审查吗？",
   "summary": "对照同一语言的作者有无 Readability 资格时，本项批准由具资格审查者明确给予还是由作者资格隐含满足；两条路径都保留代码审查要求，并展示引用准则的教学反馈。",
   "enabled": true,
-  "sourceSections": ["### What Is the Readability Process?  什么是可读性认证流程？", "### Why Have This Process? 为什么需要这一流程？"],
+  "sourceSections": [
+    "What Is the Readability Process?",
+    "Why Have This Process?"
+  ],
   "afterParagraph": "权威准则和语言使用建议都有全面的文档记录，这当然是好事；但资料数量太多",
   "desktop": "assets/diagrams/sections/ch03-04.svg",
   "mobile": "assets/diagrams/sections/ch03-04-mobile.svg",

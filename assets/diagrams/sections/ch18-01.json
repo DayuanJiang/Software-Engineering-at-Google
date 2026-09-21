@@ -3,7 +3,11 @@
   "chapter": 18,
   "title": "互不依赖，就能安全并行吗？",
   "summary": "B 与 C 虽无依赖边，却可能写同一状态文件；交换最后写入者即可得到不同结果。对照声明并隔离输出的两个动作，说明安全并行需要掌握资源读写，而不只是任务依赖图。",
-  "sourceSections": ["#### The dark side of task-based build systems 基于任务的构建系统的缺陷", "### Artifact-Based Build Systems 基于产物的构建系统", "### Other nifty Bazel tricks 其他巧妙的 Bazel 做法"],
+  "sourceSections": [
+    "The dark side of task-based build systems",
+    "Artifact-Based Build Systems",
+    "Other nifty Bazel tricks"
+  ],
   "afterParagraph": "系统完全掌握何时运行哪些工具，因此能够作出更强的保证，在确保正确性的同时大幅提高效率。",
   "desktop": "assets/diagrams/sections/ch18-01.svg",
   "mobile": "assets/diagrams/sections/ch18-01-mobile.svg",

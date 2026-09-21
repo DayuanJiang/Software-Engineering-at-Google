@@ -5,7 +5,7 @@
   "summary": "用原书 Java 案例画出三方关系：受阻工程师、并非 Java 专家的经理、了解该问题的另一位工程师。经理的贡献是牵线建立技术求助关系，而不是自己掌握答案。",
   "enabled": false,
   "sourceSections": [
-    "### Remove Roadblocks  消除障碍"
+    "Remove Roadblocks"
   ],
   "afterParagraph": "很多时候，认识合适的人比知道正确答案更有价值。",
   "desktop": "assets/diagrams/sections/ch05-03.svg",

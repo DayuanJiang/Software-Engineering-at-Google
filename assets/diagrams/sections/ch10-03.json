@@ -3,7 +3,9 @@
   "chapter": 10,
   "title": "下一步，究竟轮到谁操作？",
   "summary": "将原教程第3至7步对照改写：认证与建库是执行脚本后的系统响应，测试与输入 SQL 是同一个用户操作。只给用户动作编号，命令独立成行。",
-  "sourceSections": ["### Tutorials 教程"],
+  "sourceSections": [
+    "Tutorials"
+  ],
   "afterParagraph": "则应从该对象的角度组织并编号步骤，也就是列出服务器执行的动作。",
   "desktop": "assets/diagrams/sections/ch10-03.svg",
   "mobile": "assets/diagrams/sections/ch10-03-mobile.svg",

@@ -3,7 +3,10 @@
   "chapter": 15,
   "title": "静态清单之外，谁还在用？",
   "summary": "对照静态引用和计划停服揭示的运行依赖，说明代码搜索、日志采样与停服演练提供的证据如何互补，并可能改变迁移计划。",
-  "sourceSections": ["### Compulsory Deprecation  强制性弃用", "#### Discovery  发现使用者"],
+  "sourceSections": [
+    "Compulsory Deprecation",
+    "Discovery"
+  ],
   "afterParagraph": "不过静态分析工具提供的语义信息，通常已经足以发现对过时系统的所有依赖。",
   "desktop": "assets/diagrams/sections/ch15-02.svg",
   "mobile": "assets/diagrams/sections/ch15-02-mobile.svg",

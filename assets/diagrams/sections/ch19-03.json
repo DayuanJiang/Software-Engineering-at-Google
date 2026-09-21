@@ -3,7 +3,10 @@
   "chapter": 19,
   "title": "甲已发意见，为什么还在等乙？",
   "summary": "同一参与者名单的三次交接：先等甲乙审查；甲发布意见后，等作者处理且仍等乙；作者回复甲后，等甲复看且仍等乙。示例通过手动设置关注集明确等待关系，不假定具体自动更新算法。",
-  "sourceSections": ["### Commenting 提出审查意见", "#### “Whose turn” feature “轮到谁”功能"],
+  "sourceSections": [
+    "Commenting",
+    "“Whose turn” feature"
+  ],
   "afterParagraph": "Critique 通过加粗相关用户名来标示关注集成员。",
   "enabled": true,
   "pedagogy": {

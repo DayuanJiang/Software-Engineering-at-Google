@@ -3,7 +3,9 @@
   "chapter": 24,
   "title": "更新后指标变了，原因是什么？",
   "summary": "旧版重发与新版同时经历更新，用对照区分更新本身与版本差异。以非实测的同向变化说明为什么不能仅凭更新前后归因，并区分证据充分且护栏达标、证据不足、护栏恶化三种发布后果。",
-  "sourceSections": ["## Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策"],
+  "sourceSections": [
+    "Shifting Left: Making Data-Driven Decisions Earlier"
+  ],
   "afterParagraph": "这样在逐步发布时，需要检验的就只有部署本身的稳定性。",
   "desktop": "assets/diagrams/sections/ch24-04.svg",
   "mobile": "assets/diagrams/sections/ch24-04-mobile.svg",

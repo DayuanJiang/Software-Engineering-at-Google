@@ -4,7 +4,10 @@
   "title": "没显示广告：代码坏了，还是超时了？",
   "summary": "本章广告服务在内部超时后不展示广告而非返回500；这种降级可能看似业务缺陷。区分内部服务期限与测试等待，展示重跑加重过载的循环及事件等待的退出条件。",
   "enabled": true,
-  "sourceSections": ["#### Speeding up tests  加快测试运行", "#### Driving out flakiness  消除测试不稳定性"],
+  "sourceSections": [
+    "Speeding up tests",
+    "Driving out flakiness"
+  ],
   "afterParagraph": "因此，必须清楚地呈现这种失败原因，并让内部超时时间易于针对测试场景调整。",
   "desktop": "assets/diagrams/sections/ch14-05.svg",
   "mobile": "assets/diagrams/sections/ch14-05-mobile.svg",

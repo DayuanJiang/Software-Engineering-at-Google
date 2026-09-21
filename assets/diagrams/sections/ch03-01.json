@@ -5,7 +5,10 @@
   "removalReason": "与章首图重复呈现专家、文档、学习者的互补关系，没有独立的推理任务。修订后的章首图已用排障场景解释同一关系；保留本组 SVG 供追溯，不再作为启用的章节插图。",
   "title": "专家与文档相互补充",
   "summary": "专家帮助判断问题背景和适用资料，文档支持跨团队与跨时间共享，学习者通过提问和更新把经验回馈；心理安全感是共同基础。",
-  "sourceSections": ["## Philosophy  理念", "## Setting the Stage: Psychological Safety 奠定基础：心理安全感"],
+  "sourceSections": [
+    "Philosophy",
+    "Setting the Stage: Psychological Safety"
+  ],
   "afterParagraph": "培养自己的专家队伍：工程专业知识永远不嫌多。",
   "desktop": "assets/diagrams/sections/ch03-01.svg",
   "mobile": "assets/diagrams/sections/ch03-01-mobile.svg",

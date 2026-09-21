@@ -4,7 +4,10 @@
   "title": "搜得到，为什么引用列表还没变？",
   "summary": "新增 worker.cc 中的 Send 调用后，文本查询已显示它，旧交叉引用图却还未包含这次调用；两种结果使用的索引状态不同。",
   "enabled": true,
-  "sourceSections": ["### Scale 规模", "### Index Latency 索引延迟"],
+  "sourceSections": [
+    "Scale",
+    "Index Latency"
+  ],
   "afterParagraph": "两者不同步，会引发一些虽不常见、却反复出现的用户问题。",
   "desktop": "assets/diagrams/sections/ch17-01.svg",
   "mobile": "assets/diagrams/sections/ch17-01-mobile.svg",

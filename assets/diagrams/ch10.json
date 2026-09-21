@@ -4,14 +4,14 @@
   "summary": "把文档当作代码来写、评审和维护，动笔前先想清读者是谁",
   "enabled": true,
   "sourceSections": [
-    "## What Qualifies as Documentation? 什么算是文档？",
-    "## Why Is Documentation Needed? 为什么需要文档？",
-    "## Documentation Is Like Code 把文档当作代码",
-    "## Know Your Audience 了解你的受众",
-    "## Documentation Types 文档类型",
-    "## Documentation Reviews 文档评审",
-    "## Documentation Philosophy 文档写作理念",
-    "## When Do You Need Technical Writers? 何时需要技术撰稿人？"
+    "What Qualifies as Documentation?",
+    "Why Is Documentation Needed?",
+    "Documentation Is Like Code",
+    "Know Your Audience",
+    "Documentation Types",
+    "Documentation Reviews",
+    "Documentation Philosophy",
+    "When Do You Need Technical Writers?"
   ],
   "kind": "contrast",
   "desktop": "assets/diagrams/ch10.svg",

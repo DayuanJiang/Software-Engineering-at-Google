@@ -4,7 +4,9 @@
   "title": "跳过清理，会让谁的构建失败？",
   "summary": "对照先开错误导致旧项目失败与先扫描、自动修复、测试提交清理后再启用错误的推广顺序，同时保留严格准入条件和提交前后发现失败的区别。",
   "enabled": true,
-  "sourceSections": ["### Compiler Integration 编译器集成"],
+  "sourceSections": [
+    "Compiler Integration"
+  ],
   "afterParagraph": "构建失败会在提交后由持续集成（CI）系统发现，或在提交前由预提交检查发现，参见前文。",
   "desktop": "assets/diagrams/sections/ch20-04.svg",
   "mobile": "assets/diagrams/sections/ch20-04-mobile.svg",

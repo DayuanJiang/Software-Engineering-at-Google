@@ -4,7 +4,11 @@
   "title": "分片边界不能切断配套修改",
   "summary": "示意把函数返回类型从 int 改为 long：若先提交头文件，声明与旧实现不一致；把头文件与实现放进同一分片，才能形成可独立提交的变更。另一项目的独立修改不必捆绑提交。",
   "enabled": true,
-  "sourceSections": ["## What Is a Large-Scale Change? 什么是大规模变更？", "### Sharding and Submitting  分片与提交", "#### Testing 测试"],
+  "sourceSections": [
+    "What Is a Large-Scale Change?",
+    "Sharding and Submitting",
+    "Testing"
+  ],
   "afterParagraph": "本章后面会详细讨论原子变更可能遇到的障碍。",
   "desktop": "assets/diagrams/sections/ch22-01.svg",
   "mobile": "assets/diagrams/sections/ch22-01-mobile.svg",

@@ -4,7 +4,10 @@
   "title": "拆开仓库不必拆成多个依赖版本",
   "summary": "同一张 A、B 依赖公共库 L 的图，分别放在一个物理仓库和三个独立仓库内。仓库边界改变，指定依赖仍唯一；多仓库需要额外协调主干、先后和依赖关系。",
   "enabled": true,
-  "sourceSections": ["## Monorepos    单体代码仓库", "## Future of Version Control  版本控制的未来"],
+  "sourceSections": [
+    "Monorepos",
+    "Future of Version Control"
+  ],
   "afterParagraph": "以某种方式构建类似 VMR 的体系，可能更能兼得两者之长。",
   "desktop": "assets/diagrams/sections/ch16-05.svg",
   "mobile": "assets/diagrams/sections/ch16-05-mobile.svg",

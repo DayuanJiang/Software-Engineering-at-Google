@@ -6,10 +6,10 @@
   "removalReason": "抽象更新循环重复修改规则段的流程文字，也重复新版概览对决策理由与条件变化的解释；其例外边界已由 ch08-02 的宏冲突反例具体说明。保留 SVG 文件供追溯，不继续插入阅读正文。",
   "summary": "用流程与反馈连接真实问题、原有决策理由、社区讨论、仲裁共识和规则工具更新；个别豁免并不自动推翻通用规则。",
   "sourceSections": [
-    "## Changing the Rules  修改规则",
-    "### The Process  流程",
-    "### The Style Arbiters  风格仲裁者",
-    "### Exceptions   例外"
+    "Changing the Rules",
+    "The Process",
+    "The Style Arbiters",
+    "Exceptions"
   ],
   "afterParagraph": "因此，保留原规则仍然值得。",
   "desktop": "assets/diagrams/sections/ch08-03.svg",

@@ -4,11 +4,11 @@
   "summary": "软件工程是把编程放进时间里：多人、多年、随时改得动",
   "enabled": true,
   "sourceSections": [
-    "## Time and Change 时间与变化",
-    "## Scale and Efficiency  规模和效率",
-    "## Trade-offs and Costs 权衡和成本",
-    "## Revisiting Decisions, Making Mistakes 重审决策与犯错",
-    "## Software Engineering Versus Programming 软件工程与编程"
+    "Time and Change",
+    "Scale and Efficiency",
+    "Trade-offs and Costs",
+    "Revisiting Decisions, Making Mistakes",
+    "Software Engineering Versus Programming"
   ],
   "kind": "axes",
   "desktop": "assets/diagrams/ch01.svg",

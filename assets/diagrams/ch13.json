@@ -4,14 +4,14 @@
   "summary": "优先真实实现；用替身时首选伪实现，打桩和交互验证要克制",
   "enabled": true,
   "sourceSections": [
-    "## Basic Concepts 基本概念",
-    "### Seams 接缝",
-    "### Mocking Frameworks 模拟框架",
-    "## Techniques for Using Test Doubles 测试替身的使用技术",
-    "### How to Decide When to Use a Real Implementation 如何决定何时使用真实实现",
-    "## Faking 使用伪实现",
-    "## Stubbing 打桩",
-    "## Interaction Testing  交互测试"
+    "Basic Concepts",
+    "Seams",
+    "Mocking Frameworks",
+    "Techniques for Using Test Doubles",
+    "How to Decide When to Use a Real Implementation",
+    "Faking",
+    "Stubbing",
+    "Interaction Testing"
   ],
   "kind": "socket",
   "desktop": "assets/diagrams/ch13.svg",

@@ -5,8 +5,8 @@
   "summary": "显示新增质量功能持续增加复杂度、抵消提速收益的路径，并把预防与优化两组工作分别连到新增成因和已有延迟，说明为何需要并行负责。",
   "enabled": true,
   "sourceSections": [
-    "### Dividing the Problem Space  划分问题域",
-    "####  Example: Subdividing the “latency problem” of Google Search  示例：拆分谷歌搜索的“延迟问题”"
+    "Dividing the Problem Space",
+    "Example: Subdividing the “latency problem” of Google Search"
   ],
   "afterParagraph": "这些团队负责的是问题，而不是特定的解决方案！）",
   "desktop": "assets/diagrams/sections/ch06-02.svg",

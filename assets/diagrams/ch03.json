@@ -4,13 +4,13 @@
   "summary": "让人敢问、愿教，再用文档和制度把知识沉淀成组织的资产",
   "enabled": true,
   "sourceSections": [
-    "## Challenges to Learning 学习的挑战",
-    "## Setting the Stage: Psychological Safety 奠定基础：心理安全感",
-    "## Growing Your Knowledge 增进自己的知识",
-    "## Scaling Your Questions: Ask the Community 扩大求助范围：向社区提问",
-    "## Scaling Your Knowledge:You Always Have Something to Teach 扩大知识传播：你总有东西可以教给别人",
-    "## Scaling Your Organization’s Knowledge 扩大组织内的知识传播",
-    "## Readability: Standardized Mentorship Through Code Review 可读性认证：通过代码审查实现标准化指导"
+    "Challenges to Learning",
+    "Setting the Stage: Psychological Safety",
+    "Growing Your Knowledge",
+    "Scaling Your Questions: Ask the Community",
+    "Scaling Your Knowledge:You Always Have Something to Teach",
+    "Scaling Your Organization’s Knowledge",
+    "Readability: Standardized Mentorship Through Code Review"
   ],
   "kind": "pillars",
   "desktop": "assets/diagrams/ch03.svg",

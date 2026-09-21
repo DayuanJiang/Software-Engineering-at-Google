@@ -14,7 +14,9 @@
     "whyBetter": "固定预期并改变运行证据，显示未运行、失败未处理、修复重跑三个可区分状态；实际值 3 明确标为示意，不是书中事件。",
     "limits": "这是基于书中计算器测试的示意状态，不是所有失败都由产品代码导致；通过这一断言不代表所有行为正确，也不代表以后无需再运行。"
   },
-  "sourceSections": ["### Write, Run, React  编写、运行、处理失败"],
+  "sourceSections": [
+    "Write, Run, React"
+  ],
   "afterParagraph": "让大家持续信任测试流程。",
   "desktop": "assets/diagrams/sections/ch11-01.svg",
   "mobile": "assets/diagrams/sections/ch11-01-mobile.svg"

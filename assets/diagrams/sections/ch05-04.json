@@ -4,7 +4,10 @@
   "title": "不知怎么做，还是不知为何做？",
   "summary": "并列区分方向缺口和意义缺口：前者需要把工作拆成可管理任务；后者以原书经理转发客户受益邮件的案例，展示如何让团队看见工作用途。两种帮助改变的信息不同。",
   "enabled": true,
-  "sourceSections": ["## People Are Like Plants  人如植物", "### Intrinsic Versus Extrinsic Motivation  内在动机与外在动机"],
+  "sourceSections": [
+    "People Are Like Plants",
+    "Intrinsic Versus Extrinsic Motivation"
+  ],
   "afterParagraph": "这不但能激励大家，也常能启发成员思考怎样进一步改进产品。",
   "desktop": "assets/diagrams/sections/ch05-04.svg",
   "mobile": "assets/diagrams/sections/ch05-04-mobile.svg",

@@ -4,7 +4,12 @@
   "title": "数据库不可用于测试时，替换哪一层？",
   "summary": "示意保留真实的两个调用者，只在无法用于测试的数据库 API 边界提供共享 fake；写入调用改变 fake 状态，另一调用者读回该状态，而非为每个调用者分别写 fake。",
   "enabled": true,
-  "sourceSections": ["### When Should Fakes Be Written? 何时应该编写伪实现？", "### Prefer Realism Over Isolation 优先考虑真实性，而非隔离性", "#### Tests become less effective 测试有效性降低", "## Conclusion 总结"],
+  "sourceSections": [
+    "When Should Fakes Be Written?",
+    "Prefer Realism Over Isolation",
+    "Tests become less effective",
+    "Conclusion"
+  ],
   "afterParagraph": "而不是为每个调用该 API 的类都写一个。",
   "desktop": "assets/diagrams/sections/ch13-03.svg",
   "mobile": "assets/diagrams/sections/ch13-03-mobile.svg",

@@ -5,8 +5,8 @@
   "summary": "按风险和领域知识需求选择审查者，再按问题对象区分本地变更评论与向 LSC 监督小组升级反馈；机器生成不等于低风险，也不等于免审。",
   "enabled": true,
   "sourceSections": [
-    "## Types of Code Reviews  代码审查的类型",
-    "### Refactorings and Large-Scale Changes  重构与大规模变更"
+    "Types of Code Reviews",
+    "Refactorings and Large-Scale Changes"
   ],
   "afterParagraph": "也会限制此人借助工具能够有效处理的变更规模。",
   "desktop": "assets/diagrams/sections/ch09-04.svg",

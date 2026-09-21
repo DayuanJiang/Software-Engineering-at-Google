@@ -1,0 +1,37 @@
+{
+  "format": 2,
+  "sourceSha256": "08efb0ca0c6eab012bdd93c95454f7a5b1c912687d919b4d58453f28eea69bc6",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch15.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [128, 130],
+      "english": "“Design and Construction of Nuclear Power Plants to Facilitate Decommissioning,” Technical Reports Series No. 382, IAEA, Vienna (1997).",
+      "chinese": "《便于退役的核电站设计与建造》，技术报告系列第382号，IAEA，维也纳（1997年）。",
+      "after": "设计时就必须考虑，核电站在完成整个服役周期后如何退役，甚至需要为此预留资金。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [208, 210],
+      "english": "See `https://abseil.io/docs/cpp/tools/api-upgrades` for an example.",
+      "chinese": "示例见 `https://abseil.io/docs/cpp/tools/api-upgrades`。",
+      "after": "这两类警告都明确告诉工程师下一步可以做什么，从而不再依赖已弃用的系统。",
+      "reason": "The definition at line 208 lacks the colon after [^2]; the English body reference at line 196 is intact. The reviewed line range identifies the definition without changing its wording."
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [],
+  "issues": [
+    {
+      "kind": "colonless-footnote-definition",
+      "sourceLines": [208, 210],
+      "detail": "Footnote 2 is unambiguously defined as '> [^2] See ...' without a colon. Its body reference and bilingual definition are complete. Compiler definition discovery and prefix removal must accept this reviewed form; requiring a colon incorrectly reports only footnote 1."
+    },
+    {
+      "kind": "source-duplicate-fragment",
+      "sourceLines": [47, 47],
+      "detail": "The English paragraph starts with the stray fragment 'with the old one.' and repeats the sentence about removing the old system before the paragraph's actual argument. The Chinese paragraph already expresses the argument once. Source repair is outside this rollout's ownership."
+    }
+  ]
+}

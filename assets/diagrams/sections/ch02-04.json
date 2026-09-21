@@ -4,7 +4,7 @@
   "title": "无责复盘：从原因到改变",
   "summary": "用明确标为示意的配置故障，把事实、原因连接到立即修复与预防两类行动，再区分落实改变和共享经验；避免把复盘画成必然回到事件起点的循环。",
   "sourceSections": [
-    "### Blameless Post-Mortem Culture 无责复盘文化"
+    "Blameless Post-Mortem Culture"
   ],
   "afterParagraph": "不要抹去自己的足迹，而要像照亮跑道一样，让后来者看清这些足迹！",
   "desktop": "assets/diagrams/sections/ch02-04.svg",

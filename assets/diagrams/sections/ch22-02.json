@@ -4,7 +4,10 @@
   "title": "合测的失败，如何归到分片？",
   "summary": "以三个分片和四个测试为示例，先跑受影响测试的并集；若 b 失败，甲、乙分别重跑 b，丙与失败集的交集为空。甲通过、乙失败的示例说明合测失败不能直接归罪于整批分片。",
   "enabled": true,
-  "sourceSections": ["#### Testing 测试", "##### Case Study: Testing LSCs  案例研究：测试大规模变更"],
+  "sourceSections": [
+    "Testing",
+    "Case Study: Testing LSCs"
+  ],
   "afterParagraph": "因此再向这批分片加入变更，几乎不会增加成本。",
   "desktop": "assets/diagrams/sections/ch22-02.svg",
   "mobile": "assets/diagrams/sections/ch22-02-mobile.svg",

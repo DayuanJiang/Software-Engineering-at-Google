@@ -5,8 +5,8 @@
   "summary": "对照两类冲突：指南允许局部选择的 const 写法沿用文件惯例；头文件宏可能全局重名时，不能只为项目一致而豁免项目前缀。代码是依据书中两例构造的示意。",
   "enabled": true,
   "sourceSections": [
-    "#### Be consistent   保持一致性",
-    "### Exceptions   例外"
+    "Be consistent",
+    "Exceptions"
   ],
   "afterParagraph": "在这里，代码库整体不受破坏，比单个项目保持一致更重要。",
   "desktop": "assets/diagrams/sections/ch08-02.svg",

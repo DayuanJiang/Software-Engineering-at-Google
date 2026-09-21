@@ -14,7 +14,10 @@
     "whyBetter": "读者可以根据可见的错误返回值和断言预测两个测试的不同结果，而不是仅记住覆盖率不等于质量这一口号。",
     "limits": "错误实现及无断言分支为示意，不是新增书中代码。仅比较所示功能行的行覆盖率；不是整个程序覆盖率，也不证明一个断言已覆盖所有行为。"
   },
-  "sourceSections": ["### A Note on Code Coverage  关于代码覆盖率的注意事项", "### Write, Run, React  编写、运行、处理失败"],
+  "sourceSections": [
+    "A Note on Code Coverage",
+    "Write, Run, React"
+  ],
   "afterParagraph": "却不能代替对系统测试充分程度的审慎判断。",
   "desktop": "assets/diagrams/sections/ch11-04.svg",
   "mobile": "assets/diagrams/sections/ch11-04-mobile.svg"

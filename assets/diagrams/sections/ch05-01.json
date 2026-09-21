@@ -5,7 +5,11 @@
   "removalReason": "与本章概览重复解释工程经理、TL、共同人员配置及 TLM 兼任。新版概览已将这些职责对应到具体问题，本节图没有额外的推理或案例价值；保留 SVG 供追溯。",
   "title": "两类职责，一个团队",
   "summary": "工程经理关注人员、绩效和业务，技术负责人关注架构、技术选择与推进；双方共同安排人员与任务。小团队的 TLM 兼任两职，但需要平衡和指导。",
-  "sourceSections": ["### The Engineering Manager  工程经理", "### The Tech Lead  技术负责人", "### The Tech Lead Manager  技术负责人兼经理"],
+  "sourceSections": [
+    "The Engineering Manager",
+    "The Tech Lead",
+    "The Tech Lead Manager"
+  ],
   "afterParagraph": "在自己逐渐适应这个角色的过程中，定期听取导师的建议。",
   "desktop": "assets/diagrams/sections/ch05-01.svg",
   "mobile": "assets/diagrams/sections/ch05-01-mobile.svg",

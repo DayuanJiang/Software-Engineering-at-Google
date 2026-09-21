@@ -4,7 +4,10 @@
   "title": "只改版本号，姓名测试为什么会失败？",
   "summary": "对照例13-18和13-19的 setText 验证：版本号从2.1改为2.2时，锁定全部参数的旧测试失败，只锁定姓名的测试仍通过；姓名真变错时，后者仍会失败。",
   "enabled": true,
-  "sourceSections": ["### When Is Interaction Testing Appropriate? 什么时候适合进行交互测试？", "#### Avoid overspecification 避免过度限定"],
+  "sourceSections": [
+    "When Is Interaction Testing Appropriate?",
+    "Avoid overspecification"
+  ],
   "afterParagraph": "每个测试只检查确认相应行为正确所必需的最少内容。",
   "desktop": "assets/diagrams/sections/ch13-05.svg",
   "mobile": "assets/diagrams/sections/ch13-05-mobile.svg",

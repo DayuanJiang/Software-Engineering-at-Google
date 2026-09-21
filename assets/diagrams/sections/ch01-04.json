@@ -5,8 +5,8 @@
   "summary": "规律升级结合专业知识、自动化和一致性，让后续变更更可行；长期推迟则积累隐式依赖和集中升级的负担。",
   "enabled": true,
   "sourceSections": [
-    "## Time and Change 时间与变化",
-    "### Example: Compiler Upgrade 示例：编译器升级"
+    "Time and Change",
+    "Example: Compiler Upgrade"
   ],
   "afterParagraph": "停滞不前也是一种选择，但往往并不明智。",
   "desktop": "assets/diagrams/sections/ch01-04.svg",

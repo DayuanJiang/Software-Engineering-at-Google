@@ -3,7 +3,10 @@
   "chapter": 10,
   "title": "重名时，还会返回记录 ID 吗？",
   "summary": "从原文 AddCustomer 注释推演：没有同名记录时创建并返回 ID，已有同名记录时抛出 DuplicateEntryError；删掉条件与异常后，调用者便无法判断重名的结果。",
-  "sourceSections": ["### Reference Documentation 参考文档", "#### Function comments 函数注释"],
+  "sourceSections": [
+    "Reference Documentation",
+    "Function comments"
+  ],
   "afterParagraph": "加入固定格式的小节，只会让注释更冗长、更重复，并不会更清楚，甚至可能更难理解。",
   "desktop": "assets/diagrams/sections/ch10-02.svg",
   "mobile": "assets/diagrams/sections/ch10-02-mobile.svg",

@@ -4,7 +4,9 @@
   "title": "OWNERS 没变，使用范围变了",
   "summary": "以同一个 third_party 包的前后使用路径对比：从演示引入到搜索的传递依赖，登记未更新而人员已转岗；删除会破坏构建，升级又缺乏维护经验。",
   "enabled": true,
-  "sourceSections": ["### How Google Handles Importing Dependencies  Google如何引入依赖"],
+  "sourceSections": [
+    "How Google Handles Importing Dependencies"
+  ],
   "afterParagraph": "结果就是，Alice 和这个包的其他使用方将面临一次昂贵而艰难的升级",
   "desktop": "assets/diagrams/sections/ch21-02.svg",
   "mobile": "assets/diagrams/sections/ch21-02-mobile.svg",

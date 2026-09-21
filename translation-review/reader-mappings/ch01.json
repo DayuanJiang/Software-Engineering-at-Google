@@ -1,0 +1,50 @@
+{
+  "sourceSha256": "688a72a834ec947385d6c5678482a1a22168fb98285ab5235b24430ffa1e5fc1",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch01.html",
+  "epigraph": {
+    "english": "Nothing is built on stone; all is built on sand, but we must build as if the sand were stone. --Jorge Luis Borges",
+    "chinese": "没有什么建在磐石上，一切都建在沙上；但我们必须把沙当作磐石来建造。",
+    "author": "豪尔赫·路易斯·博尔赫斯"
+  },
+  "proseCodeBlocks": [
+    {
+      "text": "*With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody.*",
+      "language": "en",
+      "reason": "The original book presents this as a quotation, not executable code."
+    },
+    {
+      "text": "*只要 API 的用户足够多，不论你在契约中作了什么承诺，系统的每一种可观察行为都会被某些用户依赖。*",
+      "language": "zh",
+      "reason": "Chinese counterpart of Hyrum's Law; indentation incorrectly produced a code block."
+    }
+  ],
+  "translatorNotes": [
+    {
+      "text": "[一条微博引发的思考——再谈“Software Stack”之“软件栈”译法！](https://www.ituring.com.cn/article/1144)\n软件栈（Software Stack），是指为了实现某种完整功能解决方案（例如某款产品或服务）所需的一套软件子系统或组件。",
+      "title": "译者补充：软件栈（非原书内容）",
+      "body": "软件栈（Software Stack），是指为了实现某种完整功能解决方案（例如某款产品或服务）所需的一套软件子系统或组件。",
+      "linkText": "一条微博引发的思考——再谈“Software Stack”之“软件栈”译法！",
+      "href": "https://www.ituring.com.cn/article/1144",
+      "reason": "Present in the existing Chinese repository, absent from the original book chapter."
+    }
+  ],
+  "footnotes": [
+    {"id": "1", "after": "你的代码预计会使用多久？”"},
+    {"id": "2", "after": "而选择不升级。"},
+    {"id": "3", "after": "恐怕就不是了。"},
+    {"id": "4", "after": "“由多人开发多版本程序。”"},
+    {"id": "5", "after": "《人月神话》。"},
+    {"id": "6", "after": "移动应用的生命周期往往较短，不论利弊如何，彻底重写并不少见。"},
+    {"id": "7", "after": "项目就必须开始应对外部环境的变化。"},
+    {"id": "8", "after": "它在概念上类似于熵：讨论长期变更和维护时必须考虑海勒姆定律，就像讨论效率或热力学时必须考虑熵一样。"},
+    {"id": "9", "after": "也会破坏某些使用方式。"},
+    {"id": "10", "after": "哈希洪水攻击使人们更有理由采用非确定性的哈希遍历顺序。"},
+    {"id": "11", "after": "正如《Site Reliability Engineering》（SRE，站点可靠性工程）一书所述，谷歌的整个生产系统，是人类创造的最复杂的机器之一。"},
+    {"id": "12", "after": "这项工作显然就不具备可扩展性。"},
+    {"id": "13", "after": "我们称之为“碧昂斯规则”。"},
+    {"id": "14", "after": "绕过那些不知道如何适应的上游编译器及语言变化。"},
+    {"id": "15", "after": "这与 SRE 对 toil（琐务）的看法有很大共通之处。"},
+    {"id": "16", "after": "也能由固定数量的工程师完成升级。"},
+    {"id": "17", "existingMarker": true}
+  ]
+}

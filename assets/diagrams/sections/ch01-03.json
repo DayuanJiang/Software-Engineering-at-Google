@@ -5,10 +5,10 @@
   "summary": "对照各团队重复迁移与共享专家、自动化和统一 CI，说明如何减少重复人力投入；团队布局为概念示例。",
   "enabled": true,
   "sourceSections": [
-    "## Scale and Efficiency  规模和效率",
-    "### Policies That Don’t Scale 难以随规模扩展的策略",
-    "### Policies That Scale Well 适于规模扩展的策略",
-    "### Example: Compiler Upgrade 示例：编译器升级"
+    "Scale and Efficiency",
+    "Policies That Don’t Scale",
+    "Policies That Scale Well",
+    "Example: Compiler Upgrade"
   ],
   "afterParagraph": "专业知识更能发挥规模效益。",
   "desktop": "assets/diagrams/sections/ch01-03.svg",

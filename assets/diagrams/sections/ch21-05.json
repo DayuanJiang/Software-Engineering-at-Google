@@ -4,7 +4,9 @@
   "title": "gflags：等效假设怎样约束内部优化？",
   "summary": "同一份代码按环境选择不同 flags 分叉，并依赖观察到的等效行为；只改内部实现后这一假设失效，跨环境构建与发布出错，从而推迟内部优化。",
   "enabled": true,
-  "sourceSections": ["#### Example: open sourcing gflags  示例：开源 gflags"],
+  "sourceSections": [
+    "Example: open sourcing gflags"
+  ],
   "afterParagraph": "海勒姆定律又一次影响了软件变更，这次甚至涉及由不同组织维护的分叉 API。",
   "desktop": "assets/diagrams/sections/ch21-05.svg",
   "mobile": "assets/diagrams/sections/ch21-05-mobile.svg",

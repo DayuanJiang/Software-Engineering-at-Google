@@ -4,7 +4,11 @@
   "title": "响应不同，何时才能说 B 错了？",
   "summary": "将本章 xyzzy 搜索断言作为对照：A 含 Colossal Cave、B 不含，仅比较只能发现差异；明确要求结果必须包含它，才能据该断言判 B 失败。A-A 对照帮助识别噪声。",
   "enabled": true,
-  "sourceSections": ["### Verification 验证", "### A/B Diff Regression Testing  A/B 差异回归测试", "#### Limitations  局限性"],
+  "sourceSections": [
+    "Verification",
+    "A/B Diff Regression Testing A/B",
+    "Limitations"
+  ],
   "afterParagraph": "让人一眼就能看出当前变更的影响，以及下一个待发布版本的累积影响。",
   "desktop": "assets/diagrams/sections/ch14-04.svg",
   "mobile": "assets/diagrams/sections/ch14-04-mobile.svg",

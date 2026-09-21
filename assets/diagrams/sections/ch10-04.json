@@ -3,7 +3,10 @@
   "chapter": 10,
   "title": "按文档目的权衡质量",
   "summary": "完整性、准确性和清晰性是需要权衡的维度，不是量化评分；概念文档省略罕见细节不等于故意写错。",
-  "sourceSections": ["### The Parameters of Good Documentation 良好文档的衡量标准", "## Documentation Reviews 文档评审"],
+  "sourceSections": [
+    "The Parameters of Good Documentation",
+    "Documentation Reviews"
+  ],
   "afterParagraph": "这些因素共同决定文档质量，而质量确实很难准确衡量。",
   "desktop": "assets/diagrams/sections/ch10-04.svg",
   "mobile": "assets/diagrams/sections/ch10-04-mobile.svg",

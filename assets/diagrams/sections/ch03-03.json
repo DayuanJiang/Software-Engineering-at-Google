@@ -4,7 +4,9 @@
   "title": "哪些资料需要全公司统一？",
   "summary": "用原文的基本开发工作流与本地 Frobber 实例两个例子，展示不同团队查阅同一份权威指南和特定团队使用局部指南的区别，并标明更广泛资料的维护责任。",
   "enabled": true,
-  "sourceSections": ["### Establishing Canonical Sources of Information 建立权威信息源"],
+  "sourceSections": [
+    "Establishing Canonical Sources of Information"
+  ],
   "afterParagraph": "你所在的产品领域？还是所有工程师？",
   "desktop": "assets/diagrams/sections/ch03-03.svg",
   "mobile": "assets/diagrams/sections/ch03-03-mobile.svg",

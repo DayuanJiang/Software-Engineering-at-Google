@@ -5,8 +5,8 @@
   "summary": "用同一段示意代码的两次提交展示 S 与格式化结果 F(S) 的比较：有差异拒绝并提示修正，无差异仅通过格式检查。以数百文件同一行修改与20行复杂逻辑对照，保留人工审查复杂性的职责。",
   "enabled": true,
   "sourceSections": [
-    "## Applying the Rules  应用规则",
-    "### Code Formatters  代码格式化工具"
+    "Applying the Rules",
+    "Code Formatters"
   ],
   "afterParagraph": "BUILD 文件则使用 buildifier。",
   "desktop": "assets/diagrams/sections/ch08-04.svg",

@@ -3,7 +3,10 @@
   "chapter": 23,
   "title": "两个提交前通过，为什么组合后失败？",
   "summary": "假设配置变更 A 改用 v2，客户端变更 B 只保留 v1；两者在同一旧基线上各自通过同一测试，组合却失败。不同文件无文本冲突，不代表没有语义冲突；提交后必须检查实际组合并处置失败。",
-  "sourceSections": ["#### Why presubmit isn’t enough 为什么仅靠提交前测试还不够", "#### Presubmit versus post-submit 提交前测试与提交后测试"],
+  "sourceSections": [
+    "Why presubmit isn’t enough",
+    "Presubmit versus post-submit"
+  ],
   "afterParagraph": "只要有适当的处理机制，提交后测试就可以耗时更长，也可以容忍一定的不稳定性。",
   "desktop": "assets/diagrams/sections/ch23-02.svg",
   "mobile": "assets/diagrams/sections/ch23-02-mobile.svg",

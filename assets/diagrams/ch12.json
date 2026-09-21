@@ -4,10 +4,10 @@
   "summary": "好的单元测试：重构不坏、读起来完整、失败时说得清原因",
   "enabled": true,
   "sourceSections": [
-    "## The Importance of Maintainability  可维护性的重要性",
-    "## Preventing Brittle Tests  避免脆弱测试",
-    "## Writing Clear Tests  编写清晰的测试",
-    "## Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY"
+    "The Importance of Maintainability",
+    "Preventing Brittle Tests",
+    "Writing Clear Tests",
+    "Tests and Code Sharing: DAMP, Not DRY"
   ],
   "kind": "pillars",
   "desktop": "assets/diagrams/ch12.svg",

@@ -5,8 +5,8 @@
   "summary": "用空列表处理这一明确标为示例的变更，对比只写“修复缺陷”和写出改动及原因的描述，检验未来维护者能否从描述回答为什么增加分支。",
   "enabled": true,
   "sourceSections": [
-    "### Knowledge Sharing  知识共享",
-    "### Write Good Change Descriptions  写好变更描述"
+    "Knowledge Sharing",
+    "Write Good Change Descriptions"
   ],
   "afterParagraph": "变更描述并不是记录信息的唯一地方。编写公开 API 时，通常应避免暴露实现细节，但在实际实现内部，应当充分注释、说明这些细节。如果审查者不理解你为什么这样做，即使代码是正确的，也说明代码结构或注释需要改进，可能两者都要改。如果审查过程中作出了新决定，应更新变更描述，或在实现中补充适当注释。代码审查不只是处理眼前的工作，也是在为后来者记录你做过的事情。",
   "desktop": "assets/diagrams/sections/ch09-03.svg",

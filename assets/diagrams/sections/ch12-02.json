@@ -4,7 +4,10 @@
   "title": "同一次创建，两种断言，两类错误",
   "summary": "固定createUser调用，对比原始写入、等价替代API和写后误删；交互断言分别产生误报与漏报，而最终状态断言区分用户存在与不存在。",
   "enabled": true,
-  "sourceSections": ["### Test via Public APIs  通过公共API进行测试", "### Test State, Not Interactions  测试状态，而不是交互"],
+  "sourceSections": [
+    "Test via Public APIs",
+    "Test State, Not Interactions"
+  ],
   "afterParagraph": "我们就倾向于使用真实对象，而不是模拟对象。",
   "desktop": "assets/diagrams/sections/ch12-02.svg",
   "mobile": "assets/diagrams/sections/ch12-02-mobile.svg",

@@ -4,7 +4,9 @@
   "title": "为什么 MVS 有时也要选 1.8？",
   "summary": "沿用 liba≥1.7，补充另一使用方的最低要求，逐列核对所有要求；libb 下限从1.6升至1.8后，共同最低候选必须由1.7变成1.8，仍须纳入传递要求和组合测试。",
   "enabled": true,
-  "sourceSections": ["### Minimum Version Selection  最小版本选择"],
+  "sourceSections": [
+    "Minimum Version Selection"
+  ],
   "afterParagraph": "现在运行一些测试，看看是否正常吧。",
   "desktop": "assets/diagrams/sections/ch21-04.svg",
   "mobile": "assets/diagrams/sections/ch21-04-mobile.svg",

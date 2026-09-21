@@ -3,7 +3,11 @@
   "chapter": 4,
   "title": "数据覆盖不足，测试也未拦截",
   "summary": "按本章对 2015 年 Google Photos 的解释，区分未能代表人群的照片数据、实际伤害性误分类，以及测试漏检后由用户发现错误。团队视角是可能影响数据与设计的因素，不是与数据、测试并列的自动致错开关。",
-  "sourceSections": ["## Bias Is the Default 偏见是默认状态", "#### Case Study: Google Misses the Mark on Racial Inclusion  案例研究：谷歌在种族包容方面的失误", "## Building Multicultural Capacity 培养多元文化能力"],
+  "sourceSections": [
+    "Bias Is the Default",
+    "Case Study: Google Misses the Mark on Racial Inclusion",
+    "Building Multicultural Capacity"
+  ],
   "afterParagraph": "让软件工程组织的人员构成，更能代表我们所服务的用户群体。",
   "desktop": "assets/diagrams/sections/ch04-01.svg",
   "mobile": "assets/diagrams/sections/ch04-01-mobile.svg",

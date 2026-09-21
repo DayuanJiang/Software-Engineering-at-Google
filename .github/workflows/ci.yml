@@ -29,4 +29,4 @@ jobs:
           uv run --project tools python tools/build_chapter_figures.py
           uv run --project tools python tools/build_reader_manifest.py
           uv run --project tools python tools/build_search_index.py
-          git diff --exit-code -- index.html assets/diagrams assets/reader-manifest.json assets/reader-review assets/code-variants assets/search-index.json
+          git diff --exit-code -- index.html assets/diagrams assets/reader-manifest.json assets/reader-content assets/code-variants assets/search-index.json

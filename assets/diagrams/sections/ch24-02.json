@@ -3,7 +3,9 @@
   "chapter": 24,
   "title": "关掉功能，不等于移除代码",
   "summary": "对照同一 v2 的运行时关闭与开启状态，以及构建时剔除新代码的另一产物。关闭只改变所走路径；不存在的代码不能仅靠配置启用。动态配置仍需谨慎发布，已部署的关闭代码仍可能被提取。",
-  "sourceSections": ["## Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能"],
+  "sourceSections": [
+    "Evaluating Changes in Isolation: Flag-Guarding Features"
+  ],
   "afterParagraph": "仍是实现应用长期可持续性的重要手段。",
   "desktop": "assets/diagrams/sections/ch24-02.svg",
   "mobile": "assets/diagrams/sections/ch24-02-mobile.svg",

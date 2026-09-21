@@ -187,20 +187,20 @@ body.close .content { margin-left: 0; }
 .markdown-section .chapter-kicker { display: none; }
 .markdown-section .chapter-credit { display: inline-block; margin: 0 16px 12px 0; color: var(--muted); font-family: var(--ui-font); font-size: 11px; }
 .markdown-section .chapter-credit strong { font-weight: 400; color: inherit; }
+/* Credits and attributions exist in both languages; each reading mode shows one of them. */
+body[data-reading-mode="bilingual"] .markdown-section .chapter-credit[lang="zh-CN"],
+body[data-reading-mode="bilingual"] .markdown-section .reader-attribution.translated-source { display: none; }
+.markdown-section .reader-code-label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+.markdown-section .reader-error { color: var(--accent); font-family: var(--ui-font); }
 .markdown-section .english-prose { color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: calc(var(--reading-size) - 1px); line-height: 1.8; }
 /* Pull each translation up to its source paragraph so the pair reads as one unit. */
 .markdown-section p.english-prose:has(+ p:not(.english-prose)) { margin-bottom: .45em; }
 .markdown-section .reader-caption { font-family: var(--ui-font); color: var(--muted); font-size: 13px; line-height: 1.7; margin: 12px 0 24px; }
 .markdown-section .reader-attribution { font-family: var(--ui-font); color: var(--muted); font-size: 12px; text-align: right; }
 .markdown-section .reader-subheading { margin-top: 30px; font-weight: 600; }
-.reader-heading-alias { display: block; height: 0; }
 body[data-reading-mode="chinese"] .translated-source { display: none !important; }
-.markdown-section .repeated-source { display: none !important; }
-.credit-chinese { display: none; }
 body[data-reading-mode="chinese"] .reader-original-title,
-body[data-reading-mode="chinese"] .heading-original,
-body[data-reading-mode="chinese"] .credit-original { display: none; }
-body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
+body[data-reading-mode="chinese"] .heading-original { display: none; }
 .markdown-section blockquote { color: var(--muted); border-left: 2px solid var(--line); margin: 1.5em 0; padding: 0 0 0 20px; }
 .markdown-section blockquote p { margin: .6em 0; font-weight: 400; }
 .markdown-section .chapter-epigraph { margin: 26px 0 32px; padding: 0; border: 0; font-size: 17px; line-height: 1.9; }

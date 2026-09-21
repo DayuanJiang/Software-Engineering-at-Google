@@ -101,18 +101,27 @@ def validate_protected(source: str, original: bytes, result: bytes, prose_code_l
     }
 
 
+# The pilot edited the interleaved chapter files. That layout ended with this commit, when the book was split into
+# en/ and zh-cn/; the record is verified against the last interleaved revision.
+INTERLEAVED_COMMIT = "83df794"
+
+
+def interleaved(path: str) -> bytes:
+    return subprocess.check_output(["git", "-C", str(audit.ROOT), "show", f"{INTERLEAVED_COMMIT}:{path}"])
+
+
 def verify(check_other_sources: bool = True) -> dict:
     manifest, baseline, original, expected = load()
-    actual = (audit.ROOT / manifest["source"]).read_bytes()
+    actual = interleaved(manifest["source"])
     if actual != expected:
         raise ValueError("Chapter differs from the reviewed edit manifest.")
     counts = validate_protected(manifest["source"], original, actual, manifest["prose_code_lines"])
     if check_other_sources:
         for file, snapshot in baseline["files"].items():
-            if file != manifest["source"] and audit.digest((audit.ROOT / file).read_bytes()) != snapshot["sha256"]:
+            if file != manifest["source"] and audit.digest(interleaved(file)) != snapshot["sha256"]:
                 raise ValueError(f"Unrelated source changed: {file}")
     for file, expected_hash in baseline["assets"].items():
-        if audit.digest((audit.ROOT / file).read_bytes()) != expected_hash:
+        if audit.digest(interleaved(file)) != expected_hash:
             raise ValueError(f"Image changed: {file}")
     lines = original.decode("utf-8").splitlines()
     chinese_lines = {i + 1 for i, line in enumerate(lines) if audit.HAN.search(line)}

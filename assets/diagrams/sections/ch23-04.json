@@ -3,7 +3,9 @@
   "chapter": 23,
   "title": "Takeout：用成对结果缩小排查范围",
   "summary": "新二进制与生产二进制运行相同测试、连接相同真实后端。四种假设结果组合给出不同排查方向；结果对照不是根因证明。录制／重放在 Takeout 案例中仍是未来改进。",
-  "sourceSections": ["#### Scenario #3: Debugging “all of Google” 场景3：调试“整个谷歌”"],
+  "sourceSections": [
+    "Scenario #3: Debugging “all of Google”"
+  ],
   "afterParagraph": "提交后 CI 使用新构建的二进制文件，但与生产环境连接相同的真实后端。",
   "desktop": "assets/diagrams/sections/ch23-04.svg",
   "mobile": "assets/diagrams/sections/ch23-04-mobile.svg",

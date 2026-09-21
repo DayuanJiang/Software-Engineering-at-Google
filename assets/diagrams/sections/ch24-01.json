@@ -3,7 +3,10 @@
   "chapter": 24,
   "title": "持续交付不等于持续部署",
   "summary": "持续交付让团队维持随时可部署的状态；持续部署进一步让符合条件的变更自动进入生产。创建可发布版本的频率、实际部署频率和用户收到更新的频率可以分别选择。",
-  "sourceSections": ["## Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践", "## Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能"],
+  "sourceSections": [
+    "Idioms of Continuous Delivery at Google",
+    "Quality and User-Focus: Ship Only What Gets Used"
+  ],
   "afterParagraph": "团队可以先具备随时部署的能力，而不必真的随时部署，逐步建立信心，为今后更频繁地发布作准备。",
   "desktop": "assets/diagrams/sections/ch24-01.svg",
   "mobile": "assets/diagrams/sections/ch24-01-mobile.svg",

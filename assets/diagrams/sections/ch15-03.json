@@ -3,7 +3,10 @@
   "chapter": 15,
   "title": "同一条弃用警告，何时才有用？",
   "summary": "区分 A 到 B 到 C 的依赖方向和 C 的警告传到 A 的方向；对照泛报与新修改行上的替代调用提示，并以数据迁移邮件说明准备时间。",
-  "sourceSections": ["### Deprecation Warnings  弃用警告", "#### Preventing backsliding  防止新增旧系统依赖"],
+  "sourceSections": [
+    "Deprecation Warnings",
+    "Preventing backsliding"
+  ],
   "afterParagraph": "让我们在增加警告的同时，避免用户产生警报疲劳。",
   "desktop": "assets/diagrams/sections/ch15-03.svg",
   "mobile": "assets/diagrams/sections/ch15-03-mobile.svg",

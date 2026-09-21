@@ -5,9 +5,9 @@
   "summary": "对照 FYI、尚未获 LGTM 的修改要求、不同意意见，以及约定落实意见即可的 LGTM 四种状态，显示作者下一步和是否再审的区别。",
   "enabled": true,
   "sourceSections": [
-    "## Code Review Flow  代码审查流程",
-    "### Knowledge Sharing  知识共享",
-    "### Be Polite and Professional  保持礼貌和专业"
+    "Code Review Flow",
+    "Knowledge Sharing",
+    "Be Polite and Professional"
   ],
   "afterParagraph": "应把每条审查意见都当作一个 TODO 待办项：不必无条件接受，但至少要作出回应。如果不同意，就说明自己的看法和理由；在双方都有机会提出替代方案之前，不要将评论标记为已解决。作者与审查者意见不同时，一种常见的礼貌做法是提出替代方案，再请审查者 PTAL（请再看一下）。记住，代码审查是双方学习的机会，这种认识往往有助于减少分歧。",
   "desktop": "assets/diagrams/sections/ch09-01.svg",

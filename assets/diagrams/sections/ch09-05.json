@@ -5,7 +5,7 @@
   "summary": "用三种具体组合比较批准状态：合格的另一位审查者兼任三项、作者凭资格满足后两项、作者仅自审而缺少他人 LGTM。三项批准齐全且所有审查意见已处理，才满足本章的常规提交条件。",
   "enabled": true,
   "sourceSections": [
-    "## How Code Review Works at Google  谷歌如何开展代码审查"
+    "How Code Review Works at Google"
   ],
   "afterParagraph": "而所有者往往也具备相应的 Readability 资格。",
   "desktop": "assets/diagrams/sections/ch09-05.svg",

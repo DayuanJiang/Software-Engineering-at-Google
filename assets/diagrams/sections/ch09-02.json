@@ -6,8 +6,8 @@
   "enabled": false,
   "removalReason": "与本章概览重复。新版概览已用人员与批准条件矩阵、仅自审的反例以及意见处理条件，完整承担此处的问题；保留原 SVG 供追溯，不再插入正文。",
   "sourceSections": [
-    "## How Code Review Works at Google  谷歌如何开展代码审查",
-    "### Code Consistency  代码的一致性"
+    "How Code Review Works at Google",
+    "Code Consistency"
   ],
   "afterParagraph": "而所有者往往也具备相应的 Readability 资格。",
   "desktop": "assets/diagrams/sections/ch09-02.svg",

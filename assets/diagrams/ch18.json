@@ -4,12 +4,12 @@
   "summary": "只声明要什么，让工具决定怎么做，构建才可靠、可缓存、可并行",
   "enabled": true,
   "sourceSections": [
-    "## Purpose of a Build System 构建系统的目的",
-    "## What Happens Without a Build System? 没有构建系统会怎样？",
-    "## Modern Build Systems 现代构建系统",
-    "### Task-Based Build Systems 基于任务的构建系统",
-    "### Artifact-Based Build Systems 基于产物的构建系统",
-    "## Dealing with Modules and Dependencies 处理模块和依赖关系"
+    "Purpose of a Build System",
+    "What Happens Without a Build System?",
+    "Modern Build Systems",
+    "Task-Based Build Systems",
+    "Artifact-Based Build Systems",
+    "Dealing with Modules and Dependencies"
   ],
   "kind": "contrast",
   "desktop": "assets/diagrams/ch18.svg",

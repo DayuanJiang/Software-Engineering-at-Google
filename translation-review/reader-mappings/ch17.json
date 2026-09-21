@@ -1,0 +1,150 @@
+{
+  "format": 2,
+  "sourceSha256": "261fc83c95ce5757e3395c5972daf2ee6dba6b5aa9807a887a58789533d81179",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch17.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [28, 30],
+      "english": "GSearch originally ran on Jeff Dean’s personal computer, which once caused company-wide distress when he went on vacation and it was shut down!",
+      "chinese": "GSearch 最初运行在 Jeff Dean 的个人电脑上。有一次他去度假，电脑被关掉了，竟让全公司都受到了影响！",
+      "after": "最初，它将用于内部代码的类 grep 工具，与面向外部的 Code Search 的结果排序和用户界面结合起来。",
+      "reason": "Notes 1 and 2 refer to the two components described in the same translated sentence. Both dots belong at that sentence ending, in source reference order."
+    },
+    {
+      "id": "2",
+      "definitionLines": [32, 34],
+      "english": "Shut down in 2013; see `https://en.wikipedia.org/wiki/Google_Code_Search`.",
+      "chinese": "该服务于2013年关闭；参见`https://en.wikipedia.org/wiki/Google_Code_Search`。",
+      "after": "最初，它将用于内部代码的类 grep 工具，与面向外部的 Code Search 的结果排序和用户界面结合起来。"
+    },
+    {
+      "id": "3",
+      "definitionLines": [36, 38],
+      "english": "Now known as Kythe, a service that provides cross-references (among other things): the uses of a particular code symbol—for example, a function—using the full build information to disambiguate it from other ones with the same name.",
+      "chinese": "现称 Kythe，其服务之一是提供交叉引用，即找出某个代码符号（例如函数）的使用位置。它利用完整的构建信息，将该符号与其他同名符号区分开来。",
+      "after": "后来，代码搜索集成了 Kythe/Grok，增加了交叉引用和跳转到符号定义的能力，进一步确立了它作为 Google 开发者关键工具的地位。"
+    },
+    {
+      "id": "4",
+      "definitionLines": [62, 64],
+      "english": "There is an interesting virtuous cycle that a ubiquitous code browser encourages: writing code that is easy to browse. This can mean things like not nesting hierarchies too deep, which requires many clicks to move from call sites to actual implementation, and using named types rather than generic things like strings or integers, because it’s then easy to find all usages.",
+      "chinese": "广泛使用的代码浏览器会促成一种有趣的良性循环：开发者会编写更便于浏览的代码。例如，避免过深的嵌套层次，否则从调用点跳到实际实现需要点击很多次；使用具名类型，而不是字符串或整数等通用类型，这样就容易找到所有使用位置。",
+      "after": "尽管其他工具也提供类似功能，Google 员工仍然频繁使用代码搜索的用户界面来搜索和查看文件，最终目的是理解代码。"
+    },
+    {
+      "id": "5",
+      "definitionLines": [66, 68],
+      "english": "Sadowski, Caitlin, Kathryn T. Stolee, and Sebastian Elbaum. “How Developers Search for Code: A Case Study” In Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering (ESEC/FSE 2015). `https://doi.org/10.1145/2786805.2786855`.",
+      "chinese": "Sadowski, Caitlin, Kathryn T. Stolee, and Sebastian Elbaum. “开发者如何搜索代码：A Case Study” In Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering (ESEC/FSE 2015). `https://doi.org/10.1145/2786805.2786855`.",
+      "after": "工程师用代码搜索完成的任务，可以看作是在回答有关代码的问题；从这些问题中，可以归纳出一些反复出现的使用意图。"
+    },
+    {
+      "id": "6",
+      "definitionLines": [118, 120],
+      "english": "That said, given the rate of commits for machine-generated changes, naive “blame” tracking has less value than it does in more change-averse ecosystems.",
+      "chinese": "不过，考虑到机器生成的变更提交得十分频繁，简单的“blame”追踪在这里的价值，不如在那些更倾向于避免变更的生态系统中大。",
+      "after": "历史面板也有助于找到最合适的人，向其询问这段代码，或请其审查相关变更。"
+    },
+    {
+      "id": "7",
+      "definitionLines": [142, 144],
+      "english": "For comparison, the model of “every developer has their own IDE on their own workspace do the indexing calculation” scales roughly quadratically: developers produce a roughly constant amount of code per unit time, so the codebase scales linearly (even with a fixed number of developers). A linear number of IDEs do linearly more work each time—this is not a recipe for good scaling.",
+      "chinese": "相比之下，让每位开发者都在自己的工作区中用自己的 IDE 构建索引，其成本大致呈二次方增长：开发者单位时间内产出的代码量大致恒定，因此即使开发者人数不变，代码库规模也会线性增长。IDE 的数量线性增加，每个 IDE 每次承担的工作量也线性增加，这种方式的可扩展性并不好。",
+      "after": "例如，每次提交变更时，代码搜索都会增量更新索引，使索引构建成本保持线性增长。"
+    },
+    {
+      "id": "8",
+      "definitionLines": [146, 148],
+      "english": "Kythe instruments the build workflow to extract semantic nodes and edges from source code. This extraction process collects partial cross-reference graphs for each individual build rule. In a subsequent phase, these partial graphs are merged into one global graph and its representation is optimized for the most common queries (go-to-definition, find all usages, fetch all decorations for a file). Each phase—extraction and post processing—is roughly as expensive as a full build; for example, in case of Chromium, the construction of the Kythe index is done in about six hours in a distributed setup and therefore too costly to be constructed by every developer on their own workstation. This computational cost is the why the Kythe index is computed only once per day.",
+      "chinese": "Kythe 在构建工作流中加入采集机制，从源代码提取语义节点和边。提取过程会为每条构建规则收集局部交叉引用图。随后，这些局部图会合并成一张全局图，并针对最常见的查询优化其表示方式，例如跳转到定义、查找所有使用位置，以及获取文件的全部附加标注。提取和后处理这两个阶段，各自的成本都大致相当于一次完整构建。例如，Chromium 的 Kythe 索引在分布式环境中构建，约需六小时；让每位开发者都在自己的工作站上构建，成本实在太高。正是这一计算成本，使 Kythe 索引每天只计算一次。",
+      "after": "为了确定完整的语义结构，需要完整构建或至少分析大量二进制目标，在 Google 几乎是全部目标。"
+    },
+    {
+      "id": "9",
+      "definitionLines": [206, 208],
+      "english": "Because queries are independent, more users can be addressed by having more servers.",
+      "chinese": "各次查询相互独立，因此可以通过增加服务器来服务更多用户。",
+      "after": "代码搜索在规模扩展方面面临的最大挑战，是待搜索的语料库大小。"
+    },
+    {
+      "id": "10",
+      "definitionLines": [232, 234],
+      "english": "The Code Search UI does also have a classical file tree, so navigating this way is also possible.",
+      "chinese": "代码搜索的用户界面也提供传统文件树，因此仍可沿文件树导航。",
+      "after": "在代码搜索用户界面中，用户可以预先定义多个上下文，并按需快速切换。"
+    },
+    {
+      "id": "11",
+      "definitionLines": [290, 291],
+      "english": "See https://blog.scalyr.com/2014/05/searching-20-gbsec-systems-engineering-before-algorithms and http://volnitsky.com/project/str_search./",
+      "chinese": "查阅blog.scalyr.com/2014/05/searching-20-gbsec-systems-engineering-before-algorithms 和tp://volnitsky.com/project/str_search.",
+      "after": "在某些条件下，其速度可达约1 GB/秒，所需核心数就能降至十分之一。"
+    },
+    {
+      "id": "12",
+      "definitionLines": [305, 307],
+      "english": "ontrast to web search, adding more characters to a Code Search query always reduces the result set (apart rom a few rare exceptions via regular expression terms).",
+      "chinese": "与 Web 搜索不同，在代码搜索查询中增加字符，总会缩小结果集，只有使用正则表达式查询项时才有少数罕见例外。",
+      "after": "如果没有排序，用户要么逐一检查所有结果来寻找目标，要么不断细化查询，直到结果只剩几个文件。"
+    },
+    {
+      "id": "13",
+      "definitionLines": [327, 329],
+      "english": "This could likely be somewhat corrected by using recency in some form as a signal, perhaps doing something imilar to web search dealing with new pages, but we don’t yet do so.",
+      "chinese": "以某种形式将新近程度用作信号，很可能有助于缓解这一问题，例如借鉴 Web 搜索处理新页面的方式。不过，我们还没有这样做。",
+      "after": "但对新文件而言，这确实是个问题，因为它们还没有积累足够的信息来形成有效信号。"
+    },
+    {
+      "id": "14",
+      "definitionLines": [345, 347],
+      "english": "In programming languages, a symbol such as a function “Alert” often is defined in a particular scope, such as  class (“Monitor”) or namespace (“absl”). The qualified name might then be absl::Monitor::Alert, and this is indable, even if it doesn’t occur in the actual text.",
+      "chinese": "在编程语言中，函数“Alert”这样的符号通常定义在某个作用域中，例如类“Monitor”或命名空间“absl”。它的限定名可能是 absl::Monitor::Alert；即使这一完整名称没有出现在实际文本中，也可以搜索到它。",
+      "after": "为方便使用，默认搜索除匹配文件内容外，也会匹配文件名和符号的限定名。"
+    },
+    {
+      "id": "15",
+      "definitionLines": [407, 409],
+      "english": "An analysis of queries showed that about one-third of user searches have fewer than 20 results.",
+      "chinese": "查询分析表明，大约三分之一的用户查询返回的结果少于20个。",
+      "after": "不过，大多数查询只有少数相关结果：要么匹配项本来就少，要么用户只关心其中几个。"
+    },
+    {
+      "id": "16",
+      "definitionLines": [411, 413],
+      "english": "In practice, even more happens behind the scenes so that responses don’t become painfully huge and developers don’t bring down the whole system by making searches that match nearly everything (imagine searching for the letter “i” or a single space).",
+      "chinese": "实际上，系统在后台还会作更多处理，避免响应过于庞大，也防止开发者用几乎匹配所有内容的查询拖垮整个系统，例如搜索字母“i”或单个空格。",
+      "after": "但如果请求需要，代码搜索也可以从每个分片获取全部结果，保证没有遗漏。"
+    },
+    {
+      "id": "17",
+      "definitionLines": [473, 475],
+      "english": "There are other intermediate varieties, such as building a prefix/suffix index, but generally they provide less expressiveness in search queries while still having high complexity and indexing costs.",
+      "chinese": "两者之间还有一些中间方案，例如构建前缀或后缀索引。不过，这些方案通常仍有较高的复杂性和索引成本，查询的表达能力却较弱。",
+      "after": "再增强一级搜索能力，就是完整的子串搜索，可以搜索任意字符序列。"
+    },
+    {
+      "id": "18",
+      "definitionLines": [477, 479],
+      "english": "Russ Cox, “Regular Expression Matching with a Trigram Index or How Google Code Search Worked.”",
+      "chinese": "Russ Cox，《使用三元组索引进行正则表达式匹配，或 Google 代码搜索的工作原理》。",
+      "after": "一种较高效的实现方式，是采用三元组索引。",
+      "reason": "The English definition lacks the blockquote prefix present on the other definitions; the following Chinese line is quoted. This is still one definition block."
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [],
+  "translations": [],
+  "issues": [
+    {
+      "kind": "malformed-source-links",
+      "sourceLines": [290, 291],
+      "detail": "Footnote 11's English second URL ends in 'str_search./'; the Chinese note contains a bare first address and 'tp://' for the second. All source wording is preserved. Canonical URL repair or destination validation is not claimed."
+    },
+    {
+      "kind": "source-text-artifacts",
+      "sourceLines": [297, 347],
+      "detail": "English body text has 'query[^12] er' and 'symbols[^14] ion'; definitions 12, 13 and 14 retain the source fragments 'ontrast', 'rom', 'imilar' and 'indable'. Reference markers and semantic counterparts are identifiable, so no englishAfter fallback is needed."
+    }
+  ]
+}

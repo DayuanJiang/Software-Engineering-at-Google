@@ -4,14 +4,14 @@
   "summary": "测试让代码改得放心；大部分测试应该小、快、确定",
   "enabled": true,
   "sourceSections": [
-    "## Why Do We Write Tests?  为什么我们要编写测试？",
-    "## Designing a Test Suite  设计测试套件",
-    "### Test Size  测试规模",
-    "### Test Scope  测试范围",
-    "### The Beyoncé Rule  碧昂斯规则",
-    "## Testing at Google Scale  以谷歌的规模进行测试",
-    "## History of Testing at Google  谷歌的测试历史",
-    "## The Limits of Automated Testing  自动化测试的局限"
+    "Why Do We Write Tests?",
+    "Designing a Test Suite",
+    "Test Size",
+    "Test Scope",
+    "The Beyoncé Rule",
+    "Testing at Google Scale",
+    "History of Testing at Google",
+    "The Limits of Automated Testing"
   ],
   "kind": "layers",
   "desktop": "assets/diagrams/ch11.svg",

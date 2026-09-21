@@ -4,14 +4,14 @@
   "summary": "为所有人做工程，先承认自己有盲点，再把公平当作工程目标去验证",
   "enabled": true,
   "sourceSections": [
-    "## Bias Is the Default 偏见是默认状态",
-    "## Understanding the Need for Diversity 了解多样性的必要性",
-    "## Building Multicultural Capacity 培养多元文化能力",
-    "## Making Diversity Actionable 将多样性付诸行动",
-    "## Reject Singular Approaches 摒弃单一方法",
-    "## Challenge Established Processes 挑战既定流程",
-    "## Values Versus Outcomes 价值观与结果",
-    "## Stay Curious, Push Forward 保持好奇，继续前行"
+    "Bias Is the Default",
+    "Understanding the Need for Diversity",
+    "Building Multicultural Capacity",
+    "Making Diversity Actionable",
+    "Reject Singular Approaches",
+    "Challenge Established Processes",
+    "Values Versus Outcomes",
+    "Stay Curious, Push Forward"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch04.svg",

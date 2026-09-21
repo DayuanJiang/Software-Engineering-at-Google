@@ -5,7 +5,7 @@
   "summary": "以书中20分钟可修好的老问题，对照亲自动手的本次效率与授权辅导带来的独立练习；明确他人能做且不刻不容缓这一前提。",
   "enabled": true,
   "sourceSections": [
-    "#### Delegating subproblems to leaders  将子问题交给子团队领导者负责"
+    "Delegating subproblems to leaders"
   ],
   "afterParagraph": "你持续描绘森林的全貌，再把砍树的工作交给别人。",
   "desktop": "assets/diagrams/sections/ch06-03.svg",

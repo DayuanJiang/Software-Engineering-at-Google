@@ -1,0 +1,185 @@
+{
+  "format": 2,
+  "sourceSha256": "d451452852c8004aa414750484bbc194479d2a1b03a924fca0e78a22d8e20fd0",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch03.html",
+  "textEdits": [],
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [65, 66],
+      "english": "In other words, rather than developing a single global maximum, we have a bunch of local maxima.",
+      "chinese": "换句话说，我们得到的不是一个全局最大值，而是一组局部最大值。",
+      "after": "在这样的环境中，每个小组都会形成自己的做事方式。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [94, 95],
+      "english": "David Lorge Parnas, Software Engineering: Multi-person Development of Multi-version Programs (Heidelberg: Springer-Verlag Berlin, 2011).",
+      "chinese": "David Lorge Parnas，《软件工程：由多人开发多版本程序》（海德堡：Springer-Verlag Berlin，2011）。",
+      "after": "软件工程可以定义为由多人开发多版本程序。"
+    },
+    {
+      "id": "3",
+      "definitionLines": [212, 213],
+      "english": "Impostor syndrome is not uncommon among high achievers, and Googlers are no exception—in fact, a majority of this book’s authors have impostor syndrome. We acknowledge that fear of failure can be difficult for those with impostor syndrome and can reinforce an inclination to avoid branching out.",
+      "chinese": "冒名顶替综合征在成就出众的人群中并不少见，谷歌员工也不例外。事实上，本书的大多数作者都有这种感受。我们理解，对这些人来说，害怕失败可能很难克服，也可能使他们更不愿意涉足新的领域。",
+      "after": "把未知当作学习的机会，而不是恐惧的对象。"
+    },
+    {
+      "id": "4",
+      "definitionLines": [215, 216],
+      "english": "See “[How to ask good questions.](https://jvns.ca/blog/good-questions/).",
+      "chinese": "见“如何提出好问题”。",
+      "after": "公开提问"
+    },
+    {
+      "id": "5",
+      "definitionLines": [336, 337],
+      "english": "https://talksat.withgoogle.com and https://www.youtube.com/GoogleTechTalks, to name a few.",
+      "chinese": "https://talksat.withgoogle.com 和 [https://www.youtube.com/GoogleTechTalks](https://www.youtube.com/GoogleTechTalks)，仅举几例。",
+      "after": "谷歌有浓厚的技术讲座与课程文化，既面向内部，也面向外部。"
+    },
+    {
+      "id": "6",
+      "definitionLines": [338, 339],
+      "english": "The g2g program is detailed in: Laszlo Bock, Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead (New York: Twelve Books, 2015). It includes descriptions of different aspects of the program as well as how to evaluate impact and recommendations for what to focus on when setting up similar programs.",
+      "chinese": "g2g 计划详见 Laszlo Bock 的《工作规则！：来自谷歌内部、将改变你生活与领导方式的洞见》（纽约：Twelve Books，2015）。书中介绍了该计划的各个方面、如何评估其影响，以及建立类似计划时应重点关注什么。",
+      "after": "g2g（Googler2Googler）计划让员工可以报名主讲或参加同事开设的讲座和课程。"
+    },
+    {
+      "id": "7",
+      "definitionLines": [389, 390],
+      "english": "See “[The Boy Scout Rule](https://oreil.ly/2u1Ce)” and Kevlin Henney, 97 Things Every Programmer Should Know (Boston: O’Reilly, 2010).",
+      "chinese": "见“童子军规则”，以及 Kevlin Henney 的《每个程序员都应该知道的97件事》（波士顿：O'Reilly，2010）。",
+      "after": "离开时让营地比来时更干净。"
+    },
+    {
+      "id": "8",
+      "definitionLines": [392, 393],
+      "english": "g3doc stands for “google3 documentation.” google3 is the name of the current incarnation of Google’s monolithic source repository.",
+      "chinese": "g3doc 是“google3 documentation”的缩写。google3 是谷歌当前这套单体源代码仓库的名称。",
+      "after": "引入 g3doc"
+    },
+    {
+      "id": "9",
+      "definitionLines": [429, 430],
+      "english": "Laszlo Bock, Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead (New York: Twelve Books, 2015).",
+      "chinese": "Laszlo Bock，《工作规则！：来自谷歌内部、将改变你生活与领导方式的洞见》（纽约：Twelve Books，2015）。",
+      "after": "先关注文化和环境"
+    },
+    {
+      "id": "10",
+      "definitionLines": [432, 433],
+      "english": "Ibid.",
+      "chinese": "同上。",
+      "after": "想更深入地了解谷歌文化，可以参阅《工作规则！》。"
+    },
+    {
+      "id": "11",
+      "definitionLines": [487, 488],
+      "english": "Peer bonuses include a cash award and a certificate as well as being a permanent part of a Googler’s award record in an internal tool called gThanks.",
+      "chinese": "同事奖金包括现金奖励和证书，还会永久保存在内部工具 gThanks 的员工获奖记录中。",
+      "after": "以金钱奖励和正式认可，表彰对方超出通常要求的付出。"
+    },
+    {
+      "id": "12",
+      "definitionLines": [518, 519],
+      "english": "Such as books about software engineering at Google.",
+      "chinese": "例如介绍谷歌软件工程实践的书籍。",
+      "after": "官方软件工程最佳实践"
+    },
+    {
+      "id": "13",
+      "definitionLines": [521, 522],
+      "english": "See Chapter 9.",
+      "chinese": "见第9章。",
+      "after": "代码审查指南"
+    },
+    {
+      "id": "14",
+      "definitionLines": [524, 525],
+      "english": "See Chapter 11",
+      "chinese": "见第11章。",
+      "after": "测试指南"
+    },
+    {
+      "id": "15",
+      "definitionLines": [527, 528],
+      "english": "Available for multiple languages. Externally available for C++ at https://abseil.io/tips.",
+      "chinese": "涵盖多种编程语言，其中 C++ 的内容已公开，可在[https://abseil.io/tips](https://abseil.io/tips)查阅。",
+      "after": "以及每周技巧（TotW）。"
+    },
+    {
+      "id": "16",
+      "definitionLines": [552, 553],
+      "english": "go/ links are unrelated to the Go language.",
+      "chinese": "go/ 链接与 Go 语言无关。",
+      "after": "go/links（有时也称 goto/ links）是谷歌内部的短链接服务。"
+    },
+    {
+      "id": "17",
+      "definitionLines": [555, 556],
+      "english": "External codelabs are available at `https://codelabs.developers.google.com`.",
+      "chinese": "对外开放的 codelab 可在 `https://codelabs.developers.google.com` 获取。",
+      "after": "以及编程练习，向工程师传授新概念或流程。"
+    },
+    {
+      "id": "18",
+      "definitionLines": [618, 619],
+      "english": "A changelist is a list of files that make up a change in a version control system. A changelist is synonymous with a changeset.",
+      "chinese": "变更列表是版本控制系统中构成一次变更的文件清单，与变更集同义。",
+      "after": "每个变更列表（CL）"
+    },
+    {
+      "id": "19",
+      "definitionLines": [625, 626],
+      "english": "As of 2019, just the Google C++ style guide is 40 pages long. The secondary material making up the complete corpus of best practices is many times longer.",
+      "chinese": "截至2019年，仅谷歌 C++ 风格指南就有40页。构成完整最佳实践资料集的配套材料，篇幅还要长数倍。",
+      "after": "但资料数量太多"
+    },
+    {
+      "id": "20",
+      "definitionLines": [642, 643],
+      "english": "For why Google uses a monorepo, see `https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext`. Note also that not all of Google’s code lives within the monorepo; readability as described here applies only to the monorepo because it is a notion of within- repository consistency.",
+      "chinese": "关于谷歌采用单体代码仓库的原因，请参阅 https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext. 另请注意，谷歌并非所有代码都在这个仓库中；这里介绍的 Readability 只适用于该单体代码仓库，因为它关注的是仓库内部的一致性。",
+      "after": "在谷歌这样的规模和庞大的单体代码仓库中，这一效应尤为明显。"
+    },
+    {
+      "id": "21",
+      "definitionLines": [677, 678],
+      "english": "For this reason, code that is known to have a short time span is exempt from readability requirements. Examples include the experimental/ directory (explicitly designated for experimental code and cannot push to production) and the Area 120 program, a workshop for Google’s experimental products.",
+      "chinese": "因此，明确只会短期使用的代码可以豁免 Readability 要求。例如 experimental/ 目录中的代码（明确用于实验，不能发布到生产环境），以及 Area 120 项目中的代码；后者是谷歌实验性产品的孵化项目。",
+      "after": "代码可能使用数年，甚至数十年。"
+    },
+    {
+      "id": "22",
+      "definitionLines": [680, 681],
+      "english": "This includes controlling for a variety of factors, including tenure at Google and the fact that CLs for authors who do not have readability typically need additional rounds of review compared to authors who already have readability.",
+      "chinese": "研究控制了多种因素，包括在谷歌的任职时间，以及尚未取得 Readability 资格的作者所提交的 CL，通常比已有资格的作者需要更多轮审查这一事实。",
+      "after": "其 CL 的审查和提交耗时显著更短，这一差异具有统计显著性。"
+    }
+  ],
+  "proseCodeBlocks": [],
+  "translatorNotes": [
+    {
+      "text": "tribal knowledge：口头知识；是指一种仅存在于某个部落中的信息或知识， 这些知识不为外界所知，没有正式记录， 只能口口相传。",
+      "title": "补充释义：口头知识",
+      "body": "tribal knowledge：口头知识；是指一种仅存在于某个部落中的信息或知识， 这些知识不为外界所知，没有正式记录， 只能口口相传。",
+      "linkText": "",
+      "href": "",
+      "reason": "The fenced block at lines 86-88 is a Chinese glossary supplement, not executable code. The preceding English paragraph already has its Chinese translation at line 84. The source does not identify the supplement's author or a reference URL."
+    }
+  ],
+  "translations": [],
+  "pairedTables": [
+    {"englishIndex": 0, "chineseIndex": 1, "reason": "Reviewed the two columns and four interaction-pattern rows against the existing Chinese table."}
+  ],
+  "issues": [
+    {
+      "sourceLines": [215, 216],
+      "kind": "source-punctuation",
+      "noteId": "4",
+      "reason": "The English definition opens a curly quotation mark without closing it. Its Markdown link has a complete URL; preserve source wording rather than silently repair punctuation. The reference-to-sentence mapping is unambiguous."
+    }
+  ]
+}

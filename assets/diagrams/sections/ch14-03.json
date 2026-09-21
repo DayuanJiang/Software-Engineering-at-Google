@@ -4,7 +4,10 @@
   "title": "日志没有这个请求，重放怎么办？",
   "summary": "以地图请求为示意：提交后录制通过才保存请求/响应；开发时匹配东京请求才能返回已录制响应，大阪请求未匹配则不能通过，需运行录制模式。",
   "enabled": true,
-  "sourceSections": ["## What Are Larger Tests? 什么是较大规模测试？", "#### Record/replay proxies 录制/重放代理"],
+  "sourceSections": [
+    "What Are Larger Tests?",
+    "Record/replay proxies"
+  ],
   "afterParagraph": "因此，让录制模式测试易于运行、速度快且稳定，非常重要。",
   "desktop": "assets/diagrams/sections/ch14-03.svg",
   "mobile": "assets/diagrams/sections/ch14-03-mobile.svg",

@@ -60,7 +60,7 @@ python3 -m http.server 8000
 # 打开 http://localhost:8000
 ```
 
-如果只想读文字，[`zh-cn/`](zh-cn/) 目录下的 Markdown 在 GitHub 上直接点开就能看。
+如果只想读文字，英文原文在 [`en/`](en/)，中文译文在 [`zh-cn/`](zh-cn/)，同名文件逐块对应，在 GitHub 上直接点开就能看。
 
 ## 阅读器一览
 
@@ -94,13 +94,13 @@ python3 -m http.server 8000
 ## 仓库结构
 
 ```text
-zh-cn/                       中英对照正文，每章一个目录
+en/                          英文原文，每章一个目录，图片也放在这里
+zh-cn/                       中文译文，与 en/ 同名同结构
 assets/reader.js             阅读器本体，以 Docsify 插件形式实现
 assets/reader.css            阅读器样式，含浅色与深色主题
 assets/reader-manifest.json  章节与图解清单，打开页面时加载
-assets/reader-review/        每章编译后的脚注、译者注和显示修订，进入该章时加载
+assets/reader-content/       每章对齐好的中英段落单元，由 en/ 与 zh-cn/ 生成，进入该章时加载
 assets/search-index.json     全书搜索索引，第一次搜索时加载
-assets/reader-content/       脚注与译者注的审校源数据
 assets/code-variants/        代码示例的 Python 改写：每章一个目录，原文与改写成对存放，编译为按章 JSON
 assets/diagrams/             160 张图解的 SVG 与元数据；章首概览和章末回顾由 chNN.json 里的内容生成
 assets/vendor/               本地化的 Docsify 与图标依赖
@@ -108,6 +108,8 @@ tools/                       审校、校验和构建脚本，用 uv 管理
 translation-review/          全书润色的审校记录、术语表与验收数据
 .github/workflows/ci.yml     每次推送运行测试，并检查生成文件是否同步
 ```
+
+原文与译文分开存放，按块一一对应：`en/` 里的每个标题、段落、列表、引文和表格，在 `zh-cn/` 同名文件的同一位置都有且只有一个中文块；代码、图片和分隔线只出现在 `en/`。脚注在两边都是 `[^n]:` 定义，按编号对应；`zh-cn/` 里以 `[^tN]:` 定义的是译者注。`tools/book.py` 负责解析、对齐并生成阅读器数据，两边结构对不上时构建会直接报错，指出出问题的块。阅读器只负责渲染这些单元，不再猜测哪段是原文、哪段是译文。
 
 ## 翻译是怎么审校的
 
@@ -125,7 +127,7 @@ translation-review/          全书润色的审校记录、术语表与验收数
 
 发现译文可以更好，欢迎直接提 Pull Request。
 
-1. 修改 `zh-cn/` 下对应章节的中文段落，英文原文保持原样。
+1. 修改 `zh-cn/` 下对应章节的中文块，保持与 `en/` 同一位置、同一类型（段落对段落、列表项数相同）；英文原文在 `en/`，保持原样。
 2. 涉及术语时先查[术语表](translation-review/glossary.md)，与已审定译法保持一致。
 3. 改写代码示例时，在 `assets/code-variants/<章节>/` 下放一对文件：`NN.java`（或 `.cpp`、`.go`）保存原书代码，`NN.py` 保存 Python 改写；没有对应写法的示例改放 `NN.skip`，写明原因。构建脚本会检查原文能在章节中找到、Python 能通过语法解析。
 4. 提交前在 `tools/` 目录跑一遍测试：

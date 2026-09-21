@@ -4,7 +4,11 @@
   "title": "流程变了，旧答案怎么办？",
   "summary": "用明确标为示意的开发流程变化，展示群聊结论需要整理、旧邮件存档不能改写、问答答案可以主动编辑的不同结果。",
   "enabled": true,
-  "sourceSections": ["### Group Chats 群聊", "### Mailing Lists 邮件列表", "### YAQS: Question-and-Answer Platform YAQS：问答平台"],
+  "sourceSections": [
+    "Group Chats",
+    "Mailing Lists",
+    "YAQS: Question-and-Answer Platform"
+  ],
   "afterParagraph": "另一些则演变为话题更广泛的讨论列表，不再那么侧重于解决问题。",
   "desktop": "assets/diagrams/sections/ch03-02.svg",
   "mobile": "assets/diagrams/sections/ch03-02-mobile.svg",

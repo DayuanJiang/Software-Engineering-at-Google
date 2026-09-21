@@ -14,7 +14,10 @@
     "whyBetter": "把泛化的文化传播摘要换成一个能逐项判断的历史认证案例，明确识别与消除、已有快速测试与每次提交前运行、未知与不满足的差异。",
     "limits": "仅演示书中历史 Test Certified 的第1级与第5级要求，不能推断第2至第4级，也不是当前谷歌政策或 pH 评分算法。"
   },
-  "sourceSections": ["### Test Certified  测试认证", "### Testing Culture Today  当今的测试文化"],
+  "sourceSections": [
+    "Test Certified",
+    "Testing Culture Today"
+  ],
   "afterParagraph": "没过多久，团队之间就开始竞相提升等级。",
   "desktop": "assets/diagrams/sections/ch11-05.svg",
   "mobile": "assets/diagrams/sections/ch11-05-mobile.svg"

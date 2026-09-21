@@ -12,7 +12,7 @@ class CodeVariantTests(unittest.TestCase):
     def test_every_java_cpp_and_go_example_has_a_python_rewrite_or_a_reason(self):
         manifest = json.loads((reader.ROOT / "assets/reader-manifest.json").read_text())
         for chapter in manifest["chapters"]:
-            text = (reader.ROOT / chapter["file"]).read_text()
+            text = (reader.ROOT / chapter["source"]).read_text()
             expected = {t.content.replace("\t", "    ").strip() for t in reader.audit.MD.parse(text)
                         if t.type == "fence" and t.info.strip() in TRANSLATED}
             if not expected:

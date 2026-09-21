@@ -5,10 +5,10 @@
   "summary": "沿一次搜索质量改动追踪短期参与度收益、延迟带来的长期损失和服务容量代价，再把收益与损失接入共同指标，显出旧决策遗漏的因素。",
   "enabled": true,
   "sourceSections": [
-    "### Identify the Blinders  找出思维盲点",
-    "## Identify the Key Trade-Offs  确定关键的权衡要素",
-    "### Decide, Then Iterate  做决定，然后持续迭代",
-    "#### Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题"
+    "Identify the Blinders",
+    "Identify the Key Trade-Offs",
+    "Decide, Then Iterate",
+    "Case Study: Addressing the “Latency” of Web Search"
   ],
   "afterParagraph": "我们持续判断质量、延迟和容量方面的变化是否平衡，并每月迭代这些决策。",
   "desktop": "assets/diagrams/sections/ch06-01.svg",

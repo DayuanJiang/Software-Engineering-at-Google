@@ -4,7 +4,10 @@
   "title": "仓库有两版，新应用能任选吗",
   "summary": "对照 v1、v2 升级前后的仓库存放状态与应用 A、B、C 的依赖。迁移中 A 暂留 v1、B 已用 v2，但新应用 C 不准再依赖 v1。",
   "enabled": true,
-  "sourceSections": ["### One Version  单版本", "### The “One-Version” Rule  “单版本”规则"],
+  "sourceSections": [
+    "One Version",
+    "The “One-Version” Rule"
+  ],
   "afterParagraph": "能够更准确地传达这条规则的重要含义。",
   "desktop": "assets/diagrams/sections/ch16-04.svg",
   "mobile": "assets/diagrams/sections/ch16-04-mobile.svg",

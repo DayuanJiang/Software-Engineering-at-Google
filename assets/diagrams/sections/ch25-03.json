@@ -4,7 +4,10 @@
   "title": "答复丢了，为什么不能重下单？",
   "summary": "比萨订单 P7 已写入，答复却丢失。客户端向新实例重试同一 P7，接口查到已有订单并返回成功，而不是再创建一份。退避与抖动控制重试压力，按同一订单标识查重控制业务效果，两者不相互替代。",
   "enabled": true,
-  "sourceSections": ["### Managing State 管理状态", "#### Connecting to a Service 连接到服务"],
+  "sourceSections": [
+    "Managing State",
+    "Connecting to a Service"
+  ],
   "afterParagraph": "两个执行相同工作、承担相同角色的副本，也是产生重复请求的潜在原因。",
   "desktop": "assets/diagrams/sections/ch25-03.svg",
   "mobile": "assets/diagrams/sections/ch25-03-mobile.svg",

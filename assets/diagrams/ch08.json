@@ -4,11 +4,11 @@
   "summary": "规则服务于长期协作：少而精，能自动执行，随时代更新",
   "enabled": true,
   "sourceSections": [
-    "## Why Have Rules?  为什么需要规则？",
-    "## Creating the Rules  制定规则",
-    "## Changing the Rules  修改规则",
-    "## Guidance  指导",
-    "## Applying the Rules  应用规则"
+    "Why Have Rules?",
+    "Creating the Rules",
+    "Changing the Rules",
+    "Guidance",
+    "Applying the Rules"
   ],
   "kind": "cycle",
   "desktop": "assets/diagrams/ch08.svg",

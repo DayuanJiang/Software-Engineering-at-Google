@@ -4,14 +4,14 @@
   "summary": "可以度量：从目标出发选指标，用访谈等定性数据校验，再据此行动",
   "enabled": true,
   "sourceSections": [
-    "## Why Should We Measure Engineering Productivity? 我们为什么要度量工程生产力？",
-    "## Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？",
-    "## Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
-    "## Goals  目标",
-    "## Signals  信号",
-    "## Metrics  指标",
-    "## Using Data to Validate Metrics  使用数据验证指标",
-    "## Taking Action and Tracking Results  采取行动并跟踪结果"
+    "Why Should We Measure Engineering Productivity?",
+    "Triage: Is It Even Worth Measuring?",
+    "Selecting Meaningful Metrics with Goals and Signals",
+    "Goals",
+    "Signals",
+    "Metrics",
+    "Using Data to Validate Metrics",
+    "Taking Action and Tracking Results"
   ],
   "kind": "cycle",
   "desktop": "assets/diagrams/ch07.svg",

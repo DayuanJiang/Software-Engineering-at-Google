@@ -4,7 +4,10 @@
   "title": "一个方法，拆出两项行为测试",
   "summary": "显示商品名和低余额警告虽在同一个方法内，却是两项保证；删去警告的示意变更只让警告测试失败。转账的两个余额断言则共同描述一个行为。",
   "enabled": true,
-  "sourceSections": ["### Test Behaviors, Not Methods  测试行为，而不是方法", "#### Structure tests to emphasize behaviors  用测试结构突出行为"],
+  "sourceSections": [
+    "Test Behaviors, Not Methods",
+    "Structure tests to emphasize behaviors"
+  ],
   "afterParagraph": "而不是不断往已有方法里堆内容。",
   "desktop": "assets/diagrams/sections/ch12-03.svg",
   "mobile": "assets/diagrams/sections/ch12-03-mobile.svg",

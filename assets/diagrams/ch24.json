@@ -4,13 +4,13 @@
   "summary": "发布越小越频繁，风险越低；开关和数据让决策提前",
   "enabled": true,
   "sourceSections": [
-    "## Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践",
-    "## Velocity Is a Team Sport: How to Break Up a Deployment into Manageable Pieces   提速需要团队协作：如何将部署拆分成易于管理的部分",
-    "## Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能",
-    "## Striving for Agility: Setting Up a Release Train 追求敏捷：建立发布列车机制",
-    "## Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能",
-    "## Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策",
-    "## Changing Team Culture: Building Discipline into Deployment 改变团队文化：严格遵守部署流程"
+    "Idioms of Continuous Delivery at Google",
+    "Velocity Is a Team Sport: How to Break Up a Deployment into Manageable Pieces",
+    "Evaluating Changes in Isolation: Flag-Guarding Features",
+    "Striving for Agility: Setting Up a Release Train",
+    "Quality and User-Focus: Ship Only What Gets Used",
+    "Shifting Left: Making Data-Driven Decisions Earlier",
+    "Changing Team Culture: Building Discipline into Deployment"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch24.svg",

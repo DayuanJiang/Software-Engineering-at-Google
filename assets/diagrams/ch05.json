@@ -4,12 +4,12 @@
   "summary": "领导者的产出是团队的产出：少插手，多清障，让人成长",
   "enabled": true,
   "sourceSections": [
-    "## Managers and Tech Leads (and Both)  经理、技术负责人及兼任两职者",
-    "## Moving from an Individual Contributor Role to a Leadership Role  从个人贡献者角色转变为领导角色",
-    "## The Engineering Manager 工程经理",
-    "## Antipatterns  反模式",
-    "## Positive Patterns  积极模式",
-    "## People Are Like Plants  人如植物"
+    "Managers and Tech Leads (and Both)",
+    "Moving from an Individual Contributor Role to a Leadership Role",
+    "The Engineering Manager",
+    "Antipatterns",
+    "Positive Patterns",
+    "People Are Like Plants"
   ],
   "kind": "contrast",
   "desktop": "assets/diagrams/ch05.svg",

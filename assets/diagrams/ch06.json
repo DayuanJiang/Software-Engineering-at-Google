@@ -4,10 +4,10 @@
   "summary": "规模一大，领导要从做事转向决策、放权和守住自己的注意力",
   "enabled": true,
   "sourceSections": [
-    "## Always Be Deciding 持续作出决策",
-    "## Identify the Key Trade-Offs  确定关键的权衡要素",
-    "## Always Be Leaving  随时准备离开",
-    "## Always Be Scaling  不断适应规模增长"
+    "Always Be Deciding",
+    "Identify the Key Trade-Offs",
+    "Always Be Leaving",
+    "Always Be Scaling"
   ],
   "kind": "pillars",
   "desktop": "assets/diagrams/ch06.svg",

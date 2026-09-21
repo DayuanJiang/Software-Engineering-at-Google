@@ -4,13 +4,13 @@
   "summary": "把审查的每一步放在一个界面里，让审查快、透明、有记录",
   "enabled": true,
   "sourceSections": [
-    "## Code Review Tooling Principles 代码审查工具的设计原则",
-    "## Code Review Flow 代码审查流程",
-    "## Stage 1: Create a Change 阶段1：创建变更",
-    "## Stage 2: Request Review 阶段2：请求审查",
-    "## Stages 3 and 4: Understanding and Commenting on a Change 阶段3和4：理解变更并提出审查意见",
-    "## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）",
-    "## Stage 6: Commiting a Change 阶段6：提交变更"
+    "Code Review Tooling Principles",
+    "Code Review Flow",
+    "Stage 1: Create a Change",
+    "Stage 2: Request Review",
+    "Stages 3 and 4: Understanding and Commenting on a Change",
+    "Stage 5: Change Approvals (Scoring a Change)",
+    "Stage 6: Commiting a Change"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch19.svg",

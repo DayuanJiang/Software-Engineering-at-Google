@@ -3,7 +3,12 @@
   "chapter": 19,
   "title": "四种评分状态，下一步各找谁？",
   "summary": "四个独立评分案例每次只缺一项：缺 LGTM、缺所需批准、尚有未解决意见，分别对应不同的下一步；只有三项都满足时可启动提交，提交前检查失败仍不能入库。",
-  "sourceSections": ["## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）", "## Stage 6: Commiting a Change 阶段6：提交变更", "## Code Review Flow 代码审查流程", "## Conclusion 总结"],
+  "sourceSections": [
+    "Stage 5: Change Approvals (Scoring a Change)",
+    "Stage 6: Commiting a Change",
+    "Code Review Flow",
+    "Conclusion"
+  ],
   "afterParagraph": "主动信任他人，也有助于建立信任、增强团队凝聚力。",
   "enabled": true,
   "pedagogy": {

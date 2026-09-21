@@ -4,7 +4,10 @@
   "title": "菱形冲突：哪个版本能同时满足？",
   "summary": "将两条路径的声明范围逐一代入候选版本，显示迁移前无共同解；完成 libb 迁移并更新要求后才出现共同候选，不把约束通过当作 API 兼容证明。",
   "enabled": true,
-  "sourceSections": ["### Conflicting Requirements and Diamond Dependencies  要求冲突与菱形依赖", "### Semantic Versioning  语义化版本管理"],
+  "sourceSections": [
+    "Conflicting Requirements and Diamond Dependencies",
+    "Semantic Versioning"
+  ],
   "afterParagraph": "只要某个上层节点通过两条路径，要求同一个底层节点同时使用两个不兼容的版本，就会出问题。",
   "desktop": "assets/diagrams/sections/ch21-01.svg",
   "mobile": "assets/diagrams/sections/ch21-01-mobile.svg",

@@ -14,7 +14,12 @@
     "whyBetter": "同一目标下移动依赖位置，读者能看到具体是哪条进程或机器边界排除了较小规模；图示不是用单元或集成名称替代资源分类。",
     "limits": "是运行边界的示意，不保证本机测试一定中型或进程内测试一定小型；时间、内存和其他约束仍须满足。不是性能测量，也不证明替身能验证真实数据库交互。"
   },
-  "sourceSections": ["### Test Size  测试规模", "#### Small tests  小型测试", "#### Medium tests  中型测试", "#### Large tests  大型测试"],
+  "sourceSections": [
+    "Test Size",
+    "Small tests",
+    "Medium tests",
+    "Large tests"
+  ],
   "afterParagraph": "只在构建和发布过程中运行，以免影响开发者的工作流。",
   "desktop": "assets/diagrams/sections/ch11-02.svg",
   "mobile": "assets/diagrams/sections/ch11-02-mobile.svg"

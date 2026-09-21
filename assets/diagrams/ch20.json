@@ -4,9 +4,9 @@
   "summary": "编译只查语法和类型；静态分析在审查时自动抓出更多问题",
   "enabled": true,
   "sourceSections": [
-    "## 有效静态分析的特点",
-    "## Key Lessons in Making Static Analysis Work 让静态分析发挥作用的关键经验",
-    "## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台"
+    "Characteristics of Effective Static Analysis",
+    "Key Lessons in Making Static Analysis Work",
+    "Tricorder: Google’s Static Analysis Platform Tricorder： Google"
   ],
   "kind": "layers",
   "desktop": "assets/diagrams/ch20.svg",

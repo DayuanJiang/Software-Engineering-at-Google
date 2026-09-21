@@ -4,7 +4,12 @@
   "title": "复用生产环境省了什么，又暴露了什么？",
   "summary": "Webdriver Torso 在 YouTube 生产环境上传测试视频；复用环境省去另建 SUT 的维护，但公开频道让测试数据被用户发现。成本按类别权衡，不画单调增长阶梯。",
   "enabled": true,
-  "sourceSections": ["### Fidelity 仿真度", "### The System Under Test 被测系统", "#### The benefits of hermetic SUTs 封闭式 SUT 的好处", "### Authoring Large Tests 编写大型测试"],
+  "sourceSections": [
+    "Fidelity",
+    "The System Under Test",
+    "The benefits of hermetic SUTs",
+    "Authoring Large Tests"
+  ],
   "afterParagraph": "不过，这件事提醒我们：放在生产环境中的任何测试数据，都可能被最终用户发现，我们必须考虑这种可能性并做好准备。",
   "desktop": "assets/diagrams/sections/ch14-01.svg",
   "mobile": "assets/diagrams/sections/ch14-01-mobile.svg",

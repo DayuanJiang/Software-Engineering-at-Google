@@ -3,7 +3,9 @@
   "chapter": 18,
   "title": "改 common，为什么不重建 otherlib？",
   "summary": "保留原文的 common 变更传播图，补上 Guava，并同时显示使用方指向依赖的声明和反向的产物流。common、mylib、MyBinary 重建，otherlib 与 Guava 复用；只改 MyBinary.java 则只重建 MyBinary。",
-  "sourceSections": ["#### A functional perspective 函数式视角"],
+  "sourceSections": [
+    "A functional perspective"
+  ],
   "afterParagraph": "并行执行与结果复用，还将成为后文所述分布式、高可扩展性构建系统的基础。",
   "desktop": "assets/diagrams/sections/ch18-02.svg",
   "mobile": "assets/diagrams/sections/ch18-02-mobile.svg",

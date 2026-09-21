@@ -15,7 +15,9 @@
     "whyBetter": "停止重复展示同一推理，保留概览中完整的两轴反例和可见证据；原 SVG 不删除，方便比较。",
     "limits": "退役不是否定图中分类；仅减少重复。原两个布局保留，不再作为读者可见插图使用。"
   },
-  "sourceSections": ["### Test Scope  测试范围"],
+  "sourceSections": [
+    "Test Scope"
+  ],
   "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
   "desktop": "assets/diagrams/sections/ch11-03.svg",
   "mobile": "assets/diagrams/sections/ch11-03-mobile.svg"

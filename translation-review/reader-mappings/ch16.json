@@ -1,0 +1,204 @@
+{
+  "format": 2,
+  "sourceSha256": "59b9dc82d52c1fb4e5c0a1fb0d5e086daab283992bd758eb56f23ff36a089d35",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch16.html",
+  "footnotes": [
+    {
+      "id": "1",
+      "definitionLines": [
+        20,
+        22
+      ],
+      "english": "The DevOps Research Association, which was acquired by Google between the first draft of this chapter and publication, has published extensively on this in the annual “State of DevOps Report” and the book Accelerate. As near as we can tell, it popularized the terminology trunk-based development.",
+      "chinese": "DevOps 研究协会在年度《DevOps 状况报告》和《加速》一书中，对此作了大量论述。从本章初稿完成到出版之间，该协会被谷歌收购。据我们所知，“主干开发”这一术语正是由它推广开来的。",
+      "after": "尤其是，我们发现 DevOps 推广的“主干开发”（一个代码仓库，没有开发分支）特别有利于规模扩展，后文将解释其中的原因。"
+    },
+    {
+      "id": "2",
+      "definitionLines": [
+        46,
+        48
+      ],
+      "english": "Although the formal idea of what is and is not a repository changes a bit depending on your choice of VCS, and the terminology will vary.",
+      "chinese": "不过，具体什么算作代码仓库，会随所选 VCS 略有不同，相关术语也不尽相同。",
+      "after": "一份文件副本连同这些元数据，统称为代码仓库（简称 repo）。"
+    },
+    {
+      "id": "3",
+      "definitionLines": [
+        96,
+        98
+      ],
+      "english": "Indeed, I’ve given several public talks that use “adoption of version control” as the canonical example of how the norms of software engineering can and do evolve over time. In my experience, in the 1990s, version control was pretty well understood as a best practice but not universally followed. In the early 2000s, it was still common to encounter professional groups that didn’t use it. Today, the use of tools like Git seems ubiquitous even among college students working on personal projects. Some of this rise in adoption is likely due to better user experience in the tools (nobody wants to go back to RCS), but the role of experience and changing norms is significant.",
+      "chinese": "我在几次公开演讲中，都把“采用版本控制”作为典型例子，说明软件工程规范不仅能够、而且确实会随时间演变。根据我的经验，20世纪90年代，大家已经普遍知道版本控制是最佳实践，却没有普遍采用。到了21世纪初，不使用版本控制的专业团队仍很常见。如今，即使是做个人项目的大学生，似乎也普遍使用 Git 之类的工具。采用率提高，可能部分归功于工具用户体验的改善，毕竟没人想回到 RCS；但经验积累和规范变化也发挥了重要作用。",
+      "after": "经过几十年的演进和普及，可靠、持续地使用版本控制才成为今天的规范。"
+    },
+    {
+      "id": "4",
+      "definitionLines": [
+        120,
+        122
+      ],
+      "english": "Anecdote: To illustrate this, I looked for information on what pending/unsubmitted edits Googlers had outstanding for a semipopular file in my most recent project. At the time of this writing, 27 changes are pending, 12 from people on my team, 5 from people on related teams, and 10 from engineers I’ve never met. This is basically working as expected. Technical systems or policies that require out-of-band coordination certainly don’t scale to 24/7 software engineering in distributed locations.",
+      "chinese": "举个例子：为说明这一点，我查看了最近一个项目中某个使用较多的文件，看看谷歌工程师还有哪些待提交的修改。撰写本章时，共有27项变更尚未提交，其中12项来自我的团队，5项来自相关团队，10项来自我从未见过的工程师。这基本上就是预期的工作状态。需要在系统之外另行协调的技术系统或策略，显然无法支持分散各地、全天候开展的软件工程工作。",
+      "after": "这种简单的锁定机制有固有的规模限制：几个人使用时可以运行良好，但团队变大后，一旦发生锁竞争，就可能难以为继。"
+    },
+    {
+      "id": "5",
+      "definitionLines": [
+        150,
+        152
+      ],
+      "english": "Stack Overflow Developer Survey Results, 2018.",
+      "chinese": "Stack Overflow 开发者调查结果，2018年。",
+      "after": "总体而言，如今占主导地位的源代码版本控制系统是 Git，它采用 DVCS 模型。"
+    },
+    {
+      "id": "6",
+      "definitionLines": [
+        154,
+        156
+      ],
+      "english": "Monotonically increasing version numbers, rather than commit hashes, are particularly troublesome. Many systems and scripts have grown up in the Google developer ecosystem that assume that the numeric ordering of commits is the same as the temporal order—undoing those hidden dependencies is difficult.",
+      "chinese": "使用单调递增的版本号而非提交哈希，尤其让迁移棘手。谷歌开发者生态系统中的许多系统和脚本，都假定提交编号的大小顺序与提交时间顺序一致。要消除这些隐含依赖并不容易。",
+      "after": "海勒姆定律带来的影响，又让我们难以摆脱特定 VCS 及其接口。"
+    },
+    {
+      "id": "7",
+      "definitionLines": [
+        158,
+        160
+      ],
+      "english": "For that matter, as of the publication of the Monorepo paper, the repository itself had something like 86 TB of data and metadata, ignoring release branches. Fitting that onto a developer workstation directly would be… challenging.",
+      "chinese": "而且，在 Monorepo 论文发表时，即使不计发布分支，仓库也已有约86 TB 的数据和元数据。要把这些内容直接放进开发者的工作站，恐怕……颇有挑战。",
+      "after": "大多数现有工具都难以扩展到支持50,000名工程师和数千万次提交的规模。"
+    },
+    {
+      "id": "8",
+      "definitionLines": [
+        280,
+        282
+      ],
+      "english": "Recent informal Twitter polling suggests about 25% of software engineers have been subjected to “regularly scheduled” merge strategy meetings.",
+      "chinese": "最近一次非正式推特调查显示，约25%的软件工程师经历过“定期召开”的合并策略会议。",
+      "after": "大家定期开会，确保“本周的合并策略已经确定”。"
+    },
+    {
+      "id": "9",
+      "definitionLines": [
+        326,
+        328
+      ],
+      "english": "For example, during an upgrade operation, there might be two versions checked in, but if a developer is adding a new dependency on an existing package, there should be no choice in which version to depend upon.",
+      "chinese": "例如，升级期间可能同时检入两个版本，但开发者新添对现有软件包的依赖时，应该只有一个版本可选。",
+      "after": "还要求“仓库中的每项依赖，都只能有一个可供选择的版本”。"
+    },
+    {
+      "id": "10",
+      "definitionLines": [
+        330,
+        332
+      ],
+      "english": "That said, we fail at this in many cases because external packages sometimes have pinned copies of their own dependencies bundled in their source release. You can read more on how all of this goes wrong in Chapter 21.",
+      "chinese": "不过，我们在不少情况下也未能做到，因为外部软件包有时会在发布的源码中捆绑自身依赖的固定版本副本。第21章会进一步讨论由此引发的问题。",
+      "after": "对第三方软件包而言，这意味着在稳定状态下，仓库中只能检入该包的一个版本。"
+    },
+    {
+      "id": "11",
+      "definitionLines": [
+        369,
+        371
+      ],
+      "english": "For instance, if there are external/third-party libraries that are periodically updated, it might be infeasible to update that library and update all use of it in a single atomic change. As such, it is often necessary to add a new version of that library, prevent new users from adding dependencies on the old one, and incrementally switch usage from old to new.",
+      "chinese": "例如，外部或第三方库定期更新时，可能无法在一次原子变更中同时升级库及其所有使用方。因此，往往需要先加入新版本，禁止新使用方依赖旧版本，再逐步把现有使用方迁移到新版本。",
+      "after": "实践中，“单版本”并非绝对不能变通，但把要求表述为“添加新依赖时限制可选版本”，能够更准确地传达这条规则的重要含义。"
+    },
+    {
+      "id": "12",
+      "definitionLines": [
+        407,
+        408
+      ],
+      "english": "Kevin Behr, Gene Kim, and George Spafford, The Phoenix Project (Portland: IT Revolution Press, 2018).",
+      "chinese": "Kevin Behr、Gene Kim 和 George Spafford，《凤凰城项目》（波特兰：IT 革命出版社，2018年）。",
+      "after": "从敏捷流程、DORA 关于主干开发的研究，到《凤凰城项目》中“减少尚未完成的工作”的经验，都有体现。"
+    },
+    {
+      "id": "13",
+      "definitionLines": [
+        410,
+        412
+      ],
+      "english": "It’s difficult to get a precise count, but the number of such teams is almost certainly fewer than 10./",
+      "chinese": "很难准确统计，但这样的团队几乎肯定不到10个。",
+      "after": "在使用谷歌单体代码仓库的约1,000个团队中，只有两三个团队维护这样的开发分支，通常都有非常具体、非常特殊的原因。"
+    },
+    {
+      "id": "14",
+      "definitionLines": [
+        414,
+        415
+      ],
+      "english": "Cloud interfaces are a different story.",
+      "chinese": "云接口是另一回事。",
+      "after": "谷歌内部的生产服务较少作出此类承诺。"
+    },
+    {
+      "id": "15",
+      "definitionLines": [
+        457,
+        459
+      ],
+      "english": "Rachel Potvin and Josh Levenberg, “Why Google stores billions of lines of code in a single repository,” Communications of the ACM, 59 No. 7 (2016): 78-87.",
+      "chinese": "Rachel Potvin 和 Josh Levenberg，《为什么谷歌将数十亿行代码存储在一个代码仓库中》，《ACM 通讯》，第59卷第7期（2016）：78-87。",
+      "after": "2016年，我们发表了一篇介绍 Google 单体代码仓库实践的论文，后来被广泛引用和讨论。"
+    },
+    {
+      "id": "16",
+      "definitionLines": [
+        461,
+        463
+      ],
+      "english": "We don’t think we’ve seen anything do this particularly smoothly, but the interrepository dependencies/virtual monorepo idea is clearly in the air.",
+      "chinese": "据我们所见，还没有哪套系统能特别顺畅地做到这一点，但仓库间依赖和虚拟单体代码仓库的想法，显然已在酝酿之中。",
+      "after": "Git 子模块、Bazel 的外部依赖支持和 CMake 子项目，都能让开发者在一定程度上模拟单体代码仓库的行为，又不必承担其成本和弊端。"
+    },
+    {
+      "id": "17",
+      "definitionLines": [
+        465,
+        467
+      ],
+      "english": "Or you have the willingness and capability to customize your VCS—and maintain that customization for the lifetime of your codebase/organization. Then again, maybe don’t plan on that as an option; that is a lot of overhead.",
+      "chinese": "或者，你愿意且有能力定制 VCS，并在代码库或组织的整个生命周期内维护这些定制。不过，也许最好别把它列为选项，毕竟开销很大。",
+      "after": "换句话说，如果组织中所有项目的保密、法律、隐私和安全要求都相同，真正的单体代码仓库是不错的选择。"
+    }
+  ],
+  "proseCodeBlocks": [
+    {
+      "text": "Developers must never have a choice of “What version of this component should I depend upon?”\n绝不能让开发者面对“我应该依赖这个组件的哪个版本？”这样的选择。",
+      "language": "bilingual",
+      "reason": "Lines 358-359 form one indented Markdown code block containing the English One-Version rule and its existing Chinese translation. Both lines are prose, not executable code. Preserve the pair when converting the block to a quotation."
+    }
+  ],
+  "translatorNotes": [],
+  "translations": [],
+  "issues": [
+    {
+      "kind": "bilingual-prose-code-block",
+      "sourceLines": [
+        358,
+        359
+      ],
+      "detail": "This is one exact bilingual source block, not two independent code blocks. Its language is explicitly bilingual; integration should expose the existing Chinese line in Chinese mode rather than hide the entire block as English."
+    },
+    {
+      "kind": "source-definition-artifact",
+      "sourceLines": [
+        410,
+        410
+      ],
+      "detail": "Footnote 13 ends with the stray slash in '10./'. The exact English wording is preserved; the corresponding Chinese note has no such slash."
+    }
+  ]
+}

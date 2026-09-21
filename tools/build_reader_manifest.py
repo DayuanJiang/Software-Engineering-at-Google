@@ -1,4 +1,4 @@
-"""Build and validate the static reader's chapter/SVG manifest without modifying book text."""
+"""Build the reader's data: aligned chapter units, the chapter/SVG manifest and code variants, without modifying book text."""
 
 import ast
 import hashlib
@@ -7,11 +7,11 @@ from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 import translation_audit as audit
-import reader_content
+import book
 
 ROOT = Path(__file__).resolve().parents[1]
 DIAGRAMS = ROOT / "assets" / "diagrams"
-REVIEWS = ROOT / "assets" / "reader-review"
+CONTENT = ROOT / "assets" / "reader-content"
 VARIANTS = ROOT / "assets" / "code-variants"
 VARIANT_LANGUAGES = {".java": "java", ".cpp": "cpp", ".c": "c", ".go": "go"}
 
@@ -39,28 +39,12 @@ def check_pedagogy(metadata, overview=False):
     return not retired
 
 
-def load_reader_review(key, text):
-    path = ROOT / "assets" / "reader-content" / f"{key}.json"
-    if not path.exists():
-        return None
-    review = json.loads(path.read_text())
-    if audit.digest(text) != review["sourceSha256"]:
-        raise ValueError(f"Reader corrections need re-review after source changes: {key}")
-    if review.get("format") == 2:
-        return reader_content.compile_review(key, text, review)
-    tokens = audit.MD.parse(text)
-    code = [t.content.strip() for t in tokens if t.type in {"fence", "code_block"}]
-    for item in review.get("proseCodeBlocks", []) + review.get("translatorNotes", []):
-        if code.count(item["text"]) != 1:
-            raise ValueError(f"Reader correction does not identify one code block: {key}")
-    expected = set(re.findall(r"^>\s*\[\^(\d+)\]:", text, re.MULTILINE))
-    ids = [note["id"] for note in review["footnotes"]]
-    if len(ids) != len(set(ids)) or set(ids) != expected:
-        raise ValueError(f"Incomplete or duplicate reviewed footnotes: {key}")
-    for note in review["footnotes"]:
-        if "after" in note and text.count(note["after"]) != 1:
-            raise ValueError(f"Ambiguous Chinese footnote anchor: {key}: {note['id']}")
-    return review
+def anchor_count(chapter, anchor):
+    """How many translation blocks contain the anchor text (footnote markers ignored on both sides)."""
+    needle = " ".join(re.sub(r"\[\^\w+\]", "", anchor).split())
+    if not needle:
+        return 0
+    return sum(needle in " ".join(re.sub(r"\[\^\w+\]", "", u.get("targetPlain") or "").split()) for u in chapter["units"])
 
 
 def compile_code_variants(folder, text):
@@ -145,29 +129,25 @@ def check_svg(path, chapter, mobile, section=None, story=False):
 def main():
     chapters = []
     guides = {}
-    REVIEWS.mkdir(exist_ok=True)
-    for stale in list(REVIEWS.glob("*.json")) + list(VARIANTS.glob("*.json")):
+    CONTENT.mkdir(exist_ok=True)
+    for stale in list(CONTENT.glob("*.json")) + list(VARIANTS.glob("*.json")):
         stale.unlink()
-    paths = sorted((ROOT / "zh-cn").rglob("*.md"))
+    paths = sorted((ROOT / "en").rglob("*.md"))
     for path in paths:
+        relative = path.relative_to(ROOT / "en")
+        translation = ROOT / "zh-cn" / relative
+        if not translation.exists():
+            raise ValueError(f"Translation file missing: zh-cn/{relative.as_posix()}")
         text = path.read_text()
         number = re.search(r"Chapter-(\d+)_", str(path))
         key = f"ch{int(number[1]):02d}" if number else path.stem.lower()
-        title = next(line[re.search(r"[\u3400-\u9fff]", line).start():].strip()
-                     for line in text.splitlines() if re.match(r"^#{1,6}\s", line) and re.search(r"[\u3400-\u9fff]", line))
-        file = path.relative_to(ROOT).as_posix()
-        # These known untranslated paragraphs must remain visible in Chinese-priority mode.
-        preserve_lines = {"ch18": [337], "ch23": [673]}.get(key, [])
-        chapters.append({"id": key, "number": int(number[1]) if number else None, "title": title,
-                         "file": file, "route": "/" + file.removesuffix(".md"),
-                         "keepEnglish": [audit.plain(audit.MD.parseInline(text.splitlines()[line - 1])[0].children)
-                                         for line in preserve_lines]})
-        review = load_reader_review(key, text)
-        if review:
-            (REVIEWS / f"{key}.json").write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n")
-            chapters[-1]["review"] = f"assets/reader-review/{key}.json"
-            translated = {reader_content.plain(t["english"]) for t in review.get("translations", [])}
-            chapters[-1]["keepEnglish"] = [s for s in chapters[-1]["keepEnglish"] if reader_content.plain(s) not in translated]
+        image_root = "en/" + relative.parent.as_posix() if relative.parent.as_posix() != "." else "en"
+        chapter = book.compile_chapter(key, text, translation.read_text(), image_root)
+        (CONTENT / f"{key}.json").write_text(json.dumps(chapter, ensure_ascii=False) + "\n")
+        file = translation.relative_to(ROOT).as_posix()
+        chapters.append({"id": key, "number": int(number[1]) if number else None, "title": chapter["title"],
+                         "englishTitle": chapter["englishTitle"], "file": file, "source": path.relative_to(ROOT).as_posix(),
+                         "route": "/" + file.removesuffix(".md"), "content": f"assets/reader-content/{key}.json"})
         variants = compile_code_variants(VARIANTS / key, text)
         if variants:
             (VARIANTS / f"{key}.json").write_text(json.dumps(variants, ensure_ascii=False, indent=2) + "\n")
@@ -180,9 +160,9 @@ def main():
             check_pedagogy(metadata, overview=True)
             if metadata["map"]["question"] != metadata["title"] or not metadata["story"]["acts"]:
                 raise ValueError(f"Chapter map/story content missing or inconsistent: {key}")
-            headings = {re.sub(r"^#+\s*", "", line).strip() for line in text.splitlines() if line.startswith("#")}
+            headings = {" ".join(re.sub(r"^#+\s*", "", u["source"]).split()) for u in chapter["units"] if u["kind"] == "heading"}
             for heading in metadata["sourceSections"]:
-                if re.sub(r"^#+\s*", "", heading).strip() not in headings:
+                if " ".join(heading.split()) not in headings:
                     raise ValueError(f"Unknown source heading in {key}: {heading}")
             check_svg(ROOT / metadata["desktop"], n, False)
             check_svg(ROOT / metadata["mobile"], n, True)
@@ -200,10 +180,10 @@ def main():
                 if not check_pedagogy(section):
                     retired.append(section)
                     continue
-                if reader_content.anchor_count(text, section["afterParagraph"]) != 1:
+                if anchor_count(chapter, section["afterParagraph"]) != 1:
                     raise ValueError(f"Ambiguous section insertion point: {section_path}")
                 for heading in section["sourceSections"]:
-                    if re.sub(r"^#+\s*", "", heading).strip() not in headings:
+                    if " ".join(heading.split()) not in headings:
                         raise ValueError(f"Unknown section guide heading: {section_path}: {heading}")
                 check_svg(ROOT / section["desktop"], n, False, section["id"])
                 check_svg(ROOT / section["mobile"], n, True, section["id"])

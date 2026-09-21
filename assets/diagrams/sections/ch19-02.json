@@ -3,7 +3,9 @@
   "chapter": 19,
   "title": "集成入口，不把所有工具塞进审查",
   "summary": "以 Critique 为审查中心，分别标示编辑、搜索和发布的链接入口，以及在审查界面中显示的分析结果和覆盖率，体现原文的关注点分离。",
-  "sourceSections": ["### Tight Tool Integration 紧密的工具集成"],
+  "sourceSections": [
+    "Tight Tool Integration"
+  ],
   "afterParagraph": "测试覆盖率是一个例外：文件的 diff 视图会在行号栏用不同背景色表示各行是否被测试覆盖，但并非所有项目都使用这一覆盖率工具。",
   "enabled": false,
   "removalReason": "原图只是把紧邻的工具清单和链接/内嵌区别重新装入方框，未增加可推导的案例或状态变化。原文已经具体说明 Cider 编辑、Code Search 主干浏览、发布版本查询及覆盖率例外，保留该图会重复阅读而无额外解释价值。",

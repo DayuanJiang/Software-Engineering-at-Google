@@ -3,7 +3,11 @@
   "chapter": 19,
   "title": "新快照清除哪些已审查标记？",
   "summary": "示例中甲、乙都看过 v1，v2 只把 a.cc 的 n 改为 count：a.cc 对两人的已审查勾选都被清除，未变的 b.cc 保留勾选。文件已审查标记不同于 LGTM。",
-  "sourceSections": ["### Diffing 差异比较", "### Commenting 提出审查意见", "## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）"],
+  "sourceSections": [
+    "Diffing",
+    "Commenting",
+    "Stage 5: Change Approvals (Scoring a Change)"
+  ],
   "afterParagraph": "当作者修改文件、更新最新快照后，系统会清除所有审查者对该文件的“已审查”勾选。",
   "enabled": true,
   "pedagogy": {

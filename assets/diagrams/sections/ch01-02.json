@@ -5,8 +5,8 @@
   "summary": "沿用原文五个元素，把 RPC 响应的前两项换位：按集合比较的调用方仍通过，假定首项固定的调用方失效。新顺序与调用方判断均为演示。",
   "enabled": true,
   "sourceSections": [
-    "### Hyrum’s  Law 海勒姆定律",
-    "### Example: Hash Ordering 哈希遍历顺序"
+    "Hyrum’s Law",
+    "Example: Hash Ordering"
   ],
   "afterParagraph": "例如，如果库把一组值序列化到远程过程调用（RPC）的响应中，调用方最终可能就会依赖这些值的排列顺序。",
   "desktop": "assets/diagrams/sections/ch01-02.svg",

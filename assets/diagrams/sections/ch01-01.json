@@ -6,7 +6,7 @@
   "enabled": false,
   "removalReason": "与同节已有图1-1重复解释生命周期与升级需要；变更能力与选择不升级的区别已由新版总览呈现。保留 SVG 供追溯，不在读者页面重复插入。",
   "sourceSections": [
-    "## Time and Change 时间与变化"
+    "Time and Change"
   ],
   "afterParagraph": "项目的长期可持续性，不只是熬过第一次大规模升级，还要做到此后能够持续、可靠地跟进更新。",
   "desktop": "assets/diagrams/sections/ch01-01.svg",

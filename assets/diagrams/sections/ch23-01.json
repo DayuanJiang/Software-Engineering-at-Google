@@ -3,7 +3,11 @@
   "chapter": 23,
   "title": "head 与 RC：测试证据属于哪个版本？",
   "summary": "同一仓库快照中，最新提交可领先于 CB 最新验证通过的提交。CD 通常取 green head 组装候选，候选本身仍需测试；拣选修复形成新候选后，必须取得与新候选关联的测试证据。",
-  "sourceSections": ["#### Continuous Build 持续构建", "#### Continuous Delivery 持续交付", "#### Release candidate testing 候选发布版本测试"],
+  "sourceSections": [
+    "Continuous Build",
+    "Continuous Delivery",
+    "Release candidate testing"
+  ],
   "afterParagraph": "减少生产环境中的意外。",
   "desktop": "assets/diagrams/sections/ch23-01.svg",
   "mobile": "assets/diagrams/sections/ch23-01-mobile.svg",

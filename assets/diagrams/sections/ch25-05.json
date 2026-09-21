@@ -4,7 +4,9 @@
   "title": "Bash 换成 ash，为何反而告警？",
   "summary": "书中团队曾在文件系统覆盖层里把 Bash 路径换成极简执行程序。平台改用 ash 后，绕开既有定制，开始承担真正 shell 的开销，内存反而增加并触发告警、回滚。平台迁移必须检查实际依赖，不仅是新二进制是否存在。",
   "enabled": true,
-  "sourceSections": ["## Choosing a Compute Service 选择计算服务"],
+  "sourceSections": [
+    "Choosing a Compute Service"
+  ],
   "afterParagraph": "迫使团队回滚变更，也引起了一些不满。",
   "desktop": "assets/diagrams/sections/ch25-05.svg",
   "mobile": "assets/diagrams/sections/ch25-05-mobile.svg",

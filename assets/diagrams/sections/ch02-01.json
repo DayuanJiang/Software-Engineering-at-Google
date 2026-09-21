@@ -3,7 +3,11 @@
   "chapter": 2,
   "title": "同一个设计缺陷，何时才能被看见？",
   "summary": "把原文变速器故事与书中的早期分享反事实并列：保密使邻居的检查延后，早期展示则让相同缺陷有机会及早被指出；不把反事实当作实测工期。",
-  "sourceSections": ["## Hiding Considered Harmful 隐藏工作的危害", "### Early Detection 及早发现", "### Pace of Progress 进展速度"],
+  "sourceSections": [
+    "Hiding Considered Harmful",
+    "Early Detection",
+    "Pace of Progress"
+  ],
   "afterParagraph": "记住那句久经检验的箴言：“尽早失败，快速失败，经常失败。”",
   "desktop": "assets/diagrams/sections/ch02-01.svg",
   "mobile": "assets/diagrams/sections/ch02-01-mobile.svg",

@@ -48,6 +48,7 @@
     return response.json();
   });
   let currentPage = null;
+  let currentChapter = null;
   let currentGuide = null;
   let routeVersion = 0;
   let resizeObservers = [];
@@ -333,270 +334,49 @@
     });
   }
 
-  function cleanTitle(main) {
-    if (!main.querySelector(":scope > h1")) {
-      const first = main.querySelector(":scope > h2");
-      if (first) {
-        const h1 = document.createElement("h1");
-        h1.id = first.id; h1.innerHTML = first.innerHTML; first.replaceWith(h1);
-      }
+  // Chapter content arrives as aligned units (see tools/book.py); the reader only renders them.
+  function loadChapter(page) {
+    if (!page.chapterPromise) {
+      page.chapterPromise = fetch(asset(page.content)).then((response) => {
+        if (!response.ok) throw new Error("Chapter content unavailable: " + page.id);
+        return response.json();
+      }).catch((error) => { delete page.chapterPromise; throw error; });
     }
-    const title = [...main.querySelectorAll(":scope > h1")].find((node) => han.test(node.textContent));
-    const englishTitle = [...main.querySelectorAll(":scope > h1")].find((node) => !han.test(node.textContent));
-    if (title && englishTitle) {
-      const subtitle = document.createElement("p");
-      subtitle.className = "reader-original-title";
-      subtitle.lang = "en";
-      subtitle.id = englishTitle.id;
-      subtitle.innerHTML = englishTitle.innerHTML;
-      englishTitle.replaceWith(subtitle);
-    }
-    [...main.children].forEach((node) => {
-      const text = node.textContent.trim();
-      if (node.tagName === "P" && /^CHAPTER\s+\d+$/.test(text.replace(/\*/g, "").trim())) node.classList.add("chapter-kicker");
-      if (node.tagName === "P" && /^(?:—|--|——)\s*\S/.test(text) && text.length < 120) {
-        node.classList.add("reader-attribution");
-      }
-      const continuedCredit = node.previousElementSibling?.classList.contains("chapter-credit") &&
-        node.children.length && [...node.children].every((child) => child.tagName === "STRONG") && /\sEdited by\b/.test(text);
-      if (node.tagName === "P" && (/^(Written|Edited) by\b/.test(text) || continuedCredit)) {
-        node.classList.add("chapter-credit"); node.lang = "en";
-        const original = document.createElement("span");
-        original.className = "credit-original"; original.textContent = text;
-        const translated = document.createElement("span");
-        translated.className = "credit-chinese"; translated.lang = "zh-CN";
-        translated.textContent = text.replace(/^Written by\s*/, "作者：").replace(/(?:^|\s)Edited by\s*/, "；编辑：").replace(/^；/, "");
-        node.replaceChildren(original, translated);
-      }
-      if (node.tagName === "P" && text.length < 100 && han.test(text) && /[a-zA-Z]/.test(text) &&
-        node.children.length && [...node.childNodes].every((child) => child.nodeType === Node.TEXT_NODE ?
-          !child.textContent.trim() : child.tagName === "STRONG") && /\s$/.test(text.slice(0, text.search(han)))) {
-        node.classList.add("reader-subheading");
-        const original = document.createElement("span"); original.className = "heading-original"; original.lang = "en";
-        original.textContent = text.slice(0, text.search(han));
-        const translated = document.createElement("span"); translated.lang = "zh-CN"; translated.textContent = text.slice(text.search(han));
-        node.replaceChildren(original, translated);
-      }
-    });
-    main.querySelectorAll("h2,h3,h4").forEach((heading) => {
-      const next = heading.nextElementSibling;
-      if (!han.test(heading.textContent) && next?.tagName === heading.tagName && han.test(next.textContent)) {
-        const label = next.querySelector(".anchor > span") || next;
-        label.prepend(document.createTextNode(heading.textContent.trim() + " "));
-        if (heading.id) {
-          const alias = document.createElement("span");
-          alias.id = heading.id; alias.className = "reader-heading-alias"; alias.setAttribute("aria-hidden", "true");
-          next.prepend(alias);
+    return page.chapterPromise;
+  }
+
+  const ROLE_CLASSES = { credit: "chapter-credit", attribution: "reader-attribution", caption: "reader-caption",
+    epigraph: "chapter-epigraph", subheading: "reader-subheading", "code-label": "reader-code-label" };
+
+  function withAttributes(html, classes, language) {
+    return html.replace(/^<([a-z0-9]+)/, '<$1 class="' + classes.trim() + '" lang="' + language + '"');
+  }
+
+  function renderChapter(chapter) {
+    const html = [];
+    for (const unit of chapter.units) {
+      if (unit.kind === "heading") {
+        if (unit.level === 1) {
+          html.push('<p class="reader-original-title" lang="en">' + unit.sourceHtml + "</p>");
+          html.push('<h1 id="' + unit.anchor + '">' + unit.targetHtml + "</h1>");
+        } else {
+          html.push("<h" + unit.level + ' id="' + unit.anchor + '"><span class="heading-original" lang="en">' + unit.sourceHtml +
+            ' </span><span lang="zh-CN">' + unit.targetHtml + "</span></h" + unit.level + ">");
         }
-        heading.remove();
+        continue;
       }
-    });
-    main.querySelectorAll("h2,h3,h4").forEach((heading) => {
-      const label = heading.querySelector(".anchor > span") || heading;
-      const parts = bilingualHeading(label.textContent);
-      if (!parts) return;
-      const original = document.createElement("span");
-      original.className = "heading-original"; original.lang = "en";
-      original.textContent = parts.english + " ";
-      const translated = document.createElement("span");
-      translated.lang = "zh-CN"; translated.textContent = parts.chinese;
-      label.replaceChildren(original, translated);
-    });
-    let next = (title || main.querySelector(":scope > h1"))?.nextElementSibling;
-    while (next?.classList.contains("chapter-credit")) next = next.nextElementSibling;
-    if (next?.tagName === "P" && next.children.length && [...next.childNodes].every((node) =>
-      node.nodeType === Node.TEXT_NODE ? !node.textContent.trim() : node.tagName === "EM")) {
-      next.classList.add("chapter-epigraph");
+      if (unit.targetHtml == null) {
+        html.push(unit.role === "code-label" ? withAttributes(unit.sourceHtml, ROLE_CLASSES[unit.role], "en") : unit.sourceHtml);
+        continue;
+      }
+      const role = ROLE_CLASSES[unit.role] || "";
+      html.push(withAttributes(unit.sourceHtml, "english-prose translated-source " + role, "en"));
+      html.push(withAttributes(unit.targetHtml, role, "zh-CN"));
     }
+    return html.join("\n");
   }
 
-  function classifyCaptions(main) {
-    const kindLabels = { Figure: "图", Example: "例", Table: "表" };
-    for (const paragraph of main.querySelectorAll("p")) {
-      if (paragraph.closest("pre,code,.reader-translator-note")) continue;
-      const text = paragraph.textContent.trim().replace(/^\*+|\*+$/g, "").trim();
-      const english = text.match(/^(Figure|Example|Table)\s*(\d+[-.]\d+)\.?/);
-      const chinese = text.match(/^[图表例]\s*\d+[-.]\d+(?:[.：:\s]|$)/);
-      if (!english && !chinese) continue;
-      paragraph.classList.add("reader-caption");
-      if (english && han.test(text)) {
-        const firstHan = text.search(han);
-        let prefix = text.slice(0, firstHan).trim().replace(/[\s*]+$/, "");
-        let translated = text.slice(firstHan).replace(/[\s*]+$/, "");
-        if (!/^[图表例]\s*\d/.test(translated)) {
-          const repeated = new RegExp(english[1] + "\\s*" + english[2].replace(".", "\\.") + "\\.?\\s*$");
-          prefix = prefix.replace(repeated, "").trim();
-          translated = kindLabels[english[1]] + english[2] + " " + translated;
-        }
-        const notes = [...paragraph.querySelectorAll(".note-reference")];
-        const original = document.createElement("span");
-        original.className = "translated-source"; original.lang = "en";
-        original.textContent = prefix + (prefix ? " " : "");
-        const target = document.createElement("span"); target.lang = "zh-CN"; target.textContent = translated;
-        paragraph.replaceChildren(original, target, ...notes);
-      } else if (english) {
-        const next = paragraph.nextElementSibling;
-        if (next?.tagName === "P" && new RegExp("^[图表例]\\s*" + english[2].replace(".", "\\.")).test(next.textContent.trim())) {
-          paragraph.classList.add("translated-source"); next.classList.add("reader-caption");
-        }
-      } else if (/^\*|\*$/.test(paragraph.textContent.trim())) {
-        paragraph.textContent = text;
-      }
-    }
-  }
-
-  function classifyProse(main, page) {
-    const normalize = (s) => s.replace(/\s+/g, " ").trim();
-    const keep = (page?.keepEnglish || []).map(normalize);
-    const isText = (node) => /^(P|UL|OL|LI|BLOCKQUOTE)$/.test(node.tagName) &&
-      !node.matches(".chapter-credit,.chapter-kicker,.reader-original-title,.reader-caption,.reader-subheading,.reader-attribution,[data-reviewed-translation]") &&
-      !node.closest(".reader-notes,.reader-translator-note") &&
-      !node.querySelector("[data-reviewed-translation]") &&
-      !node.querySelector("pre,figure,img,table");
-    const language = (node) => {
-      if (!isText(node)) return "boundary";
-      if (/^(UL|OL)$/.test(node.tagName)) {
-        const languages = new Set([...node.children].map((child) => han.test(child.textContent) ? "zh" : /[a-zA-Z]/.test(child.textContent) ? "en" : ""));
-        if (languages.has("en") && languages.has("zh")) return "boundary";
-      }
-      const text = node.textContent.trim();
-      if (han.test(text)) return "zh";
-      return /[a-zA-Z]/.test(text) ? "en" : "boundary";
-    };
-    [main, ...main.querySelectorAll("blockquote,ul,ol,li")].forEach((container) => {
-      const nodes = [...container.children];
-      nodes.forEach((node) => {
-        if (language(node) === "en") {
-          node.classList.add("english-prose"); node.setAttribute("lang", "en");
-        }
-      });
-      let i = 0;
-      while (i < nodes.length) {
-        if (language(nodes[i]) !== "en") { i += 1; continue; }
-        const en = [];
-        while (i < nodes.length && language(nodes[i]) === "en") en.push(nodes[i++]);
-        const zh = [];
-        let j = i;
-        while (j < nodes.length && language(nodes[j]) === "zh") zh.push(nodes[j++]);
-        if (en.length !== zh.length || !en.every((node, k) => node.tagName === zh[k].tagName)) continue;
-        en.forEach((node) => {
-          const text = normalize(node.textContent);
-          if (!keep.some((source) => source.includes(text) || text.includes(source))) node.classList.add("translated-source");
-        });
-      }
-    });
-  }
-
-  // The translation sometimes repeats a code block after both the English and the Chinese paragraph.
-  // Keep the copy that follows the Chinese text, hide the earlier copy, and hide list items left empty.
-  function hideRepeatedCode(main) {
-    const pres = [...main.querySelectorAll("pre")];
-    // Compare without shell prompts, whitespace, or a trailing period so a "$ cmd" copy matches "cmd".
-    const body = (pre) => (pre.querySelector("code") || pre).textContent.split("\n")
-      .map((line) => line.replace(/^\s*\$\s*/, "")).join("").replace(/\s+/g, "").replace(/[.。;]$/, "");
-    pres.forEach((pre, i) => {
-      if (pres.slice(i + 1).some((other) => body(other) === body(pre))) pre.classList.add("repeated-source");
-    });
-    main.querySelectorAll("li").forEach((item) => {
-      const remaining = [...item.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE
-        ? node.textContent.trim() : !node.matches(".translated-source,.repeated-source") && node.textContent.trim());
-      if (!remaining.length) item.classList.add("translated-source");
-    });
-    main.querySelectorAll("ul,ol").forEach((list) => {
-      if (list.children.length && [...list.children].every((child) => child.classList.contains("translated-source"))) {
-        list.classList.add("translated-source");
-      }
-    });
-  }
-
-  function replaceText(root, text, replacement) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    let node;
-    while ((node = walker.nextNode())) {
-      if (node.parentElement.closest("pre,code,.reader-notes,.reader-translator-note")) continue;
-      const offset = node.data.indexOf(text);
-      if (offset < 0) continue;
-      const range = document.createRange();
-      range.setStart(node, offset); range.setEnd(node, offset + text.length);
-      range.deleteContents(); range.insertNode(replacement);
-      return true;
-    }
-    return false;
-  }
-
-  function proseRange(root, text) {
-    const normalize = (s) => s.replace(/\[(?:\^\d+|\d+\^)\]/g, "").replace(/\s+/g, " ").trim();
-    const needle = normalize(text);
-    const blocks = [...root.querySelectorAll("p,li,td,h2,h3,h4")].filter((block) =>
-      !block.closest("pre,.reader-translator-note,.chapter-visual,.section-visual") && !block.querySelector("p,li"));
-    for (const block of blocks) {
-      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT);
-      const positions = [];
-      let flattened = "";
-      let current;
-      while ((current = walker.nextNode())) {
-        if (current.parentElement.closest(".note-trigger")) continue;
-        for (let index = 0; index < current.data.length; index++) {
-          const reference = current.data.slice(index).match(/^\[(?:\^\d+|\d+\^)\]/);
-          if (reference) { index += reference[0].length - 1; continue; }
-          const char = current.data[index];
-          if (/\s/.test(char)) {
-            if (!flattened || flattened.endsWith(" ")) continue;
-            flattened += " ";
-          } else flattened += char;
-          positions.push({ node: current, start: index, end: index + 1 });
-        }
-      }
-      const index = flattened.indexOf(needle);
-      if (index < 0) continue;
-      const start = positions[index], end = positions[index + needle.length - 1];
-      const range = document.createRange();
-      range.setStart(start.node, start.start); range.setEnd(end.node, end.end);
-      return range;
-    }
-    return null;
-  }
-
-  function insertAfterText(root, text, node) {
-    const range = proseRange(root, text);
-    if (!range) return false;
-    range.collapse(false);
-    if (range.endContainer.nodeType === Node.TEXT_NODE && range.endOffset === range.endContainer.length) {
-      let sibling = range.endContainer.nextSibling;
-      let last = null;
-      while (sibling && ((sibling.nodeType === Node.TEXT_NODE && !sibling.textContent) ||
-        (sibling.nodeType === Node.ELEMENT_NODE && sibling.classList.contains("note-reference")))) {
-        if (sibling.nodeType === Node.ELEMENT_NODE) last = sibling;
-        sibling = sibling.nextSibling;
-      }
-      if (last) { last.after(node); return true; }
-    }
-    range.insertNode(node); return true;
-  }
-
-  function replaceProseText(root, text, node) {
-    const range = proseRange(root, text);
-    if (!range) return false;
-    range.deleteContents(); range.insertNode(node); return true;
-  }
-
-  function noteMarker(id, language, serial = 1, label = "注释 " + id) {
-    const marker = document.createElement("span"); marker.className = "note-reference";
-    const trigger = document.createElement("button");
-    trigger.type = "button"; trigger.className = "note-trigger";
-    trigger.id = "note-ref-" + id + "-" + language + (serial > 1 ? "-" + serial : "");
-    trigger.dataset.note = id; trigger.dataset.noteLanguage = language; trigger.dataset.noteLabel = label;
-    trigger.setAttribute("aria-label", "查看" + label);
-    trigger.setAttribute("aria-haspopup", "dialog");
-    trigger.setAttribute("aria-controls", "reader-note-popover");
-    trigger.setAttribute("aria-expanded", "false");
-    // Footnotes show their number; translator notes show 注.
-    trigger.innerHTML = '<span class="note-mark" aria-hidden="true">' + (/^\d+$/.test(String(id)) ? id : "注") + '</span>';
-    bindNote(trigger); marker.append(trigger);
-    return marker;
-  }
-
-  function htmlContent(html, language, page) {
+  function fragment(html, language, page) {
     const wrapper = document.createElement("div");
     wrapper.lang = language; wrapper.innerHTML = html;
     wrapper.querySelectorAll("a[href]").forEach((link) => {
@@ -610,171 +390,13 @@
     return wrapper;
   }
 
-  function reviewedContent(main, page) {
-    const review = page?.readerReview;
-    if (!review) return;
-    const normalize = (text) => text.replace(/\s+/g, " ").trim();
-    for (const edit of review.textEdits || []) {
-      if (!replaceProseText(main, edit.source, document.createTextNode(edit.replacement))) {
-        throw new Error("Reviewed display correction missing: " + edit.source);
-      }
-    }
-    if (review.epigraph) {
-      const source = [...main.querySelectorAll(".chapter-epigraph")].find((node) =>
-        normalize(node.textContent) === normalize(review.epigraph.english));
-      if (!source) throw new Error("Reviewed epigraph no longer matches the chapter");
-      const epigraph = document.createElement("blockquote");
-      epigraph.className = "chapter-epigraph";
-      const english = source.cloneNode(true);
-      english.className = "english-prose translated-source"; english.lang = "en";
-      const chinese = document.createElement("p"); chinese.lang = "zh-CN";
-      chinese.textContent = review.epigraph.chinese;
-      const author = document.createElement("cite"); author.textContent = review.epigraph.author;
-      epigraph.append(english, chinese, author); source.replaceWith(epigraph);
-    }
-    for (const item of review.proseCodeBlocks || []) {
-      const block = [...main.querySelectorAll("pre")].find((node) => node.textContent.trim() === item.text);
-      if (!block) throw new Error("Reviewed quotation no longer matches the chapter");
-      if (item.parts) {
-        const fragment = document.createDocumentFragment();
-        for (const part of item.parts) {
-          const quote = document.createElement("blockquote");
-          quote.className = "reader-quotation"; quote.lang = part.language === "zh" ? "zh-CN" : "en";
-          const content = htmlContent(part.html, quote.lang, page);
-          quote.append(...content.childNodes); fragment.append(quote);
-        }
-        block.replaceWith(fragment);
-        continue;
-      }
-      const quote = document.createElement("blockquote");
-      quote.className = "reader-quotation"; quote.lang = item.language === "zh" ? "zh-CN" : "en";
-      const paragraph = document.createElement("p");
-      paragraph.textContent = item.text.replace(/^\*|\*$/g, "");
-      quote.append(paragraph); block.replaceWith(quote);
-    }
-    for (const [index, item] of (review.translatorNotes || []).entries()) {
-      const block = [...main.querySelectorAll("pre")].find((node) => node.textContent.trim() === item.text);
-      if (!block && review.format === 2) {
-        const id = "translator-" + (index + 1);
-        const content = htmlContent(item.bodyHtml, "zh-CN", page);
-        if (item.href) {
-          const link = document.createElement("a");
-          link.href = item.href; link.textContent = item.linkText || "参考来源";
-          link.target = "_blank"; link.rel = "noopener noreferrer"; content.append(link);
-        }
-        noteContent.set(id, { zh: content });
-        if (!replaceProseText(main, item.renderedText, noteMarker(id, "zh", 1, item.title || "译者注"))) {
-          throw new Error("Inline translator note source missing: " + item.renderedText);
-        }
-        continue;
-      }
-      if (!block) throw new Error("Reviewed translator note no longer matches the chapter");
-      const details = document.createElement("details"); details.className = "reader-translator-note";
-      const title = document.createElement("summary"); title.textContent = item.title;
-      const body = document.createElement("p"); body.textContent = item.body;
-      const link = document.createElement("a"); link.href = item.href; link.textContent = item.linkText;
-      link.target = "_blank"; link.rel = "noopener noreferrer";
-      details.append(title, body, link); block.replaceWith(details);
-    }
-    for (const item of review.translations || []) {
-      const normalized = (s) => normalize(s.replace(/\[\^\d+\]/g, ""));
-      if (item.kind === "heading") {
-        const heading = [...main.querySelectorAll("h2,h3,h4")].find((node) => normalized(node.textContent) === normalized(item.english));
-        if (!heading) throw new Error("Reviewed heading translation missing: " + item.english);
-        const label = heading.querySelector(".anchor > span") || heading;
-        const original = document.createElement("span"); original.className = "heading-original"; original.lang = "en";
-        original.textContent = item.english + " ";
-        const translated = document.createElement("span"); translated.lang = "zh-CN"; translated.textContent = item.chinese;
-        label.replaceChildren(original, translated);
-        continue;
-      }
-      const matches = [...main.querySelectorAll("p,li")].filter((node) =>
-        !node.querySelector("p,li") && normalized(node.textContent) === normalized(item.english));
-      if (matches.length !== 1) throw new Error("Reviewed translation source not found: " + item.english.slice(0, 70));
-      const source = matches[0];
-      source.classList.add("english-prose", "translated-source");
-      source.dataset.reviewedTranslation = "true"; source.lang = "en";
-      if (item.kind === "epigraph" && item.author) {
-        const attribution = source.nextElementSibling;
-        if (attribution?.classList.contains("reader-attribution") && !han.test(attribution.textContent)) {
-          attribution.classList.add("translated-source"); attribution.dataset.reviewedTranslation = "true";
-        }
-      }
-      const translated = htmlContent(item.chineseHtml, "zh-CN", page);
-      translated.dataset.reviewedTranslation = "true";
-      if (item.kind === "epigraph") translated.className = "chapter-epigraph";
-      if (item.author) {
-        const author = document.createElement("cite"); author.textContent = item.author;
-        translated.append(author);
-      }
-      source.after(translated);
-    }
-    buildFootnotes(main, page, review.footnotes || []);
-    const tables = [...main.querySelectorAll("table")];
-    for (const pair of review.pairedTables || []) {
-      for (const language of ["english", "chinese"]) {
-        const table = tables[pair[language + "Index"]];
-        const headers = table ? [...table.rows[0].cells].map((cell) => normalize(cell.textContent)) : [];
-        if (!table || table.rows.length !== pair[language].rows ||
-          headers.length !== pair[language].headers.length ||
-          headers.some((header, index) => header !== pair[language].headers[index])) {
-          throw new Error("Reviewed bilingual table changed: " + page.id);
-        }
-      }
-      const english = tables[pair.englishIndex];
-      english.classList.add("translated-source"); english.lang = "en";
-      const caption = english.previousElementSibling;
-      if (caption?.tagName === "P" && /^Table\s+\d/.test(caption.textContent) && !han.test(caption.textContent)) {
-        caption.classList.add("translated-source");
-      }
-    }
-    for (const pair of review.pairedSources || []) {
-      const range = proseRange(main, pair.english);
-      if (!range || !proseRange(main, pair.chinese)) throw new Error("Reviewed bilingual prose pair not found: " + pair.english.slice(0, 80));
-      const parent = (range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ?
-        range.commonAncestorContainer : range.commonAncestorContainer.parentElement).closest("p,li,td");
-      if (parent && normalize(parent.textContent) === normalize(pair.english) && !parent.querySelector("pre,img,table")) {
-        parent.classList.add("translated-source", "english-prose"); parent.lang = "en";
-        parent.dataset.reviewedTranslation = "true";
-        const quote = parent.parentElement;
-        if (quote.matches("blockquote.reader-quotation") && quote.children.length === 1) quote.classList.add("translated-source");
-      } else {
-        const original = document.createElement("span");
-        original.className = "translated-source"; original.lang = "en";
-        original.dataset.reviewedTranslation = "true"; original.append(range.extractContents());
-        range.insertNode(original);
-      }
-    }
-    main.querySelectorAll("blockquote").forEach((node) => {
-      if (!node.textContent.trim() && !node.querySelector("img,svg,pre")) node.remove();
-    });
-  }
-
-  function buildFootnotes(main, page, notes) {
-    const ids = new Set(notes.map((note) => String(note.id)));
-    main.querySelectorAll("a").forEach((link) => {
-      const id = link.textContent.trim().match(/^\^(\d+)$/)?.[1];
-      if (id && ids.has(id)) link.replaceWith(document.createTextNode("[^" + id + "]"));
-    });
-    const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
-    let textNode;
-    while ((textNode = walker.nextNode())) {
-      if (textNode.parentElement.closest("pre,code")) continue;
-      textNode.data = textNode.data.replace(/\[(\d+)\^\]/g, (match, id) => ids.has(id) ? "[^" + id + "]" : match);
-    }
-    for (const note of notes) {
-      const prefix = "[^" + note.id + "]:";
-      const compiled = page.readerReview.format === 2;
-      const english = compiled ? htmlContent(note.englishHtml, "en", page) :
-        [...main.querySelectorAll("blockquote > p")].find((node) => node.textContent.trim().startsWith(prefix));
-      const chinese = compiled ? htmlContent(note.chineseHtml, "zh-CN", page) : english?.nextElementSibling;
-      if (!english || !chinese || !han.test(chinese.textContent)) throw new Error("Unpaired footnote " + note.id);
-      const quote = english.parentElement;
-      if (!compiled) replaceText(english, prefix, document.createTextNode(""));
-      const oldNumber = chinese.textContent.match(new RegExp("^\\s*(?:\\[" + note.id + "\\]|" + note.id + ")\\s+"));
-      if (!compiled && oldNumber) replaceText(chinese, oldNumber[0], document.createTextNode(""));
-      english.className = ""; english.lang = "en";
-      chinese.lang = "zh-CN";
+  // Footnote popovers: both languages for the book's notes, Chinese only for translator notes. A source that
+  // the English note links to but the Chinese note omits is appended to the Chinese note as 参考来源.
+  function mountNotes(main, chapter, page) {
+    noteContent.clear();
+    for (const [id, note] of Object.entries(chapter.footnotes)) {
+      const english = fragment(note.sourceHtml, "en", page);
+      const chinese = fragment(note.targetHtml, "zh-CN", page);
       const citations = new Set([...chinese.querySelectorAll("a[href]")].map((link) => link.href));
       for (const source of english.querySelectorAll("a[href]")) {
         if (citations.has(source.href)) continue;
@@ -784,49 +406,21 @@
         citation.target = "_blank"; citation.rel = "noopener noreferrer";
         chinese.append(document.createTextNode(" "), citation); citations.add(source.href);
       }
-      english.remove(); chinese.remove();
-      noteContent.set(note.id, { en: english, zh: chinese });
-      if (quote && !quote.children.length) quote.remove();
-      for (const language of ["en", "zh"]) {
-        const findReference = () => {
-          const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
-          let text;
-          while ((text = walker.nextNode())) {
-            if (!text.data.includes("[^" + note.id + "]") || text.parentElement.closest("pre,code,.reader-translator-note")) continue;
-            const block = text.parentElement.closest("p,li,td");
-            if (!block) continue;
-            let offset = text.data.indexOf("[^" + note.id + "]");
-            while (offset >= 0) {
-              const preceding = document.createRange(); preceding.setStart(block, 0); preceding.setEnd(text, offset);
-              const firstHan = block.textContent.search(han);
-              const markerLanguage = firstHan < 0 || preceding.toString().length < firstHan ? "en" : "zh";
-              if (markerLanguage === language) return { text, offset };
-              offset = text.data.indexOf("[^" + note.id + "]", offset + 1);
-            }
-          }
-          return null;
-        };
-        const replaceReference = (reference, replacement) => {
-          const range = document.createRange();
-          range.setStart(reference.text, reference.offset);
-          range.setEnd(reference.text, reference.offset + note.id.length + 3);
-          range.deleteContents(); range.insertNode(replacement);
-        };
-        if ((language === "en" && note.relocateEnglish) || (language === "zh" && note.relocateChinese)) {
-          let reference;
-          while ((reference = findReference())) replaceReference(reference, document.createTextNode(""));
-        }
-        if (!findReference()) {
-          const after = language === "zh" ? note.after : note.englishAfter;
-          if (!after || !insertAfterText(main, after, document.createTextNode("[^" + note.id + "]"))) {
-            throw new Error("Footnote reference missing: " + note.id + " " + language);
-          }
-        }
-        let serial = 0;
-        let reference;
-        while ((reference = findReference())) replaceReference(reference, noteMarker(note.id, language, ++serial));
-      }
+      noteContent.set(id, { en: english, zh: chinese });
     }
+    for (const [id, note] of Object.entries(chapter.notes)) {
+      noteContent.set(id, { zh: fragment(note.html, "zh-CN", page) });
+    }
+    main.querySelectorAll(".note-trigger").forEach((trigger) => {
+      trigger.id = "note-ref-" + trigger.dataset.note + "-" + trigger.dataset.noteLanguage;
+      bindNote(trigger);
+    });
+  }
+
+  function proseText(node) {
+    const clone = node.cloneNode(true);
+    clone.querySelectorAll(".note-trigger").forEach((trigger) => trigger.remove());
+    return clone.textContent.replace(/\s+/g, " ").trim();
   }
 
   function mountNotePopover() {
@@ -1019,8 +613,7 @@
     while (next?.classList.contains("chapter-credit")) { anchor = next; next = next.nextElementSibling; }
     if (isSection) {
       const normalized = (s) => s.replace(/\s+/g, " ").trim();
-      anchor = [...main.querySelectorAll(":scope > p, :scope > [data-reviewed-translation] > p")].find((node) =>
-        normalized(node.textContent).includes(normalized(guide.afterParagraph)));
+      anchor = [...main.querySelectorAll(":scope > p")].find((node) => proseText(node).includes(normalized(guide.afterParagraph)));
       if (!anchor) throw new Error("Section guide insertion point missing: " + guide.id);
     }
     if (guide.position === "end") main.append(figure);
@@ -1121,19 +714,6 @@
       nav.append(link);
     });
     main.append(nav);
-  }
-
-  // Per-chapter review data (footnotes, translations, display edits) is fetched on demand.
-  function loadReview(page) {
-    if (!page.review) return Promise.resolve(null);
-    if (!page.reviewPromise) {
-      page.reviewPromise = fetch(asset(page.review)).then((response) => {
-        if (!response.ok) throw new Error("Reader review unavailable: " + page.id);
-        return response.json();
-      }).then((review) => { page.readerReview = review; return review; })
-        .catch((error) => { delete page.reviewPromise; throw error; });
-    }
-    return page.reviewPromise;
   }
 
   // Code examples: highlight originals, and optionally swap in Python rewrites loaded per chapter.
@@ -1264,7 +844,7 @@
         const at = entry.text.toLowerCase().indexOf(query);
         if (at < 0 && !entry.title.toLowerCase().includes(query)) continue;
         const link = document.createElement("a"); link.className = "matching-post";
-        link.href = "#" + entry.route + "?id=" + encodeURIComponent(window.Docsify.slugify(entry.title));
+        link.href = "#" + entry.route + (entry.anchor ? "?id=" + encodeURIComponent(entry.anchor) : "");
         const title = document.createElement("h2"); title.append(highlight(entry.title, query));
         const chapter = document.createElement("small"); chapter.textContent = entry.chapter;
         const start = Math.max(0, Math.max(at, 0) - 40);
@@ -1352,31 +932,28 @@
   window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function (hook, vm) {
     hook.mounted(mountChrome);
     hook.beforeEach((markdown, next) => {
-      closeNote(); closeSettings(); noteContent.clear();
       routeVersion += 1;
-      const version = routeVersion;
       preparationError = null;
       const main = document.getElementById("main");
       if (main) delete main.dataset.readerReady;
       resizeObservers.forEach((observer) => observer.disconnect()); resizeObservers = [];
       headings = [];
       document.getElementById("diagram-modal")?.close();
+      // The Markdown file only serves as the route target; the chapter is rendered from its units in afterEach.
+      next("");
+    });
+    hook.afterEach((html, next) => {
+      const version = routeVersion;
       manifestPromise.then(async (manifest) => {
-        if (version !== routeVersion) { next(markdown); return; }
         const page = routePage(vm, manifest);
-        const review = page ? await loadReview(page) : null;
-        if (version !== routeVersion) { next(markdown); return; }
-        let prepared = markdown;
-        for (const edit of [...(review?.sourceEdits || [])].sort((a, b) => b.startLine - a.startLine)) {
-          const lines = prepared.match(/[^\n]*\n|[^\n]+$/g) || [];
-          const original = lines.slice(edit.startLine - 1, edit.endLine).join("");
-          if (original !== edit.source) throw new Error("Footnote source changed; rebuild reviewed manifest");
-          lines.splice(edit.startLine - 1, edit.endLine - edit.startLine + 1, "\n");
-          prepared = lines.join("");
-        }
-        next(prepared);
+        if (!page) { next(html); return; }
+        const chapter = await loadChapter(page);
+        if (version !== routeVersion) return;
+        currentChapter = chapter;
+        next(renderChapter(chapter));
       }).catch((error) => {
-        preparationError = error; console.error(error); next(markdown);
+        preparationError = error; console.error(error);
+        next('<p class="reader-error">章节内容暂时无法加载，请刷新重试。</p>');
       });
     });
     hook.doneEach(async () => {
@@ -1391,11 +968,7 @@
       if (currentPage) { preferences.lastRoute = currentPage.route; persist(); }
       updateSidebar();
       currentGuide = currentPage ? manifest.guides[currentPage.id] : null;
-      cleanTitle(main);
-      reviewedContent(main, currentPage);
-      classifyCaptions(main);
-      classifyProse(main, currentPage);
-      hideRepeatedCode(main);
+      if (currentPage && currentChapter) mountNotes(main, currentChapter, currentPage);
       highlightOriginals(main);
       await applyCodeVariants(main, currentPage, version);
       if (version !== routeVersion) return;

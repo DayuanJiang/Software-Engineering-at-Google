@@ -4,7 +4,9 @@
   "title": "诊断正确，为什么仍被认为无用？",
   "summary": "用 Guava 只支持 %s 的原文案例，对照用户和分析器对占位符的不同计数，再展示无用反馈如何促成诊断改写，并与请修复的处理对象区分。",
   "enabled": true,
-  "sourceSections": ["### Integrated Feedback Channels  集成反馈渠道"],
+  "sourceSections": [
+    "Integrated Feedback Channels"
+  ],
   "afterParagraph": "这可能决定开发者能否在阅读提示时学到东西。",
   "desktop": "assets/diagrams/sections/ch20-03.svg",
   "mobile": "assets/diagrams/sections/ch20-03-mobile.svg",

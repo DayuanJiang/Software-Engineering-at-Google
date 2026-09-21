@@ -4,12 +4,12 @@
   "summary": "读代码比写代码花的时间多，让全公司代码可秒查值得专门投入",
   "enabled": true,
   "sourceSections": [
-    "## The Code Search UI 代码搜索用户界面",
-    "## How Do Googlers Use Code Search? Google 员工如何使用代码搜索？",
-    "## Why a Separate Web Tool? 为什么要使用单独的 Web 工具？",
-    "## Impact of Scale on Design 规模对设计的影响",
-    "## 谷歌的实现",
-    "## Selected Trade-Offs 几项重要权衡"
+    "The Code Search UI",
+    "How Do Googlers Use Code Search? Google",
+    "Why a Separate Web Tool?",
+    "Impact of Scale on Design",
+    "Google’s Implementation",
+    "Selected Trade-Offs"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch17.svg",

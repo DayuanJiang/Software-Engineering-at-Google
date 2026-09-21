@@ -3,7 +3,10 @@
   "chapter": 15,
   "title": "存在已久，不等于已经过时",
   "summary": "LaTeX 是年龄不构成弃用理由的原文反例；新系统用户仍经组件依赖旧系统，则揭示为什么发布替代品没有自动消除旧系统成本。",
-  "sourceSections": ["## Why Deprecate? 为什么要弃用？", "## 为什么弃用这么难？ (Why Is Deprecation So Hard?)"],
+  "sourceSections": [
+    "Why Deprecate?",
+    "Why Is Deprecation So Hard?"
+  ],
   "afterParagraph": "用户可能需要使用新系统，却仍然依赖某些使用旧系统的组件。",
   "desktop": "assets/diagrams/sections/ch15-01.svg",
   "mobile": "assets/diagrams/sections/ch15-01-mobile.svg",

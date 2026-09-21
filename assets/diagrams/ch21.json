@@ -4,11 +4,11 @@
   "summary": "依赖问题的根源是时间和信任，版本号替代不了实际测试",
   "enabled": true,
   "sourceSections": [
-    "## Why Is Dependency Management So Difficult?  为什么依赖管理如此困难？",
-    "## Importing Dependencies 导入依赖",
-    "## Dependency Management, In Theory  理论上的依赖管理",
-    "## The Limitations of SemVer  SemVer （语义化版本管理）的局限性",
-    "## Dependency Management with Infinite Resources  无限资源下的依赖管理"
+    "Why Is Dependency Management So Difficult?",
+    "Importing Dependencies",
+    "Dependency Management, In Theory",
+    "The Limitations of SemVer",
+    "Dependency Management with Infinite Resources"
   ],
   "kind": "socket",
   "desktop": "assets/diagrams/ch21.svg",

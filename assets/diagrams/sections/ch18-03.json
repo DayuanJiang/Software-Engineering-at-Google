@@ -3,7 +3,9 @@
   "chapter": 18,
   "title": "哈希能拒绝错文件，不能找回文件",
   "summary": "固定 S1 清单中的 Guava 哈希 H1，对比三种获取结果：H2 被拒绝，镜像中的 H1 可接受，所有副本缺失则失败。升级须批准并提交新清单，不能为了构建成功自动改用新版。",
-  "sourceSections": ["### Other nifty Bazel tricks 其他巧妙的 Bazel 做法"],
+  "sourceSections": [
+    "Other nifty Bazel tricks"
+  ],
   "afterParagraph": "否则，即使已提交的哈希值能保证安全，构建系统的可用性仍将受制于第三方。",
   "desktop": "assets/diagrams/sections/ch18-03.svg",
   "mobile": "assets/diagrams/sections/ch18-03-mobile.svg",

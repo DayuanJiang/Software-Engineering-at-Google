@@ -3,7 +3,9 @@
   "chapter": 23,
   "title": "录制／重放：什么变化应让缓存失配？",
   "summary": "假设 ZIP 解码器面对请求变化：忽略格式变动会重放旧响应并漏报；只因追踪字段变化就失配会引入无关维护；识别实质变化、刷新响应后仍失败，才获得有用信号。封闭性仍不消除所有非确定性。",
-  "sourceSections": ["### Hermetic Testing  封闭测试"],
+  "sourceSections": [
+    "Hermetic Testing"
+  ],
   "afterParagraph": "要判断请求是否发生了实质变化，可能极其困难。",
   "desktop": "assets/diagrams/sections/ch23-03.svg",
   "mobile": "assets/diagrams/sections/ch23-03-mobile.svg",

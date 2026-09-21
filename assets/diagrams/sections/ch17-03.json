@@ -4,7 +4,10 @@
   "title": "首屏没显示，就不用改吗？",
   "summary": "同一 OldApi 查询在两分片中有四个示例匹配：首屏仅列 a.cc、b.cc 并不排除 y.cc、z.cc；重构须明确请求各片全部结果。",
   "enabled": true,
-  "sourceSections": ["### Completeness: All Versus Most-Relevant Results 完整性：所有结果与最相关结果", "### Completeness: Repository at Head 完整性：代码仓库的最新版本"],
+  "sourceSections": [
+    "Completeness: All Versus Most-Relevant Results",
+    "Completeness: Repository at Head"
+  ],
   "afterParagraph": "结果还可以按字母顺序返回，而不是按相关性排序，这对某些工具很有用。",
   "desktop": "assets/diagrams/sections/ch17-03.svg",
   "mobile": "assets/diagrams/sections/ch17-03-mobile.svg",

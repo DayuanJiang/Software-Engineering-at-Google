@@ -40,8 +40,7 @@ class MarkdownTests(unittest.TestCase):
         self.assertEqual(audit.term_lines_without_break("- *No* *“well-actuallys”*\n    Text.\n"), [1])
         self.assertEqual(audit.term_lines_without_break("- *Term* inline text\n- *Alone*\n\n*Spans a\nline*\n"), [])
 
-    # Chapter 1's epigraph keeps its attribution on a second source line; the reader shows the reviewed blockquote instead.
-    EPIGRAPH_LINES = {"zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md": [12]}
+    EPIGRAPH_LINES = {}
 
     def test_book_terms_break_before_their_description(self):
         for path in audit.book_files(audit.ROOT):
@@ -51,10 +50,8 @@ class MarkdownTests(unittest.TestCase):
     def test_literal_emphasis_markers_are_reported(self):
         self.assertEqual(audit.literal_emphasis_markers("**标题。**正文\n\n**标题**。正文\n\n`a * b`\n"), [1])
 
-    # Chapter 12's bilingual caption carries the English "*A transaction API *", whose space before the closing
-    # asterisk leaves it literal; English text is protected. "Point *p" quotes C pointer syntax, as the English does.
-    LITERAL_ASTERISKS = {"zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md": [115],
-                         "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": [339]}
+    # "Point *p" quotes C pointer syntax, as the English does.
+    LITERAL_ASTERISKS = {"zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md": [157]}
 
     def test_book_chinese_emphasis_markers_all_pair(self):
         for path in audit.book_files(audit.ROOT):

@@ -4,11 +4,11 @@
   "summary": "单元测试看不到组件之间的配合，需要少量有目标的大型测试补上",
   "enabled": true,
   "sourceSections": [
-    "## What Are Larger Tests? 什么是较大规模测试？",
-    "## Larger Tests at Google 谷歌的较大规模测试",
-    "## Structure of a Large Test 大型测试的结构",
-    "## Types of Larger Tests 较大规模测试的类型",
-    "## Large Tests and the Developer Workflow  大型测试与开发者工作流"
+    "What Are Larger Tests?",
+    "Larger Tests at Google",
+    "Structure of a Large Test",
+    "Types of Larger Tests",
+    "Large Tests and the Developer Workflow"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch14.svg",

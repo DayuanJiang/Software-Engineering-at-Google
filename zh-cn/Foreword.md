@@ -1,29 +1,15 @@
-## Foreword 序言
-
-I have always been endlessly fascinated with the details of how Google does things. I have grilled my Googler friends for information about the way things really work inside of the company. How do they manage such a massive, monolithic code repository without falling over? How do tens of thousands of engineers successfully collaborate on thousands of projects? How do they maintain the quality of their systems?
+# 序言
 
 我一直对谷歌具体如何做事充满好奇，也常追问在谷歌工作的朋友，公司内部究竟怎样运转。他们如何管理如此庞大的单体代码仓库，而不让它陷入混乱？数万名工程师如何在数千个项目上顺利协作？他们又如何保证系统质量？
 
-Working with former Googlers has only increased my curiosity. If you’ve ever worked with a former Google engineer (or “Xoogler,” as they’re sometimes called), you’ve no doubt heard the phrase “at Google we…” Coming out of Google into other companies seems to be a shocking experience, at least from the engineering side of things. As far as this outsider can tell, the systems and processes for writing code at Google must be among the best in the world, given both the scale of the company and how often peo‐ ple sing their praises.
-
 与前谷歌员工共事，让我的好奇心更强了。如果你和前谷歌工程师，也就是有时被称为“Xoogler”的人一起工作过，一定听过“在谷歌，我们……”这句话。从谷歌转到其他公司，似乎会带来很大的冲击，至少在工程实践方面如此。从我这个局外人的角度看，考虑到谷歌的规模，以及人们对它频频赞誉，谷歌的软件开发系统和流程想必处于世界前列。
-
-In *Software Engineering at Google*, a set of Googlers (and some Xooglers) gives us a lengthy blueprint for many of the practices, tools, and even cultural elements that underlie software engineering at Google. It’s easy to overfocus on the amazing tools that Google has built to support writing code, and this book provides a lot of details about those tools. But it also goes beyond simply describing the tooling to give us the philosophy and processes that the teams at Google follow. These can be adapted to fit a variety of circumstances, whether or not you have the scale and tooling. To my delight, there are several chapters that go deep on various aspects of automated testing, a topic that continues to meet with too much resistance in our industry.
 
 在《谷歌的软件工程》中，一群现任及前任谷歌员工，详细介绍了支撑谷歌软件工程的实践、工具乃至文化。谷歌为软件开发打造的工具令人赞叹，很容易吸引我们过多的注意；本书确实介绍了其中许多细节，但并不止于工具，还阐述了谷歌团队遵循的理念和流程。无论你的组织是否具备同等规模和工具，这些经验都可以调整后用于不同情境。让我尤其欣喜的是，书中有几章深入讨论了自动化测试的各个方面，而这一主题在业界仍然面临太多阻力。
 
-The great thing about tech is that there is never only one way to do something. Instead, there is a series of trade-offs we all must make depending on the circumstances of our team and situation. What can we cheaply take from open source? What can our team build? What makes sense to support for our scale? When I was grilling my Googler friends, I wanted to hear about the world at the extreme end of scale: resource rich, in both talent and money, with high demands on the software being built. This anecdotal information gave me ideas on some options that I might not otherwise have considered.
-
 技术的魅力在于，做一件事从来不只有一种方法。我们必须根据团队和具体情境作出一系列权衡：哪些东西可以低成本地从开源项目中获取？哪些可以由团队自行构建？在我们的规模下，支持哪些能力才合理？追问谷歌的朋友时，我想了解的是规模另一端的世界：人才和资金充裕，对所开发的软件又有很高要求。这些具体经历，让我看到了原本可能不会考虑的选择。
-
-With this book, we’ve written down those options for everyone to read. Of course, Google is a unique company, and it would be foolish to assume that the right way to run your software engineering organization is to precisely copy their formula. Applied practically, this book will give you ideas on how things could be done, and a lot of information that you can use to bolster your arguments for adopting best practices like testing, knowledge sharing, and building collaborative teams.
 
 这本书把这些选择记录下来，供大家参考。当然，谷歌有其独特之处，认为管理软件工程组织的正确方法就是照搬谷歌，显然并不明智。结合实际情况阅读，本书既能启发你思考不同的做法，也能提供丰富依据，帮助你推动测试、知识共享、协作型团队建设等最佳实践。
 
-You may never need to build Google yourself, and you may not even want to reach for the same techniques they apply in your organization. But if you aren’t familiar with the practices Google has developed, you’re missing a perspective on software engineering that comes from tens of thousands of engineers working collaboratively on software over the course of more than two decades. That knowledge is far too valuable to ignore.
-
 你也许永远不必打造另一家谷歌，甚至不想在自己的组织中采用同样的方法。但如果不了解谷歌积累的实践，你就会错过一种重要的软件工程视角：数万名工程师在二十多年里共同开发软件所形成的认识。这些知识的价值，不容忽视。
 
- 
-
-*— Camille Fournier* *Author,* The Manager’s Path
+Camille Fournier，《The Manager’s Path》作者

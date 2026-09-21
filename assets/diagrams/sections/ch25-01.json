@@ -4,7 +4,11 @@
   "title": "装箱解决放置，隔离约束越界",
   "summary": "日志分析与搜索服务共用健康机器时，仅声明 CPU、RAM 不能约束实际超用。调度排除故障机器，隔离机制执行资源边界；CPU 争抢会影响邻居延迟，整机 RAM 耗尽可能终止进程或引起交换延迟。",
   "enabled": true,
-  "sourceSections": ["#### Automated scheduling 自动调度", "### Containerization and Multitenancy 容器化和多租户", "#### My neighbor’s dog barks in my RAM 邻居家的狗在我的内存中吠叫"],
+  "sourceSections": [
+    "Automated scheduling",
+    "Containerization and Multitenancy",
+    "My neighbor’s dog barks in my RAM"
+  ],
   "afterParagraph": "这是一种轻量级机制，基于 cgroups",
   "desktop": "assets/diagrams/sections/ch25-01.svg",
   "mobile": "assets/diagrams/sections/ch25-01-mobile.svg",

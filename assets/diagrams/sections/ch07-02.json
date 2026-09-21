@@ -4,11 +4,11 @@
   "title": "指标缺位，不等于目标消失",
   "summary": "对照 Readability 的速度和质量研究设计：速度可用按资格分组的审查耗时中位数作代理，质量则保留自评并承认客观定量代理空缺，不用不理想指标填满表格。",
   "sourceSections": [
-    "## Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
-    "## Goals  目标",
-    "## Signals  信号",
-    "## Metrics  指标",
-    "## Using Data to Validate Metrics  使用数据验证指标"
+    "Selecting Meaningful Metrics with Goals and Signals",
+    "Goals",
+    "Signals",
+    "Metrics",
+    "Using Data to Validate Metrics"
   ],
   "afterParagraph": "在谷歌，我们用定性数据验证指标，确保它们确实反映了预期的信号。",
   "enabled": true,

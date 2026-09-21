@@ -5,7 +5,11 @@
   "summary": "用非比例时间线区分最终合回主干的开发分支与只接受少量修复、最终弃用的发布分支。",
   "enabled": false,
   "removalReason": "与本章概览重复。重写后的概览已经用 C、F、N 的内容状态展示开发支线合回、发布分支只取修复并最终弃用；保留这张匿名时间线没有增加独立问题或证据。",
-  "sourceSections": ["### Dev Branches  开发分支", "### Release Branches  发布分支", "#### What About Release Branches?  发布分支呢？"],
+  "sourceSections": [
+    "Dev Branches",
+    "Release Branches",
+    "What About Release Branches?"
+  ],
   "afterParagraph": "开发分支最终要合回主干，期间甚至可能被另一个团队用来创建新分支；发布分支最终则会弃用。",
   "desktop": "assets/diagrams/sections/ch16-02.svg",
   "mobile": "assets/diagrams/sections/ch16-02-mobile.svg",

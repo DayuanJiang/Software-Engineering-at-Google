@@ -4,7 +4,11 @@
   "title": "实例重建之后，还要补哪一步？",
   "summary": "甲在 K2 未上报时终止，乙重领 K2，不重做已上报的 K1。另一个计划维护示例中，甲停止接受新请求并完成在途 Q1，负载均衡把新请求 Q2 转给乙。突然故障不一定有排空机会，实例重建不提供幂等效果。",
   "enabled": true,
-  "sourceSections": ["### Architecting for Failure 为应对故障设计架构", "### Batch Versus Serving 批处理作业与服务作业", "#### Multitenancy for serving jobs 服务作业的多租户支持"],
+  "sourceSections": [
+    "Architecting for Failure",
+    "Batch Versus Serving",
+    "Multitenancy for serving jobs"
+  ],
   "afterParagraph": "但要在故障率适中的情况下仍然平稳运行，还需要额外的设计和投入。",
   "desktop": "assets/diagrams/sections/ch25-02.svg",
   "mobile": "assets/diagrams/sections/ch25-02-mobile.svg",

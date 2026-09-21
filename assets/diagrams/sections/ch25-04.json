@@ -4,7 +4,11 @@
   "title": "服务要收回资源，批处理会怎样？",
   "summary": "搜索服务预留但未使用的资源可被日志分析借用。需要收回 CPU 时暂停批处理，计算停止推进但内存仍占用；需要 RAM 时终止批处理，释放内存而丢失进程状态，重启后重做未上报块。余量不能再当作不可抢占服务的另一份承诺。",
   "enabled": true,
-  "sourceSections": ["### One Service to Rule Them All 用一个服务统一管理", "#### Multitenancy for serving jobs 服务作业的多租户支持", "### Architecting for Failure 为应对故障设计架构"],
+  "sourceSections": [
+    "One Service to Rule Them All",
+    "Multitenancy for serving jobs",
+    "Architecting for Failure"
+  ],
   "afterParagraph": "都能从牛群式管理中受益。",
   "desktop": "assets/diagrams/sections/ch25-04.svg",
   "mobile": "assets/diagrams/sections/ch25-04-mobile.svg",

@@ -4,7 +4,10 @@
   "title": "工作区结果不是基线与改动的并集",
   "summary": "查询 OldApi 的示例中，基线中的 a.cc 被修改、d.cc 被删除，只有未修改的 b.cc 和新增的 c.cc 命中；更新的 head 也不能替代同步快照。",
   "enabled": true,
-  "sourceSections": ["### 搜索索引", "### Completeness: Head Versus Branches Versus All History Versus Workspaces 完整性：最新版本、分支、完整历史与工作区"],
+  "sourceSections": [
+    "Search Index",
+    "Completeness: Head Versus Branches Versus All History Versus Workspaces"
+  ],
   "afterParagraph": "工作区索引必须准确反映工作区的当前状态，才有价值。",
   "desktop": "assets/diagrams/sections/ch17-04.svg",
   "mobile": "assets/diagrams/sections/ch17-04-mobile.svg",

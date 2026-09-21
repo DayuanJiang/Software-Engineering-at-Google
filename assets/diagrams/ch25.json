@@ -4,10 +4,10 @@
   "summary": "把机器交给平台管理，代价是程序必须随时能被搬走和重启",
   "enabled": true,
   "sourceSections": [
-    "## Taming the Compute Environment 驯服计算环境",
-    "## Writing Software for Managed Compute 为托管计算编写软件",
-    "## CaaS Over Time and Scale CaaS随时间和规模的变化",
-    "## Choosing a Compute Service 选择计算服务"
+    "Taming the Compute Environment",
+    "Writing Software for Managed Compute",
+    "CaaS Over Time and Scale",
+    "Choosing a Compute Service"
   ],
   "kind": "layers",
   "desktop": "assets/diagrams/ch25.svg",

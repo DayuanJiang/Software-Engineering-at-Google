@@ -3,7 +3,12 @@
   "chapter": 15,
   "title": "迁移与收紧许可，缺一不可",
   "summary": "甲迁到新系统后，从旧系统可见性白名单中删去甲，保留尚未迁出的乙；新增丙和甲的回退都不再获准依赖旧目标。",
-  "sourceSections": ["### Milestones  制定里程碑", "#### Discovery  发现使用者", "#### Migration  迁移", "#### Preventing backsliding  防止新增旧系统依赖"],
+  "sourceSections": [
+    "Milestones",
+    "Discovery",
+    "Migration",
+    "Preventing backsliding"
+  ],
   "afterParagraph": "自动化工具会定期检查白名单，随着各个依赖方迁出旧系统，逐步删减相应条目。",
   "desktop": "assets/diagrams/sections/ch15-04.svg",
   "mobile": "assets/diagrams/sections/ch15-04-mobile.svg",

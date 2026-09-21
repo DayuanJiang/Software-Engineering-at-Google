@@ -5,10 +5,10 @@
   "summary": "沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。",
   "enabled": true,
   "sourceSections": [
-    "## Techniques for Using Test Doubles 测试替身的使用技术",
-    "### Faking 使用伪实现",
-    "### Stubbing 打桩",
-    "### Interaction Testing 交互测试"
+    "Techniques for Using Test Doubles",
+    "Faking",
+    "Stubbing",
+    "Interaction Testing"
   ],
   "afterParagraph": "但应尽可能避免，因为过度使用很容易让测试变得脆弱。",
   "desktop": "assets/diagrams/sections/ch13-06.svg",

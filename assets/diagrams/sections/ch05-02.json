@@ -4,7 +4,9 @@
   "title": "用限期指导，让差距可见",
   "summary": "对照放任等待与限期指导：约定期限及小而可衡量的目标，每周对照实际进展；达标后明确下一里程碑，未达标时双方尽早看清差距。两个月是原书示例，不是统一期限或自动离职条件。",
   "enabled": true,
-  "sourceSections": ["### Antipattern: Ignore Low Performers  反模式：忽略低绩效员工"],
+  "sourceSections": [
+    "Antipattern: Ignore Low Performers"
+  ],
   "afterParagraph": "直接与低绩效员工一起解决问题，都能推动必要而重要的改变。",
   "desktop": "assets/diagrams/sections/ch05-02.svg",
   "mobile": "assets/diagrams/sections/ch05-02-mobile.svg",

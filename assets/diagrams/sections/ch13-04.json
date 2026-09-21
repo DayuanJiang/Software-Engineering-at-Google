@@ -4,7 +4,11 @@
   "title": "同一 ID 保存两次，fake 也必须报错",
   "summary": "将书中的重复 ID 契约变为并排执行轨迹：从空库开始，首次 save(id) 成功并改变状态，第二次必须报错；只测首次成功会漏掉允许重复保存的 fake。",
   "enabled": true,
-  "sourceSections": ["### The Fidelity of Fakes 伪实现的保真度", "### Fakes Should Be Tested  伪实现也需要测试", "### When Should Fakes Be Written? 何时应该编写伪实现？"],
+  "sourceSections": [
+    "The Fidelity of Fakes",
+    "Fakes Should Be Tested",
+    "When Should Fakes Be Written?"
+  ],
   "afterParagraph": "但只需由伪实现的维护者运行，因此额外负担可以控制在较小范围内。",
   "desktop": "assets/diagrams/sections/ch13-04.svg",
   "mobile": "assets/diagrams/sections/ch13-04-mobile.svg",

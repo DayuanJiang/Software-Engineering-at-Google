@@ -5,7 +5,7 @@
   "summary": "对照共享依赖与受影响分叉的修复路径：两者都要更新使用方，而分叉需要先找全受影响副本并分别处理。保留分叉的控制权收益及生命周期、范围边界。",
   "enabled": true,
   "sourceSections": [
-    "### Example: Deciding Between Time and Scale 示例：在时间与规模之间取舍"
+    "Example: Deciding Between Time and Scale"
   ],
   "afterParagraph": "只要足够审慎，自行实现往往也能获得收益。",
   "desktop": "assets/diagrams/sections/ch01-06.svg",

@@ -4,13 +4,13 @@
   "summary": "持续集成就是把发现问题的时间不断往前挪，让反馈快而可信",
   "enabled": true,
   "sourceSections": [
-    "## CI Concepts CI概念",
-    "### Fast Feedback Loops 快速反馈回路",
-    "### Continuous Testing 持续测试",
-    "### Hermetic Testing  封闭测试",
-    "## CI at Google 谷歌的CI",
-    "### TAP: Google’s Global Continuous Build 谷歌的全局持续构建",
-    "### CI Case Study: Google Takeout   CI案例研究：Google Takeout"
+    "CI Concepts",
+    "Fast Feedback Loops",
+    "Continuous Testing",
+    "Hermetic Testing",
+    "CI at Google",
+    "TAP: Google’s Global Continuous Build",
+    "CI Case Study: Google Takeout"
   ],
   "kind": "cycle",
   "desktop": "assets/diagrams/ch23.svg",

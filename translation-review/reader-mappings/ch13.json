@@ -1,0 +1,110 @@
+{
+  "format": 2,
+  "sourceSha256": "3b64a5f191581577923565de4a140d11fc9f7b02c276859d6c024c23f1fc94ac",
+  "sourceUrl": "https://abseil.io/resources/swe-book/html/ch13.html",
+  "footnotes": [],
+  "proseCodeBlocks": [
+    {
+      "text": "Seams是可以更改程序中的行为而无需在指定位置进行编辑的地方。",
+      "language": "zh",
+      "reason": "The txt fence at source lines 131-133 contains a Chinese conceptual definition, not code or sample output. Render it as prose without changing its wording or claiming an author."
+    }
+  ],
+  "translatorNotes": [],
+  "pairedSources": [
+    {
+      "english": "When a system under test calls a function on a dependency, that call falls into one of two categories:",
+      "chinese": "被测系统调用依赖中的函数时，调用可分为两类：",
+      "reason": "The English introduction precedes both function categories and their genuine code examples; its complete Chinese counterpart follows those blocks at source line 834, so the paragraphs are not adjacent."
+    },
+    {
+      "english": "State-changing Functions that have side effects on the world outside the system under test. Examples:",
+      "chinese": "会对被测系统之外的环境产生副作用的函数。例如：",
+      "reason": "The English category is a list item, while its complete Chinese heading and definition at source lines 836-837 form a plain paragraph. Intervening function-example fences also interrupt pairing. Map only the category prose, excluding the sendEmail, saveRecord, and logAccess code example."
+    },
+    {
+      "english": "Non-state-changing Functions that don’t have side effects; they return information about the world outside the system under test and don’t modify anything. Examples:",
+      "chinese": "没有副作用的函数：返回被测系统之外的信息，但不作任何修改。例如：",
+      "reason": "The category and its complete Chinese counterpart at source lines 843-844 are separated by genuine code examples and differently grouped language blocks. The audited list text also includes a fenced getUser, findResults, and readFile example; pair only the prose through Examples:, never the enclosing list item or code."
+    }
+  ],
+  "translations": [
+    {
+      "english": "Example 13-1. A credit card service",
+      "chinese": "例13-1：信用卡服务"
+    },
+    {
+      "english": "Example 13-2. A trivial test double",
+      "chinese": "例13-2：一个极简测试替身"
+    },
+    {
+      "english": "Example 13-3. Using the test double",
+      "chinese": "例13-3：使用测试替身"
+    },
+    {
+      "english": "Example 13-4. Dependency injection",
+      "chinese": "例13-4：依赖注入"
+    },
+    {
+      "english": "Example 13-5. Passing in a test double",
+      "chinese": "例13-5：传入测试替身"
+    },
+    {
+      "english": "Example 13-6. Mocking frameworks",
+      "chinese": "例13-6：模拟框架"
+    },
+    {
+      "english": "Example 13-7. A simple fake",
+      "chinese": "例13-7：一个简单的伪实现"
+    },
+    {
+      "english": "Example 13-8. Stubbing",
+      "chinese": "例13-8：打桩"
+    },
+    {
+      "english": "Example 13-9. Interaction testing",
+      "chinese": "例13-9：交互测试"
+    },
+    {
+      "english": "Example 13-10. The @DoNotMock annotation",
+      "chinese": "例13-10：@DoNotMock 注解"
+    },
+    {
+      "english": "Example 13-11. A fake file system",
+      "chinese": "例13-11：文件系统的伪实现"
+    },
+    {
+      "english": "Example 13-12. Using stubbing to simulate responses",
+      "chinese": "例13-12：通过打桩模拟响应"
+    },
+    {
+      "english": "Example 13-13. Overuse of stubbing",
+      "chinese": "例13-13：过度打桩"
+    },
+    {
+      "english": "Example 13-14. Refactoring a test to avoid stubbing",
+      "chinese": "例13-14：重构测试，避免打桩"
+    },
+    {
+      "english": "Example 13-15. State testing",
+      "chinese": "例13-15：状态测试"
+    },
+    {
+      "english": "Example 13-16. Interaction testing",
+      "chinese": "例13-16：交互测试"
+    },
+    {
+      "english": "Example 13-18. Overspecified interaction tests",
+      "chinese": "例13-18：限定过多的交互测试"
+    }
+  ],
+  "issues": [
+    {
+      "sourceLines": [
+        436,
+        438
+      ],
+      "reason": "The English source says replacing a frequently flaky real implementation with a double improves fidelity, while this chapter defines fidelity as similarity to real behavior. The Chinese preserves that claim. Whether fidelity here is intended to mean reliability remains ambiguous; diagrams keep determinism and fidelity separate and do not silently rewrite either source."
+    }
+  ]
+}

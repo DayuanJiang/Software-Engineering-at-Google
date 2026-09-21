@@ -4,10 +4,10 @@
   "summary": "软件是团队做出来的：早点把工作亮出来，靠谦逊、尊重、信任协作",
   "enabled": true,
   "sourceSections": [
-    "## The Genius Myth  天才神话",
-    "## Hiding Considered Harmful 隐藏工作的危害",
-    "## It’s All About the Team 关键在于团队",
-    "### Humility, Respect, and Trust in Practice 谦逊、尊重和信任的实践"
+    "The Genius Myth",
+    "Hiding Considered Harmful",
+    "It’s All About the Team",
+    "Humility, Respect, and Trust in Practice"
   ],
   "kind": "contrast",
   "desktop": "assets/diagrams/ch02.svg",

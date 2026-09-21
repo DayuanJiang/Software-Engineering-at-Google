@@ -5,8 +5,8 @@
   "summary": "对照两个书中反例：单机浏览器只验证日期选择器的一条路径，属于中型、窄范围；服务器端点验证解析、请求校验和业务逻辑，替换全部进程外依赖后可以是小型、广范围。",
   "enabled": true,
   "sourceSections": [
-    "### Test Size  测试规模",
-    "### Test Scope  测试范围"
+    "Test Size",
+    "Test Scope"
   ],
   "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
   "desktop": "assets/diagrams/sections/ch11-06.svg",

@@ -3,7 +3,9 @@
   "chapter": 14,
   "title": "用数据衔接较小的集成测试",
   "summary": "拆分跨系统用户旅程，用持久化的输出作为下一对组件测试的输入；数据衔接不要求测试串行执行。",
-  "sourceSections": ["#### Larger Tests at Google Scale 谷歌规模下的较大规模测试"],
+  "sourceSections": [
+    "Larger Tests at Google Scale"
+  ],
   "afterParagraph": "具体做法是将一个测试的输出持久化到数据存储中，供另一个测试作为输入使用。",
   "desktop": "assets/diagrams/sections/ch14-02.svg",
   "mobile": "assets/diagrams/sections/ch14-02-mobile.svg",

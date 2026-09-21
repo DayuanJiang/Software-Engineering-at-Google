@@ -4,7 +4,10 @@
   "title": "本地已有提交，同事为何拿不到",
   "summary": "在 DVCS 示例中，本地已有搜索提交 B 时，组织指定的 origin/main 仍只有 A；B 合入该主干后，从主干同步的同事才得到 B。",
   "enabled": true,
-  "sourceSections": ["### Centralized VCS Versus Distributed VCS  集中式 VCS 与分布式 VCS", "### Source of Truth 权威来源"],
+  "sourceSections": [
+    "Centralized VCS Versus Distributed VCS",
+    "Source of Truth"
+  ],
   "afterParagraph": "工作进入该仓库的主干分支，才算“完成”。",
   "desktop": "assets/diagrams/sections/ch16-01.svg",
   "mobile": "assets/diagrams/sections/ch16-01-mobile.svg",

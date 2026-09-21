@@ -4,27 +4,31 @@
       "id": "foreword",
       "number": null,
       "title": "序言",
+      "englishTitle": "Foreword",
       "file": "zh-cn/Foreword.md",
+      "source": "en/Foreword.md",
       "route": "/zh-cn/Foreword",
-      "keepEnglish": [],
-      "review": "assets/reader-review/foreword.json"
+      "content": "assets/reader-content/foreword.json"
     },
     {
       "id": "preface",
       "number": null,
       "title": "前言",
+      "englishTitle": "Preface",
       "file": "zh-cn/Preface.md",
+      "source": "en/Preface.md",
       "route": "/zh-cn/Preface",
-      "keepEnglish": []
+      "content": "assets/reader-content/preface.json"
     },
     {
       "id": "ch01",
       "number": 1,
       "title": "第一章 软件工程是什么？",
+      "englishTitle": "What Is Software Engineering?",
       "file": "zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
+      "source": "en/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering.md",
       "route": "/zh-cn/Chapter-1_What_Is_Software_Engineering/Chapter-1_What_Is_Software_Engineering",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch01.json",
+      "content": "assets/reader-content/ch01.json",
       "sectionGuides": [
         {
           "id": "ch01-02",
@@ -33,8 +37,8 @@
           "summary": "沿用原文五个元素，把 RPC 响应的前两项换位：按集合比较的调用方仍通过，假定首项固定的调用方失效。新顺序与调用方判断均为演示。",
           "enabled": true,
           "sourceSections": [
-            "### Hyrum’s  Law 海勒姆定律",
-            "### Example: Hash Ordering 哈希遍历顺序"
+            "Hyrum’s Law",
+            "Example: Hash Ordering"
           ],
           "afterParagraph": "例如，如果库把一组值序列化到远程过程调用（RPC）的响应中，调用方最终可能就会依赖这些值的排列顺序。",
           "desktop": "assets/diagrams/sections/ch01-02.svg",
@@ -57,10 +61,10 @@
           "summary": "对照各团队重复迁移与共享专家、自动化和统一 CI，说明如何减少重复人力投入；团队布局为概念示例。",
           "enabled": true,
           "sourceSections": [
-            "## Scale and Efficiency  规模和效率",
-            "### Policies That Don’t Scale 难以随规模扩展的策略",
-            "### Policies That Scale Well 适于规模扩展的策略",
-            "### Example: Compiler Upgrade 示例：编译器升级"
+            "Scale and Efficiency",
+            "Policies That Don’t Scale",
+            "Policies That Scale Well",
+            "Example: Compiler Upgrade"
           ],
           "afterParagraph": "专业知识更能发挥规模效益。",
           "desktop": "assets/diagrams/sections/ch01-03.svg",
@@ -83,8 +87,8 @@
           "summary": "规律升级结合专业知识、自动化和一致性，让后续变更更可行；长期推迟则积累隐式依赖和集中升级的负担。",
           "enabled": true,
           "sourceSections": [
-            "## Time and Change 时间与变化",
-            "### Example: Compiler Upgrade 示例：编译器升级"
+            "Time and Change",
+            "Example: Compiler Upgrade"
           ],
           "afterParagraph": "停滞不前也是一种选择，但往往并不明智。",
           "desktop": "assets/diagrams/sections/ch01-04.svg",
@@ -107,9 +111,9 @@
           "summary": "把原文的假设方案拆成 CPU 节省、额外 RAM 与两周工程师投入；资源数量并不足以决定净收益，还须比较相对成本与机会成本。",
           "enabled": true,
           "sourceSections": [
-            "## Trade-offs and Costs 权衡和成本",
-            "### Inputs to Decision Making 决策依据",
-            "## Revisiting Decisions, Making Mistakes 重审决策与犯错"
+            "Trade-offs and Costs",
+            "Inputs to Decision Making",
+            "Revisiting Decisions, Making Mistakes"
           ],
           "afterParagraph": "还取决于人力成本（一名软件工程师两周的投入）和机会成本（他用这两周还能完成什么）。",
           "desktop": "assets/diagrams/sections/ch01-05.svg",
@@ -132,7 +136,7 @@
           "summary": "对照共享依赖与受影响分叉的修复路径：两者都要更新使用方，而分叉需要先找全受影响副本并分别处理。保留分叉的控制权收益及生命周期、范围边界。",
           "enabled": true,
           "sourceSections": [
-            "### Example: Deciding Between Time and Scale 示例：在时间与规模之间取舍"
+            "Example: Deciding Between Time and Scale"
           ],
           "afterParagraph": "只要足够审慎，自行实现往往也能获得收益。",
           "desktop": "assets/diagrams/sections/ch01-06.svg",
@@ -158,7 +162,7 @@
           "enabled": false,
           "removalReason": "与同节已有图1-1重复解释生命周期与升级需要；变更能力与选择不升级的区别已由新版总览呈现。保留 SVG 供追溯，不在读者页面重复插入。",
           "sourceSections": [
-            "## Time and Change 时间与变化"
+            "Time and Change"
           ],
           "afterParagraph": "项目的长期可持续性，不只是熬过第一次大规模升级，还要做到此后能够持续、可靠地跟进更新。",
           "desktop": "assets/diagrams/sections/ch01-01.svg",
@@ -180,10 +184,11 @@
       "id": "ch02",
       "number": 2,
       "title": "第二章 如何在团队中有效协作",
+      "englishTitle": "How to Work Well on Teams",
       "file": "zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md",
+      "source": "en/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams.md",
       "route": "/zh-cn/Chapter-2_How_to_Work_Well_on_Teams/Chapter-2_How_to_Work_Well_on_Teams",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch02.json",
+      "content": "assets/reader-content/ch02.json",
       "sectionGuides": [
         {
           "id": "ch02-01",
@@ -191,9 +196,9 @@
           "title": "同一个设计缺陷，何时才能被看见？",
           "summary": "把原文变速器故事与书中的早期分享反事实并列：保密使邻居的检查延后，早期展示则让相同缺陷有机会及早被指出；不把反事实当作实测工期。",
           "sourceSections": [
-            "## Hiding Considered Harmful 隐藏工作的危害",
-            "### Early Detection 及早发现",
-            "### Pace of Progress 进展速度"
+            "Hiding Considered Harmful",
+            "Early Detection",
+            "Pace of Progress"
           ],
           "afterParagraph": "记住那句久经检验的箴言：“尽早失败，快速失败，经常失败。”",
           "desktop": "assets/diagrams/sections/ch02-01.svg",
@@ -216,7 +221,7 @@
           "title": "主负责人离开后，谁还能接手？",
           "summary": "在两种知识分布中移除同一个主负责人，检查是否仍有理解原型的人连接到工作；文档辅助接手，不作为额外人员或独立接手者。",
           "sourceSections": [
-            "### The Bus Factor 巴士因子"
+            "The Bus Factor"
           ],
           "afterParagraph": "做成功项目中的一员，总比做失败项目中不可或缺的那个人更好。",
           "desktop": "assets/diagrams/sections/ch02-02.svg",
@@ -239,8 +244,8 @@
           "title": "同样建议 xyzzy，措辞改变了什么？",
           "summary": "完整并列原文中控制流与 xyzzy 的坏反馈、较好反馈，逐项连接具体措辞与互动变化：从判错转向理解困难，从要求从众转向可拒绝的提议，从服从标准转向清晰和维护目标。",
           "sourceSections": [
-            "### The Three Pillars of Social Interaction社交互动的三大支柱",
-            "#### Learn to give and take criticism 学会提出和接受建设性批评"
+            "The Three Pillars of Social Interaction",
+            "Learn to give and take criticism"
           ],
           "afterParagraph": "讨论就始终围绕代码本身，而不是任何人的价值或编程能力。",
           "desktop": "assets/diagrams/sections/ch02-03.svg",
@@ -265,7 +270,7 @@
           "title": "无责复盘：从原因到改变",
           "summary": "用明确标为示意的配置故障，把事实、原因连接到立即修复与预防两类行动，再区分落实改变和共享经验；避免把复盘画成必然回到事件起点的循环。",
           "sourceSections": [
-            "### Blameless Post-Mortem Culture 无责复盘文化"
+            "Blameless Post-Mortem Culture"
           ],
           "afterParagraph": "不要抹去自己的足迹，而要像照亮跑道一样，让后来者看清这些足迹！",
           "desktop": "assets/diagrams/sections/ch02-04.svg",
@@ -289,10 +294,11 @@
       "id": "ch03",
       "number": 3,
       "title": "第三章 知识共享",
+      "englishTitle": "Knowledge Sharing",
       "file": "zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
+      "source": "en/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing.md",
       "route": "/zh-cn/Chapter-3_Knowledge_Sharing/Chapter-3_Knowledge_Sharing",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch03.json",
+      "content": "assets/reader-content/ch03.json",
       "sectionGuides": [
         {
           "id": "ch03-02",
@@ -301,9 +307,9 @@
           "summary": "用明确标为示意的开发流程变化，展示群聊结论需要整理、旧邮件存档不能改写、问答答案可以主动编辑的不同结果。",
           "enabled": true,
           "sourceSections": [
-            "### Group Chats 群聊",
-            "### Mailing Lists 邮件列表",
-            "### YAQS: Question-and-Answer Platform YAQS：问答平台"
+            "Group Chats",
+            "Mailing Lists",
+            "YAQS: Question-and-Answer Platform"
           ],
           "afterParagraph": "另一些则演变为话题更广泛的讨论列表，不再那么侧重于解决问题。",
           "desktop": "assets/diagrams/sections/ch03-02.svg",
@@ -326,7 +332,7 @@
           "summary": "用原文的基本开发工作流与本地 Frobber 实例两个例子，展示不同团队查阅同一份权威指南和特定团队使用局部指南的区别，并标明更广泛资料的维护责任。",
           "enabled": true,
           "sourceSections": [
-            "### Establishing Canonical Sources of Information 建立权威信息源"
+            "Establishing Canonical Sources of Information"
           ],
           "afterParagraph": "你所在的产品领域？还是所有工程师？",
           "desktop": "assets/diagrams/sections/ch03-03.svg",
@@ -349,8 +355,8 @@
           "summary": "对照同一语言的作者有无 Readability 资格时，本项批准由具资格审查者明确给予还是由作者资格隐含满足；两条路径都保留代码审查要求，并展示引用准则的教学反馈。",
           "enabled": true,
           "sourceSections": [
-            "### What Is the Readability Process?  什么是可读性认证流程？",
-            "### Why Have This Process? 为什么需要这一流程？"
+            "What Is the Readability Process?",
+            "Why Have This Process?"
           ],
           "afterParagraph": "权威准则和语言使用建议都有全面的文档记录，这当然是好事；但资料数量太多",
           "desktop": "assets/diagrams/sections/ch03-04.svg",
@@ -376,8 +382,8 @@
           "title": "专家与文档相互补充",
           "summary": "专家帮助判断问题背景和适用资料，文档支持跨团队与跨时间共享，学习者通过提问和更新把经验回馈；心理安全感是共同基础。",
           "sourceSections": [
-            "## Philosophy  理念",
-            "## Setting the Stage: Psychological Safety 奠定基础：心理安全感"
+            "Philosophy",
+            "Setting the Stage: Psychological Safety"
           ],
           "afterParagraph": "培养自己的专家队伍：工程专业知识永远不嫌多。",
           "desktop": "assets/diagrams/sections/ch03-01.svg",
@@ -399,10 +405,11 @@
       "id": "ch04",
       "number": 4,
       "title": "第四章 面向公平的工程实践",
+      "englishTitle": "Engineering for Equity",
       "file": "zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md",
+      "source": "en/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity.md",
       "route": "/zh-cn/Chapter-4_Engineering_for_Equity/Chapter-4_Engineering_for_Equity",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch04.json",
+      "content": "assets/reader-content/ch04.json",
       "sectionGuides": [
         {
           "id": "ch04-01",
@@ -410,9 +417,9 @@
           "title": "数据覆盖不足，测试也未拦截",
           "summary": "按本章对 2015 年 Google Photos 的解释，区分未能代表人群的照片数据、实际伤害性误分类，以及测试漏检后由用户发现错误。团队视角是可能影响数据与设计的因素，不是与数据、测试并列的自动致错开关。",
           "sourceSections": [
-            "## Bias Is the Default 偏见是默认状态",
-            "#### Case Study: Google Misses the Mark on Racial Inclusion  案例研究：谷歌在种族包容方面的失误",
-            "## Building Multicultural Capacity 培养多元文化能力"
+            "Bias Is the Default",
+            "Case Study: Google Misses the Mark on Racial Inclusion",
+            "Building Multicultural Capacity"
           ],
           "afterParagraph": "让软件工程组织的人员构成，更能代表我们所服务的用户群体。",
           "desktop": "assets/diagrams/sections/ch04-01.svg",
@@ -435,8 +442,8 @@
           "title": "同样改招聘，入职之后呢？",
           "summary": "沿用书中经理希望招聘更多女性的例子，在相同的招聘改进起点下对照两种审视范围：只改入口，支持和成长机会的缺口仍未解决；同时检查心理安全、支持与机会分配，再依据留任和成长结果修正做法。",
           "sourceSections": [
-            "## Making Diversity Actionable 将多样性付诸行动",
-            "## Reject Singular Approaches 摒弃单一方法"
+            "Making Diversity Actionable",
+            "Reject Singular Approaches"
           ],
           "afterParagraph": "投入资源培养团队的多元文化能力，让新成员感到受欢迎。",
           "desktop": "assets/diagrams/sections/ch04-02.svg",
@@ -459,7 +466,7 @@
           "title": "旧岗位低评分，能否决定新岗位资格？",
           "summary": "把旧岗位当期评级与新团队资格分开，展示书中调查的关键比较：转组后，曾获低评级与从无低评级的候选人获得满意或卓越评级的可能性相当。该案例不支持用历史低评级筛掉新岗位候选人，但评级仍可帮助审视当前岗位和支持需求。",
           "sourceSections": [
-            "## Challenge Established Processes 挑战既定流程"
+            "Challenge Established Processes"
           ],
           "afterParagraph": "这项分析确实占用了大量项目时间，但换来了更公平的内部流动流程。",
           "desktop": "assets/diagrams/sections/ch04-03.svg",
@@ -484,8 +491,8 @@
           "title": "与用户共同设计和改进",
           "summary": "将弱势用户参与、从困难用例开始、衡量系统公平性和持续调整组成概念回路。价值观与投入不自动等于公平结果，需要反馈和专业知识。",
           "sourceSections": [
-            "## Values Versus Outcomes 价值观与结果",
-            "## Stay Curious, Push Forward 保持好奇，继续前行"
+            "Values Versus Outcomes",
+            "Stay Curious, Push Forward"
           ],
           "afterParagraph": "改变会让人不适，追求高绩效的过程也可能痛苦，但凭借协作和创造力，我们能够做到。",
           "desktop": "assets/diagrams/sections/ch04-04.svg",
@@ -509,10 +516,11 @@
       "id": "ch05",
       "number": 5,
       "title": "第五章 如何领导团队",
+      "englishTitle": "How to Lead a Team",
       "file": "zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md",
+      "source": "en/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team.md",
       "route": "/zh-cn/Chapter-5_How_to_Lead_a_Team/Chapter-5_How_to_Lead_a_Team",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch05.json",
+      "content": "assets/reader-content/ch05.json",
       "sectionGuides": [
         {
           "id": "ch05-02",
@@ -521,7 +529,7 @@
           "summary": "对照放任等待与限期指导：约定期限及小而可衡量的目标，每周对照实际进展；达标后明确下一里程碑，未达标时双方尽早看清差距。两个月是原书示例，不是统一期限或自动离职条件。",
           "enabled": true,
           "sourceSections": [
-            "### Antipattern: Ignore Low Performers  反模式：忽略低绩效员工"
+            "Antipattern: Ignore Low Performers"
           ],
           "afterParagraph": "直接与低绩效员工一起解决问题，都能推动必要而重要的改变。",
           "desktop": "assets/diagrams/sections/ch05-02.svg",
@@ -544,8 +552,8 @@
           "summary": "并列区分方向缺口和意义缺口：前者需要把工作拆成可管理任务；后者以原书经理转发客户受益邮件的案例，展示如何让团队看见工作用途。两种帮助改变的信息不同。",
           "enabled": true,
           "sourceSections": [
-            "## People Are Like Plants  人如植物",
-            "### Intrinsic Versus Extrinsic Motivation  内在动机与外在动机"
+            "People Are Like Plants",
+            "Intrinsic Versus Extrinsic Motivation"
           ],
           "afterParagraph": "这不但能激励大家，也常能启发成员思考怎样进一步改进产品。",
           "desktop": "assets/diagrams/sections/ch05-04.svg",
@@ -571,9 +579,9 @@
           "title": "两类职责，一个团队",
           "summary": "工程经理关注人员、绩效和业务，技术负责人关注架构、技术选择与推进；双方共同安排人员与任务。小团队的 TLM 兼任两职，但需要平衡和指导。",
           "sourceSections": [
-            "### The Engineering Manager  工程经理",
-            "### The Tech Lead  技术负责人",
-            "### The Tech Lead Manager  技术负责人兼经理"
+            "The Engineering Manager",
+            "The Tech Lead",
+            "The Tech Lead Manager"
           ],
           "afterParagraph": "在自己逐渐适应这个角色的过程中，定期听取导师的建议。",
           "desktop": "assets/diagrams/sections/ch05-01.svg",
@@ -596,7 +604,7 @@
           "summary": "用原书 Java 案例画出三方关系：受阻工程师、并非 Java 专家的经理、了解该问题的另一位工程师。经理的贡献是牵线建立技术求助关系，而不是自己掌握答案。",
           "enabled": false,
           "sourceSections": [
-            "### Remove Roadblocks  消除障碍"
+            "Remove Roadblocks"
           ],
           "afterParagraph": "很多时候，认识合适的人比知道正确答案更有价值。",
           "desktop": "assets/diagrams/sections/ch05-03.svg",
@@ -619,10 +627,11 @@
       "id": "ch06",
       "number": 6,
       "title": "第六章 领导大规模团队",
+      "englishTitle": "Leading at Scale",
       "file": "zh-cn/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale.md",
+      "source": "en/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale.md",
       "route": "/zh-cn/Chapter-6_Leading_at_Scale/Chapter-6_Leading_at_Scale",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch06.json",
+      "content": "assets/reader-content/ch06.json",
       "sectionGuides": [
         {
           "id": "ch06-01",
@@ -631,10 +640,10 @@
           "summary": "沿一次搜索质量改动追踪短期参与度收益、延迟带来的长期损失和服务容量代价，再把收益与损失接入共同指标，显出旧决策遗漏的因素。",
           "enabled": true,
           "sourceSections": [
-            "### Identify the Blinders  找出思维盲点",
-            "## Identify the Key Trade-Offs  确定关键的权衡要素",
-            "### Decide, Then Iterate  做决定，然后持续迭代",
-            "#### Case Study: Addressing the “Latency” of Web Search  案例研究：解决网页搜索的“延迟”问题"
+            "Identify the Blinders",
+            "Identify the Key Trade-Offs",
+            "Decide, Then Iterate",
+            "Case Study: Addressing the “Latency” of Web Search"
           ],
           "afterParagraph": "我们持续判断质量、延迟和容量方面的变化是否平衡，并每月迭代这些决策。",
           "desktop": "assets/diagrams/sections/ch06-01.svg",
@@ -657,8 +666,8 @@
           "summary": "显示新增质量功能持续增加复杂度、抵消提速收益的路径，并把预防与优化两组工作分别连到新增成因和已有延迟，说明为何需要并行负责。",
           "enabled": true,
           "sourceSections": [
-            "### Dividing the Problem Space  划分问题域",
-            "####  Example: Subdividing the “latency problem” of Google Search  示例：拆分谷歌搜索的“延迟问题”"
+            "Dividing the Problem Space",
+            "Example: Subdividing the “latency problem” of Google Search"
           ],
           "afterParagraph": "这些团队负责的是问题，而不是特定的解决方案！）",
           "desktop": "assets/diagrams/sections/ch06-02.svg",
@@ -681,7 +690,7 @@
           "summary": "以书中20分钟可修好的老问题，对照亲自动手的本次效率与授权辅导带来的独立练习；明确他人能做且不刻不容缓这一前提。",
           "enabled": true,
           "sourceSections": [
-            "#### Delegating subproblems to leaders  将子问题交给子团队领导者负责"
+            "Delegating subproblems to leaders"
           ],
           "afterParagraph": "你持续描绘森林的全貌，再把砍树的工作交给别人。",
           "desktop": "assets/diagrams/sections/ch06-03.svg",
@@ -704,8 +713,8 @@
           "summary": "用原文中的消息、会议和战略工作，对照被动等空闲与主动预留至少两小时的注意力安排，说明哪些关键工作会被持续响应挤掉。",
           "enabled": true,
           "sourceSections": [
-            "### Important Versus Urgent   重要和紧急",
-            "### Learn to Drop Balls  学会放下任务"
+            "Important Versus Urgent",
+            "Learn to Drop Balls"
           ],
           "afterParagraph": "才能让有限的时间和注意力覆盖团队不断扩大的职责范围。",
           "desktop": "assets/diagrams/sections/ch06-04.svg",
@@ -727,10 +736,11 @@
       "id": "ch07",
       "number": 7,
       "title": "第七章  度量工程生产力",
+      "englishTitle": "Measuring Engineering Productivity",
       "file": "zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
+      "source": "en/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity.md",
       "route": "/zh-cn/Chapter-7_Measuring_Engineering_Productivity/Chapter-7_Measuring_Engineering_Productivity",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch07.json",
+      "content": "assets/reader-content/ch07.json",
       "sectionGuides": [
         {
           "id": "ch07-01",
@@ -738,7 +748,7 @@
           "title": "哪种研究结果会改变行动？",
           "summary": "并列 Readability 的两种结果对应不同决策，与发布工具变更的大、小收益都汇入实施决定，解释何时生产力度量能为决策增添信息。",
           "sourceSections": [
-            "## Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？"
+            "Triage: Is It Even Worth Measuring?"
           ],
           "afterParagraph": "最重要的是，Readability 团队有权作出这个决定。",
           "enabled": true,
@@ -761,11 +771,11 @@
           "title": "指标缺位，不等于目标消失",
           "summary": "对照 Readability 的速度和质量研究设计：速度可用按资格分组的审查耗时中位数作代理，质量则保留自评并承认客观定量代理空缺，不用不理想指标填满表格。",
           "sourceSections": [
-            "## Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
-            "## Goals  目标",
-            "## Signals  信号",
-            "## Metrics  指标",
-            "## Using Data to Validate Metrics  使用数据验证指标"
+            "Selecting Meaningful Metrics with Goals and Signals",
+            "Goals",
+            "Signals",
+            "Metrics",
+            "Using Data to Validate Metrics"
           ],
           "afterParagraph": "在谷歌，我们用定性数据验证指标，确保它们确实反映了预期的信号。",
           "enabled": true,
@@ -788,7 +798,7 @@
           "title": "同算中位数，哪些构建不再算？",
           "summary": "用校正前后纳入范围的对照显示：工程师等待结果的构建仍计入，自动工具发起且工程师不等待的构建被排除。改变的是代理的范围，不是目标或已知性能结果。",
           "sourceSections": [
-            "## Using Data to Validate Metrics  使用数据验证指标"
+            "Using Data to Validate Metrics"
           ],
           "afterParagraph": "并据此帮助我们判断下一步该如何改进流程。",
           "enabled": true,
@@ -813,7 +823,7 @@
           "title": "生产力不只有速度",
           "summary": "将 QUANTS 五方面与 Readability 案例目标并列，明确注意力未设目标，不把维度当成分数、排名或必须填满的表格。",
           "sourceSections": [
-            "## Goals  目标"
+            "Goals"
           ],
           "afterParagraph": "并非每个工程生产力问题都涉及全部五个方面的权衡。",
           "enabled": false,
@@ -837,10 +847,11 @@
       "id": "ch08",
       "number": 8,
       "title": "第八章 风格指南和规则",
+      "englishTitle": "Style Guides and Rules",
       "file": "zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md",
+      "source": "en/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules.md",
       "route": "/zh-cn/Chapter-8_Style_Guides_and_Rules/Chapter-8_Style_Guides_and_Rules",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch08.json",
+      "content": "assets/reader-content/ch08.json",
       "codeVariants": "assets/code-variants/ch08.json",
       "sectionGuides": [
         {
@@ -850,7 +861,7 @@
           "summary": "并列原文的 Foo* 与按值 unique_ptr 参数声明、调用代码和所有权关系。普通指针调用不能单独回答所有权问题；按值 unique_ptr 参数接收 std::move(my_foo) 时，所有权由调用方转交。",
           "enabled": true,
           "sourceSections": [
-            "#### Optimize for the reader   为读者优化"
+            "Optimize for the reader"
           ],
           "afterParagraph": "就能清楚地理解调用处发生了什么。",
           "desktop": "assets/diagrams/sections/ch08-01.svg",
@@ -873,8 +884,8 @@
           "summary": "对照两类冲突：指南允许局部选择的 const 写法沿用文件惯例；头文件宏可能全局重名时，不能只为项目一致而豁免项目前缀。代码是依据书中两例构造的示意。",
           "enabled": true,
           "sourceSections": [
-            "#### Be consistent   保持一致性",
-            "### Exceptions   例外"
+            "Be consistent",
+            "Exceptions"
           ],
           "afterParagraph": "在这里，代码库整体不受破坏，比单个项目保持一致更重要。",
           "desktop": "assets/diagrams/sections/ch08-02.svg",
@@ -897,8 +908,8 @@
           "summary": "用同一段示意代码的两次提交展示 S 与格式化结果 F(S) 的比较：有差异拒绝并提示修正，无差异仅通过格式检查。以数百文件同一行修改与20行复杂逻辑对照，保留人工审查复杂性的职责。",
           "enabled": true,
           "sourceSections": [
-            "## Applying the Rules  应用规则",
-            "### Code Formatters  代码格式化工具"
+            "Applying the Rules",
+            "Code Formatters"
           ],
           "afterParagraph": "BUILD 文件则使用 buildifier。",
           "desktop": "assets/diagrams/sections/ch08-04.svg",
@@ -924,10 +935,10 @@
           "removalReason": "抽象更新循环重复修改规则段的流程文字，也重复新版概览对决策理由与条件变化的解释；其例外边界已由 ch08-02 的宏冲突反例具体说明。保留 SVG 文件供追溯，不继续插入阅读正文。",
           "summary": "用流程与反馈连接真实问题、原有决策理由、社区讨论、仲裁共识和规则工具更新；个别豁免并不自动推翻通用规则。",
           "sourceSections": [
-            "## Changing the Rules  修改规则",
-            "### The Process  流程",
-            "### The Style Arbiters  风格仲裁者",
-            "### Exceptions   例外"
+            "Changing the Rules",
+            "The Process",
+            "The Style Arbiters",
+            "Exceptions"
           ],
           "afterParagraph": "因此，保留原规则仍然值得。",
           "desktop": "assets/diagrams/sections/ch08-03.svg",
@@ -949,10 +960,11 @@
       "id": "ch09",
       "number": 9,
       "title": "第九章 代码审查",
+      "englishTitle": "Code Review",
       "file": "zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review.md",
+      "source": "en/Chapter-9_Code_Review/Chapter-9_Code_Review.md",
       "route": "/zh-cn/Chapter-9_Code_Review/Chapter-9_Code_Review",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch09.json",
+      "content": "assets/reader-content/ch09.json",
       "sectionGuides": [
         {
           "id": "ch09-01",
@@ -961,9 +973,9 @@
           "summary": "对照 FYI、尚未获 LGTM 的修改要求、不同意意见，以及约定落实意见即可的 LGTM 四种状态，显示作者下一步和是否再审的区别。",
           "enabled": true,
           "sourceSections": [
-            "## Code Review Flow  代码审查流程",
-            "### Knowledge Sharing  知识共享",
-            "### Be Polite and Professional  保持礼貌和专业"
+            "Code Review Flow",
+            "Knowledge Sharing",
+            "Be Polite and Professional"
           ],
           "afterParagraph": "应把每条审查意见都当作一个 TODO 待办项：不必无条件接受，但至少要作出回应。如果不同意，就说明自己的看法和理由；在双方都有机会提出替代方案之前，不要将评论标记为已解决。作者与审查者意见不同时，一种常见的礼貌做法是提出替代方案，再请审查者 PTAL（请再看一下）。记住，代码审查是双方学习的机会，这种认识往往有助于减少分歧。",
           "desktop": "assets/diagrams/sections/ch09-01.svg",
@@ -986,8 +998,8 @@
           "summary": "用空列表处理这一明确标为示例的变更，对比只写“修复缺陷”和写出改动及原因的描述，检验未来维护者能否从描述回答为什么增加分支。",
           "enabled": true,
           "sourceSections": [
-            "### Knowledge Sharing  知识共享",
-            "### Write Good Change Descriptions  写好变更描述"
+            "Knowledge Sharing",
+            "Write Good Change Descriptions"
           ],
           "afterParagraph": "变更描述并不是记录信息的唯一地方。编写公开 API 时，通常应避免暴露实现细节，但在实际实现内部，应当充分注释、说明这些细节。如果审查者不理解你为什么这样做，即使代码是正确的，也说明代码结构或注释需要改进，可能两者都要改。如果审查过程中作出了新决定，应更新变更描述，或在实现中补充适当注释。代码审查不只是处理眼前的工作，也是在为后来者记录你做过的事情。",
           "desktop": "assets/diagrams/sections/ch09-03.svg",
@@ -1010,8 +1022,8 @@
           "summary": "按风险和领域知识需求选择审查者，再按问题对象区分本地变更评论与向 LSC 监督小组升级反馈；机器生成不等于低风险，也不等于免审。",
           "enabled": true,
           "sourceSections": [
-            "## Types of Code Reviews  代码审查的类型",
-            "### Refactorings and Large-Scale Changes  重构与大规模变更"
+            "Types of Code Reviews",
+            "Refactorings and Large-Scale Changes"
           ],
           "afterParagraph": "也会限制此人借助工具能够有效处理的变更规模。",
           "desktop": "assets/diagrams/sections/ch09-04.svg",
@@ -1034,7 +1046,7 @@
           "summary": "用三种具体组合比较批准状态：合格的另一位审查者兼任三项、作者凭资格满足后两项、作者仅自审而缺少他人 LGTM。三项批准齐全且所有审查意见已处理，才满足本章的常规提交条件。",
           "enabled": true,
           "sourceSections": [
-            "## How Code Review Works at Google  谷歌如何开展代码审查"
+            "How Code Review Works at Google"
           ],
           "afterParagraph": "而所有者往往也具备相应的 Readability 资格。",
           "desktop": "assets/diagrams/sections/ch09-05.svg",
@@ -1060,8 +1072,8 @@
           "enabled": false,
           "removalReason": "与本章概览重复。新版概览已用人员与批准条件矩阵、仅自审的反例以及意见处理条件，完整承担此处的问题；保留原 SVG 供追溯，不再插入正文。",
           "sourceSections": [
-            "## How Code Review Works at Google  谷歌如何开展代码审查",
-            "### Code Consistency  代码的一致性"
+            "How Code Review Works at Google",
+            "Code Consistency"
           ],
           "afterParagraph": "而所有者往往也具备相应的 Readability 资格。",
           "desktop": "assets/diagrams/sections/ch09-02.svg",
@@ -1083,10 +1095,11 @@
       "id": "ch10",
       "number": 10,
       "title": "第十章 文档",
+      "englishTitle": "Documentation",
       "file": "zh-cn/Chapter-10_Documentation/Chapter-10_Documentation.md",
+      "source": "en/Chapter-10_Documentation/Chapter-10_Documentation.md",
       "route": "/zh-cn/Chapter-10_Documentation/Chapter-10_Documentation",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch10.json",
+      "content": "assets/reader-content/ch10.json",
       "codeVariants": "assets/code-variants/ch10.json",
       "sectionGuides": [
         {
@@ -1095,7 +1108,7 @@
           "title": "发现错误，怎样进入修复？",
           "summary": "对照 GooWiki 中使用者与修复者错开的反馈断点，以及缺陷报告、权威来源、负责人和现有评审流程如何接通修复路径。",
           "sourceSections": [
-            "## Documentation Is Like Code 把文档当作代码"
+            "Documentation Is Like Code"
           ],
           "afterParagraph": "能够沿用现有开发者工作流，无须另建一套，是这一做法的重要优势。",
           "desktop": "assets/diagrams/sections/ch10-01.svg",
@@ -1118,8 +1131,8 @@
           "title": "重名时，还会返回记录 ID 吗？",
           "summary": "从原文 AddCustomer 注释推演：没有同名记录时创建并返回 ID，已有同名记录时抛出 DuplicateEntryError；删掉条件与异常后，调用者便无法判断重名的结果。",
           "sourceSections": [
-            "### Reference Documentation 参考文档",
-            "#### Function comments 函数注释"
+            "Reference Documentation",
+            "Function comments"
           ],
           "afterParagraph": "加入固定格式的小节，只会让注释更冗长、更重复，并不会更清楚，甚至可能更难理解。",
           "desktop": "assets/diagrams/sections/ch10-02.svg",
@@ -1142,7 +1155,7 @@
           "title": "下一步，究竟轮到谁操作？",
           "summary": "将原教程第3至7步对照改写：认证与建库是执行脚本后的系统响应，测试与输入 SQL 是同一个用户操作。只给用户动作编号，命令独立成行。",
           "sourceSections": [
-            "### Tutorials 教程"
+            "Tutorials"
           ],
           "afterParagraph": "则应从该对象的角度组织并编号步骤，也就是列出服务器执行的动作。",
           "desktop": "assets/diagrams/sections/ch10-03.svg",
@@ -1167,8 +1180,8 @@
           "title": "按文档目的权衡质量",
           "summary": "完整性、准确性和清晰性是需要权衡的维度，不是量化评分；概念文档省略罕见细节不等于故意写错。",
           "sourceSections": [
-            "### The Parameters of Good Documentation 良好文档的衡量标准",
-            "## Documentation Reviews 文档评审"
+            "The Parameters of Good Documentation",
+            "Documentation Reviews"
           ],
           "afterParagraph": "这些因素共同决定文档质量，而质量确实很难准确衡量。",
           "desktop": "assets/diagrams/sections/ch10-04.svg",
@@ -1192,10 +1205,11 @@
       "id": "ch11",
       "number": 11,
       "title": "第十一章 测试概述",
+      "englishTitle": "Testing Overview",
       "file": "zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md",
+      "source": "en/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview.md",
       "route": "/zh-cn/Chapter-11_Testing_Overview/Chapter-11_Testing_Overview",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch11.json",
+      "content": "assets/reader-content/ch11.json",
       "codeVariants": "assets/code-variants/ch11.json",
       "sectionGuides": [
         {
@@ -1215,7 +1229,7 @@
             "limits": "这是基于书中计算器测试的示意状态，不是所有失败都由产品代码导致；通过这一断言不代表所有行为正确，也不代表以后无需再运行。"
           },
           "sourceSections": [
-            "### Write, Run, React  编写、运行、处理失败"
+            "Write, Run, React"
           ],
           "afterParagraph": "让大家持续信任测试流程。",
           "desktop": "assets/diagrams/sections/ch11-01.svg",
@@ -1238,10 +1252,10 @@
             "limits": "是运行边界的示意，不保证本机测试一定中型或进程内测试一定小型；时间、内存和其他约束仍须满足。不是性能测量，也不证明替身能验证真实数据库交互。"
           },
           "sourceSections": [
-            "### Test Size  测试规模",
-            "#### Small tests  小型测试",
-            "#### Medium tests  中型测试",
-            "#### Large tests  大型测试"
+            "Test Size",
+            "Small tests",
+            "Medium tests",
+            "Large tests"
           ],
           "afterParagraph": "只在构建和发布过程中运行，以免影响开发者的工作流。",
           "desktop": "assets/diagrams/sections/ch11-02.svg",
@@ -1264,8 +1278,8 @@
             "limits": "错误实现及无断言分支为示意，不是新增书中代码。仅比较所示功能行的行覆盖率；不是整个程序覆盖率，也不证明一个断言已覆盖所有行为。"
           },
           "sourceSections": [
-            "### A Note on Code Coverage  关于代码覆盖率的注意事项",
-            "### Write, Run, React  编写、运行、处理失败"
+            "A Note on Code Coverage",
+            "Write, Run, React"
           ],
           "afterParagraph": "却不能代替对系统测试充分程度的审慎判断。",
           "desktop": "assets/diagrams/sections/ch11-04.svg",
@@ -1288,8 +1302,8 @@
             "limits": "仅演示书中历史 Test Certified 的第1级与第5级要求，不能推断第2至第4级，也不是当前谷歌政策或 pH 评分算法。"
           },
           "sourceSections": [
-            "### Test Certified  测试认证",
-            "### Testing Culture Today  当今的测试文化"
+            "Test Certified",
+            "Testing Culture Today"
           ],
           "afterParagraph": "没过多久，团队之间就开始竞相提升等级。",
           "desktop": "assets/diagrams/sections/ch11-05.svg",
@@ -1302,8 +1316,8 @@
           "summary": "对照两个书中反例：单机浏览器只验证日期选择器的一条路径，属于中型、窄范围；服务器端点验证解析、请求校验和业务逻辑，替换全部进程外依赖后可以是小型、广范围。",
           "enabled": true,
           "sourceSections": [
-            "### Test Size  测试规模",
-            "### Test Scope  测试范围"
+            "Test Size",
+            "Test Scope"
           ],
           "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
           "desktop": "assets/diagrams/sections/ch11-06.svg",
@@ -1339,7 +1353,7 @@
             "limits": "退役不是否定图中分类；仅减少重复。原两个布局保留，不再作为读者可见插图使用。"
           },
           "sourceSections": [
-            "### Test Scope  测试范围"
+            "Test Scope"
           ],
           "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
           "desktop": "assets/diagrams/sections/ch11-03.svg",
@@ -1351,10 +1365,11 @@
       "id": "ch12",
       "number": 12,
       "title": "第十二章 单元测试",
+      "englishTitle": "Unit Testing",
       "file": "zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
+      "source": "en/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing.md",
       "route": "/zh-cn/Chapter-12_Unit_Testing/Chapter-12_Unit_Testing",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch12.json",
+      "content": "assets/reader-content/ch12.json",
       "codeVariants": "assets/code-variants/ch12.json",
       "sectionGuides": [
         {
@@ -1364,9 +1379,9 @@
           "summary": "沿用交易示例，把内部记录的逗号换成竖线作为纯重构示意；相同余额不变，内部字符串断言却从通过变为失败，显露测试对实现的意外依赖。",
           "enabled": true,
           "sourceSections": [
-            "### Strive for Unchanging Tests  力求让测试无需改动",
-            "## Preventing Brittle Tests  避免脆弱测试",
-            "### Test via Public APIs  通过公共API进行测试"
+            "Strive for Unchanging Tests",
+            "Preventing Brittle Tests",
+            "Test via Public APIs"
           ],
           "afterParagraph": "但若要让测试只在系统发生实质性变化时才失败，这是最重要的一步。",
           "desktop": "assets/diagrams/sections/ch12-01.svg",
@@ -1389,8 +1404,8 @@
           "summary": "固定createUser调用，对比原始写入、等价替代API和写后误删；交互断言分别产生误报与漏报，而最终状态断言区分用户存在与不存在。",
           "enabled": true,
           "sourceSections": [
-            "### Test via Public APIs  通过公共API进行测试",
-            "### Test State, Not Interactions  测试状态，而不是交互"
+            "Test via Public APIs",
+            "Test State, Not Interactions"
           ],
           "afterParagraph": "我们就倾向于使用真实对象，而不是模拟对象。",
           "desktop": "assets/diagrams/sections/ch12-02.svg",
@@ -1413,8 +1428,8 @@
           "summary": "显示商品名和低余额警告虽在同一个方法内，却是两项保证；删去警告的示意变更只让警告测试失败。转账的两个余额断言则共同描述一个行为。",
           "enabled": true,
           "sourceSections": [
-            "### Test Behaviors, Not Methods  测试行为，而不是方法",
-            "#### Structure tests to emphasize behaviors  用测试结构突出行为"
+            "Test Behaviors, Not Methods",
+            "Structure tests to emphasize behaviors"
           ],
           "afterParagraph": "而不是不断往已有方法里堆内容。",
           "desktop": "assets/diagrams/sections/ch12-03.svg",
@@ -1437,10 +1452,10 @@
           "summary": "展开论坛通用验证helper里的布尔表达式，看到NORMAL和BANNED的注册预期都写反了；再与显式状态、动作、false断言及有意义的共享边界对照。",
           "enabled": true,
           "sourceSections": [
-            "## Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY",
-            "### Shared  Values  共享值",
-            "### Shared  Helpers  and  Validation  共享辅助方法和验证",
-            "### Defining Test Infrastructure  定义测试基础设施"
+            "Tests and Code Sharing: DAMP, Not DRY",
+            "Shared Values",
+            "Shared Helpers and Validation",
+            "Defining Test Infrastructure"
           ],
           "afterParagraph": "而不只是为了减少重复。",
           "desktop": "assets/diagrams/sections/ch12-04.svg",
@@ -1462,10 +1477,11 @@
       "id": "ch13",
       "number": 13,
       "title": "第十三章 测试替身",
+      "englishTitle": "Test Doubles",
       "file": "zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
+      "source": "en/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles.md",
       "route": "/zh-cn/Chapter-13_Test_Doubles/Chapter-13_Test_Doubles",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch13.json",
+      "content": "assets/reader-content/ch13.json",
       "codeVariants": "assets/code-variants/ch13.json",
       "sectionGuides": [
         {
@@ -1475,8 +1491,8 @@
           "summary": "由构造函数传入同一 CreditCardService 接口的替身，再跟踪 makePayment 的过期判断：过期卡直接返回 false，未调用扣款；有效卡才调用始终返回 true 的替身。",
           "enabled": true,
           "sourceSections": [
-            "### Seams 接缝",
-            "### An Example Test Double 测试替身示例"
+            "Seams",
+            "An Example Test Double"
           ],
           "afterParagraph": "通常需要先重构或重写，才能补上适当的测试。",
           "desktop": "assets/diagrams/sections/ch13-01.svg",
@@ -1499,10 +1515,10 @@
           "summary": "示意保留真实的两个调用者，只在无法用于测试的数据库 API 边界提供共享 fake；写入调用改变 fake 状态，另一调用者读回该状态，而非为每个调用者分别写 fake。",
           "enabled": true,
           "sourceSections": [
-            "### When Should Fakes Be Written? 何时应该编写伪实现？",
-            "### Prefer Realism Over Isolation 优先考虑真实性，而非隔离性",
-            "#### Tests become less effective 测试有效性降低",
-            "## Conclusion 总结"
+            "When Should Fakes Be Written?",
+            "Prefer Realism Over Isolation",
+            "Tests become less effective",
+            "Conclusion"
           ],
           "afterParagraph": "而不是为每个调用该 API 的类都写一个。",
           "desktop": "assets/diagrams/sections/ch13-03.svg",
@@ -1525,9 +1541,9 @@
           "summary": "将书中的重复 ID 契约变为并排执行轨迹：从空库开始，首次 save(id) 成功并改变状态，第二次必须报错；只测首次成功会漏掉允许重复保存的 fake。",
           "enabled": true,
           "sourceSections": [
-            "### The Fidelity of Fakes 伪实现的保真度",
-            "### Fakes Should Be Tested  伪实现也需要测试",
-            "### When Should Fakes Be Written? 何时应该编写伪实现？"
+            "The Fidelity of Fakes",
+            "Fakes Should Be Tested",
+            "When Should Fakes Be Written?"
           ],
           "afterParagraph": "但只需由伪实现的维护者运行，因此额外负担可以控制在较小范围内。",
           "desktop": "assets/diagrams/sections/ch13-04.svg",
@@ -1550,8 +1566,8 @@
           "summary": "对照例13-18和13-19的 setText 验证：版本号从2.1改为2.2时，锁定全部参数的旧测试失败，只锁定姓名的测试仍通过；姓名真变错时，后者仍会失败。",
           "enabled": true,
           "sourceSections": [
-            "### When Is Interaction Testing Appropriate? 什么时候适合进行交互测试？",
-            "#### Avoid overspecification 避免过度限定"
+            "When Is Interaction Testing Appropriate?",
+            "Avoid overspecification"
           ],
           "afterParagraph": "每个测试只检查确认相应行为正确所必需的最少内容。",
           "desktop": "assets/diagrams/sections/ch13-05.svg",
@@ -1574,10 +1590,10 @@
           "summary": "沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。",
           "enabled": true,
           "sourceSections": [
-            "## Techniques for Using Test Doubles 测试替身的使用技术",
-            "### Faking 使用伪实现",
-            "### Stubbing 打桩",
-            "### Interaction Testing 交互测试"
+            "Techniques for Using Test Doubles",
+            "Faking",
+            "Stubbing",
+            "Interaction Testing"
           ],
           "afterParagraph": "但应尽可能避免，因为过度使用很容易让测试变得脆弱。",
           "desktop": "assets/diagrams/sections/ch13-06.svg",
@@ -1603,8 +1619,8 @@
           "enabled": false,
           "removalReason": "原图与概览重复三种技术的定义，缺少独立推理任务。重写后的概览已用同一个权限 API 展示 fake 状态变化、打桩响应变化及交互断言边界，并明确同一个 mock 的两种用途；保留原 SVG 仅供追溯。",
           "sourceSections": [
-            "## Techniques for Using Test Doubles 测试替身的使用技术",
-            "### Mocking Frameworks 模拟框架"
+            "Techniques for Using Test Doubles",
+            "Mocking Frameworks"
           ],
           "afterParagraph": "但应尽可能避免，因为过度使用很容易让测试变得脆弱。",
           "desktop": "assets/diagrams/sections/ch13-02.svg",
@@ -1626,10 +1642,11 @@
       "id": "ch14",
       "number": 14,
       "title": "第十四章 较大规模测试",
+      "englishTitle": "Larger Testing",
       "file": "zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
+      "source": "en/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing.md",
       "route": "/zh-cn/Chapter-14_Larger_Testing/Chapter-14_Larger_Testing",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch14.json",
+      "content": "assets/reader-content/ch14.json",
       "codeVariants": "assets/code-variants/ch14.json",
       "sectionGuides": [
         {
@@ -1639,10 +1656,10 @@
           "summary": "Webdriver Torso 在 YouTube 生产环境上传测试视频；复用环境省去另建 SUT 的维护，但公开频道让测试数据被用户发现。成本按类别权衡，不画单调增长阶梯。",
           "enabled": true,
           "sourceSections": [
-            "### Fidelity 仿真度",
-            "### The System Under Test 被测系统",
-            "#### The benefits of hermetic SUTs 封闭式 SUT 的好处",
-            "### Authoring Large Tests 编写大型测试"
+            "Fidelity",
+            "The System Under Test",
+            "The benefits of hermetic SUTs",
+            "Authoring Large Tests"
           ],
           "afterParagraph": "不过，这件事提醒我们：放在生产环境中的任何测试数据，都可能被最终用户发现，我们必须考虑这种可能性并做好准备。",
           "desktop": "assets/diagrams/sections/ch14-01.svg",
@@ -1665,8 +1682,8 @@
           "summary": "以地图请求为示意：提交后录制通过才保存请求/响应；开发时匹配东京请求才能返回已录制响应，大阪请求未匹配则不能通过，需运行录制模式。",
           "enabled": true,
           "sourceSections": [
-            "## What Are Larger Tests? 什么是较大规模测试？",
-            "#### Record/replay proxies 录制/重放代理"
+            "What Are Larger Tests?",
+            "Record/replay proxies"
           ],
           "afterParagraph": "因此，让录制模式测试易于运行、速度快且稳定，非常重要。",
           "desktop": "assets/diagrams/sections/ch14-03.svg",
@@ -1689,9 +1706,9 @@
           "summary": "将本章 xyzzy 搜索断言作为对照：A 含 Colossal Cave、B 不含，仅比较只能发现差异；明确要求结果必须包含它，才能据该断言判 B 失败。A-A 对照帮助识别噪声。",
           "enabled": true,
           "sourceSections": [
-            "### Verification 验证",
-            "### A/B Diff Regression Testing  A/B 差异回归测试",
-            "#### Limitations  局限性"
+            "Verification",
+            "A/B Diff Regression Testing A/B",
+            "Limitations"
           ],
           "afterParagraph": "让人一眼就能看出当前变更的影响，以及下一个待发布版本的累积影响。",
           "desktop": "assets/diagrams/sections/ch14-04.svg",
@@ -1714,8 +1731,8 @@
           "summary": "本章广告服务在内部超时后不展示广告而非返回500；这种降级可能看似业务缺陷。区分内部服务期限与测试等待，展示重跑加重过载的循环及事件等待的退出条件。",
           "enabled": true,
           "sourceSections": [
-            "#### Speeding up tests  加快测试运行",
-            "#### Driving out flakiness  消除测试不稳定性"
+            "Speeding up tests",
+            "Driving out flakiness"
           ],
           "afterParagraph": "因此，必须清楚地呈现这种失败原因，并让内部超时时间易于针对测试场景调整。",
           "desktop": "assets/diagrams/sections/ch14-05.svg",
@@ -1739,7 +1756,7 @@
           "title": "用数据衔接较小的集成测试",
           "summary": "拆分跨系统用户旅程，用持久化的输出作为下一对组件测试的输入；数据衔接不要求测试串行执行。",
           "sourceSections": [
-            "#### Larger Tests at Google Scale 谷歌规模下的较大规模测试"
+            "Larger Tests at Google Scale"
           ],
           "afterParagraph": "具体做法是将一个测试的输出持久化到数据存储中，供另一个测试作为输入使用。",
           "desktop": "assets/diagrams/sections/ch14-02.svg",
@@ -1763,10 +1780,11 @@
       "id": "ch15",
       "number": 15,
       "title": "第十五章 弃用",
+      "englishTitle": "Deprecation",
       "file": "zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
+      "source": "en/Chapter-15_Deprecation/Chapter-15_Deprecation.md",
       "route": "/zh-cn/Chapter-15_Deprecation/Chapter-15_Deprecation",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch15.json",
+      "content": "assets/reader-content/ch15.json",
       "sectionGuides": [
         {
           "id": "ch15-01",
@@ -1774,8 +1792,8 @@
           "title": "存在已久，不等于已经过时",
           "summary": "LaTeX 是年龄不构成弃用理由的原文反例；新系统用户仍经组件依赖旧系统，则揭示为什么发布替代品没有自动消除旧系统成本。",
           "sourceSections": [
-            "## Why Deprecate? 为什么要弃用？",
-            "## 为什么弃用这么难？ (Why Is Deprecation So Hard?)"
+            "Why Deprecate?",
+            "Why Is Deprecation So Hard?"
           ],
           "afterParagraph": "用户可能需要使用新系统，却仍然依赖某些使用旧系统的组件。",
           "desktop": "assets/diagrams/sections/ch15-01.svg",
@@ -1798,8 +1816,8 @@
           "title": "静态清单之外，谁还在用？",
           "summary": "对照静态引用和计划停服揭示的运行依赖，说明代码搜索、日志采样与停服演练提供的证据如何互补，并可能改变迁移计划。",
           "sourceSections": [
-            "### Compulsory Deprecation  强制性弃用",
-            "#### Discovery  发现使用者"
+            "Compulsory Deprecation",
+            "Discovery"
           ],
           "afterParagraph": "不过静态分析工具提供的语义信息，通常已经足以发现对过时系统的所有依赖。",
           "desktop": "assets/diagrams/sections/ch15-02.svg",
@@ -1822,8 +1840,8 @@
           "title": "同一条弃用警告，何时才有用？",
           "summary": "区分 A 到 B 到 C 的依赖方向和 C 的警告传到 A 的方向；对照泛报与新修改行上的替代调用提示，并以数据迁移邮件说明准备时间。",
           "sourceSections": [
-            "### Deprecation Warnings  弃用警告",
-            "#### Preventing backsliding  防止新增旧系统依赖"
+            "Deprecation Warnings",
+            "Preventing backsliding"
           ],
           "afterParagraph": "让我们在增加警告的同时，避免用户产生警报疲劳。",
           "desktop": "assets/diagrams/sections/ch15-03.svg",
@@ -1846,10 +1864,10 @@
           "title": "迁移与收紧许可，缺一不可",
           "summary": "甲迁到新系统后，从旧系统可见性白名单中删去甲，保留尚未迁出的乙；新增丙和甲的回退都不再获准依赖旧目标。",
           "sourceSections": [
-            "### Milestones  制定里程碑",
-            "#### Discovery  发现使用者",
-            "#### Migration  迁移",
-            "#### Preventing backsliding  防止新增旧系统依赖"
+            "Milestones",
+            "Discovery",
+            "Migration",
+            "Preventing backsliding"
           ],
           "afterParagraph": "自动化工具会定期检查白名单，随着各个依赖方迁出旧系统，逐步删减相应条目。",
           "desktop": "assets/diagrams/sections/ch15-04.svg",
@@ -1872,10 +1890,11 @@
       "id": "ch16",
       "number": 16,
       "title": "第十六章 版本控制和分支管理",
+      "englishTitle": "Version Control and Branch Management",
       "file": "zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md",
+      "source": "en/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management.md",
       "route": "/zh-cn/Chapter-16_Version_Control_and_Branch_Management/Chapter-16_Version_Control_and_Branch_Management",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch16.json",
+      "content": "assets/reader-content/ch16.json",
       "sectionGuides": [
         {
           "id": "ch16-01",
@@ -1884,8 +1903,8 @@
           "summary": "在 DVCS 示例中，本地已有搜索提交 B 时，组织指定的 origin/main 仍只有 A；B 合入该主干后，从主干同步的同事才得到 B。",
           "enabled": true,
           "sourceSections": [
-            "### Centralized VCS Versus Distributed VCS  集中式 VCS 与分布式 VCS",
-            "### Source of Truth 权威来源"
+            "Centralized VCS Versus Distributed VCS",
+            "Source of Truth"
           ],
           "afterParagraph": "工作进入该仓库的主干分支，才算“完成”。",
           "desktop": "assets/diagrams/sections/ch16-01.svg",
@@ -1908,7 +1927,7 @@
           "summary": "保留原有 A 到 Abseil 原版的依赖路径，用虚线标出新增 B 后引入未改名分叉的第二条路径，显示同一程序的传递依赖如何改变。",
           "enabled": true,
           "sourceSections": [
-            "### Scenario: Multiple Available Versions  场景：多个可用版本"
+            "Scenario: Multiple Available Versions"
           ],
           "afterParagraph": "这既昂贵又令人遗憾，也不利于规模扩展。",
           "desktop": "assets/diagrams/sections/ch16-03.svg",
@@ -1931,8 +1950,8 @@
           "summary": "对照 v1、v2 升级前后的仓库存放状态与应用 A、B、C 的依赖。迁移中 A 暂留 v1、B 已用 v2，但新应用 C 不准再依赖 v1。",
           "enabled": true,
           "sourceSections": [
-            "### One Version  单版本",
-            "### The “One-Version” Rule  “单版本”规则"
+            "One Version",
+            "The “One-Version” Rule"
           ],
           "afterParagraph": "能够更准确地传达这条规则的重要含义。",
           "desktop": "assets/diagrams/sections/ch16-04.svg",
@@ -1955,8 +1974,8 @@
           "summary": "同一张 A、B 依赖公共库 L 的图，分别放在一个物理仓库和三个独立仓库内。仓库边界改变，指定依赖仍唯一；多仓库需要额外协调主干、先后和依赖关系。",
           "enabled": true,
           "sourceSections": [
-            "## Monorepos    单体代码仓库",
-            "## Future of Version Control  版本控制的未来"
+            "Monorepos",
+            "Future of Version Control"
           ],
           "afterParagraph": "以某种方式构建类似 VMR 的体系，可能更能兼得两者之长。",
           "desktop": "assets/diagrams/sections/ch16-05.svg",
@@ -1982,9 +2001,9 @@
           "enabled": false,
           "removalReason": "与本章概览重复。重写后的概览已经用 C、F、N 的内容状态展示开发支线合回、发布分支只取修复并最终弃用；保留这张匿名时间线没有增加独立问题或证据。",
           "sourceSections": [
-            "### Dev Branches  开发分支",
-            "### Release Branches  发布分支",
-            "#### What About Release Branches?  发布分支呢？"
+            "Dev Branches",
+            "Release Branches",
+            "What About Release Branches?"
           ],
           "afterParagraph": "开发分支最终要合回主干，期间甚至可能被另一个团队用来创建新分支；发布分支最终则会弃用。",
           "desktop": "assets/diagrams/sections/ch16-02.svg",
@@ -2006,10 +2025,11 @@
       "id": "ch17",
       "number": 17,
       "title": "第十七章 代码搜索",
+      "englishTitle": "Code Search",
       "file": "zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search.md",
+      "source": "en/Chapter-17_Code_Search/Chapter-17_Code_Search.md",
       "route": "/zh-cn/Chapter-17_Code_Search/Chapter-17_Code_Search",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch17.json",
+      "content": "assets/reader-content/ch17.json",
       "sectionGuides": [
         {
           "id": "ch17-01",
@@ -2018,8 +2038,8 @@
           "summary": "新增 worker.cc 中的 Send 调用后，文本查询已显示它，旧交叉引用图却还未包含这次调用；两种结果使用的索引状态不同。",
           "enabled": true,
           "sourceSections": [
-            "### Scale 规模",
-            "### Index Latency 索引延迟"
+            "Scale",
+            "Index Latency"
           ],
           "afterParagraph": "两者不同步，会引发一些虽不常见、却反复出现的用户问题。",
           "desktop": "assets/diagrams/sections/ch17-01.svg",
@@ -2042,9 +2062,9 @@
           "summary": "查询 Point 时，假设常规检索只取到 a.cc、b.cc 中的使用处；补充检索把 point.h 的定义加入，才有机会参与评分。",
           "enabled": true,
           "sourceSections": [
-            "#### Query independent signals 查询无关信号",
-            "#### Query dependent signals 查询相关信号",
-            "#### Retrieval 检索"
+            "Query independent signals",
+            "Query dependent signals",
+            "Retrieval"
           ],
           "afterParagraph": "只对检索阶段最有希望的文档作完整评估。",
           "desktop": "assets/diagrams/sections/ch17-02.svg",
@@ -2067,8 +2087,8 @@
           "summary": "同一 OldApi 查询在两分片中有四个示例匹配：首屏仅列 a.cc、b.cc 并不排除 y.cc、z.cc；重构须明确请求各片全部结果。",
           "enabled": true,
           "sourceSections": [
-            "### Completeness: All Versus Most-Relevant Results 完整性：所有结果与最相关结果",
-            "### Completeness: Repository at Head 完整性：代码仓库的最新版本"
+            "Completeness: All Versus Most-Relevant Results",
+            "Completeness: Repository at Head"
           ],
           "afterParagraph": "结果还可以按字母顺序返回，而不是按相关性排序，这对某些工具很有用。",
           "desktop": "assets/diagrams/sections/ch17-03.svg",
@@ -2091,8 +2111,8 @@
           "summary": "查询 OldApi 的示例中，基线中的 a.cc 被修改、d.cc 被删除，只有未修改的 b.cc 和新增的 c.cc 命中；更新的 head 也不能替代同步快照。",
           "enabled": true,
           "sourceSections": [
-            "### 搜索索引",
-            "### Completeness: Head Versus Branches Versus All History Versus Workspaces 完整性：最新版本、分支、完整历史与工作区"
+            "Search Index",
+            "Completeness: Head Versus Branches Versus All History Versus Workspaces"
           ],
           "afterParagraph": "工作区索引必须准确反映工作区的当前状态，才有价值。",
           "desktop": "assets/diagrams/sections/ch17-04.svg",
@@ -2114,10 +2134,11 @@
       "id": "ch18",
       "number": 18,
       "title": "第十八章 构建系统与构建理念",
+      "englishTitle": "Build Systems and Build Philosophy",
       "file": "zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
+      "source": "en/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy.md",
       "route": "/zh-cn/Chapter-18_Build_Systems_and_Build_Philosophy/Chapter-18_Build_Systems_and_Build_Philosophy",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch18.json",
+      "content": "assets/reader-content/ch18.json",
       "sectionGuides": [
         {
           "id": "ch18-01",
@@ -2125,9 +2146,9 @@
           "title": "互不依赖，就能安全并行吗？",
           "summary": "B 与 C 虽无依赖边，却可能写同一状态文件；交换最后写入者即可得到不同结果。对照声明并隔离输出的两个动作，说明安全并行需要掌握资源读写，而不只是任务依赖图。",
           "sourceSections": [
-            "#### The dark side of task-based build systems 基于任务的构建系统的缺陷",
-            "### Artifact-Based Build Systems 基于产物的构建系统",
-            "### Other nifty Bazel tricks 其他巧妙的 Bazel 做法"
+            "The dark side of task-based build systems",
+            "Artifact-Based Build Systems",
+            "Other nifty Bazel tricks"
           ],
           "afterParagraph": "系统完全掌握何时运行哪些工具，因此能够作出更强的保证，在确保正确性的同时大幅提高效率。",
           "desktop": "assets/diagrams/sections/ch18-01.svg",
@@ -2150,7 +2171,7 @@
           "title": "改 common，为什么不重建 otherlib？",
           "summary": "保留原文的 common 变更传播图，补上 Guava，并同时显示使用方指向依赖的声明和反向的产物流。common、mylib、MyBinary 重建，otherlib 与 Guava 复用；只改 MyBinary.java 则只重建 MyBinary。",
           "sourceSections": [
-            "#### A functional perspective 函数式视角"
+            "A functional perspective"
           ],
           "afterParagraph": "并行执行与结果复用，还将成为后文所述分布式、高可扩展性构建系统的基础。",
           "desktop": "assets/diagrams/sections/ch18-02.svg",
@@ -2173,7 +2194,7 @@
           "title": "哈希能拒绝错文件，不能找回文件",
           "summary": "固定 S1 清单中的 Guava 哈希 H1，对比三种获取结果：H2 被拒绝，镜像中的 H1 可接受，所有副本缺失则失败。升级须批准并提交新清单，不能为了构建成功自动改用新版。",
           "sourceSections": [
-            "### Other nifty Bazel tricks 其他巧妙的 Bazel 做法"
+            "Other nifty Bazel tricks"
           ],
           "afterParagraph": "否则，即使已提交的哈希值能保证安全，构建系统的可用性仍将受制于第三方。",
           "desktop": "assets/diagrams/sections/ch18-03.svg",
@@ -2196,7 +2217,7 @@
           "title": "直接使用，就直接声明依赖",
           "summary": "固定 A 调用 C.f() 的示例，只比较是否声明 A → C。两侧都移除 B → C 后，借用传递依赖的一侧失去 C，而显式声明的一侧仍保有 C；严格模式能在移除前就发现缺少的直接依赖。",
           "sourceSections": [
-            "#### Internal dependencies 内部依赖"
+            "Internal dependencies"
           ],
           "afterParagraph": "工程师可以移除不再需要的依赖项，无需担心破坏依赖自己目标的其他目标。",
           "desktop": "assets/diagrams/sections/ch18-05.svg",
@@ -2221,8 +2242,8 @@
           "title": "缓存共享结果，远程执行共享算力",
           "summary": "远程缓存复用已经存在的产物，未命中仍需执行构建；远程执行把动作调度到工作节点，依赖就绪后通过缓存共享中间产物。本图退役，相关流程由正文与原书图18-2、18-3保留。",
           "sourceSections": [
-            "### Remote caching 远程缓存",
-            "### Remote execution 远程执行"
+            "Remote caching",
+            "Remote execution"
           ],
           "afterParagraph": "基于任务的系统很难提供这些保证，因此，在它之上实现可靠的远程执行系统几乎不可能。",
           "desktop": "assets/diagrams/sections/ch18-04.svg",
@@ -2246,10 +2267,11 @@
       "id": "ch19",
       "number": 19,
       "title": "第十九章 Critique：谷歌的代码审查工具",
+      "englishTitle": "Critique: Google’s Code Review Tool",
       "file": "zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md",
+      "source": "en/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool.md",
       "route": "/zh-cn/Chapter-19_Critique_Googles_Code_Review_Tool/Chapter-19_Critique_Googles_Code_Review_Tool",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch19.json",
+      "content": "assets/reader-content/ch19.json",
       "sectionGuides": [
         {
           "id": "ch19-01",
@@ -2257,9 +2279,9 @@
           "title": "新快照清除哪些已审查标记？",
           "summary": "示例中甲、乙都看过 v1，v2 只把 a.cc 的 n 改为 count：a.cc 对两人的已审查勾选都被清除，未变的 b.cc 保留勾选。文件已审查标记不同于 LGTM。",
           "sourceSections": [
-            "### Diffing 差异比较",
-            "### Commenting 提出审查意见",
-            "## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）"
+            "Diffing",
+            "Commenting",
+            "Stage 5: Change Approvals (Scoring a Change)"
           ],
           "afterParagraph": "当作者修改文件、更新最新快照后，系统会清除所有审查者对该文件的“已审查”勾选。",
           "enabled": true,
@@ -2282,8 +2304,8 @@
           "title": "甲已发意见，为什么还在等乙？",
           "summary": "同一参与者名单的三次交接：先等甲乙审查；甲发布意见后，等作者处理且仍等乙；作者回复甲后，等甲复看且仍等乙。示例通过手动设置关注集明确等待关系，不假定具体自动更新算法。",
           "sourceSections": [
-            "### Commenting 提出审查意见",
-            "#### “Whose turn” feature “轮到谁”功能"
+            "Commenting",
+            "“Whose turn” feature"
           ],
           "afterParagraph": "Critique 通过加粗相关用户名来标示关注集成员。",
           "enabled": true,
@@ -2306,10 +2328,10 @@
           "title": "四种评分状态，下一步各找谁？",
           "summary": "四个独立评分案例每次只缺一项：缺 LGTM、缺所需批准、尚有未解决意见，分别对应不同的下一步；只有三项都满足时可启动提交，提交前检查失败仍不能入库。",
           "sourceSections": [
-            "## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）",
-            "## Stage 6: Commiting a Change 阶段6：提交变更",
-            "## Code Review Flow 代码审查流程",
-            "## Conclusion 总结"
+            "Stage 5: Change Approvals (Scoring a Change)",
+            "Stage 6: Commiting a Change",
+            "Code Review Flow",
+            "Conclusion"
           ],
           "afterParagraph": "主动信任他人，也有助于建立信任、增强团队凝聚力。",
           "enabled": true,
@@ -2334,7 +2356,7 @@
           "title": "集成入口，不把所有工具塞进审查",
           "summary": "以 Critique 为审查中心，分别标示编辑、搜索和发布的链接入口，以及在审查界面中显示的分析结果和覆盖率，体现原文的关注点分离。",
           "sourceSections": [
-            "### Tight Tool Integration 紧密的工具集成"
+            "Tight Tool Integration"
           ],
           "afterParagraph": "测试覆盖率是一个例外：文件的 diff 视图会在行号栏用不同背景色表示各行是否被测试覆盖，但并非所有项目都使用这一覆盖率工具。",
           "enabled": false,
@@ -2358,10 +2380,11 @@
       "id": "ch20",
       "number": 20,
       "title": "第二十章 静态分析",
+      "englishTitle": "Static Analysis",
       "file": "zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
+      "source": "en/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis.md",
       "route": "/zh-cn/Chapter-20_Static_Analysis/Chapter-20_Static_Analysis",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch20.json",
+      "content": "assets/reader-content/ch20.json",
       "codeVariants": "assets/code-variants/ch20.json",
       "sectionGuides": [
         {
@@ -2371,7 +2394,7 @@
           "summary": "保留技术正确性与积极行动的二维矩阵，并用原文 Hashtable.contains 示例提供意图、方法语义和实际修改三项证据，定位技术误报但非感知误报的格子。",
           "enabled": true,
           "sourceSections": [
-            "### Focus on Developer Happiness  关注开发者的幸福感"
+            "Focus on Developer Happiness"
           ],
           "afterParagraph": "反过来，如果分析报告了真实缺陷，开发者却没有理解，因此未采取行动，这也算感知误报。",
           "desktop": "assets/diagrams/sections/ch20-01.svg",
@@ -2394,7 +2417,7 @@
           "summary": "用 Guava 只支持 %s 的原文案例，对照用户和分析器对占位符的不同计数，再展示无用反馈如何促成诊断改写，并与请修复的处理对象区分。",
           "enabled": true,
           "sourceSections": [
-            "### Integrated Feedback Channels  集成反馈渠道"
+            "Integrated Feedback Channels"
           ],
           "afterParagraph": "这可能决定开发者能否在阅读提示时学到东西。",
           "desktop": "assets/diagrams/sections/ch20-03.svg",
@@ -2417,7 +2440,7 @@
           "summary": "对照先开错误导致旧项目失败与先扫描、自动修复、测试提交清理后再启用错误的推广顺序，同时保留严格准入条件和提交前后发现失败的区别。",
           "enabled": true,
           "sourceSections": [
-            "### Compiler Integration 编译器集成"
+            "Compiler Integration"
           ],
           "afterParagraph": "构建失败会在提交后由持续集成（CI）系统发现，或在提交前由预提交检查发现，参见前文。",
           "desktop": "assets/diagrams/sections/ch20-04.svg",
@@ -2443,7 +2466,7 @@
           "enabled": false,
           "removalReason": "请求、服务器、存储、界面的通用框图主要复述相邻架构段落，未展示开发者如何判断或处理报告；已有图20-1展示审查界面。本轮保留源文架构说明与原 SVG 以便追溯，不再额外插入该图。",
           "sourceSections": [
-            "## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台"
+            "Tricorder: Google’s Static Analysis Platform Tricorder： Google"
           ],
           "afterParagraph": "谷歌各处的开发者会编写 Tricorder 分析，称为“分析器”，也会为已有分析贡献单独的“检查项”。",
           "desktop": "assets/diagrams/sections/ch20-02.svg",
@@ -2465,10 +2488,11 @@
       "id": "ch21",
       "number": 21,
       "title": "第二十一章 依赖管理",
+      "englishTitle": "Dependency Management",
       "file": "zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md",
+      "source": "en/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management.md",
       "route": "/zh-cn/Chapter-21_Dependency_Management/Chapter-21_Dependency_Management",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch21.json",
+      "content": "assets/reader-content/ch21.json",
       "sectionGuides": [
         {
           "id": "ch21-01",
@@ -2477,8 +2501,8 @@
           "summary": "将两条路径的声明范围逐一代入候选版本，显示迁移前无共同解；完成 libb 迁移并更新要求后才出现共同候选，不把约束通过当作 API 兼容证明。",
           "enabled": true,
           "sourceSections": [
-            "### Conflicting Requirements and Diamond Dependencies  要求冲突与菱形依赖",
-            "### Semantic Versioning  语义化版本管理"
+            "Conflicting Requirements and Diamond Dependencies",
+            "Semantic Versioning"
           ],
           "afterParagraph": "只要某个上层节点通过两条路径，要求同一个底层节点同时使用两个不兼容的版本，就会出问题。",
           "desktop": "assets/diagrams/sections/ch21-01.svg",
@@ -2501,7 +2525,7 @@
           "summary": "以同一个 third_party 包的前后使用路径对比：从演示引入到搜索的传递依赖，登记未更新而人员已转岗；删除会破坏构建，升级又缺乏维护经验。",
           "enabled": true,
           "sourceSections": [
-            "### How Google Handles Importing Dependencies  Google如何引入依赖"
+            "How Google Handles Importing Dependencies"
           ],
           "afterParagraph": "结果就是，Alice 和这个包的其他使用方将面临一次昂贵而艰难的升级",
           "desktop": "assets/diagrams/sections/ch21-02.svg",
@@ -2524,8 +2548,8 @@
           "summary": "通过 Foo / Bar 的签名对照与无序流首项断言，展示声明版本范围和真实使用结果可向两个方向偏离；示意签名、数组和补丁编号均不冒充原文代码。",
           "enabled": true,
           "sourceSections": [
-            "### SemVer Might Overconstrain  SemVer可能过度约束",
-            "### SemVer Might Overpromise  SemVer可能过度承诺"
+            "SemVer Might Overconstrain",
+            "SemVer Might Overpromise"
           ],
           "afterParagraph": "这时可能出现构建错误或运行时缺陷，其严重程度理论上没有上限。",
           "desktop": "assets/diagrams/sections/ch21-03.svg",
@@ -2548,7 +2572,7 @@
           "summary": "沿用 liba≥1.7，补充另一使用方的最低要求，逐列核对所有要求；libb 下限从1.6升至1.8后，共同最低候选必须由1.7变成1.8，仍须纳入传递要求和组合测试。",
           "enabled": true,
           "sourceSections": [
-            "### Minimum Version Selection  最小版本选择"
+            "Minimum Version Selection"
           ],
           "afterParagraph": "现在运行一些测试，看看是否正常吧。",
           "desktop": "assets/diagrams/sections/ch21-04.svg",
@@ -2571,7 +2595,7 @@
           "summary": "同一份代码按环境选择不同 flags 分叉，并依赖观察到的等效行为；只改内部实现后这一假设失效，跨环境构建与发布出错，从而推迟内部优化。",
           "enabled": true,
           "sourceSections": [
-            "#### Example: open sourcing gflags  示例：开源 gflags"
+            "Example: open sourcing gflags"
           ],
           "afterParagraph": "海勒姆定律又一次影响了软件变更，这次甚至涉及由不同组织维护的分叉 API。",
           "desktop": "assets/diagrams/sections/ch21-05.svg",
@@ -2593,10 +2617,11 @@
       "id": "ch22",
       "number": 22,
       "title": "第二十二章 大规模变更",
+      "englishTitle": "Large-Scale Changes",
       "file": "zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md",
+      "source": "en/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes.md",
       "route": "/zh-cn/Chapter-22_Large-Scale_Changes/Chapter-22_Large-Scale_Changes",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch22.json",
+      "content": "assets/reader-content/ch22.json",
       "sectionGuides": [
         {
           "id": "ch22-01",
@@ -2605,9 +2630,9 @@
           "summary": "示意把函数返回类型从 int 改为 long：若先提交头文件，声明与旧实现不一致；把头文件与实现放进同一分片，才能形成可独立提交的变更。另一项目的独立修改不必捆绑提交。",
           "enabled": true,
           "sourceSections": [
-            "## What Is a Large-Scale Change? 什么是大规模变更？",
-            "### Sharding and Submitting  分片与提交",
-            "#### Testing 测试"
+            "What Is a Large-Scale Change?",
+            "Sharding and Submitting",
+            "Testing"
           ],
           "afterParagraph": "本章后面会详细讨论原子变更可能遇到的障碍。",
           "desktop": "assets/diagrams/sections/ch22-01.svg",
@@ -2630,8 +2655,8 @@
           "summary": "以三个分片和四个测试为示例，先跑受影响测试的并集；若 b 失败，甲、乙分别重跑 b，丙与失败集的交集为空。甲通过、乙失败的示例说明合测失败不能直接归罪于整批分片。",
           "enabled": true,
           "sourceSections": [
-            "#### Testing 测试",
-            "##### Case Study: Testing LSCs  案例研究：测试大规模变更"
+            "Testing",
+            "Case Study: Testing LSCs"
           ],
           "afterParagraph": "因此再向这批分片加入变更，几乎不会增加成本。",
           "desktop": "assets/diagrams/sections/ch22-02.svg",
@@ -2654,8 +2679,8 @@
           "summary": "用新旧类型的兼容矩阵比较别名前后：没有转换适配时，新旧类型不同会卡住混合迁移；旧名成为新类型别名后，API 和调用方即使分批改名，也指向同一类型。行为准备仍是前提，旧引用清完才删除别名。",
           "enabled": true,
           "sourceSections": [
-            "##### Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr",
-            "### Language Support  编程语言支持"
+            "Case Study: scoped_ptr to std::unique_ptr",
+            "Language Support"
           ],
           "afterParagraph": "最后删除旧的 scoped_ptr 别名，完成了迁移。",
           "desktop": "assets/diagrams/sections/ch22-03.svg",
@@ -2678,10 +2703,10 @@
           "summary": "以类型改名为例：符合既定替换模式的分片可由全局审批人的工具批准；冲突后出现额外行为修改时需人工核查；依赖项目特有行为时需本地所有者提供背景。迁移授权并不等于每个分片已获批准。",
           "enabled": true,
           "sourceSections": [
-            "### Authorization  授权",
-            "#### Mailing reviewers  邮件送审",
-            "#### Reviewing 审查",
-            "#### Submitting 提交"
+            "Authorization",
+            "Mailing reviewers",
+            "Reviewing",
+            "Submitting"
           ],
           "afterParagraph": "审查流程也就能够有效地随规模扩展。",
           "desktop": "assets/diagrams/sections/ch22-04.svg",
@@ -2703,10 +2728,11 @@
       "id": "ch23",
       "number": 23,
       "title": "第二十三章 持续集成",
+      "englishTitle": "Continuous Integration",
       "file": "zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md",
+      "source": "en/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration.md",
       "route": "/zh-cn/Chapter-23_Continuous_Integration/Chapter-23_Continuous_Integration",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch23.json",
+      "content": "assets/reader-content/ch23.json",
       "sectionGuides": [
         {
           "id": "ch23-01",
@@ -2714,9 +2740,9 @@
           "title": "head 与 RC：测试证据属于哪个版本？",
           "summary": "同一仓库快照中，最新提交可领先于 CB 最新验证通过的提交。CD 通常取 green head 组装候选，候选本身仍需测试；拣选修复形成新候选后，必须取得与新候选关联的测试证据。",
           "sourceSections": [
-            "#### Continuous Build 持续构建",
-            "#### Continuous Delivery 持续交付",
-            "#### Release candidate testing 候选发布版本测试"
+            "Continuous Build",
+            "Continuous Delivery",
+            "Release candidate testing"
           ],
           "afterParagraph": "减少生产环境中的意外。",
           "desktop": "assets/diagrams/sections/ch23-01.svg",
@@ -2739,8 +2765,8 @@
           "title": "两个提交前通过，为什么组合后失败？",
           "summary": "假设配置变更 A 改用 v2，客户端变更 B 只保留 v1；两者在同一旧基线上各自通过同一测试，组合却失败。不同文件无文本冲突，不代表没有语义冲突；提交后必须检查实际组合并处置失败。",
           "sourceSections": [
-            "#### Why presubmit isn’t enough 为什么仅靠提交前测试还不够",
-            "#### Presubmit versus post-submit 提交前测试与提交后测试"
+            "Why presubmit isn’t enough",
+            "Presubmit versus post-submit"
           ],
           "afterParagraph": "只要有适当的处理机制，提交后测试就可以耗时更长，也可以容忍一定的不稳定性。",
           "desktop": "assets/diagrams/sections/ch23-02.svg",
@@ -2763,7 +2789,7 @@
           "title": "录制／重放：什么变化应让缓存失配？",
           "summary": "假设 ZIP 解码器面对请求变化：忽略格式变动会重放旧响应并漏报；只因追踪字段变化就失配会引入无关维护；识别实质变化、刷新响应后仍失败，才获得有用信号。封闭性仍不消除所有非确定性。",
           "sourceSections": [
-            "### Hermetic Testing  封闭测试"
+            "Hermetic Testing"
           ],
           "afterParagraph": "要判断请求是否发生了实质变化，可能极其困难。",
           "desktop": "assets/diagrams/sections/ch23-03.svg",
@@ -2786,7 +2812,7 @@
           "title": "Takeout：用成对结果缩小排查范围",
           "summary": "新二进制与生产二进制运行相同测试、连接相同真实后端。四种假设结果组合给出不同排查方向；结果对照不是根因证明。录制／重放在 Takeout 案例中仍是未来改进。",
           "sourceSections": [
-            "#### Scenario #3: Debugging “all of Google” 场景3：调试“整个谷歌”"
+            "Scenario #3: Debugging “all of Google”"
           ],
           "afterParagraph": "提交后 CI 使用新构建的二进制文件，但与生产环境连接相同的真实后端。",
           "desktop": "assets/diagrams/sections/ch23-04.svg",
@@ -2809,10 +2835,11 @@
       "id": "ch24",
       "number": 24,
       "title": "第二十四章 持续交付",
+      "englishTitle": "Continuous Delivery",
       "file": "zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md",
+      "source": "en/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery.md",
       "route": "/zh-cn/Chapter-24_Continuous_Delivery/Chapter-24_Continuous_Delivery",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch24.json",
+      "content": "assets/reader-content/ch24.json",
       "sectionGuides": [
         {
           "id": "ch24-02",
@@ -2820,7 +2847,7 @@
           "title": "关掉功能，不等于移除代码",
           "summary": "对照同一 v2 的运行时关闭与开启状态，以及构建时剔除新代码的另一产物。关闭只改变所走路径；不存在的代码不能仅靠配置启用。动态配置仍需谨慎发布，已部署的关闭代码仍可能被提取。",
           "sourceSections": [
-            "## Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能"
+            "Evaluating Changes in Isolation: Flag-Guarding Features"
           ],
           "afterParagraph": "仍是实现应用长期可持续性的重要手段。",
           "desktop": "assets/diagrams/sections/ch24-02.svg",
@@ -2843,9 +2870,9 @@
           "title": "功能迟到，与质量阻塞不同",
           "summary": "用按时就绪的 A 和迟到的 B 示意常规发车选择，再与书中因罕见方言搜索返回空白而延迟整个发布的实际案例对照。功能截止保护节奏，质量判断仍保护用户。",
           "sourceSections": [
-            "### No Binary Is Perfect 没有完美的二进制包",
-            "### Meet Your Release Deadline 遵守发布截止时间",
-            "## Changing Team Culture: Building Discipline into Deployment 改变团队文化：严格遵守部署流程"
+            "No Binary Is Perfect",
+            "Meet Your Release Deadline",
+            "Changing Team Culture: Building Discipline into Deployment"
           ],
           "afterParagraph": "这能减轻开发者的焦虑，也能大大改善发布工程师的工作与生活平衡。",
           "desktop": "assets/diagrams/sections/ch24-03.svg",
@@ -2868,7 +2895,7 @@
           "title": "更新后指标变了，原因是什么？",
           "summary": "旧版重发与新版同时经历更新，用对照区分更新本身与版本差异。以非实测的同向变化说明为什么不能仅凭更新前后归因，并区分证据充分且护栏达标、证据不足、护栏恶化三种发布后果。",
           "sourceSections": [
-            "## Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策"
+            "Shifting Left: Making Data-Driven Decisions Earlier"
           ],
           "afterParagraph": "这样在逐步发布时，需要检验的就只有部署本身的稳定性。",
           "desktop": "assets/diagrams/sections/ch24-04.svg",
@@ -2893,8 +2920,8 @@
           "title": "持续交付不等于持续部署",
           "summary": "持续交付让团队维持随时可部署的状态；持续部署进一步让符合条件的变更自动进入生产。创建可发布版本的频率、实际部署频率和用户收到更新的频率可以分别选择。",
           "sourceSections": [
-            "## Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践",
-            "## Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能"
+            "Idioms of Continuous Delivery at Google",
+            "Quality and User-Focus: Ship Only What Gets Used"
           ],
           "afterParagraph": "团队可以先具备随时部署的能力，而不必真的随时部署，逐步建立信心，为今后更频繁地发布作准备。",
           "desktop": "assets/diagrams/sections/ch24-01.svg",
@@ -2918,10 +2945,11 @@
       "id": "ch25",
       "number": 25,
       "title": "第二十五章 计算即服务",
+      "englishTitle": "Compute as a Service",
       "file": "zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md",
+      "source": "en/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service.md",
       "route": "/zh-cn/Chapter-25_Compute_as_a_Service/Chapter-25_Compute_as_a_Service",
-      "keepEnglish": [],
-      "review": "assets/reader-review/ch25.json",
+      "content": "assets/reader-content/ch25.json",
       "sectionGuides": [
         {
           "id": "ch25-01",
@@ -2930,9 +2958,9 @@
           "summary": "日志分析与搜索服务共用健康机器时，仅声明 CPU、RAM 不能约束实际超用。调度排除故障机器，隔离机制执行资源边界；CPU 争抢会影响邻居延迟，整机 RAM 耗尽可能终止进程或引起交换延迟。",
           "enabled": true,
           "sourceSections": [
-            "#### Automated scheduling 自动调度",
-            "### Containerization and Multitenancy 容器化和多租户",
-            "#### My neighbor’s dog barks in my RAM 邻居家的狗在我的内存中吠叫"
+            "Automated scheduling",
+            "Containerization and Multitenancy",
+            "My neighbor’s dog barks in my RAM"
           ],
           "afterParagraph": "这是一种轻量级机制，基于 cgroups",
           "desktop": "assets/diagrams/sections/ch25-01.svg",
@@ -2955,9 +2983,9 @@
           "summary": "甲在 K2 未上报时终止，乙重领 K2，不重做已上报的 K1。另一个计划维护示例中，甲停止接受新请求并完成在途 Q1，负载均衡把新请求 Q2 转给乙。突然故障不一定有排空机会，实例重建不提供幂等效果。",
           "enabled": true,
           "sourceSections": [
-            "### Architecting for Failure 为应对故障设计架构",
-            "### Batch Versus Serving 批处理作业与服务作业",
-            "#### Multitenancy for serving jobs 服务作业的多租户支持"
+            "Architecting for Failure",
+            "Batch Versus Serving",
+            "Multitenancy for serving jobs"
           ],
           "afterParagraph": "但要在故障率适中的情况下仍然平稳运行，还需要额外的设计和投入。",
           "desktop": "assets/diagrams/sections/ch25-02.svg",
@@ -2980,8 +3008,8 @@
           "summary": "比萨订单 P7 已写入，答复却丢失。客户端向新实例重试同一 P7，接口查到已有订单并返回成功，而不是再创建一份。退避与抖动控制重试压力，按同一订单标识查重控制业务效果，两者不相互替代。",
           "enabled": true,
           "sourceSections": [
-            "### Managing State 管理状态",
-            "#### Connecting to a Service 连接到服务"
+            "Managing State",
+            "Connecting to a Service"
           ],
           "afterParagraph": "两个执行相同工作、承担相同角色的副本，也是产生重复请求的潜在原因。",
           "desktop": "assets/diagrams/sections/ch25-03.svg",
@@ -3004,9 +3032,9 @@
           "summary": "搜索服务预留但未使用的资源可被日志分析借用。需要收回 CPU 时暂停批处理，计算停止推进但内存仍占用；需要 RAM 时终止批处理，释放内存而丢失进程状态，重启后重做未上报块。余量不能再当作不可抢占服务的另一份承诺。",
           "enabled": true,
           "sourceSections": [
-            "### One Service to Rule Them All 用一个服务统一管理",
-            "#### Multitenancy for serving jobs 服务作业的多租户支持",
-            "### Architecting for Failure 为应对故障设计架构"
+            "One Service to Rule Them All",
+            "Multitenancy for serving jobs",
+            "Architecting for Failure"
           ],
           "afterParagraph": "都能从牛群式管理中受益。",
           "desktop": "assets/diagrams/sections/ch25-04.svg",
@@ -3029,7 +3057,7 @@
           "summary": "书中团队曾在文件系统覆盖层里把 Bash 路径换成极简执行程序。平台改用 ash 后，绕开既有定制，开始承担真正 shell 的开销，内存反而增加并触发告警、回滚。平台迁移必须检查实际依赖，不仅是新二进制是否存在。",
           "enabled": true,
           "sourceSections": [
-            "## Choosing a Compute Service 选择计算服务"
+            "Choosing a Compute Service"
           ],
           "afterParagraph": "迫使团队回滚变更，也引起了一些不满。",
           "desktop": "assets/diagrams/sections/ch25-05.svg",
@@ -3051,10 +3079,11 @@
       "id": "afterword",
       "number": null,
       "title": "后记",
+      "englishTitle": "Afterword",
       "file": "zh-cn/Afterword.md",
+      "source": "en/Afterword.md",
       "route": "/zh-cn/Afterword",
-      "keepEnglish": [],
-      "review": "assets/reader-review/afterword.json"
+      "content": "assets/reader-content/afterword.json"
     }
   ],
   "guides": {

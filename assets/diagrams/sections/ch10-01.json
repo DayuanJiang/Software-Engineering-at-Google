@@ -3,7 +3,9 @@
   "chapter": 10,
   "title": "发现错误，怎样进入修复？",
   "summary": "对照 GooWiki 中使用者与修复者错开的反馈断点，以及缺陷报告、权威来源、负责人和现有评审流程如何接通修复路径。",
-  "sourceSections": ["## Documentation Is Like Code 把文档当作代码"],
+  "sourceSections": [
+    "Documentation Is Like Code"
+  ],
   "afterParagraph": "能够沿用现有开发者工作流，无须另建一套，是这一做法的重要优势。",
   "desktop": "assets/diagrams/sections/ch10-01.svg",
   "mobile": "assets/diagrams/sections/ch10-01-mobile.svg",

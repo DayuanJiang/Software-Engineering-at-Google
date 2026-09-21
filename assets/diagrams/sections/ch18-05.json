@@ -3,7 +3,9 @@
   "chapter": 18,
   "title": "直接使用，就直接声明依赖",
   "summary": "固定 A 调用 C.f() 的示例，只比较是否声明 A → C。两侧都移除 B → C 后，借用传递依赖的一侧失去 C，而显式声明的一侧仍保有 C；严格模式能在移除前就发现缺少的直接依赖。",
-  "sourceSections": ["#### Internal dependencies 内部依赖"],
+  "sourceSections": [
+    "Internal dependencies"
+  ],
   "afterParagraph": "工程师可以移除不再需要的依赖项，无需担心破坏依赖自己目标的其他目标。",
   "desktop": "assets/diagrams/sections/ch18-05.svg",
   "mobile": "assets/diagrams/sections/ch18-05-mobile.svg",

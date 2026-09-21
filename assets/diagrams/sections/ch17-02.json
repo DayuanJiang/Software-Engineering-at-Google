@@ -4,7 +4,11 @@
   "title": "没进候选，定义再相关也排不上",
   "summary": "查询 Point 时，假设常规检索只取到 a.cc、b.cc 中的使用处；补充检索把 point.h 的定义加入，才有机会参与评分。",
   "enabled": true,
-  "sourceSections": ["#### Query independent signals 查询无关信号", "#### Query dependent signals 查询相关信号", "#### Retrieval 检索"],
+  "sourceSections": [
+    "Query independent signals",
+    "Query dependent signals",
+    "Retrieval"
+  ],
   "afterParagraph": "只对检索阶段最有希望的文档作完整评估。",
   "desktop": "assets/diagrams/sections/ch17-02.svg",
   "mobile": "assets/diagrams/sections/ch17-02-mobile.svg",

@@ -5,9 +5,9 @@
   "summary": "把原文的假设方案拆成 CPU 节省、额外 RAM 与两周工程师投入；资源数量并不足以决定净收益，还须比较相对成本与机会成本。",
   "enabled": true,
   "sourceSections": [
-    "## Trade-offs and Costs 权衡和成本",
-    "### Inputs to Decision Making 决策依据",
-    "## Revisiting Decisions, Making Mistakes 重审决策与犯错"
+    "Trade-offs and Costs",
+    "Inputs to Decision Making",
+    "Revisiting Decisions, Making Mistakes"
   ],
   "afterParagraph": "还取决于人力成本（一名软件工程师两周的投入）和机会成本（他用这两周还能完成什么）。",
   "desktop": "assets/diagrams/sections/ch01-05.svg",

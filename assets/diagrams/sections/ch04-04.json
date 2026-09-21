@@ -3,7 +3,10 @@
   "chapter": 4,
   "title": "与用户共同设计和改进",
   "summary": "将弱势用户参与、从困难用例开始、衡量系统公平性和持续调整组成概念回路。价值观与投入不自动等于公平结果，需要反馈和专业知识。",
-  "sourceSections": ["## Values Versus Outcomes 价值观与结果", "## Stay Curious, Push Forward 保持好奇，继续前行"],
+  "sourceSections": [
+    "Values Versus Outcomes",
+    "Stay Curious, Push Forward"
+  ],
   "afterParagraph": "改变会让人不适，追求高绩效的过程也可能痛苦，但凭借协作和创造力，我们能够做到。",
   "desktop": "assets/diagrams/sections/ch04-04.svg",
   "mobile": "assets/diagrams/sections/ch04-04-mobile.svg",

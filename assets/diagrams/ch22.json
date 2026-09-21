@@ -4,11 +4,11 @@
   "summary": "把一个大改动拆成很多小提交，靠工具和流程批量推进",
   "enabled": true,
   "sourceSections": [
-    "## What Is a Large-Scale Change? 什么是大规模变更？",
-    "## Who Deals with LSCs? 谁负责大规模变更？",
-    "## Barriers to Atomic Changes  原子变更的障碍",
-    "## LSC Infrastructure  LSC基础设施",
-    "## The LSC Process  LSC过程"
+    "What Is a Large-Scale Change?",
+    "Who Deals with LSCs?",
+    "Barriers to Atomic Changes",
+    "LSC Infrastructure",
+    "The LSC Process"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch22.svg",

@@ -3,7 +3,10 @@
   "chapter": 2,
   "title": "同样建议 xyzzy，措辞改变了什么？",
   "summary": "完整并列原文中控制流与 xyzzy 的坏反馈、较好反馈，逐项连接具体措辞与互动变化：从判错转向理解困难，从要求从众转向可拒绝的提议，从服从标准转向清晰和维护目标。",
-  "sourceSections": ["### The Three Pillars of Social Interaction社交互动的三大支柱", "#### Learn to give and take criticism 学会提出和接受建设性批评"],
+  "sourceSections": [
+    "The Three Pillars of Social Interaction",
+    "Learn to give and take criticism"
+  ],
   "afterParagraph": "讨论就始终围绕代码本身，而不是任何人的价值或编程能力。",
   "desktop": "assets/diagrams/sections/ch02-03.svg",
   "mobile": "assets/diagrams/sections/ch02-03-mobile.svg",

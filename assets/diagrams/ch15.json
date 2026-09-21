@@ -4,10 +4,10 @@
   "summary": "弃用是个正式项目：有人负责、有期限、有工具，从设计时就该考虑",
   "enabled": true,
   "sourceSections": [
-    "## Why Deprecate? 为什么要弃用？",
-    "## 为什么弃用这么难？ (Why Is Deprecation So Hard?)",
-    "## Types of Deprecation  “弃用”的类型",
-    "## Managing the Deprecation Process  管理弃用流程"
+    "Why Deprecate?",
+    "Why Is Deprecation So Hard?",
+    "Types of Deprecation",
+    "Managing the Deprecation Process"
   ],
   "kind": "pipeline",
   "desktop": "assets/diagrams/ch15.svg",

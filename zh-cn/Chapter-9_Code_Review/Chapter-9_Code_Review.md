@@ -1,48 +1,18 @@
-
-**CHAPTER 9**
-
-# Code Review
-
 # 第九章 代码审查
 
-**Written by Tom Manshreck**
+**作者：Tom Manshreck, Caitlin Sadowski**
 
-**Caitlin Sadowski Edited by Lisa Carey**
-
-Code review is a process in which code is reviewed by someone other than the author, often before the introduction of that code into a codebase. Although that is a simple definition, implementations of the process of code review vary widely throughout the software industry. Some organizations have a select group of “gatekeepers” across the codebase that review changes. Others delegate code review processes to smaller teams, allowing different teams to require different levels of code review. At Google, essentially every change is reviewed before being committed, and every engineer is responsible for initiating reviews and reviewing changes.
+**编辑：Lisa Carey**
 
 代码审查是由作者以外的人检查代码的过程，通常在代码进入代码库之前进行。定义虽然简单，但软件行业中的具体做法差异很大。有些组织选出一组“守门人”，负责审查整个代码库的变更；另一些组织则把代码审查交给较小的团队，由各团队自行决定审查要求。在谷歌，基本上每项变更都要先经审查才能提交，每位工程师都有责任发起审查，也有责任审查他人的变更。
 
-Code reviews generally require a combination of a process and a tool supporting that process. At Google, we use a custom code review tool, Critique, to support our process.[^1] Critique is an important enough tool at Google to warrant its own chapter in this book. This chapter focuses on the process of code review as it is practiced at Google rather than the specific tool, both because these foundations are older than the tool and because most of these insights can be adapted to whatever tool you might use for code review.
+代码审查通常需要流程与配套工具相结合。在谷歌，我们使用定制的代码审查工具 Critique 来支持这一流程。[^1]Critique 在谷歌的重要性，足以让本书用一章专门介绍它。不过，本章关注的是谷歌的代码审查流程，而不是具体工具：一方面，这些基本做法早于工具出现；另一方面，无论使用什么代码审查工具，大多数经验都可以借鉴。
 
-代码审查通常需要流程与配套工具相结合。在谷歌，我们使用定制的代码审查工具 Critique 来支持这一流程。Critique 在谷歌的重要性，足以让本书用一章专门介绍它。不过，本章关注的是谷歌的代码审查流程，而不是具体工具：一方面，这些基本做法早于工具出现；另一方面，无论使用什么代码审查工具，大多数经验都可以借鉴。
+代码审查有些好处已经得到充分证实，也比较直观，例如在代码进入代码库之前发现缺陷，尽管这些好处未必能精确衡量。[^2]另一些好处则不那么明显。谷歌广泛而深入地开展代码审查，让我们得以观察到许多较为隐性的影响，包括心理层面的影响。随着时间推移、规模扩大，这些影响会为组织带来诸多益处。
 
-Some of the benefits of code review, such as detecting bugs in code before they enter a codebase, are well established[^2] and somewhat obvious (if imprecisely measured). Other benefits, however, are more subtle. Because the code review process at Google is so ubiquitous and extensive, we’ve noticed many of these more subtle effects, including psychological ones, which provide many benefits to an organization over time and scale.
-
-代码审查有些好处已经得到充分证实，也比较直观，例如在代码进入代码库之前发现缺陷，尽管这些好处未必能精确衡量。另一些好处则不那么明显。谷歌广泛而深入地开展代码审查，让我们得以观察到许多较为隐性的影响，包括心理层面的影响。随着时间推移、规模扩大，这些影响会为组织带来诸多益处。
-
-> [^1]: We also use Gerrit to review Git code, primarily for our open source projects. However, Critique is the primary tool of a typical software engineer at Google.
->
-> 1 我们也使用 Gerrit 审查 Git 中的代码，主要用于开源项目。不过，对谷歌一般的软件工程师而言，主要工具仍是 Critique。
->
-> [^2]: Steve McConnell, Code Complete (Redmond: Microsoft Press, 2004).
->
-> 2 史蒂夫·麦康奈尔，Code Complete（雷蒙德：微软出版社，2004年）。
-
-## Code Review Flow  代码审查流程
-
-Code reviews can happen at many stages of software development. At Google, code reviews take place before a change can be committed to the codebase; this stage is also known as a *precommit review*. The primary end goal of a code review is to get another engineer to consent to the change, which we denote by tagging the change as “looks good to me” (LGTM). We use this LGTM as a necessary permissions “bit” (combined with other bits noted below) to allow the change to be committed.
+## 代码审查流程
 
 代码审查可以在软件开发的多个阶段进行。在谷歌，变更必须先经代码审查，才能提交到代码库；这一阶段也称为*提交前审查*。代码审查的首要目标是取得另一位工程师对变更的认可，以“我看没问题”（LGTM）标记表示。LGTM 是允许提交变更所必需的一个“权限位”，还需要与下文介绍的其他权限位配合使用。
-
-A typical code review at Google goes through the following steps:
-
-1. A user writes a change to the codebase in their workspace. This *author* then creates a snapshot of the change: a patch and corresponding description that are uploaded to the code review tool. This change produces a *diff* against the codebase, which is used to evaluate what code has changed.
-2. The author can use this initial patch to apply automated review comments or do self-review. When the author is satisfied with the diff of the change, they mail the change to one or more reviewers. This process notifies those reviewers, asking them to view and comment on the snapshot.
-3. *Reviewers* open the change in the code review tool and post comments on the diff. Some comments request explicit resolution. Some are merely informational.
-4. The author modifies the change and uploads new snapshots based on the feedback and then replies back to the reviewers. Steps 3 and 4 may be repeated multiple times.
-5. After the reviewers are happy with the latest state of the change, they agree to the change and accept it by marking it as “looks good to me” (LGTM). Only one LGTM is required by default, although convention might request that all reviewers agree to the change.
-6. After a change is marked LGTM, the author is allowed to commit the change to the codebase, provided they *resolve all comments* and that the change is *approved*. We’ll cover approval in the next section.
 
 谷歌一次典型的代码审查包含以下步骤：
 
@@ -53,122 +23,57 @@ A typical code review at Google goes through the following steps:
 5. 审查者对变更的最新状态满意后，将其标记为“我看没问题”（LGTM），表示认可并接受。默认只需一个 LGTM，但按惯例，也可能要求所有审查者都同意。
 6. 变更标记为 LGTM 后，作者便可将其提交到代码库，前提是已经*处理*所有*审查意见*，且变更已获*批准*。下一节将介绍批准要求。
 
-We’ll go over this process in more detail later in this chapter.
-
 我们将在本章后面更详细地介绍这个过程。
 
------
-
-#### Code Is a Liability 代码是一种负担
-
-It’s important to remember (and accept) that code itself is a liability. It might be a necessary liability, but by itself, code is simply a maintenance task to someone somewhere down the line. Much like the fuel that an airplane carries, it has weight, though it is, of course, [necessary for that airplane to fly](https://oreil.ly/TmoWX).
+#### 代码是一种负担
 
 要记住并接受一点：代码本身就是一种负担。这种负担或许有其必要性，但代码一旦存在，日后就会成为某个人的维护任务。它就像飞机携带的燃料，虽然是[飞机飞行的必要条件](https://oreil.ly/TmoWX)，却也有自身的重量。
 
-New features are often necessary, of course, but care should be taken before developing code in the first place to ensure that any new feature is warranted. Duplicated code not only is a wasted effort, it can actually cost more in time than not having the code at all; changes that could be easily performed under one code pattern often require more effort when there is duplication in the codebase. Writing entirely new code is so frowned upon that some of us have a saying: “If you’re writing it from scratch, you’re doing it wrong!”
-
 当然，新功能往往必不可少，但动手写代码之前，应先确认它确有必要。重复代码不只是浪费开发精力，还可能比不写这些代码耗费更多时间：只有一种代码模式时很容易完成的变更，在代码库存在重复实现时往往要付出更多工作。从头编写代码是我们很不提倡的做法，有些同事甚至常说：“如果你在从零开始写，那就做错了！”
-
-This is especially true of library or utility code. Chances are, if you are writing a utility, someone else somewhere in a codebase the size of Google’s has probably done something similar. Tools such as those discussed in Chapter 17 are therefore critical for both finding such utility code and preventing the introduction of duplicate code. Ideally, this research is done beforehand, and a design for anything new has been communicated to the proper groups before any new code is written.
 
 对于库或工具代码，尤其如此。在谷歌这样规模的代码库中，如果你打算编写一个工具，很可能已经有人实现过类似功能。因此，第17章讨论的那些工具，对于查找现有工具代码、避免引入重复实现都至关重要。理想情况下，应当提前完成这项调研，并在动手编写新代码之前，将新设计告知相关团队。
 
-Of course, new projects happen, new techniques are introduced, new components are needed, and so on. All that said, a code review is not an occasion to rehash or debate previous design decisions. Design decisions often take time, requiring the circulation of design proposals, debate on the design in API reviews or similar meetings, and perhaps the development of prototypes. As much as a code review of entirely new code should not come out of the blue, the code review process itself should also not be viewed as an opportunity to revisit previous decisions.
-
 当然，总会有新项目启动、新技术引入，也总会需要新组件。即便如此，代码审查也不是重议或争论既有设计决策的场合。设计决策往往需要时间：先传阅设计方案，再通过 API 评审或类似会议讨论，有时还要开发原型。全新代码不应毫无预告地进入代码审查，代码审查本身也不应成为重新讨论既有决策的机会。
 
-----
-
-## How Code Review Works at Google  谷歌如何开展代码审查
-
-We’ve pointed out roughly how the typical code review process works, but the devil is in the details. This section outlines in detail how code review works at Google and how these practices allow it to scale properly over time.
+## 谷歌如何开展代码审查
 
 前面已大致介绍了典型的代码审查流程，但关键在于细节。本节将具体说明谷歌如何开展代码审查，以及这些做法如何让流程在长期运行中适应规模增长。
-
-There are three aspects of review that require “approval” for any given change at Google:
-
-- A correctness and comprehension check from another engineer that the code is appropriate and does what the author claims it does. This is often a team member, though it does not need to be. This is reflected in the LGTM permissions “bit,” which will be set after a peer reviewer agrees that the code “looks good” to them.
-- Approval from one of the code owners that the code is appropriate for this particular part of the codebase (and can be checked into a particular directory). This approval might be implicit if the author is such an owner. Google’s codebase is a tree structure with hierarchical owners of particular directories. (See [Chapter 16](#_bookmark1364)). Owners act as gatekeepers for their particular directories. A change might be proposed by any engineer and LGTM’ed by any other engineer, but an owner of the directory in question must also *approve* this addition to their part of the codebase. Such an owner might be a tech lead or other engineer deemed expert in that particular area of the codebase. It’s generally up to each team to decide how broadly or narrowly to assign ownership privileges.
-- Approval from someone with language “readability”[^3] that the code conforms to the language’s style and best practices, checking whether the code is written in the manner we expect. This approval, again, might be implicit if the author has such readability. These engineers are pulled from a company-wide pool of engineers who have been granted readability in that programming language.
 
 在谷歌，每项变更都需要在三个方面通过审查并获得“批准”：
 
 - 由另一位工程师检查正确性和可理解性，确认代码是否得当，是否实现了作者声称的功能。此人通常是团队成员，但并非必须如此。同行审查者认为代码“看起来没问题”后，便会设置 LGTM 这一权限位。
 - 由一位代码所有者批准，确认代码适合放入代码库的相应部分，可以提交到相应目录。如果作者本身就是该部分的所有者，则可视为已经获得这项批准。谷歌的代码库采用树状结构，各级目录都有相应的所有者（见第16章）。所有者负责为各自的目录把关。任何工程师都可以提出变更，任何其他工程师都可以给出 LGTM，但把代码加入相关目录，还必须得到该目录所有者的*批准*。所有者可能是技术负责人，也可能是被认可为该领域专家的其他工程师。所有者权限授予多大范围的人员，通常由各团队自行决定。
-- 由具备相应语言 Readability 资格（语言规范审查资格）的工程师批准，确认代码符合该语言的风格和最佳实践，采用了我们期望的写法。如果作者本人具备这项资格，也可视为已经获得这项批准。这类审查者来自全公司已取得相应编程语言 Readability 资格的工程师群体。
-
-Although this level of control sounds onerous—and, admittedly, it sometimes is— most reviews have one person assuming all three roles, which speeds up the process quite a bit. Importantly, the author can also assume the latter two roles, needing only an LGTM from another engineer to check code into their own codebase, provided they already have readability in that language (which owners often do).
+- 由具备相应语言 Readability 资格（语言规范审查资格）的工程师批准，确认代码符合该语言的风格和最佳实践，采用了我们期望的写法。[^3]如果作者本人具备这项资格，也可视为已经获得这项批准。这类审查者来自全公司已取得相应编程语言 Readability 资格的工程师群体。
 
 这种管控听起来很繁琐，有时也确实如此。不过，大多数审查由同一个人承担这三种角色，因此流程快了许多。重要的是，作者也可以兼任后两种角色：如果作者既是代码所有者，又具备该语言的 Readability 资格，而所有者通常具备这项资格，那么只需另一位工程师给出 LGTM，就能把代码提交到自己负责的代码库中。
 
-These requirements allow the code review process to be quite flexible. A tech lead who is an owner of a project and has that code’s language readability can submit a code change with only an LGTM from another engineer. An intern without such authority can submit the same change to the same codebase, provided they get approval from an owner with language readability. The three aforementioned permission “bits” can be combined in any combination. An author can even request more than one LGTM from separate people by explicitly tagging the change as wanting an LGTM from all reviewers.
-
 这些要求让代码审查流程具有很大的灵活性。技术负责人如果既是项目所有者，又具备代码所用语言的 Readability 资格，只需另一位工程师给出 LGTM，就能提交变更。没有这些权限的实习生，只要获得一位同时具备该语言 Readability 资格的所有者批准，也能向同一代码库提交相同的变更。上述三个权限位可以由不同的角色组合来满足。作者还可以明确标记变更，要求所有审查者都给出 LGTM，从而取得多人的认可。
-
-In practice, most code reviews that require more than one approval usually go through a two-step process: gaining an LGTM from a peer engineer, and then seeking approval from appropriate code owner/readability reviewer(s). This allows the two roles to focus on different aspects of the code review and saves review time. The primary reviewer can focus on code correctness and the general validity of the code change; the code owner can focus on whether this change is appropriate for their part of the codebase without having to focus on the details of each line of code. An approver is often looking for something different than a peer reviewer, in other words. After all, someone is trying to check in code to their project/directory. They are more concerned with questions such as: “Will this code be easy or difficult to maintain?” “Does it add to my technical debt?” “Do we have the expertise to maintain it within our team?”
 
 实际中，需要不止一次批准的代码审查大多分为两步：先从同行工程师那里取得 LGTM，再向相应的代码所有者或 Readability 审查者寻求批准。这样，两种角色就能各自关注不同方面，节省审查时间。主要审查者可以专注于代码正确性和变更的总体合理性；代码所有者则可以关注变更是否适合自己负责的代码，而不必逐行检查细节。换言之，批准者与同行审查者的关注点往往不同。毕竟，别人要把代码提交到他们负责的项目或目录中。他们更关心的是：“这段代码是否容易维护？”“它会增加我的技术债务吗？”“团队是否具备维护它所需的专业知识？”
 
-If all three of these types of reviews can be handled by one reviewer, why not just have those types of reviewers handle all code reviews? The short answer is scale. Separating the three roles adds flexibility to the code review process. If you are working with a peer on a new function within a utility library, you can get someone on your team to review the code for code correctness and comprehension. After several rounds (perhaps over several days), your code satisfies your peer reviewer and you get an LGTM. Now, you need only get an *owner* of the library (and owners often have appropriate readability) to approve the change.
-
 既然一个人可以完成这三类审查，为什么不让具备全部资格的人承担所有代码审查呢？简短的答案是规模。将三种角色分开，可以增加流程的灵活性。假设你与同事一起为一个工具库开发新函数，可以先请团队成员检查代码的正确性和可理解性。经过几轮审查，也许耗时几天，代码得到同行审查者认可，你便取得了 LGTM。接下来，只需该库的*所有者*批准变更即可，而所有者往往也具备相应的 Readability 资格。
 
-> [^3]: At Google, “readability” does not refer simply to comprehension, but to the set of styles and best practices that allow code to be maintainable to other engineers. See Chapter 3.
->
-> 3   在谷歌，Readability（可读性）不只是指代码易于理解，还涉及一套让其他工程师能够维护代码的风格规范和最佳实践。参见第3章。
-
------
-
-#### Ownership  所有权
-
-***Hyrum Wright***
-
-When working on a small team in a dedicated repository, it’s common to grant the entire team access to everything in the repository. After all, you know the other engineers, the domain is narrow enough that each of you can be experts, and small numbers constrain the effect of potential errors.
+#### 所有权
 
 ***海勒姆·赖特***
 
 小团队使用专属代码仓库时，通常会让全体成员访问仓库中的所有内容。毕竟，大家彼此熟悉，涉及的领域足够小，每个人都能成为专家；人数较少，也限制了潜在错误的影响范围。
 
-As the team grows larger, this approach can fail to scale. The result is either a messy repository split or a different approach to recording who has what knowledge and responsibilities in different parts of the repository. At Google, we call this set of knowledge and responsibilities *ownership* and the people to exercise them *owners*. This concept is different than possession of a collection of source code, but rather implies a sense of stewardship to act in the company’s best interest with a section of the codebase. (Indeed, “stewards” would almost certainly be a better term if we had it to do over again.)
-
 随着团队扩大，这种做法可能难以为继。结果要么是混乱地拆分代码仓库，要么是换一种方式，记录各人在仓库不同部分所具备的知识和承担的职责。在谷歌，我们将这些知识和职责称为*所有权*，将运用这些知识、履行这些职责的人称为*所有者*。这里并不是指占有一批源代码，而是指以公司的最佳利益为准则，负责照管代码库中的某一部分。事实上，如果重新命名，“管家”几乎肯定是更合适的说法。
-
-Specially named OWNERS files list usernames of people who have ownership responsibilities for a directory and its children. These files may also contain references to other OWNERS files or external access control lists, but eventually they resolve to a list of individuals. Each subdirectory may also contain a separate OWNERS file, and the relationship is hierarchically additive: a given file is generally owned by the union of the members of all the OWNERS files above it in the directory tree. OWNERS files may have as many entries as teams like, but we encourage a relatively small and focused list to ensure responsibility is clear.
 
 名为 OWNERS 的专用文件列出对某个目录及其下级目录承担所有者职责的用户名。文件也可以引用其他 OWNERS 文件或外部访问控制列表，但最终都会解析为具体的人员名单。每个子目录也可以有自己的 OWNERS 文件，所有者按目录层级累加：一个文件的所有者，通常是目录树中它上方所有 OWNERS 文件所列人员的并集。团队可以在 OWNERS 文件中列出任意多的人，但我们建议名单保持精简、集中，以确保责任明确。
 
-Ownership of Google’s code conveys approval rights for code within one’s purview, but these rights also come with a set of responsibilities, such as understanding the code that is owned or knowing how to find somebody who does. Different teams have different criteria for granting ownership to new members, but we generally encourage them not to use ownership as a rite of initiation and encourage departing members to yield ownership as soon as is practical.
-
 谷歌代码的所有者有权批准自己负责范围内的代码变更，同时也承担相应职责，例如了解所负责的代码，或知道如何找到了解它的人。各团队授予新成员所有者资格的标准不同，但我们通常建议，不要把取得这一资格当作加入团队的必经仪式；离开团队的成员也应在实际可行时尽快交出所有者职责。
-
-This distributed ownership structure enables many of the other practices we’ve outlined in this book. For example, the set of people in the root OWNERS file can act as global approvers for large-scale changes (see Chapter 22) without having to bother local teams. Likewise, OWNERS files act as a kind of documentation, making it easy for people and tools to find those responsible for a given piece of code just by walking up the directory tree. When new projects are created, there’s no central authority that has to register new ownership privileges: a new OWNERS file is sufficient.
 
 这种分布式所有权结构支撑着本书介绍的许多其他实践。例如，根目录 OWNERS 文件中列出的人员，可以在整个代码库范围内批准大规模变更（见第22章），无须打扰各个团队。OWNERS 文件也起到文档的作用：无论是人还是工具，只需沿目录树向上查找，就能找到某段代码的负责人。创建新项目时，也无须由中央机构登记新的所有者权限，只要创建一个 OWNERS 文件即可。
 
-This ownership mechanism is simple, yet powerful, and has scaled well over the past two decades. It is one of the ways that Google ensures that tens of thousands of engineers can operate efficiently on billions of lines of code in a single repository.
-
 这一所有权机制简单而有力，在过去20年里很好地适应了规模增长。它是谷歌确保数万名工程师能够在单一代码仓库中高效处理数十亿行代码的机制之一。
 
------
-
-## Code Review Benefits 代码审查的好处
-
-Across the industry, code review itself is not controversial, although it is far from a universal practice. Many (maybe even most) other companies and open source projects have some form of code review, and most view the process as important as a sanity check on the introduction of new code into a codebase. Software engineers understand some of the more obvious benefits of code review, even if they might not personally think it applies in all cases. But at Google, this process is generally more thorough and wide spread than at most other companies.
+## 代码审查的好处
 
 在业界，代码审查本身没有多少争议，尽管还远未普及。许多其他公司和开源项目，甚至可能是其中大多数，都采用某种形式的代码审查；多数也认为，在新代码进入代码库时进行基本检查很重要。软件工程师了解代码审查的一些明显好处，即使个人未必认为所有情况都需要审查。不过，谷歌的代码审查通常比其他大多数公司更深入，覆盖面也更广。
 
-Google’s culture, like that of a lot of software companies, is based on giving engineers wide latitude in how they do their jobs. There is a recognition that strict processes tend not to work well for a dynamic company needing to respond quickly to new technologies, and that bureaucratic rules tend not to work well with creative professionals. Code review, however, is a mandate, one of the few blanket processes in which all software engineers at Google must participate. Google requires code review for almost[^4] every code change to the codebase, no matter how small. This mandate does have a cost and effect on engineering velocity given that it does slow down the introduction of new code into a codebase and can impact time-to-production for any given code change. (Both of these are common complaints by software engineers of strict code review processes.) Why, then, do we require this process? Why do we believe that this is a long-term benefit?
-
-与许多软件公司一样，谷歌的文化强调让工程师自主决定如何开展工作。我们认识到，需要快速响应新技术、充满活力的公司，往往不适合僵硬的流程；繁文缛节也不适合从事创造性工作的专业人员。然而，代码审查是一项强制要求，也是少数所有谷歌软件工程师都必须参与的统一流程之一。代码库中几乎每项变更，无论多小，都要经过代码审查。这项要求确实有成本，也会影响开发速度：新代码进入代码库的速度会放缓，变更上线所需的时间也可能延长。这也是软件工程师对严格代码审查流程的两种常见抱怨。那么，我们为什么仍然要求代码审查？为什么认为它有长期价值？
-
- A well-designed code review process and a culture of taking code review seriously provides the following benefits:  
-
-- Checks code correctness
-- Ensures the code change is comprehensible to other engineers
-- Enforces consistency across the codebase
-- Psychologically promotes team ownership
-- Enables knowledge sharing
-- Provides a historical record of the code review itself
+与许多软件公司一样，谷歌的文化强调让工程师自主决定如何开展工作。我们认识到，需要快速响应新技术、充满活力的公司，往往不适合僵硬的流程；繁文缛节也不适合从事创造性工作的专业人员。然而，代码审查是一项强制要求，也是少数所有谷歌软件工程师都必须参与的统一流程之一。代码库中几乎每项变更，无论多小，都要经过代码审查。[^4]这项要求确实有成本，也会影响开发速度：新代码进入代码库的速度会放缓，变更上线所需的时间也可能延长。这也是软件工程师对严格代码审查流程的两种常见抱怨。那么，我们为什么仍然要求代码审查？为什么认为它有长期价值？
 
 设计得当的代码审查流程，加上认真对待审查的文化，可以带来以下好处：
 
@@ -179,241 +84,119 @@ Google’s culture, like that of a lot of software companies, is based on giving
 - 促进知识共享
 - 提供代码审查本身的历史记录
 
-Many of these benefits are critical to a software organization over time, and many of them are beneficial to not only the author but also the reviewers. The following sections go into more specifics for each of these items.
-
 从长期看，其中许多好处对软件组织至关重要，而且受益的不只是作者，也包括审查者。下面各节将逐一展开说明。
 
-> [^4]: Some changes to documentation and configurations might not require a code review, but it is often still preferable to obtain such a review.
->
-> 4   某些文档和配置变更可能无须代码审查，但通常仍以经过审查为佳。
-
-### Code Correctness  代码正确性
-
-An obvious benefit of code review is that it allows a reviewer to check the “correctness” of the code change. Having another set of eyes look over a change helps ensure that the change does what was intended. Reviewers typically look for whether a change has proper testing, is properly designed, and functions correctly and efficiently. In many cases, checking code correctness is checking whether the particular change can introduce bugs into the codebase.
+### 代码正确性
 
 代码审查的一个明显好处，是可以检查代码变更的“正确性”。请另一个人看一遍，有助于确认变更实现了预期目标。审查者通常会检查测试是否充分、设计是否合理，以及功能是否正确、运行是否高效。很多时候，检查正确性就是检查变更会不会向代码库引入缺陷。
 
-Many reports point to the efficacy of code review in the prevention of future bugs in software. A study at IBM found that discovering defects earlier in a process, unsurprisingly, led to less time required to fix them later on.[^5] The investment in the time for code review saved time otherwise spent in testing, debugging, and performing regressions, provided that the code review process itself was streamlined to keep it lightweight. This latter point is important; code review processes that are heavyweight, or that don’t scale properly, become unsustainable.[^6] We will get into some best practices for keeping the process lightweight later in this chapter.
-
-许多报告都指出，代码审查能够有效预防软件缺陷。IBM 的一项研究发现，越早发现缺陷，后续修复所需的时间就越少，这并不意外。投入代码审查的时间，节省了原本要用于测试、调试和回归测试的时间，前提是审查流程本身经过精简，保持轻量。这一点很重要：流程如果过于繁重，或无法适应规模增长，就难以持续。后文将介绍保持流程轻量的一些最佳实践。
-
-To prevent the evaluation of correctness from becoming more subjective than objective, authors are generally given deference to their particular approach, whether it be in the design or the function of the introduced change. A reviewer shouldn’t propose alternatives because of personal opinion. Reviewers can propose alternatives, but only if they improve comprehension (by being less complex, for example) or functionality (by being more efficient, for example). In general, engineers are encouraged to approve changes that improve the codebase rather than wait for consensus on a more “perfect” solution. This focus tends to speed up code reviews.
+许多报告都指出，代码审查能够有效预防软件缺陷。IBM 的一项研究发现，越早发现缺陷，后续修复所需的时间就越少，这并不意外。[^5]投入代码审查的时间，节省了原本要用于测试、调试和回归测试的时间，前提是审查流程本身经过精简，保持轻量。这一点很重要：流程如果过于繁重，或无法适应规模增长，就难以持续。[^6]后文将介绍保持流程轻量的一些最佳实践。
 
 为了避免正确性判断过于主观，通常应尊重作者在变更设计和功能实现上的选择。审查者不应仅凭个人偏好提出替代方案；只有当替代方案能让代码更易理解，例如降低复杂度，或改善功能，例如提高效率时，才应提出。总体而言，我们鼓励工程师批准能改善代码库的变更，不必等到大家就更“完美”的方案达成共识。这一取向通常能加快代码审查。
 
-As tooling becomes stronger, many correctness checks are performed automatically through techniques such as static analysis and automated testing (though tooling might never completely obviate the value for human-based inspection of code—see Chapter 20 for more information). Though this tooling has its limits, it has definitely lessoned the need to rely on human-based code reviews for checking code correctness.
-
 随着工具能力增强，许多正确性检查已经可以通过静态分析、自动化测试等技术自动完成，不过人工检查代码可能始终有其价值，详见第20章。工具虽然有局限，却确实减少了正确性检查对人工代码审查的依赖。
-
-That said, checking for defects during the initial code review process is still an integral part of a general “shift left” strategy, aiming to discover and resolve issues at the earliest possible time so that they don’t require escalated costs and resources farther down in the development cycle. A code review is neither a panacea nor the only check for such correctness, but it is an element of a defense-in-depth against such problems in software. As a result, code review does not need to be “perfect” to achieve results.
 
 即便如此，在最初的代码审查中检查缺陷，仍然是整体“左移”策略不可或缺的一环。左移旨在尽早发现并解决问题，避免拖到开发周期后期再付出更高的成本、投入更多资源。代码审查不是万能的，也不是检查正确性的唯一手段，但它是防范这类软件问题的纵深防御体系的一部分。因此，代码审查无须做到“完美”，也能发挥作用。
 
-Surprisingly enough, checking for code correctness is not the primary benefit Google accrues from the process of code review. Checking for code correctness generally ensures that a change works, but more importance is attached to ensuring that a code change is understandable and makes sense over time and as the codebase itself scales. To evaluate those aspects, we need to look at factors other than whether the code is simply logically “correct” or understood.
-
 或许出人意料，检查代码正确性并不是谷歌从代码审查中获得的首要收益。正确性检查通常只能确保变更能正常工作；更重要的是，随着时间推移和代码库扩大，这项变更仍然容易理解、依然合理。要评估这些方面，就不能只看代码在逻辑上是否“正确”，或眼下是否能被理解。
 
-> [^5]: “Advances in Software Inspection,” IEEE Transactions on Software Engineering, SE-12(7): 744–751, July 1986. Granted, this study took place before robust tooling and automated testing had become so important in the software development process, but the results still seem relevant in the modern software age.
->
-> 5 "Advances in Software Inspection," IEEE Transactions on Software Engineering, SE-12(7): 744-751, July 1986. 诚然，开展这项研究时，强大的工具和自动化测试尚未在软件开发中占据如今这样重要的地位，但研究结果对现代软件开发似乎仍有参考价值。
->
-> [^6]: Rigby, Peter C. and Christian Bird. 2013. “Convergent software peer review practices.” ESEC/FSE 2013: Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering, August 2013: 202-212. https:// dl.acm.org/doi/10.1145/2491411.2491444.
->
-> 6 Rigby, Peter C. and Christian Bird. 2013.《趋同的软件同行审查实践》。ESEC/FSE 2013，《2013年第九届软件工程基础联合会议论文集》，2013年8月：202-212。https:// dl.acm.org/doi/10.1145/2491411.2491444。
-
-### Comprehension of Code  代码理解
-
-A code review typically is the first opportunity for someone other than the author to inspect a change. This perspective allows a reviewer to do something that even the best engineer cannot do: provide feedback unbiased by an author’s perspective. *A* *code review is often the first test of whether a given change is understandable to a broader audience*. This perspective is vitally important because code will be read many more times than it is written, and understanding and comprehension are critically important.
+### 代码理解
 
 代码审查通常是作者以外的人首次检查变更的机会。审查者的视角让他们能够做到一件即使最优秀的工程师作为作者也做不到的事：提供不受作者视角影响的反馈。*代码审查往往是第一次检验一项变更能否被更多人理解*。这一视角至关重要，因为代码被阅读的次数远多于被编写的次数，而读懂代码十分关键。
 
-It is often useful to find a reviewer who has a different perspective from the author, especially a reviewer who might need, as part of their job, to maintain or use the code being proposed within the change. Unlike the deference reviewers should give authors regarding design decisions, it’s often useful to treat questions on code comprehension using the maxim “the customer is always right.” In some respect, any questions you get now will be multiplied many-fold over time, so view each question on code comprehension as valid. This doesn’t mean that you need to change your approach or your logic in response to the criticism, but it does mean that you might need to explain it more clearly.
-
 选择与作者视角不同的审查者通常很有帮助，尤其是工作中可能需要维护或使用这次变更中代码的人。对于设计决策，审查者应尊重作者；但对于代码能否被理解的问题，遵循“客户永远是对的”这句话往往更有用。从某种意义上说，现在遇到的疑问，日后会成倍出现，因此应认真对待每一个有关代码理解的问题。这不意味着受到质疑就必须改变方法或逻辑，但可能意味着需要解释得更清楚。
-
-Together, the code correctness and code comprehension checks are the main criteria for an LGTM from another engineer, which is one of the approval bits needed for an approved code review. When an engineer marks a code review as LGTM, they are saying that the code does what it says and that it is understandable. Google, however, also requires that the code be sustainably maintained, so we have additional approvals needed for code in certain cases.
 
 代码正确性和可理解性，是另一位工程师给出 LGTM 的主要依据；LGTM 也是代码审查通过所需的批准标记之一。工程师标记 LGTM，表示代码实现了所述功能，而且容易理解。不过，谷歌还要求代码能够长期维护，因此在某些情况下，还需要取得其他批准。
 
-### Code Consistency  代码的一致性
-
-At scale, code that you write will be depended on, and eventually maintained, by someone else. Many others will need to read your code and understand what you did. Others (including automated tools) might need to refactor your code long after you’ve moved to another project. Code, therefore, needs to conform to some standards of consistency so that it can be understood and maintained. Code should also avoid being overly complex; simpler code is easier for others to understand and maintain as well. Reviewers can assess how well this code lives up to the standards of the codebase itself during code review. A code review, therefore, should act to ensure *code health*.
+### 代码的一致性
 
 规模扩大后，你编写的代码会被他人依赖，最终也会由他人维护。许多人需要阅读代码，理解你做了什么。即使你早已转到其他项目，别人仍可能需要重构这些代码，自动化工具也可能参与其中。因此，代码需要遵循统一标准，才能便于理解和维护。代码还应避免过度复杂，因为简单的代码同样更容易让他人理解和维护。审查者可以在代码审查中判断代码是否符合代码库的标准。因此，代码审查应当保障*代码健康*。
 
-It is for maintainability that the LGTM state of a code review (indicating code correctness and comprehension) is separated from that of readability approval. Readability approvals can be granted only by individuals who have successfully gone through the process of code readability training in a particular programming language. For example, Java code requires approval from an engineer who has “Java readability.”
-
 正是出于可维护性的考虑，代码审查将 LGTM 状态与 Readability 批准状态分开：前者表示代码正确且易于理解；后者只能由完成相应编程语言 Readability 培训、取得资格的人给出。例如，Java 代码需要由具备“Java Readability”资格的工程师批准。
-
-A readability approver is tasked with reviewing code to ensure that it follows agreedon best practices for that particular programming language, is consistent with the codebase for that language within Google’s code repository, and avoids being overly complex. Code that is consistent and simple is easier to understand and easier for tools to update when it comes time for refactoring, making it more resilient. If a particular pattern is always done in one fashion in the codebase, it’s easier to write a tool to refactor it.
 
 Readability 批准者负责检查代码是否遵循该语言公认的最佳实践，是否与谷歌代码仓库中同语言的其他代码保持一致，以及是否过于复杂。一致、简单的代码更容易理解，重构时也更容易通过工具更新，因此更能适应变化。如果某种模式在代码库中始终采用同一种写法，就更容易编写工具来重构它。
 
-Additionally, code might be written only once, but it will be read dozens, hundreds, or even thousands of times. Having code that is consistent across the codebase improves comprehension for all of engineering, and this consistency even affects the process of code review itself. Consistency sometimes clashes with functionality; a readability reviewer may prefer a less complex change that may not be functionally “better” but is easier to understand.
-
 此外，代码可能只写一次，却会被阅读几十次、几百次，甚至几千次。整个代码库保持一致，有助于所有工程师理解代码，甚至会影响代码审查本身。一致性有时会与功能上的追求发生冲突：Readability 审查者可能倾向于更简单的变更，即使它在功能上未必“更好”，却更容易理解。
-
-With a more consistent codebase, it is easier for engineers to step in and review code on someone else’s projects. Engineers might occasionally need to look outside the team for help in a code review. Being able to reach out and ask experts to review the code, knowing they can expect the code itself to be consistent, allows those engineers to focus more properly on code correctness and comprehension.
 
 代码库越一致，工程师就越容易参与其他项目的代码审查。有时，工程师需要向团队外寻求审查帮助。如果受邀专家可以预期代码采用一致的写法，就能更好地把精力放在正确性和可理解性上。
 
-### Psychological and Cultural Benefits  心理和文化方面的好处
-
-Code review also has important cultural benefits: it reinforces to software engineers that code is not “theirs” but in fact part of a collective enterprise. Such psychological benefits can be subtle but are still important. Without code review, most engineers would naturally gravitate toward personal style and their own approach to software design. The code review process forces an author to not only let others have input, but to compromise for the sake of the greater good.
+### 心理和文化方面的好处
 
 代码审查还具有重要的文化价值：它让软件工程师认识到，代码并非“个人所有”，而是集体工作的一部分。这种心理影响虽然不易察觉，却很重要。如果没有代码审查，大多数工程师自然会偏向个人风格和自己习惯的软件设计方法。代码审查要求作者不仅听取他人意见，还要为整体利益作出让步。
 
-It is human nature to be proud of one’s craft and to be reluctant to open up one’s code to criticism by others. It is also natural to be somewhat reticent to welcome critical feedback about code that one writes. The code review process provides a mechanism to mitigate what might otherwise be an emotionally charged interaction. Code review, when it works best, provides not only a challenge to an engineer’s assumptions, but also does so in a prescribed, neutral manner, acting to temper any criticism which might otherwise be directed to the author if provided in an unsolicited manner. After all, the process *requires* critical review (we in fact call our code review tool “Critique”), so you can’t fault a reviewer for doing their job and being critical. The code review process itself, therefore, can act as the “bad cop,” whereas the reviewer can still be seen as the “good cop.”
-
 为自己的手艺感到自豪，又不愿把代码拿出来接受他人批评，是人之常情。面对自己代码的批评性反馈，多少有些抵触也很自然。代码审查提供了一种机制，缓和原本可能带有情绪的交流。理想的代码审查既能质疑工程师的假设，又以约定、中立的方式进行；同样的批评如果未经请求就直接提出，可能会被视为针对作者本人。毕竟，这个流程要求审查者提出批评性意见，我们甚至把代码审查工具命名为“Critique”，因此不能责怪审查者履行职责、提出质疑。这样，流程本身可以“唱黑脸”，审查者仍然可以“唱白脸”。
-
-Of course, not all, or even most, engineers need such psychological devices. But buffering such criticism through the process of code review often provides a much gentler introduction for most engineers to the expectations of the team. Many engineers joining Google, or a new team, are intimidated by code review. It is easy to think that any form of critical review reflects negatively on a person’s job performance. But over time, almost all engineers come to expect to be challenged when sending a code review and come to value the advice and questions offered through this process (though, admittedly, this sometimes takes a while).
 
 当然，并非所有工程师都需要这样的心理机制，甚至大多数也未必需要。不过，通过代码审查流程缓和批评，通常能让多数工程师以更温和的方式了解团队的期望。许多刚加入谷歌或新团队的工程师都会对代码审查感到畏惧，很容易把任何批评都看成对个人工作表现的否定。但随着时间推移，几乎所有工程师都会习惯于在发起代码审查时接受质疑，并逐渐重视这一过程中的建议和问题，尽管这有时确实需要一段时间。
 
-Another psychological benefit of code review is validation. Even the most capable engineers can suffer from imposter syndrome and be too self-critical. A process like code review acts as validation and recognition for one’s work. Often, the process involves an exchange of ideas and knowledge sharing (covered in the next section), which benefits both the reviewer and the reviewee. As an engineer grows in their domain knowledge, it’s sometimes difficult for them to get positive feedback on how they improve. The process of code review can provide that mechanism.
-
 代码审查的另一个心理益处，是让人获得肯定。即使最有能力的工程师，也可能受到冒名顶替综合征的困扰，对自己过于苛刻。代码审查可以肯定并认可一个人的工作。审查通常还包含想法交流和知识共享，下一节会进一步介绍，审查者和被审查者都能从中受益。随着工程师的领域知识不断增长，有时反而很难得到对自身进步的正面反馈，代码审查可以提供这样的机会。
-
-The process of initiating a code review also forces all authors to take a little extra care with their changes. Many software engineers are not perfectionists; most will admit that code that “gets the job done” is better than code that is perfect but that takes too long to develop. Without code review, it’s natural that many of us would cut corners, even with the full intention of correcting such defects later. “Sure, I don’t have all of the unit tests done, but I can do that later.” A code review forces an engineer to resolve those issues before sending the change. Collecting the components of a change for code review psychologically forces an engineer to make sure that all of their ducks are in a row. The little moment of reflection that comes before sending off your change is the perfect time to read through your change and make sure you’re not missing anything.
 
 发起代码审查，也会促使每位作者对变更多用一点心。许多软件工程师并非完美主义者，大多数人都会承认，与耗时过长才写出的完美代码相比，“能完成任务”的代码更好。如果没有代码审查，即使真心打算以后补上缺陷，许多人仍难免省去一些工序：“单元测试确实还没写全，不过以后可以补。”代码审查要求工程师先解决这些问题，再把变更发出去。整理待审查变更的各项内容，也会在心理上促使工程师确认准备齐全。发送变更前稍作停顿，正好可以通读一遍，检查有无遗漏。
 
-### Knowledge Sharing  知识共享
-
-One of the most important, but underrated, benefits of code review is in knowledge sharing. Most authors pick reviewers who are experts, or at least knowledgeable, in the area under review. The review process allows reviewers to impart domain knowledge to the author, allowing the reviewer(s) to offer suggestions, new techniques, or advisory information to the author. (Reviewers can even mark some comments “FYI,” requiring no action; they are simply added as an aid to the author.) Authors who become particularly proficient in an area of the codebase will often become owners as well, who then in turn will be able to act as reviewers for other engineers.
+### 知识共享
 
 知识共享是代码审查最重要、却常被低估的好处之一。作者大多会选择相关领域的专家，或至少熟悉该领域的人担任审查者。审查者可以借此向作者传授领域知识，提出建议，介绍新技术或提供参考信息。有些评论甚至可以标记为“仅供参考”，无须作者采取行动，只是提供帮助。特别精通代码库某一部分的作者，往往也会成为代码所有者，继而为其他工程师审查代码。
 
-Part of the code review process of feedback and confirmation involves asking questions on why the change is done in a particular way. This exchange of information facilitates knowledge sharing. In fact, many code reviews involve an exchange of information both ways: the authors as well as the reviewers can learn new techniques and patterns from code review. At Google, reviewers may even directly share suggested edits with an author within the code review tool itself.
-
 代码审查中的反馈与确认，也包括询问作者为什么这样修改。这种交流有助于知识共享。事实上，许多代码审查都是双向交流：作者和审查者都能从中学到新的技术和模式。在谷歌，审查者甚至可以直接在代码审查工具中向作者提供建议的修改内容。
-
-An engineer may not read every email sent to them, but they tend to respond to every code review sent. This knowledge sharing can occur across time zones and projects as well, using Google’s scale to disseminate information quickly to engineers in all corners of the codebase. Code review is a perfect time for knowledge transfer: it is timely and actionable. (Many engineers at Google “meet” other engineers first through their code reviews!)
 
 工程师未必会阅读收到的每封邮件，却往往会回应每个发给自己的代码审查请求。这种知识共享还可以跨越时区和项目，借助谷歌的规模，将信息快速传播给负责代码库各个部分的工程师。代码审查是传递知识的理想时机，因为知识来得及时，也能立即用于实践。谷歌的许多工程师，正是通过代码审查初次“认识”彼此的！
 
-Given the amount of time Google engineers spend in code review, the knowledge accrued is quite significant. A Google engineer’s primary task is still programming, of course, but a large chunk of their time is still spent in code review. The code review process provides one of the primary ways that software engineers interact with one another and exchange information about coding techniques. Often, new patterns are advertised within the context of code review, sometimes through refactorings such as large-scale changes.
-
 谷歌工程师投入代码审查的时间很多，因此积累的知识也相当可观。编程当然仍是他们的主要任务，但代码审查也占据了相当一部分时间。它是软件工程师彼此交流、分享编码技术的主要渠道之一。新的代码模式常在审查过程中得到推广，有时则借助大规模变更等重构来推广。
-
-Moreover, because each change becomes part of the codebase, code review acts as a historical record. Any engineer can inspect the Google codebase and determine when some particular pattern was introduced and bring up the actual code review in question. Often, that archeology provides insights to many more engineers than the original author and reviewer(s).
 
 此外，每项变更都会成为代码库的一部分，相应的代码审查也就留下了历史记录。任何工程师都能查看谷歌代码库，查明某种模式何时引入，并调出当时的代码审查记录。这种“代码考古”带来的认识，往往能惠及原作者和审查者之外的更多工程师。
 
-## Code Review Best Practices  代码审查最佳实践
-
-Code review can, admittedly, introduce friction and delay to an organization. Most of these issues are not problems with code review per se, but with their chosen implementation of code review. Keeping the code review process running smoothly at Google is no different, and it requires a number of best practices to ensure that code review is worth the effort put into the process. Most of those practices emphasize keeping the process nimble and quick so that code review can scale properly.
+## 代码审查最佳实践
 
 代码审查确实可能给组织带来阻力和延迟，但问题大多不在代码审查本身，而在具体的实施方式。谷歌也不例外：要让流程顺畅运行，让代码审查的收益值得所投入的精力，就需要遵循一系列最佳实践。其中大多数都强调让流程保持轻快、灵活，以便适应规模增长。
 
-### Be Polite and Professional  保持礼貌和专业
-
-As pointed out in the Culture section of this book, Google heavily fosters a culture of trust and respect. This filters down into our perspective on code review. A software engineer needs an LGTM from only one other engineer to satisfy our requirement on code comprehension, for example. Many engineers make comments and LGTM a change with the understanding that the change can be submitted after those changes are made, without any additional rounds of review. That said, code reviews can introduce anxiety and stress to even the most capable engineers. It is critically important to keep all feedback and criticism firmly in the professional realm.
+### 保持礼貌和专业
 
 正如本书文化部分所述，谷歌大力倡导信任与尊重，这也体现在我们对代码审查的态度上。例如，只需另一位工程师给出 LGTM，就能满足我们对代码可理解性的要求。许多工程师会在提出意见的同时给出 LGTM，默认作者落实这些意见后就可以提交，无须再审一轮。即便如此，代码审查仍可能让最有能力的工程师感到焦虑和压力。因此，所有反馈和批评都必须严格限定在专业问题上。
 
-In general, reviewers should defer to authors on particular approaches and only point out alternatives if the author’s approach is deficient. If an author can demonstrate that several approaches are equally valid, the reviewer should accept the preference of the author. Even in those cases, if defects are found in an approach, consider the review a learning opportunity (for both sides!). All comments should remain strictly professional. Reviewers should be careful about jumping to conclusions based on a code author’s particular approach. It’s better to ask questions on why something was done the way it was before assuming that approach is wrong.
-
 通常，审查者应尊重作者对具体方法的选择，只有作者的方法存在不足时才提出替代方案。如果作者能证明几种方法同样可行，审查者就应接受作者的偏好。即使发现方法有缺陷，也应把审查看作双方学习的机会。所有评论都应保持专业。审查者不应仅凭作者选择的方法就贸然下结论；与其先认定方法有误，不如先问清楚为什么这样做。
-
-Reviewers should be prompt with their feedback. At Google, we expect feedback from a code review within 24 (working) hours. If a reviewer is unable to complete a review in that time, it’s good practice (and expected) to respond that they’ve at least seen the change and will get to the review as soon as possible. Reviewers should avoid responding to the code review in piecemeal fashion. Few things annoy an author more than getting feedback from a review, addressing it, and then continuing to get unrelated further feedback in the review process.
 
 审查者应及时反馈。在谷歌，我们期望在24个工作小时内得到代码审查反馈。如果无法在这段时间内完成审查，审查者至少应回复，说明自己已经看到变更，会尽快处理；这既是良好做法，也是我们的要求。审查者还应避免零零碎碎地给出反馈。作者收到意见、处理完毕后，又不断收到与此前意见无关的新问题，很少有什么比这更令人恼火。
 
-As much as we expect professionalism on the part of the reviewer, we expect professionalism on the part of the author as well. Remember that you are not your code, and that this change you propose is not “yours” but the team’s. After you check that piece of code into the codebase, it is no longer yours in any case. Be receptive to questions on your approach, and be prepared to explain why you did things in certain ways. Remember that part of the responsibility of an author is to make sure this code is understandable and maintainable for the future.
-
 我们要求审查者保持专业，也同样要求作者保持专业。要记住，代码不等于你本人，提出的变更也不是“你个人的”，而是团队的。无论如何，代码一旦提交到代码库，就不再属于你个人。应当乐于接受对方法的提问，并准备好解释为什么这样做。让代码在未来仍能被理解和维护，也是作者的职责。
-
-It’s important to treat each reviewer comment within a code review as a TODO item; a particular comment might not need to be accepted without question, but it should at least be addressed. If you disagree with a reviewer’s comment, let them know, and let them know why and don’t mark a comment as resolved until each side has had a chance to offer alternatives. One common way to keep such debates civil if an author doesn’t agree with a reviewer is to offer an alternative and ask the reviewer to PTAL (please take another look). Remember that code review is a learning opportunity for both the reviewer and the author. That insight often helps to mitigate any chances for disagreement.
 
 应把每条审查意见都当作一个 TODO 待办项：不必无条件接受，但至少要作出回应。如果不同意，就说明自己的看法和理由；在双方都有机会提出替代方案之前，不要将评论标记为已解决。作者与审查者意见不同时，一种常见的礼貌做法是提出替代方案，再请审查者 PTAL（请再看一下）。记住，代码审查是双方学习的机会，这种认识往往有助于减少分歧。
 
-By the same token, if you are an owner of code and responding to a code review within your codebase, be amenable to changes from an outside author. As long as the change is an improvement to the codebase, you should still give deference to the author that the change indicates something that could and should be improved.
-
 同样，作为代码所有者，审查自己负责的代码库时，应对外部作者提出的变更持开放态度。只要变更能改善代码库，就应尊重作者的判断，承认代码中确有可以而且应该改进的地方。
 
-### Write Small Changes  保持变更精简
-
-Probably the most important practice to keep the code review process nimble is to keep changes small. A code review should ideally be easy to digest and focus on a single issue, both for the reviewer and the author. Google’s code review process discourages massive changes consisting of fully formed projects, and reviewers can rightfully reject such changes as being too large for a single review. Smaller changes also prevent engineers from wasting time waiting for reviews on larger changes, reducing downtime. These small changes have benefits further down in the software development process as well. It is far easier to determine the source of a bug within a change if that particular change is small enough to narrow it down.
+### 保持变更精简
 
 要让代码审查流程保持轻快，最重要的做法可能就是控制变更规模。理想情况下，一次审查应聚焦一个问题，让审查者和作者都容易理解。谷歌不鼓励把一个完整成型的项目作为单次大型变更送审；如果规模大到无法一次审完，审查者完全有理由拒绝。小变更也能减少工程师等待大型审查的时间，避免工作停滞。这种好处还会延续到软件开发的后续阶段：变更足够小，排查范围就更集中，定位其中的缺陷也容易得多。
 
-That said, it’s important to acknowledge that a code review process that relies on small changes is sometimes difficult to reconcile with the introduction of major new features. A set of small, incremental code changes can be easier to digest individually, but more difficult to comprehend within a larger scheme. Some engineers at Google admittedly are not fans of the preference given to small changes. Techniques exist for managing such code changes (development on integration branches, management of changes using a diff base different than HEAD), but those techniques inevitably involve more overhead. Consider the optimization for small changes just that: an optimization, and allow your process to accommodate the occasional larger change.
-
 不过，也要承认，依赖小变更的代码审查流程，有时难以兼顾重大新功能的引入。一组渐进的小变更，单独看容易理解，放在整体方案中却可能更难把握。谷歌确实有些工程师不赞成过于偏重小变更。可以采用一些技术来管理这类变更，例如在集成分支上开发，或使用不同于 HEAD 的差异基准管理变更，但都免不了额外开销。因此，应把偏重小变更视为一种优化，而不是绝对规则，让流程也能容纳偶尔出现的较大变更。
 
-Small” changes should generally be limited to about 200 lines of code. A small change should be easy on a reviewer and, almost as important, not be so cumbersome that additional changes are delayed waiting for an extensive review. Most changes at Google are expected to be reviewed within about a day.[^7] (This doesn’t necessarily mean that the review is over within a day, but that initial feedback is provided within a day.) About 35% of the changes at Google are to a single file.[^8] Being easy on a reviewer allows for quicker changes to the codebase and benefits the author as well. The author wants a quick review; waiting on an extensive review for a week or so would likely impact follow-on changes. A small initial review also can prevent much more expensive wasted effort on an incorrect approach further down the line.
-
-“小”变更一般应控制在约200行代码以内。它应便于审查者处理；几乎同样重要的是，不能繁重到让后续变更都停下来等待审查。谷歌期望大多数变更在约一天内得到审查，这不一定意味着一天内审完，而是一天内给出初步反馈。谷歌约35%的变更只涉及一个文件。降低审查难度，可以加快代码库的变更，也让作者受益。作者希望尽快得到审查结果，如果一次繁重的审查要等上一周左右，后续变更就可能受到影响。先审查一项小变更，还能避免沿着错误方向继续投入，造成更大浪费。
-
-Because code reviews are typically small, it’s common for almost all code reviews at Google to be reviewed by one and only one person. Were that not the case—if a team were expected to weigh in on all changes to a common codebase—there is no way the process itself would scale. By keeping the code reviews small, we enable this optimization. It’s not uncommon for multiple people to comment on any given change— most code reviews are sent to a team member, but also CC’d to appropriate teams— but the primary reviewer is still the one whose LGTM is desired, and only one LGTM is necessary for any given change. Any other comments, though important, are still optional.
+“小”变更一般应控制在约200行代码以内。它应便于审查者处理；几乎同样重要的是，不能繁重到让后续变更都停下来等待审查。谷歌期望大多数变更在约一天内得到审查，这不一定意味着一天内审完，而是一天内给出初步反馈。[^7]谷歌约35%的变更只涉及一个文件。[^8]降低审查难度，可以加快代码库的变更，也让作者受益。作者希望尽快得到审查结果，如果一次繁重的审查要等上一周左右，后续变更就可能受到影响。先审查一项小变更，还能避免沿着错误方向继续投入，造成更大浪费。
 
 由于变更通常很小，谷歌几乎所有代码审查都只由一人负责。如果要求整个团队对共享代码库中的每项变更都发表意见，流程就无法适应规模增长。小规模审查使这种优化成为可能。多人评论同一项变更并不少见：大多数审查请求会发给一位团队成员，同时抄送相关团队。不过，作者需要取得 LGTM 的对象仍是主要审查者，每项变更也只需一个 LGTM。其他意见虽然重要，但是否采纳仍可自行决定。
 
-Keeping changes small also allows the “approval” reviewers to more quickly approve any given changes. They can quickly inspect whether the primary code reviewer did due diligence and focus purely on whether this change augments the codebase while maintaining code health over time.
-
 小变更也便于负责“批准”的审查者更快作出决定。他们可以迅速确认主要审查者是否完成了应有的检查，再专注于判断变更是否改善代码库，并保持代码的长期健康。
 
-> [^7]: Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko, and Alberto Bacchelli, “Modern code review: a case study at Google.”
->
-> 7   Caitlin Sadowski、Emma Söderberg、Luke Church、Michal Sipko 和 Alberto Baccelli，《现代代码审查：谷歌案例研究》。
->
-> [^8]: Ibid.
->
-> 8   同上。
-
-
-### Write Good Change Descriptions  写好变更描述
-
-A change description should indicate its type of change on the first line, as a summary. The first line is prime real estate and is used to provide summaries within the code review tool itself, to act as the subject line in any associated emails, and to become the visible line Google engineers see in a history summary within Code Search (see Chapter 17), so that first line is important.
+### 写好变更描述
 
 变更描述的第一行应概括变更类型。这一行位置关键：代码审查工具用它显示摘要，相关邮件用它作为主题，谷歌工程师在代码搜索的历史摘要中看到的也是这一行（见第17章）。因此，第一行值得认真斟酌。
 
-Although the first line should be a summary of the entire change, the description should still go into detail on what is being changed *and why*. A description of “Bug fix” is not helpful to a reviewer or a future code archeologist. If several related modifications were made in the change, enumerate them within a list (while still keeping it on message and small). The description is the historical record for this change, and tools such as Code Search allow you to find who wrote what line in any particular change in the codebase. Drilling down into the original change is often useful when trying to fix a bug.
-
 第一行概括整个变更后，后续描述仍应详细说明改了什么，以及*为什么要改*。只写“修复缺陷”，对审查者或日后追溯代码历史的人都没有帮助。如果变更包含几项相关修改，应逐项列出，同时保持说明简短、切题。描述就是这项变更的历史记录；代码搜索等工具可以帮助查明代码库中某次变更的某一行出自谁手。修复缺陷时，深入查看最初的变更通常很有帮助。
-
-Descriptions aren’t the only opportunity for adding documentation to a change. When writing a public API, you generally don’t want to leak implementation details, but by all means do so within the actual implementation, where you should comment liberally. If a reviewer does not understand why you did something, even if it is correct, it is a good indicator that such code needs better structure or better comments (or both). If, during the code review process, a new decision is reached, update the change description, or add appropriate comments within the implementation. A code review is not just something that you do in the present time; it is something you do to record what you did for posterity.
 
 变更描述并不是记录信息的唯一地方。编写公开 API 时，通常应避免暴露实现细节，但在实际实现内部，应当充分注释、说明这些细节。如果审查者不理解你为什么这样做，即使代码是正确的，也说明代码结构或注释需要改进，可能两者都要改。如果审查过程中作出了新决定，应更新变更描述，或在实现中补充适当注释。代码审查不只是处理眼前的工作，也是在为后来者记录你做过的事情。
 
-### Keep Reviewers to a Minimum  尽量减少审查者人数
+### 尽量减少审查者人数
 
-Most code reviews at Google are reviewed by precisely one reviewer.[^9] Because the code review process allows the bits on code correctness, owner acceptance, and language readability to be handled by one individual, the code review process scales quite well across an organization the size of Google.
-
-谷歌大多数代码审查只由一位审查者负责。代码正确性、代码所有者批准和语言 Readability 批准所需的权限位，可以由同一个人满足，因此，这一流程能很好地适应谷歌这样的组织规模。
-
-There is a tendency within the industry, and within individuals, to try to get additional input (and unanimous consent) from a cross-section of engineers. After all, each additional reviewer can add their own particular insight to the code review in question. But we’ve found that this leads to diminishing returns; the most important LGTM is the first one, and subsequent ones don’t add as much as you might think to the equation. The cost of additional reviewers quickly outweighs their value.
+谷歌大多数代码审查只由一位审查者负责。[^9]代码正确性、代码所有者批准和语言 Readability 批准所需的权限位，可以由同一个人满足，因此，这一流程能很好地适应谷歌这样的组织规模。
 
 无论整个行业还是工程师个人，都容易倾向于征求来自不同背景的工程师的更多意见，并争取全体一致同意。毕竟，每多一位审查者，就可能多一份独特见解。但我们发现，这样做的收益会递减：第一个 LGTM 最重要，后续 LGTM 带来的价值并没有想象中大。增加审查者的成本，很快就会超过收益。
 
-The code review process is optimized around the trust we place in our engineers to do the right thing. In certain cases, it can be useful to get a particular change reviewed by multiple people, but even in those cases, those reviewers should focus on different aspects of the same change.
-
 我们信任工程师会作出正确判断，代码审查流程也以此为基础进行优化。某些情况下，让多人审查同一变更确实有帮助，但即使如此，各位审查者也应分别关注变更的不同方面。
 
-> [^9]: Ibid.
->
-> 9   同上。
-
-### Automate Where Possible  尽可能实现自动化
-
-Code review is a human process, and that human input is important, but if there are components of the code process that can be automated, try to do so. Opportunities to automate mechanical human tasks should be explored; investments in proper tooling reap dividends. At Google, our code review tooling allows authors to automatically submit and automatically sync changes to the source control system upon approval (usually used for fairly simple changes).
+### 尽可能实现自动化
 
 代码审查由人参与完成，人的判断很重要；但流程中能够自动化的部分，应尽量自动化。值得寻找机会，将机械性的人工作业交给工具，适当的工具投入会带来回报。在谷歌，作者可以通过代码审查工具，在变更获批后自动提交，并自动同步到源代码版本控制系统中；这通常用于较简单的变更。
 
-One of the most important technological improvements regarding automation over the past few years is automatic static analysis of a given code change (see Chapter 20). Rather than require authors to run tests, linters, or formatters, the current Google code review tooling provides most of that utility automatically through what is known as *presubmits*. A presubmit process is run when a change is initially sent to a reviewer. Before that change is sent, the presubmit process can detect a variety of problems with the existing change, reject the current change (and prevent sending an awkward email to a reviewer), and ask the original author to fix the change first. Such automation not only helps out with the code review process itself, it also allows the reviewers to focus on more important concerns than formatting.
-
 过去几年，自动化方面最重要的技术进展之一，是对代码变更进行自动静态分析（见第20章）。谷歌现有的代码审查工具通过所谓的*提交前检查*，自动完成大部分测试、代码检查和格式化工作，无须作者自行运行这些工具。首次向审查者发送变更时，就会触发提交前检查。在变更真正发出之前，检查可以发现各种问题，阻止发送，并要求作者先修复，也避免把令人尴尬的邮件发给审查者。这类自动化既有助于审查流程本身，也能让审查者关注比格式更重要的问题。
 
-## Types of Code Reviews  代码审查的类型
-
-All code reviews are not alike! Different types of code review require different levels of focus on the various aspects of the review process. Code changes at Google generally fall into one of the following buckets (though there is sometimes overlap):
-
-- Greenfield reviews and new feature development
-- Behavioral changes, improvements, and optimizations
-- Bug fixes and rollbacks
-- Refactorings and large-scale changes
+## 代码审查的类型
 
 代码审查并非千篇一律。不同类型的审查，对流程中各个方面的关注程度也不同。谷歌的代码变更通常可以分为以下几类，有时也会相互重叠：
 
@@ -422,76 +205,43 @@ All code reviews are not alike! Different types of code review require different
 - 缺陷修复与回滚
 - 重构与大规模变更
 
-### Greenfield Code Reviews  全新代码审查
-
-The least common type of code review is that of entirely new code, a so-called *green‐* *field review*. A greenfield review is the most important time to evaluate whether the code will stand the test of time: that it will be easier to maintain as time and scale change the underlying assumptions of the code. Of course, the introduction of entirely new code should not come as a surprise. As mentioned earlier in this chapter, code is a liability, so the introduction of entirely new code should generally solve a real problem rather than simply provide yet another alternative. At Google, we generally require new code and/or projects to undergo an extensive design review, apart from a code review. A code review is not the time to debate design decisions already made in the past (and by the same token, a code review is not the time to introduce the design of a proposed API).
+### 全新代码审查
 
 最少见的一类是审查完全新写的代码，称为*全新代码审查*。这是评估代码能否经受时间考验的关键时机：当时间推移、规模变化改变了代码的基本假设时，代码是否仍便于维护。当然，引入全新代码不应让人措手不及。前文已经说过，代码是一种负担，因此，新代码通常应解决实际问题，而不只是再提供一种替代方案。在谷歌，新代码或新项目除了代码审查，一般还需要经过全面的设计评审。代码审查不是重新争论既有设计决策的场合，同样也不是首次介绍拟议 API 设计的场合。
 
-To ensure that code is sustainable, a greenfield review should ensure that an API matches an agreed design (which may require reviewing a design document) and is tested *fully*, with all API endpoints having some form of unit test, and that those tests fail when the code’s assumptions change. (See Chapter 11). The code should also have proper owners (one of the first reviews in a new project is often of a single OWNERS file for the new directory), be sufficiently commented, and provide supplemental documentation, if needed. A greenfield review might also necessitate the introduction of a project into the continuous integration system. (See Chapter 23).
-
 为了确保代码能够持续维护，全新代码审查应确认 API 符合已商定的设计，这可能需要查阅设计文档；还应确认 API 已经得到*充分测试*，每个 API 端点都有某种形式的单元测试，而且代码的假设发生变化时，测试会失败（见第11章）。代码还应有合适的所有者、充分的注释，必要时提供补充文档。新项目最初的几次审查中，往往有一次只审查新目录的 OWNERS 文件。全新代码审查也可能要求把项目接入持续集成系统（见第23章）。
 
-### Behavioral Changes, Improvements, and Optimizations 行为变更、改进和优化
-
-Most changes at Google generally fall into the broad category of modifications to existing code within the codebase. These additions may include modifications to API endpoints, improvements to existing implementations, or optimizations for other factors such as performance. Such changes are the bread and butter of most software engineers.
+### 行为变更、改进和优化
 
 谷歌的大多数变更，都属于修改代码库中的现有代码这一大类，包括调整 API 端点、改进现有实现，或优化性能等其他方面。这是大多数软件工程师的日常工作。
 
-In each of these cases, the guidelines that apply to a greenfield review also apply: is this change necessary, and does this change improve the codebase? Some of the best modifications to a codebase are actually deletions! Getting rid of dead or obsolete code is one of the best ways to improve the overall code health of a codebase.
-
 这些情况同样适用全新代码审查的原则：变更是否必要？是否改善了代码库？有些最有价值的变更，其实是删除代码。移除死代码或过时代码，是改善代码库整体健康状况的最佳方式之一。
-
-Any behavioral modifications should necessarily include revisions to appropriate tests for any new API behavior. Augmentations to the implementation should be tested in a Continuous Integration (CI) system to ensure that those modifications don’t break any underlying assumptions of the existing tests. As well, optimizations should of course ensure that they don’t affect those tests and might need to include performance benchmarks for the reviewers to consult. Some optimizations might also require benchmark tests.
 
 任何行为变更，都必须相应更新测试，覆盖新的 API 行为。对实现的增强应在持续集成（CI）系统中接受测试，确保没有破坏现有测试的基本假设。优化也应保证不影响这些测试，并可能需要提供性能基准数据，供审查者参考。有些优化还需要加入基准测试。
 
-### Bug Fixes and Rollbacks  Bug修复与回滚
-
-Inevitably, you will need to submit a change for a bug fix to your codebase. *When doing so, avoid the temptation to address other issues*. Not only does this risk increasing the size of the code review, it also makes it more difficult to perform regression testing or for others to roll back your change. A bug fix should focus solely on fixing the indicated bug and (usually) updating associated tests to catch the error that occurred in the first place.
+### Bug修复与回滚
 
 你迟早需要提交变更，修复代码库中的缺陷。*此时不要顺手处理其他问题*。那样不仅可能扩大审查范围，也会增加回归测试的难度，让别人更难回滚这项变更。缺陷修复应只针对指定问题，通常还应更新相关测试，确保能够捕获最初发生的错误。
 
-Addressing the bug with a revised test is often necessary. The bug surfaced because existing tests were either inadequate, or the code had certain assumptions that were not met. As a reviewer of a bug fix, it is important to ask for updates to unit tests if applicable.
-
 修复缺陷时，往往也需要修改测试。缺陷之所以出现，要么是现有测试不充分，要么是代码的某些假设没有成立。审查缺陷修复时，应在适用的情况下要求更新单元测试。
-
-Sometimes, a code change in a codebase as large as Google’s causes some dependency to fail that was either not detected properly by tests or that unearths an untested part of the codebase. In those cases, Google allows such changes to be “rolled back,” usually by the affected downstream customers. A rollback consists of a change that essentially undoes the previous change. Such rollbacks can be created in seconds because they just revert the previous change to a known state, but they still require a code review.
 
 在谷歌这样庞大的代码库中，一项变更有时会导致依赖它的代码失效：可能是测试没有正确检出问题，也可能是暴露了尚未测试到的代码。遇到这种情况，谷歌允许“回滚”变更，通常由受影响的下游使用者执行。回滚本身也是一项变更，其作用是撤销先前的变更。由于只是撤销修改、恢复到已知状态，回滚变更几秒钟就能生成，但仍然需要代码审查。
 
-It also becomes critically important that any change that could cause a potential rollback (and that includes all changes!) be as small and atomic as possible so that a rollback, if needed, does not cause further breakages on other dependencies that can be difficult to untangle. At Google, we’ve seen developers start to depend on new code very quickly after it is submitted, and rollbacks sometimes break these developers as a result. Small changes help to mitigate these concerns, both because of their atomicity, and because reviews of small changes tend to be done quickly.
-
 还有一点至关重要：任何可能被回滚的变更，也就是所有变更，都应尽量小，并保持原子性。这样，必要时回滚才不至于进一步破坏其他依赖，造成难以理清的问题。在谷歌，新代码提交后，开发者往往很快就开始依赖它，回滚有时因此会破坏他们的代码。小变更有助于减轻这些问题，既因为它们具有原子性，也因为它们通常能很快完成审查。
 
-### Refactorings and Large-Scale Changes  重构与大规模变更
-
-Many changes at Google are automatically generated: the author of the change isn’t a person, but a machine. We discuss more about the large-scale change (LSC) process in Chapter 22, but even machine-generated changes require review. In cases where the change is considered low risk, it is reviewed by designated reviewers who have approval privileges for our entire codebase. But for cases in which the change might be risky or otherwise requires local domain expertise, individual engineers might be asked to review automatically generated changes as part of their normal workflow.
+### 重构与大规模变更
 
 谷歌的许多变更自动生成，作者不是人，而是机器。第22章会详细介绍大规模变更（LSC）流程，但即使由机器生成，变更也必须经过审查。被认定为低风险的变更，由具备整个代码库批准权限的指定审查者处理。如果变更可能有风险，或需要了解具体代码领域，则可能请相关工程师在日常工作流中审查这些自动生成的变更。
 
-At first look, a review for an automatically generated change should be handled the same as any other code review: the reviewer should check for correctness and applicability of the change. However, we encourage reviewers to limit comments in the associated change and only flag concerns that are specific to their code, not the underlying tool or LSC generating the changes. While the specific change might be machine generated, the overall process generating these changes has already been reviewed, and individual teams cannot hold a veto over the process, or it would not be possible to scale such changes across the organization. If there is a concern about the underlying tool or process, reviewers can escalate out of band to an LSC oversight group for more information.
-
 乍看之下，自动生成的变更与其他变更的审查方式相同，都要检查正确性和适用性。不过，我们建议审查者限制评论范围，只提出与自己负责的代码直接相关的问题，不在单项变更中质疑生成变更的底层工具或 LSC。虽然具体变更由机器生成，整体生成流程却已经过审查；单个团队不能否决这一流程，否则就无法在整个组织中大规模推进此类变更。如果对底层工具或流程有疑虑，审查者可以在本次审查之外，另行向 LSC 监督小组升级反馈，了解更多信息。
-
-We also encourage reviewers of automatic changes to avoid expanding their scope. When reviewing a new feature or a change written by a teammate, it is often reasonable to ask the author to address related concerns within the same change, so long as the request still follows the earlier advice to keep the change small. This does not apply to automatically generated changes because the human running the tool might have hundreds of changes in flight, and even a small percentage of changes with review comments or unrelated questions limits the scale at which the human can effectively operate the tool.
 
 审查自动生成的变更时，也应避免扩大变更范围。对于新功能或同事编写的变更，只要仍遵循前文所说的精简原则，要求作者顺带处理相关问题通常是合理的。但这不适用于自动生成的变更：操作工具的人可能同时处理数百项变更，即使只有少量变更收到审查意见或无关提问，也会限制此人借助工具能够有效处理的变更规模。
 
-## Conclusion  总结
-
-Code review is one of the most important and critical processes at Google. Code review acts as the glue connecting engineers with one another, and the code review process is the primary developer workflow upon which almost all other processes must hang, from testing to static analysis to CI. A code review process must scale appropriately, and for that reason, best practices, including small changes and rapid feedback and iteration, are important to maintain developer satisfaction and appropriate production velocity.
+## 总结
 
 代码审查是谷歌最重要、最关键的流程之一，也是连接工程师的纽带。它构成了开发者的主要工作流，测试、静态分析、CI 等几乎所有其他流程都要依托于它。代码审查必须能够适应规模增长，因此，保持变更精简、快速反馈和迭代等最佳实践，对于维持开发者满意度和合理的交付速度十分重要。
 
-## TL;DRs  内容提要
-
-- Code review has many benefits, including ensuring code correctness, comprehension, and consistency across a codebase.
-- Always check your assumptions through someone else; optimize for the reader.
-- Provide the opportunity for critical feedback while remaining professional.
-- Code review is important for knowledge sharing throughout an organization.
-- Automation is critical for scaling the process.
-- The code review itself provides a historical record.
+## 内容提要
 
 - 代码审查有许多好处，包括确保代码正确、易于理解，并在整个代码库中保持一致。
 - 始终请他人检验你的假设，优先考虑代码读者。
@@ -499,3 +249,21 @@ Code review is one of the most important and critical processes at Google. Code 
 - 代码审查对于整个组织的知识共享非常重要。
 - 自动化是让代码审查流程适应规模增长的关键。
 - 代码审查本身会留下历史记录。
+
+[^1]: 我们也使用 Gerrit 审查 Git 中的代码，主要用于开源项目。不过，对谷歌一般的软件工程师而言，主要工具仍是 Critique。
+
+[^2]: 史蒂夫·麦康奈尔，Code Complete（雷蒙德：微软出版社，2004年）。
+
+[^3]: 在谷歌，Readability（可读性）不只是指代码易于理解，还涉及一套让其他工程师能够维护代码的风格规范和最佳实践。参见第3章。
+
+[^4]: 某些文档和配置变更可能无须代码审查，但通常仍以经过审查为佳。
+
+[^5]: "Advances in Software Inspection," IEEE Transactions on Software Engineering, SE-12(7): 744-751, July 1986. 诚然，开展这项研究时，强大的工具和自动化测试尚未在软件开发中占据如今这样重要的地位，但研究结果对现代软件开发似乎仍有参考价值。
+
+[^6]: Rigby, Peter C. and Christian Bird. 2013.《趋同的软件同行审查实践》。ESEC/FSE 2013，《2013年第九届软件工程基础联合会议论文集》，2013年8月：202-212。https:// dl.acm.org/doi/10.1145/2491411.2491444。
+
+[^7]: Caitlin Sadowski、Emma Söderberg、Luke Church、Michal Sipko 和 Alberto Baccelli，《现代代码审查：谷歌案例研究》。
+
+[^8]: 同上。
+
+[^9]: 同上。

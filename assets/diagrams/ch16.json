@@ -4,11 +4,11 @@
   "summary": "所有人在同一个主干上工作，改动小而频繁，合并的痛苦最少",
   "enabled": true,
   "sourceSections": [
-    "## What Is Version Control?  什么是版本控制？",
-    "## Branch Management  分支管理",
-    "## Version Control at Google  谷歌的版本控制",
-    "## Monorepos    单体代码仓库",
-    "## Future of Version Control  版本控制的未来"
+    "What Is Version Control?",
+    "Branch Management",
+    "Version Control at Google",
+    "Monorepos",
+    "Future of Version Control"
   ],
   "kind": "contrast",
   "desktop": "assets/diagrams/ch16.svg",

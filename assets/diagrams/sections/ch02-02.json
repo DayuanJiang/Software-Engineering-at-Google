@@ -3,7 +3,9 @@
   "chapter": 2,
   "title": "主负责人离开后，谁还能接手？",
   "summary": "在两种知识分布中移除同一个主负责人，检查是否仍有理解原型的人连接到工作；文档辅助接手，不作为额外人员或独立接手者。",
-  "sourceSections": ["### The Bus Factor 巴士因子"],
+  "sourceSections": [
+    "The Bus Factor"
+  ],
   "afterParagraph": "做成功项目中的一员，总比做失败项目中不可或缺的那个人更好。",
   "desktop": "assets/diagrams/sections/ch02-02.svg",
   "mobile": "assets/diagrams/sections/ch02-02-mobile.svg",

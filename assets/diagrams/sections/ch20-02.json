@@ -5,7 +5,9 @@
   "summary": "数据流展示变更元数据如何触发分析服务器读取相应版本的源文件与缓存构建产物，运行分析器并写入结果存储；Critique 展示每类最新结果和运行状态。",
   "enabled": false,
   "removalReason": "请求、服务器、存储、界面的通用框图主要复述相邻架构段落，未展示开发者如何判断或处理报告；已有图20-1展示审查界面。本轮保留源文架构说明与原 SVG 以便追溯，不再额外插入该图。",
-  "sourceSections": ["## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台"],
+  "sourceSections": [
+    "Tricorder: Google’s Static Analysis Platform Tricorder： Google"
+  ],
   "afterParagraph": "谷歌各处的开发者会编写 Tricorder 分析，称为“分析器”，也会为已有分析贡献单独的“检查项”。",
   "desktop": "assets/diagrams/sections/ch20-02.svg",
   "mobile": "assets/diagrams/sections/ch20-02-mobile.svg",

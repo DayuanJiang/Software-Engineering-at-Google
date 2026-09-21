@@ -4,7 +4,10 @@
   "title": "版本允许，不等于用法兼容",
   "summary": "通过 Foo / Bar 的签名对照与无序流首项断言，展示声明版本范围和真实使用结果可向两个方向偏离；示意签名、数组和补丁编号均不冒充原文代码。",
   "enabled": true,
-  "sourceSections": ["### SemVer Might Overconstrain  SemVer可能过度约束", "### SemVer Might Overpromise  SemVer可能过度承诺"],
+  "sourceSections": [
+    "SemVer Might Overconstrain",
+    "SemVer Might Overpromise"
+  ],
   "afterParagraph": "这时可能出现构建错误或运行时缺陷，其严重程度理论上没有上限。",
   "desktop": "assets/diagrams/sections/ch21-03.svg",
   "mobile": "assets/diagrams/sections/ch21-03-mobile.svg",

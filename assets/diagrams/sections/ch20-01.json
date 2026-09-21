@@ -4,7 +4,9 @@
   "title": "两种误报，要用两类证据判断",
   "summary": "保留技术正确性与积极行动的二维矩阵，并用原文 Hashtable.contains 示例提供意图、方法语义和实际修改三项证据，定位技术误报但非感知误报的格子。",
   "enabled": true,
-  "sourceSections": ["### Focus on Developer Happiness  关注开发者的幸福感"],
+  "sourceSections": [
+    "Focus on Developer Happiness"
+  ],
   "afterParagraph": "反过来，如果分析报告了真实缺陷，开发者却没有理解，因此未采取行动，这也算感知误报。",
   "desktop": "assets/diagrams/sections/ch20-01.svg",
   "mobile": "assets/diagrams/sections/ch20-01-mobile.svg",

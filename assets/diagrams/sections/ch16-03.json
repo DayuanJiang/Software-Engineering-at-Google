@@ -4,7 +4,9 @@
   "title": "只新增库 B，为何拉入两版 Abseil",
   "summary": "保留原有 A 到 Abseil 原版的依赖路径，用虚线标出新增 B 后引入未改名分叉的第二条路径，显示同一程序的传递依赖如何改变。",
   "enabled": true,
-  "sourceSections": ["### Scenario: Multiple Available Versions  场景：多个可用版本"],
+  "sourceSections": [
+    "Scenario: Multiple Available Versions"
+  ],
   "afterParagraph": "这既昂贵又令人遗憾，也不利于规模扩展。",
   "desktop": "assets/diagrams/sections/ch16-03.svg",
   "mobile": "assets/diagrams/sections/ch16-03-mobile.svg",

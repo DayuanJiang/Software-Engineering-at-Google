@@ -4,7 +4,12 @@
   "title": "DAMP：显露真正的预期",
   "summary": "展开论坛通用验证helper里的布尔表达式，看到NORMAL和BANNED的注册预期都写反了；再与显式状态、动作、false断言及有意义的共享边界对照。",
   "enabled": true,
-  "sourceSections": ["## Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY", "### Shared  Values  共享值", "### Shared  Helpers  and  Validation  共享辅助方法和验证", "### Defining Test Infrastructure  定义测试基础设施"],
+  "sourceSections": [
+    "Tests and Code Sharing: DAMP, Not DRY",
+    "Shared Values",
+    "Shared Helpers and Validation",
+    "Defining Test Infrastructure"
+  ],
   "afterParagraph": "而不只是为了减少重复。",
   "desktop": "assets/diagrams/sections/ch12-04.svg",
   "mobile": "assets/diagrams/sections/ch12-04-mobile.svg",

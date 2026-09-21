@@ -4,7 +4,7 @@
   "title": "同算中位数，哪些构建不再算？",
   "summary": "用校正前后纳入范围的对照显示：工程师等待结果的构建仍计入，自动工具发起且工程师不等待的构建被排除。改变的是代理的范围，不是目标或已知性能结果。",
   "sourceSections": [
-    "## Using Data to Validate Metrics  使用数据验证指标"
+    "Using Data to Validate Metrics"
   ],
   "afterParagraph": "并据此帮助我们判断下一步该如何改进流程。",
   "enabled": true,

@@ -5,7 +5,7 @@
   "summary": "并列原文的 Foo* 与按值 unique_ptr 参数声明、调用代码和所有权关系。普通指针调用不能单独回答所有权问题；按值 unique_ptr 参数接收 std::move(my_foo) 时，所有权由调用方转交。",
   "enabled": true,
   "sourceSections": [
-    "#### Optimize for the reader   为读者优化"
+    "Optimize for the reader"
   ],
   "afterParagraph": "就能清楚地理解调用处发生了什么。",
   "desktop": "assets/diagrams/sections/ch08-01.svg",
