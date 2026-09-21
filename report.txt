@@ -1,7 +1,0 @@
-ch10: detached numbered step from paragraph L423: 4. Test “baz” by executing a SQL command
-ch10: hint not matched (0 en, 1 zh): The foobar system will first communicate with the authentica
-ch13: Chinese-only quotation became translator note 1
-ch18: inserted English paragraph from the official text: Fundamentally, it might not seem like what’s happe
-ch20: supplied English heading from the official text: 有效静态分析的特点
-ch02: split 5-line English paragraph L30 to match 5 Chinese paragraphs
-ch02: split 2-line English paragraph L131 to match 2 Chinese paragraphs

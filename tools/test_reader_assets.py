@@ -114,27 +114,22 @@ class ReaderAssetsTests(unittest.TestCase):
             if not page["number"]:
                 continue
             content = json.loads((reader.ROOT / page["content"]).read_text())
-            reader.check_pedagogy(json.loads((reader.DIAGRAMS / f"{page['id']}.json").read_text()), overview=True)
+            reader.check_pedagogy(json.loads((reader.DIAGRAMS / f"{page["id"]}.json").read_text()))
             for guide in page.get("sectionGuides", []):
-                self.assertTrue(reader.check_pedagogy(guide))
+                reader.check_pedagogy(guide)
                 self.assertEqual(reader.anchor_count(content, guide["afterParagraph"]), 1)
                 reader.check_svg(reader.ROOT / guide["desktop"], page["number"], False, guide["id"])
                 reader.check_svg(reader.ROOT / guide["mobile"], page["number"], True, guide["id"])
-            for guide in page.get("retiredSectionGuides", []):
-                self.assertFalse(reader.check_pedagogy(guide))
 
     def test_diagram_review_requires_question_and_visual_reasoning(self):
         metadata = {"id": "fixture", "pedagogy": {"action": "keep"}}
         with self.assertRaisesRegex(ValueError, "readerQuestion"):
             reader.check_pedagogy(metadata)
         metadata["pedagogy"].update({field: "Reviewed fixture." for field in reader.PEDAGOGY_FIELDS})
-        self.assertTrue(reader.check_pedagogy(metadata))
-        metadata["enabled"] = False
-        with self.assertRaisesRegex(ValueError, "disagree"):
-            reader.check_pedagogy(metadata)
+        reader.check_pedagogy(metadata)
         metadata["pedagogy"]["action"] = "retire"
-        metadata["removalReason"] = "Redundant with a more concrete example."
-        self.assertFalse(reader.check_pedagogy(metadata))
+        with self.assertRaisesRegex(ValueError, "decision"):
+            reader.check_pedagogy(metadata)
 
 
 if __name__ == "__main__":

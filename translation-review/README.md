@@ -79,7 +79,7 @@ log(1 + 英文频次) * (1 + log(1 + 文档数)) + 2 * log(1 + 标题频次)
 ```bash
 uv sync --project tools --locked --python 3.12 --cache-dir .cache/uv
 
-uv run --offline --locked --project tools --cache-dir .cache/uv python tools/book_review.py verify --final
+# 逐行应用与校验工具随 2026 年 9 月 21 日的 en/ 与 zh-cn/ 拆分一并移除（见下文“工具去向”）
 uv run --offline --locked --project tools --cache-dir .cache/uv python -m unittest discover -s tools -p 'test_*.py' -v
 ```
 
@@ -103,8 +103,9 @@ uv run --offline --locked --project tools --cache-dir .cache/uv python tools/tra
 `verify --exact` 要求全部被记录的书籍、站点和图片文件逐字节不变，适用于准备阶段。
 正文开始润色后，不带 `--exact` 的 `verify` 检查保护内容；标题、HTML 或结构的有意修改仍会报出，必须人工核对，不能直接重建基线消掉差异。
 有几处缩进中文引文已登记为非程序代码的修改例外，一处原损坏链接已登记语法修复。
-当前全书使用 `book_review.py verify --final` 校验，它只接受具体登记的前后内容，不会忽略任意代码或链接差异。
-如仅检查第一章，可运行 `chapter_pilot.py verify --chapter-only`。
+## 工具去向
+
+全书润色完成后，书稿于 2026 年 9 月 21 日拆分为 `en/`（英文原文）与 `zh-cn/`（中文译文）两套按块对齐的文件。此前按行号向交错文件应用修改并与基线快照比对的工具（`tools/book_review.py`、`tools/chapter_pilot.py` 以及各章目录下的 `verify.py`）只能处理旧布局，已随之移除；它们最后一次可运行的版本在提交 `d9ce3ab` 及其父提交中，拆分脚本 `tools/split_book.py` 亦在提交 `d9ce3ab` 中。本目录保留的 `edits.json`、`notes.md`、`changes.diff`、各类核验结果和 `reader-mappings/` 仍是当时审校的完整记录；全书最终校验结果见 `final-verification.md`。现在书稿的结构一致性由 `tools/book.py` 在每次构建时检查。
 英文混在中文句内的自由文本仍需检查 diff，基线不是语义正确性的证明。
 
 依赖说明：固定 `setuptools` 以兼容 jieba 的 `pkg_resources` 导入；显式固定 `click`，

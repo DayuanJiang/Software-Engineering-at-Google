@@ -21,22 +21,13 @@ PEDAGOGY_FIELDS = (
 )
 
 
-def check_pedagogy(metadata, overview=False):
+def check_pedagogy(metadata):
     review = metadata.get("pedagogy", {})
-    action = review.get("action")
-    if action not in {"keep", "revise", "replace", "retire"}:
+    if review.get("action") not in {"keep", "revise", "replace"}:
         raise ValueError(f"Missing diagram review decision: {metadata.get('id', metadata.get('chapter'))}")
     for key in PEDAGOGY_FIELDS:
         if not isinstance(review.get(key), str) or not review[key].strip():
             raise ValueError(f"Missing diagram review field {key}: {metadata.get('id', metadata.get('chapter'))}")
-    retired = metadata.get("enabled") is False
-    if overview and retired:
-        raise ValueError("A chapter overview must remain available.")
-    if retired != (action == "retire"):
-        raise ValueError(f"Diagram status and review decision disagree: {metadata.get('id')}")
-    if retired and not metadata.get("removalReason"):
-        raise ValueError(f"Retired diagram has no explanation: {metadata.get('id')}")
-    return not retired
 
 
 def anchor_count(chapter, anchor):
@@ -157,7 +148,7 @@ def main():
             metadata = json.loads((DIAGRAMS / f"ch{n:02d}.json").read_text())
             if metadata["chapter"] != n or not metadata["title"] or not metadata["summary"]:
                 raise ValueError(f"Invalid guide metadata: {key}")
-            check_pedagogy(metadata, overview=True)
+            check_pedagogy(metadata)
             if metadata["map"]["question"] != metadata["title"] or not metadata["story"]["acts"]:
                 raise ValueError(f"Chapter map/story content missing or inconsistent: {key}")
             headings = {" ".join(re.sub(r"^#+\s*", "", u["source"]).split()) for u in chapter["units"] if u["kind"] == "heading"}
@@ -172,14 +163,11 @@ def main():
             guides[key] = {field: metadata[field] for field in ("chapter", "title", "summary", "desktop", "mobile", "storyDesktop", "storyMobile")}
             guides[key]["storyTitle"] = metadata["story"]["headline"]
             sections = []
-            retired = []
             for section_path in sorted((DIAGRAMS / "sections").glob(f"{key}-*.json")):
                 section = json.loads(section_path.read_text())
                 if section["id"] != section_path.stem or section["chapter"] != n:
                     raise ValueError(f"Invalid section guide identity: {section_path}")
-                if not check_pedagogy(section):
-                    retired.append(section)
-                    continue
+                check_pedagogy(section)
                 if anchor_count(chapter, section["afterParagraph"]) != 1:
                     raise ValueError(f"Ambiguous section insertion point: {section_path}")
                 for heading in section["sourceSections"]:
@@ -190,8 +178,6 @@ def main():
                 sections.append(section)
             if sections:
                 chapters[-1]["sectionGuides"] = sections
-            if retired:
-                chapters[-1]["retiredSectionGuides"] = retired
     chapters.sort(key=lambda c: c["number"] if c["number"] else {"foreword": -2, "preface": -1, "afterword": 99}[c["id"]])
     if len(guides) != 25:
         raise ValueError("Every numbered chapter must have both SVG layouts.")

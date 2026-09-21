@@ -152,32 +152,6 @@
             "limits": "示例明确假定两个分叉都受影响，数量不是实测。箭头不是依赖方向或自动部署承诺；不把所有分叉认定为有漏洞，也不声称共享依赖总是更优。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch01-01",
-          "chapter": 1,
-          "title": "维护生命周期：从一次运行到持续变更",
-          "summary": "用非比例时间线对照短期脚本与长期项目：可以选择不升级，但要保留应对必要变更的能力。",
-          "enabled": false,
-          "removalReason": "与同节已有图1-1重复解释生命周期与升级需要；变更能力与选择不升级的区别已由新版总览呈现。保留 SVG 供追溯，不在读者页面重复插入。",
-          "sourceSections": [
-            "Time and Change"
-          ],
-          "afterParagraph": "项目的长期可持续性，不只是熬过第一次大规模升级，还要做到此后能够持续、可靠地跟进更新。",
-          "desktop": "assets/diagrams/sections/ch01-01.svg",
-          "mobile": "assets/diagrams/sections/ch01-01-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "一次性脚本和长期项目为什么有不同的维护预期？",
-            "expectedAnswer": "短期使用可能无需应对环境变化；长期维护则需要保留应对有价值变更的能力，而不是每次发布都升级。",
-            "visualEncoding": "保留的旧图以终止的短轨与继续延伸、标有环境变化的长轨作对照；新版页面由书中图1-1及总览分别承担寿命对照和能力判断。",
-            "sourceEvidence": "## Time and Change 时间与变化：'图1-1展示了两个处于“预期生命周期”两端的软件项目'；'项目的长期可持续性，不只是熬过第一次大规模升级'。",
-            "beforeProblem": "图本身的终止线和持续线有意义，但其主要问题已被紧邻的原书图1-1回答，变更能力结论又与总览重叠。",
-            "whyBetter": "退役避免连续出现两张解答同一寿命问题的图；原书图保持原位，SVG 原件不删除，能力和决策区别移交给总览。",
-            "limits": "退役不是认定图中结论错误。旧图的事件顺序和间隔均为示意，不是观测时间线或普遍转折点。"
-          }
-        }
       ]
     },
     {
@@ -262,32 +236,6 @@
             "limits": "引语采用本章现有中文译文。xyzzy 是原文占位模式，不是技术正确性的证明；礼貌措辞不保证建议被采纳，也不能替代对团队文化的了解。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch02-04",
-          "chapter": 2,
-          "title": "无责复盘：从原因到改变",
-          "summary": "用明确标为示意的配置故障，把事实、原因连接到立即修复与预防两类行动，再区分落实改变和共享经验；避免把复盘画成必然回到事件起点的循环。",
-          "sourceSections": [
-            "Blameless Post-Mortem Culture"
-          ],
-          "afterParagraph": "不要抹去自己的足迹，而要像照亮跑道一样，让后来者看清这些足迹！",
-          "desktop": "assets/diagrams/sections/ch02-04.svg",
-          "mobile": "assets/diagrams/sections/ch02-04-mobile.svg",
-          "enabled": false,
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "说明了故障原因之后，复盘还必须带来哪些不同的结果？",
-            "expectedAnswer": "要说明学到了什么和据此改变什么，明确立即修复问题的行动及负责人、预防再次发生的行动，并实际落实，同时让记录便于现在和未来的人查阅；道歉或指责不能代替这些结果。",
-            "visualEncoding": "同一示意原因分出立即修复与预防复发两条行动，两条连线均标成提出的行动并汇合到落实检查；事实与根因记录另有一条通向共享查阅的路径，区分改变系统和传递经验，不画成时间循环。",
-            "sourceEvidence": "### Blameless Post-Mortem Culture 无责复盘文化：'合格的复盘必须说明学到了什么，以及据此要作出哪些改变'；'文档便于查阅，团队也确实落实了改进措施'；随后行动项清单。",
-            "beforeProblem": "旧图把事实、根因、行动、共享串成循环，最后从共享返回事实，暗示没有文本依据的固定流程；没有展示根因如何决定行动，也没有区分写下行动与落实行动。",
-            "whyBetter": "具体的配置故障把原因、修复、预防一一对应，写下与落实被明确分开；共享记录独立成一路，显示文档可查与行动落地是互补要求。",
-            "limits": "配置故障、A/B 负责人及措施是明确标注的教学示例，不是书中事故。箭头表示依据与责任关系，不是事故处理的强制时间顺序，也不保证措施一定杜绝复发。"
-          },
-          "removalReason": "示意事件并非书中案例；图中的“事实、原因、修复、预防、共享”与正文对无责复盘内容的列举重复，读过该节后看不到新的东西。"
-        }
       ]
     },
     {
@@ -370,33 +318,6 @@
             "beforeProblem": "旧图把提交、反馈、改进连成通用循环，未画出作者资格实际改变的批准路径；尤其手机图省略了不能等同于免除代码审查的关键边界。",
             "whyBetter": "两种作者状态控制住其他输入，让读者能定位改变的是哪一项批准，并看到代码审查没有消失。将插入点移至流程说明末尾，紧邻规则和教学机制。",
             "limits": "描述本书中的 Google 单体仓库制度，不声称是现行全球规则。不绘制完整提交流程或审查先后顺序；明确短期使用的代码可有豁免。取得语言资格不自动等于成为集中认证项目的专职审查者。"
-          }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch03-01",
-          "chapter": 3,
-          "enabled": false,
-          "removalReason": "与章首图重复呈现专家、文档、学习者的互补关系，没有独立的推理任务。修订后的章首图已用排障场景解释同一关系；保留本组 SVG 供追溯，不再作为启用的章节插图。",
-          "title": "专家与文档相互补充",
-          "summary": "专家帮助判断问题背景和适用资料，文档支持跨团队与跨时间共享，学习者通过提问和更新把经验回馈；心理安全感是共同基础。",
-          "sourceSections": [
-            "Philosophy",
-            "Setting the Stage: Psychological Safety"
-          ],
-          "afterParagraph": "培养自己的专家队伍：工程专业知识永远不嫌多。",
-          "desktop": "assets/diagrams/sections/ch03-01.svg",
-          "mobile": "assets/diagrams/sections/ch03-01-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "已经有文档后，为什么还要向专家求助？",
-            "expectedAnswer": "文档扩大可复用范围，专家帮助判断背景、资料的适用性和时效，两者互补。",
-            "visualEncoding": "旧图以专家、文档、学习者三个框和循环箭头表达互补；该任务已由修订的章首图中的先查资料、必要时求助两段路径承担。",
-            "sourceEvidence": "## Philosophy  理念：口头知识与书面知识相辅相成；专家能够判断哪些信息适合提问者的具体场景。",
-            "beforeProblem": "与章首图几乎完全重复，箭头连接的是原则框，没有具体问题或状态变化。手机端的回路也未解释专家怎样回应学习者。",
-            "whyBetter": "停用重复插图，保留原文论述和更具体的章首排障对照；不再要求读者为同一个结论解读第二个抽象回路。",
-            "limits": "原 SVG 原样保留，属于停用的历史图而非本次认可的教学图。是否隐藏取决于后续共享构建和读者界面对 enabled 的处理，本任务不修改这些文件。"
           }
         }
       ]
@@ -483,33 +404,6 @@
             "limits": "比较只转述本章内部流动案例，原文未给样本数、概率或研究设计。两组相当不保证某个人转组后的表现，也不说明所有组织的全部绩效指标都无预测价值。三项审视问题不是公平通行证。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch04-04",
-          "chapter": 4,
-          "title": "与用户共同设计和改进",
-          "summary": "将弱势用户参与、从困难用例开始、衡量系统公平性和持续调整组成概念回路。价值观与投入不自动等于公平结果，需要反馈和专业知识。",
-          "sourceSections": [
-            "Values Versus Outcomes",
-            "Stay Curious, Push Forward"
-          ],
-          "afterParagraph": "改变会让人不适，追求高绩效的过程也可能痛苦，但凭借协作和创造力，我们能够做到。",
-          "desktop": "assets/diagrams/sections/ch04-04.svg",
-          "mobile": "assets/diagrams/sections/ch04-04-mobile.svg",
-          "enabled": false,
-          "removalReason": "四项抽象行动的循环重复原章节总览和相邻条目，没有具体对象、状态变化或新的关系可供推导。修订总览已保留产品共建、组织环境与结果核查的联系，本节文字足以说明持续改进；保留 SVG 文件供追溯。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "价值观与投入为什么不能替代用户参与和实际结果的核查？",
-            "expectedAnswer": "本章指出执行可能偏离价值观，应与弱势用户共建、关注困难用例、和领域专家衡量系统结果，并为失败承担责任、持续修正。",
-            "visualEncoding": "原图是用户参与、困难用例、衡量、改进的四框循环；顺序并非原文规定，箭头没有额外解释可观察的变化。退出读者展示，不增画另一个同义循环。",
-            "sourceEvidence": "Values Versus Outcomes 价值观与结果: “Build with everyone”, “Don't assume equity; measure equity throughout your systems”; Stay Curious, Push Forward 保持好奇，继续前行: “Continuous Improvement and owning our failures”.",
-            "beforeProblem": "与原 ch04 总览几乎同义，也只是重复紧邻正文的行动清单。循环形状容易把开放的持续学习误读成固定流程。",
-            "whyBetter": "退役消除重复和不必要的流程暗示，让保留的图片各自回答不同的因果、条件或适用范围问题。原 SVG 不删除，可检查历史版本。",
-            "limits": "退役不否定用户参与或持续改进的重要性。enabled:false 是本任务规定的消费端排除信号；本次不修改共享构建器、清单或阅读器。"
-          }
-        }
       ]
     },
     {
@@ -568,58 +462,6 @@
             "whyBetter": "把“方向”和“意义”落实为不同的信息传递：可执行任务与客户受益证据；读者可看到为何同一种管理动作无法补足每一种缺口。",
             "limits": "是两种支持需求的选择性示意，不是完备诊断或固定人格分类，也不将意义等同于全部动机。省略自主与精进的展开，保留薪酬不构成压力的前提；不声称邮件保证提高产出。"
           }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch05-01",
-          "chapter": 5,
-          "enabled": false,
-          "removalReason": "与本章概览重复解释工程经理、TL、共同人员配置及 TLM 兼任。新版概览已将这些职责对应到具体问题，本节图没有额外的推理或案例价值；保留 SVG 供追溯。",
-          "title": "两类职责，一个团队",
-          "summary": "工程经理关注人员、绩效和业务，技术负责人关注架构、技术选择与推进；双方共同安排人员与任务。小团队的 TLM 兼任两职，但需要平衡和指导。",
-          "sourceSections": [
-            "The Engineering Manager",
-            "The Tech Lead",
-            "The Tech Lead Manager"
-          ],
-          "afterParagraph": "在自己逐渐适应这个角色的过程中，定期听取导师的建议。",
-          "desktop": "assets/diagrams/sections/ch05-01.svg",
-          "mobile": "assets/diagrams/sections/ch05-01-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "工程经理与 TL 如何分工，TLM 是否减少了其中一类职责？",
-            "expectedAnswer": "经理负责人与业务，TL 负责技术与推进；共同配置人员、匹配任务。TLM 兼任两职并需要平衡与指导，不是免除其中一类职责。",
-            "visualEncoding": "原图的两个并列角色框和共同任务文字准确表达基本分工，但与概览呈现同一组关系；退休后由概览的问题与职责对齐关系承接。",
-            "sourceEvidence": "The Engineering Manager  工程经理：performance, productivity, and happiness；The Tech Lead  技术负责人：work hand in hand；The Tech Lead Manager  技术负责人兼经理：balance individual work, delegation, and people management。",
-            "beforeProblem": "与概览重复；TLM 横条只再述同一分工，没有独立案例、决定条件或状态变化。",
-            "whyBetter": "停止在同一章重复呈现相同职责关系；保留原文件和定位信息，便于追溯退休决定。",
-            "limits": "SVG 原样保留但 enabled=false；实际不再插入需要共享 reader/manifest 的集成方遵守该标志，本次不修改共享代码。"
-          }
-        },
-        {
-          "id": "ch05-03",
-          "chapter": 5,
-          "title": "经理不是 Java 专家，怎么办？",
-          "summary": "用原书 Java 案例画出三方关系：受阻工程师、并非 Java 专家的经理、了解该问题的另一位工程师。经理的贡献是牵线建立技术求助关系，而不是自己掌握答案。",
-          "enabled": false,
-          "sourceSections": [
-            "Remove Roadblocks"
-          ],
-          "afterParagraph": "很多时候，认识合适的人比知道正确答案更有价值。",
-          "desktop": "assets/diagrams/sections/ch05-03.svg",
-          "mobile": "assets/diagrams/sections/ch05-03-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "经理不是 Java 专家，怎样仍能帮助被 Java 代码卡住的工程师？",
-            "expectedAnswer": "原书经理把受阻工程师与另一位恰好理解问题的工程师联系起来。领导可以通过认识合适的人清除障碍，不必亲自知道所有技术答案。",
-            "visualEncoding": "三角关系图将经理放在牵线位置；两条带“介绍”标签的连线接到工程师和懂该问题的人，再用独立标注的技术求助关系连接这两位工程师。角色、知识所在位置与新增联系分开编码。",
-            "sourceEvidence": "Remove Roadblocks  消除障碍：an arcane bit of Java code / manager was not a Java expert / connect the engineer to another engineer who knew exactly what the problem was。",
-            "beforeProblem": "原图将目标、执行、校准串成通用循环，清障机制只藏在图外一句话里；回到目标框也容易把技术求助误读成必须重定目标。",
-            "whyBetter": "真实案例把经理改变的联系关系画出来，读者能区分技术知识由谁提供、联系由谁促成，不必把“服务团队”解释为领导替成员解决所有问题。",
-            "limits": "连线表示介绍与技术求助，不是汇报层级；不虚构 Java 问题细节、解决时长或效率提升。图示角色位置仅为排版，不代表职级。"
-          },
-          "removalReason": "三个方框加箭头只表达“经理牵线、懂问题的人帮忙”这一句话，正文一句已经说清，图形没有增加信息。"
         }
       ]
     },
@@ -815,32 +657,6 @@
             "limits": "两行表示类别而非样本个数、占比或穷尽分类；不虚构延迟、过滤后数值或变化方向。不把定性证据总是正确作为普遍规则。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch07-03",
-          "chapter": 7,
-          "title": "生产力不只有速度",
-          "summary": "将 QUANTS 五方面与 Readability 案例目标并列，明确注意力未设目标，不把维度当成分数、排名或必须填满的表格。",
-          "sourceSections": [
-            "Goals"
-          ],
-          "afterParagraph": "并非每个工程生产力问题都涉及全部五个方面的权衡。",
-          "enabled": false,
-          "removalReason": "仅重列 Goals 段落和表7-2已有的 QUANTS 目标，未呈现权衡发生的条件或目标与代理的差别。新版概览已用取消审查反例说明漏掉质量目标的后果，ch07-02 另展示真实质量度量空缺；保留原 SVG 以便追溯。",
-          "desktop": "assets/diagrams/sections/ch07-03.svg",
-          "mobile": "assets/diagrams/sections/ch07-03-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "Readability 未设注意力目标，是否必须补一个指标才能使用 QUANTS？",
-            "expectedAnswer": "不必。书中明确未设注意力目标，并说明并非每个问题都涉及全部五方面；但这段答案已由相邻原文和表格直接提供。",
-            "visualEncoding": "保留的旧图是五行目标映射，注意力一行标注未设目标；它能提供查找，却没有超出原有列表的关系编码，因此不再插入正文。",
-            "sourceEvidence": "Goals  目标：'我们没有为 Readability 设定注意力方面的目标'、'并非每个工程生产力问题都涉及全部五个方面的权衡'；Using Data to Validate Metrics  使用数据验证指标，表7-2 的注意力行。",
-            "beforeProblem": "五个彩色条带重述原文和既有表格，无输入变化、反例或可推导的权衡；读者容易将五行视为固定填表任务。",
-            "whyBetter": "退役删除重复阅读负担；概览用书中取消审查反例承担权衡解释，ch07-02 区分保留质量目标与承认代理空缺。",
-            "limits": "退役不删除 QUANTS 内容或主张注意力普遍不重要。原 SVG 原样保留仅供追溯，不作为新的教学图。"
-          }
-        }
       ]
     },
     {
@@ -923,35 +739,6 @@
             "beforeProblem": "旧图只有“有差异吗”的抽象分支和工具/人工职责清单，没有给出比较对象；把静态检查与格式化放进同一个入口，也模糊了具体判定机制。",
             "whyBetter": "读者可直接比较字符并独立判断两次结果，看到工具移除的是格式细节往返，而不是全部审查；行数反例让保留人工判断的理由变得具体。",
             "limits": "赋值代码为格式比较示意，不是原书代码或某个格式化器的完整可执行测试；F(S) 仅表示同一配置下的格式化结果，不表示静态分析或语义正确性。数百文件和20行来自原文，表示反例而非实测速度或难度阈值。"
-          }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch08-03",
-          "chapter": 8,
-          "title": "规则随证据演进",
-          "enabled": false,
-          "removalReason": "抽象更新循环重复修改规则段的流程文字，也重复新版概览对决策理由与条件变化的解释；其例外边界已由 ch08-02 的宏冲突反例具体说明。保留 SVG 文件供追溯，不继续插入阅读正文。",
-          "summary": "用流程与反馈连接真实问题、原有决策理由、社区讨论、仲裁共识和规则工具更新；个别豁免并不自动推翻通用规则。",
-          "sourceSections": [
-            "Changing the Rules",
-            "The Process",
-            "The Style Arbiters",
-            "Exceptions"
-          ],
-          "afterParagraph": "因此，保留原规则仍然值得。",
-          "desktop": "assets/diagrams/sections/ch08-03.svg",
-          "mobile": "assets/diagrams/sections/ch08-03-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "什么时候值得重审规则，谁决定是否改变？",
-            "expectedAnswer": "现有代码中的实际问题促使社区重新讨论原有理由，通过社区审查的提案仍需风格仲裁者按工程权衡作最终决定，个别豁免不自动取消通用规则。",
-            "visualEncoding": "原图用方框和循环箭头表示问题、复查、讨论、仲裁与更新，未展示任何被比较的证据或拒绝分支；退休后不再作为正文图呈现。",
-            "sourceEvidence": "### The Process  流程：“有些提案……予以否决”“还需要交由最终决策者批准”；### The Style Arbiters  风格仲裁者：“靠共识而不是投票”；### Exceptions   例外：“保留原规则仍然值得”。",
-            "beforeProblem": "流程方框近乎是相邻段落的小标题列表；单一路径从讨论通往更新还可能暗示每个提案最终都会修改规则，移动版又没有桌面反馈边。",
-            "whyBetter": "去掉重复且可能误导的图，让新版概览用同一类型的两次真实决策解释条件变化，让 ch08-02 用宏命名反例解释豁免边界；完整流程仍由相邻原文提供。",
-            "limits": "未删除原图或原文，也未用概览替代完整社区与仲裁治理流程；保留文件只用于追溯，不代表其流程编码获得认可。"
           }
         }
       ]
@@ -1062,33 +849,6 @@
             "limits": "仅解释书中谷歌常规流程，不代表其他平台的自批准规则，也不声称批准证明代码无缺陷。示例假定对应目录及语言资格有效，不展开跨目录、多语言、例外流程或工具自动撤销批准的行为。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch09-02",
-          "chapter": 9,
-          "title": "三项批准，不是三个人",
-          "summary": "区分同行 LGTM、代码所有者和语言 Readability 三种要求，再汇合为同时满足；明确角色可兼任，而同行批准必须来自作者以外的人。",
-          "enabled": false,
-          "removalReason": "与本章概览重复。新版概览已用人员与批准条件矩阵、仅自审的反例以及意见处理条件，完整承担此处的问题；保留原 SVG 供追溯，不再插入正文。",
-          "sourceSections": [
-            "How Code Review Works at Google",
-            "Code Consistency"
-          ],
-          "afterParagraph": "而所有者往往也具备相应的 Readability 资格。",
-          "desktop": "assets/diagrams/sections/ch09-02.svg",
-          "mobile": "assets/diagrams/sections/ch09-02-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "三个批准权限位是否分别要求三个不同的人？",
-            "expectedAnswer": "不要求三位不同的人。一个具备资格的审查者可以兼任三项，作者可以满足后两项，但他人的 LGTM 仍然必需。",
-            "visualEncoding": "原图三条批准支路汇合为同时满足，结尾以文字说明角色兼任；该信息现在由概览的具体人员矩阵及仅自审反例编码。",
-            "sourceEvidence": "## How Code Review Works at Google  谷歌如何开展代码审查：'同一个人承担这三种角色'、'作者也可以兼任后两种角色'；### Code Consistency  代码的一致性：'LGTM 状态与 Readability 批准状态分开'。",
-            "beforeProblem": "原图准确地区分了批准类型，但与概览几乎重复，且兼任关系仍依靠尾注，不是独立的解释任务。",
-            "whyBetter": "移除重复插图，让一次更具体的比较承担批准要求与人数的区分，正文不再重复同一组三框汇合。",
-            "limits": "SVG 文件原样保留以供审计；停用不意味着相关规则不重要，也不删除源文或原有追溯信息。"
-          }
-        }
       ]
     },
     {
@@ -1170,33 +930,6 @@
             "beforeProblem": "原图只是从入口页到四种文档的分类树，没有展示完成任务时的具体障碍，也没有利用本章已给出的坏教程与好教程对照。",
             "whyBetter": "序号的消失与合并可见地对应用户操作次数的变化，读者能指出何时自己动手、何时是系统响应，而不是只记住教程应有步骤这一原则。",
             "limits": "只摘录原例第3至7步，下载和复制步骤省略，不是完整可执行指南。显示的 shell 和 SQL 是原书展示片段，未执行、未验证运行环境；不替原例增补程序、权限操作或成功输出。若文档写的是服务器生命周期，编号视角可以不同。"
-          }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch10-04",
-          "chapter": 10,
-          "title": "按文档目的权衡质量",
-          "summary": "完整性、准确性和清晰性是需要权衡的维度，不是量化评分；概念文档省略罕见细节不等于故意写错。",
-          "sourceSections": [
-            "The Parameters of Good Documentation",
-            "Documentation Reviews"
-          ],
-          "afterParagraph": "这些因素共同决定文档质量，而质量确实很难准确衡量。",
-          "desktop": "assets/diagrams/sections/ch10-04.svg",
-          "mobile": "assets/diagrams/sections/ch10-04-mobile.svg",
-          "enabled": false,
-          "removalReason": "三角形仅把完整性、准确性、清晰性三个名词连起来，没有来源支持的几何量或具体取舍案例；右侧文档类型与评审清单重复相邻正文。保留原 SVG 供追溯，不继续向读者展示。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "为了让概念文档更清楚，哪些信息可以省略，哪些不能因此写错？",
-            "expectedAnswer": "应按预定任务确定重点：概念文档侧重常见用法，把罕见用法和副作用交给参考文档，不故意写错；参考文档则需完整覆盖契约与边界。质量不是可由三角形位置或面积读出的量。",
-            "visualEncoding": "原三角形只有三个概念顶点和中央预定任务，边长、位置和面积都不编码来源中的证据。旁边的类型及评审列表同样不能让读者推导某项信息该保留还是省略，因此退出展示。",
-            "sourceEvidence": "### The Parameters of Good Documentation 良好文档的衡量标准：好文档是能完成预定任务的文档；### Conceptual Documentation 概念文档：不是说要故意写得不准确，应侧重常见用法，把少见用法和副作用留给参考文档。",
-            "beforeProblem": "抽象三角形暗示某种固定的三方制约关系，但没有明确变量、取舍条件或可比较案例；其余文字重复文档分类与评审正文。",
-            "whyBetter": "移除没有额外解释力的几何示意，避免读者把它当作定量模型。必要的概念与参考文档区别仍由原章节说明；ch10-02 另用真实注释示范不能删掉的调用条件，不再加一张重复列表。",
-            "limits": "退休不否认完整性、准确性和清晰性需要权衡，也不以 ch10-02 替代概念文档的全部论述。原两种布局不改动，仅作可追溯存档，仍接受结构与布局检查。"
           }
         }
       ]
@@ -1332,32 +1065,6 @@
             "whyBetter": "读者先读到书中的例子和规则，再看这张图把它们并排对照，能自己推出图中每个结论。",
             "limits": "不是完整分类算法、测试配比或速度保证。只绘制书中两个例子，不表示其他组合不可行；规模还可能受时间和内存等约束影响。"
           }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch11-03",
-          "chapter": 11,
-          "title": "规模与范围：相关但不等同",
-          "summary": "用源文中的服务器端点和日期选择器两个反例，分别定位小型但广范围、中型但窄范围的测试；范围指验证目标，不是执行过的代码。",
-          "enabled": false,
-          "removalReason": "与保留并补齐证据的 ch11 概览矩阵重复：同样使用服务器端点与日期选择器两个反例，回答同一个规模与范围问题。保留文件以供追溯，不再重复插入正文。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "小型是否一定是单元测试，中型是否一定是集成测试？",
-            "expectedAnswer": "不是。服务器端点可以小型但广范围，日期选择器可以中型但窄范围；实际执行依赖不自动扩大验证范围。",
-            "visualEncoding": "原桌面矩阵把两例放在小型且广范围、中型且窄范围的格子里，移动版按相同两例堆叠。它的正确关系已由启用的概览矩阵承担。",
-            "sourceEvidence": "### Test Scope  测试范围：'范围较窄的测试往往属于小型测试'之后的服务器端点和日期选择器反例。",
-            "beforeProblem": "内容准确，但与概览的两个案例、两个维度和结论重合，没有独立的读者问题。",
-            "whyBetter": "停止重复展示同一推理，保留概览中完整的两轴反例和可见证据；原 SVG 不删除，方便比较。",
-            "limits": "退役不是否定图中分类；仅减少重复。原两个布局保留，不再作为读者可见插图使用。"
-          },
-          "sourceSections": [
-            "Test Scope"
-          ],
-          "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
-          "desktop": "assets/diagrams/sections/ch11-03.svg",
-          "mobile": "assets/diagrams/sections/ch11-03-mobile.svg"
         }
       ]
     },
@@ -1609,33 +1316,6 @@
             "limits": "u 表示 USER_ID，USER 表示同一用户。图中是书中测试示意，不是可直接编译的完整代码；lookupUser 交互验证用于说明证据边界，不推荐对普通只读调用重复验证。例子不证明真实授权服务的正确性，也不把三种技术定义为通用互斥分类。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch13-02",
-          "chapter": 13,
-          "title": "fake、stub 与交互验证不是一回事",
-          "summary": "区分伪实现的轻量行为、打桩的预设响应和交互测试的调用验证；mock 是框架创建的对象，框架既能打桩也能验证交互。",
-          "enabled": false,
-          "removalReason": "原图与概览重复三种技术的定义，缺少独立推理任务。重写后的概览已用同一个权限 API 展示 fake 状态变化、打桩响应变化及交互断言边界，并明确同一个 mock 的两种用途；保留原 SVG 仅供追溯。",
-          "sourceSections": [
-            "Techniques for Using Test Doubles",
-            "Mocking Frameworks"
-          ],
-          "afterParagraph": "但应尽可能避免，因为过度使用很容易让测试变得脆弱。",
-          "desktop": "assets/diagrams/sections/ch13-02.svg",
-          "mobile": "assets/diagrams/sections/ch13-02-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "fake、打桩和交互验证是否是三种互斥的对象类别？",
-            "expectedAnswer": "不是。本章介绍的是使用测试替身的技术；fake 提供简化行为，打桩指定响应，交互验证检查调用。同一个由框架创建的 mock 可以同时用于打桩和交互验证。",
-            "visualEncoding": "原图以三列文字框列出定义，底部补充 mock 的两种用途。退役后，该问题由概览的状态/响应/断言轨迹回答；保留原图文件，不在正文继续展示。",
-            "sourceEvidence": "## Techniques for Using Test Doubles 测试替身的使用技术；### Mocking Frameworks 模拟框架；### Interaction Testing 交互测试，模拟框架既可用于打桩，也可用于交互测试。",
-            "beforeProblem": "大段文字框和概览重复，没有独立的输入、状态或断言对照；三列视觉分组仍可能造成互斥分类印象。",
-            "whyBetter": "删除正文中的重复解释，把概念比较集中到有具体调用与断言的概览，避免连续记忆两份标签列表。",
-            "limits": "保留的 SVG 是未修改的历史版本；enabled:false 是退役状态。没有删除原书内容，也没有否定三种技术本身。"
-          }
-        }
       ]
     },
     {
@@ -1746,32 +1426,6 @@
             "beforeProblem": "原图的负载反馈环有效，但右侧只是措施清单；等待超时没有区分测试等待和服务内部期限，也未说明为什么生产降级会误导测试。",
             "whyBetter": "缺失广告这一具体症状可追踪到隐藏的内部超时；等待状态的两个出口展示如何及时结束又不无限等待，同时保留重跑放大的机制。",
             "limits": "重跑指失败测试的重新执行，不是服务 RPC 的自动重试策略。事件等待不保证治愈内部超时；不设虚构时长，不假定所有缺失广告均由超时导致。"
-          }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch14-02",
-          "chapter": 14,
-          "title": "用数据衔接较小的集成测试",
-          "summary": "拆分跨系统用户旅程，用持久化的输出作为下一对组件测试的输入；数据衔接不要求测试串行执行。",
-          "sourceSections": [
-            "Larger Tests at Google Scale"
-          ],
-          "afterParagraph": "具体做法是将一个测试的输出持久化到数据存储中，供另一个测试作为输入使用。",
-          "desktop": "assets/diagrams/sections/ch14-02.svg",
-          "mobile": "assets/diagrams/sections/ch14-02-mobile.svg",
-          "enabled": false,
-          "removalReason": "与紧邻的原书图14-4重复同一测试-数据仓库-测试关系；非串行执行的区别在相邻中文段落已明确。保留原 SVG 供追溯，不再插入重复图。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "串联两个较小的集成测试，是否意味着必须按顺序运行？",
-            "expectedAnswer": "不是。一个测试的输出持久化后用作另一个测试的输入，串联的是数据而非执行顺序。",
-            "visualEncoding": "现有图的保存和读取箭头准确表达数据衔接，底注明确不是串行调度，但与图14-4及相邻解释几乎相同。",
-            "sourceEvidence": "Larger Tests at Google Scale 谷歌规模下的较大规模测试：这里不是指把测试按顺序执行；图14-4 Chained tests。",
-            "beforeProblem": "A/B/C 概念组件和数据仓库重画了相邻原书图，没有增加具体输入输出或新的可推导关系。",
-            "whyBetter": "停用重复插图，保留原书图与解释，避免读者连续处理两份相同的链式关系。",
-            "limits": "只退出读者插入流程，不删除文件；不否定数据衔接的测试策略，也不声称两两测试覆盖所有端到端行为。"
           }
         }
       ]
@@ -1991,34 +1645,6 @@
             "limits": "这是策略与结构示意，不声称跨仓库提交天然原子、所有工具自动实现虚拟单仓库、或隔离完全没有成本。A、B、L 不是实际仓库；互不依赖的独立工作可采用独立仓库策略。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch16-02",
-          "chapter": 16,
-          "title": "两类分支的终点不同",
-          "summary": "用非比例时间线区分最终合回主干的开发分支与只接受少量修复、最终弃用的发布分支。",
-          "enabled": false,
-          "removalReason": "与本章概览重复。重写后的概览已经用 C、F、N 的内容状态展示开发支线合回、发布分支只取修复并最终弃用；保留这张匿名时间线没有增加独立问题或证据。",
-          "sourceSections": [
-            "Dev Branches",
-            "Release Branches",
-            "What About Release Branches?"
-          ],
-          "afterParagraph": "开发分支最终要合回主干，期间甚至可能被另一个团队用来创建新分支；发布分支最终则会弃用。",
-          "desktop": "assets/diagrams/sections/ch16-02.svg",
-          "mobile": "assets/diagrams/sections/ch16-02-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "为什么开发分支最终合回主干，发布分支却最终弃用？",
-            "expectedAnswer": "开发分支承载待集成工作，发布分支记录已经发布的代码，只按需从主干选取少量修复并最终弃用，不计划整支合回。",
-            "visualEncoding": "存档 SVG 中开发支线返回主干，发布支线接收一条修复箭头并以终止线结束；相同关系现在由概览中的具体内容状态承担。",
-            "sourceEvidence": "### Release Branches  发布分支：二者的主要区别是预期归宿不同；#### What About Release Branches?  发布分支呢？：尽量减少选择性合并，不要计划再合回主干。",
-            "beforeProblem": "原图的拓扑关系有效，但几乎完整重复原概览，且匿名节点不能显示修复和新功能的选择差异；移动版存续越久就越困难的措辞也过于绝对。",
-            "whyBetter": "退役后读者不必再看一次同样的匿名时间线；概览保留必要分支对照，并明确显示发布内容改变与未改变之处。",
-            "limits": "只取消读者中的启用状态，两个 SVG 原样留存便于追溯。不能由退役推断发布分支不重要或所有团队都必须采用同一种分支策略。"
-          }
-        }
       ]
     },
     {
@@ -2234,33 +1860,6 @@
             "limits": "C.f() 是原文类/符号使用的示意写法，不是原文代码。不保证 B 的任意重构都不会影响 A；只讨论删除 B → C 这条依赖。严格模式先报错的时间点已明确，不把左侧当成严格模式下的合法构建。"
           }
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch18-04",
-          "chapter": 18,
-          "title": "缓存共享结果，远程执行共享算力",
-          "summary": "远程缓存复用已经存在的产物，未命中仍需执行构建；远程执行把动作调度到工作节点，依赖就绪后通过缓存共享中间产物。本图退役，相关流程由正文与原书图18-2、18-3保留。",
-          "sourceSections": [
-            "Remote caching",
-            "Remote execution"
-          ],
-          "afterParagraph": "基于任务的系统很难提供这些保证，因此，在它之上实现可靠的远程执行系统几乎不可能。",
-          "desktop": "assets/diagrams/sections/ch18-04.svg",
-          "mobile": "assets/diagrams/sections/ch18-04-mobile.svg",
-          "enabled": false,
-          "removalReason": "缓存命中分支与总览重复；远程执行侧只是三个结论框，没有依赖等待或中间产物的具体流向，未明显超出相邻正文与原书图18-2、18-3。保留 SVG 文件作为审计前状态，不再插入阅读页。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "缓存中没有结果时，远程缓存与远程执行分别由谁完成实际构建？",
-            "expectedAnswer": "仅有远程缓存时，本地构建并上传未命中的结果；远程执行系统由主控节点把动作分派给工作节点，依赖就绪后共享中间产物，最终让用户下载结果。",
-            "visualEncoding": "原图左侧命中/未命中分支表达正确；右侧只按顺序排主控、工作节点、共享缓存三个文本框，没有使读者能够追踪某个具体输入或产物。退役后保留原 SVG 供追溯。",
-            "sourceEvidence": "Remote caching 远程缓存：没有，则自行构建并上传；Remote execution 远程执行：主控节点等待依赖完成、工作节点从缓存读取输入。已查看原书图18-2和18-3。",
-            "beforeProblem": "其缓存机制与总览重叠，远程执行又重复相邻段落和已有书图；移动版实际退化成三行文字。原图几何检查通过，退役原因是解释价值重复，而非布局故障。",
-            "whyBetter": "去掉低增量价值的插图，使保留的图分别承担缓存输入判定、并行反例、增量传播、外部内容核对和显式依赖的不同问题；不删除原书分布式构建图或正文。",
-            "limits": "退役不表示远程执行不重要或概念错误。原 SVG 未改写，并通过 XML 和几何检查；disabled 项不会进入下次生成的阅读页。未因退役而删除正文或原书图，也未运行全局清单构建。"
-          }
-        }
       ]
     },
     {
@@ -2348,32 +1947,6 @@
           "desktop": "assets/diagrams/sections/ch19-04.svg",
           "mobile": "assets/diagrams/sections/ch19-04-mobile.svg"
         }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch19-02",
-          "chapter": 19,
-          "title": "集成入口，不把所有工具塞进审查",
-          "summary": "以 Critique 为审查中心，分别标示编辑、搜索和发布的链接入口，以及在审查界面中显示的分析结果和覆盖率，体现原文的关注点分离。",
-          "sourceSections": [
-            "Tight Tool Integration"
-          ],
-          "afterParagraph": "测试覆盖率是一个例外：文件的 diff 视图会在行号栏用不同背景色表示各行是否被测试覆盖，但并非所有项目都使用这一覆盖率工具。",
-          "enabled": false,
-          "removalReason": "原图只是把紧邻的工具清单和链接/内嵌区别重新装入方框，未增加可推导的案例或状态变化。原文已经具体说明 Cider 编辑、Code Search 主干浏览、发布版本查询及覆盖率例外，保留该图会重复阅读而无额外解释价值。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "在 Critique 中继续编辑代码或查看覆盖率，分别留在何处、转往何处？",
-            "expectedAnswer": "编辑通过链接转到 Cider；覆盖率作为例外呈现在 diff 行号栏，并非所有项目使用。其他功能由独立子系统实现，Critique 保持审查焦点。",
-            "visualEncoding": "旧图的箭头区分链接到独立工具和在审查界面呈现的结果，但节点只复述工具名和职责，没有具体变更或使用状态。",
-            "sourceEvidence": "Tight Tool Integration 紧密的工具集成：转到 Cider 继续编辑；优先使用链接而非嵌入式界面；测试覆盖率是一个例外。",
-            "beforeProblem": "组件目录式图示重复紧邻的工具清单与解释；桌面 Rapid：发布 还可能被误读成 Critique 内直接执行发布，而原文此处讲查询已提交变更是否包含在发布版本中。",
-            "whyBetter": "停用重复图示，保留原文更具体的跨工具行为说明。SVG 原件保留以供追溯，避免把元数据补齐当作解释性改进。",
-            "limits": "退休不否定工具集成的重要性；不据此引入任何外部产品行为，也不改变源文、原书截图或阅读器映射。"
-          },
-          "desktop": "assets/diagrams/sections/ch19-02.svg",
-          "mobile": "assets/diagrams/sections/ch19-02-mobile.svg"
-        }
       ]
     },
     {
@@ -2454,32 +2027,6 @@
             "beforeProblem": "原图顺序正确，但只是四个步骤名称；没有说明跳过清理具体损害谁，且缺少提交前检查与提交后 CI 的发现边界。",
             "whyBetter": "相同的启用动作在清理前后产生不同结果，反事实路径让顺序成为可以解释的工程约束，而非需要记忆的清单。",
             "limits": "不声称启用后所有问题都在提交前发现，也不保证其他原因不会令旧项目构建失败。图不规定扫描时长；不满足准入的检查可在审查中展示或被屏蔽，不能自动升级为构建错误。"
-          }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch20-02",
-          "chapter": 20,
-          "title": "Tricorder 的请求、执行与结果",
-          "summary": "数据流展示变更元数据如何触发分析服务器读取相应版本的源文件与缓存构建产物，运行分析器并写入结果存储；Critique 展示每类最新结果和运行状态。",
-          "enabled": false,
-          "removalReason": "请求、服务器、存储、界面的通用框图主要复述相邻架构段落，未展示开发者如何判断或处理报告；已有图20-1展示审查界面。本轮保留源文架构说明与原 SVG 以便追溯，不再额外插入该图。",
-          "sourceSections": [
-            "Tricorder: Google’s Static Analysis Platform Tricorder： Google"
-          ],
-          "afterParagraph": "谷歌各处的开发者会编写 Tricorder 分析，称为“分析器”，也会为已有分析贡献单独的“检查项”。",
-          "desktop": "assets/diagrams/sections/ch20-02.svg",
-          "mobile": "assets/diagrams/sections/ch20-02-mobile.svg",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "一次 Tricorder 分析请求如何取得输入，并向审查者展示结果和运行状态？",
-            "expectedAnswer": "请求携带变更元数据，服务器读取相应版本的文件和缓存构建输入输出，运行分析器并存储结果；Critique 展示每类最新结果，服务器另行发布运行和完成状态。",
-            "visualEncoding": "原桌面图用主链表示请求、执行、存储和展示，用侧向箭头表示输入、虚线表示状态。移动版把状态并入展示框，未保留单独的状态路径。",
-            "sourceEvidence": "## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台：'系统将分析请求与代码变更的元数据一同发送到分析服务器'、'服务器还会发布状态更新'。",
-            "beforeProblem": "节点主要是基础设施名称，内容与相邻段落高度重复；移动版容易让人把运行状态误读为结果存储链的产物。没有提供具体报告、判断条件或开发者动作。",
-            "whyBetter": "退役减少解释价值有限的重复插图，将阅读注意力留给代码求值、误报分类证据、诊断改写及推广顺序。原文件保持不变，便于追溯而不隐去历史设计。",
-            "limits": "退役并不表示微服务、FUSE 或缓存架构不重要，也不否定原文的架构说明。两个 SVG 仅作为历史文件验证，不再作为本轮启用的教学图。"
           }
         }
       ]
@@ -2910,33 +2457,6 @@
             "beforeProblem": "原图虽然有正确的旧版安慰剂，但两支箭头汇入'比较护栏指标，再扩大范围'，未显示不充分或负面证据的分支。桌面图也遗漏了小用户群的替代做法。",
             "whyBetter": "读者能指出两组共同经历的更新、真正要比较的版本差异，并依据不同证据预测扩大、等待或暂停，而不是把 A/B 比较误读为发布许可。",
             "limits": "箭头是定性示意，非测量结果、相等效应或自动因果抵消模型。本图未规定样本量、显著性检验、指标阈值或固定观察时长；护栏达标也不等于证明全部用户价值。"
-          }
-        }
-      ],
-      "retiredSectionGuides": [
-        {
-          "id": "ch24-01",
-          "chapter": 24,
-          "title": "持续交付不等于持续部署",
-          "summary": "持续交付让团队维持随时可部署的状态；持续部署进一步让符合条件的变更自动进入生产。创建可发布版本的频率、实际部署频率和用户收到更新的频率可以分别选择。",
-          "sourceSections": [
-            "Idioms of Continuous Delivery at Google",
-            "Quality and User-Focus: Ship Only What Gets Used"
-          ],
-          "afterParagraph": "团队可以先具备随时部署的能力，而不必真的随时部署，逐步建立信心，为今后更频繁地发布作准备。",
-          "desktop": "assets/diagrams/sections/ch24-01.svg",
-          "mobile": "assets/diagrams/sections/ch24-01-mobile.svg",
-          "enabled": false,
-          "removalReason": "其部署能力与实际推送选择已由总览的 v1/v2 状态对照具体解释。保留另一幅构建到交付再到部署的定义流程会重复内容，并可能暗示持续部署是必经下一阶段；保留 SVG 仅用于追溯。",
-          "pedagogy": {
-            "action": "retire",
-            "readerQuestion": "已经能随时部署，是否就必须把每个版本推送给用户？",
-            "expectedAnswer": "不必须。生成可发布版本和用户收到更新的频率可以按用户需求与组织目标分别选择。",
-            "visualEncoding": "原图的虚线与说明文字意在表示可选，但横向或纵向三级顺序仍容易被理解为成熟度阶梯；由总览中明确的暂不部署状态取代。",
-            "sourceEvidence": "Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践：'具备随时部署的能力，而不必真的随时部署'；Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能：'有意识地作出这些选择'。",
-            "beforeProblem": "用构建、持续交付、持续部署三个定义框复述相邻段落，与总览重复；移动图的'更进一步'容易把可选策略暗示为必经目标。",
-            "whyBetter": "取消冗余插图，将关键区别集中到总览的具体产物与用户状态对照，避免让读者两次读同一组定义。",
-            "limits": "保留的 SVG 是已停用的历史文件，不再作为正文解释。停用不是否定持续部署作为一种可选发布策略。"
           }
         }
       ]
