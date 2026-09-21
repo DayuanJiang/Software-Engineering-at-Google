@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="855" viewBox="0 0 420 855" class="chapter-svg cg-ch04-story" data-layout="mobile" role="img" aria-labelledby="ch04-storym-title ch04-storym-desc">
+  <title id="ch04-storym-title">从一次照片误分类，到把公平当作工程目标</title>
+  <desc id="ch04-storym-desc">本章回顾。从一次照片误分类，到把公平当作工程目标。起点：图像识别把黑人用户标成了动物。没有人故意写下这样的代码。训练数据、测试用户和团队本身，都没有覆盖到这些用户。；根源：偏见是默认状态。工程师按自己的经验做假设，团队越单一，盲点越大。产品的伤害还会反过来伤害招聘：求职者不再相信这家公司包容。；转折：多样性是产品质量问题。多元团队更容易预见不同用户的处境。谷歌的方法是培养多元文化能力，把“这对谁不适用”变成每个环节的问题。；做法：拒绝单一方案，用结果检验价值观。挑战既定流程，从设计到测试都纳入更多视角；评估速度时，把“是否真的帮到所有用户”放进权衡。。这一章最想强调的：为所有人做工程，从承认自己的盲点开始。 宁可放慢，也别发布会伤害部分用户的产品；这项工作没有做完的时候。</desc>
+  <style>
+    .cg-ch04-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch04-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch04-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch04-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch04-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch04-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch04-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch04-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch04-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch04-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="855" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 539" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从一次照片误分类，到把公平当作工程</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">目标</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">图像识别把黑人用户标成了动物</text>
+  <text x="76.0" y="184.0" class="t15" text-anchor="start">没有人故意写下这样的代码。训练数据、测试用</text>
+  <text x="76.0" y="207.0" class="t15" text-anchor="start">户和团队本身，都没有覆盖到这些用户。</text>
+  <circle cx="40.0" cy="269.0" r="18" fill="var(--diagram-warm-soft,#eae2cf)" stroke="var(--diagram-warm,#80531b)" stroke-width="2"/><g transform="translate(31.0,260.0) scale(0.750)" fill="none" stroke="var(--diagram-warm,#80531b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></g>
+  <text x="76.0" y="257.0" class="act" fill="var(--diagram-warm,#80531b)" text-anchor="start">根源</text>
+  <text x="76.0" y="281.0" class="h18" text-anchor="start">偏见是默认状态</text>
+  <text x="76.0" y="307.0" class="t15" text-anchor="start">工程师按自己的经验做假设，团队越单一，盲点</text>
+  <text x="76.0" y="330.0" class="t15" text-anchor="start">越大。产品的伤害还会反过来伤害招聘：求职者</text>
+  <text x="76.0" y="353.0" class="t15" text-anchor="start">不再相信这家公司包容。</text>
+  <circle cx="40.0" cy="415.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,406.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="76.0" y="403.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="76.0" y="427.0" class="h18" text-anchor="start">多样性是产品质量问题</text>
+  <text x="76.0" y="453.0" class="t15" text-anchor="start">多元团队更容易预见不同用户的处境。谷歌的方</text>
+  <text x="76.0" y="476.0" class="t15" text-anchor="start">法是培养多元文化能力，把“这对谁不适用”变</text>
+  <text x="76.0" y="499.0" class="t15" text-anchor="start">成每个环节的问题。</text>
+  <circle cx="40.0" cy="561.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,552.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="76.0" y="549.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="573.0" class="h18" text-anchor="start">拒绝单一方案，用结果检验价值观</text>
+  <text x="76.0" y="599.0" class="t15" text-anchor="start">挑战既定流程，从设计到测试都纳入更多视角；</text>
+  <text x="76.0" y="622.0" class="t15" text-anchor="start">评估速度时，把“是否真的帮到所有用户”放进</text>
+  <text x="76.0" y="645.0" class="t15" text-anchor="start">权衡。</text>
+  <rect x="22.0" y="683.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,703.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="711.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="737.0" class="emph-m" text-anchor="start">为所有人做工程，从承认自己的盲点开</text>
+  <text x="78.0" y="761.0" class="emph-m" text-anchor="start">始。</text>
+  <text x="78.0" y="785.0" class="c14" text-anchor="start">宁可放慢，也别发布会伤害部分用户的产品；这</text>
+  <text x="78.0" y="806.0" class="c14" text-anchor="start">项工作没有做完的时候。</text>
+</svg>

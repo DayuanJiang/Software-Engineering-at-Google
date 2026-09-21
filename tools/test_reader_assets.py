@@ -15,8 +15,11 @@ class ReaderAssetsTests(unittest.TestCase):
         for number in range(1, 26):
             key = f"ch{number:02d}"
             guide = manifest["guides"][key]
+            self.assertTrue(guide["storyTitle"])
             for mobile, field in [(False, "desktop"), (True, "mobile")]:
                 reader.check_svg(reader.ROOT / guide[field], number, mobile)
+            for mobile, field in [(False, "storyDesktop"), (True, "storyMobile")]:
+                reader.check_svg(reader.ROOT / guide[field], number, mobile, story=True)
 
     def test_existing_book_text_is_byte_identical_to_translation_commit(self):
         for path in (reader.ROOT / "zh-cn").rglob("*.md"):
@@ -86,7 +89,7 @@ class ReaderAssetsTests(unittest.TestCase):
             source = (reader.ROOT / page["file"]).read_text()
             self.assertIn("review", page, page["id"])
             self.assertEqual(reader.load_reader_review(page["id"], source), reader.compiled_review(page))
-            reader.check_pedagogy(manifest["guides"][page["id"]], overview=True)
+            reader.check_pedagogy(json.loads((reader.DIAGRAMS / f"{page['id']}.json").read_text()), overview=True)
             for guide in page.get("sectionGuides", []):
                 self.assertTrue(reader.check_pedagogy(guide))
                 self.assertEqual(reader.reader_content.anchor_count(source, guide["afterParagraph"]), 1)

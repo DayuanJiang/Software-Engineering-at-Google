@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="833" viewBox="0 0 420 833" class="chapter-svg cg-ch22-story" data-layout="mobile" role="img" aria-labelledby="ch22-storym-title ch22-storym-desc">
+  <title id="ch22-storym-title">从“这个 API 永远改不了”，到每天都在发生的大规模变更</title>
+  <desc id="ch22-storym-desc">本章回顾。从“这个 API 永远改不了”，到每天都在发生的大规模变更。起点：一个被几万处调用的旧 API，大家默认它永远改不了。改一处很容易，改几万处却被认为不可能：一次提交要么冲突，要么审不完，要么跑不完测试。；冲突：原子提交在这个规模上行不通。技术上仓库承受不了，合并冲突随时间增加，没有一个人能审完，测试和验证也不可能一次完成。；转折：拆成很多小改动，用工具批量推进。按目录或负责人自动分片，每片独立审查提交；全局批准人代替逐个目录负责人；测试通过就自动提交，失败自动回滚。；做法：把大规模变更变成习惯。有了基础设施和流程，重构就能突破人力上限。谷歌的经验：要做好它，就要经常做它。。这一章最想强调的：大规模变更让组织重新思考：哪些技术决策真的不可更改？ 传统重构到了大规模就失效；分片、自动化、经常做，是可行的路。</desc>
+  <style>
+    .cg-ch22-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch22-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch22-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch22-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch22-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch22-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch22-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch22-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch22-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch22-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="833" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 540" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从“这个 API 永远改不了”，到每天都</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">在发生的大规模变更</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">一个被几万处调用的旧 API，大家默认</text>
+  <text x="76.0" y="182.0" class="h18" text-anchor="start">它永远改不了</text>
+  <text x="76.0" y="208.0" class="t15" text-anchor="start">改一处很容易，改几万处却被认为不可能：一次</text>
+  <text x="76.0" y="231.0" class="t15" text-anchor="start">提交要么冲突，要么审不完，要么跑不完测试。</text>
+  <circle cx="40.0" cy="293.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,284.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></g>
+  <text x="76.0" y="281.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">冲突</text>
+  <text x="76.0" y="305.0" class="h18" text-anchor="start">原子提交在这个规模上行不通</text>
+  <text x="76.0" y="331.0" class="t15" text-anchor="start">技术上仓库承受不了，合并冲突随时间增加，没</text>
+  <text x="76.0" y="354.0" class="t15" text-anchor="start">有一个人能审完，测试和验证也不可能一次完成。</text>
+  <circle cx="40.0" cy="416.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,407.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></g>
+  <text x="76.0" y="404.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="76.0" y="428.0" class="h18" text-anchor="start">拆成很多小改动，用工具批量推进</text>
+  <text x="76.0" y="454.0" class="t15" text-anchor="start">按目录或负责人自动分片，每片独立审查提交；</text>
+  <text x="76.0" y="477.0" class="t15" text-anchor="start">全局批准人代替逐个目录负责人；测试通过就自</text>
+  <text x="76.0" y="500.0" class="t15" text-anchor="start">动提交，失败自动回滚。</text>
+  <circle cx="40.0" cy="562.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,553.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></g>
+  <text x="76.0" y="550.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="574.0" class="h18" text-anchor="start">把大规模变更变成习惯</text>
+  <text x="76.0" y="600.0" class="t15" text-anchor="start">有了基础设施和流程，重构就能突破人力上限。</text>
+  <text x="76.0" y="623.0" class="t15" text-anchor="start">谷歌的经验：要做好它，就要经常做它。</text>
+  <rect x="22.0" y="661.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,681.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="689.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="715.0" class="emph-m" text-anchor="start">大规模变更让组织重新思考：哪些技术</text>
+  <text x="78.0" y="739.0" class="emph-m" text-anchor="start">决策真的不可更改？</text>
+  <text x="78.0" y="763.0" class="c14" text-anchor="start">传统重构到了大规模就失效；分片、自动化、经</text>
+  <text x="78.0" y="784.0" class="c14" text-anchor="start">常做，是可行的路。</text>
+</svg>

@@ -1,63 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch16" data-layout="mobile" role="img" aria-labelledby="ch16m-title ch16m-desc" viewBox="0 0 420 680" width="420" height="680">
-<title id="ch16m-title">主干修复不等于发布版自动更新</title>
-<desc id="ch16m-desc">说明性提交状态：搜索开发支线从 A 出发，合回主干形成 B。发布分支从 C 建立，只选择主干修复 F，得到 C+F，不带入新功能 N，最终弃用而不整支合回。时间不按比例。组织指定权威仓库和分支；新依赖用指定版本，升级可暂存两版。这些协作策略不等同于物理仓库布局。</desc>
-<style>
-.cg-ch16[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch16[data-layout="mobile"] .strong {font-weight:600}
-.cg-ch16[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
-.cg-ch16[data-layout="mobile"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch16[data-layout="mobile"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
-.cg-ch16[data-layout="mobile"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
-.cg-ch16[data-layout="mobile"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2.5}
-.cg-ch16[data-layout="mobile"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
-.cg-ch16[data-layout="mobile"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
-.cg-ch16[data-layout="mobile"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2.5}
-.cg-ch16[data-layout="mobile"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
-.cg-ch16[data-layout="mobile"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
-.cg-ch16[data-layout="mobile"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2.5}
-.cg-ch16[data-layout="mobile"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
-.cg-ch16[data-layout="mobile"] .danger-ink {fill:var(--diagram-danger,#b54750)}
-.cg-ch16[data-layout="mobile"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2.5}
-</style>
-<defs>
-<marker id="ch16m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch16m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch16m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
-<marker id="ch16m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-</defs>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="38" class="strong" text-anchor="start">修复进入主干，发布版会更新吗？</text>
-<text x="24" y="72" class="small" text-anchor="start">示例；向下是时间，不按比例</text>
-<text x="24" y="105" class="small" text-anchor="start">权威主干</text>
-<path d="M56 138V468" class="primary-line" data-connector="true" marker-end="url(#ch16m-primary-arrow)"/>
-<path d="M56 138L190 175V192L56 238" class="secondary-line" data-connector="true" marker-end="url(#ch16m-secondary-arrow)"/>
-<path d="M56 298L218 328V476" class="warm-line" data-connector="true"/>
-<path d="M62 374H211" class="warm-line" data-connector="true" marker-end="url(#ch16m-warm-arrow)" stroke-dasharray="6 5"/>
-<path d="M208 476H228" class="warm-line" data-connector="true"/>
-<circle cx="56" cy="138" r="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
-<circle cx="56" cy="238" r="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
-<circle cx="56" cy="298" r="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
-<circle cx="56" cy="374" r="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
-<circle cx="56" cy="450" r="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-primary,#087f6d)" stroke-width="2.5"/>
-<circle cx="218" cy="374" r="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2.5"/>
-<text x="76" y="130" class="small" text-anchor="start">A 起点</text>
-<text x="212" y="174" class="secondary-ink" text-anchor="start">短期工作</text>
-<text x="212" y="205" class="small" text-anchor="start">合回主干</text>
-<text x="76" y="262" class="" text-anchor="start">B 搜索已合入</text>
-<text x="76" y="291" class="small" text-anchor="start">C 发布基线</text>
-<text x="238" y="337" class="warm-ink" text-anchor="start">发布版 C</text>
-<text x="24" y="382" class="small" text-anchor="start">F</text>
-<text x="84" y="361" class="small" text-anchor="start">只选修复 F</text>
-<text x="238" y="400" class="warm-ink strong" text-anchor="start">C + F</text>
-<text x="24" y="458" class="small" text-anchor="start">N</text>
-<text x="76" y="441" class="small" text-anchor="start">新功能</text>
-<text x="76" y="468" class="small" text-anchor="start">不带入发布版</text>
-<text x="238" y="446" class="strong" text-anchor="start">最终弃用</text>
-<text x="238" y="475" class="small" text-anchor="start">不整支合回</text>
-<path d="M24 498L396 498" class="guide"/>
-<text x="24" y="529" class="" text-anchor="start">本地提交 ≠ 已进入权威主干</text>
-<text x="24" y="566" class="" text-anchor="start">新依赖只用指定版本</text>
-<text x="24" y="596" class="small" text-anchor="start">迁移可暂存两版，但不能任选</text>
-<text x="24" y="630" class="small" text-anchor="start">一仓、多仓都能落实这些规则</text>
-<text x="24" y="659" class="small" text-anchor="start">未提交工作也相当于分支</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="528" viewBox="0 0 420 528" class="chapter-svg cg-ch16" data-layout="mobile" role="img" aria-labelledby="ch16m-title ch16m-desc">
+  <title id="ch16m-title">为什么谷歌几乎只在主干上开发？</title>
+  <desc id="ch16m-desc">本章概览。为什么谷歌几乎只在主干上开发？ 本章的主要部分：长期分支：合并痛苦、多版本、修复重复打；主干开发：小步提交、单版本规则、发布分支只挑修复。一句话：所有人在同一个主干上工作，改动小而频繁，合并的痛苦最少</desc>
+  <style>
+    .cg-ch16[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch16[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch16[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch16[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch16[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch16[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch16[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch16[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch16[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch16[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="528" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch16m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">为什么谷歌几乎只在主干上开发？</text>
+  <text x="22.0" y="80.0" class="c13" text-anchor="start">版本控制记录每次改动，让多人改同一套代码；问题出在“分支</text>
+  <text x="22.0" y="100.0" class="c13" text-anchor="start">怎么用”</text>
+  <rect x="22.0" y="118.0" width="376.0" height="110.0" rx="9" fill="var(--diagram-danger-soft,#ead9dc)"/>
+  <circle cx="50.0" cy="144.0" r="14" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(42.0,136.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></g>
+  <text x="74.0" y="149.0" class="h18" text-anchor="start">长期开发分支</text>
+  <text x="74.0" y="174.0" class="c15" text-anchor="start">各自埋头几周，合并时冲突成堆；同一份代码</text>
+  <text x="74.0" y="196.0" class="c15" text-anchor="start">有多个版本要选；修复要往每个分支各打一</text>
+  <text x="74.0" y="218.0" class="c15" text-anchor="start">遍；研究表明它拖累组织绩效</text>
+  <rect x="22.0" y="238.0" width="376.0" height="110.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="264.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,256.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="3" x2="9" y1="12" y2="12"/><line x1="15" x2="21" y1="12" y2="12"/></g>
+  <text x="74.0" y="269.0" class="h18" text-anchor="start">主干开发</text>
+  <text x="74.0" y="294.0" class="c15" text-anchor="start">小步提交，随时集成；单版本规则：不用选“</text>
+  <text x="74.0" y="316.0" class="c15" text-anchor="start">依赖哪个版本”；发布分支只挑选修复，不带</text>
+  <text x="74.0" y="338.0" class="c15" text-anchor="start">新功能；单体仓库让全公司看同一份代码</text>
+  <text x="22.0" y="370.0" class="c13" text-anchor="start">版本控制的未来：越来越多工具同时支持细粒度小仓库和整个组</text>
+  <text x="22.0" y="390.0" class="c13" text-anchor="start">织的单体仓库</text>
+  <rect x="22.0" y="416.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="437.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="463.0" class="answer-m" text-anchor="start">所有人在同一个主干上工作，改动小而频繁，</text>
+  <text x="36.0" y="489.0" class="answer-m" text-anchor="start">合并的痛苦最少</text>
 </svg>

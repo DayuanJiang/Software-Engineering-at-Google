@@ -1,25 +1,100 @@
 {
   "chapter": 12,
-  "title": "测试要守住契约，也要解释失败",
-  "summary": "用加法测试连接两个维护性问题：无害重构不应要求修改测试，错误结果应能用具体输入、预期与实际解释。隐藏无关构造，显露2加3应为5。",
+  "title": "什么样的单元测试值得长期维护？",
+  "summary": "好的单元测试：重构不坏、读起来完整、失败时说得清原因",
   "enabled": true,
   "sourceSections": [
-    "The Importance of Maintainability  可维护性的重要性",
-    "Strive for Unchanging Tests  力求让测试无需改动",
-    "Make Your Tests Complete and Concise  让测试完整且简洁",
-    "Write Clear Failure Messages  给出清晰的失败信息"
+    "## The Importance of Maintainability  可维护性的重要性",
+    "## Preventing Brittle Tests  避免脆弱测试",
+    "## Writing Clear Tests  编写清晰的测试",
+    "## Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY"
   ],
-  "kind": "worked-comparison",
+  "kind": "pillars",
   "desktop": "assets/diagrams/ch12.svg",
   "mobile": "assets/diagrams/ch12-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch12-story.svg",
+  "storyMobile": "assets/diagrams/ch12-story-mobile.svg",
+  "map": {
+    "form": "pillars",
+    "question": "什么样的单元测试值得长期维护？",
+    "answer": "好的单元测试：重构不坏、读起来完整、失败时说得清原因",
+    "parts": [
+      {
+        "icon": "shield",
+        "label": "不轻易坏",
+        "text": "对着公开接口测行为；重构、加功能、修 bug 都不该逼你改测试"
+      },
+      {
+        "icon": "focus",
+        "label": "一个行为",
+        "text": "一个测试只验证一个行为，按 given、when、then 组织，用被测行为命名"
+      },
+      {
+        "icon": "book-open",
+        "label": "完整简洁",
+        "text": "读者在测试里就能看到全部关键输入和预期，无关细节用辅助方法藏起来"
+      },
+      {
+        "icon": "message-square",
+        "label": "失败可读",
+        "text": "失败信息要说清预期、实际和差别，让人不用调试就知道错在哪"
+      },
+      {
+        "icon": "split",
+        "label": "DAMP 优于 DRY",
+        "text": "测试代码宁可重复也要直白；别把逻辑和条件放进测试里"
+      }
+    ],
+    "figure": {
+      "goal": {
+        "label": "目标：测试陪代码很多年，不拖慢任何人",
+        "text": "脆弱的测试一改就坏，不清晰的测试失败了没人看得懂；两者都在偷走工程师的时间"
+      }
+    }
+  },
+  "story": {
+    "headline": "从一改代码就大片变红的测试，到读得懂、改不坏的测试",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "bug",
+        "tone": "danger",
+        "title": "重构完，几十个测试失败，功能却没坏",
+        "text": "测试盯着实现细节写，代码一动它就红。工程师开始把测试当噩梦，改代码前先想“会坏多少测试”。"
+      },
+      {
+        "act": "转折",
+        "icon": "shield-check",
+        "tone": "pri",
+        "title": "对着公开接口测行为",
+        "text": "通过公共 API 测试，断言结果状态，少断言内部调用；这样无害的重构一个测试都不用改。"
+      },
+      {
+        "act": "设计",
+        "icon": "book-open",
+        "tone": "pri",
+        "title": "让测试完整又简洁，失败时说得清",
+        "text": "一个测试一个行为，用被测行为命名；关键输入和预期都写在眼前，无关细节收进辅助方法；失败信息直接指出差别。"
+      },
+      {
+        "act": "取舍",
+        "icon": "split",
+        "tone": "pri",
+        "title": "测试代码：DAMP 优于 DRY",
+        "text": "生产代码追求不重复，测试代码追求一眼看懂。宁可重复几行，也别把逻辑和条件塞进测试。"
+      }
+    ],
+    "emphasis": "好测试改代码时不坏、失败时能读懂；为此宁可啰嗦一点。",
+    "emphasis2": "测行为、测状态、通过公共接口测；共享测试代码时优先 DAMP。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "同一个加法测试，怎样既经得起内部重构，又能说明失败原因？",
-    "expectedAnswer": "用helper隐藏无关构造，但把2、PLUS、3和期望5留在测试中。行为不变的内部重构不应要求修改测试；返回6的缺陷则应失败，并显露期望与实际的差异。",
-    "visualEncoding": "上方反例把隐藏输入与显露无关细节并置，中部把改写后的代码行对应到构造、输入和期望，底部将同一测试置于两种明确标为示意的变更下。移动版按相同关系重新纵向排版。",
-    "sourceEvidence": "The Importance of Maintainability  可维护性的重要性：brittle与unclear两类问题；Make Your Tests Complete and Concise  让测试完整且简洁：例12-6/7的newTestCalculation与newCalculation(2, Operation.PLUS, 3)；Strive for Unchanging Tests  力求让测试无需改动：pure refactorings；Write Clear Failure Messages  给出清晰的失败信息：desired outcome, actual outcome。",
-    "beforeProblem": "原概览重复分节中的given/when/then和变更类型列表，没有把维护性中的不脆弱与清晰这两项要求联系到可检查的测试上。",
-    "whyBetter": "读者可以从同一段测试的可见输入与期望推导两种变更后的结果，而不是只读原则名称；对照也直接显露旧helper遮住的关键信息。",
-    "limits": "返回6为教学用的示意缺陷，不是书中实测结果；两个布局的代码均为标明的简写，省略Calculation构建语法。该图不证明使用helper或公共API就能排除所有脆弱性，也不穷尽本章技术。"
+    "readerQuestion": "什么样的单元测试值得长期维护？",
+    "expectedAnswer": "好的单元测试：重构不坏、读起来完整、失败时说得清原因",
+    "visualEncoding": "支柱：顶部一条横带写目标，下面并排的柱子各写一项支撑做法，柱子等高表示它们同等重要。 章末故事线：纵向轨道上的 4 幕，幕名为起点、转折、设计、取舍，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## The Importance of Maintainability  可维护性的重要性；## Preventing Brittle Tests  避免脆弱测试；## Writing Clear Tests  编写清晰的测试；## Tests and Code Sharing: DAMP, Not DRY  测试和代码共享：DAMP，而不是DRY",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

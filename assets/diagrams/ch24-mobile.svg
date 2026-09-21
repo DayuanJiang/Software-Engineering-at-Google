@@ -1,55 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch24m-root" class="chapter-svg cg-ch24" width="420" height="680" viewBox="0 0 420 680" role="img" aria-labelledby="ch24m-title ch24m-desc">
-<title id="ch24m-title">版本已就绪，用户就能用新功能吗？</title>
-<desc id="ch24m-desc">以候选版本 v2 和新功能 F 为示例，对照暂不部署、部署但关闭功能、只为部分用户启用三种状态。可交付能力不要求立即部署；部署代码与启用功能分别改变产物位置和用户行为。</desc>
-<style>
-.cg-ch24#ch24m-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch24#ch24m-root .small {font-size:19px;fill:var(--diagram-muted,#686868)}
-.cg-ch24#ch24m-root .strong {font-weight:600}
-.cg-ch24#ch24m-root .line {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-</style>
-<defs>
-<marker id="ch24m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch24m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch24m-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
-<marker id="ch24m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-</defs>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="38" class="strong" text-anchor="start" data-box="12,8,396,664">版本已就绪，用户就能用</text>
-<text x="24" y="67" class="strong" text-anchor="start" data-box="12,8,396,664">新功能吗？</text>
-<text x="24" y="100" class="small" text-anchor="start" data-box="12,8,396,664">示例：v2 可交付，内含旧路径与 F。</text>
-<rect x="20" y="122" width="380" height="118" rx="0" fill="var(--diagram-bg,#fff)" stroke="none"/>
-<text x="28" y="150" class="strong" text-anchor="start" data-box="20,122,380,118">暂不部署</text>
-<rect x="28" y="164" width="64" height="38" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="60" y="190" class="strong" text-anchor="middle" data-box="28,164,64,38">v1</text>
-<text x="106" y="190" class="small" text-anchor="start" data-box="20,122,380,118">F 未上线</text>
-<circle cx="231" cy="168" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
-<path d="M222 190V183Q231 173 240 183V190" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="3"/>
-<text x="250" y="190" class="small" text-anchor="start" data-box="20,122,380,118">全部：旧路径</text>
-<text x="28" y="223" class="small" text-anchor="start" data-box="20,122,380,118">仍然具备交付能力</text>
-<rect x="20" y="254" width="380" height="118" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="none"/>
-<text x="28" y="282" class="strong" text-anchor="start" data-box="20,254,380,118">部署 v2，不启用 F</text>
-<rect x="28" y="296" width="64" height="38" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="60" y="322" class="strong" text-anchor="middle" data-box="28,296,64,38">v2</text>
-<text x="106" y="322" class="small" text-anchor="start" data-box="20,254,380,118">F 关闭</text>
-<circle cx="231" cy="300" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
-<path d="M222 322V315Q231 305 240 315V322" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="3"/>
-<text x="250" y="322" class="small" text-anchor="start" data-box="20,254,380,118">全部：旧路径</text>
-<text x="28" y="355" class="small" text-anchor="start" data-box="20,254,380,118">新代码到位，旧行为继续</text>
-<rect x="20" y="386" width="380" height="118" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="none"/>
-<text x="28" y="414" class="strong" text-anchor="start" data-box="20,386,380,118">只更新启用配置</text>
-<rect x="28" y="428" width="64" height="38" rx="4" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="60" y="454" class="strong" text-anchor="middle" data-box="28,428,64,38">v2</text>
-<text x="106" y="454" class="small" text-anchor="start" data-box="20,386,380,118">F 部分开</text>
-<circle cx="231" cy="432" r="5" fill="var(--diagram-primary,#087f6d)"/>
-<path d="M222 454V447Q231 437 240 447V454" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="3"/>
-<text x="250" y="454" class="small" text-anchor="start" data-box="20,386,380,118">选中用户：新</text>
-<text x="250" y="487" class="small" text-anchor="start" data-box="20,386,380,118">其余用户：旧</text>
-<text x="28" y="487" class="small" text-anchor="start" data-box="20,386,380,118">同一个二进制 v2</text>
-<circle cx="231" cy="465" r="5" fill="var(--diagram-secondary,#2f6eac)"/>
-<path d="M222 487V480Q231 470 240 480V487" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="3"/>
-<path class="line" d="M24 524L396 524"/>
-<text x="24" y="559" class="" text-anchor="start" data-box="12,8,396,664">可部署，不等于必须部署。</text>
-<text x="24" y="590" class="small" text-anchor="start" data-box="12,8,396,664">实际推送频率按用户需求选择。</text>
-<text x="24" y="627" class="small" text-anchor="start" data-box="12,8,396,664">配置须分阶段验证；关闭标志</text>
-<text x="24" y="654" class="small" text-anchor="start" data-box="12,8,396,664">不代表代码保密或风险消失。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="758" viewBox="0 0 420 758" class="chapter-svg cg-ch24" data-layout="mobile" role="img" aria-labelledby="ch24m-title ch24m-desc">
+  <title id="ch24m-title">怎么做到又快又稳地发布？</title>
+  <desc id="ch24m-desc">本章概览。怎么做到又快又稳地发布？ 本章的主要部分：拆小：把大部署切成小块，每块都可管理；模块化架构让团队并行；开关保护：先部署代码，再决定对谁打开功能；问题可以单独隔离；发布列车：固定节奏发车，没上车的功能等下一班；分阶段发布：先给少数用户和设备，以真实环境为基准；看数据取舍：只交付会被用的功能；把数据驱动的决策往前挪。一句话：发布越小越频繁，风险越低；开关和数据让决策提前</desc>
+  <style>
+    .cg-ch24[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch24[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch24[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch24[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch24[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch24[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch24[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch24[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch24[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch24[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="758" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch24m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">怎么做到又快又稳地发布？</text>
+  <text x="22.0" y="80.0" class="c13" text-anchor="start">谷歌持续交付的常用做法，串起来是一条流水线</text>
+  <rect x="22.0" y="98.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="124.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,116.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></g>
+  <text x="74.0" y="129.0" class="h18" text-anchor="start">拆小</text>
+  <text x="74.0" y="154.0" class="c15" text-anchor="start">把大部署切成小块，每块都可管理；模块化架</text>
+  <text x="74.0" y="176.0" class="c15" text-anchor="start">构让团队并行</text>
+  <path d="M210.0 188.0 L210.0 204.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch24m-arrow)"/>
+  <rect x="22.0" y="212.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="238.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,230.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="6" ry="6"/><circle cx="16" cy="12" r="2"/></g>
+  <text x="74.0" y="243.0" class="h18" text-anchor="start">开关保护</text>
+  <text x="74.0" y="268.0" class="c15" text-anchor="start">先部署代码，再决定对谁打开功能；问题可以</text>
+  <text x="74.0" y="290.0" class="c15" text-anchor="start">单独隔离</text>
+  <path d="M210.0 302.0 L210.0 318.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch24m-arrow)"/>
+  <rect x="22.0" y="326.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="352.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,344.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/></g>
+  <text x="74.0" y="357.0" class="h18" text-anchor="start">发布列车</text>
+  <text x="74.0" y="382.0" class="c15" text-anchor="start">固定节奏发车，没上车的功能等下一班</text>
+  <path d="M210.0 394.0 L210.0 410.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch24m-arrow)"/>
+  <rect x="22.0" y="418.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="444.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,436.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="74.0" y="449.0" class="h18" text-anchor="start">分阶段发布</text>
+  <text x="74.0" y="474.0" class="c15" text-anchor="start">先给少数用户和设备，以真实环境为基准</text>
+  <path d="M210.0 486.0 L210.0 502.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch24m-arrow)"/>
+  <rect x="22.0" y="510.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="536.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,528.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></g>
+  <text x="74.0" y="541.0" class="h18" text-anchor="start">看数据取舍</text>
+  <text x="74.0" y="566.0" class="c15" text-anchor="start">只交付会被用的功能；把数据驱动的决策往前</text>
+  <text x="74.0" y="588.0" class="c15" text-anchor="start">挪</text>
+  <text x="22.0" y="620.0" class="c13" text-anchor="start">改变团队文化：把纪律写进部署流程，越快越安全</text>
+  <rect x="22.0" y="646.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="667.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="693.0" class="answer-m" text-anchor="start">发布越小越频繁，风险越低；开关和数据让决</text>
+  <text x="36.0" y="719.0" class="answer-m" text-anchor="start">策提前</text>
 </svg>

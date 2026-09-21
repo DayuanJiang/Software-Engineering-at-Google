@@ -1,25 +1,87 @@
 {
   "chapter": 20,
-  "title": "编译通过，为何仍需要静态分析？",
-  "summary": "沿着原文哈希表达式比较 long 与 int：类型改变后，右移成为空操作，字段不再贡献哈希值。再区分作者修复当前代码与贡献检查、清理旧问题后防止同类缺陷再次出现。",
+  "title": "编译能过，代码就没问题了吗？",
+  "summary": "编译只查语法和类型；静态分析在审查时自动抓出更多问题",
   "enabled": true,
   "sourceSections": [
-    "Empower Users to Contribute  让用户能够贡献分析",
-    "Make Static Analysis a Part of the Core Developer Workflow  使静态分析成为核心开发工作流程的一部分",
-    "Integrated Tools  集成工具",
-    "Compiler Integration 编译器集成"
+    "## 有效静态分析的特点",
+    "## Key Lessons in Making Static Analysis Work 让静态分析发挥作用的关键经验",
+    "## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台"
   ],
-  "kind": "worked-example",
+  "kind": "layers",
   "desktop": "assets/diagrams/ch20.svg",
   "mobile": "assets/diagrams/ch20-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch20-story.svg",
+  "storyMobile": "assets/diagrams/ch20-story-mobile.svg",
+  "map": {
+    "form": "layers",
+    "question": "编译能过，代码就没问题了吗？",
+    "answer": "编译只查语法和类型；静态分析在审查时自动抓出更多问题",
+    "parts": [
+      {
+        "icon": "binary",
+        "label": "编译器",
+        "text": "只查语法和类型；long 换成 int 之后右移成了空操作，它照样通过"
+      },
+      {
+        "icon": "scan-search",
+        "label": "静态分析（Tricorder）",
+        "text": "跑得快、误报少、结果让工程师愿意看；在代码审查时给出意见，附带修复建议"
+      },
+      {
+        "icon": "users",
+        "label": "人工审查",
+        "text": "只处理需要判断和取舍的部分；机器能抓的问题不该耗审查者的时间"
+      }
+    ],
+    "figure": {
+      "header": "三层把关，越往上越依赖人的判断",
+      "footer": "关键经验：关注开发者的感受；把分析融入核心工作流；让领域专家贡献自己的检查"
+    }
+  },
+  "story": {
+    "headline": "从一个编译通过却算错哈希的改动，到审查时自动出现的修复建议",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "bug",
+        "tone": "danger",
+        "title": "把 long 改成 int，编译通过，哈希算错了",
+        "text": "右移 32 位对 int 是空操作，字段不再参与哈希。编译器不管这个，测试也可能漏过。"
+      },
+      {
+        "act": "冲突",
+        "icon": "eye-off",
+        "tone": "warm",
+        "title": "静态分析工具很多，工程师却不看",
+        "text": "误报太多、结果藏在别处、修起来麻烦。分析器再聪明，没人看就等于没有。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "把分析结果放进代码审查，并且让它值得信任",
+        "text": "Tricorder 在审查时给出意见，附带一键修复；每条结果都能点“没用”，误报率高的分析器会被下线。"
+      },
+      {
+        "act": "做法",
+        "icon": "users",
+        "tone": "pri",
+        "title": "让写分析的人和用分析的人形成回路",
+        "text": "关注开发者的感受；分析融入编译、提交前检查、IDE 和代码浏览；领域专家可以贡献自己的检查。"
+      }
+    ],
+    "emphasis": "静态分析要发挥作用，关键是开发者体验和融入工作流，技术反倒是次要的。",
+    "emphasis2": "让用户能贡献分析：领域专家的知识会让代码库持续变好。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "同一段哈希代码仍能编译，为什么把字段类型从 long 改成 int 会产生缺陷，开发者又怎样防止同类缺陷再出现？",
-    "expectedAnswer": "原文的 Java 哈希表达式在 f 为 int 时右移 32 位是空操作，f 与自身异或为 0，字段不再影响结果。作者需要修复哈希实现；工程师可以贡献检查识别同类反模式。只有符合编译器检查准入要求、且清理全部既有实例后，才启用编译错误。",
-    "visualEncoding": "共享代码下的两个类型分支逐步展开同一表达式；int 分支显示 f >>> 32 = f、f ^ f = 0。下方将修复当前代码和贡献、推广检查分为不同动作，而不是用基础设施框代替缺陷机制。",
-    "sourceEvidence": "### Integrated Tools  集成工具：'现在假设 f 的类型是 int'、'不再影响最终结果'；### Empower Users to Contribute  让用户能够贡献分析：'防止同类缺陷在代码库其他地方再次出现'；### Compiler Integration 编译器集成：'必须先清理代码库中所有同类问题'。",
-    "beforeProblem": "旧总览与 ch20-03 重复两条反馈回路；读者看不到静态分析究竟检出什么，也无法从图中推导为什么编译成功不足以说明代码正确。",
-    "whyBetter": "类型是明确改变的输入，表达式求值是可检查的中间证据，字段贡献消失是具体后果；开发者和检查贡献者的后续动作也直接对应这些证据。",
-    "limits": "这是原文的 Java 语义示例，尽管 Markdown 代码围栏误标为 C++；未修改源文。long 分支表示取高低位混合的操作，不保证每个值产生非零结果。图不提供原文未给出的修复实现，也不把所有分析都视为可阻断构建。"
+    "readerQuestion": "编译能过，代码就没问题了吗？",
+    "expectedAnswer": "编译只查语法和类型；静态分析在审查时自动抓出更多问题",
+    "visualEncoding": "分层：从下到上叠放，越靠上越依赖上层；宽度递减时表示数量递减（金字塔）。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## 有效静态分析的特点；## Key Lessons in Making Static Analysis Work 让静态分析发挥作用的关键经验；## Tricorder: Google’s Static Analysis Platform  Tricorder： Google 的静态分析平台",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

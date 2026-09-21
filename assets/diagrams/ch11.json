@@ -1,27 +1,97 @@
 {
   "chapter": 11,
-  "title": "测试规模与范围是两个维度",
-  "summary": "对照两个书中反例：单机浏览器只验证日期选择器的一条路径，属于中型、窄范围；服务器端点验证解析、请求校验和业务逻辑，替换全部进程外依赖后可以是小型、广范围。",
+  "title": "为什么要写测试，写多大的测试？",
+  "summary": "测试让代码改得放心；大部分测试应该小、快、确定",
   "enabled": true,
-  "pedagogy": {
-    "action": "revise",
-    "readerQuestion": "为什么只验证日期选择器一条路径的测试可以比验证整个服务器端点的测试规模更大？",
-    "expectedAnswer": "规模按运行资源与约束分类，范围按实际验证的行为分类。单机浏览器测试可以是中型且窄范围；用进程内替身替换所有进程外依赖并遵守小型约束的端点测试，可以是小型且广范围。",
-    "visualEncoding": "保留正交的规模行和范围列，只标出书中两个反例。颜色对应下方可见的运行条件与验证目标；空白格不是不可能，格子面积不是用例数量。",
-    "sourceEvidence": "### Test Scope  测试范围：'针对服务器端点的测试，可以覆盖其全部正常解析流程、请求验证和业务逻辑'；'即使只验证一条代码路径，通常也要运行整个浏览器'。### Test Size  测试规模及#### Small tests  小型测试：单进程、禁止网络磁盘和阻塞、脚注5的隔离内存文件系统例外。",
-    "beforeProblem": "矩阵本身准确而有价值，但移动版只有案例名称，没有把单条路径与端点的多项验证目标同时显示；桌面版日期选择器说明贴近格子边缘。",
-    "whyBetter": "保留有解释力的反例矩阵，补齐两个布局中的运行与验证证据，让读者不依赖说明文字也能解释反常组合；不为增加修改数量而重画矩阵。",
-    "limits": "不是完整分类算法、测试配比或速度保证。只绘制书中两个例子，不表示其他组合不可行；规模还可能受时间和内存等约束影响。"
-  },
   "sourceSections": [
-    "Designing a Test Suite  设计测试套件",
-    "Test Size  测试规模",
-    "Small tests  小型测试",
-    "Medium tests  中型测试",
-    "Large tests  大型测试",
-    "Test Scope  测试范围"
+    "## Why Do We Write Tests?  为什么我们要编写测试？",
+    "## Designing a Test Suite  设计测试套件",
+    "### Test Size  测试规模",
+    "### Test Scope  测试范围",
+    "### The Beyoncé Rule  碧昂斯规则",
+    "## Testing at Google Scale  以谷歌的规模进行测试",
+    "## History of Testing at Google  谷歌的测试历史",
+    "## The Limits of Automated Testing  自动化测试的局限"
   ],
-  "kind": "axes",
+  "kind": "layers",
   "desktop": "assets/diagrams/ch11.svg",
-  "mobile": "assets/diagrams/ch11-mobile.svg"
+  "mobile": "assets/diagrams/ch11-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch11-story.svg",
+  "storyMobile": "assets/diagrams/ch11-story-mobile.svg",
+  "map": {
+    "form": "layers",
+    "question": "为什么要写测试，写多大的测试？",
+    "answer": "测试让代码改得放心；大部分测试应该小、快、确定",
+    "parts": [
+      {
+        "icon": "test-tube",
+        "label": "单元测试，约 80%",
+        "text": "小而窄：单进程、无网络无磁盘，毫秒级，几乎不会无故失败"
+      },
+      {
+        "icon": "boxes",
+        "label": "集成测试，约 15%",
+        "text": "中等规模：单机多进程，验证几个组件的配合"
+      },
+      {
+        "icon": "globe",
+        "label": "端到端，约 5%",
+        "text": "大而广：慢且不稳，只留关键路径"
+      }
+    ],
+    "figure": {
+      "header": "测试金字塔：底座宽、塔尖窄。规模（小中大）看占用的资源，范围（窄中广）看验证多少代码",
+      "widths": [
+        896,
+        640,
+        400
+      ],
+      "footer": "自动化测试是让软件能持续变更的基础；碧昂斯规则：喜欢它，就为它写个测试"
+    }
+  },
+  "story": {
+    "headline": "从 GWS 的救火，到测试成为谷歌的文化",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "siren",
+        "tone": "danger",
+        "title": "2005 年的谷歌 Web 服务器：改一行就出事",
+        "text": "代码越来越复杂，发布常带着 bug，工程师害怕改动。新来的负责人决定：把自动化测试变成硬性要求。"
+      },
+      {
+        "act": "转折",
+        "icon": "shield-check",
+        "tone": "pri",
+        "title": "测试是改代码的底气",
+        "text": "人工验证跟不上改动速度；有了测试，重构和加功能都敢下手。GWS 一年后成了公司里最健康的项目之一。"
+      },
+      {
+        "act": "设计",
+        "icon": "layers",
+        "tone": "pri",
+        "title": "按规模和范围设计测试套件",
+        "text": "规模看资源：小型单进程、中型单机、大型跨机；范围看验证多少代码。多数测试应小而窄，少量端到端兜底。"
+      },
+      {
+        "act": "文化",
+        "icon": "graduation-cap",
+        "tone": "pri",
+        "title": "改变文化需要时间：培训、认证、厕所里的测试",
+        "text": "入职课程、测试认证、贴在厕所的小贴士，十几年下来测试才成为默认。自动化也有做不到的事，人工探索仍有价值。"
+      }
+    ],
+    "emphasis": "测试的目的是让代码能被放心地改；测试要能随规模扩展，就必须自动化。",
+    "emphasis2": "测试套件的配比要平衡：多数小而快，少量大而慢；喜欢它，就为它写个测试。"
+  },
+  "pedagogy": {
+    "action": "replace",
+    "readerQuestion": "为什么要写测试，写多大的测试？",
+    "expectedAnswer": "测试让代码改得放心；大部分测试应该小、快、确定",
+    "visualEncoding": "分层：从下到上叠放，越靠上越依赖上层；宽度递减时表示数量递减（金字塔）。 章末故事线：纵向轨道上的 4 幕，幕名为起点、转折、设计、文化，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Why Do We Write Tests?  为什么我们要编写测试？；## Designing a Test Suite  设计测试套件；### Test Size  测试规模；### Test Scope  测试范围；### The Beyoncé Rule  碧昂斯规则；## Testing at Google Scale  以谷歌的规模进行测试；## History of Testing at Google  谷歌的测试历史；## The Limits of Automated Testing  自动化测试的局限",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
+  }
 }

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch19-story" data-layout="desktop" role="img" aria-labelledby="ch19-story-title ch19-story-desc">
+  <title id="ch19-story-title">从一封邮件里的 diff，到一条改动在 Critique 里走完全程</title>
+  <desc id="ch19-story-desc">本章回顾。从一封邮件里的 diff，到一条改动在 Critique 里走完全程。起点：审查曾经就是把 diff 发给同事。看不到上下文，不知道谁在等谁，意见散在邮件里。流程不变，体验却决定了大家愿不愿意认真审。；原则：简单、信任、通用、集成。Critique 不替人做判断，它信任工程师；界面简单，通用到各种语言和团队都能用，并且和构建、分析、搜索打通。；流程：六个阶段：创建、请求、理解、评论、批准、提交。作者先看自动分析结果再请人审；审查者看差异留意见；LGTM 和所需批准齐了、意见处理完，才能提交。；细节：小优化，大不同：关注集。谁现在该行动，一眼可见，来回等待的摩擦少了很多。工具的价值往往藏在这种小地方。。这一章最想强调的：信任和沟通是代码审查的核心，工具能改善体验，但取代不了它们。 与其他工具紧密集成，以及像“关注集”这样的小优化，决定了审查体验的好坏。</desc>
+  <style>
+    .cg-ch19-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch19-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch19-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch19-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch19-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch19-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch19-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch19-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch19-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch19-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从一封邮件里的 diff，到一条改动在 Critique 里走完全程</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="M18 15.28c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"/><path d="M20 22v.01"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">审查曾经就是把 diff 发给同事</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">看不到上下文，不知道谁在等谁，意见散在邮件里。流程不变，体验却决定了大家愿不愿意认真审。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">原则</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">简单、信任、通用、集成</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">Critique 不替人做判断，它信任工程师；界面简单，通用到各种语言和团队都能用，并且和构建、分析、搜索打通。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">流程</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">六个阶段：创建、请求、理解、评论、批准、提交</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">作者先看自动分析结果再请人审；审查者看差异留意见；LGTM 和所需批准齐了、意见处理完，才能提交。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">细节</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">小优化，大不同：关注集</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">谁现在该行动，一眼可见，来回等待的摩擦少了很多。工具的价值往往藏在这种小地方。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">信任和沟通是代码审查的核心，工具能改善体验，但取代不了它们。</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">与其他工具紧密集成，以及像“关注集”这样的小优化，决定了审查体验的好坏。</text>
+</svg>

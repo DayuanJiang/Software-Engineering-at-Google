@@ -1,40 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch20" data-layout="mobile" role="img" aria-labelledby="ch20m-title ch20m-desc">
-<title id="ch20m-title">编译通过，为何仍需要静态分析？</title>
-<desc id="ch20m-desc">沿着原文哈希表达式比较 long 与 int：类型改变后，右移成为空操作，字段不再贡献哈希值。再区分作者修复当前代码与贡献检查、清理旧问题后防止同类缺陷再次出现。 这是原文的 Java 语义示例，尽管 Markdown 代码围栏误标为 C++；未修改源文。long 分支表示取高低位混合的操作，不保证每个值产生非零结果。图不提供原文未给出的修复实现，也不把所有分析都视为可阻断构建。</desc>
-<style>
-.cg-ch20[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch20[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
-.cg-ch20[data-layout="mobile"] .strong{font-weight:600}
-.cg-ch20[data-layout="mobile"] .code{font-family:Menlo,Consolas,monospace}
-.cg-ch20[data-layout="mobile"] .connector{fill:none;stroke-width:2;stroke-linejoin:round}
-.cg-ch20[data-layout="mobile"] .rule{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch20[data-layout="mobile"] .primary-edge{stroke:var(--diagram-primary,#087f6d)}
-.cg-ch20[data-layout="mobile"] .secondary-edge{stroke:var(--diagram-secondary,#2f6eac)}
-.cg-ch20[data-layout="mobile"] .danger-edge{stroke:var(--diagram-danger,#b54750)}
-</style>
-<defs><marker id="ch20m-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch20m-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch20m-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker></defs>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="38" class="strong" text-anchor="start">编译通过，为何仍需要静态分析？</text>
-<text x="24" y="70" class="small" text-anchor="start">原文 Java 哈希片段；代码仍能编译</text>
-<rect id="ch20m-shape-1" x="24" y="88" width="372" height="70" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="40" y="116" class="code" text-anchor="start" data-owner="ch20m-shape-1">result = 31 * result</text>
-<text x="40" y="145" class="code" text-anchor="start" data-owner="ch20m-shape-1">  + (int) (f ^ (f &gt;&gt;&gt; 32));</text>
-<rect id="ch20m-shape-2" x="24" y="178" width="372" height="112" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="40" y="207" class="strong" text-anchor="start" data-owner="ch20m-shape-2">f 是 long（64 位）</text>
-<text x="40" y="240" class="" text-anchor="start" data-owner="ch20m-shape-2">f &gt;&gt;&gt; 32 取高 32 位</text>
-<text x="40" y="272" class="" text-anchor="start" data-owner="ch20m-shape-2">再与 f 异或，混合高低位</text>
-<rect id="ch20m-shape-3" x="24" y="310" width="372" height="118" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="40" y="341" class="strong" text-anchor="start" data-owner="ch20m-shape-3">f 改为 int（32 位）</text>
-<text x="40" y="375" class="code" text-anchor="start" data-owner="ch20m-shape-3">f &gt;&gt;&gt; 32 = f; f ^ f = 0</text>
-<text x="40" y="409" class="" text-anchor="start" data-owner="ch20m-shape-3">字段 f 不再影响哈希结果</text>
-<path class="rule" d="M24 448L396 448"/>
-<text x="24" y="477" class="strong" text-anchor="start">作者：检查类型，修复哈希实现</text>
-<text x="24" y="504" class="small" text-anchor="start">在当前变更的代码审查中处理</text>
-<text x="24" y="543" class="strong" text-anchor="start">贡献者：把反模式写成检查</text>
-<text x="24" y="570" class="small" text-anchor="start">让相同检查覆盖其他代码</text>
-<text x="24" y="609" class="strong" text-anchor="start">符合准入：清理全库后启用错误</text>
-<text x="24" y="636" class="small" text-anchor="start">同类问题再出现时，构建就会失败</text>
-<text x="24" y="668" class="small" text-anchor="start">可读性等建议，不一定能阻断构建。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="592" viewBox="0 0 420 592" class="chapter-svg cg-ch20" data-layout="mobile" role="img" aria-labelledby="ch20m-title ch20m-desc">
+  <title id="ch20m-title">编译能过，代码就没问题了吗？</title>
+  <desc id="ch20m-desc">本章概览。编译能过，代码就没问题了吗？ 本章的主要部分：编译器：只查语法和类型；long 换成 int 之后右移成了空操作，它照样通过；静态分析（Tricorder）：跑得快、误报少、结果让工程师愿意看；在代码审查时给出意见，附带修复建议；人工审查：只处理需要判断和取舍的部分；机器能抓的问题不该耗审查者的时间。一句话：编译只查语法和类型；静态分析在审查时自动抓出更多问题</desc>
+  <style>
+    .cg-ch20[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch20[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch20[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch20[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch20[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch20[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch20[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch20[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch20[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch20[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="592" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch20m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">编译能过，代码就没问题了吗？</text>
+  <text x="22.0" y="80.0" class="c13" text-anchor="start">三层把关，越往上越依赖人的判断</text>
+  <text x="22.0" y="112.0" class="h16" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">从上到下</text>
+  <rect x="22.0" y="128.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="154.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,146.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="74.0" y="159.0" class="h18" text-anchor="start">人工审查</text>
+  <text x="74.0" y="184.0" class="c15" text-anchor="start">只处理需要判断和取舍的部分；机器能抓的问</text>
+  <text x="74.0" y="206.0" class="c15" text-anchor="start">题不该耗审查者的时间</text>
+  <rect x="22.0" y="226.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="252.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,244.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></g>
+  <text x="74.0" y="257.0" class="h18" text-anchor="start">静态分析（Tricorder）</text>
+  <text x="74.0" y="282.0" class="c15" text-anchor="start">跑得快、误报少、结果让工程师愿意看；在代</text>
+  <text x="74.0" y="304.0" class="c15" text-anchor="start">码审查时给出意见，附带修复建议</text>
+  <rect x="22.0" y="324.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="350.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,342.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="2"/><rect x="6" y="4" width="4" height="6" rx="2"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></g>
+  <text x="74.0" y="355.0" class="h18" text-anchor="start">编译器</text>
+  <text x="74.0" y="380.0" class="c15" text-anchor="start">只查语法和类型；long 换成 int 之后右移成</text>
+  <text x="74.0" y="402.0" class="c15" text-anchor="start">了空操作，它照样通过</text>
+  <text x="22.0" y="434.0" class="c13" text-anchor="start">关键经验：关注开发者的感受；把分析融入核心工作流；让领域</text>
+  <text x="22.0" y="454.0" class="c13" text-anchor="start">专家贡献自己的检查</text>
+  <rect x="22.0" y="480.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="501.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="527.0" class="answer-m" text-anchor="start">编译只查语法和类型；静态分析在审查时自动</text>
+  <text x="36.0" y="553.0" class="answer-m" text-anchor="start">抓出更多问题</text>
 </svg>

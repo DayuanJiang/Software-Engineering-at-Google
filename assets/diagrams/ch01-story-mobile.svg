@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="856" viewBox="0 0 420 856" class="chapter-svg cg-ch01-story" data-layout="mobile" role="img" aria-labelledby="ch01-storym-title ch01-storym-desc">
+  <title id="ch01-storym-title">从一个脚本到十年的服务：编程怎样变成软件工程</title>
+  <desc id="ch01-storym-desc">本章回顾。从一个脚本到十年的服务：编程怎样变成软件工程。起点：你写了一个脚本，跑完就扔。这是编程：一个人，一次性，只要现在能跑就行。没有人会在明年回来改它。；变化：代码活了十年，几百人在改。依赖会升级，需求会变，编译器会变。海勒姆定律：用户够多，你的一切可见行为都会被人依赖，想改就有人痛。；转折：问题从“怎么写对”变成“怎么一直改得动”。这就是软件工程：编程加上时间、规模和权衡。可以选择不改，但绝不能失去改的能力。；做法：让做法跟得上规模，让决策拿得出依据。反复执行的任务，人力不能随规模暴涨；决策以数据为主，加上假设和先例；数据变了就调整，犯错和修订都正常。。这一章最想强调的：软件工程是随时间推移的编程。一次性脚本和十年服务需要完全不同的做法。 判断标准只有一个：在代码预期的寿命里，你是否还有能力应对变化。</desc>
+  <style>
+    .cg-ch01-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch01-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch01-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch01-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch01-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch01-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch01-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch01-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="856" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 540" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从一个脚本到十年的服务：编程怎样变</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">成软件工程</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">你写了一个脚本，跑完就扔</text>
+  <text x="76.0" y="184.0" class="t15" text-anchor="start">这是编程：一个人，一次性，只要现在能跑就行。</text>
+  <text x="76.0" y="207.0" class="t15" text-anchor="start">没有人会在明年回来改它。</text>
+  <circle cx="40.0" cy="269.0" r="18" fill="var(--diagram-warm-soft,#eae2cf)" stroke="var(--diagram-warm,#80531b)" stroke-width="2"/><g transform="translate(31.0,260.0) scale(0.750)" fill="none" stroke="var(--diagram-warm,#80531b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></g>
+  <text x="76.0" y="257.0" class="act" fill="var(--diagram-warm,#80531b)" text-anchor="start">变化</text>
+  <text x="76.0" y="281.0" class="h18" text-anchor="start">代码活了十年，几百人在改</text>
+  <text x="76.0" y="307.0" class="t15" text-anchor="start">依赖会升级，需求会变，编译器会变。海勒姆定</text>
+  <text x="76.0" y="330.0" class="t15" text-anchor="start">律：用户够多，你的一切可见行为都会被人依赖，</text>
+  <text x="76.0" y="353.0" class="t15" text-anchor="start">想改就有人痛。</text>
+  <circle cx="40.0" cy="415.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,406.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></g>
+  <text x="76.0" y="403.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="76.0" y="427.0" class="h18" text-anchor="start">问题从“怎么写对”变成“怎么一直改得</text>
+  <text x="76.0" y="451.0" class="h18" text-anchor="start">动”</text>
+  <text x="76.0" y="477.0" class="t15" text-anchor="start">这就是软件工程：编程加上时间、规模和权衡。</text>
+  <text x="76.0" y="500.0" class="t15" text-anchor="start">可以选择不改，但绝不能失去改的能力。</text>
+  <circle cx="40.0" cy="562.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,553.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></g>
+  <text x="76.0" y="550.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="574.0" class="h18" text-anchor="start">让做法跟得上规模，让决策拿得出依据</text>
+  <text x="76.0" y="600.0" class="t15" text-anchor="start">反复执行的任务，人力不能随规模暴涨；决策以</text>
+  <text x="76.0" y="623.0" class="t15" text-anchor="start">数据为主，加上假设和先例；数据变了就调整，</text>
+  <text x="76.0" y="646.0" class="t15" text-anchor="start">犯错和修订都正常。</text>
+  <rect x="22.0" y="684.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,704.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="712.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="738.0" class="emph-m" text-anchor="start">软件工程是随时间推移的编程。一次性</text>
+  <text x="78.0" y="762.0" class="emph-m" text-anchor="start">脚本和十年服务需要完全不同的做法。</text>
+  <text x="78.0" y="786.0" class="c14" text-anchor="start">判断标准只有一个：在代码预期的寿命里，你是</text>
+  <text x="78.0" y="807.0" class="c14" text-anchor="start">否还有能力应对变化。</text>
+</svg>

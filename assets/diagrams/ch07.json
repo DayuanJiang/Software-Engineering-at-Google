@@ -1,27 +1,102 @@
 {
   "chapter": 7,
-  "title": "审查更快，等于生产力更高？",
-  "summary": "用取消代码审查的书中反例揭示速度指标与质量目标的区别，再对照 Readability 研究实际采用的日志、自述体验和行动；不把单项代理当作总体收益或因果证明。",
-  "sourceSections": [
-    "Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？",
-    "Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
-    "Goals  目标",
-    "Metrics  指标",
-    "Using Data to Validate Metrics  使用数据验证指标",
-    "Taking Action and Tracking Results  采取行动并跟踪结果"
-  ],
-  "kind": "counterexample-and-evidence",
+  "title": "工程效率能度量吗？该怎么度量？",
+  "summary": "可以度量：从目标出发选指标，用访谈等定性数据校验，再据此行动",
   "enabled": true,
+  "sourceSections": [
+    "## Why Should We Measure Engineering Productivity? 我们为什么要度量工程生产力？",
+    "## Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？",
+    "## Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标",
+    "## Goals  目标",
+    "## Signals  信号",
+    "## Metrics  指标",
+    "## Using Data to Validate Metrics  使用数据验证指标",
+    "## Taking Action and Tracking Results  采取行动并跟踪结果"
+  ],
+  "kind": "cycle",
   "desktop": "assets/diagrams/ch07.svg",
   "mobile": "assets/diagrams/ch07-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch07-story.svg",
+  "storyMobile": "assets/diagrams/ch07-story-mobile.svg",
+  "map": {
+    "form": "cycle",
+    "question": "工程效率能度量吗？该怎么度量？",
+    "answer": "可以度量：从目标出发选指标，用访谈等定性数据校验，再据此行动",
+    "parts": [
+      {
+        "icon": "target",
+        "label": "目标",
+        "text": "想改善什么？用 QUANTS 五个方面拆开：质量、注意力、脑力负担、速度、满意度"
+      },
+      {
+        "icon": "radio",
+        "label": "信号",
+        "text": "什么现象能说明目标达成？信号不一定可测"
+      },
+      {
+        "icon": "gauge",
+        "label": "指标",
+        "text": "为每个信号找可测量的代理，说明它能追溯到哪个目标"
+      },
+      {
+        "icon": "stethoscope",
+        "label": "验证",
+        "text": "用访谈、调查等定性数据校验指标；对不上，多半是指标错了"
+      },
+      {
+        "icon": "rocket",
+        "label": "行动",
+        "text": "把改进融入日常工作流和激励，再跟踪结果"
+      }
+    ],
+    "figure": {
+      "header": "先问一句：无论结果好坏，能不能据此采取行动？不能就别度量",
+      "footer": "度量前先筛选：结果不会改变任何决策的项目，本身就不值得度量"
+    }
+  },
+  "story": {
+    "headline": "从“审查更快就是更好”的假设，到追溯到目标的指标",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "gauge",
+        "tone": "sec",
+        "title": "有人提出：取消可读性流程，审查能更快",
+        "text": "速度确实是个可以度量的数字。但更快的审查等于更高的生产力吗？这是这一章要回答的问题。"
+      },
+      {
+        "act": "冲突",
+        "icon": "triangle-alert",
+        "tone": "danger",
+        "title": "只盯一个数字，会把目标换掉",
+        "text": "只跟踪速度和满意度，就漏掉了质量。一个代理指标变好，并不等于整体目标达成。"
+      },
+      {
+        "act": "转折",
+        "icon": "target",
+        "tone": "pri",
+        "title": "目标、信号、指标：从想要什么倒推该量什么",
+        "text": "先写清目标，用 QUANTS 五个方面把它拆全；再找能反映目标的信号；最后才选可测量的指标。"
+      },
+      {
+        "act": "做法",
+        "icon": "stethoscope",
+        "tone": "pri",
+        "title": "定性数据校验定量指标，再融入工作流",
+        "text": "谷歌用日志加访谈证明可读性流程总体值得投入；改进建议要嵌进开发者的日常习惯和激励里，才会真的发生。"
+      }
+    ],
+    "emphasis": "度量之前先问：无论结果好坏，能不能据此采取行动？",
+    "emphasis2": "好指标能追溯到目标，并且有定性数据相互印证；对不上时，多半是指标错了。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "取消代码审查也能让审查更快，为什么不能据此断言生产力提高？Readability 研究实际如何作判断？",
-    "expectedAnswer": "速度代理不能替代代码质量等目标。书中假设用取消审查暴露这一缺口；实际 Readability 研究结合日志中的审查和提交速度、取得资格者的满意度和学习自述，判断流程总体值得，并改进工具与透明度。代码质量仍只收集自评，未采用不理想的客观定量代理。",
-    "visualEncoding": "左侧假设中，取消审查连到审查更快，但不等号阻断速度到质量的推论；右侧两个独立证据带汇入书中综合判断，再连接行动。移动版把反例与实际研究上下分开，避免把假设误认成研究结果。",
-    "sourceEvidence": "Goals  目标：'直接取消代码审查就行'；Metrics  指标：'决定不将代码质量纳入定量度量'；Taking Action and Tracking Results  采取行动并跟踪结果：'总体上值得投入'、'即使考虑到取得资格后所需审查者减少这一因素'、'提高速度和透明度'。",
-    "beforeProblem": "原图只是 GSM 定义和改进循环，读者无法用实际例子区分速度代理、生产力目标与研究判断；与两个节图重复。",
-    "whyBetter": "把能改善单项速度表现却漏掉质量目标的反例，与书中实际证据和行动直接对照，读者可看出单项指标为何不足以决定流程价值。",
-    "limits": "假设不是实测。实际结果不展示数值、效应大小或独立因果证明；取得资格者的自述不代表未完成者。图不重列全部目标和指标，也不评价个人绩效。"
+    "readerQuestion": "工程效率能度量吗？该怎么度量？",
+    "expectedAnswer": "可以度量：从目标出发选指标，用访谈等定性数据校验，再据此行动",
+    "visualEncoding": "循环：带图标的圆点沿椭圆排列，箭头首尾相接，表示这是反复进行的过程。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Why Should We Measure Engineering Productivity? 我们为什么要度量工程生产力？；## Triage: Is It Even Worth Measuring? 项目筛选：究竟是否值得度量？；## Selecting Meaningful Metrics with Goals and Signals  根据目标和信号选择有意义的指标；## Goals  目标；## Signals  信号；## Metrics  指标；## Using Data to Validate Metrics  使用数据验证指标；## Taking Action and Tracking Results  采取行动并跟踪结果",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

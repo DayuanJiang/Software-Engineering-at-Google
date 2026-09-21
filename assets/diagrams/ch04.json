@@ -1,27 +1,97 @@
 {
   "chapter": 4,
-  "title": "产品伤害为何也会影响团队建设？",
-  "summary": "以照片误分类造成的伤害为起点，展示本章提出的风险联系：求职者也可能失去对组织包容性的信任，使代表性招聘目标更难实现。产品共建与组织内的招聘、留任、成长需要共同审视，人员构成不保证公平结果。",
-  "sourceSections": [
-    "Bias Is the Default 偏见是默认状态",
-    "Building Multicultural Capacity 培养多元文化能力",
-    "Reject Singular Approaches 摒弃单一方法",
-    "Challenge Established Processes 挑战既定流程",
-    "Values Versus Outcomes 价值观与结果",
-    "Stay Curious, Push Forward 保持好奇，继续前行"
-  ],
-  "kind": "risk-and-response-map",
+  "title": "软件会不会伤害它没想到的用户？",
+  "summary": "为所有人做工程，先承认自己有盲点，再把公平当作工程目标去验证",
   "enabled": true,
+  "sourceSections": [
+    "## Bias Is the Default 偏见是默认状态",
+    "## Understanding the Need for Diversity 了解多样性的必要性",
+    "## Building Multicultural Capacity 培养多元文化能力",
+    "## Making Diversity Actionable 将多样性付诸行动",
+    "## Reject Singular Approaches 摒弃单一方法",
+    "## Challenge Established Processes 挑战既定流程",
+    "## Values Versus Outcomes 价值观与结果",
+    "## Stay Curious, Push Forward 保持好奇，继续前行"
+  ],
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch04.svg",
   "mobile": "assets/diagrams/ch04-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch04-story.svg",
+  "storyMobile": "assets/diagrams/ch04-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "软件会不会伤害它没想到的用户？",
+    "answer": "为所有人做工程，先承认自己有盲点，再把公平当作工程目标去验证",
+    "parts": [
+      {
+        "icon": "eye-off",
+        "label": "承认偏见是默认",
+        "text": "团队和数据都带着自己的经验，没有刻意纠正，产品就会自动带上盲点"
+      },
+      {
+        "icon": "users",
+        "label": "建立多元团队",
+        "text": "不同背景的人更容易预见不同用户的处境，这直接决定产品质量"
+      },
+      {
+        "icon": "refresh-cw",
+        "label": "挑战既定流程",
+        "text": "拒绝单一方案；从需求、设计到测试，每一步都问：这对谁不适用？"
+      },
+      {
+        "icon": "target",
+        "label": "用结果检验价值",
+        "text": "价值观要落到结果上：宁可放慢，也别发布会伤害部分用户的产品"
+      }
+    ],
+    "figure": {
+      "header": "从照片被错误分类的伤害出发，这一章讲工程团队为什么会有盲点，以及怎么补",
+      "footer": "保持好奇，继续前行：公平是一直要做的工程工作，没有一次做完的时候"
+    }
+  },
+  "story": {
+    "headline": "从一次照片误分类，到把公平当作工程目标",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "triangle-alert",
+        "tone": "danger",
+        "title": "图像识别把黑人用户标成了动物",
+        "text": "没有人故意写下这样的代码。训练数据、测试用户和团队本身，都没有覆盖到这些用户。"
+      },
+      {
+        "act": "根源",
+        "icon": "eye-off",
+        "tone": "warm",
+        "title": "偏见是默认状态",
+        "text": "工程师按自己的经验做假设，团队越单一，盲点越大。产品的伤害还会反过来伤害招聘：求职者不再相信这家公司包容。"
+      },
+      {
+        "act": "转折",
+        "icon": "users",
+        "tone": "pri",
+        "title": "多样性是产品质量问题",
+        "text": "多元团队更容易预见不同用户的处境。谷歌的方法是培养多元文化能力，把“这对谁不适用”变成每个环节的问题。"
+      },
+      {
+        "act": "做法",
+        "icon": "target",
+        "tone": "pri",
+        "title": "拒绝单一方案，用结果检验价值观",
+        "text": "挑战既定流程，从设计到测试都纳入更多视角；评估速度时，把“是否真的帮到所有用户”放进权衡。"
+      }
+    ],
+    "emphasis": "为所有人做工程，从承认自己的盲点开始。",
+    "emphasis2": "宁可放慢，也别发布会伤害部分用户的产品；这项工作没有做完的时候。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "为什么伤害用户的产品失误，也可能妨碍建设更有代表性的工程团队？",
-    "expectedAnswer": "本章将有害输出与信任受损联系起来，并指出求职者可能因而怀疑组织的包容性，妨碍代表性招聘目标。产品内要让弱势用户参与并衡量结果，组织内还要审视留任与成长；人员代表性不能保证数据无偏差。",
-    "visualEncoding": "上方风险链以照片误分类为具体起点，两段虚线箭头均标明“可能”，连接产品伤害、求职者信任与招聘目标。下方并列产品侧和组织侧的审视问题；不画通往“公平成功”的箭头。",
-    "sourceEvidence": "Bias Is the Default 偏见是默认状态: “applicants could lose faith in Google ... undermining Google's goal of improving representation in hiring”; Building Multicultural Capacity 培养多元文化能力: “Even when we do have representation, a training set can still be biased”; Reject Singular Approaches 摒弃单一方法: “progression and retention”; Values Versus Outcomes 价值观与结果: “Build with everyone” and “measure equity throughout your systems”.",
-    "beforeProblem": "原图以四个抽象行动组成循环，与 ch04-04 重复；即使去掉箭头，也几乎不损失信息，没有说明产品结果与组织建设为何相关。",
-    "whyBetter": "将容易被分开理解的产品伤害和招聘代表性连接起来，区分实际案例起点与可能的后续影响，并让读者定位产品侧、组织侧各自需要检查的范围。",
-    "limits": "虚线是书中讨论的可能联系，不是测量出的因果效应、当前公司现状或任何群体的必然行为。两侧实践不是充分条件，团队代表性也不能消除所有数据偏差。"
+    "readerQuestion": "软件会不会伤害它没想到的用户？",
+    "expectedAnswer": "为所有人做工程，先承认自己有盲点，再把公平当作工程目标去验证",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、根源、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Bias Is the Default 偏见是默认状态；## Understanding the Need for Diversity 了解多样性的必要性；## Building Multicultural Capacity 培养多元文化能力；## Making Diversity Actionable 将多样性付诸行动；## Reject Singular Approaches 摒弃单一方法；## Challenge Established Processes 挑战既定流程；## Values Versus Outcomes 价值观与结果；## Stay Curious, Push Forward 保持好奇，继续前行",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

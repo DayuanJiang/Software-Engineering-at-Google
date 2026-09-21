@@ -1,55 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch03" data-layout="mobile" role="img" aria-labelledby="ch03m-title ch03m-desc">
-<title id="ch03m-title">专家休假后，同类故障还能排查吗？</title>
-<desc id="ch03m-desc">对比反复向唯一专家求助，与记录排查步骤后的路径。没有记录时，专家休假会使求助受阻。记录并维护知识后，同事能先查资料，不适用或仍有疑问时再向有经验的同事求助。仍须培养专家并允许坦诚提问。</desc>
-<style>
-.cg-ch03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch03[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
-.cg-ch03[data-layout="mobile"] .strong {font-weight:600}
-.cg-ch03[data-layout="mobile"] .danger {fill:var(--diagram-danger,#b54750)}
-</style>
-<defs>
-<marker id="ch03m-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch03m-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch03m-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-</defs>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="37" text-anchor="start" class="strong">专家不在，故障还能排查吗？</text>
-<text x="24" y="70" text-anchor="start" class="small">书中场景：反复求助同一位排障专家</text>
-<text x="24" y="111" text-anchor="start" class="strong danger">只靠口头经验</text>
-<g id="ch03m-node-1" data-box="24,133,152,94">
-<rect x="24" y="133" width="152" height="94" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
-<text x="100.0" y="170" text-anchor="middle" class="strong">同事再求助</text>
-<text x="100.0" y="204" text-anchor="middle" class="small">同类故障</text>
-</g>
-<path d="M182 180H228" class="rule" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 5"/>
-<path d="M201 170L221 190M221 170L201 190" class="rule" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
-<g id="ch03m-node-2" data-box="236,133,160,94">
-<rect x="236" y="133" width="160" height="94" rx="6" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-danger,#b54750)"/>
-<text x="316.0" y="170" text-anchor="middle" class="strong">唯一专家</text>
-<text x="316.0" y="204" text-anchor="middle" class="small">正在休假</text>
-</g>
-<text x="24" y="264" text-anchor="start" class="small">没有记录可查，同类问题也会受阻</text>
-<path d="M24 287H396" class="rule" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" stroke-linejoin="round"/>
-<text x="24" y="323" text-anchor="start" class="strong">记录步骤，也培养其他专家</text>
-<g id="ch03m-node-3" data-box="24,357,128,80">
-<rect x="24" y="357" width="128" height="80" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
-<text x="88.0" y="391" text-anchor="middle" class="strong">后来同事</text>
-<text x="88.0" y="421" text-anchor="middle" class="small">同类故障</text>
-</g>
-<path d="M158 397H210" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03m-arrow-primary)"/>
-<text x="184" y="376" text-anchor="middle" class="small">先查</text>
-<g id="ch03m-node-4" data-box="216,345,180,108">
-<rect x="216" y="345" width="180" height="108" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)"/>
-<text x="306.0" y="381" text-anchor="middle" class="strong">共享排查步骤</text>
-<text x="306.0" y="417" text-anchor="middle" class="small">可找到的记录</text>
-</g>
-<path d="M306 459V498" class="connector" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch03m-arrow-secondary)"/>
-<text x="24" y="483" text-anchor="start" class="small">不适用或仍有疑问</text>
-<g id="ch03m-node-5" data-box="114,504,282,88">
-<rect x="114" y="504" width="282" height="88" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)"/>
-<text x="255.0" y="539" text-anchor="middle" class="strong">有经验的同事</text>
-<text x="255.0" y="572" text-anchor="middle" class="small">判断背景，解释例外</text>
-</g>
-<text x="24" y="627" text-anchor="start" class="small">文档须持续维护；仍需人工帮助</text>
-<text x="24" y="659" text-anchor="start" class="small">前提：让人敢于提问、培养更多专家</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="784" viewBox="0 0 420 784" class="chapter-svg cg-ch03" data-layout="mobile" role="img" aria-labelledby="ch03m-title ch03m-desc">
+  <title id="ch03m-title">组织里的知识，怎样才不随人走？</title>
+  <desc id="ch03m-desc">本章概览。组织里的知识，怎样才不随人走？ 本章的主要部分：心理安全：敢提问、敢认错，是学习的前提；嘲笑提问的人等于关掉知识的水龙头；多提问：问出来比自己猜快得多；把问到的答案记下来，下一个人就不用再问；问社区：邮件组、问答频道让一个问题的答案被很多人看到；教别人：你总有东西可以教：办公时间、技术讲座、写文档、做代码审查；组织制度：用培训、文档、可读性认证把经验标准化，并奖励愿意花时间教人的人。一句话：让人敢问、愿教，再用文档和制度把知识沉淀成组织的资产</desc>
+  <style>
+    .cg-ch03[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch03[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch03[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch03[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch03[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch03[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch03[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch03[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch03[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch03[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="784" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch03m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">组织里的知识，怎样才不随人走？</text>
+  <rect x="22.0" y="68.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="94.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,86.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="74.0" y="99.0" class="h18" text-anchor="start">目标：知识从个人经验变成组织资产</text>
+  <text x="74.0" y="124.0" class="c15" text-anchor="start">专家休假、离职时，同类问题还能被解决</text>
+  <text x="22.0" y="158.0" class="h16" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">靠什么支撑</text>
+  <rect x="22.0" y="174.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="200.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,192.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></g>
+  <text x="74.0" y="205.0" class="h18" text-anchor="start">心理安全</text>
+  <text x="74.0" y="230.0" class="c15" text-anchor="start">敢提问、敢认错，是学习的前提；嘲笑提问的</text>
+  <text x="74.0" y="252.0" class="c15" text-anchor="start">人等于关掉知识的水龙头</text>
+  <rect x="22.0" y="272.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="298.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,290.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="M18 15.28c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"/><path d="M20 22v.01"/></g>
+  <text x="74.0" y="303.0" class="h18" text-anchor="start">多提问</text>
+  <text x="74.0" y="328.0" class="c15" text-anchor="start">问出来比自己猜快得多；把问到的答案记下</text>
+  <text x="74.0" y="350.0" class="c15" text-anchor="start">来，下一个人就不用再问</text>
+  <rect x="22.0" y="370.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="396.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,388.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></g>
+  <text x="74.0" y="401.0" class="h18" text-anchor="start">问社区</text>
+  <text x="74.0" y="426.0" class="c15" text-anchor="start">邮件组、问答频道让一个问题的答案被很多人</text>
+  <text x="74.0" y="448.0" class="c15" text-anchor="start">看到</text>
+  <rect x="22.0" y="468.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="494.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,486.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g>
+  <text x="74.0" y="499.0" class="h18" text-anchor="start">教别人</text>
+  <text x="74.0" y="524.0" class="c15" text-anchor="start">你总有东西可以教：办公时间、技术讲座、写</text>
+  <text x="74.0" y="546.0" class="c15" text-anchor="start">文档、做代码审查</text>
+  <rect x="22.0" y="566.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="592.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,584.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></g>
+  <text x="74.0" y="597.0" class="h18" text-anchor="start">组织制度</text>
+  <text x="74.0" y="622.0" class="c15" text-anchor="start">用培训、文档、可读性认证把经验标准化，并</text>
+  <text x="74.0" y="644.0" class="c15" text-anchor="start">奖励愿意花时间教人的人</text>
+  <rect x="22.0" y="672.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="693.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="719.0" class="answer-m" text-anchor="start">让人敢问、愿教，再用文档和制度把知识沉淀</text>
+  <text x="36.0" y="745.0" class="answer-m" text-anchor="start">成组织的资产</text>
 </svg>

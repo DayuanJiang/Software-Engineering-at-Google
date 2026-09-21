@@ -1,29 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch19" data-layout="mobile" role="img" aria-labelledby="ch19m-title ch19m-desc">
-<title id="ch19m-title">获批后，为什么还不能提交？</title>
-<desc id="ch19m-desc">同一条命名意见的前后对照：LGTM 和所需批准不变，作者修改代码并回复 Done 后，未解决意见从 1 变为 0，才满足基本审查条件；提交前检查仍须通过。</desc>
-<style>.cg-ch19[data-layout=mobile] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}.cg-ch19[data-layout=mobile] .small{font-size:19px;fill:var(--diagram-muted,#686868)}.cg-ch19[data-layout=mobile] .strong{font-weight:600}.cg-ch19[data-layout=mobile] .code{font-family:Menlo,Consolas,monospace}.cg-ch19[data-layout=mobile] .danger{fill:var(--diagram-danger,#b54750)}.cg-ch19[data-layout=mobile] .positive{fill:var(--diagram-primary,#087f6d)}</style>
-<defs><marker id="ch19m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="38" class="strong" text-anchor="start">获批后，为什么还不能提交？</text>
-<text x="24" y="74" class="small" text-anchor="start">Critique · 命名意见示例</text>
-<rect id="ch19m-region-1" x="24" y="100" width="372" height="196" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<rect id="ch19m-region-2" x="24" y="100" width="372" height="44" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
-<text x="40" y="130" class="strong" text-anchor="start" data-owner="ch19m-region-2">v1 · 意见已发布</text>
-<text x="40" y="176" class="code" text-anchor="start" data-owner="ch19m-region-1">n = size()</text>
-<text x="40" y="206" class="" text-anchor="start" data-owner="ch19m-region-1">“请把 n 改成 count”</text>
-<text x="40" y="240" class="small" text-anchor="start" data-owner="ch19m-region-1">LGTM 1 · 所需批准齐全</text>
-<text x="40" y="276" class="strong danger" text-anchor="start" data-owner="ch19m-region-1">未解决 1：仍不能提交</text>
-<rect id="ch19m-region-3" x="24" y="348" width="372" height="196" rx="6" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<rect id="ch19m-region-4" x="24" y="348" width="372" height="44" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
-<text x="40" y="378" class="strong" text-anchor="start" data-owner="ch19m-region-4">v2 · 作者处理意见后</text>
-<text x="40" y="424" class="code" text-anchor="start" data-owner="ch19m-region-3">count = size()</text>
-<text x="40" y="454" class="" text-anchor="start" data-owner="ch19m-region-3">Done：已改名</text>
-<text x="40" y="488" class="small" text-anchor="start" data-owner="ch19m-region-3">LGTM 1 · 所需批准齐全</text>
-<text x="40" y="524" class="strong positive" text-anchor="start" data-owner="ch19m-region-3">未解决 0：可启动提交</text>
-<path class="connector" d="M210 299V339" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch19m-arrow)"/>
-<text x="232" y="324" class="small" text-anchor="start">作者修改、回复</text>
-<text x="24" y="580" class="small" text-anchor="start">LGTM 与批准只能由审查者给出。</text>
-<text x="24" y="606" class="small" text-anchor="start">本例 LGTM 和批准均未撤销；</text>
-<text x="24" y="632" class="small" text-anchor="start">工具不要求再获一次 LGTM。</text>
-<text x="24" y="658" class="small" text-anchor="start">提交前检查通过后，才真正入库。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="732" viewBox="0 0 420 732" class="chapter-svg cg-ch19" data-layout="mobile" role="img" aria-labelledby="ch19m-title ch19m-desc">
+  <title id="ch19m-title">一个代码审查工具要做好哪些事？</title>
+  <desc id="ch19m-desc">本章概览。一个代码审查工具要做好哪些事？ 本章的主要部分：创建变更：写改动，先看静态分析的自动意见；请求审查：选审查者，工具建议合适的人；理解评论：看差异、留意见，作者回复并修改；批准评分：LGTM 和所需批准；关注集让人知道轮到谁；提交：意见都处理完，才能提交。一句话：把审查的每一步放在一个界面里，让审查快、透明、有记录</desc>
+  <style>
+    .cg-ch19[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch19[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch19[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch19[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch19[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch19[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch19[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch19[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch19[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch19[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="732" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch19m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">一个代码审查工具要做好哪些事？</text>
+  <text x="22.0" y="80.0" class="c13" text-anchor="start">设计原则：简单、信任工程师、通用、和其他工具打通；下面是</text>
+  <text x="22.0" y="100.0" class="c13" text-anchor="start">一次审查在 Critique 里走过的路</text>
+  <rect x="22.0" y="118.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="144.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,136.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></g>
+  <text x="74.0" y="149.0" class="h18" text-anchor="start">创建变更</text>
+  <text x="74.0" y="174.0" class="c15" text-anchor="start">写改动，先看静态分析的自动意见</text>
+  <path d="M210.0 186.0 L210.0 202.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch19m-arrow)"/>
+  <rect x="22.0" y="210.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="236.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,228.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></g>
+  <text x="74.0" y="241.0" class="h18" text-anchor="start">请求审查</text>
+  <text x="74.0" y="266.0" class="c15" text-anchor="start">选审查者，工具建议合适的人</text>
+  <path d="M210.0 278.0 L210.0 294.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch19m-arrow)"/>
+  <rect x="22.0" y="302.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="328.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,320.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></g>
+  <text x="74.0" y="333.0" class="h18" text-anchor="start">理解评论</text>
+  <text x="74.0" y="358.0" class="c15" text-anchor="start">看差异、留意见，作者回复并修改</text>
+  <path d="M210.0 370.0 L210.0 386.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch19m-arrow)"/>
+  <rect x="22.0" y="394.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="420.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,412.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="74.0" y="425.0" class="h18" text-anchor="start">批准评分</text>
+  <text x="74.0" y="450.0" class="c15" text-anchor="start">LGTM 和所需批准；关注集让人知道轮到谁</text>
+  <path d="M210.0 462.0 L210.0 478.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch19m-arrow)"/>
+  <rect x="22.0" y="486.0" width="376.0" height="66.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="512.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,504.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="3" x2="9" y1="12" y2="12"/><line x1="15" x2="21" y1="12" y2="12"/></g>
+  <text x="74.0" y="517.0" class="h18" text-anchor="start">提交</text>
+  <text x="74.0" y="542.0" class="c15" text-anchor="start">意见都处理完，才能提交</text>
+  <text x="22.0" y="574.0" class="c13" text-anchor="start">信任与沟通是核心，工具只是让它们更顺；和其他工具紧密集成</text>
+  <text x="22.0" y="594.0" class="c13" text-anchor="start">是好体验的关键</text>
+  <rect x="22.0" y="620.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="641.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="667.0" class="answer-m" text-anchor="start">把审查的每一步放在一个界面里，让审查快、</text>
+  <text x="36.0" y="693.0" class="answer-m" text-anchor="start">透明、有记录</text>
 </svg>

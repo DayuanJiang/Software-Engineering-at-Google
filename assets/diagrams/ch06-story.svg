@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch06-story" data-layout="desktop" role="img" aria-labelledby="ch06-story-title ch06-story-desc">
+  <title id="ch06-story-title">从每个问题都等你拍板，到你休假一周团队照常推进</title>
+  <desc id="ch06-story-desc">本章回顾。从每个问题都等你拍板，到你休假一周团队照常推进。起点：你现在带的是好几个团队。问题变了：从“这个 bug 怎么修”变成“搜索延迟该不该降”这样没有标准答案的模糊难题。；冲突：所有决定都等你，你成了瓶颈。每件事都要你拍板，日程被填满，真正重要的问题反而没时间想。团队也学不会自己判断。；转折：三个“始终”：决策、离开、扩展。认清盲点、找出关键权衡、做决定再迭代；建立一个你不在也能运转的组织；随着责任增长，主动保护时间和精力。；做法：用“休假一周”检验团队是否自主。你不在时，子团队的领导者能否自己权衡取舍？如果不能，就还没把决策权真正交下去。。这一章最想强调的：领导者的职责是建立一个不需要自己在场也能解决模糊难题的组织。 成功会不断带来新责任，你必须主动管理这些扩张，守住有限的注意力。</desc>
+  <style>
+    .cg-ch06-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch06-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch06-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch06-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch06-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch06-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch06-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch06-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch06-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch06-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从每个问题都等你拍板，到你休假一周团队照常推进</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">你现在带的是好几个团队</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">问题变了：从“这个 bug 怎么修”变成“搜索延迟该不该降”这样没有标准答案的模糊难题。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">冲突</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">所有决定都等你，你成了瓶颈</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">每件事都要你拍板，日程被填满，真正重要的问题反而没时间想。团队也学不会自己判断。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">三个“始终”：决策、离开、扩展</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">认清盲点、找出关键权衡、做决定再迭代；建立一个你不在也能运转的组织；随着责任增长，主动保护时间和精力。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">用“休假一周”检验团队是否自主</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">你不在时，子团队的领导者能否自己权衡取舍？如果不能，就还没把决策权真正交下去。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">领导者的职责是建立一个不需要自己在场也能解决模糊难题的组织。</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">成功会不断带来新责任，你必须主动管理这些扩张，守住有限的注意力。</text>
+</svg>

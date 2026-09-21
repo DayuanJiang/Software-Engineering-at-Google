@@ -1,47 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch25-root" class="chapter-svg cg-ch25" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch25-title ch25-desc">
-<title id="ch25-title">换一台机器，哪些东西要接上？</title>
-<desc id="ch25-desc">示例：订单服务从故障机器甲重新调度到乙。服务名保持不变，解析地址更新，客户端跟踪变化。甲的本地磁盘和进程状态不会自动复制到乙；若订单只在甲本地，新实例取不到。故障前写入外部持久存储的订单可以重新读取，可重建的本地缓存则从空开始，延迟可能上升。外部存储自身仍需复制与故障设计，实例恢复也不等于进度恢复、幂等效果或无中断服务。</desc>
-<style>
-.cg-ch25#ch25-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch25#ch25-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch25#ch25-root .strong {font-weight:600}
-.cg-ch25#ch25-root .danger {fill:var(--diagram-danger,#b54750)}
-</style>
-<defs>
-<marker id="ch25-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch25-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch25-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
-<marker id="ch25-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-<marker id="ch25-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
-</defs>
-<rect x="0" y="0" width="960" height="560" rx="0" fill="var(--diagram-bg,#fff)" stroke="none" stroke-width="1.5"/>
-<text x="32" y="42" text-anchor="start" class="strong">换一台机器，哪些东西要接上？</text>
-<text x="32" y="78" text-anchor="start" class="small">示例：订单服务从故障机器甲迁到乙；迁移不是搬走本地磁盘</text>
-<rect x="32" y="104" width="896" height="70" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="none" stroke-width="1.5"/>
-<text x="48" y="133" text-anchor="start" class="strong" data-box="32,104,896,70">稳定服务名：订单服务</text>
-<text x="48" y="161" text-anchor="start" class="small" data-box="32,104,896,70">解析地址会更新；客户端持续跟踪</text>
-<text x="588" y="146" text-anchor="start" class="" data-box="32,104,896,70">主机甲</text>
-<path data-connector="true" d="M684 139H804" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-secondary-arrow)"/>
-<text x="822" y="146" text-anchor="start" class="" data-box="32,104,896,70">主机乙</text>
-<rect x="32" y="200" width="330" height="182" rx="0" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="52" y="232" text-anchor="start" class="strong" data-box="32,200,330,182">机器甲（故障）</text>
-<text x="52" y="272" text-anchor="start" class="" data-box="32,200,330,182">本地缓存、进程状态</text>
-<text x="52" y="309" text-anchor="start" class="small" data-box="32,200,330,182">若订单只在本地：</text>
-<text x="52" y="343" text-anchor="start" class="small danger" data-box="32,200,330,182">新实例取不到</text>
-<rect x="598" y="200" width="330" height="182" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="618" y="232" text-anchor="start" class="strong" data-box="598,200,330,182">机器乙（新实例）</text>
-<text x="618" y="272" text-anchor="start" class="" data-box="598,200,330,182">从镜像启动，缓存为空</text>
-<text x="618" y="309" text-anchor="start" class="small" data-box="598,200,330,182">订单重新读取；缓存可重建</text>
-<text x="618" y="343" text-anchor="start" class="small" data-box="598,200,330,182">缓存重建期间延迟可能上升</text>
-<text x="480" y="253" text-anchor="middle" class="small">重新放置</text>
-<path data-connector="true" d="M372 277H588" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch25-muted-arrow)"/>
-<text x="480" y="309" text-anchor="middle" class="small">不是复制本地状态</text>
-<rect x="260" y="420" width="440" height="80" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5"/>
-<text x="280" y="451" text-anchor="start" class="strong" data-box="260,420,440,80">机器之外：持久订单记录</text>
-<text x="280" y="483" text-anchor="start" class="small" data-box="260,420,440,80">保存故障前已写入的订单</text>
-<path data-connector="true" d="M164 382V460H250" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-secondary-arrow)"/>
-<text x="32" y="417" text-anchor="start" class="small">故障前写入</text>
-<path data-connector="true" d="M700 460H764V392" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch25-secondary-arrow)"/>
-<text x="786" y="417" text-anchor="start" class="small">重新读取</text>
-<text x="32" y="538" text-anchor="start" class="small">能找到乙、能取回订单，仍不等于请求不会重复或中断。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="472" viewBox="0 0 960 472" class="chapter-svg cg-ch25" data-layout="desktop" role="img" aria-labelledby="ch25-title ch25-desc">
+  <title id="ch25-title">程序跑在哪台机器上，还需要关心吗？</title>
+  <desc id="ch25-desc">本章概览。程序跑在哪台机器上，还需要关心吗？ 本章的主要部分：物理机器：曾经要人手管每一台：装软件、盯故障、半夜重启；容器与调度：打包成容器，调度器决定放哪台机器，坏了自动换一台；服务：稳定的服务名，状态放在机器之外；程序要接受随时被迁移和重启。一句话：把机器交给平台管理，代价是程序必须随时能被搬走和重启</desc>
+  <style>
+    .cg-ch25[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch25[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch25[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch25[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch25[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch25[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch25[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch25[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch25[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch25[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="472" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch25-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">程序跑在哪台机器上，还需要关心吗？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">计算即服务：一层层把“哪台机器”这个问题抽象掉</text>
+  <rect x="32.0" y="114.0" width="896.0" height="64.0" rx="10" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <g transform="translate(50.0,132.0) scale(1.167)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></g>
+  <text x="92.0" y="142.0" class="h18" text-anchor="start">服务</text>
+  <text x="92.0" y="164.0" class="c15" text-anchor="start">稳定的服务名，状态放在机器之外；程序要接受随时被迁移和重启</text>
+  <rect x="32.0" y="186.0" width="896.0" height="64.0" rx="10" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <g transform="translate(50.0,204.0) scale(1.167)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7.7c0-.6-.4-1.2-.8-1.5l-6.3-3.9a1.72 1.72 0 0 0-1.7 0l-10.3 6c-.5.2-.9.8-.9 1.4v6.6c0 .5.4 1.2.8 1.5l6.3 3.9a1.72 1.72 0 0 0 1.7 0l10.3-6c.5-.3.9-1 .9-1.5Z"/><path d="M10 21.9V14L2.1 9.1"/><path d="m10 14 11.9-6.9"/><path d="M14 19.8v-8.1"/><path d="M18 17.5V9.4"/></g>
+  <text x="92.0" y="214.0" class="h18" text-anchor="start">容器与调度</text>
+  <text x="92.0" y="236.0" class="c15" text-anchor="start">打包成容器，调度器决定放哪台机器，坏了自动换一台</text>
+  <rect x="32.0" y="258.0" width="896.0" height="64.0" rx="10" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <g transform="translate(50.0,276.0) scale(1.167)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></g>
+  <text x="92.0" y="286.0" class="h18" text-anchor="start">物理机器</text>
+  <text x="92.0" y="308.0" class="c15" text-anchor="start">曾经要人手管每一台：装软件、盯故障、半夜重启</text>
+  <text x="32.0" y="348.0" class="c14" text-anchor="start">怎么选：集中托管还是自建，无服务器还是容器；抽象层次要恰当，太低太高都有代价</text>
+  <rect x="32.0" y="376.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="397.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="427.0" class="answer" text-anchor="start">把机器交给平台管理，代价是程序必须随时能被搬走和重启</text>
 </svg>

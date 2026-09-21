@@ -1,25 +1,110 @@
 {
   "chapter": 5,
-  "title": "先分清职责，再决定谁来做",
-  "summary": "从成员与业务需求、技术决策、人员与任务配置三个具体问题辨认工程经理、TL 和双方共同承担的职责；兼任不减少职责，负责技术也不等于亲自实现一切。",
+  "title": "从写代码到带团队，要换什么脑子？",
+  "summary": "领导者的产出是团队的产出：少插手，多清障，让人成长",
   "enabled": true,
   "sourceSections": [
-    "Managers and Tech Leads (and Both)  经理、技术负责人及兼任两职者",
-    "The Engineering Manager  工程经理",
-    "The Tech Lead  技术负责人",
-    "The Tech Lead Manager  技术负责人兼经理"
+    "## Managers and Tech Leads (and Both)  经理、技术负责人及兼任两职者",
+    "## Moving from an Individual Contributor Role to a Leadership Role  从个人贡献者角色转变为领导角色",
+    "## The Engineering Manager 工程经理",
+    "## Antipatterns  反模式",
+    "## Positive Patterns  积极模式",
+    "## People Are Like Plants  人如植物"
   ],
-  "kind": "responsibility-map",
+  "kind": "contrast",
   "desktop": "assets/diagrams/ch05.svg",
   "mobile": "assets/diagrams/ch05-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch05-story.svg",
+  "storyMobile": "assets/diagrams/ch05-story-mobile.svg",
+  "map": {
+    "form": "contrast",
+    "question": "从写代码到带团队，要换什么脑子？",
+    "answer": "领导者的产出是团队的产出：少插手，多清障，让人成长",
+    "parts": [
+      {
+        "icon": "circle-x",
+        "label": "反模式",
+        "text": "招庸才、放任低绩效、当老好人、事事插手"
+      },
+      {
+        "icon": "circle-check",
+        "label": "积极模式",
+        "text": "放下自我、做催化剂、当导师、设目标、护住团队"
+      }
+    ],
+    "figure": {
+      "header": "两种角色：经理管人和方向，技术负责人管技术决策；小团队常由一人兼任",
+      "left": {
+        "icon": "circle-x",
+        "title": "反模式：新领导常踩的坑",
+        "tone": "danger",
+        "items": [
+          "招好说话的庸才",
+          "忽视低绩效者",
+          "忽视人的问题",
+          "当所有人的朋友",
+          "事事插手当保姆"
+        ]
+      },
+      "right": {
+        "icon": "circle-check",
+        "title": "积极模式：让团队变强",
+        "tone": "pri",
+        "items": [
+          "放下自我，信任团队",
+          "做催化剂，帮人清障",
+          "当导师，多问少答",
+          "设清晰目标，保持诚实",
+          "护住团队，把人当植物养"
+        ]
+      },
+      "arrow": "改为",
+      "footer": "委派：成员有时做得慢一些，也是培养团队能力的机会"
+    }
+  },
+  "story": {
+    "headline": "从最会写代码的人，到让团队写出好代码的人",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "code",
+        "tone": "sec",
+        "title": "你写得最好，所以被叫去当负责人",
+        "text": "第一反应通常是继续自己动手：最难的活自己干，别人的代码自己改。结果是你成了瓶颈。"
+      },
+      {
+        "act": "冲突",
+        "icon": "triangle-alert",
+        "tone": "danger",
+        "title": "老式“管理”在工程团队行不通",
+        "text": "把人当资源、盯着产出、当所有人的朋友、忽视低绩效者，这些反模式每一个都会拖垮团队。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "领导是服务：放下自我，做催化剂",
+        "text": "你的工作变成让别人做得更好：清障、提问、设目标、护住团队。成员有时慢一点，也是团队在成长。"
+      },
+      {
+        "act": "做法",
+        "icon": "hand-helping",
+        "tone": "pri",
+        "title": "像照料植物一样对待每个人",
+        "text": "有人需要更多光照，有人需要更少打扰。经理负责人和方向，技术负责人负责技术；兼任两职时更要学会委派。"
+      }
+    ],
+    "emphasis": "领导者的成绩单是团队的产出，与自己写了多少代码无关。",
+    "emphasis2": "尽量委派，别事事自己干；特别关注团队的专注点、方向和推进速度。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "成员与业务需求冲突、技术决策、人员与任务配置，分别由谁负责？TL 负责技术是否就该亲自做完？",
-    "expectedAnswer": "工程经理兼顾每个人（包括 TL）的绩效、生产力和幸福感与产品的业务需求；TL 负责技术选择、架构和项目推进；两人共同配齐人员、按技能与水平匹配任务。小或新团队可以由 TLM 兼任；培养团队时 TL 通常应委派，即使成员有时较慢。",
-    "visualEncoding": "三行把具体问题与负责角色对齐；最后一行是明确标注的共同职责，不画上下级箭头。底部将一人兼任与任务委派作为不同层次的决定，手机布局逐行重排。",
-    "sourceEvidence": "The Engineering Manager  工程经理：including their tech lead / needs of the business；The Tech Lead  技术负责人：adequately staffed / tasks that best match their skill sets and skill levels / delegating it；The Tech Lead Manager  技术负责人兼经理：two specialists / mentoring。",
-    "beforeProblem": "两大角色名词框汇入“共同服务团队”，与 ch05-01 几乎重复；抽象职责清单没有明确对应读者遇到的问题，也未显示负责技术与亲自实现之间的区别。",
-    "whyBetter": "每一行都能直接回答一类问题由谁负责，并把双方共同配置人员与任务的职责放在同一行；委派注释避免将 TL 的责任误读成包办所有实现。",
-    "limits": "是本章描述的 Google 角色惯例，不是通用组织章程或完整 RACI；行距和颜色不代表工作量、优先级或汇报层级。没有量化委派收益。"
+    "readerQuestion": "从写代码到带团队，要换什么脑子？",
+    "expectedAnswer": "领导者的产出是团队的产出：少插手，多清障，让人成长",
+    "visualEncoding": "前后对比：左栏是问题做法，右栏是本章主张的做法，中间箭头表示转向；每条用叉或勾标记。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Managers and Tech Leads (and Both)  经理、技术负责人及兼任两职者；## Moving from an Individual Contributor Role to a Leadership Role  从个人贡献者角色转变为领导角色；## The Engineering Manager 工程经理；## Antipatterns  反模式；## Positive Patterns  积极模式；## People Are Like Plants  人如植物",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

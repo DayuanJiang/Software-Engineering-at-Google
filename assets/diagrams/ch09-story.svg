@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch09-story" data-layout="desktop" role="img" aria-labelledby="ch09-story-title ch09-story-desc">
+  <title id="ch09-story-title">从“这只是找 bug”的误解，到审查成为代码库的共同所有权</title>
+  <desc id="ch09-story-desc">本章回顾。从“这只是找 bug”的误解，到审查成为代码库的共同所有权。起点：大多数人以为代码审查是为了抓错误。抓错确实是收益之一，但如果只为这个，审查的成本看起来太高了：每次改动都要等人。；发现：审查更大的作用是让代码可读、一致、被人理解。审查者是代码的第一位读者。看不懂就改到看得懂；风格不一致就统一；顺带把知识传给了另一个人。；规则：三项批准，不等于三位审查者。他人认可、目录负责人批准、该语言的可读性认证；一个合格的审查者可以同时给出三项。自审不能替代他人认可。；做法：小改动、快回复、保持专业。把改动切小，审查才快；审查者及时回应，作者虚心接受批评；能自动化的检查交给工具，人只看需要判断的部分。。这一章最想强调的：代码审查让代码库成为团队共同的财产，每个人都为它负责。 始终请他人检验你的假设，优先考虑读者；自动化是审查跟上规模的关键。</desc>
+  <style>
+    .cg-ch09-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch09-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch09-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch09-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch09-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch09-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch09-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch09-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch09-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch09-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从“这只是找 bug”的误解，到审查成为代码库的共同所有权</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">大多数人以为代码审查是为了抓错误</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">抓错确实是收益之一，但如果只为这个，审查的成本看起来太高了：每次改动都要等人。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">发现</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">审查更大的作用是让代码可读、一致、被人理解</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">审查者是代码的第一位读者。看不懂就改到看得懂；风格不一致就统一；顺带把知识传给了另一个人。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">规则</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">三项批准，不等于三位审查者</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">他人认可、目录负责人批准、该语言的可读性认证；一个合格的审查者可以同时给出三项。自审不能替代他人认可。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">小改动、快回复、保持专业</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">把改动切小，审查才快；审查者及时回应，作者虚心接受批评；能自动化的检查交给工具，人只看需要判断的部分。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">代码审查让代码库成为团队共同的财产，每个人都为它负责。</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">始终请他人检验你的假设，优先考虑读者；自动化是审查跟上规模的关键。</text>
+</svg>

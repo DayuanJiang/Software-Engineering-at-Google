@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="898" viewBox="0 0 420 898" class="chapter-svg cg-ch11-story" data-layout="mobile" role="img" aria-labelledby="ch11-storym-title ch11-storym-desc">
+  <title id="ch11-storym-title">从 GWS 的救火，到测试成为谷歌的文化</title>
+  <desc id="ch11-storym-desc">本章回顾。从 GWS 的救火，到测试成为谷歌的文化。起点：2005 年的谷歌 Web 服务器：改一行就出事。代码越来越复杂，发布常带着 bug，工程师害怕改动。新来的负责人决定：把自动化测试变成硬性要求。；转折：测试是改代码的底气。人工验证跟不上改动速度；有了测试，重构和加功能都敢下手。GWS 一年后成了公司里最健康的项目之一。；设计：按规模和范围设计测试套件。规模看资源：小型单进程、中型单机、大型跨机；范围看验证多少代码。多数测试应小而窄，少量端到端兜底。；文化：改变文化需要时间：培训、认证、厕所里的测试。入职课程、测试认证、贴在厕所的小贴士，十几年下来测试才成为默认。自动化也有做不到的事，人工探索仍有价值。。这一章最想强调的：测试的目的是让代码能被放心地改；测试要能随规模扩展，就必须自动化。 测试套件的配比要平衡：多数小而快，少量大而慢；喜欢它，就为它写个测试。</desc>
+  <style>
+    .cg-ch11-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch11-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch11-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch11-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch11-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch11-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch11-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="898" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 140 V 558" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从 GWS 的救火，到测试成为谷歌的文化</text>
+  <circle cx="40.0" cy="118.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,109.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></g>
+  <text x="76.0" y="106.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">起点</text>
+  <text x="76.0" y="130.0" class="h18" text-anchor="start">2005 年的谷歌 Web 服务器：改一行就出</text>
+  <text x="76.0" y="154.0" class="h18" text-anchor="start">事</text>
+  <text x="76.0" y="180.0" class="t15" text-anchor="start">代码越来越复杂，发布常带着 bug，工程师害怕</text>
+  <text x="76.0" y="203.0" class="t15" text-anchor="start">改动。新来的负责人决定：把自动化测试变成硬</text>
+  <text x="76.0" y="226.0" class="t15" text-anchor="start">性要求。</text>
+  <circle cx="40.0" cy="288.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,279.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="76.0" y="276.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="76.0" y="300.0" class="h18" text-anchor="start">测试是改代码的底气</text>
+  <text x="76.0" y="326.0" class="t15" text-anchor="start">人工验证跟不上改动速度；有了测试，重构和加</text>
+  <text x="76.0" y="349.0" class="t15" text-anchor="start">功能都敢下手。GWS 一年后成了公司里最健康的</text>
+  <text x="76.0" y="372.0" class="t15" text-anchor="start">项目之一。</text>
+  <circle cx="40.0" cy="434.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,425.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g>
+  <text x="76.0" y="422.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">设计</text>
+  <text x="76.0" y="446.0" class="h18" text-anchor="start">按规模和范围设计测试套件</text>
+  <text x="76.0" y="472.0" class="t15" text-anchor="start">规模看资源：小型单进程、中型单机、大型跨机；</text>
+  <text x="76.0" y="495.0" class="t15" text-anchor="start">范围看验证多少代码。多数测试应小而窄，少量</text>
+  <text x="76.0" y="518.0" class="t15" text-anchor="start">端到端兜底。</text>
+  <circle cx="40.0" cy="580.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,571.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g>
+  <text x="76.0" y="568.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">文化</text>
+  <text x="76.0" y="592.0" class="h18" text-anchor="start">改变文化需要时间：培训、认证、厕所里</text>
+  <text x="76.0" y="616.0" class="h18" text-anchor="start">的测试</text>
+  <text x="76.0" y="642.0" class="t15" text-anchor="start">入职课程、测试认证、贴在厕所的小贴士，十几</text>
+  <text x="76.0" y="665.0" class="t15" text-anchor="start">年下来测试才成为默认。自动化也有做不到的事，</text>
+  <text x="76.0" y="688.0" class="t15" text-anchor="start">人工探索仍有价值。</text>
+  <rect x="22.0" y="726.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,746.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="754.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="780.0" class="emph-m" text-anchor="start">测试的目的是让代码能被放心地改；测</text>
+  <text x="78.0" y="804.0" class="emph-m" text-anchor="start">试要能随规模扩展，就必须自动化。</text>
+  <text x="78.0" y="828.0" class="c14" text-anchor="start">测试套件的配比要平衡：多数小而快，少量大而</text>
+  <text x="78.0" y="849.0" class="c14" text-anchor="start">慢；喜欢它，就为它写个测试。</text>
+</svg>

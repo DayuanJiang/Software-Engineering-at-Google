@@ -1,24 +1,88 @@
 {
   "chapter": 25,
-  "title": "换一台机器，哪些东西要接上？",
-  "summary": "以订单服务从故障机器甲迁到乙为例：服务名稳定但地址会更新；本地状态不会随重建自动复制，持久订单要从外部重新读取，缓存则可重建。实例恢复、进度恢复、安全重试与平稳服务是不同要求。",
+  "title": "程序跑在哪台机器上，还需要关心吗？",
+  "summary": "把机器交给平台管理，代价是程序必须随时能被搬走和重启",
   "enabled": true,
   "sourceSections": [
-    "Architecting for Failure 为应对故障设计架构",
-    "Managing State 管理状态",
-    "Connecting to a Service 连接到服务"
+    "## Taming the Compute Environment 驯服计算环境",
+    "## Writing Software for Managed Compute 为托管计算编写软件",
+    "## CaaS Over Time and Scale CaaS随时间和规模的变化",
+    "## Choosing a Compute Service 选择计算服务"
   ],
-  "kind": "state-transition",
+  "kind": "layers",
   "desktop": "assets/diagrams/ch25.svg",
   "mobile": "assets/diagrams/ch25-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch25-story.svg",
+  "storyMobile": "assets/diagrams/ch25-story-mobile.svg",
+  "map": {
+    "form": "layers",
+    "question": "程序跑在哪台机器上，还需要关心吗？",
+    "answer": "把机器交给平台管理，代价是程序必须随时能被搬走和重启",
+    "parts": [
+      {
+        "icon": "server",
+        "label": "物理机器",
+        "text": "曾经要人手管每一台：装软件、盯故障、半夜重启"
+      },
+      {
+        "icon": "container",
+        "label": "容器与调度",
+        "text": "打包成容器，调度器决定放哪台机器，坏了自动换一台"
+      },
+      {
+        "icon": "cloud",
+        "label": "服务",
+        "text": "稳定的服务名，状态放在机器之外；程序要接受随时被迁移和重启"
+      }
+    ],
+    "figure": {
+      "header": "计算即服务：一层层把“哪台机器”这个问题抽象掉",
+      "footer": "怎么选：集中托管还是自建，无服务器还是容器；抽象层次要恰当，太低太高都有代价"
+    }
+  },
+  "story": {
+    "headline": "从半夜起来重启机器，到不知道程序跑在哪台机器上",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "server",
+        "tone": "sec",
+        "title": "早年的谷歌：每台机器都要人管",
+        "text": "装软件、盯故障、机器坏了半夜起来处理。机器越多，人越不够用。"
+      },
+      {
+        "act": "转折",
+        "icon": "container",
+        "tone": "pri",
+        "title": "驯服计算环境：容器加调度器",
+        "text": "把程序打包成容器，由调度器决定放哪台机器，坏了自动换一台。工程师只声明需要多少资源。"
+      },
+      {
+        "act": "代价",
+        "icon": "triangle-alert",
+        "tone": "warm",
+        "title": "程序必须学会被随时搬走",
+        "text": "机器随时会换，本地状态说没就没。持久数据放在机器之外；用稳定的服务名找服务，别记地址；接受重启和重复请求。"
+      },
+      {
+        "act": "选择",
+        "icon": "compass",
+        "tone": "pri",
+        "title": "选一个抽象层次恰当的计算方案",
+        "text": "集中托管还是自建，无服务器还是容器，各有取舍。抽象太低，人还是在管机器；太高，程序就被平台绑死。"
+      }
+    ],
+    "emphasis": "要扩大规模，就需要共用的基础设施来运行生产负载，软件必须为此调整。",
+    "emphasis2": "审慎选择组织的计算方案，让它提供恰当的抽象层次。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "订单服务换到新机器后，为什么启动成功仍不代表旧订单、地址与请求都恢复了？",
-    "expectedAnswer": "调度重建实例，不搬运原机器本地状态。客户端要跟踪服务名对应的新地址，需要保留的订单应提前写到外部持久存储；缓存可重新构建，但冷缓存可能增加延迟。安全重试和维护排空还需单独设计。",
-    "visualEncoding": "服务名横带保持不变而地址由甲改乙；旧机与新机对照，中间箭头明确只表示重新放置。持久订单画在两台机器之外，用故障前写入和新实例读取连接；甲仅本地保存的订单与乙空缓存构成失败反例。",
-    "sourceEvidence": "Architecting for Failure 为应对故障设计架构：还需要额外的设计和投入。Managing State 管理状态：真正需要保存的数据则必须存放在别处；缓存层丢失后延迟会更高。Connecting to a Service 连接到服务：即使具体的后端实例重启，这个标识符也保持不变。",
-    "beforeProblem": "原总览以共享池和借还箭头重复 ch25-04；持久状态只在图脚出现，读者无法判断换机器后哪些内容仍在、哪些会丢。",
-    "whyBetter": "把机器边界、持久存储边界、地址更新和空缓存画成同一次替换的不同后果，为后续隔离、恢复、重试和资源回收例子提供问题框架。",
-    "limits": "订单与机器甲乙是教学示例。没有展示存储的复制、共识、容量配置与客户端实现，也不保证外部存储永不失败或重建服务无中断。"
+    "readerQuestion": "程序跑在哪台机器上，还需要关心吗？",
+    "expectedAnswer": "把机器交给平台管理，代价是程序必须随时能被搬走和重启",
+    "visualEncoding": "分层：从下到上叠放，越靠上越依赖上层；宽度递减时表示数量递减（金字塔）。 章末故事线：纵向轨道上的 4 幕，幕名为起点、转折、代价、选择，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Taming the Compute Environment 驯服计算环境；## Writing Software for Managed Compute 为托管计算编写软件；## CaaS Over Time and Scale CaaS随时间和规模的变化；## Choosing a Compute Service 选择计算服务",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

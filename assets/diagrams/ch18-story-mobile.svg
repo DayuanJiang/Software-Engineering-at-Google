@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="926" viewBox="0 0 420 926" class="chapter-svg cg-ch18-story" data-layout="mobile" role="img" aria-labelledby="ch18-storym-title ch18-storym-desc">
+  <title id="ch18-storym-title">从“我只需要一个编译器”，到把构建交给工具推理</title>
+  <desc id="ch18-storym-desc">本章回顾。从“我只需要一个编译器”，到把构建交给工具推理。起点：“我只需要一个编译器！”。一个人、几个文件，一条命令就够。文件多了写个 shell 脚本，依赖多了再加几行。直到有人在别的机器上构建失败。；冲突：基于任务的构建：步骤越写越多，工具越来越盲。Ant、Maven、Gradle 让你描述做什么；但工具不知道步骤之间真正依赖什么，于是不敢并行、不敢缓存，脚本自身也成了维护负担。；转折：基于产物的构建：声明目标，让工具算依赖。Bazel 只让你说“这个目标依赖那些目标”。工具知道全部依赖图，就能判断什么该重建、什么能并行、什么能从远程缓存拿。；做法：细粒度模块、最小可见性、锁定外部依赖。1:1:1 规则让模块小而清晰；限制谁能依赖谁；外部依赖锁定版本并校验哈希。约束多了，工程师反而轻松。。这一章最想强调的：构建系统的价值在于对依赖的理解；给它适当的约束，它就能替你推理。 组织越大，越需要功能完备的构建系统；控制权和灵活性都有代价。</desc>
+  <style>
+    .cg-ch18-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch18-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch18-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch18-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch18-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch18-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch18-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch18-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch18-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch18-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="926" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 610" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从“我只需要一个编译器”，到把构建</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">交给工具推理</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">“我只需要一个编译器！”</text>
+  <text x="76.0" y="184.0" class="t15" text-anchor="start">一个人、几个文件，一条命令就够。文件多了写</text>
+  <text x="76.0" y="207.0" class="t15" text-anchor="start">个 shell 脚本，依赖多了再加几行。直到有人在</text>
+  <text x="76.0" y="230.0" class="t15" text-anchor="start">别的机器上构建失败。</text>
+  <circle cx="40.0" cy="292.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,283.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></g>
+  <text x="76.0" y="280.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">冲突</text>
+  <text x="76.0" y="304.0" class="h18" text-anchor="start">基于任务的构建：步骤越写越多，工具越</text>
+  <text x="76.0" y="328.0" class="h18" text-anchor="start">来越盲</text>
+  <text x="76.0" y="354.0" class="t15" text-anchor="start">Ant、Maven、Gradle 让你描述做什么；但工具</text>
+  <text x="76.0" y="377.0" class="t15" text-anchor="start">不知道步骤之间真正依赖什么，于是不敢并行、</text>
+  <text x="76.0" y="400.0" class="t15" text-anchor="start">不敢缓存，脚本自身也成了维护负担。</text>
+  <circle cx="40.0" cy="462.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,453.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></g>
+  <text x="76.0" y="450.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="76.0" y="474.0" class="h18" text-anchor="start">基于产物的构建：声明目标，让工具算依</text>
+  <text x="76.0" y="498.0" class="h18" text-anchor="start">赖</text>
+  <text x="76.0" y="524.0" class="t15" text-anchor="start">Bazel 只让你说“这个目标依赖那些目标”。工</text>
+  <text x="76.0" y="547.0" class="t15" text-anchor="start">具知道全部依赖图，就能判断什么该重建、什么</text>
+  <text x="76.0" y="570.0" class="t15" text-anchor="start">能并行、什么能从远程缓存拿。</text>
+  <circle cx="40.0" cy="632.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,623.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g>
+  <text x="76.0" y="620.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="644.0" class="h18" text-anchor="start">细粒度模块、最小可见性、锁定外部依赖</text>
+  <text x="76.0" y="670.0" class="t15" text-anchor="start">1:1:1 规则让模块小而清晰；限制谁能依赖谁；</text>
+  <text x="76.0" y="693.0" class="t15" text-anchor="start">外部依赖锁定版本并校验哈希。约束多了，工程</text>
+  <text x="76.0" y="716.0" class="t15" text-anchor="start">师反而轻松。</text>
+  <rect x="22.0" y="754.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,774.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="782.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="808.0" class="emph-m" text-anchor="start">构建系统的价值在于对依赖的理解；给</text>
+  <text x="78.0" y="832.0" class="emph-m" text-anchor="start">它适当的约束，它就能替你推理。</text>
+  <text x="78.0" y="856.0" class="c14" text-anchor="start">组织越大，越需要功能完备的构建系统；控制权</text>
+  <text x="78.0" y="877.0" class="c14" text-anchor="start">和灵活性都有代价。</text>
+</svg>

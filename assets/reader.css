@@ -290,6 +290,7 @@ body[data-reading-mode="chinese"] .credit-chinese { display: inline; }
 .medium-zoom-image--opened { z-index: 101; }
 .markdown-section hr { border: 0; border-top: 1px solid var(--line); margin: 36px 0; }
 .chapter-visual { margin: 20px 0 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: var(--ui-font); }
+.chapter-story { margin-top: 48px; }
 .chapter-visual > summary { display: flex; align-items: center; gap: 14px; padding: 15px 0; list-style: none; cursor: pointer; }
 .chapter-visual > summary::-webkit-details-marker { display: none; }
 .chapter-visual > summary:hover { color: var(--accent); }

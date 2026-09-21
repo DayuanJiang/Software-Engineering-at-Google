@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="805" viewBox="0 0 420 805" class="chapter-svg cg-ch13-story" data-layout="mobile" role="img" aria-labelledby="ch13-storym-title ch13-storym-desc">
+  <title id="ch13-storym-title">从不能真扣钱的测试，到对替身的克制</title>
+  <desc id="ch13-storym-desc">本章回顾。从不能真扣钱的测试，到对替身的克制。起点：支付代码调用真实的信用卡服务，怎么测？。总不能每跑一次测试就扣一次钱。测试需要一个能替换真实依赖的办法。；发现：接缝：让依赖从外面传进来。构造函数接收依赖，测试就能塞进一个替身。模拟框架让替身几秒钟就能生成，再也不用手写。；诱惑：太方便了，于是到处打桩、到处验证调用。测试开始复述实现细节：改一行代码，一堆测试就坏；测试通过了，也说不清到底证明了什么。；转向：谷歌的选择：能用真的就用真的。真实实现最可信；用不了时，用依赖方维护并测试过的伪实现；打桩只用来制造状态；交互验证只留给没法验证状态的改动。。这一章最想强调的：替身是一种权衡，从来不是默认。测试要断言结果，不要断言过程。 每多一个替身，测试离真实系统就远一步；用之前先问一句：真的不能用真的吗？</desc>
+  <style>
+    .cg-ch13-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch13-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch13-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch13-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch13-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch13-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch13-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch13-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch13-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch13-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="805" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 140 V 489" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从不能真扣钱的测试，到对替身的克制</text>
+  <circle cx="40.0" cy="118.0" r="18" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(31.0,109.0) scale(0.750)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></g>
+  <text x="76.0" y="106.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="76.0" y="130.0" class="h18" text-anchor="start">支付代码调用真实的信用卡服务，怎么</text>
+  <text x="76.0" y="154.0" class="h18" text-anchor="start">测？</text>
+  <text x="76.0" y="180.0" class="t15" text-anchor="start">总不能每跑一次测试就扣一次钱。测试需要一个</text>
+  <text x="76.0" y="203.0" class="t15" text-anchor="start">能替换真实依赖的办法。</text>
+  <circle cx="40.0" cy="265.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,256.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></g>
+  <text x="76.0" y="253.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">发现</text>
+  <text x="76.0" y="277.0" class="h18" text-anchor="start">接缝：让依赖从外面传进来</text>
+  <text x="76.0" y="303.0" class="t15" text-anchor="start">构造函数接收依赖，测试就能塞进一个替身。模</text>
+  <text x="76.0" y="326.0" class="t15" text-anchor="start">拟框架让替身几秒钟就能生成，再也不用手写。</text>
+  <circle cx="40.0" cy="388.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,379.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></g>
+  <text x="76.0" y="376.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">诱惑</text>
+  <text x="76.0" y="400.0" class="h18" text-anchor="start">太方便了，于是到处打桩、到处验证调用</text>
+  <text x="76.0" y="426.0" class="t15" text-anchor="start">测试开始复述实现细节：改一行代码，一堆测试</text>
+  <text x="76.0" y="449.0" class="t15" text-anchor="start">就坏；测试通过了，也说不清到底证明了什么。</text>
+  <circle cx="40.0" cy="511.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,502.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="76.0" y="499.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转向</text>
+  <text x="76.0" y="523.0" class="h18" text-anchor="start">谷歌的选择：能用真的就用真的</text>
+  <text x="76.0" y="549.0" class="t15" text-anchor="start">真实实现最可信；用不了时，用依赖方维护并测</text>
+  <text x="76.0" y="572.0" class="t15" text-anchor="start">试过的伪实现；打桩只用来制造状态；交互验证</text>
+  <text x="76.0" y="595.0" class="t15" text-anchor="start">只留给没法验证状态的改动。</text>
+  <rect x="22.0" y="633.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,653.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="661.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="687.0" class="emph-m" text-anchor="start">替身是一种权衡，从来不是默认。测试</text>
+  <text x="78.0" y="711.0" class="emph-m" text-anchor="start">要断言结果，不要断言过程。</text>
+  <text x="78.0" y="735.0" class="c14" text-anchor="start">每多一个替身，测试离真实系统就远一步；用之</text>
+  <text x="78.0" y="756.0" class="c14" text-anchor="start">前先问一句：真的不能用真的吗？</text>
+</svg>

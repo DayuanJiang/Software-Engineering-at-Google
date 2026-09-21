@@ -1,24 +1,98 @@
 {
   "chapter": 15,
-  "title": "只剩一个用户，为什么还不能关？",
-  "summary": "旧系统的最后一个直接用户可能是关键基础设施。依赖链说明关闭的连带影响，也说明建议性通知与有团队、有授权的强制性弃用为何不同。",
-  "sourceSections": [
-    "建议性弃用 (Advisory Deprecation)",
-    "Compulsory Deprecation  强制性弃用",
-    "Process Owners  弃用流程的负责人"
-  ],
-  "kind": "dependency-case",
+  "title": "老系统还有人用，怎么才能下线？",
+  "summary": "弃用是个正式项目：有人负责、有期限、有工具，从设计时就该考虑",
   "enabled": true,
+  "sourceSections": [
+    "## Why Deprecate? 为什么要弃用？",
+    "## 为什么弃用这么难？ (Why Is Deprecation So Hard?)",
+    "## Types of Deprecation  “弃用”的类型",
+    "## Managing the Deprecation Process  管理弃用流程"
+  ],
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch15.svg",
   "mobile": "assets/diagrams/ch15-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch15-story.svg",
+  "storyMobile": "assets/diagrams/ch15-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "老系统还有人用，怎么才能下线？",
+    "answer": "弃用是个正式项目：有人负责、有期限、有工具，从设计时就该考虑",
+    "parts": [
+      {
+        "icon": "scale",
+        "label": "先算成本",
+        "text": "老系统一直在耗维护精力；留着的成本要和移除的成本比"
+      },
+      {
+        "icon": "signpost",
+        "label": "选类型",
+        "text": "建议性：只通知，靠用户自愿；强制性：有团队、有期限"
+      },
+      {
+        "icon": "user-cog",
+        "label": "定负责人",
+        "text": "明确谁负责推进，设里程碑，让进度可见"
+      },
+      {
+        "icon": "scan-search",
+        "label": "找出用法",
+        "text": "用代码搜索和静态分析找到每一个使用点"
+      },
+      {
+        "icon": "trash-2",
+        "label": "迁走再关",
+        "text": "自动化迁移，逐步收口；最后一个用户往往是关键基础设施"
+      }
+    ],
+    "figure": {
+      "header": "为什么难：迁移的成本和收益落在不同人身上；用户的用法常常超出最初的设计",
+      "footer": "更便宜的做法：让系统原地演进；还有一种选择是从设计时就想好怎么弃用"
+    }
+  },
+  "story": {
+    "headline": "从“只剩一个用户了”的旧系统，到有人负责的弃用项目",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "hourglass",
+        "tone": "sec",
+        "title": "一个旧系统，只剩最后一个直接用户",
+        "text": "看起来随手就能关掉。可那个用户可能是关键基础设施，关了它，半个公司跟着停。"
+      },
+      {
+        "act": "冲突",
+        "icon": "scale",
+        "tone": "danger",
+        "title": "弃用比建造更难",
+        "text": "用户的用法早就超出最初的设计；迁移的成本落在用户身上，收益却在维护者身上，谁都不急。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "留着旧系统也有成本，只是分散得看不见",
+        "text": "维护精力、用户在几个相似系统之间纠结、新系统被拖慢。把这些成本算进来，才能如实比较。"
+      },
+      {
+        "act": "做法",
+        "icon": "milestone",
+        "tone": "pri",
+        "title": "把弃用当项目做：类型、负责人、里程碑、工具",
+        "text": "建议性弃用只靠通知，往往不了了之；强制性弃用有团队、有期限，用代码搜索和自动迁移逐个收口。"
+      }
+    ],
+    "emphasis": "系统会持续产生维护成本，留着与移除都要算账。",
+    "emphasis2": "最省钱的办法常是让系统原地演进；能在设计时就想好如何弃用更好。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "旧系统只剩一个直接用户，为什么不能只按截止日期关闭？",
-    "expectedAnswer": "最后一个直接用户可能是全组织依赖的关键基础设施，关闭旧系统会连带影响其调用方。建议性通知不能完成迁移；强制性弃用需要专门团队、充分告知和迁移帮助后的执行权限，时间表仍可调整。",
-    "visualEncoding": "两条应用依赖汇入关键基础设施，再指向同一旧系统，把直接用户数与影响范围区分开。下方对照同一依赖情境中的建议性通知和有资源的强制性推进；没有把截止日期画成自动移除开关。",
-    "sourceEvidence": "Compulsory Deprecation  强制性弃用：'旧系统最后一个使用方，是整个组织都依赖的关键基础设施'、'这并不意味着时间表不能调整'、'充分告知后'；建议性弃用 (Advisory Deprecation)：'没有截止日期'；Process Owners  弃用流程的负责人：'没有明确的负责人'。",
-    "beforeProblem": "旧图把发现、迁移、验证、移除排成通用生命周期，几乎重复 ch15-04，未展示为什么最后一个使用方仍可能阻止移除。",
-    "whyBetter": "读者可以沿可见依赖边追出间接影响，并比较资源与授权改变了什么，而不是把有截止日期误读为能够安全删除。",
-    "limits": "应用甲乙是书中关键基础设施反例的示意展开，不是实测拓扑或用户数量。连带失效取决于实际依赖行为；图不授权任意破坏关键基础设施，也不保证强制性弃用一定完成。"
+    "readerQuestion": "老系统还有人用，怎么才能下线？",
+    "expectedAnswer": "弃用是个正式项目：有人负责、有期限、有工具，从设计时就该考虑",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Why Deprecate? 为什么要弃用？；## 为什么弃用这么难？ (Why Is Deprecation So Hard?)；## Types of Deprecation  “弃用”的类型；## Managing the Deprecation Process  管理弃用流程",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

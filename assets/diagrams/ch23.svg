@@ -1,40 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch23-root" class="chapter-svg cg-ch23" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch23-title ch23-desc">
-  <title id="ch23-title">CI：把不同问题放进合适的反馈回路</title>
-  <desc id="ch23-desc">Takeout 的两个反馈回路。实例启动测试由夜间部署后提前到提交前，在临时沙盒中组合二进制与各实例配置。完整归档测试因测试账户的安全限制，放在已审代码的提交后环境，每两小时从 green head 组装 RC 后运行。启动成功不代表端到端成功。CI 决定何时测试何种系统，CB 验证 head，CD 组装并推进测试候选版本；候选版本不一定进入生产。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="724" viewBox="0 0 960 724" class="chapter-svg cg-ch23" data-layout="desktop" role="img" aria-labelledby="ch23-title ch23-desc">
+  <title id="ch23-title">集成问题为什么越早发现越便宜？</title>
+  <desc id="ch23-desc">本章概览。集成问题为什么越早发现越便宜？ 本章的主要部分：写代码：小步改动，随时准备集成；提交前：跑快而可靠的测试：单元测试、静态分析，几分钟出结果；提交：进入主干，TAP 全球持续构建开始跑更慢、覆盖更广的测试；提交后：慢而不太确定的测试放这里；坏了要能快速定位到某次提交；修复或回滚：反馈易得、能立刻行动；封闭测试让结果可重复。一句话：持续集成就是把发现问题的时间不断往前挪，让反馈快而可信</desc>
   <style>
-  .cg-ch23#ch23-root text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-  .cg-ch23#ch23-root .small {font-size:20px;fill:var(--diagram-muted,#686868)}
-  .cg-ch23#ch23-root .strong {font-weight:600}
-  .cg-ch23#ch23-root .good {fill:var(--diagram-primary,#087f6d)}
-  .cg-ch23#ch23-root .bad {fill:var(--diagram-danger,#b54750)}
-  .cg-ch23#ch23-root .pending {fill:var(--diagram-warm,#a56a1f)}
+    .cg-ch23[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch23[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch23[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch23[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch23[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch23[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch23[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch23[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch23[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch23[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
   </style>
-  <defs><marker id="ch23-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)"/></marker></defs>
-  <rect x="0" y="0" width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-  <text x="32" y="42" class="strong" data-box="16,8,928,544">CI：把不同问题放进合适的反馈回路</text>
-  <text x="32" y="78" class="small" data-box="16,8,928,544">Takeout 案例：实例启动与完整归档，不能只等夜间部署后才检查</text>
-  <text x="48" y="124" class="strong" data-box="16,8,928,544">被测组合</text>
-  <text x="418" y="124" class="strong" data-box="16,8,928,544">原先</text>
-  <text x="640" y="124" class="strong" data-box="16,8,928,544">改进后的反馈入口</text>
-  <rect x="32" y="145" width="896" height="135" fill="var(--diagram-primary-soft,#e5f4ee)"/>
-  <text x="48" y="180" class="strong" data-box="32,145,328,135">各实例启动</text>
-  <text x="48" y="218" class="" data-box="32,145,328,135">二进制 + Drive 配置</text>
-  <text x="48" y="256" class="small" data-box="32,145,328,135">同一二进制 + Gmail 配置 …</text>
-  <text x="394" y="211" class="" data-box="380,145,170,135">夜间部署后</text>
-  <path d="M560 211L614 211" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-arrow)"/>
-  <text x="640" y="180" class="strong" data-box="625,145,303,135">提交前：临时沙盒</text>
-  <text x="640" y="218" class="" data-box="625,145,303,135">逐实例检查能否启动</text>
-  <text x="640" y="256" class="small" data-box="625,145,303,135">仍未验证完整归档</text>
-  <rect x="32" y="295" width="896" height="135" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
-  <text x="48" y="330" class="strong" data-box="32,295,328,135">完整归档输出</text>
-  <text x="48" y="368" class="" data-box="32,295,328,135">RC + 测试账户</text>
-  <text x="48" y="406" class="small" data-box="32,295,328,135">测试账户受安全与隐私保护</text>
-  <text x="394" y="361" class="" data-box="380,295,170,135">夜间部署后</text>
-  <path d="M560 361L614 361" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" data-connector="true" marker-end="url(#ch23-arrow)"/>
-  <text x="640" y="330" class="strong" data-box="625,295,303,135">提交后：每两小时</text>
-  <text x="640" y="368" class="small" data-box="625,295,303,135">从 green head 组装 RC</text>
-  <text x="640" y="406" class="small" data-box="625,295,303,135">代码已审，可用测试账户</text>
-  <text x="32" y="473" class="strong" data-box="16,8,928,544">CI 决定：何时测什么，以及怎样组建被测系统（SUT）</text>
-  <text x="32" y="509" class="small" data-box="16,8,928,544">CB 验证 head 的构建与测试；CD 组装、推进并测试 RC。</text>
-  <text x="32" y="543" class="small" data-box="16,8,928,544">两小时是案例频率，不是时限保证；RC 不一定进入生产。</text>
+  <rect x="0" y="0" width="960" height="724" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch23-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">集成问题为什么越早发现越便宜？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">CI 是一个反馈回路：决定运行哪些测试、什么时候运行</text>
+  <path d="M515.1 254.2 L737.8 306.4" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch23-arrow)"/>
+  <path d="M749.3 340.5 L689.2 400.1" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch23-arrow)"/>
+  <path d="M626.2 426.9 L335.8 426.9" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch23-arrow)"/>
+  <path d="M272.2 401.5 L212.1 341.9" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch23-arrow)"/>
+  <path d="M220.2 306.9 L443.0 254.7" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch23-arrow)"/>
+  <circle cx="480.0" cy="246.0" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(466.0,232.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></g>
+  <text x="480.0" y="184.0" class="h18" text-anchor="middle">写代码</text>
+  <text x="480.0" y="206.0" class="c14" text-anchor="middle">小步改动，随时准备集成</text>
+  <circle cx="774.8" cy="315.1" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(760.8,301.1) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></g>
+  <text x="774.8" y="233.1" class="h18" text-anchor="middle">提交前</text>
+  <text x="774.8" y="255.1" class="c14" text-anchor="middle">跑快而可靠的测试：单元测试、静态</text>
+  <text x="774.8" y="275.1" class="c14" text-anchor="middle">分析，几分钟出结果</text>
+  <circle cx="662.2" cy="426.9" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(648.2,412.9) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="3" x2="9" y1="12" y2="12"/><line x1="15" x2="21" y1="12" y2="12"/></g>
+  <text x="662.2" y="480.9" class="h18" text-anchor="middle">提交</text>
+  <text x="662.2" y="502.9" class="c14" text-anchor="middle">进入主干，TAP 全球持续构建开始跑</text>
+  <text x="662.2" y="522.9" class="c14" text-anchor="middle">更慢、覆盖更广的测试</text>
+  <circle cx="297.8" cy="426.9" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(283.8,412.9) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></g>
+  <text x="297.8" y="480.9" class="h18" text-anchor="middle">提交后</text>
+  <text x="297.8" y="502.9" class="c14" text-anchor="middle">慢而不太确定的测试放这里；坏了要</text>
+  <text x="297.8" y="522.9" class="c14" text-anchor="middle">能快速定位到某次提交</text>
+  <circle cx="185.2" cy="315.1" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(171.2,301.1) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></g>
+  <text x="185.2" y="233.1" class="h18" text-anchor="middle">修复或回滚</text>
+  <text x="185.2" y="255.1" class="c14" text-anchor="middle">反馈易得、能立刻行动；封闭测试让</text>
+  <text x="185.2" y="275.1" class="c14" text-anchor="middle">结果可重复</text>
+  <text x="32.0" y="590.0" class="c14" text-anchor="start">Takeout 团队的四个场景说明：随着规模变大，CI 越来越不可或缺；负担不起完整 CI 时也能从小做起</text>
+  <rect x="32.0" y="628.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="649.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="679.0" class="answer" text-anchor="start">持续集成就是把发现问题的时间不断往前挪，让反馈快而可信</text>
 </svg>

@@ -1,26 +1,105 @@
 {
   "chapter": 21,
-  "title": "依赖更新：谁能验证受影响的用法？",
-  "summary": "沿依赖的反向路径查找受影响测试，并用组织可见性边界区分上游能验证的用法与私有使用方必须补充的证据；本地通过不是下游兼容证明。",
+  "title": "用别人的代码，版本该怎么跟？",
+  "summary": "依赖问题的根源是时间和信任，版本号替代不了实际测试",
   "enabled": true,
   "sourceSections": [
-    "Why Is Dependency Management So Difficult?  为什么依赖管理如此困难？",
-    "Conflicting Requirements and Diamond Dependencies  要求冲突与菱形依赖",
-    "Conclusion  总结",
-    "Live at Head  直接使用最新版本",
-    "Dependency Management with Infinite Resources  无限资源下的依赖管理"
+    "## Why Is Dependency Management So Difficult?  为什么依赖管理如此困难？",
+    "## Importing Dependencies 导入依赖",
+    "## Dependency Management, In Theory  理论上的依赖管理",
+    "## The Limitations of SemVer  SemVer （语义化版本管理）的局限性",
+    "## Dependency Management with Infinite Resources  无限资源下的依赖管理"
   ],
-  "kind": "dependency",
+  "kind": "socket",
   "desktop": "assets/diagrams/ch21.svg",
   "mobile": "assets/diagrams/ch21-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch21-story.svg",
+  "storyMobile": "assets/diagrams/ch21-story-mobile.svg",
+  "map": {
+    "form": "socket",
+    "question": "用别人的代码，版本该怎么跟？",
+    "answer": "依赖问题的根源是时间和信任，版本号替代不了实际测试",
+    "parts": [
+      {
+        "icon": "lock",
+        "label": "全部不动",
+        "text": "永远用同一个版本，直到不得不换"
+      },
+      {
+        "icon": "tag",
+        "label": "语义化版本",
+        "text": "看版本号猜兼容，靠得住吗？"
+      },
+      {
+        "icon": "boxes",
+        "label": "打包发行版",
+        "text": "跟着一个经过整体测试的集合走"
+      },
+      {
+        "icon": "trending-up",
+        "label": "跟随最新",
+        "text": "Live at Head：一起改、一起测"
+      }
+    ],
+    "figure": {
+      "box": {
+        "icon": "package",
+        "label": "你的项目",
+        "text": "它用了别人维护、随时在变的代码"
+      },
+      "socket": {
+        "label": "依赖",
+        "text": "版本策略从这里定"
+      },
+      "header": "四种跟版本的策略，各有代价",
+      "highlight": null,
+      "bracket": null,
+      "footer": "SemVer 把“这次改动多大风险”压成一个数字，包管理器却把它当成事实"
+    }
+  },
+  "story": {
+    "headline": "从一个随手 import 的库，到“谁来为兼容负责”",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "package",
+        "tone": "sec",
+        "title": "引入一个库只要一行，看起来免费",
+        "text": "可它由别人维护，随时会变。你不控制它，却要一直跟着它。引入依赖的成本在之后的每一年。"
+      },
+      {
+        "act": "冲突",
+        "icon": "shuffle",
+        "tone": "danger",
+        "title": "菱形依赖：两个库要求同一个依赖的不同版本",
+        "text": "越往下游，越难协调。版本策略只有几种：全部不动、看语义化版本、跟发行版、跟最新。每种都有代价。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "SemVer 只是一个人的风险估计",
+        "text": "版本号把“这次改动多大风险”压成一个数字，包管理器却把它当事实求解，于是要么约束过度，要么约束不足。"
+      },
+      {
+        "act": "做法",
+        "icon": "shield-check",
+        "tone": "pri",
+        "title": "依赖是契约，兼容靠测试证明",
+        "text": "提供方说清愿意承诺什么，使用方补上测试；资源足够时，Live at Head 用 CI 给出实际证据。能放进自己版本控制的代码，就别当外部依赖。"
+      }
+    ],
+    "emphasis": "依赖是一种契约，双方都有权利和责任；版本号替代不了测试。",
+    "emphasis2": "优先把问题变成源代码版本控制问题；引入依赖前，先想清长期支持的成本。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "libbase 本地测试通过后，为什么还要查找 liba 与私有 libuser 的测试，谁能运行它们？",
-    "expectedAnswer": "改动的影响取决于下游具体用法。上游可沿反向依赖查找可见使用方并运行测试，但无法从自身测试推断私有使用方兼容；使用方需要补充验证，必要变更还需迁移协调或工具。Live at Head 依赖这些条件，不是普适的最新版本策略。",
-    "visualEncoding": "实线从使用方指向依赖，节点明确写出调用 Foo 和经 liba 使用结果；反向虚线把候选改动连回受影响使用方。虚线边界把私有用法与上游可见项目分开，下方比较本地证据与下游证据。",
-    "sourceEvidence": "### Live at Head  直接使用最新版本：'通过测试和 CI，对能够看到的依赖方进行实际验证'、'这类工具对闭源的下游使用方至关重要'；## Dependency Management with Infinite Resources  无限资源下的依赖管理：'不提供反向边，也就是哪些项目依赖它'。",
-    "beforeProblem": "旧概览用仅接受 v1/v2 的菱形重复原书图21-1和章节图，未展示如何取得使用方证据，也未呈现可见性对更新责任的影响。",
-    "whyBetter": "可从箭头方向和组织边界读出验证范围及责任缺口；本地测试与受影响使用方测试的差异不再只是一句测试建议。",
-    "limits": "这是组织可见性的示意网络，不声称所有开源依赖只形成一条链。Foo 仅为调用示意；测试受覆盖率与可见性限制，不构成全生态兼容证明，也不证明 Live at Head 可跨组织普适运作。"
+    "readerQuestion": "用别人的代码，版本该怎么跟？",
+    "expectedAnswer": "依赖问题的根源是时间和信任，版本号替代不了实际测试",
+    "visualEncoding": "插座与部件：左侧盒子是需要依赖的一方，右缘的插座标出可替换的位置，右侧一列是能插进去的选项，顺序表示优先级。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Why Is Dependency Management So Difficult?  为什么依赖管理如此困难？；## Importing Dependencies 导入依赖；## Dependency Management, In Theory  理论上的依赖管理；## The Limitations of SemVer  SemVer （语义化版本管理）的局限性；## Dependency Management with Infinite Resources  无限资源下的依赖管理",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

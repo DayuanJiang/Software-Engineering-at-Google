@@ -1,26 +1,94 @@
 {
   "chapter": 8,
-  "title": "同一个 unique_ptr，为何先禁用后采用？",
-  "summary": "以书中引入 std::unique_ptr 的案例对照两次决策：早期担心陌生类型与移动语义，后来逐渐适应并认识到调用处所有权信息的长期价值。复杂性成本没有消失，改变的是权衡结论。",
-  "sourceSections": [
-    "#### Rules must pull their weight  规则的收益必须抵得上成本",
-    "#### Optimize for the reader   为读者优化",
-    "#### Case Study: Introducing std::unique_ptr  案例分析：引入 std::unique_ptr",
-    "## Changing the Rules  修改规则",
-    "### The Process  流程"
-  ],
-  "kind": "worked-comparison",
+  "title": "代码规范为什么要定，怎么定？",
+  "summary": "规则服务于长期协作：少而精，能自动执行，随时代更新",
   "enabled": true,
+  "sourceSections": [
+    "## Why Have Rules?  为什么需要规则？",
+    "## Creating the Rules  制定规则",
+    "## Changing the Rules  修改规则",
+    "## Guidance  指导",
+    "## Applying the Rules  应用规则"
+  ],
+  "kind": "cycle",
   "desktop": "assets/diagrams/ch08.svg",
   "mobile": "assets/diagrams/ch08-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch08-story.svg",
+  "storyMobile": "assets/diagrams/ch08-story-mobile.svg",
+  "map": {
+    "form": "cycle",
+    "question": "代码规范为什么要定，怎么定？",
+    "answer": "规则服务于长期协作：少而精，能自动执行，随时代更新",
+    "parts": [
+      {
+        "icon": "pen-line",
+        "label": "制定规则",
+        "text": "少而精：规则要能扛住时间和规模，优先照顾读代码的人，不为炫技留空间"
+      },
+      {
+        "icon": "cog",
+        "label": "自动执行",
+        "text": "格式化器和检查工具替人执行规则，人只处理需要判断的部分"
+      },
+      {
+        "icon": "trending-up",
+        "label": "看数据",
+        "text": "规则影响了什么？用代码库和工程师的反馈判断规则是否还合适"
+      },
+      {
+        "icon": "refresh-cw",
+        "label": "修改规则",
+        "text": "规则会过时。unique_ptr 从禁用到推荐，靠的是明确的修改流程"
+      }
+    ],
+    "figure": {
+      "header": "谷歌的风格指南是给读者写的，目标是让代码库在时间和规模上都撑得住",
+      "footer": "并非所有做法都该写成规则：指导是建议，规则是必须；一致性本身就是价值"
+    }
+  },
+  "story": {
+    "headline": "从一个被禁用的 unique_ptr，到会自己更新的规则",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "lock",
+        "tone": "sec",
+        "title": "谷歌曾经禁止使用 std::unique_ptr",
+        "text": "当时它是陌生类型，移动语义也少有人懂。规则的理由很实在：读代码的人看不懂。"
+      },
+      {
+        "act": "冲突",
+        "icon": "users",
+        "tone": "warm",
+        "title": "几万工程师、几亿行代码，靠什么保持一致？",
+        "text": "没有规则，每个人按自己的习惯写，读别人的代码就要先猜。规则的目的是让读者少花力气。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "规则不追求完美，追求可持续",
+        "text": "规则要少而精、优先照顾读者、能扛住时间和规模；能自动检查的就交给工具；不该写成规则的留作指导。"
+      },
+      {
+        "act": "做法",
+        "icon": "refresh-cw",
+        "tone": "pri",
+        "title": "规则会过时，所以要能改",
+        "text": "后来大家适应了 unique_ptr，看到了所有权信息的长期价值，规则就改成了推荐。改规则要有明确流程，用数据说话。"
+      }
+    ],
+    "emphasis": "规则和指导的目的是帮组织应对时间推移和规模增长，一致性是关键。",
+    "emphasis2": "只要可行，就用自动化执行规则；了解数据，随时调整规则。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "同一种所有权类型为什么会先被禁用、后来又被采用？这是否表示原先的目标被推翻？",
-    "expectedAnswer": "目标仍是可读、可维护的代码库。最初对新类型和移动语义的陌生使禁用看来更安全；逐渐适应后，调用处提供所有权信息的长期收益使采用成为值得的取舍，尽管复杂性仍有成本。",
-    "visualEncoding": "桌面将同一项代价、收益判断与决定按行对齐，移动端以两段有明确时间标签的状态重排；中间箭头只表示适应经验和理解的变化，不表示时间自动导致采用。贯穿两阶段的目标和仍有成本的标注显示不变量。",
-    "sourceEvidence": "#### Case Study: Introducing std::unique_ptr  案例分析：引入 std::unique_ptr：从“我们的风格指南最初禁止使用它”到“仍是重要顾虑……采用 std::unique_ptr 是值得的取舍”；## Changing the Rules  修改规则：“记录决策理由，有助于判断何时需要改变”；### The Process  流程：“不是假想中可能出错的例子”。",
-    "beforeProblem": "旧图把规则、指导、工具、人工和原则分成文字栏，几乎只复述定义，没有让读者看到条件变化如何改变实际决策。",
-    "whyBetter": "读者可逐行比较同一特性的两次判断，指出哪些认识发生变化、哪些成本仍在，以及为什么结论改变而目标未变；替代了抽象规则演进循环。",
-    "limits": "呈现本章记述的历史案例，不是当前 Google 风格指南或所有新特性的放行程序；不量化学习成本和收益，不暗示等待足够久就应采用新特性。具体调用处推理另见 ch08-01。"
+    "readerQuestion": "代码规范为什么要定，怎么定？",
+    "expectedAnswer": "规则服务于长期协作：少而精，能自动执行，随时代更新",
+    "visualEncoding": "循环：带图标的圆点沿椭圆排列，箭头首尾相接，表示这是反复进行的过程。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Why Have Rules?  为什么需要规则？；## Creating the Rules  制定规则；## Changing the Rules  修改规则；## Guidance  指导；## Applying the Rules  应用规则",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

@@ -1,48 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch06" data-layout="mobile" role="img" aria-labelledby="ch06m-title ch06m-desc">
-  <title id="ch06m-title">离开一周，搜索延迟问题还会推进吗？</title>
-  <desc id="ch06m-desc">将本章搜索案例与休假检验并置的依赖关系示意，不是实际组织图。左侧或上侧的子团队凡事等待领导者，领导者休假便暴露单点依赖。右侧或下侧经过培养的子团队领导者衡量质量收益与延迟代价，依数据作决定并继续迭代。组织领导者仍负责整体方向与关键调整，而不逐项代办，从而为新职责保留时间、注意力与精力。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="687" viewBox="0 0 420 687" class="chapter-svg cg-ch06" data-layout="mobile" role="img" aria-labelledby="ch06m-title ch06m-desc">
+  <title id="ch06m-title">管的团队大了，还能事事亲力亲为吗？</title>
+  <desc id="ch06m-desc">本章概览。管的团队大了，还能事事亲力亲为吗？ 本章的主要部分：持续作出决策：模糊难题没有唾手可得的答案。认清盲点，找出关键权衡，做出当前最好的决定，然后不断迭代；随时准备离开：打造自主运转的组织：定清晰的目标和方向，把决策权交下去，你不在时它也能自己判断；不断适应规模增长：成功会带来更多责任。保护有限的时间、注意力和精力，学会放手，只留下最重要的问题。一句话：规模一大，领导要从做事转向决策、放权和守住自己的注意力</desc>
   <style>
-    .cg-ch06[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424);}
-    .cg-ch06[data-layout="mobile"] .strong {font-weight:600;}
-    .cg-ch06[data-layout="mobile"] .heading {font-size:22px;font-weight:600;}
-    .cg-ch06[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868);}
-    .cg-ch06[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);}
-    .cg-ch06[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);}
-    .cg-ch06[data-layout="mobile"] .cost {fill:var(--diagram-warm,#a56a1f);}
-    .cg-ch06[data-layout="mobile"] .blue {fill:var(--diagram-secondary,#2f6eac);}
-    .cg-ch06[data-layout="mobile"] .edge {fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;}
+    .cg-ch06[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch06[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch06[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch06[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch06[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch06[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch06[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch06[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch06[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch06[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
   </style>
-  <defs>
-    <marker id="ch06m-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-    <marker id="ch06m-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-    <marker id="ch06m-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-    <marker id="ch06m-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
-  </defs>
-  <rect x="0" y="0" width="420" height="680" rx="0" fill="var(--diagram-bg,#fff)"/>
-  <text x="24" y="38" text-anchor="start" class="heading">离开一周，搜索延迟问题</text>
-  <text x="24" y="68" text-anchor="start" class="heading">还会推进吗？</text>
-  <text x="24" y="99" text-anchor="start" class="small">搜索案例 × 休假检验</text>
-  <text x="24" y="125" text-anchor="start" class="small">组织依赖示意，不是实际组织图</text>
-  <rect x="24" y="146" width="372" height="58" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" id="ch06m-work"/>
-  <text x="210" y="182" text-anchor="middle" class="strong" data-box="ch06m-work">搜索变更：质量、延迟、容量</text>
-  <text x="24" y="239" text-anchor="start" class="strong bad">事事依赖你</text>
-  <rect x="24" y="254" width="156" height="74" rx="6" fill="var(--diagram-bg,#fff)" id="ch06m-waiting" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
-  <text x="102" y="283" text-anchor="middle" class="strong" data-box="ch06m-waiting">子团队</text>
-  <text x="102" y="313" text-anchor="middle" data-box="ch06m-waiting">等待决策</text>
-  <path d="M180 291H230" class="edge" stroke="var(--diagram-danger,#b54750)" marker-end="url(#ch06m-danger)"/>
-  <rect x="240" y="254" width="156" height="74" rx="6" fill="var(--diagram-danger-soft,#faecee)" id="ch06m-absent" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-dasharray="6 5"/>
-  <text x="318" y="283" text-anchor="middle" class="strong" data-box="ch06m-absent">你</text>
-  <text x="318" y="313" text-anchor="middle" data-box="ch06m-absent">休假一周</text>
-  <text x="24" y="362" text-anchor="start" class="bad">你不在，取舍便无人接手</text>
-  <path d="M24 384H396" class="edge" stroke="var(--diagram-line,#b9c9c0)"/>
-  <text x="24" y="415" text-anchor="start" class="strong good">已培养独立领导者</text>
-  <rect x="24" y="434" width="344" height="54" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" id="ch06m-decision" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
-  <text x="196" y="468" text-anchor="middle" class="strong" data-box="ch06m-decision">团队权衡收益与延迟代价</text>
-  <path d="M196 488V516" class="edge" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch06m-primary)"/>
-  <rect x="24" y="526" width="344" height="54" rx="6" fill="var(--diagram-bg,#fff)" id="ch06m-iterate" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
-  <text x="196" y="560" text-anchor="middle" data-box="ch06m-iterate">依数据决定，继续迭代</text>
-  <path d="M368 553H392V461H378" class="edge" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch06m-primary)"/>
-  <path d="M24 603H396" class="edge" stroke="var(--diagram-line,#b9c9c0)"/>
-  <text x="24" y="635" text-anchor="start" class="strong">你负责整体方向与关键调整</text>
-  <text x="24" y="665" text-anchor="start" class="small">为新职责保留时间、注意力与精力</text>
+  <rect x="0" y="0" width="420" height="687" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch06m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">管的团队大了，还能事事亲力亲为</text>
+  <text x="22.0" y="75.0" class="headline-m" text-anchor="start">吗？</text>
+  <rect x="22.0" y="99.0" width="376.0" height="112.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="125.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,117.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="74.0" y="130.0" class="h18" text-anchor="start">目标：带一个你不在也能运转、还能</text>
+  <text x="74.0" y="154.0" class="h18" text-anchor="start">持续变大的组织</text>
+  <text x="74.0" y="179.0" class="c15" text-anchor="start">从带一个团队到带几个团队，问题变得模糊，</text>
+  <text x="74.0" y="201.0" class="c15" text-anchor="start">答案不再唾手可得</text>
+  <text x="22.0" y="235.0" class="h16" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">靠什么支撑</text>
+  <rect x="22.0" y="251.0" width="376.0" height="110.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="277.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,269.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></g>
+  <text x="74.0" y="282.0" class="h18" text-anchor="start">持续作出决策</text>
+  <text x="74.0" y="307.0" class="c15" text-anchor="start">模糊难题没有唾手可得的答案。认清盲点，找</text>
+  <text x="74.0" y="329.0" class="c15" text-anchor="start">出关键权衡，做出当前最好的决定，然后不断</text>
+  <text x="74.0" y="351.0" class="c15" text-anchor="start">迭代</text>
+  <rect x="22.0" y="371.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="397.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,389.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"/></g>
+  <text x="74.0" y="402.0" class="h18" text-anchor="start">随时准备离开</text>
+  <text x="74.0" y="427.0" class="c15" text-anchor="start">打造自主运转的组织：定清晰的目标和方向，</text>
+  <text x="74.0" y="449.0" class="c15" text-anchor="start">把决策权交下去，你不在时它也能自己判断</text>
+  <rect x="22.0" y="469.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="495.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,487.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></g>
+  <text x="74.0" y="500.0" class="h18" text-anchor="start">不断适应规模增长</text>
+  <text x="74.0" y="525.0" class="c15" text-anchor="start">成功会带来更多责任。保护有限的时间、注意</text>
+  <text x="74.0" y="547.0" class="c15" text-anchor="start">力和精力，学会放手，只留下最重要的问题</text>
+  <rect x="22.0" y="575.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="596.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="622.0" class="answer-m" text-anchor="start">规模一大，领导要从做事转向决策、放权和守</text>
+  <text x="36.0" y="648.0" class="answer-m" text-anchor="start">住自己的注意力</text>
 </svg>

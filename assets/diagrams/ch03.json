@@ -1,26 +1,103 @@
 {
   "chapter": 3,
-  "title": "专家休假后，同类故障还能排查吗？",
-  "summary": "以书中反复请专家排查生产故障的场景，对比只靠口头经验与记录、维护排查步骤后的求助路径：同事可以先查资料，必要时再请人判断具体背景。",
+  "title": "组织里的知识，怎样才不随人走？",
+  "summary": "让人敢问、愿教，再用文档和制度把知识沉淀成组织的资产",
   "enabled": true,
   "sourceSections": [
-    "Challenges to Learning 学习的挑战",
-    "Philosophy  理念",
-    "Setting the Stage: Psychological Safety 奠定基础：心理安全感",
-    "Documentation 文档",
-    "Promoting documentation  推广文档"
+    "## Challenges to Learning 学习的挑战",
+    "## Setting the Stage: Psychological Safety 奠定基础：心理安全感",
+    "## Growing Your Knowledge 增进自己的知识",
+    "## Scaling Your Questions: Ask the Community 扩大求助范围：向社区提问",
+    "## Scaling Your Knowledge:You Always Have Something to Teach 扩大知识传播：你总有东西可以教给别人",
+    "## Scaling Your Organization’s Knowledge 扩大组织内的知识传播",
+    "## Readability: Standardized Mentorship Through Code Review 可读性认证：通过代码审查实现标准化指导"
   ],
-  "kind": "before-after",
+  "kind": "pillars",
   "desktop": "assets/diagrams/ch03.svg",
   "mobile": "assets/diagrams/ch03-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch03-story.svg",
+  "storyMobile": "assets/diagrams/ch03-story-mobile.svg",
+  "map": {
+    "form": "pillars",
+    "question": "组织里的知识，怎样才不随人走？",
+    "answer": "让人敢问、愿教，再用文档和制度把知识沉淀成组织的资产",
+    "parts": [
+      {
+        "icon": "shield",
+        "label": "心理安全",
+        "text": "敢提问、敢认错，是学习的前提；嘲笑提问的人等于关掉知识的水龙头"
+      },
+      {
+        "icon": "mail-question",
+        "label": "多提问",
+        "text": "问出来比自己猜快得多；把问到的答案记下来，下一个人就不用再问"
+      },
+      {
+        "icon": "message-square",
+        "label": "问社区",
+        "text": "邮件组、问答频道让一个问题的答案被很多人看到"
+      },
+      {
+        "icon": "graduation-cap",
+        "label": "教别人",
+        "text": "你总有东西可以教：办公时间、技术讲座、写文档、做代码审查"
+      },
+      {
+        "icon": "landmark",
+        "label": "组织制度",
+        "text": "用培训、文档、可读性认证把经验标准化，并奖励愿意花时间教人的人"
+      }
+    ],
+    "figure": {
+      "goal": {
+        "label": "目标：知识从个人经验变成组织资产",
+        "text": "专家休假、离职时，同类问题还能被解决"
+      }
+    }
+  },
+  "story": {
+    "headline": "从只有一个人会修的故障，到人人都能查的文档",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "siren",
+        "tone": "warm",
+        "title": "生产出故障，只有一位专家知道怎么排查",
+        "text": "专家一休假，同类故障就没人会处理。知识只在一个人脑子里，组织就有了单点故障。"
+      },
+      {
+        "act": "阻碍",
+        "icon": "eye-off",
+        "tone": "danger",
+        "title": "为什么大家不问、不写、不教？",
+        "text": "怕问显得笨，专家不愿被打扰，照抄旧做法却不懂为什么。没有心理安全，学习就停在表面。"
+      },
+      {
+        "act": "转折",
+        "icon": "shield",
+        "tone": "pri",
+        "title": "先造安全感，再谈分享",
+        "text": "允许不知道，允许犯错，把提问当作正常工作。谷歌用导师制、新人组、无责复盘让人敢开口。"
+      },
+      {
+        "act": "做法",
+        "icon": "landmark",
+        "tone": "pri",
+        "title": "从个人到组织，一层层放大",
+        "text": "个人多问多记；社区用邮件组和问答让答案传开；组织用培训、文档和可读性认证把经验变成制度。"
+      }
+    ],
+    "emphasis": "知识共享的起点是心理安全，终点是制度化。",
+    "emphasis2": "没有万能办法：多种策略配合，并且要奖励那些愿意花时间教人的人。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "同事反复找同一位专家排查故障，专家休假后怎么办？记录知识具体改变了哪条求助路径？",
-    "expectedAnswer": "关键信息只掌握在一个人手中会成为单点依赖。将排查步骤记录并持续维护，让同事能先查资料，只在必要时请人提供针对性帮助；还需要培养其他专家和允许提问的环境。",
-    "visualEncoding": "上半部分让两个同类问题汇聚到休假的唯一专家，并用中断的连接表示没有记录可查；下半部分把共享排查步骤放到求助路径中，只有不适用或仍有疑问时才继续求助。手机端重新排成上下对照。",
-    "sourceEvidence": "## Challenges to Learning 学习的挑战：关键信息只能从一个人那里获得；## Philosophy  理念：专家休假或调往其他团队、文档仍需维护；####  Promoting documentation  推广文档：团队成员总来请你帮忙排查某类生产故障；## Setting the Stage: Psychological Safety 奠定基础：心理安全感：承认自己有不懂的地方。",
-    "beforeProblem": "旧图把专家经验分流到文档和指导，再汇到更多学习者；它没有展示单点依赖何时出现、记录前后学习者能采取什么不同动作，而且与 ch03-01 重复。",
-    "whyBetter": "读者可以沿可见路径回答专家不在时资料能提供什么，并能看到文档不是所有问题的终点。场景来自原文，不需要把原则名称解释成流程。",
-    "limits": "示意同类故障的求助路径，不提供排障操作，不保证文档能解决每次故障，也不声称写文档会自动培养出专家。"
+    "readerQuestion": "组织里的知识，怎样才不随人走？",
+    "expectedAnswer": "让人敢问、愿教，再用文档和制度把知识沉淀成组织的资产",
+    "visualEncoding": "支柱：顶部一条横带写目标，下面并排的柱子各写一项支撑做法，柱子等高表示它们同等重要。 章末故事线：纵向轨道上的 4 幕，幕名为起点、阻碍、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Challenges to Learning 学习的挑战；## Setting the Stage: Psychological Safety 奠定基础：心理安全感；## Growing Your Knowledge 增进自己的知识；## Scaling Your Questions: Ask the Community 扩大求助范围：向社区提问；## Scaling Your Knowledge:You Always Have Something to Teach 扩大知识传播：你总有东西可以教给别人；## Scaling Your Organization’s Knowledge 扩大组织内的知识传播；## Readability: Standardized Mentorship Through Code Review 可读性认证：通过代码审查实现标准化指导",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

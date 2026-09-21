@@ -1,63 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch15" data-layout="desktop" role="img" aria-labelledby="ch15-title ch15-desc">
-<title id="ch15-title">只剩一个用户，为什么还不能关？</title>
-<desc id="ch15-desc">书中反例的示意：应用甲和乙依赖关键基础设施，关键基础设施是旧系统的最后一个直接用户。箭头指向被依赖方；关闭旧系统可能经关键基础设施连带影响应用。建议性弃用没有期限和专门迁移投入，不能指望用户自行全部迁出。强制性弃用通常有期限，需要专门团队、迁移帮助、充分告知和执行权限；关键依赖仍可能促使调整时间表。</desc>
-<style>
-.cg-ch15[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch15[data-layout="desktop"] .strong {font-weight:600}
-.cg-ch15[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch15[data-layout="desktop"] .guide {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch15[data-layout="desktop"] .primary {fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
-.cg-ch15[data-layout="desktop"] .primary-ink {fill:var(--diagram-primary,#087f6d)}
-.cg-ch15[data-layout="desktop"] .primary-line {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2}
-.cg-ch15[data-layout="desktop"] .secondary {fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
-.cg-ch15[data-layout="desktop"] .secondary-ink {fill:var(--diagram-secondary,#2f6eac)}
-.cg-ch15[data-layout="desktop"] .secondary-line {fill:none;stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
-.cg-ch15[data-layout="desktop"] .warm {fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
-.cg-ch15[data-layout="desktop"] .warm-ink {fill:var(--diagram-warm,#a56a1f)}
-.cg-ch15[data-layout="desktop"] .warm-line {fill:none;stroke:var(--diagram-warm,#a56a1f);stroke-width:2}
-.cg-ch15[data-layout="desktop"] .danger {fill:var(--diagram-danger-soft,#faecee);stroke:var(--diagram-danger,#b54750);stroke-width:1.5}
-.cg-ch15[data-layout="desktop"] .danger-ink {fill:var(--diagram-danger,#b54750)}
-.cg-ch15[data-layout="desktop"] .danger-line {fill:none;stroke:var(--diagram-danger,#b54750);stroke-width:2}
-</style>
-<defs>
-<marker id="ch15-primary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch15-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch15-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
-<marker id="ch15-danger-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-</defs>
-<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="42" class="strong" text-anchor="start">只剩一个用户，为什么还不能关？</text>
-<text x="32" y="78" class="small" text-anchor="start">书中关键基础设施反例的示意；箭头指向被依赖方</text>
-<g data-box="32,111,168,56">
-<rect x="32" y="111" width="168" height="56" rx="5" class="secondary"/>
-<text x="116.0" y="147.0" class="strong" text-anchor="middle">应用甲</text>
-</g>
-<g data-box="32,201,168,56">
-<rect x="32" y="201" width="168" height="56" rx="5" class="secondary"/>
-<text x="116.0" y="237.0" class="strong" text-anchor="middle">应用乙</text>
-</g>
-<path d="M200 139H252V184H302" class="primary-line" data-connector="true" marker-end="url(#ch15-primary-arrow)"/>
-<path d="M200 229H252V184" class="primary-line" data-connector="true"/>
-<g data-box="304,151,260,66">
-<rect x="304" y="151" width="260" height="66" rx="5" class="warm"/>
-<text x="434.0" y="192.0" class="strong" text-anchor="middle">关键基础设施</text>
-</g>
-<path d="M564 184H734" class="primary-line" data-connector="true" marker-end="url(#ch15-primary-arrow)"/>
-<text x="603" y="163" class="small" text-anchor="start">仍依赖</text>
-<g data-box="736,151,192,66">
-<rect x="736" y="151" width="192" height="66" rx="5" class="danger"/>
-<text x="832.0" y="192.0" class="strong" text-anchor="middle">旧系统</text>
-</g>
-<text x="305" y="252" class="small" text-anchor="start">最后一个直接用户</text>
-<text x="32" y="301" class="small danger-ink" text-anchor="start">关闭旧系统，可能经基础设施连带影响甲乙；“只剩一个”不等于影响很小。</text>
-<path d="M32 321L928 321" class="guide"/>
-<text x="32" y="357" class="strong secondary-ink" text-anchor="start">只有建议性通知</text>
-<text x="32" y="392" class="" text-anchor="start">没有期限、没有专门迁移投入</text>
-<text x="32" y="424" class="" text-anchor="start">希望用户自迁，不等于全部迁出。</text>
-<path d="M475 342L475 451" class="guide"/>
-<text x="506" y="357" class="strong primary-ink" text-anchor="start">强制性：专门团队持续推进</text>
-<text x="506" y="392" class="" text-anchor="start">通常有期限；帮助迁移并充分告知后</text>
-<text x="506" y="424" class="" text-anchor="start">具备执行权限，而不只是发最后通牒。</text>
-<rect x="32" y="478" width="896" height="54" fill="var(--diagram-warm-soft,#fff3dc)"/>
-<text x="52" y="513" class="small" text-anchor="start">关键依赖仍可能阻止按期移除：发现真实用法、协助迁移，必要时调整时间表。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="441" viewBox="0 0 960 441" class="chapter-svg cg-ch15" data-layout="desktop" role="img" aria-labelledby="ch15-title ch15-desc">
+  <title id="ch15-title">老系统还有人用，怎么才能下线？</title>
+  <desc id="ch15-desc">本章概览。老系统还有人用，怎么才能下线？ 本章的主要部分：先算成本：老系统一直在耗维护精力；留着的成本要和移除的成本比；选类型：建议性：只通知，靠用户自愿；强制性：有团队、有期限；定负责人：明确谁负责推进，设里程碑，让进度可见；找出用法：用代码搜索和静态分析找到每一个使用点；迁走再关：自动化迁移，逐步收口；最后一个用户往往是关键基础设施。一句话：弃用是个正式项目：有人负责、有期限、有工具，从设计时就该考虑</desc>
+  <style>
+    .cg-ch15[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch15[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch15[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch15[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch15[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch15[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch15[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch15[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch15[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch15[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="441" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch15-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">老系统还有人用，怎么才能下线？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">为什么难：迁移的成本和收益落在不同人身上；用户的用法常常超出最初的设计</text>
+  <circle cx="111.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(96.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></g>
+  <text x="111.2" y="210.0" class="h18" text-anchor="middle">先算成本</text>
+  <text x="111.2" y="236.0" class="c14" text-anchor="middle">老系统一直在耗维护精</text>
+  <text x="111.2" y="257.0" class="c14" text-anchor="middle">力；留着的成本要和移</text>
+  <text x="111.2" y="278.0" class="c14" text-anchor="middle">除的成本比</text>
+  <path d="M194.4 150.0 L212.4 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch15-arrow)"/>
+  <circle cx="295.6" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(280.6,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M18 6a2 2 0 0 1 1.387.56l2.307 2.22a1 1 0 0 1 0 1.44l-2.307 2.22A2 2 0 0 1 18 13H6a2 2 0 0 1-1.387-.56l-2.306-2.22a1 1 0 0 1 0-1.44l2.306-2.22A2 2 0 0 1 6 6z"/></g>
+  <text x="295.6" y="210.0" class="h18" text-anchor="middle">选类型</text>
+  <text x="295.6" y="236.0" class="c14" text-anchor="middle">建议性：只通知，靠用</text>
+  <text x="295.6" y="257.0" class="c14" text-anchor="middle">户自愿；强制性：有团</text>
+  <text x="295.6" y="278.0" class="c14" text-anchor="middle">队、有期限</text>
+  <path d="M378.8 150.0 L396.8 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch15-arrow)"/>
+  <circle cx="480.0" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(465.0,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="15" r="3"/><circle cx="9" cy="7" r="4"/><path d="M10 15H6a4 4 0 0 0-4 4v2"/><path d="m21.7 16.4-.9-.3"/><path d="m15.2 13.9-.9-.3"/><path d="m16.6 18.7.3-.9"/><path d="m19.1 12.2.3-.9"/><path d="m19.6 18.7-.4-1"/><path d="m16.8 12.3-.4-1"/><path d="m14.3 16.6 1-.4"/><path d="m20.7 13.8 1-.4"/></g>
+  <text x="480.0" y="210.0" class="h18" text-anchor="middle">定负责人</text>
+  <text x="480.0" y="236.0" class="c14" text-anchor="middle">明确谁负责推进，设里</text>
+  <text x="480.0" y="257.0" class="c14" text-anchor="middle">程碑，让进度可见</text>
+  <path d="M563.2 150.0 L581.2 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch15-arrow)"/>
+  <circle cx="664.4" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(649.4,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></g>
+  <text x="664.4" y="210.0" class="h18" text-anchor="middle">找出用法</text>
+  <text x="664.4" y="236.0" class="c14" text-anchor="middle">用代码搜索和静态分析</text>
+  <text x="664.4" y="257.0" class="c14" text-anchor="middle">找到每一个使用点</text>
+  <path d="M747.6 150.0 L765.6 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch15-arrow)"/>
+  <circle cx="848.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(833.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></g>
+  <text x="848.8" y="210.0" class="h18" text-anchor="middle">迁走再关</text>
+  <text x="848.8" y="236.0" class="c14" text-anchor="middle">自动化迁移，逐步收</text>
+  <text x="848.8" y="257.0" class="c14" text-anchor="middle">口；最后一个用户往往</text>
+  <text x="848.8" y="278.0" class="c14" text-anchor="middle">是关键基础设施</text>
+  <text x="32.0" y="313.0" class="c14" text-anchor="start">更便宜的做法：让系统原地演进；还有一种选择是从设计时就想好怎么弃用</text>
+  <rect x="32.0" y="345.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="366.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="396.0" class="answer" text-anchor="start">弃用是个正式项目：有人负责、有期限、有工具，从设计时就该考虑</text>
 </svg>

@@ -1,26 +1,101 @@
 {
   "chapter": 24,
-  "title": "版本已就绪，用户就能用新功能吗？",
-  "summary": "以候选版本 v2 和新功能 F 为示例，对照暂不部署、部署但关闭功能、只为部分用户启用三种状态。可交付能力不要求立即部署；部署代码与启用功能分别改变产物位置和用户行为。",
+  "title": "怎么做到又快又稳地发布？",
+  "summary": "发布越小越频繁，风险越低；开关和数据让决策提前",
+  "enabled": true,
   "sourceSections": [
-    "Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践",
-    "Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能",
-    "Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能",
-    "Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策",
-    "Conclusion 总结"
+    "## Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践",
+    "## Velocity Is a Team Sport: How to Break Up a Deployment into Manageable Pieces   提速需要团队协作：如何将部署拆分成易于管理的部分",
+    "## Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能",
+    "## Striving for Agility: Setting Up a Release Train 追求敏捷：建立发布列车机制",
+    "## Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能",
+    "## Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策",
+    "## Changing Team Culture: Building Discipline into Deployment 改变团队文化：严格遵守部署流程"
   ],
-  "kind": "state-comparison",
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch24.svg",
   "mobile": "assets/diagrams/ch24-mobile.svg",
-  "enabled": true,
+  "storyDesktop": "assets/diagrams/ch24-story.svg",
+  "storyMobile": "assets/diagrams/ch24-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "怎么做到又快又稳地发布？",
+    "answer": "发布越小越频繁，风险越低；开关和数据让决策提前",
+    "parts": [
+      {
+        "icon": "split",
+        "label": "拆小",
+        "text": "把大部署切成小块，每块都可管理；模块化架构让团队并行"
+      },
+      {
+        "icon": "toggle-right",
+        "label": "开关保护",
+        "text": "先部署代码，再决定对谁打开功能；问题可以单独隔离"
+      },
+      {
+        "icon": "train-front",
+        "label": "发布列车",
+        "text": "固定节奏发车，没上车的功能等下一班"
+      },
+      {
+        "icon": "users",
+        "label": "分阶段发布",
+        "text": "先给少数用户和设备，以真实环境为基准"
+      },
+      {
+        "icon": "trending-up",
+        "label": "看数据取舍",
+        "text": "只交付会被用的功能；把数据驱动的决策往前挪"
+      }
+    ],
+    "figure": {
+      "header": "谷歌持续交付的常用做法，串起来是一条流水线",
+      "footer": "改变团队文化：把纪律写进部署流程，越快越安全"
+    }
+  },
+  "story": {
+    "headline": "从一年几次的大发布，到每一次都小到不可怕",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "hourglass",
+        "tone": "sec",
+        "title": "发布很大、很少、很吓人",
+        "text": "几个月的改动一起上线，出了问题不知道是哪一处。于是发布前反复检查，越检查越慢，越慢越大。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "越快越安全：小批量、频繁发布",
+        "text": "每次改动小，风险就小，出问题也容易定位。这需要模块化架构和近乎持续的集成，是团队协作的事。"
+      },
+      {
+        "act": "做法",
+        "icon": "toggle-right",
+        "tone": "pri",
+        "title": "开关、发布列车、分阶段发布",
+        "text": "部署代码和启用功能分开；固定节奏发车，没上车的等下一班；先给少数用户和设备，以真实环境为基准。"
+      },
+      {
+        "act": "取舍",
+        "icon": "trending-up",
+        "tone": "pri",
+        "title": "只交付会被用的功能，用数据尽早决策",
+        "text": "监控每项功能的成本和价值，没人用的就撤；把数据驱动的判断往前挪；把纪律写进部署流程。"
+      }
+    ],
+    "emphasis": "越快越安全：尽早、小批量、频繁地发布，每次的风险都更低。",
+    "emphasis2": "用开关单独评估变更，以真实情况为基准，只交付会被使用的功能。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "v2 已可交付时，暂不部署、部署但关闭 F、仅向部分用户启用 F，分别会让用户得到什么？",
-    "expectedAnswer": "暂不部署时生产仍运行 v1；部署含新旧路径的 v2 但关闭 F 时，用户仍走旧路径；同一 v2 通过配置可只让选定用户走新路径。团队可以保持可部署能力而有意不推送，持续部署不是必经终点。",
-    "visualEncoding": "同一列中的 v1/v2 标记显示实际运行产物；关闭与部分开启状态和带文字的用户符号显示行为。后两行重复 v2，突出只改配置也能改变启用范围。三行是状态对照，不以单向箭头暗示必须依次升级。",
-    "sourceEvidence": "Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践：'具备随时部署的能力，而不必真的随时部署'；Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能：'新功能代码与旧代码路径共存于二进制文件中'；Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能：'生成可发布版本的频率就能与用户实际收到版本的频率分开'；Conclusion 总结：'配置，以及支持试运行验证、回滚与前滚机制'。",
-    "beforeProblem": "原图是持续交付、部署、功能发布的阶梯盒图，用户看不到各阶段运行的具体版本和实际行为；单向布局也可能被读成必经成熟度阶梯。",
-    "whyBetter": "读者可逐行回答运行哪个版本、F 是否启用、谁看到新行为；暂不部署明确是有效选择。代替重复的 ch24-01 定义图。",
-    "limits": "v1、v2、F 和用户符号是示例而非真实版本、人数或发布比例。只展示已保留新旧路径的运行时标志情形；不保证即时配置传播、全风险隔离或功能保密。"
+    "readerQuestion": "怎么做到又快又稳地发布？",
+    "expectedAnswer": "发布越小越频繁，风险越低；开关和数据让决策提前",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、转折、做法、取舍，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Idioms of Continuous Delivery at Google 谷歌持续交付的常用实践；## Velocity Is a Team Sport: How to Break Up a Deployment into Manageable Pieces   提速需要团队协作：如何将部署拆分成易于管理的部分；## Evaluating Changes in Isolation: Flag-Guarding Features 单独评估变更：用标志保护功能；## Striving for Agility: Setting Up a Release Train 追求敏捷：建立发布列车机制；## Quality and User-Focus: Ship Only What Gets Used 关注质量与用户：只交付会被使用的功能；## Shifting Left: Making Data-Driven Decisions Earlier 左移：提前做出数据驱动的决策；## Changing Team Culture: Building Discipline into Deployment 改变团队文化：严格遵守部署流程",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

@@ -57,7 +57,26 @@ def main():
         for child in source:
             symbol.append(child)
     ET.ElementTree(sprite).write(ROOT / "assets" / "reader-icons.svg", encoding="utf-8", xml_declaration=True)
+    diagram_icons()
     print(f"Fetched Docsify 4.13.1, Prism 1.29.0 language components, and {len(names)} Lucide 0.468.0 symbols.")
+
+
+def diagram_icons():
+    """Store the inner markup of the icons drawn inside generated chapter figures (see build_chapter_figures.py)."""
+    import json
+    import re
+    names = sorted(set(re.findall(r'"icon":\s*"([a-z0-9-]+)"', "".join(
+        p.read_text() for p in (ROOT / "assets" / "diagrams").glob("ch??.json")))) | {"target", "flag", "circle-check", "circle-x"})
+    temporary = ROOT / ".cache" / "diagram-icons"
+    icons = {}
+    for name in names:
+        path = temporary / f"{name}.svg"
+        fetch(f"https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/{name}.svg", path)
+        inner = "".join(re.findall(r"<(?:path|circle|line|polyline|rect|polygon|ellipse)[^>]*/>", path.read_text()))
+        icons[name] = re.sub(r"\s+", " ", inner).replace(" />", "/>").replace("> <", "><")
+    (ROOT / "assets" / "diagrams" / "icons.json").write_text(json.dumps(
+        {"license": "Lucide Static 0.468.0, ISC license; see assets/vendor/lucide.LICENSE.txt", "icons": icons},
+        ensure_ascii=False, indent=0) + "\n")
 
 
 if __name__ == "__main__":

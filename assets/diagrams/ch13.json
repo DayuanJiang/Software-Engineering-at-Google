@@ -1,30 +1,111 @@
 {
   "chapter": 13,
-  "title": "同一权限检查：改状态、改响应、查调用",
-  "summary": "沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。",
+  "title": "测试里怎么替换掉不好用的真实依赖？",
+  "summary": "优先真实实现；用替身时首选伪实现，打桩和交互验证要克制",
   "enabled": true,
   "sourceSections": [
-    "Mocking Frameworks 模拟框架",
-    "Techniques for Using Test Doubles 测试替身的使用技术",
-    "Faking 使用伪实现",
-    "Stubbing 打桩",
-    "Interaction Testing 交互测试",
-    "Prefer to perform interaction testing only for state-changing functions  尽量只对改变状态的函数进行交互测试",
-    "How to Decide When to Use a Real Implementation 如何决定何时使用真实实现",
-    "Fakes Should Be Tested  伪实现也需要测试",
-    "When Is Interaction Testing Appropriate? 什么时候适合进行交互测试？"
+    "## Basic Concepts 基本概念",
+    "### Seams",
+    "### Mocking Frameworks 模拟框架",
+    "## Techniques for Using Test Doubles 测试替身的使用技术",
+    "### How to Decide When to Use a Real Implementation 如何决定何时使用真实实现",
+    "## Faking 使用伪实现",
+    "## Stubbing 打桩",
+    "## Interaction Testing  交互测试"
   ],
-  "kind": "worked-comparison",
+  "kind": "socket",
   "desktop": "assets/diagrams/ch13.svg",
   "mobile": "assets/diagrams/ch13-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch13-story.svg",
+  "storyMobile": "assets/diagrams/ch13-story-mobile.svg",
+  "map": {
+    "form": "socket",
+    "question": "测试里怎么替换掉不好用的真实依赖？",
+    "answer": "优先真实实现；用替身时首选伪实现，打桩和交互验证要克制",
+    "parts": [
+      {
+        "icon": "plug",
+        "label": "真实实现",
+        "text": "最可信，能用就用"
+      },
+      {
+        "icon": "plug",
+        "label": "伪实现",
+        "text": "轻量替代品，行为要和真的一致"
+      },
+      {
+        "icon": "tag",
+        "label": "打桩",
+        "text": "直接指定返回什么，用多了测试会脆"
+      },
+      {
+        "icon": "eye",
+        "label": "交互验证",
+        "text": "只查有没有调用，多用于改状态的操作"
+      }
+    ],
+    "figure": {
+      "box": {
+        "icon": "package",
+        "label": "被测代码",
+        "text": "它需要一个依赖才能运行"
+      },
+      "socket": {
+        "label": "接缝",
+        "text": "依赖从这里换"
+      },
+      "header": "能插进接缝的四种东西，从上往下优先",
+      "highlight": 0,
+      "bracket": {
+        "from": 1,
+        "label": "替身"
+      },
+      "footer": "打桩和交互验证一般靠模拟框架生成的 mock 来做"
+    }
+  },
+  "story": {
+    "headline": "从不能真扣钱的测试，到对替身的克制",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "credit-card",
+        "tone": "sec",
+        "title": "支付代码调用真实的信用卡服务，怎么测？",
+        "text": "总不能每跑一次测试就扣一次钱。测试需要一个能替换真实依赖的办法。"
+      },
+      {
+        "act": "发现",
+        "icon": "plug",
+        "tone": "pri",
+        "title": "接缝：让依赖从外面传进来",
+        "text": "构造函数接收依赖，测试就能塞进一个替身。模拟框架让替身几秒钟就能生成，再也不用手写。"
+      },
+      {
+        "act": "诱惑",
+        "icon": "zap",
+        "tone": "danger",
+        "title": "太方便了，于是到处打桩、到处验证调用",
+        "text": "测试开始复述实现细节：改一行代码，一堆测试就坏；测试通过了，也说不清到底证明了什么。"
+      },
+      {
+        "act": "转向",
+        "icon": "shield-check",
+        "tone": "pri",
+        "title": "谷歌的选择：能用真的就用真的",
+        "text": "真实实现最可信；用不了时，用依赖方维护并测试过的伪实现；打桩只用来制造状态；交互验证只留给没法验证状态的改动。"
+      }
+    ],
+    "emphasis": "替身是一种权衡，从来不是默认。测试要断言结果，不要断言过程。",
+    "emphasis2": "每多一个替身，测试离真实系统就远一步；用之前先问一句：真的不能用真的吗？"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "同样调用 userHasAccess，添加用户、预设 lookupUser 响应和验证 lookupUser 调用分别能说明什么？",
-    "expectedAnswer": "fake 执行添加用户的状态变化，权限断言由 false 变为 true；打桩把 lookupUser 的响应由 null 改为 USER，也使权限断言由 false 变为 true，但不证明实际添加或查询用户的实现。交互验证只检查 lookupUser 是否按参数调用，不检查权限返回值。mock 是可用于后两种技术的对象，不是与它们并列的互斥类别。优先使用可行的真实实现，不能使用时通常优先 fake。",
-    "visualEncoding": "同一权限检查的三条横向轨迹在手机上改为纵向分段。fake 轨迹将空授权集合变成含 u 的集合，并对齐 false/true 断言；打桩轨迹将 null/USER 响应对齐相同断言；交互轨迹把 verify 调用和未断言的返回值并列。同一 mock 的标注连接打桩与交互两种用途，而非划分对象分类树。",
-    "sourceEvidence": "## Techniques for Using Test Doubles 测试替身的使用技术；### Faking 使用伪实现，例13-7 addAuthorizedUser；### Stubbing 打桩，例13-8 thenReturn(null)/thenReturn(USER)；### Interaction Testing 交互测试，例13-9 verify(mockAuthorizationService).lookupUser(USER_ID)；### Mocking Frameworks 模拟框架；#### Prefer to perform interaction testing only for state-changing functions  尽量只对改变状态的函数进行交互测试，不改变状态的函数通常不需要额外验证交互。",
-    "beforeProblem": "原三列以轻量实现、预设响应、核对调用等术语配通用箭头，没有给出输入改变后的具体返回值；与 ch13-02 基本重复，列布局也容易被误读成互斥对象分类。",
-    "whyBetter": "读者可以逐条推出 false 到 true 的原因，并辨认只查调用的测试没有检查权限结果；无需把名称与定义死记硬背。用同一书中 API 对齐比较，替代原图抽象框与重复小节图。",
-    "limits": "u 表示 USER_ID，USER 表示同一用户。图中是书中测试示意，不是可直接编译的完整代码；lookupUser 交互验证用于说明证据边界，不推荐对普通只读调用重复验证。例子不证明真实授权服务的正确性，也不把三种技术定义为通用互斥分类。"
+    "readerQuestion": "测试里怎么替换掉不好用的真实依赖？",
+    "expectedAnswer": "优先真实实现；用替身时首选伪实现，打桩和交互验证要克制",
+    "visualEncoding": "插座与部件：左侧盒子是需要依赖的一方，右缘的插座标出可替换的位置，右侧一列是能插进去的选项，顺序表示优先级。 章末故事线：纵向轨道上的 4 幕，幕名为起点、发现、诱惑、转向，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Basic Concepts 基本概念；### Seams；### Mocking Frameworks 模拟框架；## Techniques for Using Test Doubles 测试替身的使用技术；### How to Decide When to Use a Real Implementation 如何决定何时使用真实实现；## Faking 使用伪实现；## Stubbing 打桩；## Interaction Testing  交互测试",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

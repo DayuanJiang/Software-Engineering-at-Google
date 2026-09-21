@@ -106,19 +106,23 @@ def compiled_review(chapter):
     return json.loads((ROOT / chapter["review"]).read_text()) if "review" in chapter else None
 
 
-def check_svg(path, chapter, mobile, section=None):
+def check_svg(path, chapter, mobile, section=None, story=False):
+    """Section figures have fixed sizes; generated chapter maps and storylines have a fixed width and any height."""
     root = ET.parse(path).getroot()
-    expected = ("0 0 420 600" if mobile else "0 0 960 480") if section else (
-        "0 0 420 680" if mobile else "0 0 960 560")
-    if root.get("viewBox") != expected or root.get("role") != "img":
+    key = section or f"ch{chapter:02d}" + ("-story" if story else "")
+    if section:
+        valid = root.get("viewBox") == ("0 0 420 600" if mobile else "0 0 960 480")
+    else:
+        valid = re.fullmatch(r"0 0 (420|960) \d+", root.get("viewBox", "")) and root.get("viewBox").startswith("0 0 420 " if mobile else "0 0 960 ")
+    if not valid or root.get("role") != "img":
         raise ValueError(f"Invalid SVG dimensions/accessibility: {path}")
     classes = set(root.get("class", "").split())
-    if "chapter-svg" not in classes or "cg-" + (section or f"ch{chapter:02d}") not in classes:
+    if "chapter-svg" not in classes or "cg-" + key not in classes:
         raise ValueError(f"Missing responsive/scoped SVG class: {path}")
     if len(root.get("aria-labelledby", "").split()) < 2:
         raise ValueError(f"Missing SVG title/description labels: {path}")
     ids = [e.get("id") for e in root.iter() if e.get("id")]
-    prefix = f"{section or f'ch{chapter:02d}'}{'m' if mobile else ''}-"
+    prefix = f"{key}{'m' if mobile else ''}-"
     if len(ids) != len(set(ids)) or any(not identifier.startswith(prefix) for identifier in ids):
         raise ValueError(f"Invalid or duplicate SVG IDs: {path}")
     for identifier in root.get("aria-labelledby", "").split():
@@ -174,13 +178,19 @@ def main():
             if metadata["chapter"] != n or not metadata["title"] or not metadata["summary"]:
                 raise ValueError(f"Invalid guide metadata: {key}")
             check_pedagogy(metadata, overview=True)
+            if metadata["map"]["question"] != metadata["title"] or not metadata["story"]["acts"]:
+                raise ValueError(f"Chapter map/story content missing or inconsistent: {key}")
             headings = {re.sub(r"^#+\s*", "", line).strip() for line in text.splitlines() if line.startswith("#")}
             for heading in metadata["sourceSections"]:
                 if re.sub(r"^#+\s*", "", heading).strip() not in headings:
                     raise ValueError(f"Unknown source heading in {key}: {heading}")
             check_svg(ROOT / metadata["desktop"], n, False)
             check_svg(ROOT / metadata["mobile"], n, True)
-            guides[key] = metadata
+            check_svg(ROOT / metadata["storyDesktop"], n, False, story=True)
+            check_svg(ROOT / metadata["storyMobile"], n, True, story=True)
+            # The reader only needs titles and file paths; the map text, storyline and review notes stay in the metadata file.
+            guides[key] = {field: metadata[field] for field in ("chapter", "title", "summary", "desktop", "mobile", "storyDesktop", "storyMobile")}
+            guides[key]["storyTitle"] = metadata["story"]["headline"]
             sections = []
             retired = []
             for section_path in sorted((DIAGRAMS / "sections").glob(f"{key}-*.json")):

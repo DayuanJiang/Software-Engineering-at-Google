@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="833" viewBox="0 0 420 833" class="chapter-svg cg-ch15-story" data-layout="mobile" role="img" aria-labelledby="ch15-storym-title ch15-storym-desc">
+  <title id="ch15-storym-title">从“只剩一个用户了”的旧系统，到有人负责的弃用项目</title>
+  <desc id="ch15-storym-desc">本章回顾。从“只剩一个用户了”的旧系统，到有人负责的弃用项目。起点：一个旧系统，只剩最后一个直接用户。看起来随手就能关掉。可那个用户可能是关键基础设施，关了它，半个公司跟着停。；冲突：弃用比建造更难。用户的用法早就超出最初的设计；迁移的成本落在用户身上，收益却在维护者身上，谁都不急。；转折：留着旧系统也有成本，只是分散得看不见。维护精力、用户在几个相似系统之间纠结、新系统被拖慢。把这些成本算进来，才能如实比较。；做法：把弃用当项目做：类型、负责人、里程碑、工具。建议性弃用只靠通知，往往不了了之；强制性弃用有团队、有期限，用代码搜索和自动迁移逐个收口。。这一章最想强调的：系统会持续产生维护成本，留着与移除都要算账。 最省钱的办法常是让系统原地演进；能在设计时就想好如何弃用更好。</desc>
+  <style>
+    .cg-ch15-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch15-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch15-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch15-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch15-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch15-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch15-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch15-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch15-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch15-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="833" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 493" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从“只剩一个用户了”的旧系统，到有</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">人负责的弃用项目</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">一个旧系统，只剩最后一个直接用户</text>
+  <text x="76.0" y="184.0" class="t15" text-anchor="start">看起来随手就能关掉。可那个用户可能是关键基</text>
+  <text x="76.0" y="207.0" class="t15" text-anchor="start">础设施，关了它，半个公司跟着停。</text>
+  <circle cx="40.0" cy="269.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,260.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></g>
+  <text x="76.0" y="257.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">冲突</text>
+  <text x="76.0" y="281.0" class="h18" text-anchor="start">弃用比建造更难</text>
+  <text x="76.0" y="307.0" class="t15" text-anchor="start">用户的用法早就超出最初的设计；迁移的成本落</text>
+  <text x="76.0" y="330.0" class="t15" text-anchor="start">在用户身上，收益却在维护者身上，谁都不急。</text>
+  <circle cx="40.0" cy="392.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,383.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></g>
+  <text x="76.0" y="380.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="76.0" y="404.0" class="h18" text-anchor="start">留着旧系统也有成本，只是分散得看不见</text>
+  <text x="76.0" y="430.0" class="t15" text-anchor="start">维护精力、用户在几个相似系统之间纠结、新系</text>
+  <text x="76.0" y="453.0" class="t15" text-anchor="start">统被拖慢。把这些成本算进来，才能如实比较。</text>
+  <circle cx="40.0" cy="515.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,506.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M4 6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h13a2 2 0 0 0 1.152-.365l3.424-2.317a1 1 0 0 0 0-1.635l-3.424-2.318A2 2 0 0 0 17 6z"/></g>
+  <text x="76.0" y="503.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="527.0" class="h18" text-anchor="start">把弃用当项目做：类型、负责人、里程</text>
+  <text x="76.0" y="551.0" class="h18" text-anchor="start">碑、工具</text>
+  <text x="76.0" y="577.0" class="t15" text-anchor="start">建议性弃用只靠通知，往往不了了之；强制性弃</text>
+  <text x="76.0" y="600.0" class="t15" text-anchor="start">用有团队、有期限，用代码搜索和自动迁移逐个</text>
+  <text x="76.0" y="623.0" class="t15" text-anchor="start">收口。</text>
+  <rect x="22.0" y="661.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,681.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="689.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="715.0" class="emph-m" text-anchor="start">系统会持续产生维护成本，留着与移除</text>
+  <text x="78.0" y="739.0" class="emph-m" text-anchor="start">都要算账。</text>
+  <text x="78.0" y="763.0" class="c14" text-anchor="start">最省钱的办法常是让系统原地演进；能在设计时</text>
+  <text x="78.0" y="784.0" class="c14" text-anchor="start">就想好如何弃用更好。</text>
+</svg>

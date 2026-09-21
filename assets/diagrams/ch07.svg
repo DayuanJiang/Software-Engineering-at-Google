@@ -1,45 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch07-diagram" class="chapter-svg cg-ch07" role="img" aria-labelledby="ch07-title ch07-desc" viewBox="0 0 960 560" width="960" height="560">
-<title id="ch07-title">审查更快，等于生产力更高？</title><desc id="ch07-desc">书中假设取消代码审查可以让审查更快，但速度不能代表代码质量。实际 Readability 研究结合日志中的审查和提交速度与取得资格者的满意、学习自述，判断流程总体值得，继而改进工具和透明度。质量仍只自评；图不提供数值或因果证明。</desc>
-<style>.cg-ch07#ch07-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch07#ch07-diagram .strong{font-weight:600}
-.cg-ch07#ch07-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch07#ch07-diagram .danger-text{fill:var(--diagram-danger,#b54750)}
-.cg-ch07#ch07-diagram .primary{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:1.5}
-.cg-ch07#ch07-diagram .secondary{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:1.5}
-.cg-ch07#ch07-diagram .warm{fill:var(--diagram-warm-soft,#fff3dc);stroke:var(--diagram-warm,#a56a1f);stroke-width:1.5}
-.cg-ch07#ch07-diagram .empty{fill:var(--diagram-bg,#fff);stroke:var(--diagram-danger,#b54750);stroke-width:1.5;stroke-dasharray:6 5}
-.cg-ch07#ch07-diagram .band{fill:var(--diagram-primary-soft,#e5f4ee)}
-.cg-ch07#ch07-diagram .blue-band{fill:var(--diagram-secondary-soft,#eaf1fa)}
-.cg-ch07#ch07-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch07#ch07-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch07-arrow)}</style>
-<defs><marker id="ch07-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
-<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="42" class="strong" text-anchor="start">审查更快，等于生产力更高？</text>
-<text x="32" y="74" class="small" text-anchor="start">Readability：先检验指标代表什么，再判断流程是否值得。</text>
-<text x="32" y="118" class="strong" text-anchor="start">反例（书中假设）</text>
-<text x="504" y="118" class="strong" text-anchor="start">实际研究（书中报告）</text>
-<path d="M476 104V405" class="line"/>
-<rect id="ch07-remove" x="32" y="146" width="182" height="64" rx="4" class="warm"/>
-<text x="123" y="186" class="" text-anchor="middle" data-box="ch07-remove">取消代码审查</text>
-<path d="M218 178H260" class="arrow"/>
-<rect id="ch07-faster" x="268" y="146" width="178" height="64" rx="4" class="warm"/>
-<text x="357" y="186" class="" text-anchor="middle" data-box="ch07-faster">审查更快</text>
-<text x="32" y="266" class="strong danger-text" text-anchor="start">耗时更短 ≠ 代码质量更好</text>
-<text x="32" y="310" class="small" text-anchor="start">只跟踪速度和满意度，</text>
-<text x="32" y="340" class="small" text-anchor="start">会漏掉质量这一目标。</text>
-<text x="32" y="387" class="small" text-anchor="start">一个代理变好，不等于整体目标达成。</text>
-<rect id="ch07-logs" x="504" y="146" width="424" height="70" rx="4" class="secondary"/>
-<text x="522" y="176" class="strong" text-anchor="start" data-box="ch07-logs">日志：审查和提交更快</text>
-<text x="522" y="204" class="small" text-anchor="start" data-box="ch07-logs">已考虑所需审查者减少这一因素</text>
-<rect id="ch07-survey" x="504" y="236" width="424" height="70" rx="4" class="secondary"/>
-<text x="522" y="266" class="strong" text-anchor="start" data-box="ch07-survey">取得资格者：满意、有收获</text>
-<text x="522" y="294" class="small" text-anchor="start" data-box="ch07-survey">这是工程师自述的体验</text>
-<path d="M930 182H946V326H716V339" class="arrow"/>
-<path d="M930 270H946" class="line"/>
-<text x="504" y="366" class="strong" text-anchor="start">综合判断：流程总体值得投入</text>
-<text x="504" y="394" class="small" text-anchor="start">不是仅凭一项速度指标作决定</text>
-<path d="M716 402V422" class="arrow"/>
-<rect id="ch07-action" x="32" y="430" width="896" height="68" rx="4" class="band"/>
-<text x="52" y="471" class="strong" text-anchor="start" data-box="ch07-action">行动：保留流程，改进工具与透明度</text>
-<text x="32" y="532" class="small" text-anchor="start">质量仅自评；未设客观定量代理。速度代理不等于总体收益或因果证明。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="724" viewBox="0 0 960 724" class="chapter-svg cg-ch07" data-layout="desktop" role="img" aria-labelledby="ch07-title ch07-desc">
+  <title id="ch07-title">工程效率能度量吗？该怎么度量？</title>
+  <desc id="ch07-desc">本章概览。工程效率能度量吗？该怎么度量？ 本章的主要部分：目标：想改善什么？用 QUANTS 五个方面拆开：质量、注意力、脑力负担、速度、满意度；信号：什么现象能说明目标达成？信号不一定可测；指标：为每个信号找可测量的代理，说明它能追溯到哪个目标；验证：用访谈、调查等定性数据校验指标；对不上，多半是指标错了；行动：把改进融入日常工作流和激励，再跟踪结果。一句话：可以度量：从目标出发选指标，用访谈等定性数据校验，再据此行动</desc>
+  <style>
+    .cg-ch07[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch07[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch07[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch07[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch07[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch07[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch07[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch07[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch07[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch07[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="724" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch07-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">工程效率能度量吗？该怎么度量？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">先问一句：无论结果好坏，能不能据此采取行动？不能就别度量</text>
+  <path d="M515.1 254.2 L737.8 306.4" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch07-arrow)"/>
+  <path d="M749.3 340.5 L689.2 400.1" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch07-arrow)"/>
+  <path d="M626.2 426.9 L335.8 426.9" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch07-arrow)"/>
+  <path d="M272.2 401.5 L212.1 341.9" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch07-arrow)"/>
+  <path d="M220.2 306.9 L443.0 254.7" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch07-arrow)"/>
+  <circle cx="480.0" cy="246.0" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(466.0,232.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="480.0" y="164.0" class="h18" text-anchor="middle">目标</text>
+  <text x="480.0" y="186.0" class="c14" text-anchor="middle">想改善什么？用 QUANTS 五个方面拆开：质量、注</text>
+  <text x="480.0" y="206.0" class="c14" text-anchor="middle">意力、脑力负担、速度、满意度</text>
+  <circle cx="774.8" cy="315.1" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(760.8,301.1) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></g>
+  <text x="774.8" y="233.1" class="h18" text-anchor="middle">信号</text>
+  <text x="774.8" y="255.1" class="c14" text-anchor="middle">什么现象能说明目标达成？信号不一</text>
+  <text x="774.8" y="275.1" class="c14" text-anchor="middle">定可测</text>
+  <circle cx="662.2" cy="426.9" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(648.2,412.9) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></g>
+  <text x="662.2" y="480.9" class="h18" text-anchor="middle">指标</text>
+  <text x="662.2" y="502.9" class="c14" text-anchor="middle">为每个信号找可测量的代理，说明它</text>
+  <text x="662.2" y="522.9" class="c14" text-anchor="middle">能追溯到哪个目标</text>
+  <circle cx="297.8" cy="426.9" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(283.8,412.9) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></g>
+  <text x="297.8" y="480.9" class="h18" text-anchor="middle">验证</text>
+  <text x="297.8" y="502.9" class="c14" text-anchor="middle">用访谈、调查等定性数据校验指标；</text>
+  <text x="297.8" y="522.9" class="c14" text-anchor="middle">对不上，多半是指标错了</text>
+  <circle cx="185.2" cy="315.1" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(171.2,301.1) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></g>
+  <text x="185.2" y="233.1" class="h18" text-anchor="middle">行动</text>
+  <text x="185.2" y="255.1" class="c14" text-anchor="middle">把改进融入日常工作流和激励，再跟</text>
+  <text x="185.2" y="275.1" class="c14" text-anchor="middle">踪结果</text>
+  <text x="32.0" y="590.0" class="c14" text-anchor="start">度量前先筛选：结果不会改变任何决策的项目，本身就不值得度量</text>
+  <rect x="32.0" y="628.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="649.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="679.0" class="answer" text-anchor="start">可以度量：从目标出发选指标，用访谈等定性数据校验，再据此行动</text>
 </svg>

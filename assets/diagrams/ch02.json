@@ -1,25 +1,106 @@
 {
   "chapter": 2,
-  "title": "团队协作，不必采用同一种工作方式",
-  "summary": "用作者与 Karl 调试转换工具的原文案例，比较强行同步的冲突与共同确认缺陷、分头探索、汇合发现的协作关系；独立探索不等于隐藏工作。",
-  "sourceSections": [
-    "## Hiding Considered Harmful 隐藏工作的危害",
-    "### The Three Pillars of Social Interaction社交互动的三大支柱",
-    "#### Learn patience 培养耐心",
-    "## TL;DRs  内容提要"
-  ],
-  "kind": "comparison",
+  "title": "为什么独自闷头干，反而更慢？",
+  "summary": "软件是团队做出来的：早点把工作亮出来，靠谦逊、尊重、信任协作",
   "enabled": true,
+  "sourceSections": [
+    "## The Genius Myth  天才神话",
+    "## Hiding Considered Harmful 隐藏工作的危害",
+    "## It’s All About the Team 关键在于团队",
+    "### Humility, Respect, and Trust in Practice 谦逊、尊重和信任的实践"
+  ],
+  "kind": "contrast",
   "desktop": "assets/diagrams/ch02.svg",
   "mobile": "assets/diagrams/ch02-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch02-story.svg",
+  "storyMobile": "assets/diagrams/ch02-story-mobile.svg",
+  "map": {
+    "form": "contrast",
+    "question": "为什么独自闷头干，反而更慢？",
+    "answer": "软件是团队做出来的：早点把工作亮出来，靠谦逊、尊重、信任协作",
+    "parts": [
+      {
+        "icon": "eye-off",
+        "label": "躲起来写",
+        "text": "怕被看到、巴士因子为 1、走错方向没人提醒"
+      },
+      {
+        "icon": "users",
+        "label": "一起做",
+        "text": "小步提交、谦逊尊重信任、无责复盘、快速学习"
+      }
+    ],
+    "figure": {
+      "header": "天才神话让人想躲起来独自做出完美的东西；这一章说，躲起来的代价比你想的大",
+      "left": {
+        "icon": "eye-off",
+        "title": "一个人躲起来写",
+        "tone": "danger",
+        "items": [
+          "怕别人看到不成熟的代码",
+          "巴士因子是 1，你一走项目就停",
+          "方向错了，没人早点提醒",
+          "重复造别人已有的轮子"
+        ]
+      },
+      "right": {
+        "icon": "users",
+        "title": "早点亮出来，一起做",
+        "tone": "pri",
+        "items": [
+          "小步提交，问题早发现",
+          "谦逊、尊重、信任是协作的底",
+          "接受批评，无责复盘",
+          "快速失败，快速学习"
+        ]
+      },
+      "arrow": "改为",
+      "footer": "了解自己和同事偏好的工作方式，团队才转得顺"
+    }
+  },
+  "story": {
+    "headline": "从想藏起代码的请求，到没人能独自完成软件",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "eye-off",
+        "tone": "sec",
+        "title": "“能不能让我把代码藏起来，等写完再给人看？”",
+        "text": "这是作者收到最多的请求之一。背后是天才神话：我们记住的是 Linus、Guido，忘了他们身后成千的贡献者。"
+      },
+      {
+        "act": "代价",
+        "icon": "triangle-alert",
+        "tone": "danger",
+        "title": "躲起来的三个代价",
+        "text": "巴士因子为 1，你一离开项目就停；方向错了没人早提醒，几个月后才发现；进展慢，因为一切都得自己来。"
+      },
+      {
+        "act": "转折",
+        "icon": "heart-handshake",
+        "tone": "pri",
+        "title": "协作靠三根柱子：谦逊、尊重、信任",
+        "text": "承认自己会错，把同事当值得尊重的人，相信他们会做对。这三样有了，批评就成了帮忙。"
+      },
+      {
+        "act": "做法",
+        "icon": "users",
+        "tone": "pri",
+        "title": "早分享、多沟通、快速失败",
+        "text": "小步提交让人看到，出问题就做无责复盘，把注意力放在事情上。团队的成果远大于个人英雄。"
+      }
+    ],
+    "emphasis": "软件工程是团队运动，藏起来的代码得不到任何帮助。",
+    "emphasis2": "谦逊、尊重、信任，缺一样，团队就会把精力耗在人际摩擦上。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "工作方式不同，是否只能强行同步或各自隐藏工作？",
-    "expectedAnswer": "不必二选一。原文中作者偏好自下而上、Karl 偏好自上而下；共同确认缺陷后分头分析，再汇合发现，既保留不同工作方式又保持协作。",
-    "visualEncoding": "上部把两种工作顺序接到同一次结对中的冲突；下部从共同确认缺陷分叉为两条不同探索路径，再汇合到交流发现。分叉表示独立探索，汇合表示没有隐藏工作，不编码速度或贡献大小。",
-    "sourceEvidence": "#### Learn patience 培养耐心：'先一起坐在电脑前确认缺陷，再分头从两个方向同时分析问题'；## Hiding Considered Harmful 隐藏工作的危害：'专注和独处'与'协作、审查'的权衡；## TL;DRs  内容提要：了解彼此偏好的工作方式。",
-    "beforeProblem": "旧总览只有我与队友的反馈双箭头，加三项原则的文字列举；与反馈时机和反馈原则两张节图重复，没有解释协作如何兼容独处和不同工作方式。",
-    "whyBetter": "读者可以沿同一缺陷的分叉与汇合追踪谁在何时共同工作、何时独立探索，直接看到团队协作不同于强行同步或完全隔离。",
-    "limits": "这是书中作者与 Karl 的具体经历，不是所有冲突的通用处方，也不证明并行一定更快；总览选取协作关系，不罗列本章所有主题。"
+    "readerQuestion": "为什么独自闷头干，反而更慢？",
+    "expectedAnswer": "软件是团队做出来的：早点把工作亮出来，靠谦逊、尊重、信任协作",
+    "visualEncoding": "前后对比：左栏是问题做法，右栏是本章主张的做法，中间箭头表示转向；每条用叉或勾标记。 章末故事线：纵向轨道上的 4 幕，幕名为起点、代价、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## The Genius Myth  天才神话；## Hiding Considered Harmful 隐藏工作的危害；## It’s All About the Team 关键在于团队；### Humility, Respect, and Trust in Practice 谦逊、尊重和信任的实践",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

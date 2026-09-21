@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="879" viewBox="0 0 420 879" class="chapter-svg cg-ch23-story" data-layout="mobile" role="img" aria-labelledby="ch23-storym-title ch23-storym-desc">
+  <title id="ch23-storym-title">从每两小时才知道坏没坏，到提交前几分钟就有答案</title>
+  <desc id="ch23-storym-desc">本章回顾。从每两小时才知道坏没坏，到提交前几分钟就有答案。起点：Takeout 团队的发布总在最后一刻发现问题。测试在部署后才跑，坏了要回溯几十个提交找原因。越晚发现，修起来越贵，这就是反馈回路的成本。；发现：反馈越快越便宜，所以要把测试往前挪。提交前跑快而可靠的测试，提交后跑慢而不太确定的；CI 系统的工作就是决定哪些测试在什么时候跑。；做法：TAP：全球持续构建，加上封闭测试。每次提交都触发受影响的测试；封闭环境让结果可重复；坏了能定位到某一次提交，并自动回滚。；演进：Takeout 的四步：把检查一步步提前。启动检查搬到提交前的沙盒，完整归档测试提前到每两小时的提交后环境。负担不起完整 CI，也能从小处开始。。这一章最想强调的：CI 决定运行哪些测试、何时运行；反馈易得且能立刻行动，它才有效。 代码库用得越久、越大，CI 越不可或缺；提交前要快而可靠，提交后可以慢而广。</desc>
+  <style>
+    .cg-ch23-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch23-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch23-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch23-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch23-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch23-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch23-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch23-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch23-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch23-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="879" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 563" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从每两小时才知道坏没坏，到提交前几</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">分钟就有答案</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">Takeout 团队的发布总在最后一刻发现</text>
+  <text x="76.0" y="182.0" class="h18" text-anchor="start">问题</text>
+  <text x="76.0" y="208.0" class="t15" text-anchor="start">测试在部署后才跑，坏了要回溯几十个提交找原</text>
+  <text x="76.0" y="231.0" class="t15" text-anchor="start">因。越晚发现，修起来越贵，这就是反馈回路的</text>
+  <text x="76.0" y="254.0" class="t15" text-anchor="start">成本。</text>
+  <circle cx="40.0" cy="316.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,307.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></g>
+  <text x="76.0" y="304.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">发现</text>
+  <text x="76.0" y="328.0" class="h18" text-anchor="start">反馈越快越便宜，所以要把测试往前挪</text>
+  <text x="76.0" y="354.0" class="t15" text-anchor="start">提交前跑快而可靠的测试，提交后跑慢而不太确</text>
+  <text x="76.0" y="377.0" class="t15" text-anchor="start">定的；CI 系统的工作就是决定哪些测试在什么时</text>
+  <text x="76.0" y="400.0" class="t15" text-anchor="start">候跑。</text>
+  <circle cx="40.0" cy="462.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,453.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></g>
+  <text x="76.0" y="450.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="474.0" class="h18" text-anchor="start">TAP：全球持续构建，加上封闭测试</text>
+  <text x="76.0" y="500.0" class="t15" text-anchor="start">每次提交都触发受影响的测试；封闭环境让结果</text>
+  <text x="76.0" y="523.0" class="t15" text-anchor="start">可重复；坏了能定位到某一次提交，并自动回滚。</text>
+  <circle cx="40.0" cy="585.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,576.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></g>
+  <text x="76.0" y="573.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">演进</text>
+  <text x="76.0" y="597.0" class="h18" text-anchor="start">Takeout 的四步：把检查一步步提前</text>
+  <text x="76.0" y="623.0" class="t15" text-anchor="start">启动检查搬到提交前的沙盒，完整归档测试提前</text>
+  <text x="76.0" y="646.0" class="t15" text-anchor="start">到每两小时的提交后环境。负担不起完整 CI，也</text>
+  <text x="76.0" y="669.0" class="t15" text-anchor="start">能从小处开始。</text>
+  <rect x="22.0" y="707.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,727.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="735.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="761.0" class="emph-m" text-anchor="start">CI 决定运行哪些测试、何时运行；反</text>
+  <text x="78.0" y="785.0" class="emph-m" text-anchor="start">馈易得且能立刻行动，它才有效。</text>
+  <text x="78.0" y="809.0" class="c14" text-anchor="start">代码库用得越久、越大，CI 越不可或缺；提交前</text>
+  <text x="78.0" y="830.0" class="c14" text-anchor="start">要快而可靠，提交后可以慢而广。</text>
+</svg>

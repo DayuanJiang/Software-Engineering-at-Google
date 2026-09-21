@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch12-story" data-layout="desktop" role="img" aria-labelledby="ch12-story-title ch12-story-desc">
+  <title id="ch12-story-title">从一改代码就大片变红的测试，到读得懂、改不坏的测试</title>
+  <desc id="ch12-story-desc">本章回顾。从一改代码就大片变红的测试，到读得懂、改不坏的测试。起点：重构完，几十个测试失败，功能却没坏。测试盯着实现细节写，代码一动它就红。工程师开始把测试当噩梦，改代码前先想“会坏多少测试”。；转折：对着公开接口测行为。通过公共 API 测试，断言结果状态，少断言内部调用；这样无害的重构一个测试都不用改。；设计：让测试完整又简洁，失败时说得清。一个测试一个行为，用被测行为命名；关键输入和预期都写在眼前，无关细节收进辅助方法；失败信息直接指出差别。；取舍：测试代码：DAMP 优于 DRY。生产代码追求不重复，测试代码追求一眼看懂。宁可重复几行，也别把逻辑和条件塞进测试。。这一章最想强调的：好测试改代码时不坏、失败时能读懂；为此宁可啰嗦一点。 测行为、测状态、通过公共接口测；共享测试代码时优先 DAMP。</desc>
+  <style>
+    .cg-ch12-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch12-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch12-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch12-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch12-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch12-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch12-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch12-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch12-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch12-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从一改代码就大片变红的测试，到读得懂、改不坏的测试</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">重构完，几十个测试失败，功能却没坏</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">测试盯着实现细节写，代码一动它就红。工程师开始把测试当噩梦，改代码前先想“会坏多少测试”。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">对着公开接口测行为</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">通过公共 API 测试，断言结果状态，少断言内部调用；这样无害的重构一个测试都不用改。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">设计</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">让测试完整又简洁，失败时说得清</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">一个测试一个行为，用被测行为命名；关键输入和预期都写在眼前，无关细节收进辅助方法；失败信息直接指出差别。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">取舍</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">测试代码：DAMP 优于 DRY</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">生产代码追求不重复，测试代码追求一眼看懂。宁可重复几行，也别把逻辑和条件塞进测试。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">好测试改代码时不坏、失败时能读懂；为此宁可啰嗦一点。</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">测行为、测状态、通过公共接口测；共享测试代码时优先 DAMP。</text>
+</svg>

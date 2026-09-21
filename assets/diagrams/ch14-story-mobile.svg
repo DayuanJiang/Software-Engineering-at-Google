@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="809" viewBox="0 0 420 809" class="chapter-svg cg-ch14-story" data-layout="mobile" role="img" aria-labelledby="ch14-storym-title ch14-storym-desc">
+  <title id="ch14-storym-title">从全绿的单元测试和挂掉的系统，到有策略的大型测试</title>
+  <desc id="ch14-storym-desc">本章回顾。从全绿的单元测试和挂掉的系统，到有策略的大型测试。起点：单元测试全部通过，上线还是坏了。每个单元都对，配合起来却错：配置不一致、接口理解不同、真实数据和替身不一样。这些问题单元测试天生看不到。；发现：大型测试补的正是“配合”这一层。它跨多个单元，更慢也更真实。谷歌把它拆成四步：搭被测系统、备数据、执行操作、验证结果。；权衡：越真实越可信，也越慢、越不稳定。所以要少而精。设计阶段就写测试策略：列出风险，决定哪些风险值得一个大型测试来覆盖。；做法：让大型测试融入开发者的日常。明确谁来写、什么时候跑、失败了谁负责；把它做成工作流的一部分，别等到发布前才救火。。这一章最想强调的：大型测试覆盖单元测试看不到的地方，但要有策略、有节制。 大型测试由被测系统、数据、操作和验证组成；良好的设计从测试策略开始。</desc>
+  <style>
+    .cg-ch14-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch14-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch14-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch14-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch14-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch14-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch14-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch14-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch14-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch14-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="809" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 516" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从全绿的单元测试和挂掉的系统，到有</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">策略的大型测试</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">单元测试全部通过，上线还是坏了</text>
+  <text x="76.0" y="184.0" class="t15" text-anchor="start">每个单元都对，配合起来却错：配置不一致、接</text>
+  <text x="76.0" y="207.0" class="t15" text-anchor="start">口理解不同、真实数据和替身不一样。这些问题</text>
+  <text x="76.0" y="230.0" class="t15" text-anchor="start">单元测试天生看不到。</text>
+  <circle cx="40.0" cy="292.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,283.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></g>
+  <text x="76.0" y="280.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">发现</text>
+  <text x="76.0" y="304.0" class="h18" text-anchor="start">大型测试补的正是“配合”这一层</text>
+  <text x="76.0" y="330.0" class="t15" text-anchor="start">它跨多个单元，更慢也更真实。谷歌把它拆成四</text>
+  <text x="76.0" y="353.0" class="t15" text-anchor="start">步：搭被测系统、备数据、执行操作、验证结果。</text>
+  <circle cx="40.0" cy="415.0" r="18" fill="var(--diagram-warm-soft,#eae2cf)" stroke="var(--diagram-warm,#80531b)" stroke-width="2"/><g transform="translate(31.0,406.0) scale(0.750)" fill="none" stroke="var(--diagram-warm,#80531b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></g>
+  <text x="76.0" y="403.0" class="act" fill="var(--diagram-warm,#80531b)" text-anchor="start">权衡</text>
+  <text x="76.0" y="427.0" class="h18" text-anchor="start">越真实越可信，也越慢、越不稳定</text>
+  <text x="76.0" y="453.0" class="t15" text-anchor="start">所以要少而精。设计阶段就写测试策略：列出风</text>
+  <text x="76.0" y="476.0" class="t15" text-anchor="start">险，决定哪些风险值得一个大型测试来覆盖。</text>
+  <circle cx="40.0" cy="538.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,529.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="76.0" y="526.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="76.0" y="550.0" class="h18" text-anchor="start">让大型测试融入开发者的日常</text>
+  <text x="76.0" y="576.0" class="t15" text-anchor="start">明确谁来写、什么时候跑、失败了谁负责；把它</text>
+  <text x="76.0" y="599.0" class="t15" text-anchor="start">做成工作流的一部分，别等到发布前才救火。</text>
+  <rect x="22.0" y="637.0" width="376.0" height="144.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,657.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="665.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="691.0" class="emph-m" text-anchor="start">大型测试覆盖单元测试看不到的地方，</text>
+  <text x="78.0" y="715.0" class="emph-m" text-anchor="start">但要有策略、有节制。</text>
+  <text x="78.0" y="739.0" class="c14" text-anchor="start">大型测试由被测系统、数据、操作和验证组成；</text>
+  <text x="78.0" y="760.0" class="c14" text-anchor="start">良好的设计从测试策略开始。</text>
+</svg>

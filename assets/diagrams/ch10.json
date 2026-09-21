@@ -1,26 +1,110 @@
 {
   "chapter": 10,
-  "title": "读者能做出下一步判断吗？",
-  "summary": "用字符串拼接、漏写授权前提和失效教程三个卡点，比较补明行为、前提与时效状态后，读者能够作出的判断；再将使用中发现的问题接回维护流程。",
-  "sourceSections": [
-    "Documentation Is Like Code 把文档当作代码",
-    "Function comments 函数注释",
-    "Tutorials 教程",
-    "Documentation Reviews 文档评审",
-    "Deprecating Documents 弃用文档"
-  ],
-  "kind": "worked-comparison",
+  "title": "工程师为什么不爱写文档，怎么改？",
+  "summary": "把文档当作代码来写、评审和维护，动笔前先想清读者是谁",
   "enabled": true,
+  "sourceSections": [
+    "## What Qualifies as Documentation? 什么算是文档？",
+    "## Why Is Documentation Needed? 为什么需要文档？",
+    "## Documentation Is Like Code 把文档当作代码",
+    "## Know Your Audience 了解你的受众",
+    "## Documentation Types 文档类型",
+    "## Documentation Reviews 文档评审",
+    "## Documentation Philosophy 文档写作理念",
+    "## When Do You Need Technical Writers? 何时需要技术撰稿人？"
+  ],
+  "kind": "contrast",
   "desktop": "assets/diagrams/ch10.svg",
   "mobile": "assets/diagrams/ch10-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch10-story.svg",
+  "storyMobile": "assets/diagrams/ch10-story-mobile.svg",
+  "map": {
+    "form": "contrast",
+    "question": "工程师为什么不爱写文档，怎么改？",
+    "answer": "把文档当作代码来写、评审和维护，动笔前先想清读者是谁",
+    "parts": [
+      {
+        "icon": "eye-off",
+        "label": "常见状况",
+        "text": "没人写、没人看、过时不删"
+      },
+      {
+        "icon": "file-text",
+        "label": "当作代码",
+        "text": "有负责人、有评审、想清读者、一份只做一件事"
+      }
+    ],
+    "figure": {
+      "header": "文档写一次、被读很多次；受益最多的常常是几个月后的自己",
+      "left": {
+        "icon": "eye-off",
+        "title": "常见状况",
+        "tone": "danger",
+        "items": [
+          "没人觉得写文档是自己的活",
+          "写了没人看，也没人知道在哪",
+          "一份文档想服务所有人",
+          "过时了还挂着，误导读者"
+        ]
+      },
+      "right": {
+        "icon": "file-text",
+        "title": "把文档当作代码",
+        "tone": "pri",
+        "items": [
+          "放进代码库，有负责人、有评审",
+          "先想清读者是谁，再决定写什么",
+          "一份文档只做一件事：参考、设计、教程或概念",
+          "跟着代码一起改，过时就删"
+        ]
+      },
+      "arrow": "改为",
+      "footer": "文档类型：参考文档、设计文档、教程、概念文档、着陆页；复杂或面向用户的场合，才需要技术撰稿人"
+    }
+  },
+  "story": {
+    "headline": "从人人抱怨却没人写的文档，到和代码一起维护的文档",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "file-text",
+        "tone": "sec",
+        "title": "每个工程师都抱怨文档差，却很少有人写",
+        "text": "写文档的收益落在未来的读者身上；工程师又常常高估自己的写作能力。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "文档和代码一样，是随时间推移的产物",
+        "text": "写一次、读很多次，受益最多的往往是几个月后忘了细节的自己。这个视角一变，写文档就值得投入。"
+      },
+      {
+        "act": "做法",
+        "icon": "git-branch",
+        "tone": "pri",
+        "title": "把文档放进代码的工作流",
+        "text": "放在代码库里，有负责人、有评审、有变更记录；先想清读者是谁，一份文档只服务一个目的。"
+      },
+      {
+        "act": "落点",
+        "icon": "trash-2",
+        "tone": "warm",
+        "title": "文档的生命周期：写、审、改、删",
+        "text": "参考文档、设计文档、教程、概念文档各有读者；过时的文档比没有更糟，该删就删。"
+      }
+    ],
+    "emphasis": "为读者写作；把文档当作代码来写、评审和维护。",
+    "emphasis2": "每份文档只服务一个目的，文档变更沿用现有的开发者工作流。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "函数名、教程步骤和旧页面都已经存在，读者还缺什么信息才能决定下一步？",
-    "expectedAnswer": "函数注释须说明调用行为，教程须交代必要前提，失效文档须删除或标明过时并在有新来源时给出指引。以原文注释推演，StrCat(\"a\", \"b\") 不插入分隔符，结果为 \"ab\"；教程可能因漏写授权要求而让读者报错。使用中的问题还需通过反馈进入维护流程。",
-    "visualEncoding": "桌面三行分别将具体问题、缺失的文档依据和可作出的判断横向对齐；移动端每个案例重新纵向排布。拼接示例直接显示输入到输出的箭头；权限与时效案例对照缺失信息和补明后的行动条件。页脚把使用反馈接回负责人和变更评审，而非画成必经顺序的循环。",
-    "sourceEvidence": "#### Function comments 函数注释：StrCat 注释中的 using no delimiter(s)；### Tutorials 教程：漏写用户名授权导致第4步报错；### Deprecating Documents 弃用文档：标明已过时，并在有新信息来源时给出指引；## Documentation Is Like Code 把文档当作代码：文档也应该有负责人；## Documentation Reviews 文档评审：通过缺陷报告或其他反馈途径告诉作者。",
-    "beforeProblem": "原概览只有同步变更、评审、反馈和复查四个框，与 ch10-01 的维护回路重复，没有显示具体哪条信息会改变读者的判断。",
-    "whyBetter": "读者可以从图中的输入、条件和文档改动推导输出或下一步，不必先接受抽象的文档价值结论；三个案例覆盖使用行为、操作前提和长期时效。",
-    "limits": "字符串调用与输出是根据原注释推演的展示示例，并非原书逐字代码；授权是原文给出的失败示例，不是第4步报错的通用诊断。图不保证补齐权限就能完成所有操作，也不以更新日期证明文档正确。"
+    "readerQuestion": "工程师为什么不爱写文档，怎么改？",
+    "expectedAnswer": "把文档当作代码来写、评审和维护，动笔前先想清读者是谁",
+    "visualEncoding": "前后对比：左栏是问题做法，右栏是本章主张的做法，中间箭头表示转向；每条用叉或勾标记。 章末故事线：纵向轨道上的 4 幕，幕名为起点、转折、做法、落点，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## What Qualifies as Documentation? 什么算是文档？；## Why Is Documentation Needed? 为什么需要文档？；## Documentation Is Like Code 把文档当作代码；## Know Your Audience 了解你的受众；## Documentation Types 文档类型；## Documentation Reviews 文档评审；## Documentation Philosophy 文档写作理念；## When Do You Need Technical Writers? 何时需要技术撰稿人？",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

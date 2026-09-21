@@ -1,30 +1,94 @@
 {
   "chapter": 22,
-  "title": "同一项迁移，不是同一次提交",
-  "summary": "以已建立类型别名的迁移为示例：项目甲已改名，乙仍在审查，丙遇到冲突；各分片独立提交，整体迁移尚未完成。兼容别名支持中间态，但仍有旧引用时不能删除别名。",
+  "title": "一处改动牵动几千个文件，怎么做？",
+  "summary": "把一个大改动拆成很多小提交，靠工具和流程批量推进",
   "enabled": true,
   "sourceSections": [
-    "What Is a Large-Scale Change? 什么是大规模变更？",
-    "Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr",
-    "Change Creation 变更创建",
-    "Sharding and Submitting  分片与提交",
-    "Testing 测试",
-    "Mailing reviewers  邮件送审",
-    "Reviewing 审查",
-    "Submitting 提交",
-    "Cleanup  清理"
+    "## What Is a Large-Scale Change? 什么是大规模变更？",
+    "## Who Deals with LSCs? 谁负责大规模变更？",
+    "## Barriers to Atomic Changes  原子变更的障碍",
+    "## LSC Infrastructure  LSC基础设施",
+    "## The LSC Process  LSC过程"
   ],
-  "kind": "state-map",
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch22.svg",
   "mobile": "assets/diagrams/ch22-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch22-story.svg",
+  "storyMobile": "assets/diagrams/ch22-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "一处改动牵动几千个文件，怎么做？",
+    "answer": "把一个大改动拆成很多小提交，靠工具和流程批量推进",
+    "parts": [
+      {
+        "icon": "file-text",
+        "label": "一个逻辑改动",
+        "text": "改名、换 API、清理旧用法：逻辑上是一件事，物理上散在整个代码库"
+      },
+      {
+        "icon": "split",
+        "label": "拆成分片",
+        "text": "工具按目录或负责人自动切成许多小改动，每片都能独立审查和提交"
+      },
+      {
+        "icon": "cog",
+        "label": "自动审查提交",
+        "text": "全局批准人代替逐个目录负责人；测试通过就自动提交，失败自动回滚"
+      },
+      {
+        "icon": "recycle",
+        "label": "清理收尾",
+        "text": "旧接口删掉，兼容别名撤掉，别让迁移停在一半"
+      }
+    ],
+    "figure": {
+      "header": "为什么不能一次提交：冲突、审查、测试和技术限制都承受不了巨型提交",
+      "footer": "基础设施：政策与授权、代码库洞察、变更管理工具（Rosie）、测试与回滚"
+    }
+  },
+  "story": {
+    "headline": "从“这个 API 永远改不了”，到每天都在发生的大规模变更",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "lock",
+        "tone": "sec",
+        "title": "一个被几万处调用的旧 API，大家默认它永远改不了",
+        "text": "改一处很容易，改几万处却被认为不可能：一次提交要么冲突，要么审不完，要么跑不完测试。"
+      },
+      {
+        "act": "冲突",
+        "icon": "triangle-alert",
+        "tone": "danger",
+        "title": "原子提交在这个规模上行不通",
+        "text": "技术上仓库承受不了，合并冲突随时间增加，没有一个人能审完，测试和验证也不可能一次完成。"
+      },
+      {
+        "act": "转折",
+        "icon": "split",
+        "tone": "pri",
+        "title": "拆成很多小改动，用工具批量推进",
+        "text": "按目录或负责人自动分片，每片独立审查提交；全局批准人代替逐个目录负责人；测试通过就自动提交，失败自动回滚。"
+      },
+      {
+        "act": "做法",
+        "icon": "recycle",
+        "tone": "pri",
+        "title": "把大规模变更变成习惯",
+        "text": "有了基础设施和流程，重构就能突破人力上限。谷歌的经验：要做好它，就要经常做它。"
+      }
+    ],
+    "emphasis": "大规模变更让组织重新思考：哪些技术决策真的不可更改？",
+    "emphasis2": "传统重构到了大规模就失效；分片、自动化、经常做，是可行的路。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "项目甲已提交而乙、丙仍未提交时，同一项迁移处于什么状态，旧别名能否删除？",
-    "expectedAnswer": "LSC 的修改逻辑相关，但实际无法作为单一原子单元提交。示例在旧类型已成为新类型别名之后，甲可改为新名，乙、丙可暂留旧名；各片独立推进不等于全局完成。此例以移除旧别名为目标，旧引用仍存在时不能收尾删除。",
-    "visualEncoding": "共同目标的括线覆盖三个项目行；每行单独列出主干上的名称和分片状态。新旧名称并存由共同别名条件支撑，乙、丙的旧名与底部不得删除别名的条件对应。行是分片，不是流水线阶段或耗时刻度。",
-    "sourceEvidence": "## What Is a Large-Scale Change? 什么是大规模变更？: 逻辑上相互关联，却无法在实际操作中作为一个原子单元提交。##### Case Study: scoped_ptr to std::unique_ptr  案例研究：从 scoped_ptr 到 std::unique_ptr: 先将 scoped_ptr 改为 std::unique_ptr 的类型别名。### Sharding and Submitting  分片与提交: 根据项目边界和代码所有权规则。### Cleanup  清理: 不同的大规模变更对完成的定义不同。",
-    "beforeProblem": "原图把三条相同的测试、送审、提交流水线并排展示，只在注释中要求独立性，没有显示部分提交后主干中的实际状态，也容易把一次迁移误读为一个同时完成的动作。",
-    "whyBetter": "读者可直接检查甲的成功、乙的待审、丙的冲突与各自主干代码，并推导为何局部成功不等于迁移完成，兼容性为何是分片独立推进的前提。",
-    "limits": "三个项目和状态是教学示意，不是原书的真实项目或进度数据。假设别名准备与行为兼容工作已完成、三个改名分片无相互依赖。不证明任意回滚都安全，也不要求所有 LSC 都清除全部旧引用。"
+    "readerQuestion": "一处改动牵动几千个文件，怎么做？",
+    "expectedAnswer": "把一个大改动拆成很多小提交，靠工具和流程批量推进",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、冲突、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## What Is a Large-Scale Change? 什么是大规模变更？；## Who Deals with LSCs? 谁负责大规模变更？；## Barriers to Atomic Changes  原子变更的障碍；## LSC Infrastructure  LSC基础设施；## The LSC Process  LSC过程",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

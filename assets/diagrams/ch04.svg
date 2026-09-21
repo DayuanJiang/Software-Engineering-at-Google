@@ -1,55 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch04" data-layout="desktop" role="img" aria-labelledby="ch04-title ch04-desc">
-<title id="ch04-title">产品伤害为何也会影响团队建设？</title>
-<desc id="ch04-desc">本章的风险联系：Google Photos 的误分类伤害黑人用户；求职者也可能失去对组织包容性的信任，从而妨碍代表性招聘目标。虚线表示可能影响，不是测量出的效应。产品侧需与用户共建并衡量结果，组织侧需同时审视招聘、留任与成长；人员代表性不保证公平。</desc>
-<style>
-.cg-ch04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch04[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch04[data-layout="desktop"] .strong {font-weight:600}
-</style>
-<defs>
-<marker id="ch04-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker>
-<marker id="ch04-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch04-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)"/></marker>
-<marker id="ch04-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
-</defs>
-<rect x="0" y="0" width="960" height="560" rx="0" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="43" text-anchor="start" class="strong">产品伤害为何也会影响团队建设？</text>
-<text x="32" y="81" text-anchor="start" class="small">书中风险联系：产品的用户，也可能是组织的求职者。</text>
-<g id="ch04-product" data-box="32,129,264,148">
-<rect x="32" y="129" width="264" height="148" rx="6" fill="var(--diagram-danger-soft,#faecee)"/>
-<text x="164" y="166" text-anchor="middle" class="strong">产品失误</text>
-<text x="164" y="207" text-anchor="middle" class="">例：照片识别误分类</text>
-<text x="164" y="244" text-anchor="middle" class="">伤害黑人用户</text>
-</g>
-<g id="ch04-trust" data-box="348,129,264,148">
-<rect x="348" y="129" width="264" height="148" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
-<text x="480" y="166" text-anchor="middle" class="strong">信任受损</text>
-<text x="480" y="207" text-anchor="middle" class="">求职者也可能怀疑</text>
-<text x="480" y="244" text-anchor="middle" class="">组织是否包容</text>
-</g>
-<g id="ch04-hiring" data-box="664,129,264,148">
-<rect x="664" y="129" width="264" height="148" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
-<text x="796" y="166" text-anchor="middle" class="strong">组织后果</text>
-<text x="796" y="207" text-anchor="middle" class="">代表性招聘目标</text>
-<text x="796" y="244" text-anchor="middle" class="">可能更难实现</text>
-</g>
-<text x="322" y="184" text-anchor="middle" class="small">可能</text>
-<polyline data-connector="true" points="298,213 344,213" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-arrow-muted)" stroke-dasharray="6 5"/>
-<text x="638" y="184" text-anchor="middle" class="small">可能</text>
-<polyline data-connector="true" points="614,213 660,213" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch04-arrow-muted)" stroke-dasharray="6 5"/>
-<text x="32" y="319" text-anchor="start" class="strong">需要共同审视的两侧</text>
-<g id="ch04-product-response" data-box="32,344,430,127">
-<rect x="32" y="344" width="430" height="127" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
-<text x="52" y="379" text-anchor="start" class="strong">产品侧：谁参与定义需求？</text>
-<text x="52" y="417" text-anchor="start" class="">与弱势用户共建，优先困难用例</text>
-<text x="52" y="451" text-anchor="start" class="small">与领域专家衡量实际结果</text>
-</g>
-<g id="ch04-organization-response" data-box="498,344,430,127">
-<rect x="498" y="344" width="430" height="127" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
-<text x="518" y="379" text-anchor="start" class="strong">组织侧：谁能进入并成长？</text>
-<text x="518" y="417" text-anchor="start" class="">同时审视招聘、留任与晋升</text>
-<text x="518" y="451" text-anchor="start" class="small">让不同经验参与设计讨论</text>
-</g>
-<text x="32" y="511" text-anchor="start" class="small">人员代表性不保证数据无偏差；善意与投入也不等于公平结果。</text>
-<text x="32" y="541" text-anchor="start" class="small">虚线不是量化因果关系，也不表示任何群体的必然行为。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="444" viewBox="0 0 960 444" class="chapter-svg cg-ch04" data-layout="desktop" role="img" aria-labelledby="ch04-title ch04-desc">
+  <title id="ch04-title">软件会不会伤害它没想到的用户？</title>
+  <desc id="ch04-desc">本章概览。软件会不会伤害它没想到的用户？ 本章的主要部分：承认偏见是默认：团队和数据都带着自己的经验，没有刻意纠正，产品就会自动带上盲点；建立多元团队：不同背景的人更容易预见不同用户的处境，这直接决定产品质量；挑战既定流程：拒绝单一方案；从需求、设计到测试，每一步都问：这对谁不适用？；用结果检验价值：价值观要落到结果上：宁可放慢，也别发布会伤害部分用户的产品。一句话：为所有人做工程，先承认自己有盲点，再把公平当作工程目标去验证</desc>
+  <style>
+    .cg-ch04[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch04[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch04[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch04[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch04[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch04[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch04[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch04[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch04[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch04[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="444" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">软件会不会伤害它没想到的用户？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">从照片被错误分类的伤害出发，这一章讲工程团队为什么会有盲点，以及怎么补</text>
+  <circle cx="134.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(119.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></g>
+  <text x="134.2" y="210.0" class="h18" text-anchor="middle">承认偏见是默认</text>
+  <text x="134.2" y="236.0" class="c15" text-anchor="middle">团队和数据都带着自己的经</text>
+  <text x="134.2" y="258.0" class="c15" text-anchor="middle">验，没有刻意纠正，产品就</text>
+  <text x="134.2" y="280.0" class="c15" text-anchor="middle">会自动带上盲点</text>
+  <path d="M240.5 150.0 L258.5 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch04-arrow)"/>
+  <circle cx="364.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(349.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="364.8" y="210.0" class="h18" text-anchor="middle">建立多元团队</text>
+  <text x="364.8" y="236.0" class="c15" text-anchor="middle">不同背景的人更容易预见不</text>
+  <text x="364.8" y="258.0" class="c15" text-anchor="middle">同用户的处境，这直接决定</text>
+  <text x="364.8" y="280.0" class="c15" text-anchor="middle">产品质量</text>
+  <path d="M471.0 150.0 L489.0 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch04-arrow)"/>
+  <circle cx="595.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(580.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></g>
+  <text x="595.2" y="210.0" class="h18" text-anchor="middle">挑战既定流程</text>
+  <text x="595.2" y="236.0" class="c15" text-anchor="middle">拒绝单一方案；从需求、设</text>
+  <text x="595.2" y="258.0" class="c15" text-anchor="middle">计到测试，每一步都问：这</text>
+  <text x="595.2" y="280.0" class="c15" text-anchor="middle">对谁不适用？</text>
+  <path d="M701.5 150.0 L719.5 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch04-arrow)"/>
+  <circle cx="825.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(810.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="825.8" y="210.0" class="h18" text-anchor="middle">用结果检验价值</text>
+  <text x="825.8" y="236.0" class="c15" text-anchor="middle">价值观要落到结果上：宁可</text>
+  <text x="825.8" y="258.0" class="c15" text-anchor="middle">放慢，也别发布会伤害部分</text>
+  <text x="825.8" y="280.0" class="c15" text-anchor="middle">用户的产品</text>
+  <text x="32.0" y="316.0" class="c14" text-anchor="start">保持好奇，继续前行：公平是一直要做的工程工作，没有一次做完的时候</text>
+  <rect x="32.0" y="348.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="369.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="399.0" class="answer" text-anchor="start">为所有人做工程，先承认自己有盲点，再把公平当作工程目标去验证</text>
 </svg>

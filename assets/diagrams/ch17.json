@@ -1,24 +1,95 @@
 {
   "chapter": 17,
-  "title": "从限定名找到定义，再辨认调用",
-  "summary": "以书中的 absl::Monitor::Alert 为例：限定名不必连续出现在源码中，符号搜索仍可找到定义；Kythe 再用构建信息区分同名函数的调用。",
+  "title": "为什么要专门做一个代码搜索工具？",
+  "summary": "读代码比写代码花的时间多，让全公司代码可秒查值得专门投入",
   "enabled": true,
   "sourceSections": [
-    "The Code Search UI 代码搜索用户界面",
-    "Query dependent signals 查询相关信号",
-    "How? 如何做？"
+    "## The Code Search UI 代码搜索用户界面",
+    "## How Do Googlers Use Code Search? Google 员工如何使用代码搜索？",
+    "## Why a Separate Web Tool? 为什么要使用单独的 Web 工具？",
+    "## Impact of Scale on Design 规模对设计的影响",
+    "## 谷歌的实现",
+    "## Selected Trade-Offs 几项重要权衡"
   ],
-  "kind": "worked-example",
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch17.svg",
   "mobile": "assets/diagrams/ch17-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch17-story.svg",
+  "storyMobile": "assets/diagrams/ch17-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "为什么要专门做一个代码搜索工具？",
+    "answer": "读代码比写代码花的时间多，让全公司代码可秒查值得专门投入",
+    "parts": [
+      {
+        "icon": "search",
+        "label": "找到定义",
+        "text": "输入一个名字或限定名，秒级跳到定义处，哪怕它没在源码里连续出现"
+      },
+      {
+        "icon": "book-open",
+        "label": "看用法示例",
+        "text": "看别人怎么调用它，比读文档更快理解一个 API"
+      },
+      {
+        "icon": "network",
+        "label": "查影响范围",
+        "text": "谁在用这个函数？改它会波及哪些地方？交叉引用给出答案"
+      },
+      {
+        "icon": "history",
+        "label": "读历史",
+        "text": "看这段代码是谁改的、为什么改，把问题追到源头"
+      }
+    ],
+    "figure": {
+      "header": "谷歌工程师每天都在用代码搜索，典型的一次使用是这样的",
+      "footer": "支撑它的：全量索引、Kythe 交叉引用、与其他工具互链的统一地址、秒级响应；赢得信任才会被广泛使用"
+    }
+  },
+  "story": {
+    "headline": "从 grep 一行行翻代码，到全公司代码秒级可查",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "terminal",
+        "tone": "sec",
+        "title": "想知道一个函数被谁调用，先 grep 半天",
+        "text": "编辑器只看得到本地检出的代码；几十亿行的代码库，本地根本放不下，更别说建索引。"
+      },
+      {
+        "act": "发现",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "读代码的时间远多于写代码",
+        "text": "理解代码是工程师最常做的事：找定义、看示例、查影响、读历史。把这件事做快，全公司的生产力都会涨。"
+      },
+      {
+        "act": "设计",
+        "icon": "server",
+        "tone": "pri",
+        "title": "专门的网页工具：全量索引、交叉引用、统一地址",
+        "text": "Kythe 用构建信息区分同名符号；搜索、浏览、索引每个环节都保持低延迟；每段代码有唯一链接，文档和工具都指向它。"
+      },
+      {
+        "act": "取舍",
+        "icon": "scale",
+        "tone": "warm",
+        "title": "信任来自完整：索引全部代码，返回全部结果",
+        "text": "早期功能弱的版本也有人用，但只有结果完整、排序合理，工具才会被广泛依赖。规模迫使谷歌自研，IDE 索引和 grep 都不够用。"
+      }
+    ],
+    "emphasis": "帮助开发者理解代码，能显著提高工程生产力；代码搜索是这件事的关键工具。",
+    "emphasis2": "作为交互式工具，它必须快到支持“一问一答”的工作流，并且完整到让人信任。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "源码里没有连续写出 absl::Monitor::Alert，为什么仍能找到它，并且不会把另一个 Alert 的调用算进来？",
-    "expectedAnswer": "默认搜索会匹配符号限定名，完整名称不必出现在实际文本中；交叉引用使用构建信息辨认特定符号，而不是只比较函数名。",
-    "visualEncoding": "源码缩进显示 namespace、class 和 Alert 的嵌套，旁边给出对应的完整限定名；同名 ui::Monitor::Alert 明确标为另一符号，后续调用片段展示从查找定义到浏览使用处。",
-    "sourceEvidence": "The Code Search UI 代码搜索用户界面：函数调用链接到函数定义；章首脚注3：利用完整的构建信息区分同名符号；Query dependent signals 查询相关信号，脚注14：absl::Monitor::Alert 即使没有出现在实际文本中也可搜索。",
-    "beforeProblem": "原图把查询、当前代码、定义、用法和历史画成分支框，没有展示任何能据此定位或排除的代码。",
-    "whyBetter": "读者可从源码的嵌套作用域推导出查询命中的名字，并区分名称相同与符号相同；不再只是记住工具组件。",
-    "limits": "沿用书中限定名，源码及 ui 对照为教学示例，不声称存在此实际 API；省略历史面板等 UI 功能，交叉引用仍受索引时效限制。"
+    "readerQuestion": "为什么要专门做一个代码搜索工具？",
+    "expectedAnswer": "读代码比写代码花的时间多，让全公司代码可秒查值得专门投入",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、发现、设计、取舍，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## The Code Search UI 代码搜索用户界面；## How Do Googlers Use Code Search? Google 员工如何使用代码搜索？；## Why a Separate Web Tool? 为什么要使用单独的 Web 工具？；## Impact of Scale on Design 规模对设计的影响；## 谷歌的实现；## Selected Trade-Offs 几项重要权衡",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

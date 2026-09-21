@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch25-story" data-layout="desktop" role="img" aria-labelledby="ch25-story-title ch25-story-desc">
+  <title id="ch25-story-title">从半夜起来重启机器，到不知道程序跑在哪台机器上</title>
+  <desc id="ch25-story-desc">本章回顾。从半夜起来重启机器，到不知道程序跑在哪台机器上。起点：早年的谷歌：每台机器都要人管。装软件、盯故障、机器坏了半夜起来处理。机器越多，人越不够用。；转折：驯服计算环境：容器加调度器。把程序打包成容器，由调度器决定放哪台机器，坏了自动换一台。工程师只声明需要多少资源。；代价：程序必须学会被随时搬走。机器随时会换，本地状态说没就没。持久数据放在机器之外；用稳定的服务名找服务，别记地址；接受重启和重复请求。；选择：选一个抽象层次恰当的计算方案。集中托管还是自建，无服务器还是容器，各有取舍。抽象太低，人还是在管机器；太高，程序就被平台绑死。。这一章最想强调的：要扩大规模，就需要共用的基础设施来运行生产负载，软件必须为此调整。 审慎选择组织的计算方案，让它提供恰当的抽象层次。</desc>
+  <style>
+    .cg-ch25-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch25-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch25-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch25-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch25-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch25-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch25-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch25-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch25-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch25-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从半夜起来重启机器，到不知道程序跑在哪台机器上</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">早年的谷歌：每台机器都要人管</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">装软件、盯故障、机器坏了半夜起来处理。机器越多，人越不够用。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7.7c0-.6-.4-1.2-.8-1.5l-6.3-3.9a1.72 1.72 0 0 0-1.7 0l-10.3 6c-.5.2-.9.8-.9 1.4v6.6c0 .5.4 1.2.8 1.5l6.3 3.9a1.72 1.72 0 0 0 1.7 0l10.3-6c.5-.3.9-1 .9-1.5Z"/><path d="M10 21.9V14L2.1 9.1"/><path d="m10 14 11.9-6.9"/><path d="M14 19.8v-8.1"/><path d="M18 17.5V9.4"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">驯服计算环境：容器加调度器</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">把程序打包成容器，由调度器决定放哪台机器，坏了自动换一台。工程师只声明需要多少资源。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-warm-soft,#eae2cf)" stroke="var(--diagram-warm,#80531b)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-warm,#80531b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-warm,#80531b)" text-anchor="start">代价</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">程序必须学会被随时搬走</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">机器随时会换，本地状态说没就没。持久数据放在机器之外；用稳定的服务名找服务，别记地址；接受重启和重复请求。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">选择</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">选一个抽象层次恰当的计算方案</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">集中托管还是自建，无服务器还是容器，各有取舍。抽象太低，人还是在管机器；太高，程序就被平台绑死。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">要扩大规模，就需要共用的基础设施来运行生产负载，软件必须为此调整。</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">审慎选择组织的计算方案，让它提供恰当的抽象层次。</text>
+</svg>

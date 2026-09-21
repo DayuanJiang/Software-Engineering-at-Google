@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch02-story" data-layout="desktop" role="img" aria-labelledby="ch02-story-title ch02-story-desc">
+  <title id="ch02-story-title">从想藏起代码的请求，到没人能独自完成软件</title>
+  <desc id="ch02-story-desc">本章回顾。从想藏起代码的请求，到没人能独自完成软件。起点：“能不能让我把代码藏起来，等写完再给人看？”。这是作者收到最多的请求之一。背后是天才神话：我们记住的是 Linus、Guido，忘了他们身后成千的贡献者。；代价：躲起来的三个代价。巴士因子为 1，你一离开项目就停；方向错了没人早提醒，几个月后才发现；进展慢，因为一切都得自己来。；转折：协作靠三根柱子：谦逊、尊重、信任。承认自己会错，把同事当值得尊重的人，相信他们会做对。这三样有了，批评就成了帮忙。；做法：早分享、多沟通、快速失败。小步提交让人看到，出问题就做无责复盘，把注意力放在事情上。团队的成果远大于个人英雄。。这一章最想强调的：软件工程是团队运动，藏起来的代码得不到任何帮助。 谦逊、尊重、信任，缺一样，团队就会把精力耗在人际摩擦上。</desc>
+  <style>
+    .cg-ch02-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch02-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch02-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch02-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch02-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch02-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch02-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch02-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch02-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch02-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从想藏起代码的请求，到没人能独自完成软件</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">“能不能让我把代码藏起来，等写完再给人看？”</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">这是作者收到最多的请求之一。背后是天才神话：我们记住的是 Linus、Guido，忘了他们身后成千的贡献者。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">代价</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">躲起来的三个代价</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">巴士因子为 1，你一离开项目就停；方向错了没人早提醒，几个月后才发现；进展慢，因为一切都得自己来。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">协作靠三根柱子：谦逊、尊重、信任</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">承认自己会错，把同事当值得尊重的人，相信他们会做对。这三样有了，批评就成了帮忙。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">早分享、多沟通、快速失败</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">小步提交让人看到，出问题就做无责复盘，把注意力放在事情上。团队的成果远大于个人英雄。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">软件工程是团队运动，藏起来的代码得不到任何帮助。</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">谦逊、尊重、信任，缺一样，团队就会把精力耗在人际摩擦上。</text>
+</svg>

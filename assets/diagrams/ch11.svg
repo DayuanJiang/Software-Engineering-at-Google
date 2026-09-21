@@ -1,57 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch11-diagram" class="chapter-svg cg-ch11" role="img" aria-labelledby="ch11-title ch11-desc" viewBox="0 0 960 560" width="960" height="560">
-  <title id="ch11-title">测试规模与范围是两个维度</title>
-  <desc id="ch11-desc">横轴是测试范围，即验证的行为或代码路径，而非执行了多少代码；纵轴是规模，即运行资源与约束，并非代码行数。小型测试限单进程，不能访问磁盘或网络，也不能休眠或阻塞，隔离的内存文件系统例外；中型测试限单机但可跨进程；大型测试允许跨机器。着色格是本章示例：仅验证日期选择器一条路径的本机浏览器测试可以是窄范围、中型；服务器端点验证解析、请求校验和业务逻辑，用进程内替身替代所有进程外依赖后可以是广范围、小型。空白格不代表不可行，面积不表示数量。</desc>
-  <defs>
-    <marker id="ch11-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/>
-    </marker>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="472" viewBox="0 0 960 472" class="chapter-svg cg-ch11" data-layout="desktop" role="img" aria-labelledby="ch11-title ch11-desc">
+  <title id="ch11-title">为什么要写测试，写多大的测试？</title>
+  <desc id="ch11-desc">本章概览。为什么要写测试，写多大的测试？ 本章的主要部分：单元测试，约 80%：小而窄：单进程、无网络无磁盘，毫秒级，几乎不会无故失败；集成测试，约 15%：中等规模：单机多进程，验证几个组件的配合；端到端，约 5%：大而广：慢且不稳，只留关键路径。一句话：测试让代码改得放心；大部分测试应该小、快、确定</desc>
   <style>
-    .cg-ch11#ch11-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-    .cg-ch11#ch11-diagram .strong{font-weight:600}
-    .cg-ch11#ch11-diagram .secondary{font-size:20px;fill:var(--diagram-muted,#686868)}
-    .cg-ch11#ch11-diagram .grid{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-    .cg-ch11#ch11-diagram .axis{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch11-arrow)}
-    .cg-ch11#ch11-diagram .browser{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
-    .cg-ch11#ch11-diagram .endpoint{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+    .cg-ch11[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch11[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch11[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch11[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch11[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch11[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch11[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
   </style>
-  <rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-  <g id="ch11-dimensions">
-    <text class="strong" x="36" y="48">规模 size</text>
-    <text class="secondary" x="36" y="80">运行资源与约束</text>
-    <text class="strong" x="574" y="50" text-anchor="middle">范围 scope：验证哪些行为</text>
-    <text x="346" y="91" text-anchor="middle">窄：单元测试</text>
-    <text x="574" y="91" text-anchor="middle">中：集成测试</text>
-    <text x="802" y="91" text-anchor="middle">广：系统等测试</text>
-  </g>
-  <g id="ch11-size-labels">
-    <text class="strong" x="36" y="151">大型</text>
-    <text class="secondary" x="36" y="185">允许跨机器</text>
-    <text class="strong" x="36" y="249">中型</text>
-    <text class="secondary" x="36" y="283">仅限单机</text>
-    <text class="strong" x="36" y="342">小型</text>
-    <text class="secondary" x="36" y="371">
-      <tspan x="36">单进程</tspan>
-      <tspan x="36" dy="26">无磁盘或网络访问</tspan>
-    </text>
-  </g>
-  <path class="grid" d="M232 116 H916 V404 H232 Z M460 116 V404 M688 116 V404 M232 212 H916 M232 308 H916"/>
-  <path class="axis" d="M220 414 V112"/>
-  <path class="axis" d="M220 414 H922"/>
-  <g id="ch11-narrow-medium-example">
-    <rect class="browser" x="232" y="212" width="228" height="96" rx="4"/>
-    <text class="strong" x="346" y="247" text-anchor="middle">日期选择器</text>
-    <text class="secondary" x="346" y="281" text-anchor="middle">本机浏览器，单路径</text>
-  </g>
-  <g id="ch11-broad-small-example">
-    <rect class="endpoint" x="688" y="308" width="228" height="96" rx="4"/>
-    <text class="strong" x="802" y="343" text-anchor="middle">服务器端点</text>
-    <text class="secondary" x="802" y="377" text-anchor="middle">进程外依赖用替身</text>
-  </g>
-  <text class="strong" x="36" y="452">日期：只验证一条路径</text>
-  <text class="secondary" x="36" y="484">本机浏览器 → 中型 + 窄范围</text>
-  <text class="strong" x="500" y="452">端点：验证解析、校验、业务逻辑</text>
-  <text class="secondary" x="500" y="484">进程外依赖全用替身 → 小型 + 广范围</text>
-  <text class="secondary" x="36" y="519">小型还禁休眠与阻塞；隔离的内存文件系统例外。</text>
-  <text class="secondary" x="36" y="548">着色格为书中反例；空白不代表不可行；格子面积不表示数量。</text>
+  <rect x="0" y="0" width="960" height="472" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch11-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">为什么要写测试，写多大的测试？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">测试金字塔：底座宽、塔尖窄。规模（小中大）看占用的资源，范围（窄中广）看验证多少代码</text>
+  <rect x="280.0" y="114.0" width="400.0" height="64.0" rx="10" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <g transform="translate(298.0,132.0) scale(1.167)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></g>
+  <text x="340.0" y="142.0" class="h18" text-anchor="start">端到端，约 5%</text>
+  <text x="340.0" y="164.0" class="c15" text-anchor="start">大而广：慢且不稳，只留关键路径</text>
+  <rect x="160.0" y="186.0" width="640.0" height="64.0" rx="10" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <g transform="translate(178.0,204.0) scale(1.167)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></g>
+  <text x="220.0" y="214.0" class="h18" text-anchor="start">集成测试，约 15%</text>
+  <text x="220.0" y="236.0" class="c15" text-anchor="start">中等规模：单机多进程，验证几个组件的配合</text>
+  <rect x="32.0" y="258.0" width="896.0" height="64.0" rx="10" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <g transform="translate(50.0,276.0) scale(1.167)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></g>
+  <text x="92.0" y="286.0" class="h18" text-anchor="start">单元测试，约 80%</text>
+  <text x="92.0" y="308.0" class="c15" text-anchor="start">小而窄：单进程、无网络无磁盘，毫秒级，几乎不会无故失败</text>
+  <text x="32.0" y="348.0" class="c14" text-anchor="start">自动化测试是让软件能持续变更的基础；碧昂斯规则：喜欢它，就为它写个测试</text>
+  <rect x="32.0" y="376.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="397.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="427.0" class="answer" text-anchor="start">测试让代码改得放心；大部分测试应该小、快、确定</text>
 </svg>

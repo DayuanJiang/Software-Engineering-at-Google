@@ -1,47 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch13" data-layout="desktop" role="img" aria-labelledby="ch13-title ch13-desc">
-<title id="ch13-title">同一权限检查：改状态、改响应、查调用</title>
-<desc id="ch13-desc">沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。 u 表示 USER_ID，USER 表示同一用户。图中是书中测试示意，不是可直接编译的完整代码；lookupUser 交互验证用于说明证据边界，不推荐对普通只读调用重复验证。例子不证明真实授权服务的正确性，也不把三种技术定义为通用互斥分类。</desc>
-<style>
-.cg-ch13[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch13[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch13[data-layout="desktop"] .strong {font-weight:600}
-.cg-ch13[data-layout="desktop"] .good {fill:var(--diagram-primary,#087f6d);font-weight:600}
-.cg-ch13[data-layout="desktop"] .bad {fill:var(--diagram-danger,#b54750);font-weight:600}
-.cg-ch13[data-layout="desktop"] .rule {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch13[data-layout="desktop"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch13-arrow)}
-</style>
-<defs><marker id="ch13-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9 Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
-<rect id="ch13-region-1" x="0" y="0" width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="40" text-anchor="start" class="strong">同一权限检查：改状态、改响应、查调用</text>
-<text x="32" y="76" text-anchor="start" class="small">例13-7至13-9；u = USER_ID，USER 是同一用户。每次均调用 userHasAccess(u)。</text>
-<rect id="ch13-region-2" x="32" y="106" width="896" height="110" fill="var(--diagram-primary-soft,#e5f4ee)"/>
-<text x="48" y="140" text-anchor="start" class="strong" data-fit="ch13-region-2">fake：改状态</text>
-<text x="48" y="177" text-anchor="start" class="small" data-fit="ch13-region-2">执行简化实现</text>
-<text x="264" y="140" text-anchor="start" class="">授权集合：{}</text>
-<path class="arrow" d="M418 132 L463 132"/>
-<text x="480" y="140" text-anchor="start" class="">{u}</text>
-<text x="264" y="180" text-anchor="start" class="" data-fit="ch13-region-2">addAuthorizedUser(USER)</text>
-<path class="rule" d="M576 122 L576 201"/>
-<text x="610" y="140" text-anchor="start" class="" data-fit="ch13-region-2">userHasAccess(u)</text>
-<text x="610" y="180" text-anchor="start" class="good" data-fit="ch13-region-2">断言 false → true</text>
-<rect id="ch13-region-3" x="32" y="234" width="896" height="118" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
-<text x="48" y="268" text-anchor="start" class="strong" data-fit="ch13-region-3">打桩：改响应</text>
-<text x="48" y="306" text-anchor="start" class="small" data-fit="ch13-region-3">在 mock 上设定</text>
-<text x="264" y="268" text-anchor="start" class="" data-fit="ch13-region-3">lookupUser(u)</text>
-<text x="264" y="306" text-anchor="start" class="" data-fit="ch13-region-3">null → USER</text>
-<path class="rule" d="M576 250 L576 331"/>
-<text x="610" y="268" text-anchor="start" class="" data-fit="ch13-region-3">userHasAccess(u)</text>
-<text x="610" y="306" text-anchor="start" class="good" data-fit="ch13-region-3">断言 false → true</text>
-<text x="264" y="338" text-anchor="start" class="small" data-fit="ch13-region-3">不执行添加用户；响应由测试指定</text>
-<rect id="ch13-region-4" x="32" y="370" width="896" height="90" fill="var(--diagram-warm-soft,#fff3dc)"/>
-<text x="48" y="403" text-anchor="start" class="strong" data-fit="ch13-region-4">交互：查调用</text>
-<text x="48" y="438" text-anchor="start" class="small" data-fit="ch13-region-4">在 mock 上核对</text>
-<text x="264" y="403" text-anchor="start" class="" data-fit="ch13-region-4">verify(mock).lookupUser(u)</text>
-<text x="264" y="439" text-anchor="start" class="" data-fit="ch13-region-4">调用符合参数 → 通过</text>
-<path class="rule" d="M639 382 L639 448"/>
-<text x="673" y="403" text-anchor="start" class="" data-fit="ch13-region-4">权限返回值？</text>
-<text x="673" y="439" text-anchor="start" class="bad" data-fit="ch13-region-4">没有断言</text>
-<text x="32" y="488" text-anchor="start" class="small">同一 mock 可用 when(...) 设响应，也可用 verify(...) 查调用；不是互斥对象分类。</text>
-<text x="32" y="519" text-anchor="start" class="small">lookupUser 示例仅说明技术；普通只读查询通常不必再验证交互。</text>
-<text x="32" y="550" text-anchor="start" class="small">优先可行的真实实现；否则通常优先 fake，仍需真实依赖测试补充。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="472" viewBox="0 0 960 472" class="chapter-svg cg-ch13" data-layout="desktop" role="img" aria-labelledby="ch13-title ch13-desc">
+  <title id="ch13-title">测试里怎么替换掉不好用的真实依赖？</title>
+  <desc id="ch13-desc">本章概览。测试里怎么替换掉不好用的真实依赖？ 本章的主要部分：真实实现：最可信，能用就用；伪实现：轻量替代品，行为要和真的一致；打桩：直接指定返回什么，用多了测试会脆；交互验证：只查有没有调用，多用于改状态的操作。一句话：优先真实实现；用替身时首选伪实现，打桩和交互验证要克制</desc>
+  <style>
+    .cg-ch13[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch13[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch13[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch13[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch13[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch13[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch13[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch13[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch13[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch13[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="472" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch13-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">测试里怎么替换掉不好用的真实依赖？</text>
+  <rect x="40.0" y="104.0" width="320.0" height="196.0" rx="14" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <text x="64.0" y="146.0" class="h22" text-anchor="start">被测代码</text>
+  <text x="64.0" y="172.0" class="c15" text-anchor="start">它需要一个依赖才能运行</text>
+  <g transform="translate(64.0,206.0) scale(2.333)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></g>
+  <rect x="338.0" y="168.0" width="52.0" height="68.0" rx="10" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/>
+  <rect x="352" y="186" width="8" height="20" rx="2" fill="var(--diagram-secondary,#2c6096)"/><rect x="368" y="186" width="8" height="20" rx="2" fill="var(--diagram-secondary,#2c6096)"/>
+  <text x="364.0" y="258.0" class="h18" text-anchor="middle">接缝</text>
+  <text x="364.0" y="280.0" class="c13" text-anchor="middle">依赖从这里换</text>
+  <path d="M470.0 202.0 L400.0 202.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#ch13-arrow)"/>
+  <text x="484.0" y="122.0" class="c15" text-anchor="start">能插进接缝的四种东西，从上往下优先</text>
+  <rect x="472.0" y="140.0" width="440.0" height="42.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(486.0,147.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></g>
+  <text x="528.0" y="168.0" class="h18" text-anchor="start">真实实现</text>
+  <text x="636.0" y="168.0" class="c15" text-anchor="start">最可信，能用就用</text>
+  <g transform="translate(486.0,195.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></g>
+  <text x="528.0" y="216.0" class="h18" text-anchor="start">伪实现</text>
+  <text x="636.0" y="216.0" class="c15" text-anchor="start">轻量替代品，行为要和真的一致</text>
+  <g transform="translate(486.0,243.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></g>
+  <text x="528.0" y="264.0" class="h18" text-anchor="start">打桩</text>
+  <text x="636.0" y="264.0" class="c15" text-anchor="start">直接指定返回什么，用多了测试会脆</text>
+  <g transform="translate(486.0,291.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></g>
+  <text x="528.0" y="312.0" class="h18" text-anchor="start">交互验证</text>
+  <text x="636.0" y="312.0" class="c15" text-anchor="start">只查有没有调用，多用于改状态的操作</text>
+  <path d="M918 192 h6 v136 h-6" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="930.0" y="265.0" class="c13" text-anchor="start">替身</text>
+  <text x="484.0" y="346.0" class="c13" text-anchor="start">打桩和交互验证一般靠模拟框架生成的 mock 来做</text>
+  <rect x="32.0" y="376.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="397.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="427.0" class="answer" text-anchor="start">优先真实实现；用替身时首选伪实现，打桩和交互验证要克制</text>
 </svg>

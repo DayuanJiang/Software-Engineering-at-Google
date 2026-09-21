@@ -1,59 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" class="chapter-svg cg-ch05" data-layout="desktop" role="img" aria-labelledby="ch05-title ch05-desc">
-  <title id="ch05-title">先分清职责，再决定谁来做</title>
-  <desc id="ch05-desc">问题与负责角色逐行对应：经理兼顾每个人（包括 TL）的绩效、生产力、幸福感与业务需求；TL 负责技术选择、架构和推进；双方共同配齐人员、匹配任务。TLM 兼任两职，但 TL 仍需委派而非包办实现。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="484" viewBox="0 0 960 484" class="chapter-svg cg-ch05" data-layout="desktop" role="img" aria-labelledby="ch05-title ch05-desc">
+  <title id="ch05-title">从写代码到带团队，要换什么脑子？</title>
+  <desc id="ch05-desc">本章概览。从写代码到带团队，要换什么脑子？ 本章的主要部分：反模式：招庸才、放任低绩效、当老好人、事事插手；积极模式：放下自我、做催化剂、当导师、设目标、护住团队。一句话：领导者的产出是团队的产出：少插手，多清障，让人成长</desc>
   <style>
-.cg-ch05[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch05[data-layout="desktop"] .small {font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch05[data-layout="desktop"] .strong {font-weight:600}
-.cg-ch05[data-layout="desktop"] .connector {fill:none;stroke-width:2;stroke-linejoin:round}
-</style>
-  <defs>
-    <marker id="ch05-arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)" />
-    </marker>
-    <marker id="ch05-arrow-secondary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)" />
-    </marker>
-    <marker id="ch05-arrow-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)" />
-    </marker>
-    <marker id="ch05-arrow-danger" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M1 1L9 5L1 9Z" fill="var(--diagram-danger,#b54750)" />
-    </marker>
-  </defs>
-  <rect x="0" y="0" width="960" height="560" fill="var(--diagram-bg,#fff)" />
-  <g id="ch05-heading" data-box="32,12,896,72">
-    <text x="32" y="42" class="strong" text-anchor="start">先分清职责，再决定谁来做</text>
-    <text x="32" y="77" class="small" text-anchor="start">本章的角色分工：负责不等于包办实现</text>
-  </g>
-  <g id="ch05-columns" data-box="32,92,896,40">
-    <text x="48" y="122" class="small" text-anchor="start">面对的问题</text>
-    <text x="482" y="122" class="small" text-anchor="start">负责角色与行动</text>
-  </g>
-  <g id="ch05-row-0" data-box="32,140,896,110">
-    <rect x="32" y="140" width="896" height="110" fill="var(--diagram-primary-soft,#e5f4ee)" />
-    <text x="48" y="177" class="" text-anchor="start">成员与业务的需求</text>
-    <text x="48" y="207" class="" text-anchor="start">不一致，谁来兼顾？</text>
-    <text x="482" y="172" class="strong" text-anchor="start">工程经理</text>
-    <text x="482" y="204" class="small" text-anchor="start">关注成员（含 TL）的绩效与幸福感</text>
-    <text x="482" y="232" class="small" text-anchor="start">兼顾生产力与产品的业务需求</text>
-  </g>
-  <g id="ch05-row-1" data-box="32,268,896,88">
-    <rect x="32" y="268" width="896" height="88" fill="var(--diagram-secondary-soft,#eaf1fa)" />
-    <text x="48" y="305" class="" text-anchor="start">技术选型、架构、优先级</text>
-    <text x="48" y="335" class="" text-anchor="start">由谁负责？</text>
-    <text x="482" y="300" class="strong" text-anchor="start">技术负责人（TL）</text>
-    <text x="482" y="332" class="small" text-anchor="start">负责技术决策与项目推进</text>
-  </g>
-  <g id="ch05-row-2" data-box="32,374,896,88">
-    <rect x="32" y="374" width="896" height="88" fill="var(--diagram-warm-soft,#fff3dc)" />
-    <text x="48" y="411" class="" text-anchor="start">人手够不够？</text>
-    <text x="48" y="441" class="" text-anchor="start">任务交给谁？</text>
-    <text x="482" y="406" class="strong" text-anchor="start">工程经理 + TL</text>
-    <text x="482" y="438" class="small" text-anchor="start">共同配齐人员，按技能与水平匹配任务</text>
-  </g>
-  <g id="ch05-limits" data-box="32,482,896,70">
-    <text x="32" y="509" class="small" text-anchor="start">小或新团队：TLM 一人兼任两职；成熟大团队通常由两位领导搭档。</text>
-    <text x="32" y="542" class="small" text-anchor="start">TL 仍需委派：成员有时做得慢一些，也是培养团队能力的机会。</text>
-  </g>
+    .cg-ch05[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch05[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch05[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch05[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch05[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch05[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch05[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch05[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch05[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch05[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="484" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch05-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">从写代码到带团队，要换什么脑子？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">两种角色：经理管人和方向，技术负责人管技术决策；小团队常由一人兼任</text>
+  <rect x="32.0" y="114.0" width="418.0" height="222.0" rx="12" fill="var(--diagram-danger-soft,#ead9dc)"/>
+  <g transform="translate(52.0,132.0) scale(1.083)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="88.0" y="152.0" class="h20" text-anchor="start">反模式：新领导常踩的坑</text>
+  <g transform="translate(52.0,176.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="189.0" class="t15" text-anchor="start">招好说话的庸才</text>
+  <g transform="translate(52.0,206.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="219.0" class="t15" text-anchor="start">忽视低绩效者</text>
+  <g transform="translate(52.0,236.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="249.0" class="t15" text-anchor="start">忽视人的问题</text>
+  <g transform="translate(52.0,266.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="279.0" class="t15" text-anchor="start">当所有人的朋友</text>
+  <g transform="translate(52.0,296.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="309.0" class="t15" text-anchor="start">事事插手当保姆</text>
+  <rect x="510.0" y="114.0" width="418.0" height="222.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(530.0,132.0) scale(1.083)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="566.0" y="152.0" class="h20" text-anchor="start">积极模式：让团队变强</text>
+  <g transform="translate(530.0,176.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="189.0" class="t15" text-anchor="start">放下自我，信任团队</text>
+  <g transform="translate(530.0,206.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="219.0" class="t15" text-anchor="start">做催化剂，帮人清障</text>
+  <g transform="translate(530.0,236.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="249.0" class="t15" text-anchor="start">当导师，多问少答</text>
+  <g transform="translate(530.0,266.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="279.0" class="t15" text-anchor="start">设清晰目标，保持诚实</text>
+  <g transform="translate(530.0,296.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="309.0" class="t15" text-anchor="start">护住团队，把人当植物养</text>
+  <path d="M462.0 225.0 L498.0 225.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch05-arrow)"/>
+  <text x="480.0" y="211.0" class="c13" text-anchor="middle">改为</text>
+  <text x="32.0" y="360.0" class="c14" text-anchor="start">委派：成员有时做得慢一些，也是培养团队能力的机会</text>
+  <rect x="32.0" y="388.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="409.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="439.0" class="answer" text-anchor="start">领导者的产出是团队的产出：少插手，多清障，让人成长</text>
 </svg>

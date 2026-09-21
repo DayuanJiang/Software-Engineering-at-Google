@@ -1,57 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch22-root" class="chapter-svg cg-ch22" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch22-title ch22-desc">
-  <title id="ch22-title">同一项迁移，不是同一次提交</title>
-  <desc id="ch22-desc">以已建立类型别名的迁移为示例：项目甲已改名，乙仍在审查，丙遇到冲突；各分片独立提交，整体迁移尚未完成。兼容别名支持中间态，但仍有旧引用时不能删除别名。 三个项目和状态是教学示意，不是原书的真实项目或进度数据。假设别名准备与行为兼容工作已完成、三个改名分片无相互依赖。不证明任意回滚都安全，也不要求所有 LSC 都清除全部旧引用。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="444" viewBox="0 0 960 444" class="chapter-svg cg-ch22" data-layout="desktop" role="img" aria-labelledby="ch22-title ch22-desc">
+  <title id="ch22-title">一处改动牵动几千个文件，怎么做？</title>
+  <desc id="ch22-desc">本章概览。一处改动牵动几千个文件，怎么做？ 本章的主要部分：一个逻辑改动：改名、换 API、清理旧用法：逻辑上是一件事，物理上散在整个代码库；拆成分片：工具按目录或负责人自动切成许多小改动，每片都能独立审查和提交；自动审查提交：全局批准人代替逐个目录负责人；测试通过就自动提交，失败自动回滚；清理收尾：旧接口删掉，兼容别名撤掉，别让迁移停在一半。一句话：把一个大改动拆成很多小提交，靠工具和流程批量推进</desc>
   <style>
-.cg-ch22#ch22-root text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:24px; font-weight:400; letter-spacing:0; fill:var(--diagram-ink,#242424); }
-.cg-ch22#ch22-root .small { font-size:20px; fill:var(--diagram-muted,#686868); }
-.cg-ch22#ch22-root .strong { font-weight:600; }
-.cg-ch22#ch22-root .primary-ink { fill:var(--diagram-primary,#087f6d); }
-.cg-ch22#ch22-root .danger-ink { fill:var(--diagram-danger,#b54750); }
-.cg-ch22#ch22-root .secondary-ink { fill:var(--diagram-secondary,#2f6eac); }
-.cg-ch22#ch22-root .warm-ink { fill:var(--diagram-warm,#a56a1f); }
-</style>
-  <defs>
-    <marker id="ch22-primary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-primary,#087f6d)" />
-    </marker>
-    <marker id="ch22-secondary-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-secondary,#2f6eac)" />
-    </marker>
-    <marker id="ch22-warm-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-warm,#a56a1f)" />
-    </marker>
-    <marker id="ch22-danger-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-danger,#b54750)" />
-    </marker>
-    <marker id="ch22-muted-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0L8 4L0 8Z" fill="var(--diagram-muted,#686868)" />
-    </marker>
-  </defs>
-  <rect x="0" y="0" width="960" height="560" fill="var(--diagram-bg,#fff)" />
-  <text x="32" y="43" text-anchor="start" class="strong">同一项迁移，不是同一次提交</text>
-  <text x="32" y="78" text-anchor="start" class="small">示意快照：把各项目的旧类型名迁到标准类型名</text>
-  <rect x="32" y="101" width="896" height="76" fill="var(--diagram-secondary-soft,#eaf1fa)" />
-  <text x="48" y="131" text-anchor="start" class="strong" data-box="32,101,896,76">前提：已完成行为准备，并建立兼容别名</text>
-  <text x="48" y="161" text-anchor="start" data-box="32,101,896,76">scoped_ptr 与 std::unique_ptr 现在指向同一类型</text>
-  <text x="90" y="216" text-anchor="start" class="strong">一个逻辑目标：移除旧名称</text>
-  <path d="M65 237L47 237L47 441L65 441" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" />
-  <text x="96" y="250" text-anchor="start" class="small">项目 / 分片</text>
-  <text x="315" y="250" text-anchor="start" class="small">主干中的类型名</text>
-  <text x="665" y="250" text-anchor="start" class="small">该分片的提交状态</text>
-  <rect x="80" y="265" width="848" height="52" fill="var(--diagram-primary-soft,#e5f4ee)" />
-  <text x="96" y="299" text-anchor="start" data-box="80,265,848,52">项目甲</text>
-  <text x="315" y="299" text-anchor="start" data-box="80,265,848,52">std::unique_ptr</text>
-  <text x="665" y="299" text-anchor="start" data-box="80,265,848,52">已原子提交</text>
-  <rect x="80" y="325" width="848" height="52" fill="var(--diagram-secondary-soft,#eaf1fa)" />
-  <text x="96" y="359" text-anchor="start" data-box="80,325,848,52">项目乙</text>
-  <text x="315" y="359" text-anchor="start" data-box="80,325,848,52">scoped_ptr</text>
-  <text x="665" y="359" text-anchor="start" data-box="80,325,848,52">审查中，尚未提交</text>
-  <rect x="80" y="385" width="848" height="52" fill="var(--diagram-warm-soft,#fff3dc)" />
-  <text x="96" y="419" text-anchor="start" data-box="80,385,848,52">项目丙</text>
-  <text x="315" y="419" text-anchor="start" data-box="80,385,848,52">scoped_ptr</text>
-  <text x="665" y="419" text-anchor="start" data-box="80,385,848,52">冲突，需重新生成</text>
-  <text x="80" y="472" text-anchor="start" class="small">一行是一片，各自测试、审查与提交；甲不必等乙、丙一起提交。</text>
-  <path d="M32 488L928 488" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
-  <text x="32" y="519" text-anchor="start" class="strong">但乙、丙还用旧名：本次迁移未完成，不能删除旧别名。</text>
-  <text x="32" y="548" text-anchor="start" class="small">本例目标是清除旧引用；迁移期间还需检查新增旧用法，避免回流。</text>
+    .cg-ch22[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch22[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch22[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch22[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch22[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch22[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch22[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch22[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch22[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch22[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="444" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch22-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">一处改动牵动几千个文件，怎么做？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">为什么不能一次提交：冲突、审查、测试和技术限制都承受不了巨型提交</text>
+  <circle cx="134.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(119.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></g>
+  <text x="134.2" y="210.0" class="h18" text-anchor="middle">一个逻辑改动</text>
+  <text x="134.2" y="236.0" class="c15" text-anchor="middle">改名、换 API、清理旧用</text>
+  <text x="134.2" y="258.0" class="c15" text-anchor="middle">法：逻辑上是一件事，物理</text>
+  <text x="134.2" y="280.0" class="c15" text-anchor="middle">上散在整个代码库</text>
+  <path d="M240.5 150.0 L258.5 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch22-arrow)"/>
+  <circle cx="364.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(349.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></g>
+  <text x="364.8" y="210.0" class="h18" text-anchor="middle">拆成分片</text>
+  <text x="364.8" y="236.0" class="c15" text-anchor="middle">工具按目录或负责人自动切</text>
+  <text x="364.8" y="258.0" class="c15" text-anchor="middle">成许多小改动，每片都能独</text>
+  <text x="364.8" y="280.0" class="c15" text-anchor="middle">立审查和提交</text>
+  <path d="M471.0 150.0 L489.0 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch22-arrow)"/>
+  <circle cx="595.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(580.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></g>
+  <text x="595.2" y="210.0" class="h18" text-anchor="middle">自动审查提交</text>
+  <text x="595.2" y="236.0" class="c15" text-anchor="middle">全局批准人代替逐个目录负</text>
+  <text x="595.2" y="258.0" class="c15" text-anchor="middle">责人；测试通过就自动提交，</text>
+  <text x="595.2" y="280.0" class="c15" text-anchor="middle">失败自动回滚</text>
+  <path d="M701.5 150.0 L719.5 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch22-arrow)"/>
+  <circle cx="825.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(810.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></g>
+  <text x="825.8" y="210.0" class="h18" text-anchor="middle">清理收尾</text>
+  <text x="825.8" y="236.0" class="c15" text-anchor="middle">旧接口删掉，兼容别名撤掉，</text>
+  <text x="825.8" y="258.0" class="c15" text-anchor="middle">别让迁移停在一半</text>
+  <text x="32.0" y="316.0" class="c14" text-anchor="start">基础设施：政策与授权、代码库洞察、变更管理工具（Rosie）、测试与回滚</text>
+  <rect x="32.0" y="348.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="369.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="399.0" class="answer" text-anchor="start">把一个大改动拆成很多小提交，靠工具和流程批量推进</text>
 </svg>

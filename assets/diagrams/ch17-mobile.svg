@@ -1,46 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" class="chapter-svg cg-ch17" data-layout="mobile" role="img" aria-labelledby="ch17m-title ch17m-desc">
-<title id="ch17m-title">从限定名找到定义，再辨认调用</title>
-<desc id="ch17m-desc">沿用书中限定名的教学示例：monitor.h 在 namespace absl 的 Monitor 类内定义 Alert，完整限定名虽未连续出现在源码中，符号搜索仍能匹配 absl::Monitor::Alert。ui::Monitor::Alert 是另一符号；Kythe 用构建信息区分调用，而不是汇集所有名为 Alert 的代码。这里不保证交叉引用索引已更新。</desc>
-<style>
-.cg-ch17[data-layout="mobile"] text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch17[data-layout="mobile"] .small{font-size:19px;fill:var(--diagram-muted,#686868)}
-.cg-ch17[data-layout="mobile"] .strong{font-weight:600}
-.cg-ch17[data-layout="mobile"] .code{font-family:ui-monospace,'SFMono-Regular',Consolas,monospace}
-.cg-ch17[data-layout="mobile"] .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch17[data-layout="mobile"] .primary{fill:var(--diagram-primary-soft,#e5f4ee)}
-.cg-ch17[data-layout="mobile"] .primary-ink{fill:var(--diagram-primary,#087f6d)}
-.cg-ch17[data-layout="mobile"] .secondary{fill:var(--diagram-secondary-soft,#eaf1fa)}
-.cg-ch17[data-layout="mobile"] .secondary-ink{fill:var(--diagram-secondary,#2f6eac)}
-.cg-ch17[data-layout="mobile"] .warm{fill:var(--diagram-warm-soft,#fff3dc)}
-.cg-ch17[data-layout="mobile"] .warm-ink{fill:var(--diagram-warm,#a56a1f)}
-.cg-ch17[data-layout="mobile"] .danger{fill:var(--diagram-danger-soft,#faecee)}
-.cg-ch17[data-layout="mobile"] .danger-ink{fill:var(--diagram-danger,#b54750)}
-</style>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="38" class="strong" text-anchor="start">找到定义，再辨认调用</text>
-<text x="24" y="70" class="small" text-anchor="start">书中限定名的展开示例，非实际 API</text>
-<g data-box="24,90,372,66">
-<rect x="24" y="90" width="372" height="66" class="secondary"/>
-<text x="40" y="115" class="small" text-anchor="start">限定名查询</text>
-<text x="40" y="144" class="code strong" text-anchor="start">absl::Monitor::Alert</text>
-</g>
-<g data-box="24,176,372,256">
-<rect x="24" y="176" width="372" height="256" class="primary"/>
-<text x="40" y="207" class="strong" text-anchor="start">命中 monitor.h 的定义</text>
-<text x="40" y="241" class="code" text-anchor="start">namespace absl {</text>
-<text x="62" y="270" class="code" text-anchor="start">class Monitor {</text>
-<text x="84" y="299" class="code" text-anchor="start">public:</text>
-<text x="106" y="328" class="code" text-anchor="start">void Alert() {}</text>
-<text x="62" y="357" class="code" text-anchor="start">};</text>
-<text x="40" y="386" class="code" text-anchor="start">}</text>
-<text x="40" y="417" class="small" text-anchor="start">作用域组合成名字，无需连续文本</text>
-</g>
-<text x="24" y="467" class="strong" text-anchor="start">同名不等于同一符号</text>
-<text x="24" y="498" class="code danger-ink" text-anchor="start">ui::Monitor::Alert</text>
-<text x="24" y="528" class="small" text-anchor="start">属于 ui，不是本次指定的 absl 符号</text>
-<path d="M24 549L396 549" class="line"/>
-<text x="24" y="579" class="strong" text-anchor="start">再查使用处：由构建信息辨认</text>
-<text x="24" y="610" class="code" text-anchor="start">absl::Monitor m; m.Alert();</text>
-<text x="24" y="644" class="small" text-anchor="start">Kythe 不只按 Alert 的拼写配对。</text>
-<text x="24" y="670" class="small" text-anchor="start">交叉引用仍受索引时效限制。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="708" viewBox="0 0 420 708" class="chapter-svg cg-ch17" data-layout="mobile" role="img" aria-labelledby="ch17m-title ch17m-desc">
+  <title id="ch17m-title">为什么要专门做一个代码搜索工具？</title>
+  <desc id="ch17m-desc">本章概览。为什么要专门做一个代码搜索工具？ 本章的主要部分：找到定义：输入一个名字或限定名，秒级跳到定义处，哪怕它没在源码里连续出现；看用法示例：看别人怎么调用它，比读文档更快理解一个 API；查影响范围：谁在用这个函数？改它会波及哪些地方？交叉引用给出答案；读历史：看这段代码是谁改的、为什么改，把问题追到源头。一句话：读代码比写代码花的时间多，让全公司代码可秒查值得专门投入</desc>
+  <style>
+    .cg-ch17[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch17[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch17[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch17[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch17[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch17[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch17[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch17[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch17[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch17[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="708" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch17m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">为什么要专门做一个代码搜索工具？</text>
+  <text x="22.0" y="80.0" class="c13" text-anchor="start">谷歌工程师每天都在用代码搜索，典型的一次使用是这样的</text>
+  <rect x="22.0" y="98.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="124.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,116.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></g>
+  <text x="74.0" y="129.0" class="h18" text-anchor="start">找到定义</text>
+  <text x="74.0" y="154.0" class="c15" text-anchor="start">输入一个名字或限定名，秒级跳到定义处，哪</text>
+  <text x="74.0" y="176.0" class="c15" text-anchor="start">怕它没在源码里连续出现</text>
+  <path d="M210.0 188.0 L210.0 204.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch17m-arrow)"/>
+  <rect x="22.0" y="212.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="238.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,230.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></g>
+  <text x="74.0" y="243.0" class="h18" text-anchor="start">看用法示例</text>
+  <text x="74.0" y="268.0" class="c15" text-anchor="start">看别人怎么调用它，比读文档更快理解一个</text>
+  <text x="74.0" y="290.0" class="c15" text-anchor="start">API</text>
+  <path d="M210.0 302.0 L210.0 318.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch17m-arrow)"/>
+  <rect x="22.0" y="326.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="352.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,344.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></g>
+  <text x="74.0" y="357.0" class="h18" text-anchor="start">查影响范围</text>
+  <text x="74.0" y="382.0" class="c15" text-anchor="start">谁在用这个函数？改它会波及哪些地方？交叉</text>
+  <text x="74.0" y="404.0" class="c15" text-anchor="start">引用给出答案</text>
+  <path d="M210.0 416.0 L210.0 432.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch17m-arrow)"/>
+  <rect x="22.0" y="440.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="466.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,458.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></g>
+  <text x="74.0" y="471.0" class="h18" text-anchor="start">读历史</text>
+  <text x="74.0" y="496.0" class="c15" text-anchor="start">看这段代码是谁改的、为什么改，把问题追到</text>
+  <text x="74.0" y="518.0" class="c15" text-anchor="start">源头</text>
+  <text x="22.0" y="550.0" class="c13" text-anchor="start">支撑它的：全量索引、Kythe 交叉引用、与其他工具互链的统一</text>
+  <text x="22.0" y="570.0" class="c13" text-anchor="start">地址、秒级响应；赢得信任才会被广泛使用</text>
+  <rect x="22.0" y="596.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="617.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="643.0" class="answer-m" text-anchor="start">读代码比写代码花的时间多，让全公司代码可</text>
+  <text x="36.0" y="669.0" class="answer-m" text-anchor="start">秒查值得专门投入</text>
 </svg>

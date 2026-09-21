@@ -1,44 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch08-diagram" class="chapter-svg cg-ch08" role="img" aria-labelledby="ch08-title ch08-desc" viewBox="0 0 960 560" width="960" height="560">
-<title id="ch08-title">同一个 unique_ptr，为何先禁用后采用？</title>
-<desc id="ch08-desc">书中引入 std::unique_ptr 的历史案例。目标始终是可读、可维护的代码库。C++11 初引入时，类型和移动语义陌生，谷歌禁用并沿用已有智能指针。工程师逐渐理解后，调用处显示所有权的长期阅读收益使采用成为值得的取舍；复杂性的代价并没有消失。时间本身不是放行条件。</desc>
-<style>
-.cg-ch08#ch08-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch08#ch08-diagram .strong{font-weight:600}
-.cg-ch08#ch08-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch08#ch08-diagram .code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
-.cg-ch08#ch08-diagram .green{fill:var(--diagram-primary,#087f6d)}
-.cg-ch08#ch08-diagram .red{fill:var(--diagram-danger,#b54750)}
-.cg-ch08#ch08-diagram .blue{fill:var(--diagram-secondary,#2f6eac)}
-.cg-ch08#ch08-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch08#ch08-diagram .arrow{fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch08-arrow)}
-.cg-ch08#ch08-diagram .uncertain{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;stroke-dasharray:5 5}
-</style>
-<defs><marker id="ch08-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
-<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="40" class="strong">同一个 unique_ptr，为何先禁用后采用？</text>
-<text x="32" y="70" class="small">书中历史案例：不是推翻“为读者优化”，而是重新权衡如何实现它</text>
-<text x="480" y="112" class="strong green" text-anchor="middle">持续目标：让代码长期可读、可维护</text>
-<path class="line" d="M32 130H928"/>
-<text x="190" y="175" class="strong">C++11 刚引入时</text>
-<path class="arrow" d="M433 168H545"/>
-<text x="570" y="175" class="strong">逐渐适应移动语义后</text>
-<text x="32" y="230" class="strong">代价</text>
-<text x="190" y="230">类型、移动语义都陌生</text>
-<text x="570" y="230">逐渐理解，复杂性成本仍在</text>
-<path class="line" d="M32 251H928"/>
-<text x="32" y="291" class="strong">判断依据</text>
-<text x="190" y="286">暂不引入看来更安全</text>
-<text x="190" y="318" class="small">继续使用熟悉的智能指针</text>
-<text x="570" y="286">调用处提供所有权信息</text>
-<text x="570" y="318" class="small">长期阅读收益使采用值得</text>
-<path class="line" d="M32 340H928"/>
-<text x="32" y="388" class="strong">决定</text>
-<rect id="ch08-box1" x="174" y="359" width="343" height="92" rx="4" fill="var(--diagram-danger-soft,#faecee)" stroke="var(--diagram-line,#b9c9c0)"/>
-<rect id="ch08-box2" x="554" y="359" width="374" height="92" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-line,#b9c9c0)"/>
-<text x="190" y="392" class="strong" data-box="ch08-box1">禁用 std::unique_ptr</text>
-<text x="190" y="427" class="small" data-box="ch08-box1">工具检测并拦截引用</text>
-<text x="570" y="392" class="strong" data-box="ch08-box2">采用 std::unique_ptr</text>
-<text x="570" y="427" class="small" data-box="ch08-box2">接受成本，换取长期可读性</text>
-<text x="32" y="494" class="small">记录决策理由 → 条件变化时重新评估，而非凭个人偏好改变规则</text>
-<text x="32" y="530" class="small">这不是“等一段时间就该放行新特性”，也没有假定学习成本已经消失。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="724" viewBox="0 0 960 724" class="chapter-svg cg-ch08" data-layout="desktop" role="img" aria-labelledby="ch08-title ch08-desc">
+  <title id="ch08-title">代码规范为什么要定，怎么定？</title>
+  <desc id="ch08-desc">本章概览。代码规范为什么要定，怎么定？ 本章的主要部分：制定规则：少而精：规则要能扛住时间和规模，优先照顾读代码的人，不为炫技留空间；自动执行：格式化器和检查工具替人执行规则，人只处理需要判断的部分；看数据：规则影响了什么？用代码库和工程师的反馈判断规则是否还合适；修改规则：规则会过时。unique_ptr 从禁用到推荐，靠的是明确的修改流程。一句话：规则服务于长期协作：少而精，能自动执行，随时代更新</desc>
+  <style>
+    .cg-ch08[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch08[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch08[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch08[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch08[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch08[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch08[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch08[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch08[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch08[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="724" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch08-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">代码规范为什么要定，怎么定？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">谷歌的风格指南是给读者写的，目标是让代码库在时间和规模上都撑得住</text>
+  <path d="M514.3 257.1 L753.8 334.3" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch08-arrow)"/>
+  <path d="M755.7 357.1 L516.2 434.3" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch08-arrow)"/>
+  <path d="M445.7 434.9 L206.2 357.7" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch08-arrow)"/>
+  <path d="M204.3 334.9 L443.8 257.7" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch08-arrow)"/>
+  <circle cx="480.0" cy="246.0" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(466.0,232.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></g>
+  <text x="480.0" y="164.0" class="h18" text-anchor="middle">制定规则</text>
+  <text x="480.0" y="186.0" class="c14" text-anchor="middle">少而精：规则要能扛住时间和规模，优先照顾读代</text>
+  <text x="480.0" y="206.0" class="c14" text-anchor="middle">码的人，不为炫技留空间</text>
+  <circle cx="790.0" cy="346.0" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(776.0,332.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></g>
+  <text x="790.0" y="400.0" class="h18" text-anchor="middle">自动执行</text>
+  <text x="790.0" y="422.0" class="c14" text-anchor="middle">格式化器和检查工具替人执行规则，</text>
+  <text x="790.0" y="442.0" class="c14" text-anchor="middle">人只处理需要判断的部分</text>
+  <circle cx="480.0" cy="446.0" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(466.0,432.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></g>
+  <text x="480.0" y="500.0" class="h18" text-anchor="middle">看数据</text>
+  <text x="480.0" y="522.0" class="c14" text-anchor="middle">规则影响了什么？用代码库和工程师的反馈判断规</text>
+  <text x="480.0" y="542.0" class="c14" text-anchor="middle">则是否还合适</text>
+  <circle cx="170.0" cy="346.0" r="28" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(156.0,332.0) scale(1.167)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></g>
+  <text x="170.0" y="400.0" class="h18" text-anchor="middle">修改规则</text>
+  <text x="170.0" y="422.0" class="c14" text-anchor="middle">规则会过时。unique_ptr 从禁用到</text>
+  <text x="170.0" y="442.0" class="c14" text-anchor="middle">推荐，靠的是明确的修改流程</text>
+  <text x="32.0" y="590.0" class="c14" text-anchor="start">并非所有做法都该写成规则：指导是建议，规则是必须；一致性本身就是价值</text>
+  <rect x="32.0" y="628.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="649.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="679.0" class="answer" text-anchor="start">规则服务于长期协作：少而精，能自动执行，随时代更新</text>
 </svg>

@@ -16,7 +16,7 @@
 <br>
 
 <a href="https://dayuanjiang.github.io/Software-Engineering-at-Google/">
-  <img src="assets/images/reader-light.png" alt="阅读器：第一章，中英对照，本章图解已展开" width="900">
+  <img src="assets/images/reader-light.png" alt="阅读器：第十四章，中英对照，章首的本章概览已展开" width="900">
 </a>
 
 </div>
@@ -33,14 +33,14 @@ Google 用二十多年时间，把几万名工程师和几十亿行代码组织�
 
 | 中文译文 | 英文原文 | 章节图解 | 脚注与译者注 |
 | :---: | :---: | :---: | :---: |
-| 约 30 万字 | 约 22 万词 | 134 张 | 263 条 |
+| 约 30 万字 | 约 22 万词 | 159 张 | 263 条 |
 
 </div>
 
 ## 特色
 
 - **逐段对照。** 每段英文原文下面紧跟中文译文。想练英文就开中英模式，想快速通读就切到纯中文，一个按钮切换。
-- **每章都有图解。** 25 章各配一张总览图，109 个关键小节另有细节图，全部是 SVG 矢量图，桌面和手机各有一套版式，可放大、可下载。
+- **每章都有图解。** 25 章各配章首的“本章概览”和章末的“本章回顾”：概览用一张地图讲这章有哪几块、怎么关联，回顾用一条故事线重讲这章想强调什么；109 个关键小节另有细节图。全部是 SVG 矢量图，由脚本从每章的内容数据生成，桌面和手机各有一套版式，可放大、可下载。
 - **脚注就地展开。** 全书 252 条脚注和 11 条译者注以弹窗形式呈现，点开即读，关上回到原处，阅读节奏不被打断。
 - **代码示例可切换为 Python。** 原书示例以 Java 为主，另有少量 C++ 和 Go。每个示例右上角有“Java | Python”标签，点一下就切换全书示例的语言。63 个示例中的 58 个有等价的 Python 改写并带语法高亮，其余 5 个没有对应写法，Python 标签置灰，悬停可见原因。
 - **术语前后一致。** 核心术语经过人工审定，译法、适用范围和例外都记录在术语表里，全书统一。
@@ -66,8 +66,8 @@ python3 -m http.server 8000
 
 <table>
   <tr>
-    <td align="center"><img src="assets/images/reader-light.png" alt="浅色主题，中英对照模式" width="440"><br><sub>浅色主题，中英对照，章首图解</sub></td>
-    <td align="center"><img src="assets/images/reader-dark.png" alt="深色主题，正文内嵌小节图解" width="440"><br><sub>深色主题，正文内嵌小节图解与译者补充</sub></td>
+    <td align="center"><img src="assets/images/reader-light.png" alt="浅色主题，中英对照模式" width="440"><br><sub>浅色主题，中英对照，章首的本章概览</sub></td>
+    <td align="center"><img src="assets/images/reader-dark.png" alt="深色主题，章末的本章回顾" width="440"><br><sub>深色主题，章末的本章回顾：故事线与最想强调的主张</sub></td>
   </tr>
 </table>
 
@@ -76,9 +76,9 @@ python3 -m http.server 8000
 | 顶栏 | 中英 / 中文切换，阅读设置（主题、字号、代码示例语言），GitHub 仓库链接 |
 | 左栏 | 全书搜索，章节列表 |
 | 右栏 | 本章目录，随滚动高亮当前小节 |
-| 章首 | 本章图解，默认展开，可收起，支持放大、适应窗口、下载 SVG |
+| 章首 | 本章概览，默认展开，可收起，支持放大、适应窗口、下载 SVG |
 | 正文 | 小节图解内嵌显示，脚注和译者注点击弹出，代码示例右上角的标签切换原文或 Python 改写 |
-| 章末 | 上一章 / 下一章 |
+| 章末 | 本章回顾（故事线与最想强调的主张），上一章 / 下一章 |
 
 ## 章节导览
 
@@ -102,7 +102,7 @@ assets/reader-review/        每章编译后的脚注、译者注和显示修订
 assets/search-index.json     全书搜索索引，第一次搜索时加载
 assets/reader-content/       脚注与译者注的审校源数据
 assets/code-variants/        代码示例的 Python 改写：每章一个目录，原文与改写成对存放，编译为按章 JSON
-assets/diagrams/             134 张图解的 SVG 与元数据
+assets/diagrams/             159 张图解的 SVG 与元数据；章首概览和章末回顾由 chNN.json 里的内容生成
 assets/vendor/               本地化的 Docsify 与图标依赖
 tools/                       审校、校验和构建脚本，用 uv 管理
 translation-review/          全书润色的审校记录、术语表与验收数据
@@ -136,9 +136,10 @@ uv sync
 uv run --with pytest pytest -q
 ```
 
-改动正文、图解或译者注后，重新生成阅读器清单和搜索索引。CI 会检查这两类生成文件是否与源文件同步。
+改动正文、图解或译者注后，重新生成章首和章末图、阅读器清单和搜索索引。CI 会检查这些生成文件是否与源文件同步。
 
 ```bash
+uv run python build_chapter_figures.py
 uv run python build_reader_manifest.py
 uv run python build_search_index.py
 ```

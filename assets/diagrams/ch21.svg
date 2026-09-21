@@ -1,44 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch21" data-layout="desktop" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="ch21-title ch21-desc">
-<title id="ch21-title">依赖更新：谁能验证受影响的用法？</title>
-<desc id="ch21-desc">示意网络中，私有 libuser 经 liba 使用结果，liba 调用 libbase 的 Foo。实线从使用方指向依赖方；libbase 的候选改动需要沿虚线反向查找 liba 和 libuser 的受影响测试。上游能运行可见使用方的测试，但不能据本地测试通过推断私有用法可用。私有使用方要补充验证，必要变更还需迁移协调或工具。Live at Head 依赖测试、可见性和责任安排，不是普适的无条件选最新版策略。</desc>
-<style>
-.cg-ch21[data-layout="desktop"] text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch21[data-layout="desktop"] .small{font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch21[data-layout="desktop"] .strong{font-weight:600}
-.cg-ch21[data-layout="desktop"] .primary{fill:var(--diagram-primary,#087f6d)}
-.cg-ch21[data-layout="desktop"] .secondary{fill:var(--diagram-secondary,#2f6eac)}
-.cg-ch21[data-layout="desktop"] .warm{fill:var(--diagram-warm,#a56a1f)}
-.cg-ch21[data-layout="desktop"] .danger{fill:var(--diagram-danger,#b54750)}
-</style><defs>
-<marker id="ch21-secondary-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-secondary,#2f6eac)"/></marker>
-<marker id="ch21-warm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-warm,#a56a1f)"/></marker>
-<marker id="ch21-muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-muted,#686868)"/></marker>
-</defs>
-<rect id="ch21-shape-1" x="0" y="0" width="960" height="560" rx="0" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="42" class="strong" text-anchor="start">依赖更新：谁能验证受影响的用法？</text>
-<text x="32" y="76" class="small" text-anchor="start">实线：使用方指向依赖方；虚线：沿反向依赖查找受影响测试</text>
-<rect id="ch21-shape-2" x="32" y="106" width="246" height="224" rx="0" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5" stroke-dasharray="6 5"/>
-<text x="48" y="139" class="small" text-anchor="start">使用方组织（私有）</text>
-<rect id="ch21-shape-3" x="310" y="106" width="618" height="224" rx="0" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1.5" stroke-dasharray="6 5"/>
-<text x="330" y="139" class="small" text-anchor="start">上游可见项目（示意）</text>
-<rect id="ch21-shape-4" x="50" y="174" width="208" height="98" rx="4" fill="var(--diagram-warm-soft,#fff3dc)" stroke="var(--diagram-warm,#a56a1f)" stroke-width="1.5"/>
-<text x="154.0" y="215.0" class="strong" text-anchor="middle" data-owner="ch21-shape-4">libuser</text>
-<text x="154.0" y="247.0" class="small" text-anchor="middle" data-owner="ch21-shape-4">经 liba 使用结果</text>
-<rect id="ch21-shape-5" x="338" y="174" width="230" height="98" rx="4" fill="var(--diagram-secondary-soft,#eaf1fa)" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="1.5"/>
-<text x="453.0" y="215.0" class="strong" text-anchor="middle" data-owner="ch21-shape-5">liba</text>
-<text x="453.0" y="247.0" class="small" text-anchor="middle" data-owner="ch21-shape-5">调用 Foo()</text>
-<rect id="ch21-shape-6" x="656" y="174" width="252" height="98" rx="4" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
-<text x="782.0" y="215.0" class="strong" text-anchor="middle" data-owner="ch21-shape-6">libbase</text>
-<text x="782.0" y="247.0" class="small" text-anchor="middle" data-owner="ch21-shape-6">候选：改动 Foo()</text>
-<path data-connector="true" d="M260 222H336" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-secondary-arrow)"/>
-<path data-connector="true" d="M570 222H654" fill="none" stroke="var(--diagram-secondary,#2f6eac)" stroke-width="2" marker-end="url(#ch21-secondary-arrow)"/>
-<path data-connector="true" d="M782 274V308H453V275" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch21-warm-arrow)" stroke-dasharray="6 5"/>
-<path data-connector="true" d="M453 308H154V275" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" marker-end="url(#ch21-warm-arrow)" stroke-dasharray="6 5"/>
-<text x="48" y="379" class="strong" text-anchor="start">libbase 本地测试通过</text>
-<text x="400" y="379" class="" text-anchor="start">只验证了测试覆盖到的本地用法</text>
-<path d="M32 400h896" stroke="var(--diagram-line,#b9c9c0)" stroke-width="1" fill="none"/>
-<text x="48" y="437" class="strong" text-anchor="start">再测 liba / libuser</text>
-<text x="400" y="437" class="" text-anchor="start">调用方式与结果假设才进入验证</text>
-<text x="32" y="492" class="small" text-anchor="start">看不到私有用法？使用方补测试；必要变更还需迁移协调或工具。</text>
-<text x="32" y="530" class="small" text-anchor="start">Live at Head 依赖这些责任与条件，不是无条件选最新版本。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="472" viewBox="0 0 960 472" class="chapter-svg cg-ch21" data-layout="desktop" role="img" aria-labelledby="ch21-title ch21-desc">
+  <title id="ch21-title">用别人的代码，版本该怎么跟？</title>
+  <desc id="ch21-desc">本章概览。用别人的代码，版本该怎么跟？ 本章的主要部分：全部不动：永远用同一个版本，直到不得不换；语义化版本：看版本号猜兼容，靠得住吗？；打包发行版：跟着一个经过整体测试的集合走；跟随最新：Live at Head：一起改、一起测。一句话：依赖问题的根源是时间和信任，版本号替代不了实际测试</desc>
+  <style>
+    .cg-ch21[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch21[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch21[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch21[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch21[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch21[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch21[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch21[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch21[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch21[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="472" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch21-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">用别人的代码，版本该怎么跟？</text>
+  <rect x="40.0" y="104.0" width="320.0" height="196.0" rx="14" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <text x="64.0" y="146.0" class="h22" text-anchor="start">你的项目</text>
+  <text x="64.0" y="172.0" class="c15" text-anchor="start">它用了别人维护、随时在变的代码</text>
+  <g transform="translate(64.0,206.0) scale(2.333)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></g>
+  <rect x="338.0" y="168.0" width="52.0" height="68.0" rx="10" fill="var(--diagram-bg,#fff)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/>
+  <rect x="352" y="186" width="8" height="20" rx="2" fill="var(--diagram-secondary,#2c6096)"/><rect x="368" y="186" width="8" height="20" rx="2" fill="var(--diagram-secondary,#2c6096)"/>
+  <text x="364.0" y="258.0" class="h18" text-anchor="middle">依赖</text>
+  <text x="364.0" y="280.0" class="c13" text-anchor="middle">版本策略从这里定</text>
+  <path d="M470.0 202.0 L400.0 202.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#ch21-arrow)"/>
+  <text x="484.0" y="122.0" class="c15" text-anchor="start">四种跟版本的策略，各有代价</text>
+  <g transform="translate(486.0,147.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></g>
+  <text x="528.0" y="168.0" class="h18" text-anchor="start">全部不动</text>
+  <text x="636.0" y="168.0" class="c15" text-anchor="start">永远用同一个版本，直到不得不换</text>
+  <g transform="translate(486.0,195.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></g>
+  <text x="528.0" y="216.0" class="h18" text-anchor="start">语义化版本</text>
+  <text x="636.0" y="216.0" class="c15" text-anchor="start">看版本号猜兼容，靠得住吗？</text>
+  <g transform="translate(486.0,243.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></g>
+  <text x="528.0" y="264.0" class="h18" text-anchor="start">打包发行版</text>
+  <text x="636.0" y="264.0" class="c15" text-anchor="start">跟着一个经过整体测试的集合走</text>
+  <g transform="translate(486.0,291.0) scale(1.167)" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></g>
+  <text x="528.0" y="312.0" class="h18" text-anchor="start">跟随最新</text>
+  <text x="636.0" y="312.0" class="c15" text-anchor="start">Live at Head：一起改、一起测</text>
+  <text x="484.0" y="346.0" class="c13" text-anchor="start">SemVer 把“这次改动多大风险”压成一个数字，包管理器却把它当成事实</text>
+  <rect x="32.0" y="376.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="397.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="427.0" class="answer" text-anchor="start">依赖问题的根源是时间和信任，版本号替代不了实际测试</text>
 </svg>

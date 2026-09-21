@@ -1,54 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch09-diagram" class="chapter-svg cg-ch09" role="img" aria-labelledby="ch09-title ch09-desc" viewBox="0 0 960 560" width="960" height="560">
-<title id="ch09-title">三项批准，不等于三位审查者</title>
-<desc id="ch09-desc">本章谷歌流程的三个示例。作者甲没有所有权和语言资格时，合格的审查者乙可以同时给出他人 LGTM、代码所有者批准和相应语言 Readability 批准。作者甲具备后两项资格时，只需另一位工程师乙给出 LGTM。同样有资格的甲如果仅自审，仍然缺少他人 LGTM，不能提交。批准齐全还必须处理全部审查意见。这不是其他平台的权限政策，也没有假定每次修改自动撤销批准。</desc>
-<style>
-.cg-ch09#ch09-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch09#ch09-diagram .strong{font-weight:600}
-.cg-ch09#ch09-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch09#ch09-diagram .peer{fill:var(--diagram-secondary,#2f6eac);font-weight:600}
-.cg-ch09#ch09-diagram .author{fill:var(--diagram-primary,#087f6d);font-weight:600}
-.cg-ch09#ch09-diagram .danger{fill:var(--diagram-danger,#b54750);font-weight:600}
-.cg-ch09#ch09-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
-.cg-ch09#ch09-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch09-arrow)}
-</style>
-<defs><marker id="ch09-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
-<rect id="ch09-box1" x="0" y="0" width="960" height="560" rx="0" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="40" class="strong" text-anchor="start">三项批准，不等于三位审查者</text>
-<text x="32" y="72" class="small" text-anchor="start">本章谷歌流程｜甲是作者，乙是另一位工程师；以下为角色组合示例</text>
-<text x="48" y="116" class="small" text-anchor="start">人员条件</text>
-<text x="350" y="116" class="small" text-anchor="middle">他人 LGTM</text>
-<text x="510" y="116" class="small" text-anchor="middle">所有者批准</text>
-<text x="680" y="116" class="small" text-anchor="middle">Readability</text>
-<text x="849" y="116" class="small" text-anchor="middle">批准状态</text>
-<text x="510" y="144" class="small" text-anchor="middle">相应目录</text>
-<text x="680" y="144" class="small" text-anchor="middle">相应语言</text>
-<rect id="ch09-box2" x="32" y="160" width="896" height="72" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
-<text x="48" y="189" class="strong" text-anchor="start" data-box="ch09-box2">甲无后两项资格</text>
-<text x="48" y="217" class="small" text-anchor="start" data-box="ch09-box2">乙有所有权与语言资格</text>
-<text x="350" y="204" class="peer" text-anchor="middle" data-box="ch09-box2">审查者乙</text>
-<text x="510" y="204" class="peer" text-anchor="middle" data-box="ch09-box2">审查者乙</text>
-<text x="680" y="204" class="peer" text-anchor="middle" data-box="ch09-box2">审查者乙</text>
-<text x="849" y="204" class="strong" text-anchor="middle" data-box="ch09-box2">三项齐全</text>
-<rect id="ch09-box3" x="32" y="242" width="896" height="72" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
-<text x="48" y="271" class="strong" text-anchor="start" data-box="ch09-box3">甲有后两项资格</text>
-<text x="48" y="299" class="small" text-anchor="start" data-box="ch09-box3">乙提供独立的同行审查</text>
-<text x="350" y="286" class="peer" text-anchor="middle" data-box="ch09-box3">审查者乙</text>
-<text x="510" y="286" class="author" text-anchor="middle" data-box="ch09-box3">作者甲</text>
-<text x="680" y="286" class="author" text-anchor="middle" data-box="ch09-box3">作者甲</text>
-<text x="849" y="286" class="strong" text-anchor="middle" data-box="ch09-box3">三项齐全</text>
-<rect id="ch09-box4" x="32" y="324" width="896" height="72" rx="0" fill="var(--diagram-danger-soft,#faecee)"/>
-<text x="48" y="353" class="strong" text-anchor="start" data-box="ch09-box4">甲有资格，但仅自审</text>
-<text x="48" y="381" class="small" text-anchor="start" data-box="ch09-box4">没有其他工程师认可</text>
-<text x="350" y="368" class="danger" text-anchor="middle" data-box="ch09-box4">缺少</text>
-<text x="510" y="368" class="author" text-anchor="middle" data-box="ch09-box4">作者甲</text>
-<text x="680" y="368" class="author" text-anchor="middle" data-box="ch09-box4">作者甲</text>
-<text x="849" y="368" class="danger" text-anchor="middle" data-box="ch09-box4">不可提交</text>
-<path d="M270 96 V396" class="line"/>
-<path d="M430 96 V396" class="line"/>
-<path d="M590 96 V396" class="line"/>
-<path d="M770 96 V396" class="line"/>
-<text x="32" y="438" class="strong" text-anchor="start">提交还须：全部审查意见已处理</text>
-<text x="32" y="474" class="small" text-anchor="start">意见未处理：即使三项批准齐全，也还不能提交。自审不能充当他人的 LGTM。</text>
-<text x="32" y="514" class="small" text-anchor="start">默认只需一个 LGTM；作者也可明确要求所有审查者同意。</text>
-<text x="32" y="543" class="small" text-anchor="start">Readability 是相应语言的规范审查资格，不只是“读懂了代码”。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="444" viewBox="0 0 960 444" class="chapter-svg cg-ch09" data-layout="desktop" role="img" aria-labelledby="ch09-title ch09-desc">
+  <title id="ch09-title">每次改动都要别人看过，值不值？</title>
+  <desc id="ch09-desc">本章概览。每次改动都要别人看过，值不值？ 本章的主要部分：写好改动：改动要小，描述要清楚；提交前先看一遍自动检查结果；请人审查：选尽量少的审查者；审查者礼貌、专业、快速回复；三项批准：有人认可（LGTM）、目录负责人同意、该语言可读性认证；一人可以兼任多项；处理意见后提交：所有意见处理完才能提交；审查记录成为代码的历史。一句话：值：代码审查是团队共同拥有代码库的方式，收益远超找错</desc>
+  <style>
+    .cg-ch09[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch09[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch09[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch09[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch09[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch09[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch09[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch09[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch09[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch09[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="444" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch09-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">每次改动都要别人看过，值不值？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">谷歌每一次改动提交前都要经过审查；流程本身不复杂，价值在流程之外</text>
+  <circle cx="134.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(119.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></g>
+  <text x="134.2" y="210.0" class="h18" text-anchor="middle">写好改动</text>
+  <text x="134.2" y="236.0" class="c15" text-anchor="middle">改动要小，描述要清楚；提</text>
+  <text x="134.2" y="258.0" class="c15" text-anchor="middle">交前先看一遍自动检查结果</text>
+  <path d="M240.5 150.0 L258.5 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch09-arrow)"/>
+  <circle cx="364.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(349.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></g>
+  <text x="364.8" y="210.0" class="h18" text-anchor="middle">请人审查</text>
+  <text x="364.8" y="236.0" class="c15" text-anchor="middle">选尽量少的审查者；审查者</text>
+  <text x="364.8" y="258.0" class="c15" text-anchor="middle">礼貌、专业、快速回复</text>
+  <path d="M471.0 150.0 L489.0 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch09-arrow)"/>
+  <circle cx="595.2" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(580.2,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="595.2" y="210.0" class="h18" text-anchor="middle">三项批准</text>
+  <text x="595.2" y="236.0" class="c15" text-anchor="middle">有人认可（LGTM）、目录负</text>
+  <text x="595.2" y="258.0" class="c15" text-anchor="middle">责人同意、该语言可读性认</text>
+  <text x="595.2" y="280.0" class="c15" text-anchor="middle">证；一人可以兼任多项</text>
+  <path d="M701.5 150.0 L719.5 150.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch09-arrow)"/>
+  <circle cx="825.8" cy="150.0" r="30" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(810.8,135.0) scale(1.250)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="3" x2="9" y1="12" y2="12"/><line x1="15" x2="21" y1="12" y2="12"/></g>
+  <text x="825.8" y="210.0" class="h18" text-anchor="middle">处理意见后提交</text>
+  <text x="825.8" y="236.0" class="c15" text-anchor="middle">所有意见处理完才能提交；</text>
+  <text x="825.8" y="258.0" class="c15" text-anchor="middle">审查记录成为代码的历史</text>
+  <text x="32.0" y="316.0" class="c14" text-anchor="start">带来什么：发现错误、代码更好懂、全库一致、知识传播、心理上的共同所有权、留下记录</text>
+  <rect x="32.0" y="348.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="369.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="399.0" class="answer" text-anchor="start">值：代码审查是团队共同拥有代码库的方式，收益远超找错</text>
 </svg>

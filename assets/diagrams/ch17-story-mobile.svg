@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="927" viewBox="0 0 420 927" class="chapter-svg cg-ch17-story" data-layout="mobile" role="img" aria-labelledby="ch17-storym-title ch17-storym-desc">
+  <title id="ch17-storym-title">从 grep 一行行翻代码，到全公司代码秒级可查</title>
+  <desc id="ch17-storym-desc">本章回顾。从 grep 一行行翻代码，到全公司代码秒级可查。起点：想知道一个函数被谁调用，先 grep 半天。编辑器只看得到本地检出的代码；几十亿行的代码库，本地根本放不下，更别说建索引。；发现：读代码的时间远多于写代码。理解代码是工程师最常做的事：找定义、看示例、查影响、读历史。把这件事做快，全公司的生产力都会涨。；设计：专门的网页工具：全量索引、交叉引用、统一地址。Kythe 用构建信息区分同名符号；搜索、浏览、索引每个环节都保持低延迟；每段代码有唯一链接，文档和工具都指向它。；取舍：信任来自完整：索引全部代码，返回全部结果。早期功能弱的版本也有人用，但只有结果完整、排序合理，工具才会被广泛依赖。规模迫使谷歌自研，IDE 索引和 grep 都不够用。。这一章最想强调的：帮助开发者理解代码，能显著提高工程生产力；代码搜索是这件事的关键工具。 作为交互式工具，它必须快到支持“一问一答”的工作流，并且完整到让人信任。</desc>
+  <style>
+    .cg-ch17-story[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch17-story[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch17-story[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch17-story[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch17-story[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch17-story[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch17-story[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch17-story[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch17-story[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch17-story[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="927" fill="var(--diagram-bg,#fff)"/>
+  <text x="22.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M40 168 V 563" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="22.0" y="62.0" class="story-headline-m" text-anchor="start">从 grep 一行行翻代码，到全公司代码秒</text>
+  <text x="22.0" y="90.0" class="story-headline-m" text-anchor="start">级可查</text>
+  <circle cx="40.0" cy="146.0" r="18" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(31.0,137.0) scale(0.750)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></g>
+  <text x="76.0" y="134.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="76.0" y="158.0" class="h18" text-anchor="start">想知道一个函数被谁调用，先 grep 半天</text>
+  <text x="76.0" y="184.0" class="t15" text-anchor="start">编辑器只看得到本地检出的代码；几十亿行的代</text>
+  <text x="76.0" y="207.0" class="t15" text-anchor="start">码库，本地根本放不下，更别说建索引。</text>
+  <circle cx="40.0" cy="269.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,260.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></g>
+  <text x="76.0" y="257.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">发现</text>
+  <text x="76.0" y="281.0" class="h18" text-anchor="start">读代码的时间远多于写代码</text>
+  <text x="76.0" y="307.0" class="t15" text-anchor="start">理解代码是工程师最常做的事：找定义、看示例、</text>
+  <text x="76.0" y="330.0" class="t15" text-anchor="start">查影响、读历史。把这件事做快，全公司的生产</text>
+  <text x="76.0" y="353.0" class="t15" text-anchor="start">力都会涨。</text>
+  <circle cx="40.0" cy="415.0" r="18" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(31.0,406.0) scale(0.750)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></g>
+  <text x="76.0" y="403.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">设计</text>
+  <text x="76.0" y="427.0" class="h18" text-anchor="start">专门的网页工具：全量索引、交叉引用、</text>
+  <text x="76.0" y="451.0" class="h18" text-anchor="start">统一地址</text>
+  <text x="76.0" y="477.0" class="t15" text-anchor="start">Kythe 用构建信息区分同名符号；搜索、浏览、</text>
+  <text x="76.0" y="500.0" class="t15" text-anchor="start">索引每个环节都保持低延迟；每段代码有唯一链</text>
+  <text x="76.0" y="523.0" class="t15" text-anchor="start">接，文档和工具都指向它。</text>
+  <circle cx="40.0" cy="585.0" r="18" fill="var(--diagram-warm-soft,#eae2cf)" stroke="var(--diagram-warm,#80531b)" stroke-width="2"/><g transform="translate(31.0,576.0) scale(0.750)" fill="none" stroke="var(--diagram-warm,#80531b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></g>
+  <text x="76.0" y="573.0" class="act" fill="var(--diagram-warm,#80531b)" text-anchor="start">取舍</text>
+  <text x="76.0" y="597.0" class="h18" text-anchor="start">信任来自完整：索引全部代码，返回全部</text>
+  <text x="76.0" y="621.0" class="h18" text-anchor="start">结果</text>
+  <text x="76.0" y="647.0" class="t15" text-anchor="start">早期功能弱的版本也有人用，但只有结果完整、</text>
+  <text x="76.0" y="670.0" class="t15" text-anchor="start">排序合理，工具才会被广泛依赖。规模迫使谷歌</text>
+  <text x="76.0" y="693.0" class="t15" text-anchor="start">自研，IDE 索引和 grep 都不够用。</text>
+  <rect x="22.0" y="731.0" width="376.0" height="168.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(40.0,751.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="78.0" y="759.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="78.0" y="785.0" class="emph-m" text-anchor="start">帮助开发者理解代码，能显著提高工程</text>
+  <text x="78.0" y="809.0" class="emph-m" text-anchor="start">生产力；代码搜索是这件事的关键工</text>
+  <text x="78.0" y="833.0" class="emph-m" text-anchor="start">具。</text>
+  <text x="78.0" y="857.0" class="c14" text-anchor="start">作为交互式工具，它必须快到支持“一问一答”</text>
+  <text x="78.0" y="878.0" class="c14" text-anchor="start">的工作流，并且完整到让人信任。</text>
+</svg>

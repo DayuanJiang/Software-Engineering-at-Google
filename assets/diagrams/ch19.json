@@ -1,24 +1,101 @@
 {
   "chapter": 19,
-  "title": "获批后，为什么还不能提交？",
-  "summary": "同一条命名意见的前后对照：LGTM 和所需批准不变，作者修改代码并回复 Done 后，未解决意见从 1 变为 0，才满足基本审查条件；提交前检查仍须通过。",
-  "sourceSections": [
-    "Code Review Flow 代码审查流程",
-    "Commenting 提出审查意见",
-    "Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）"
-  ],
-  "kind": "before-after",
+  "title": "一个代码审查工具要做好哪些事？",
+  "summary": "把审查的每一步放在一个界面里，让审查快、透明、有记录",
   "enabled": true,
+  "sourceSections": [
+    "## Code Review Tooling Principles 代码审查工具的设计原则",
+    "## Code Review Flow 代码审查流程",
+    "## Stage 1: Create a Change 阶段1：创建变更",
+    "## Stage 2: Request Review 阶段2：请求审查",
+    "## Stages 3 and 4: Understanding and Commenting on a Change 阶段3和4：理解变更并提出审查意见",
+    "## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）",
+    "## Stage 6: Commiting a Change 阶段6：提交变更"
+  ],
+  "kind": "pipeline",
+  "desktop": "assets/diagrams/ch19.svg",
+  "mobile": "assets/diagrams/ch19-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch19-story.svg",
+  "storyMobile": "assets/diagrams/ch19-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "一个代码审查工具要做好哪些事？",
+    "answer": "把审查的每一步放在一个界面里，让审查快、透明、有记录",
+    "parts": [
+      {
+        "icon": "pen-line",
+        "label": "创建变更",
+        "text": "写改动，先看静态分析的自动意见"
+      },
+      {
+        "icon": "user-check",
+        "label": "请求审查",
+        "text": "选审查者，工具建议合适的人"
+      },
+      {
+        "icon": "message-square",
+        "label": "理解评论",
+        "text": "看差异、留意见，作者回复并修改"
+      },
+      {
+        "icon": "badge-check",
+        "label": "批准评分",
+        "text": "LGTM 和所需批准；关注集让人知道轮到谁"
+      },
+      {
+        "icon": "git-commit-horizontal",
+        "label": "提交",
+        "text": "意见都处理完，才能提交"
+      }
+    ],
+    "figure": {
+      "header": "设计原则：简单、信任工程师、通用、和其他工具打通；下面是一次审查在 Critique 里走过的路",
+      "footer": "信任与沟通是核心，工具只是让它们更顺；和其他工具紧密集成是好体验的关键"
+    }
+  },
+  "story": {
+    "headline": "从一封邮件里的 diff，到一条改动在 Critique 里走完全程",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "mail-question",
+        "tone": "sec",
+        "title": "审查曾经就是把 diff 发给同事",
+        "text": "看不到上下文，不知道谁在等谁，意见散在邮件里。流程不变，体验却决定了大家愿不愿意认真审。"
+      },
+      {
+        "act": "原则",
+        "icon": "compass",
+        "tone": "pri",
+        "title": "简单、信任、通用、集成",
+        "text": "Critique 不替人做判断，它信任工程师；界面简单，通用到各种语言和团队都能用，并且和构建、分析、搜索打通。"
+      },
+      {
+        "act": "流程",
+        "icon": "route",
+        "tone": "pri",
+        "title": "六个阶段：创建、请求、理解、评论、批准、提交",
+        "text": "作者先看自动分析结果再请人审；审查者看差异留意见；LGTM 和所需批准齐了、意见处理完，才能提交。"
+      },
+      {
+        "act": "细节",
+        "icon": "focus",
+        "tone": "pri",
+        "title": "小优化，大不同：关注集",
+        "text": "谁现在该行动，一眼可见，来回等待的摩擦少了很多。工具的价值往往藏在这种小地方。"
+      }
+    ],
+    "emphasis": "信任和沟通是代码审查的核心，工具能改善体验，但取代不了它们。",
+    "emphasis2": "与其他工具紧密集成，以及像“关注集”这样的小优化，决定了审查体验的好坏。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "已有 LGTM 和所需批准，为什么 v1 仍不能提交，而作者处理命名意见后的 v2 可以启动提交？",
-    "expectedAnswer": "本例 v1 还有一条未解决意见。作者改名并回复 Done 后将其解决，LGTM 和所需批准保持有效，因而满足基本审查条件；工具不要求反复获得 LGTM，但仍须通过提交前检查。",
-    "visualEncoding": "左右（手机上下）并列同一变更的两个快照。代码由 n 变为 count，未解决计数由 1 变为 0；两个快照相同的 LGTM 与批准行把不变条件固定下来。连接箭头明确标为作者修改、回复，结尾区分可启动提交与已入库。",
-    "sourceEvidence": "Code Review Flow 代码审查流程：意见须发布、作者修改回复、提交前检查；Commenting 提出审查意见：Done 表示已处理并解决讨论串；Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）：至少一个 LGTM、所需批准齐全、没有未解决意见；工具不要求反复给出 LGTM。",
-    "beforeProblem": "原图把作者、审查者和提交门连成抽象循环，与原书图19-1及原 ch19-01 重复；看不到一次具体修改改变了哪项条件，也难以辨别是否必须重获批准。",
-    "whyBetter": "读者可直接比较同一变更前后的代码、意见和评分，推导阻塞项为何消失，而不是只记住流程名称。",
-    "limits": "命名代码与意见是教学示例，不是原书实际变更或 Critique 截图。本例假定审查者未撤销 LGTM 或批准；不呈现团队追加策略、紧急强制提交或意见是否真正妥善处理的自动证明。"
-  },
-  "desktop": "assets/diagrams/ch19.svg",
-  "mobile": "assets/diagrams/ch19-mobile.svg"
+    "readerQuestion": "一个代码审查工具要做好哪些事？",
+    "expectedAnswer": "把审查的每一步放在一个界面里，让审查快、透明、有记录",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、原则、流程、细节，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Code Review Tooling Principles 代码审查工具的设计原则；## Code Review Flow 代码审查流程；## Stage 1: Create a Change 阶段1：创建变更；## Stage 2: Request Review 阶段2：请求审查；## Stages 3 and 4: Understanding and Commenting on a Change 阶段3和4：理解变更并提出审查意见；## Stage 5: Change Approvals (Scoring a Change) 阶段5：变更批准（对变更进行评分）；## Stage 6: Commiting a Change 阶段6：提交变更",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
+  }
 }

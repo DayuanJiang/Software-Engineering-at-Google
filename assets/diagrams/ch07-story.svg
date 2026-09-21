@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="627" viewBox="0 0 960 627" class="chapter-svg cg-ch07-story" data-layout="desktop" role="img" aria-labelledby="ch07-story-title ch07-story-desc">
+  <title id="ch07-story-title">从“审查更快就是更好”的假设，到追溯到目标的指标</title>
+  <desc id="ch07-story-desc">本章回顾。从“审查更快就是更好”的假设，到追溯到目标的指标。起点：有人提出：取消可读性流程，审查能更快。速度确实是个可以度量的数字。但更快的审查等于更高的生产力吗？这是这一章要回答的问题。；冲突：只盯一个数字，会把目标换掉。只跟踪速度和满意度，就漏掉了质量。一个代理指标变好，并不等于整体目标达成。；转折：目标、信号、指标：从想要什么倒推该量什么。先写清目标，用 QUANTS 五个方面把它拆全；再找能反映目标的信号；最后才选可测量的指标。；做法：定性数据校验定量指标，再融入工作流。谷歌用日志加访谈证明可读性流程总体值得投入；改进建议要嵌进开发者的日常习惯和激励里，才会真的发生。。这一章最想强调的：度量之前先问：无论结果好坏，能不能据此采取行动？ 好指标能追溯到目标，并且有定性数据相互印证；对不上时，多半是指标错了。</desc>
+  <style>
+    .cg-ch07-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch07-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch07-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch07-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch07-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch07-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch07-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch07-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch07-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch07-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="627" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从“审查更快就是更好”的假设，到追溯到目标的指标</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">有人提出：取消可读性流程，审查能更快</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">速度确实是个可以度量的数字。但更快的审查等于更高的生产力吗？这是这一章要回答的问题。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">冲突</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">只盯一个数字，会把目标换掉</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">只跟踪速度和满意度，就漏掉了质量。一个代理指标变好，并不等于整体目标达成。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">目标、信号、指标：从想要什么倒推该量什么</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">先写清目标，用 QUANTS 五个方面把它拆全；再找能反映目标的信号；最后才选可测量的指标。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">定性数据校验定量指标，再融入工作流</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">谷歌用日志加访谈证明可读性流程总体值得投入；改进建议要嵌进开发者的日常习惯和激励里，才会真的发生。</text>
+  <rect x="32.0" y="498.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,518.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="526.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="552.0" class="emph" text-anchor="start">度量之前先问：无论结果好坏，能不能据此采取行动？</text>
+  <text x="92.0" y="578.0" class="c15" text-anchor="start">好指标能追溯到目标，并且有定性数据相互印证；对不上时，多半是指标错了。</text>
+</svg>

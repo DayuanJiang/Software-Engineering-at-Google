@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" class="chapter-svg cg-ch21-story" data-layout="desktop" role="img" aria-labelledby="ch21-story-title ch21-story-desc">
+  <title id="ch21-story-title">从一个随手 import 的库，到“谁来为兼容负责”</title>
+  <desc id="ch21-story-desc">本章回顾。从一个随手 import 的库，到“谁来为兼容负责”。起点：引入一个库只要一行，看起来免费。可它由别人维护，随时会变。你不控制它，却要一直跟着它。引入依赖的成本在之后的每一年。；冲突：菱形依赖：两个库要求同一个依赖的不同版本。越往下游，越难协调。版本策略只有几种：全部不动、看语义化版本、跟发行版、跟最新。每种都有代价。；转折：SemVer 只是一个人的风险估计。版本号把“这次改动多大风险”压成一个数字，包管理器却把它当事实求解，于是要么约束过度，要么约束不足。；做法：依赖是契约，兼容靠测试证明。提供方说清愿意承诺什么，使用方补上测试；资源足够时，Live at Head 用 CI 给出实际证据。能放进自己版本控制的代码，就别当外部依赖。。这一章最想强调的：依赖是一种契约，双方都有权利和责任；版本号替代不了测试。 优先把问题变成源代码版本控制问题；引入依赖前，先想清长期支持的成本。</desc>
+  <style>
+    .cg-ch21-story[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch21-story[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch21-story[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch21-story[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch21-story[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch21-story[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch21-story[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch21-story[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch21-story[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch21-story[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="650" fill="var(--diagram-bg,#fff)"/>
+  <text x="32.0" y="30.0" class="tag" text-anchor="start">本章回顾</text>
+  <path d="M74 144 V 400" stroke="var(--diagram-line,#aebbad)" stroke-width="2"/>
+  <text x="32.0" y="62.0" class="story-headline" text-anchor="start">从一个随手 import 的库，到“谁来为兼容负责”</text>
+  <circle cx="74.0" cy="122.0" r="22" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(63.0,111.0) scale(0.917)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></g>
+  <text x="118.0" y="110.0" class="act" fill="var(--diagram-secondary,#2c6096)" text-anchor="start">起点</text>
+  <text x="118.0" y="134.0" class="h19" text-anchor="start">引入一个库只要一行，看起来免费</text>
+  <text x="118.0" y="160.0" class="t15" text-anchor="start">可它由别人维护，随时会变。你不控制它，却要一直跟着它。引入依赖的成本在之后的每一年。</text>
+  <circle cx="74.0" cy="222.0" r="22" fill="var(--diagram-danger-soft,#ead9dc)" stroke="var(--diagram-danger,#a03946)" stroke-width="2"/><g transform="translate(63.0,211.0) scale(0.917)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"/></g>
+  <text x="118.0" y="210.0" class="act" fill="var(--diagram-danger,#a03946)" text-anchor="start">冲突</text>
+  <text x="118.0" y="234.0" class="h19" text-anchor="start">菱形依赖：两个库要求同一个依赖的不同版本</text>
+  <text x="118.0" y="260.0" class="t15" text-anchor="start">越往下游，越难协调。版本策略只有几种：全部不动、看语义化版本、跟发行版、跟最新。每种都有代价。</text>
+  <circle cx="74.0" cy="322.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,311.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></g>
+  <text x="118.0" y="310.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">转折</text>
+  <text x="118.0" y="334.0" class="h19" text-anchor="start">SemVer 只是一个人的风险估计</text>
+  <text x="118.0" y="360.0" class="t15" text-anchor="start">版本号把“这次改动多大风险”压成一个数字，包管理器却把它当事实求解，于是要么约束过度，要么约束不足。</text>
+  <circle cx="74.0" cy="422.0" r="22" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(63.0,411.0) scale(0.917)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="118.0" y="410.0" class="act" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">做法</text>
+  <text x="118.0" y="434.0" class="h19" text-anchor="start">依赖是契约，兼容靠测试证明</text>
+  <text x="118.0" y="460.0" class="t15" text-anchor="start">提供方说清愿意承诺什么，使用方补上测试；资源足够时，Live at Head 用 CI 给出实际证据。能放进自己版本控制的代</text>
+  <text x="118.0" y="483.0" class="t15" text-anchor="start">码，就别当外部依赖。</text>
+  <rect x="32.0" y="521.0" width="896.0" height="101.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(50.0,541.0) scale(1.000)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></g>
+  <text x="92.0" y="549.0" class="tag" text-anchor="start">这一章最想强调的</text>
+  <text x="92.0" y="575.0" class="emph" text-anchor="start">依赖是一种契约，双方都有权利和责任；版本号替代不了测试。</text>
+  <text x="92.0" y="601.0" class="c15" text-anchor="start">优先把问题变成源代码版本控制问题；引入依赖前，先想清长期支持的成本。</text>
+</svg>

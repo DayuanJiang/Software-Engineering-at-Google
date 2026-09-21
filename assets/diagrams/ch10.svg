@@ -1,50 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ch10-diagram" class="chapter-svg cg-ch10" role="img" aria-labelledby="ch10-title ch10-desc" viewBox="0 0 960 560" width="960" height="560">
-<title id="ch10-title">读者能做出下一步判断吗？</title>
-<desc id="ch10-desc">三个据本章改绘的阅读卡点。按 StrCat 原注释推演，输入字符串 a 和 b 不插入分隔符，所以得到 ab，而不是 a 空格 b。原文的教程失败示例漏写了用户名授权前提，读者需要先确认权限。对失效教程，应标明过时，并在有替代来源时指向它。使用中的问题通过反馈接回负责人和变更评审。这些例子是不同的判断条件，不是一个必须依次完成的流程；示例代码未执行。</desc>
-<style>
-.cg-ch10#ch10-diagram text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
-.cg-ch10#ch10-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
-.cg-ch10#ch10-diagram .heading{font-size:26px;font-weight:600}
-.cg-ch10#ch10-diagram .strong{font-weight:600}
-.cg-ch10#ch10-diagram .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
-.cg-ch10#ch10-diagram .good{fill:var(--diagram-primary,#087f6d)}
-.cg-ch10#ch10-diagram .bad{fill:var(--diagram-danger,#b54750)}
-.cg-ch10#ch10-diagram .system{fill:var(--diagram-secondary,#2f6eac)}
-</style>
-<defs><marker id="ch10-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="560" fill="var(--diagram-bg,#fff)"/>
-<text x="32" y="43" class="heading" text-anchor="start">读者能做出下一步判断吗？</text>
-<text x="32" y="79" class="small" text-anchor="start">三个阅读卡点，据本章例子改绘；拼接输入与输出是按原注释推演的示例。</text>
-<text x="32" y="123" class="small strong" text-anchor="start">读者要判断</text>
-<text x="384" y="123" class="small strong" text-anchor="start">文档中补明的依据</text>
-<text x="734" y="123" class="small strong" text-anchor="start">读者能作出的判断</text>
-<path d="M32 142H928" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
-<path d="M32 259H928" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
-<path d="M32 379H928" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2"/>
-<text x="32" y="181" class="strong" text-anchor="start" data-bounds="32 150 278 90">会自动加空格吗？</text>
-<text x="32" y="218" class="code small" text-anchor="start" data-bounds="32 150 278 90">StrCat(&quot;a&quot;, &quot;b&quot;)</text>
-<path d="M312 196H356" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-arrow)" data-connector="true"/>
-<text x="384" y="181" class="" text-anchor="start" data-bounds="384 150 290 90">注释补明“无分隔符”</text>
-<text x="384" y="218" class="code small" text-anchor="start" data-bounds="384 150 290 90">using no delimiter(s)</text>
-<path d="M680 196H716" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-arrow)" data-connector="true"/>
-<text x="734" y="181" class="code strong good" text-anchor="start" data-bounds="734 150 194 90">&quot;ab&quot;</text>
-<text x="734" y="218" class="small" text-anchor="start" data-bounds="734 150 194 90">不会自动加空格</text>
-<text x="32" y="300" class="strong" text-anchor="start" data-bounds="32 270 278 90">为何第4步报错？</text>
-<text x="32" y="337" class="small" text-anchor="start" data-bounds="32 270 278 90">示例：用户名尚未授权</text>
-<path d="M312 315H356" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-arrow)" data-connector="true"/>
-<text x="384" y="300" class="" text-anchor="start" data-bounds="384 270 290 90">教程漏写了权限前提</text>
-<text x="384" y="337" class="small" text-anchor="start" data-bounds="384 270 290 90">将必要权限写在开头</text>
-<path d="M680 315H716" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-arrow)" data-connector="true"/>
-<text x="734" y="300" class="strong good" text-anchor="start" data-bounds="734 270 194 90">先补齐权限</text>
-<text x="734" y="337" class="small" text-anchor="start" data-bounds="734 270 194 90">再继续该教程</text>
-<text x="32" y="420" class="strong" text-anchor="start" data-bounds="32 390 278 90">旧教程还能照做吗？</text>
-<text x="32" y="457" class="small" text-anchor="start" data-bounds="32 390 278 90">内容失效，却无标记</text>
-<path d="M312 435H356" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-arrow)" data-connector="true"/>
-<text x="384" y="420" class="bad" text-anchor="start" data-bounds="384 390 290 90">标明“已过时”</text>
-<text x="384" y="457" class="small" text-anchor="start" data-bounds="384 390 290 90">有新来源时给出指引</text>
-<path d="M680 435H716" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="2" marker-end="url(#ch10-arrow)" data-connector="true"/>
-<text x="734" y="420" class="strong good" text-anchor="start" data-bounds="734 390 194 90">不再盲从旧页</text>
-<text x="734" y="457" class="small" text-anchor="start" data-bounds="734 390 194 90">按指引查找新信息</text>
-<rect x="32" y="501" width="896" height="40" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
-<text x="48" y="528" class="small" text-anchor="start" data-bounds="48 505 864 32">文档质量由读者使用检验；问题反馈给负责人，再进入现有变更评审。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="454" viewBox="0 0 960 454" class="chapter-svg cg-ch10" data-layout="desktop" role="img" aria-labelledby="ch10-title ch10-desc">
+  <title id="ch10-title">工程师为什么不爱写文档，怎么改？</title>
+  <desc id="ch10-desc">本章概览。工程师为什么不爱写文档，怎么改？ 本章的主要部分：常见状况：没人写、没人看、过时不删；当作代码：有负责人、有评审、想清读者、一份只做一件事。一句话：把文档当作代码来写、评审和维护，动笔前先想清读者是谁</desc>
+  <style>
+    .cg-ch10[data-layout="desktop"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch10[data-layout="desktop"] .headline {font-size:30px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .t15 {font-size:15px}
+    .cg-ch10[data-layout="desktop"] .t14 {font-size:14px}
+    .cg-ch10[data-layout="desktop"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch10[data-layout="desktop"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch10[data-layout="desktop"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch10[data-layout="desktop"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch10[data-layout="desktop"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch10[data-layout="desktop"] .answer {font-size:21px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .emph {font-size:20px;font-weight:600}
+    .cg-ch10[data-layout="desktop"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="960" height="454" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch10-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="32.0" y="52.0" class="headline" text-anchor="start">工程师为什么不爱写文档，怎么改？</text>
+  <text x="32.0" y="94.0" class="c15" text-anchor="start">文档写一次、被读很多次；受益最多的常常是几个月后的自己</text>
+  <rect x="32.0" y="114.0" width="418.0" height="192.0" rx="12" fill="var(--diagram-danger-soft,#ead9dc)"/>
+  <g transform="translate(52.0,132.0) scale(1.083)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></g>
+  <text x="88.0" y="152.0" class="h20" text-anchor="start">常见状况</text>
+  <g transform="translate(52.0,176.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="189.0" class="t15" text-anchor="start">没人觉得写文档是自己的活</text>
+  <g transform="translate(52.0,206.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="219.0" class="t15" text-anchor="start">写了没人看，也没人知道在哪</text>
+  <g transform="translate(52.0,236.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="249.0" class="t15" text-anchor="start">一份文档想服务所有人</text>
+  <g transform="translate(52.0,266.0) scale(0.667)" fill="none" stroke="var(--diagram-danger,#a03946)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></g>
+  <text x="76.0" y="279.0" class="t15" text-anchor="start">过时了还挂着，误导读者</text>
+  <rect x="510.0" y="114.0" width="418.0" height="192.0" rx="12" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <g transform="translate(530.0,132.0) scale(1.083)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></g>
+  <text x="566.0" y="152.0" class="h20" text-anchor="start">把文档当作代码</text>
+  <g transform="translate(530.0,176.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="189.0" class="t15" text-anchor="start">放进代码库，有负责人、有评审</text>
+  <g transform="translate(530.0,206.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="219.0" class="t15" text-anchor="start">先想清读者是谁，再决定写什么</text>
+  <g transform="translate(530.0,236.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="249.0" class="t15" text-anchor="start">一份文档只做一件事：参考、设计、教程或概念</text>
+  <g transform="translate(530.0,266.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></g>
+  <text x="554.0" y="279.0" class="t15" text-anchor="start">跟着代码一起改，过时就删</text>
+  <path d="M462.0 210.0 L498.0 210.0" fill="none" stroke="var(--diagram-line,#aebbad)" stroke-width="2" marker-end="url(#ch10-arrow)"/>
+  <text x="480.0" y="196.0" class="c13" text-anchor="middle">改为</text>
+  <text x="32.0" y="330.0" class="c14" text-anchor="start">文档类型：参考文档、设计文档、教程、概念文档、着陆页；复杂或面向用户的场合，才需要技术撰稿人</text>
+  <rect x="32.0" y="358.0" width="896.0" height="68.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="50.0" y="379.0" class="tag" text-anchor="start">一句话</text>
+  <text x="50.0" y="409.0" class="answer" text-anchor="start">把文档当作代码来写、评审和维护，动笔前先想清读者是谁</text>
 </svg>

@@ -1,26 +1,94 @@
 {
   "chapter": 14,
-  "title": "界面变了，后端测试也要失败吗？",
-  "summary": "用本章 UI/API 拆分案例对比两种测试入口：界面改样式可能打断贯穿 UI 的测试，而公共 API 可独立驱动后端；缩小 SUT 后不能声称已覆盖边界外行为。",
+  "title": "单元测试都过了，系统为什么还会坏？",
+  "summary": "单元测试看不到组件之间的配合，需要少量有目标的大型测试补上",
   "enabled": true,
   "sourceSections": [
-    "What Are Larger Tests? 什么是较大规模测试？",
-    "Common Gaps in Unit Tests 单元测试常见的覆盖缺口",
-    "The System Under Test 被测系统",
-    "Reducing the size of your SUT at problem boundaries 在难处理的边界处缩小 SUT",
-    "Browser and Device Testing 浏览器和设备测试"
+    "## What Are Larger Tests? 什么是较大规模测试？",
+    "## Larger Tests at Google 谷歌的较大规模测试",
+    "## Structure of a Large Test 大型测试的结构",
+    "## Types of Larger Tests 较大规模测试的类型",
+    "## Large Tests and the Developer Workflow  大型测试与开发者工作流"
   ],
-  "kind": "dependency",
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch14.svg",
   "mobile": "assets/diagrams/ch14-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch14-story.svg",
+  "storyMobile": "assets/diagrams/ch14-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "单元测试都过了，系统为什么还会坏？",
+    "answer": "单元测试看不到组件之间的配合，需要少量有目标的大型测试补上",
+    "parts": [
+      {
+        "icon": "server",
+        "label": "搭起被测系统",
+        "text": "决定 SUT 的范围：封闭的单机环境、多机部署，还是接近生产的环境"
+      },
+      {
+        "icon": "database",
+        "label": "准备测试数据",
+        "text": "种子数据、录制的真实流量或人工构造；数据越真实越可信，也越难维护"
+      },
+      {
+        "icon": "hammer",
+        "label": "执行操作",
+        "text": "用公开 API 驱动，别贴着界面写：界面一改样式，测试就断"
+      },
+      {
+        "icon": "list-checks",
+        "label": "验证结果",
+        "text": "人工检查、断言、A/B 差异比较；明确这轮测试要回答什么风险"
+      }
+    ],
+    "figure": {
+      "header": "大型测试跨多个单元、更慢也更真实；它的结构可以拆成四步",
+      "footer": "类型：功能、浏览器与设备、性能与负载、部署配置、探索性、A/B 差异、用户验收、探针与金丝雀、灾难恢复"
+    }
+  },
+  "story": {
+    "headline": "从全绿的单元测试和挂掉的系统，到有策略的大型测试",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "bug",
+        "tone": "danger",
+        "title": "单元测试全部通过，上线还是坏了",
+        "text": "每个单元都对，配合起来却错：配置不一致、接口理解不同、真实数据和替身不一样。这些问题单元测试天生看不到。"
+      },
+      {
+        "act": "发现",
+        "icon": "boxes",
+        "tone": "pri",
+        "title": "大型测试补的正是“配合”这一层",
+        "text": "它跨多个单元，更慢也更真实。谷歌把它拆成四步：搭被测系统、备数据、执行操作、验证结果。"
+      },
+      {
+        "act": "权衡",
+        "icon": "scale",
+        "tone": "warm",
+        "title": "越真实越可信，也越慢、越不稳定",
+        "text": "所以要少而精。设计阶段就写测试策略：列出风险，决定哪些风险值得一个大型测试来覆盖。"
+      },
+      {
+        "act": "做法",
+        "icon": "users",
+        "tone": "pri",
+        "title": "让大型测试融入开发者的日常",
+        "text": "明确谁来写、什么时候跑、失败了谁负责；把它做成工作流的一部分，别等到发布前才救火。"
+      }
+    ],
+    "emphasis": "大型测试覆盖单元测试看不到的地方，但要有策略、有节制。",
+    "emphasis2": "大型测试由被测系统、数据、操作和验证组成；良好的设计从测试策略开始。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "UI 只改了外观时，为什么贯穿 UI 的后端测试可能失败，怎样拆开验证入口？",
-    "expectedAnswer": "外观变化可能破坏 UI 测试而不改变底层行为。UI 单独测试，后端通过公共 API 驱动，能避免每个后端测试都依赖 UI；内存库和第三方替身缩小所需环境，但不验证真实存储、最新依赖契约或整条 UI 联动。",
-    "visualEncoding": "上下对照同一条测试路径；上方在 UI 标出外观变化造成的中断，下方让 UI 测试与 API 驱动互不连接。虚线只圈后端 SUT，替换的内存库和边界外替身分别标明。",
-    "sourceEvidence": "Reducing the size of your SUT at problem boundaries 在难处理的边界处缩小 SUT：UI 的外观和交互体验经常变化、通过公共 API 驱动、用内存数据库替换；Browser and Device Testing 浏览器和设备测试：通过前端操作应用，可以增加一层测试覆盖。",
-    "beforeProblem": "原图虽有 SUT 边界，但 UI 单独测试仍用箭头连接后端，难以看出拆分真正改变了什么；真实数据库的固定选择也未解释本章缩小环境的案例。",
-    "whyBetter": "同一外观变更在两种测试入口下产生不同影响，读者可沿路径判断失败究竟发生在哪里，同时看到缩小范围所失去的覆盖。",
-    "limits": "将本节 UI/API 拆分与图14-6的内存库、替身缩减组合为教学示意，不是某个 Google 产品的真实拓扑。API 入口不保证测试无缺陷或无不稳定性；scope 与 size 不是同义词。"
+    "readerQuestion": "单元测试都过了，系统为什么还会坏？",
+    "expectedAnswer": "单元测试看不到组件之间的配合，需要少量有目标的大型测试补上",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、发现、权衡、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## What Are Larger Tests? 什么是较大规模测试？；## Larger Tests at Google 谷歌的较大规模测试；## Structure of a Large Test 大型测试的结构；## Types of Larger Tests 较大规模测试的类型；## Large Tests and the Developer Workflow  大型测试与开发者工作流",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

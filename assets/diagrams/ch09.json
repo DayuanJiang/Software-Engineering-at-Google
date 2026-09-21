@@ -1,24 +1,94 @@
 {
   "chapter": 9,
-  "title": "三项批准，不等于三位审查者",
-  "summary": "用三种具体组合比较批准状态：合格的另一位审查者兼任三项、作者凭资格满足后两项、作者仅自审而缺少他人 LGTM。三项批准齐全且所有审查意见已处理，才满足本章的常规提交条件。",
+  "title": "每次改动都要别人看过，值不值？",
+  "summary": "值：代码审查是团队共同拥有代码库的方式，收益远超找错",
   "enabled": true,
   "sourceSections": [
-    "Code Review Flow  代码审查流程",
-    "How Code Review Works at Google  谷歌如何开展代码审查",
-    "Keep Reviewers to a Minimum  尽量减少审查者人数"
+    "## Code Review Flow  代码审查流程",
+    "## How Code Review Works at Google  谷歌如何开展代码审查",
+    "## Code Review Benefits 代码审查的好处",
+    "## Code Review Best Practices  代码审查最佳实践",
+    "## Types of Code Reviews  代码审查的类型"
   ],
-  "kind": "comparison",
+  "kind": "pipeline",
   "desktop": "assets/diagrams/ch09.svg",
   "mobile": "assets/diagrams/ch09-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch09-story.svg",
+  "storyMobile": "assets/diagrams/ch09-story-mobile.svg",
+  "map": {
+    "form": "pipeline",
+    "question": "每次改动都要别人看过，值不值？",
+    "answer": "值：代码审查是团队共同拥有代码库的方式，收益远超找错",
+    "parts": [
+      {
+        "icon": "pen-line",
+        "label": "写好改动",
+        "text": "改动要小，描述要清楚；提交前先看一遍自动检查结果"
+      },
+      {
+        "icon": "user-check",
+        "label": "请人审查",
+        "text": "选尽量少的审查者；审查者礼貌、专业、快速回复"
+      },
+      {
+        "icon": "badge-check",
+        "label": "三项批准",
+        "text": "有人认可（LGTM）、目录负责人同意、该语言可读性认证；一人可以兼任多项"
+      },
+      {
+        "icon": "git-commit-horizontal",
+        "label": "处理意见后提交",
+        "text": "所有意见处理完才能提交；审查记录成为代码的历史"
+      }
+    ],
+    "figure": {
+      "header": "谷歌每一次改动提交前都要经过审查；流程本身不复杂，价值在流程之外",
+      "footer": "带来什么：发现错误、代码更好懂、全库一致、知识传播、心理上的共同所有权、留下记录"
+    }
+  },
+  "story": {
+    "headline": "从“这只是找 bug”的误解，到审查成为代码库的共同所有权",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "search",
+        "tone": "sec",
+        "title": "大多数人以为代码审查是为了抓错误",
+        "text": "抓错确实是收益之一，但如果只为这个，审查的成本看起来太高了：每次改动都要等人。"
+      },
+      {
+        "act": "发现",
+        "icon": "book-open",
+        "tone": "pri",
+        "title": "审查更大的作用是让代码可读、一致、被人理解",
+        "text": "审查者是代码的第一位读者。看不懂就改到看得懂；风格不一致就统一；顺带把知识传给了另一个人。"
+      },
+      {
+        "act": "规则",
+        "icon": "badge-check",
+        "tone": "pri",
+        "title": "三项批准，不等于三位审查者",
+        "text": "他人认可、目录负责人批准、该语言的可读性认证；一个合格的审查者可以同时给出三项。自审不能替代他人认可。"
+      },
+      {
+        "act": "做法",
+        "icon": "users",
+        "tone": "pri",
+        "title": "小改动、快回复、保持专业",
+        "text": "把改动切小，审查才快；审查者及时回应，作者虚心接受批评；能自动化的检查交给工具，人只看需要判断的部分。"
+      }
+    ],
+    "emphasis": "代码审查让代码库成为团队共同的财产，每个人都为它负责。",
+    "emphasis2": "始终请他人检验你的假设，优先考虑读者；自动化是审查跟上规模的关键。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "作者已经是代码所有者且有语言资格，还需要谁批准？三项批准是否要找三个人？",
-    "expectedAnswer": "本章谷歌流程要求另一位工程师的 LGTM、相应代码所有者批准和相应语言 Readability 批准。作者以外的一位合格审查者可以兼任三项；作者可凭所有权和语言资格满足后两项，但自审不能提供他人的 LGTM。三项齐全仍须处理全部审查意见。",
-    "visualEncoding": "桌面矩阵的三列是批准要求，三行是人员资格组合；同一名字重复出现表示一人兼任，不是三人。第三行只把他人 LGTM 改为缺少，结果随之变成不可提交。移动版按同样的三个情境重排，并显式列出每项由甲或乙满足。底部另列意见处理条件。",
-    "sourceEvidence": "## How Code Review Works at Google  谷歌如何开展代码审查：'作者也可以兼任后两种角色'、'上述三个权限位可以由不同的角色组合来满足'；## Code Review Flow  代码审查流程：'处理所有审查意见'；### Keep Reviewers to a Minimum  尽量减少审查者人数：'可以由同一个人满足'。",
-    "beforeProblem": "原图的三支批准汇合表达 AND 尚准确，但与 ch09-02 重复；角色可兼任主要靠结尾文字，读者不能直接比较有资格的作者、外部审查者与仅自审三种状态。",
-    "whyBetter": "用同一组批准列保持条件不变，仅改变提供批准的人和是否存在他人 LGTM，读者能直接定位缺项；批准齐全与可以提交也被明确分开。",
-    "limits": "仅解释书中谷歌常规流程，不代表其他平台的自批准规则，也不声称批准证明代码无缺陷。示例假定对应目录及语言资格有效，不展开跨目录、多语言、例外流程或工具自动撤销批准的行为。"
+    "readerQuestion": "每次改动都要别人看过，值不值？",
+    "expectedAnswer": "值：代码审查是团队共同拥有代码库的方式，收益远超找错",
+    "visualEncoding": "流水线：带图标的圆点从左到右按先后顺序排列，箭头表示顺序；上方一行说明背景，下方一行列出补充信息。 章末故事线：纵向轨道上的 4 幕，幕名为起点、发现、规则、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Code Review Flow  代码审查流程；## How Code Review Works at Google  谷歌如何开展代码审查；## Code Review Benefits 代码审查的好处；## Code Review Best Practices  代码审查最佳实践；## Types of Code Reviews  代码审查的类型",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

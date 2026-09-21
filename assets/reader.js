@@ -958,17 +958,19 @@
     const isSection = Boolean(guide.afterParagraph);
     const figure = document.createElement(isSection ? "figure" : "details");
     figure.className = isSection ? "section-visual" : "chapter-visual";
+    if (guide.kind === "story") figure.classList.add("chapter-story");
     if (!isSection) figure.open = true;
     figure.dataset.chapter = String(guide.chapter);
     figure.dataset.guide = guide.id || "ch" + String(guide.chapter).padStart(2, "0");
     const caption = document.createElement(isSection ? "figcaption" : "summary");
     const marker = document.createElement("span"); marker.className = "guide-label";
-    marker.innerHTML = icon("book-open"); marker.append(document.createTextNode("本章图解"));
+    marker.innerHTML = icon("book-open"); marker.append(document.createTextNode(guide.kind === "story" ? "本章回顾" : "本章概览"));
     const title = document.createElement(isSection ? "span" : "h2");
     title.className = "guide-title"; title.textContent = guide.title; title.id = "guide-" + (guide.id || guide.chapter);
     const expand = button("放大图解", "maximize-2");
     expand.addEventListener("click", () => openViewer(guide, expand).catch((error) => {
       console.error(error);
+      if (!summary.isConnected) figure.append(summary);
       summary.textContent = "图解暂时无法加载";
     }));
     const chevron = document.createElement("span"); chevron.className = "guide-chevron";
@@ -982,8 +984,9 @@
     stage.innerHTML = '<div class="diagram-loading" role="status">图解加载中</div>';
     const summary = document.createElement("p");
     summary.className = "guide-summary"; summary.textContent = guide.summary;
+    // Chapter maps and storylines carry their own one-line summary inside the SVG.
     if (isSection) figure.append(caption, stage, summary);
-    else figure.append(caption, toolbar, stage, summary);
+    else figure.append(caption, toolbar, stage);
     const chineseTitle = [...main.querySelectorAll(":scope > h1")].find((node) => han.test(node.textContent));
     let anchor = chineseTitle || main.querySelector("h1,h2");
     let next = anchor?.nextElementSibling;
@@ -994,7 +997,8 @@
         normalized(node.textContent).includes(normalized(guide.afterParagraph)));
       if (!anchor) throw new Error("Section guide insertion point missing: " + guide.id);
     }
-    if (anchor) anchor.after(figure); else main.prepend(figure);
+    if (guide.position === "end") main.append(figure);
+    else if (anchor) anchor.after(figure); else main.prepend(figure);
     let selected = "";
     let request = 0;
     const render = async () => {
@@ -1372,6 +1376,11 @@
       for (const guide of currentPage?.sectionGuides || []) {
         if (version !== routeVersion) return;
         await insertGuide(main, guide, version);
+      }
+      if (version !== routeVersion) return;
+      if (currentGuide?.storyDesktop) {
+        await insertGuide(main, { chapter: currentGuide.chapter, id: currentPage.id + "-story", kind: "story", position: "end",
+          title: currentGuide.storyTitle, desktop: currentGuide.storyDesktop, mobile: currentGuide.storyMobile }, version);
       }
       if (version !== routeVersion) return;
       buildToc(main); footer(main, manifest, currentPage);

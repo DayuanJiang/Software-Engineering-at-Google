@@ -1,25 +1,101 @@
 {
   "chapter": 23,
-  "title": "CI：把不同问题放进合适的反馈回路",
-  "summary": "Takeout 将逐实例启动检查提前到提交前沙盒，将完整归档测试提前到每两小时运行的提交后环境。不同被测组合有不同安全与覆盖边界；CI 决定测试安排，CB 验证 head，CD 组装并推进测试 RC。",
+  "title": "集成问题为什么越早发现越便宜？",
+  "summary": "持续集成就是把发现问题的时间不断往前挪，让反馈快而可信",
+  "enabled": true,
   "sourceSections": [
-    "第二十三章 持续集成",
-    "Continuous Build 持续构建",
-    "Continuous Delivery 持续交付",
-    "Scenario #1: Continuously broken dev deploys 场景1：开发环境部署频频失败"
+    "## CI Concepts CI概念",
+    "### Fast Feedback Loops 快速反馈回路",
+    "### Continuous Testing 持续测试",
+    "### Hermetic Testing  封闭测试",
+    "## CI at Google 谷歌的CI",
+    "### TAP: Google’s Global Continuous Build 谷歌的全局持续构建",
+    "### CI Case Study: Google Takeout   CI案例研究：Google Takeout"
   ],
-  "kind": "comparison",
+  "kind": "cycle",
   "desktop": "assets/diagrams/ch23.svg",
   "mobile": "assets/diagrams/ch23-mobile.svg",
-  "enabled": true,
+  "storyDesktop": "assets/diagrams/ch23-story.svg",
+  "storyMobile": "assets/diagrams/ch23-story-mobile.svg",
+  "map": {
+    "form": "cycle",
+    "question": "集成问题为什么越早发现越便宜？",
+    "answer": "持续集成就是把发现问题的时间不断往前挪，让反馈快而可信",
+    "parts": [
+      {
+        "icon": "code",
+        "label": "写代码",
+        "text": "小步改动，随时准备集成"
+      },
+      {
+        "icon": "zap",
+        "label": "提交前",
+        "text": "跑快而可靠的测试：单元测试、静态分析，几分钟出结果"
+      },
+      {
+        "icon": "git-commit-horizontal",
+        "label": "提交",
+        "text": "进入主干，TAP 全球持续构建开始跑更慢、覆盖更广的测试"
+      },
+      {
+        "icon": "hourglass",
+        "label": "提交后",
+        "text": "慢而不太确定的测试放这里；坏了要能快速定位到某次提交"
+      },
+      {
+        "icon": "refresh-cw",
+        "label": "修复或回滚",
+        "text": "反馈易得、能立刻行动；封闭测试让结果可重复"
+      }
+    ],
+    "figure": {
+      "header": "CI 是一个反馈回路：决定运行哪些测试、什么时候运行",
+      "footer": "Takeout 团队的四个场景说明：随着规模变大，CI 越来越不可或缺；负担不起完整 CI 时也能从小做起"
+    }
+  },
+  "story": {
+    "headline": "从每两小时才知道坏没坏，到提交前几分钟就有答案",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "siren",
+        "tone": "danger",
+        "title": "Takeout 团队的发布总在最后一刻发现问题",
+        "text": "测试在部署后才跑，坏了要回溯几十个提交找原因。越晚发现，修起来越贵，这就是反馈回路的成本。"
+      },
+      {
+        "act": "发现",
+        "icon": "timer",
+        "tone": "pri",
+        "title": "反馈越快越便宜，所以要把测试往前挪",
+        "text": "提交前跑快而可靠的测试，提交后跑慢而不太确定的；CI 系统的工作就是决定哪些测试在什么时候跑。"
+      },
+      {
+        "act": "做法",
+        "icon": "server",
+        "tone": "pri",
+        "title": "TAP：全球持续构建，加上封闭测试",
+        "text": "每次提交都触发受影响的测试；封闭环境让结果可重复；坏了能定位到某一次提交，并自动回滚。"
+      },
+      {
+        "act": "演进",
+        "icon": "trending-up",
+        "tone": "pri",
+        "title": "Takeout 的四步：把检查一步步提前",
+        "text": "启动检查搬到提交前的沙盒，完整归档测试提前到每两小时的提交后环境。负担不起完整 CI，也能从小处开始。"
+      }
+    ],
+    "emphasis": "CI 决定运行哪些测试、何时运行；反馈易得且能立刻行动，它才有效。",
+    "emphasis2": "代码库用得越久、越大，CI 越不可或缺；提交前要快而可靠，提交后可以慢而广。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "Takeout 为什么把实例启动与完整归档放进不同的反馈回路，而不是都留到夜间部署后或都移到提交前？",
-    "expectedAnswer": "各实例的临时沙盒可在提交前检查配置与启动；端到端测试使用受安全保护的账户，团队将它们放到已审代码的提交后环境，每两小时从 green head 组装 RC 后运行。启动检查不替代完整归档验证。",
-    "visualEncoding": "两行以不同被测组合为主轴，各自从相同的夜间部署后入口指向不同的新入口；配置、账户和审查状态说明为什么两个箭头终点不同。底部明确 CI、CB、CD 的职责而不画通用交付流水线。",
-    "sourceEvidence": "#### Scenario #1: Continuously broken dev deploys 场景1：开发环境部署频频失败：团队为每个实例创建了临时的小型沙盒环境；提交后 CI 每两小时从 green head 取出最新代码和配置。#### Continuous Build 持续构建；#### Continuous Delivery 持续交付。",
-    "beforeProblem": "原总览重复图23-1及图23-2的阶段推进结构，列出各阶段原则，却没有显示测试内容或约束改变时如何作出不同安排。",
-    "whyBetter": "读者可沿同一测试组合的前后位置直接看出何种反馈被提前、提前到哪里，以及为什么不能把完整归档的保障归给启动检查。",
-    "limits": "是书中 Takeout 的具体安排，不是所有团队的推荐频率或两小时完成保证；未复述案例百分比，未覆盖 TAP 调度与全部生产探针。CD 不保证每个 RC 进入生产。"
+    "readerQuestion": "集成问题为什么越早发现越便宜？",
+    "expectedAnswer": "持续集成就是把发现问题的时间不断往前挪，让反馈快而可信",
+    "visualEncoding": "循环：带图标的圆点沿椭圆排列，箭头首尾相接，表示这是反复进行的过程。 章末故事线：纵向轨道上的 4 幕，幕名为起点、发现、做法、演进，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## CI Concepts CI概念；### Fast Feedback Loops 快速反馈回路；### Continuous Testing 持续测试；### Hermetic Testing  封闭测试；## CI at Google 谷歌的CI；### TAP: Google’s Global Continuous Build 谷歌的全局持续构建；### CI Case Study: Google Takeout   CI案例研究：Google Takeout",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

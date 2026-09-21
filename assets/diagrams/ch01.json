@@ -1,25 +1,110 @@
 {
   "chapter": 1,
-  "title": "有新版本，就该升级吗？",
-  "summary": "用一次升级的决策问题连接时间、规模和权衡：评估使用期与适配成本，可以明确选择推迟，但必须保留变更能力，并随新数据重审。",
+  "title": "软件工程和编程差在哪？",
+  "summary": "软件工程是把编程放进时间里：多人、多年、随时改得动",
   "enabled": true,
   "sourceSections": [
     "## Time and Change 时间与变化",
     "## Scale and Efficiency  规模和效率",
     "## Trade-offs and Costs 权衡和成本",
-    "## Revisiting Decisions, Making Mistakes 重审决策与犯错"
+    "## Revisiting Decisions, Making Mistakes 重审决策与犯错",
+    "## Software Engineering Versus Programming 软件工程与编程"
   ],
-  "kind": "decision",
+  "kind": "axes",
   "desktop": "assets/diagrams/ch01.svg",
   "mobile": "assets/diagrams/ch01-mobile.svg",
+  "storyDesktop": "assets/diagrams/ch01-story.svg",
+  "storyMobile": "assets/diagrams/ch01-story-mobile.svg",
+  "map": {
+    "form": "axes",
+    "question": "软件工程和编程差在哪？",
+    "answer": "软件工程是把编程放进时间里：多人、多年、随时改得动",
+    "parts": [
+      {
+        "icon": "clock",
+        "label": "时间",
+        "text": "代码要用多久？"
+      },
+      {
+        "icon": "users",
+        "label": "规模",
+        "text": "多少人一起改？"
+      },
+      {
+        "icon": "scale",
+        "label": "权衡",
+        "text": "决策要算成本和收益"
+      },
+      {
+        "icon": "rotate-ccw",
+        "label": "重审",
+        "text": "数据变了就回头改"
+      }
+    ],
+    "figure": {
+      "xTicks": [
+        "几小时",
+        "十年"
+      ],
+      "yTicks": [
+        "一个人",
+        "上千人"
+      ],
+      "origin": {
+        "icon": "terminal",
+        "label": "编程",
+        "text": "一个人，写完就能跑"
+      },
+      "arrow": "活得更久、更多人用",
+      "region": {
+        "label": "软件工程",
+        "text": "多人、多年、随时要改得动"
+      }
+    }
+  },
+  "story": {
+    "headline": "从一个脚本到十年的服务：编程怎样变成软件工程",
+    "acts": [
+      {
+        "act": "起点",
+        "icon": "terminal",
+        "tone": "sec",
+        "title": "你写了一个脚本，跑完就扔",
+        "text": "这是编程：一个人，一次性，只要现在能跑就行。没有人会在明年回来改它。"
+      },
+      {
+        "act": "变化",
+        "icon": "history",
+        "tone": "warm",
+        "title": "代码活了十年，几百人在改",
+        "text": "依赖会升级，需求会变，编译器会变。海勒姆定律：用户够多，你的一切可见行为都会被人依赖，想改就有人痛。"
+      },
+      {
+        "act": "转折",
+        "icon": "lightbulb",
+        "tone": "pri",
+        "title": "问题从“怎么写对”变成“怎么一直改得动”",
+        "text": "这就是软件工程：编程加上时间、规模和权衡。可以选择不改，但绝不能失去改的能力。"
+      },
+      {
+        "act": "做法",
+        "icon": "wrench",
+        "tone": "pri",
+        "title": "让做法跟得上规模，让决策拿得出依据",
+        "text": "反复执行的任务，人力不能随规模暴涨；决策以数据为主，加上假设和先例；数据变了就调整，犯错和修订都正常。"
+      }
+    ],
+    "emphasis": "软件工程是随时间推移的编程。一次性脚本和十年服务需要完全不同的做法。",
+    "emphasis2": "判断标准只有一个：在代码预期的寿命里，你是否还有能力应对变化。"
+  },
   "pedagogy": {
     "action": "replace",
-    "readerQuestion": "有新版本时，为何既不能只看眼前功能，也不必每次都升级？",
-    "expectedAnswer": "应综合剩余维护期、使用方适配工作、当前价值和成本；可以明确推迟并承担递延成本，但必须保留实施必要变更的能力。新数据会要求重审。",
-    "visualEncoding": "时间与规模的两个问题汇入同一个价值/成本判断菱形，分出实施和推迟两条路径；横跨两条路径的能力前提区分选择不改与根本不能改。",
-    "sourceEvidence": "## Time and Change 时间与变化：'取决于升级的成本、它带来的价值，以及项目的预期生命周期'；## Scale and Efficiency  规模和效率：'下一次，你是否还能找到足够的人手'；## Trade-offs and Costs 权衡和成本：'说明自己的判断依据'；## Revisiting Decisions, Making Mistakes 重审决策与犯错：'数据会随时间改变'。",
-    "beforeProblem": "旧图把编程经时间箭头变成软件工程，再展开三个主题名；没有可推导的决策，也可能让人误以为项目仅因时间推移就自动完成工程化。",
-    "whyBetter": "同一次升级在价值或适配成本不同的条件下可以走不同分支，同时两种选择都必须满足变更能力这个前提。",
-    "limits": "问题图不是净收益计算器、升级频率建议或项目价值排名；它没有覆盖所有技术、业务和社会成本，也不保证升级成功。"
+    "readerQuestion": "软件工程和编程差在哪？",
+    "expectedAnswer": "软件工程是把编程放进时间里：多人、多年、随时改得动",
+    "visualEncoding": "坐标图：横轴和纵轴是本章两个变化的方向，原点附近的小圆点是起点状态，右上的大区域是本章讨论的状态，区域内用图标标出在那里要做的事。 章末故事线：纵向轨道上的 4 幕，幕名为起点、变化、转折、做法，结尾高亮块写最想强调的主张。",
+    "sourceEvidence": "## Time and Change 时间与变化；## Scale and Efficiency  规模和效率；## Trade-offs and Costs 权衡和成本；## Revisiting Decisions, Making Mistakes 重审决策与犯错；## Software Engineering Versus Programming 软件工程与编程",
+    "beforeProblem": "旧图把本章结论压缩成一张示意图放在章首：读者尚未接触其中术语，看不出本章要讲什么；每章一种画法，没有可识别的固定格式；文字 300 到 650 字并带免责小字；占据首屏。",
+    "whyBetter": "章首地图只回答“本章讲什么、各部分怎么关联”，用日常语言和图标，读前即可看懂，读后可对照；章末故事线按情节重讲本章，并明确作者最想强调的主张。两张图分工不同，形式不重复。",
+    "limits": "地图列本章主线，不含各节论据、例外和例子；一句话答案和故事线是概括，细节以正文为准。故事线中的场景来自书中案例，叙述口吻为译者改写。"
   }
 }

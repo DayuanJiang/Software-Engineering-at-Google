@@ -1,30 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="chapter-svg cg-ch12" data-layout="mobile" role="img" aria-labelledby="ch12m-title ch12m-desc" viewBox="0 0 420 680" width="420" height="680">
-<title id="ch12m-title">测试要守住契约，也要解释失败</title>
-<desc id="ch12m-desc">以例12-6/7的加法测试连接本章的两个维护性问题。隐藏计算输入使期望5的来源不明；以代码简写隐藏无关构造、显露2加3等于5。对同一测试施加两种示意变化：行为不变的内部重构不应要求修改测试，错误地返回6则应报告期望5、实际6。示意结果不是实测数据。</desc>
-<style>
-.cg-ch12[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0}
-.cg-ch12[data-layout="mobile"] .small {font-size:19px}
-.cg-ch12[data-layout="mobile"] .strong {font-weight:600}
-</style>
-<rect width="420" height="680" fill="var(--diagram-bg,#fff)"/>
-<text x="24" y="38" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">测试要守住契约，也要解释失败</text>
-<text x="24" y="68" class="small" text-anchor="start" fill="var(--diagram-muted,#686868)" data-font-size="19" data-lane="24 372">例12-6/7；代码简写与示意变更</text>
-<rect x="24" y="91" width="372" height="108" rx="6" fill="var(--diagram-danger-soft,#faecee)" data-region="true"/>
-<text x="40" y="122" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">newTestCalculation()</text>
-<text x="40" y="153" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 340">期待 5，却看不到输入 2 和 3</text>
-<text x="40" y="182" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 340">无关构造细节反而留在测试里</text>
-<text x="24" y="236" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="24 372">改写：显露加法行为</text>
-<rect x="24" y="251" width="372" height="149" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" data-region="true"/>
-<text x="40" y="282" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">calc = newCalculator()</text>
-<text x="40" y="317" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">result = calc.calculate(2, PLUS, 3)</text>
-<text x="40" y="352" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">assert(result == 5)</text>
-<text x="40" y="383" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="40 340">简写：隐藏构造，显露输入与期望</text>
-<rect x="24" y="421" width="372" height="85" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)" data-region="true"/>
-<text x="40" y="452" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">只重构内部，2 + 3 仍为 5</text>
-<text x="40" y="486" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">同一测试不改，继续通过</text>
-<rect x="24" y="525" width="372" height="85" rx="6" fill="var(--diagram-warm-soft,#fff3dc)" data-region="true"/>
-<text x="40" y="556" class="strong" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">示意缺陷：2 + 3 返回 6</text>
-<text x="40" y="590" class="" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="22" data-lane="40 340">测试失败：期望 5，实际 6</text>
-<text x="24" y="642" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">无害改动不改测试；</text>
-<text x="24" y="669" class="small" text-anchor="start" fill="var(--diagram-ink,#242424)" data-font-size="19" data-lane="24 372">失败能说清具体输入、预期与实际。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="830" viewBox="0 0 420 830" class="chapter-svg cg-ch12" data-layout="mobile" role="img" aria-labelledby="ch12m-title ch12m-desc">
+  <title id="ch12m-title">什么样的单元测试值得长期维护？</title>
+  <desc id="ch12m-desc">本章概览。什么样的单元测试值得长期维护？ 本章的主要部分：不轻易坏：对着公开接口测行为；重构、加功能、修 bug 都不该逼你改测试；一个行为：一个测试只验证一个行为，按 given、when、then 组织，用被测行为命名；完整简洁：读者在测试里就能看到全部关键输入和预期，无关细节用辅助方法藏起来；失败可读：失败信息要说清预期、实际和差别，让人不用调试就知道错在哪；DAMP 优于 DRY：测试代码宁可重复也要直白；别把逻辑和条件放进测试里。一句话：好的单元测试：重构不坏、读起来完整、失败时说得清原因</desc>
+  <style>
+    .cg-ch12[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:var(--diagram-ink,#242424)}
+    .cg-ch12[data-layout="mobile"] .headline {font-size:30px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .headline-m {font-size:23px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .story-headline {font-size:26px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .story-headline-m {font-size:21px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .h22 {font-size:22px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .h20 {font-size:20px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .h19 {font-size:19px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .h18 {font-size:18px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .h16 {font-size:16px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .t15 {font-size:15px}
+    .cg-ch12[data-layout="mobile"] .t14 {font-size:14px}
+    .cg-ch12[data-layout="mobile"] .c15 {font-size:15px;fill:var(--diagram-muted,#686868)}
+    .cg-ch12[data-layout="mobile"] .c14 {font-size:14px;fill:var(--diagram-muted,#686868)}
+    .cg-ch12[data-layout="mobile"] .c13 {font-size:13px;fill:var(--diagram-muted,#686868)}
+    .cg-ch12[data-layout="mobile"] .tag {font-size:13px;font-weight:600;fill:var(--diagram-primary,#0b6f5d)}
+    .cg-ch12[data-layout="mobile"] .act {font-size:12px;font-weight:600;letter-spacing:1px}
+    .cg-ch12[data-layout="mobile"] .answer {font-size:21px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .answer-m {font-size:17px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .emph {font-size:20px;font-weight:600}
+    .cg-ch12[data-layout="mobile"] .emph-m {font-size:18px;font-weight:600}
+  </style>
+  <rect x="0" y="0" width="420" height="830" fill="var(--diagram-bg,#fff)"/>
+  <defs><marker id="ch12m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L9 5L1 9Z" fill="var(--diagram-line,#aebbad)"/></marker></defs>
+  <text x="22.0" y="44.0" class="headline-m" text-anchor="start">什么样的单元测试值得长期维护？</text>
+  <rect x="22.0" y="68.0" width="376.0" height="112.0" rx="9" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <circle cx="50.0" cy="94.0" r="14" fill="var(--diagram-primary-soft,#d6e5dc)" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2"/><g transform="translate(42.0,86.0) scale(0.667)" fill="none" stroke="var(--diagram-primary,#0b6f5d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+  <text x="74.0" y="99.0" class="h18" text-anchor="start">目标：测试陪代码很多年，不拖慢任</text>
+  <text x="74.0" y="123.0" class="h18" text-anchor="start">何人</text>
+  <text x="74.0" y="148.0" class="c15" text-anchor="start">脆弱的测试一改就坏，不清晰的测试失败了没</text>
+  <text x="74.0" y="170.0" class="c15" text-anchor="start">人看得懂；两者都在偷走工程师的时间</text>
+  <text x="22.0" y="204.0" class="h16" fill="var(--diagram-primary,#0b6f5d)" text-anchor="start">靠什么支撑</text>
+  <rect x="22.0" y="220.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="246.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,238.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></g>
+  <text x="74.0" y="251.0" class="h18" text-anchor="start">不轻易坏</text>
+  <text x="74.0" y="276.0" class="c15" text-anchor="start">对着公开接口测行为；重构、加功能、修 bug</text>
+  <text x="74.0" y="298.0" class="c15" text-anchor="start">都不该逼你改测试</text>
+  <rect x="22.0" y="318.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="344.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,336.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></g>
+  <text x="74.0" y="349.0" class="h18" text-anchor="start">一个行为</text>
+  <text x="74.0" y="374.0" class="c15" text-anchor="start">一个测试只验证一个行为，按 given、when、</text>
+  <text x="74.0" y="396.0" class="c15" text-anchor="start">then 组织，用被测行为命名</text>
+  <rect x="22.0" y="416.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="442.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,434.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></g>
+  <text x="74.0" y="447.0" class="h18" text-anchor="start">完整简洁</text>
+  <text x="74.0" y="472.0" class="c15" text-anchor="start">读者在测试里就能看到全部关键输入和预期，</text>
+  <text x="74.0" y="494.0" class="c15" text-anchor="start">无关细节用辅助方法藏起来</text>
+  <rect x="22.0" y="514.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="540.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,532.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></g>
+  <text x="74.0" y="545.0" class="h18" text-anchor="start">失败可读</text>
+  <text x="74.0" y="570.0" class="c15" text-anchor="start">失败信息要说清预期、实际和差别，让人不用</text>
+  <text x="74.0" y="592.0" class="c15" text-anchor="start">调试就知道错在哪</text>
+  <rect x="22.0" y="612.0" width="376.0" height="88.0" rx="9" fill="var(--diagram-secondary-soft,#dce4ed)"/>
+  <circle cx="50.0" cy="638.0" r="14" fill="var(--diagram-secondary-soft,#dce4ed)" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2"/><g transform="translate(42.0,630.0) scale(0.667)" fill="none" stroke="var(--diagram-secondary,#2c6096)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></g>
+  <text x="74.0" y="643.0" class="h18" text-anchor="start">DAMP 优于 DRY</text>
+  <text x="74.0" y="668.0" class="c15" text-anchor="start">测试代码宁可重复也要直白；别把逻辑和条件</text>
+  <text x="74.0" y="690.0" class="c15" text-anchor="start">放进测试里</text>
+  <rect x="22.0" y="718.0" width="376.0" height="90.0" rx="10" fill="var(--diagram-primary-soft,#d6e5dc)"/>
+  <text x="36.0" y="739.0" class="tag" text-anchor="start">一句话</text>
+  <text x="36.0" y="765.0" class="answer-m" text-anchor="start">好的单元测试：重构不坏、读起来完整、失败</text>
+  <text x="36.0" y="791.0" class="answer-m" text-anchor="start">时说得清原因</text>
 </svg>
