@@ -53,5 +53,5 @@
 </g>
 <text x="32" y="397" class="strong" text-anchor="start">结果只有 b.cc、c.cc：未改文件查 S 的历史索引，改动按当前状态搜索。</text>
 <text x="32" y="432" class="small" text-anchor="start">反例：HEAD 后来新增的 h.cc 即使含 OldApi，也不属于这个工作区。</text>
-<text x="32" y="463" class="small" text-anchor="start">修改不是再添加一次旧命中；文本视图准确也不保证语义交叉引用同步。</text>
+<text x="32" y="463" class="small" text-anchor="start">文本视图准确，语义交叉引用也可能尚未同步。</text>
 </svg>

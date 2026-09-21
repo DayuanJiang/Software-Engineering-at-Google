@@ -36,5 +36,5 @@
 <text x="24" y="458" class="" text-anchor="start">启动构建，才发现范围不符。</text>
 <text x="24" y="505" class="small" text-anchor="start">指标仍是每位工程师的</text>
 <text x="24" y="533" class="small" text-anchor="start">构建延迟中位数。</text>
-<text x="24" y="577" class="small" text-anchor="start">只改纳入范围；未报告数值变化。</text>
+<text x="24" y="577" class="small" text-anchor="start">只改纳入范围。</text>
 </svg>

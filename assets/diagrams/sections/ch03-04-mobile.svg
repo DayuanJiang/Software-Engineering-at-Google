@@ -48,6 +48,5 @@
 </g>
 <text x="24" y="497" text-anchor="start" class="strong">两种情况都仍需代码审查</text>
 <text x="24" y="527" text-anchor="start" class="small">本项批准不等于全部批准</text>
-<text x="24" y="558" text-anchor="start" class="small">范围：本书描述的单体仓库</text>
 <text x="24" y="589" text-anchor="start" class="small">明确短期使用的代码可有豁免</text>
 </svg>

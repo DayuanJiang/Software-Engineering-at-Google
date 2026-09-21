@@ -27,6 +27,6 @@
 <text x="40" y="506" class="small" text-anchor="start" data-region="24 439 372 90">本例通过；以后仍须继续运行</text>
 <path d="M210 382V431" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-01m-arrow)"/>
 <text x="229" y="412" class="small" text-anchor="start">定位并修复</text>
-<text x="24" y="558" class="small" text-anchor="start">示意：修复一次错误返回 3 的缺陷。</text>
+<text x="24" y="558" class="small" text-anchor="start">修复一次错误返回 3 的缺陷。</text>
 <text x="24" y="585" class="small" text-anchor="start">本例通过不代表所有行为都正确。</text>
 </svg>

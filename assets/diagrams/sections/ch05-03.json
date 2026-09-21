@@ -3,13 +3,15 @@
   "chapter": 5,
   "title": "经理不是 Java 专家，怎么办？",
   "summary": "用原书 Java 案例画出三方关系：受阻工程师、并非 Java 专家的经理、了解该问题的另一位工程师。经理的贡献是牵线建立技术求助关系，而不是自己掌握答案。",
-  "enabled": true,
-  "sourceSections": ["### Remove Roadblocks  消除障碍"],
+  "enabled": false,
+  "sourceSections": [
+    "### Remove Roadblocks  消除障碍"
+  ],
   "afterParagraph": "很多时候，认识合适的人比知道正确答案更有价值。",
   "desktop": "assets/diagrams/sections/ch05-03.svg",
   "mobile": "assets/diagrams/sections/ch05-03-mobile.svg",
   "pedagogy": {
-    "action": "replace",
+    "action": "retire",
     "readerQuestion": "经理不是 Java 专家，怎样仍能帮助被 Java 代码卡住的工程师？",
     "expectedAnswer": "原书经理把受阻工程师与另一位恰好理解问题的工程师联系起来。领导可以通过认识合适的人清除障碍，不必亲自知道所有技术答案。",
     "visualEncoding": "三角关系图将经理放在牵线位置；两条带“介绍”标签的连线接到工程师和懂该问题的人，再用独立标注的技术求助关系连接这两位工程师。角色、知识所在位置与新增联系分开编码。",
@@ -17,5 +19,6 @@
     "beforeProblem": "原图将目标、执行、校准串成通用循环，清障机制只藏在图外一句话里；回到目标框也容易把技术求助误读成必须重定目标。",
     "whyBetter": "真实案例把经理改变的联系关系画出来，读者能区分技术知识由谁提供、联系由谁促成，不必把“服务团队”解释为领导替成员解决所有问题。",
     "limits": "连线表示介绍与技术求助，不是汇报层级；不虚构 Java 问题细节、解决时长或效率提升。图示角色位置仅为排版，不代表职级。"
-  }
+  },
+  "removalReason": "三个方框加箭头只表达“经理牵线、懂问题的人帮忙”这一句话，正文一句已经说清，图形没有增加信息。"
 }

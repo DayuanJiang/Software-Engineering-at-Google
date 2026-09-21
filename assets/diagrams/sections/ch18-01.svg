@@ -48,6 +48,6 @@
 <text x="849" y="322" class="" text-anchor="middle" data-owner="ch18-01-box-10">c.jar</text>
 <text x="580" y="382" class="small" text-anchor="start">各写各的产物，不争用状态文件。</text>
 <path d="M24 408H936" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
-<text x="32" y="437" class="small" text-anchor="start">箭头为执行／产物流，不是依赖边；并行需要已知输入输出与隔离。</text>
+<text x="32" y="437" class="small" text-anchor="start">箭头为执行与产物流；并行需要已知输入输出与隔离。</text>
 <text x="32" y="465" class="small" text-anchor="start">隔离不保证任意自定义动作确定。</text>
 </svg>

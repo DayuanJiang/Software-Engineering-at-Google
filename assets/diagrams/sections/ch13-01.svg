@@ -40,5 +40,5 @@
 <rect id="ch13-01-region-7" x="679" y="335" width="249" height="83" fill="var(--diagram-warm-soft,#fff3dc)"/>
 <text x="695" y="366" text-anchor="start" class="" data-fit="ch13-01-region-7">return true</text>
 <text x="695" y="400" text-anchor="start" class="small" data-fit="ch13-01-region-7">扣款调用：1 次</text>
-<text x="32" y="458" text-anchor="start" class="small">两条路径都不证明真实扣款成功；0/1 次由控制流推导，并非新增的交互断言。</text>
+<text x="32" y="458" text-anchor="start" class="small">两条路径都不证明真实扣款成功。</text>
 </svg>

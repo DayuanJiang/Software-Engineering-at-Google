@@ -34,5 +34,5 @@
 <text x="528" y="362" class="danger" text-anchor="middle" data-owner="ch21-05-shape-4">≠（内侧变了）</text>
 <text x="752" y="362" class="strong danger" text-anchor="middle" data-owner="ch21-05-shape-4">b</text>
 <text x="32" y="422" class="small" text-anchor="start">项目用法仍要求两处等效：跨环境构建与发布出错，内部优化被推迟。</text>
-<text x="32" y="458" class="small" text-anchor="start">图中只比较这项行为；曾经等效，不等于长期兼容承诺。</text>
+<text x="32" y="458" class="small" text-anchor="start">曾经等效，不等于长期兼容承诺。</text>
 </svg>

@@ -44,5 +44,5 @@
   <path d="M878 330L900 352L878 374L856 352Z" class="deferred"/>
   <text x="904" y="406" text-anchor="end" class="strong">集中升级更痛苦</text>
   <path d="M32 427H928" class="line"/>
-  <text x="32" y="459" class="minor">首次升级往往更昂贵；图示不代表实测成本或固定升级频率。</text>
+  <text x="32" y="459" class="minor">首次升级往往比后续升级更昂贵。</text>
 </svg>

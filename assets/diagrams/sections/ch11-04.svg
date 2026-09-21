@@ -29,5 +29,4 @@
 <text x="520" y="340" class="small" text-anchor="start" data-region="504 234 424 157">该功能行：已覆盖</text>
 <text x="520" y="377" class="strong danger" text-anchor="start" data-region="504 234 424 157">3 ≠ -3 → 断言失败</text>
 <text x="32" y="429" class="small" text-anchor="start">执行路径相同，检测结果不同：差别在是否检查返回值。</text>
-<text x="32" y="460" class="small" text-anchor="start">只比较所示功能行的行覆盖率，不是整个程序的质量评分。</text>
 </svg>

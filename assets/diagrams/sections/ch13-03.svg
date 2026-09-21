@@ -34,5 +34,5 @@
 <text x="483" y="326" text-anchor="start" class="small">读取</text>
 <text x="604" y="349" text-anchor="start" class="" data-fit="ch13-03-region-4">get(id) → item</text>
 <text x="32" y="431" text-anchor="start" class="">A/B 不必各写一个 fake；两条真实调用路径仍在测试中执行。</text>
-<text x="32" y="465" text-anchor="start" class="small">断言 B 读回 item；该示意不验证真实数据库的持久化、并发或性能，仍需另外测试。</text>
+<text x="32" y="465" text-anchor="start" class="small">断言 B 读回 item；真实数据库的持久化、并发和性能仍需另外测试。</text>
 </svg>

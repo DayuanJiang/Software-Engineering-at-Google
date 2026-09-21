@@ -48,5 +48,5 @@
   <path d="M32 368L928 368" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
   <text x="32" y="401" text-anchor="start">分片乙：项目乙的独立修改，可另交；不必因同属一次迁移而捆绑。</text>
   <text x="32" y="438" text-anchor="start" class="small">边界先看项目与所有权，再检查依赖；有更多配套修改就合并或先做兼容。</text>
-  <text x="32" y="466" text-anchor="start" class="small">每片仍需测试、审查与项目检查；本图只展示声明和定义的一致性。</text>
+  <text x="32" y="466" text-anchor="start" class="small">每片仍需测试、审查与项目检查。</text>
 </svg>

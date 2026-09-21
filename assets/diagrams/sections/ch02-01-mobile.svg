@@ -49,6 +49,5 @@
 <path d="M184 399H236" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-01m-primary-arrow)"/>
 <path d="M319 449V473H218" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-01m-primary-arrow)"/>
 <text x="24" y="506" class="primary" text-anchor="start">也许第一周就能解决</text>
-<text x="24" y="550" class="small" text-anchor="start">顺序示意，不是实测工期。</text>
 <text x="24" y="578" class="small" text-anchor="start">方向未明时，太多早期反馈也有风险。</text>
 </svg>

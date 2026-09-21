@@ -41,6 +41,5 @@
 <rect x="24" y="484" width="372" height="51" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
 <text x="210" y="516" text-anchor="middle" class="">仍可审视当前岗位与支持需求</text>
 </g>
-<text x="24" y="563" text-anchor="start" class="small">还须审视偏见与跨组织标准；</text>
-<text x="24" y="589" text-anchor="start" class="small">三项问题全答“是”也不证明公平。</text>
+<text x="24" y="563" text-anchor="start" class="small">还须审视偏见与跨组织标准。</text>
 </svg>

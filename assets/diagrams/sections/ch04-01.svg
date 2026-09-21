@@ -45,5 +45,5 @@
 <rect x="32" y="365" width="896" height="65" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
 <text x="480" y="406" text-anchor="middle" class="">只改变人员构成，不能代替对数据和测试覆盖的核查。</text>
 </g>
-<text x="32" y="462" text-anchor="start" class="small">缺口表示测试未拦截此错误，不表示样本构成、错误比例或量化因果效果。</text>
+<text x="32" y="462" text-anchor="start" class="small">缺口表示测试未拦截此错误。</text>
 </svg>

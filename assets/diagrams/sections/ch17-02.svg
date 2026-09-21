@@ -46,5 +46,4 @@
 </g>
 <text x="32" y="389" class="" text-anchor="start">补充检索定义和文件名，把 point.h 加入候选；排序本身不能补回漏项。</text>
 <text x="32" y="430" class="small" text-anchor="start">入选后再结合文档优先级与查询匹配信号；定义 / 文件名匹配可加分。</text>
-<text x="32" y="462" class="small" text-anchor="start">这里没有给出评分公式，也不保证定义最终排第一。</text>
 </svg>

@@ -60,5 +60,5 @@
 <path d="M596 261L616 277M616 261L596 277" class="cut" fill="none" stroke="var(--diagram-danger,#b54750)" stroke-width="2" stroke-linejoin="round"/>
 <path d="M832 233V278H780V297" class="connector" fill="none" stroke="var(--diagram-primary,#087f6d)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-02-primary-arrow)"/>
 <text x="738" y="398" class="small" text-anchor="middle">文档可查，辅助 B 接手</text>
-<text x="32" y="446" class="small" text-anchor="start">仅任命后备不够：本图右侧的前提是 B 已掌握知识；不据此计算巴士因子。</text>
+<text x="32" y="446" class="small" text-anchor="start">仅任命后备不够：右侧的前提是 B 已经掌握了知识。</text>
 </svg>

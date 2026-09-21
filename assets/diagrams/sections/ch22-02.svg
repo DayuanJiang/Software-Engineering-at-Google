@@ -69,5 +69,4 @@
   <text x="800" y="362" text-anchor="start" class="small muted-ink">无需复跑</text>
   <path d="M32 398L928 398" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
   <text x="32" y="430" text-anchor="start" class="strong">b 合测失败，不等于整批都有错；甲、乙得到不同的单片证据。</text>
-  <text x="32" y="463" text-anchor="start" class="small">示例测试均非 flaky；此图采用后文分片交集规则，不是 TAP 列车完整五步。</text>
 </svg>

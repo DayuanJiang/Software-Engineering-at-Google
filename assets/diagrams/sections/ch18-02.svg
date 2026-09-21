@@ -39,5 +39,5 @@
 <text x="376" y="364" class="strong" text-anchor="start">对照：只改 MyBinary.java</text>
 <text x="376" y="395" class="small" text-anchor="start">只重建 MyBinary，其他产物复用。</text>
 <path d="M24 428H936" fill="none" stroke="var(--diagram-line,#b9c9c0)"/>
-<text x="32" y="458" class="small" text-anchor="start">按原文目标级简化；其他输入不变、旧产物可用。重建不等于输出字节必变。</text>
+<text x="32" y="458" class="small" text-anchor="start">其他输入不变时旧产物可用；重建不等于输出字节必变。</text>
 </svg>

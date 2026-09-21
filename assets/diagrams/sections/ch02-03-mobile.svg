@@ -45,5 +45,5 @@
 <text x="24" y="549" class="small warm" text-anchor="start">清晰、易维护</text>
 <path d="M153 543H179" class="connector" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-03m-warm-arrow)"/>
 <text x="193" y="549" class="small" text-anchor="start">尊重：讨论目标</text>
-<text x="24" y="585" class="small" text-anchor="start">xyzzy 为占位词；不保证建议被接受。</text>
+<text x="24" y="585" class="small" text-anchor="start">xyzzy 是原文的占位词。</text>
 </svg>

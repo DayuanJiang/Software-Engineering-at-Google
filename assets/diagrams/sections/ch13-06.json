@@ -1,0 +1,26 @@
+{
+  "id": "ch13-06",
+  "chapter": 13,
+  "title": "同一权限检查：改状态、改响应、查调用",
+  "summary": "沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。",
+  "enabled": true,
+  "sourceSections": [
+    "## Techniques for Using Test Doubles 测试替身的使用技术",
+    "### Faking 使用伪实现",
+    "### Stubbing 打桩",
+    "### Interaction Testing 交互测试"
+  ],
+  "afterParagraph": "但应尽可能避免，因为过度使用很容易让测试变得脆弱。",
+  "desktop": "assets/diagrams/sections/ch13-06.svg",
+  "mobile": "assets/diagrams/sections/ch13-06-mobile.svg",
+  "pedagogy": {
+    "action": "keep",
+    "readerQuestion": "同样调用 userHasAccess，添加用户、预设 lookupUser 响应和验证 lookupUser 调用分别能说明什么？",
+    "expectedAnswer": "fake 执行添加用户的状态变化，权限断言由 false 变为 true；打桩把 lookupUser 的响应由 null 改为 USER，也使权限断言由 false 变为 true，但不证明实际添加或查询用户的实现。交互验证只检查 lookupUser 是否按参数调用，不检查权限返回值。mock 是可用于后两种技术的对象，不是与它们并列的互斥类别。优先使用可行的真实实现，不能使用时通常优先 fake。",
+    "visualEncoding": "同一权限检查的三条横向轨迹在手机上改为纵向分段。fake 轨迹将空授权集合变成含 u 的集合，并对齐 false/true 断言；打桩轨迹将 null/USER 响应对齐相同断言；交互轨迹把 verify 调用和未断言的返回值并列。同一 mock 的标注连接打桩与交互两种用途，而非划分对象分类树。",
+    "sourceEvidence": "## Techniques for Using Test Doubles 测试替身的使用技术；### Faking 使用伪实现，例13-7 addAuthorizedUser；### Stubbing 打桩，例13-8 thenReturn(null)/thenReturn(USER)；### Interaction Testing 交互测试，例13-9 verify(mockAuthorizationService).lookupUser(USER_ID)；### Mocking Frameworks 模拟框架；#### Prefer to perform interaction testing only for state-changing functions  尽量只对改变状态的函数进行交互测试，不改变状态的函数通常不需要额外验证交互。",
+    "beforeProblem": "曾作为章首总览图使用，但它讲的是读完相关小节后才能理解的具体机制，放在章首读者尚无上下文；现改为小节图，紧跟它所解释的段落。",
+    "whyBetter": "读者先读到书中的例子和规则，再看这张图把它们并排对照，能自己推出图中每个结论。",
+    "limits": "u 表示 USER_ID，USER 表示同一用户。图中是书中测试示意，不是可直接编译的完整代码；lookupUser 交互验证用于说明证据边界，不推荐对普通只读调用重复验证。例子不证明真实授权服务的正确性，也不把三种技术定义为通用互斥分类。"
+  }
+}

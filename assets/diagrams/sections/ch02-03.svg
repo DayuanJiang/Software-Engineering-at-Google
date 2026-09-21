@@ -47,5 +47,5 @@
 <text x="32" y="425" class="warm" text-anchor="start">“更清晰，也更容易维护”</text>
 <path d="M353 417H414" class="connector" fill="none" stroke="var(--diagram-warm,#a56a1f)" stroke-width="2" stroke-linejoin="round" marker-end="url(#ch02-03-warm-arrow)"/>
 <text x="436" y="425" class="" text-anchor="start">尊重：给出可讨论的项目目标</text>
-<text x="32" y="464" class="small" text-anchor="start">xyzzy 是原文占位词；措辞不证明模式更好，也不保证对方接受建议。</text>
+<text x="32" y="464" class="small" text-anchor="start">xyzzy 是原文的占位词。</text>
 </svg>

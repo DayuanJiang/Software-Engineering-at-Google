@@ -35,5 +35,5 @@
 <rect x="618" y="322" width="310" height="88" rx="6" fill="var(--diagram-warm-soft,#fff3dc)"/>
 <text x="634" y="357" class="strong" text-anchor="start" data-bounds="634 330 278 72">抛出异常</text>
 <text x="634" y="390" class="code small bad" text-anchor="start" data-bounds="634 330 278 72">DuplicateEntryError</text>
-<text x="32" y="456" class="small" text-anchor="start">条件、返回值与异常要连着写；内部如何检测重复，不是这条调用契约的重点。</text>
+<text x="32" y="456" class="small" text-anchor="start">条件、返回值与异常要连着写。</text>
 </svg>

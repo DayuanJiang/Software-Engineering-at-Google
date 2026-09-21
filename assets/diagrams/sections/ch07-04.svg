@@ -33,5 +33,5 @@
 <text x="819" y="313" class="strong danger-text" text-anchor="middle" data-box="ch07-04-excluded">排除</text>
 <text x="32" y="391" class="" text-anchor="start">体验抽样：有人表示自己并未启动构建，才发现日志范围与体验不符。</text>
 <text x="32" y="428" class="small" text-anchor="start">指标仍为每位工程师的构建延迟中位数；不是把所有自动构建一律排除。</text>
-<text x="32" y="459" class="small" text-anchor="start">改变的是纳入范围。书中未给出构建数量、延迟数值或中位数的变化方向。</text>
+<text x="32" y="459" class="small" text-anchor="start">改变的是纳入范围。</text>
 </svg>

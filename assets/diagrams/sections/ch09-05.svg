@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch09-05-diagram" class="chapter-svg cg-ch09-05" role="img" aria-labelledby="ch09-05-title ch09-05-desc" viewBox="0 0 960 480" width="960" height="480">
+<title id="ch09-05-title">三项批准，不等于三位审查者</title>
+<desc id="ch09-05-desc">本章谷歌流程的三个示例。作者甲没有所有权和语言资格时，合格的审查者乙可以同时给出他人 LGTM、代码所有者批准和相应语言 Readability 批准。作者甲具备后两项资格时，只需另一位工程师乙给出 LGTM。同样有资格的甲如果仅自审，仍然缺少他人 LGTM，不能提交。批准齐全还必须处理全部审查意见。这不是其他平台的权限政策，也没有假定每次修改自动撤销批准。</desc>
+<style>
+.cg-ch09-05#ch09-05-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch09-05#ch09-05-diagram .strong{font-weight:600}
+.cg-ch09-05#ch09-05-diagram .small{font-size:20px;fill:var(--diagram-muted,#686868)}
+.cg-ch09-05#ch09-05-diagram .peer{fill:var(--diagram-secondary,#2f6eac);font-weight:600}
+.cg-ch09-05#ch09-05-diagram .author{fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch09-05#ch09-05-diagram .danger{fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch09-05#ch09-05-diagram .line{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch09-05#ch09-05-diagram .arrow{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch09-05-arrow)}
+</style>
+<defs><marker id="ch09-05-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/></marker></defs>
+<rect id="ch09-05-box1" x="0" y="0" width="960" height="480" rx="0" fill="var(--diagram-bg,#fff)"/>
+<g transform="translate(68.6 0) scale(0.8571)">
+<text x="32" y="40" class="strong" text-anchor="start">三项批准，不等于三位审查者</text>
+<text x="32" y="72" class="small" text-anchor="start">本章谷歌流程｜甲是作者，乙是另一位工程师；以下为角色组合示例</text>
+<text x="48" y="116" class="small" text-anchor="start">人员条件</text>
+<text x="350" y="116" class="small" text-anchor="middle">他人 LGTM</text>
+<text x="510" y="116" class="small" text-anchor="middle">所有者批准</text>
+<text x="680" y="116" class="small" text-anchor="middle">Readability</text>
+<text x="849" y="116" class="small" text-anchor="middle">批准状态</text>
+<text x="510" y="144" class="small" text-anchor="middle">相应目录</text>
+<text x="680" y="144" class="small" text-anchor="middle">相应语言</text>
+<rect id="ch09-05-box2" x="32" y="160" width="896" height="72" rx="0" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="48" y="189" class="strong" text-anchor="start" data-box="ch09-05-box2">甲无后两项资格</text>
+<text x="48" y="217" class="small" text-anchor="start" data-box="ch09-05-box2">乙有所有权与语言资格</text>
+<text x="350" y="204" class="peer" text-anchor="middle" data-box="ch09-05-box2">审查者乙</text>
+<text x="510" y="204" class="peer" text-anchor="middle" data-box="ch09-05-box2">审查者乙</text>
+<text x="680" y="204" class="peer" text-anchor="middle" data-box="ch09-05-box2">审查者乙</text>
+<text x="849" y="204" class="strong" text-anchor="middle" data-box="ch09-05-box2">三项齐全</text>
+<rect id="ch09-05-box3" x="32" y="242" width="896" height="72" rx="0" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="48" y="271" class="strong" text-anchor="start" data-box="ch09-05-box3">甲有后两项资格</text>
+<text x="48" y="299" class="small" text-anchor="start" data-box="ch09-05-box3">乙提供独立的同行审查</text>
+<text x="350" y="286" class="peer" text-anchor="middle" data-box="ch09-05-box3">审查者乙</text>
+<text x="510" y="286" class="author" text-anchor="middle" data-box="ch09-05-box3">作者甲</text>
+<text x="680" y="286" class="author" text-anchor="middle" data-box="ch09-05-box3">作者甲</text>
+<text x="849" y="286" class="strong" text-anchor="middle" data-box="ch09-05-box3">三项齐全</text>
+<rect id="ch09-05-box4" x="32" y="324" width="896" height="72" rx="0" fill="var(--diagram-danger-soft,#faecee)"/>
+<text x="48" y="353" class="strong" text-anchor="start" data-box="ch09-05-box4">甲有资格，但仅自审</text>
+<text x="48" y="381" class="small" text-anchor="start" data-box="ch09-05-box4">没有其他工程师认可</text>
+<text x="350" y="368" class="danger" text-anchor="middle" data-box="ch09-05-box4">缺少</text>
+<text x="510" y="368" class="author" text-anchor="middle" data-box="ch09-05-box4">作者甲</text>
+<text x="680" y="368" class="author" text-anchor="middle" data-box="ch09-05-box4">作者甲</text>
+<text x="849" y="368" class="danger" text-anchor="middle" data-box="ch09-05-box4">不可提交</text>
+<path d="M270 96 V396" class="line"/>
+<path d="M430 96 V396" class="line"/>
+<path d="M590 96 V396" class="line"/>
+<path d="M770 96 V396" class="line"/>
+<text x="32" y="438" class="strong" text-anchor="start">提交还须：全部审查意见已处理</text>
+<text x="32" y="474" class="small" text-anchor="start">意见未处理：即使三项批准齐全，也还不能提交。自审不能充当他人的 LGTM。</text>
+<text x="32" y="514" class="small" text-anchor="start">默认只需一个 LGTM；作者也可明确要求所有审查者同意。</text>
+<text x="32" y="543" class="small" text-anchor="start">Readability 是相应语言的规范审查资格，不只是“读懂了代码”。</text>
+</g>
+</svg>

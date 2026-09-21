@@ -30,5 +30,4 @@
 <text x="40" y="470" class="small" text-anchor="start" data-region="24 375 372 146">该功能行：已覆盖</text>
 <text x="40" y="503" class="strong danger" text-anchor="start" data-region="24 375 372 146">3 ≠ -3 → 断言失败</text>
 <text x="24" y="554" class="small" text-anchor="start">都覆盖该行，但只有 B 检查返回值。</text>
-<text x="24" y="582" class="small" text-anchor="start">这里只比较所示功能行的行覆盖率。</text>
 </svg>

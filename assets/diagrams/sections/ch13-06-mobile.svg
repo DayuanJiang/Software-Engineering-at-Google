@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" class="chapter-svg cg-ch13-06" data-layout="mobile" role="img" aria-labelledby="ch13-06m-title ch13-06m-desc">
+<title id="ch13-06m-title">同一权限检查：改状态、改响应、查调用</title>
+<desc id="ch13-06m-desc">沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。 u 表示 USER_ID，USER 表示同一用户。图中是书中测试示意，不是可直接编译的完整代码；lookupUser 交互验证用于说明证据边界，不推荐对普通只读调用重复验证。例子不证明真实授权服务的正确性，也不把三种技术定义为通用互斥分类。</desc>
+<style>
+.cg-ch13-06[data-layout="mobile"] text {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+.cg-ch13-06[data-layout="mobile"] .small {font-size:19px;fill:var(--diagram-muted,#686868)}
+.cg-ch13-06[data-layout="mobile"] .strong {font-weight:600}
+.cg-ch13-06[data-layout="mobile"] .good {fill:var(--diagram-primary,#087f6d);font-weight:600}
+.cg-ch13-06[data-layout="mobile"] .bad {fill:var(--diagram-danger,#b54750);font-weight:600}
+.cg-ch13-06[data-layout="mobile"] .rule {fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+.cg-ch13-06[data-layout="mobile"] .arrow {fill:none;stroke:var(--diagram-primary,#087f6d);stroke-width:2;marker-end:url(#ch13-06m-arrow)}
+</style>
+<defs><marker id="ch13-06m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9 Z" fill="var(--diagram-primary,#087f6d)"/></marker></defs>
+<rect id="ch13-06m-region-1" x="0" y="0" width="420" height="600" fill="var(--diagram-bg,#fff)"/>
+<g transform="translate(24.7 0) scale(0.8824)">
+<text x="24" y="36" text-anchor="start" class="strong">同一权限检查：三种不同操作</text>
+<text x="24" y="65" text-anchor="start" class="small">例13-7至13-9；u = USER_ID</text>
+<text x="24" y="90" text-anchor="start" class="small">USER 是该用户；每次检查 userHasAccess(u)</text>
+<rect id="ch13-06m-region-2" x="24" y="110" width="372" height="148" fill="var(--diagram-primary-soft,#e5f4ee)"/>
+<text x="40" y="140" text-anchor="start" class="strong" data-fit="ch13-06m-region-2">fake：改变授权集合</text>
+<text x="48" y="177" text-anchor="start" class="">{}</text>
+<path class="arrow" d="M87 169 L133 169"/>
+<text x="151" y="177" text-anchor="start" class="">{u}</text>
+<text x="40" y="208" text-anchor="start" class="" data-fit="ch13-06m-region-2">addAuthorizedUser(USER)</text>
+<text x="40" y="241" text-anchor="start" class="" data-fit="ch13-06m-region-2">权限断言：false → true</text>
+<rect id="ch13-06m-region-3" x="24" y="278" width="372" height="140" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
+<text x="40" y="308" text-anchor="start" class="strong" data-fit="ch13-06m-region-3">打桩：改变预设响应</text>
+<text x="40" y="340" text-anchor="start" class="" data-fit="ch13-06m-region-3">lookupUser(u): null → USER</text>
+<text x="40" y="372" text-anchor="start" class="" data-fit="ch13-06m-region-3">权限断言：false → true</text>
+<text x="40" y="401" text-anchor="start" class="small" data-fit="ch13-06m-region-3">不执行添加用户；响应由测试指定</text>
+<rect id="ch13-06m-region-4" x="24" y="438" width="372" height="112" fill="var(--diagram-warm-soft,#fff3dc)"/>
+<text x="40" y="468" text-anchor="start" class="strong" data-fit="ch13-06m-region-4">交互验证：检查调用</text>
+<text x="40" y="499" text-anchor="start" class="" data-fit="ch13-06m-region-4">verify(mock).lookupUser(u)</text>
+<text x="40" y="532" text-anchor="start" class="" data-fit="ch13-06m-region-4">只查调用；未断言权限结果</text>
+<text x="24" y="582" text-anchor="start" class="small">同一 mock 可设响应，也可查调用。</text>
+<text x="24" y="609" text-anchor="start" class="small">普通查询通常不必再验证交互。</text>
+<text x="24" y="636" text-anchor="start" class="small">优先真实实现；不适用时优先 fake。</text>
+<text x="24" y="663" text-anchor="start" class="small">替身测试仍需真实依赖测试补充。</text>
+</g>
+</svg>

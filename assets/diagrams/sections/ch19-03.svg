@@ -33,5 +33,5 @@
 <text x="676" y="297" class="strong" text-anchor="start" data-owner="ch19-03-region-9">审查者乙</text>
 <text x="656" y="359" class="small" text-anchor="start" data-owner="ch19-03-region-7">甲复看回复；乙仍需首次审查</text>
 <text x="32" y="427" class="" text-anchor="start">甲发意见不代表乙已完成；关注集可同时包含作者和审查者。</text>
-<text x="32" y="463" class="small" text-anchor="start">发布时系统会尝试更新；本例展示手动交接，不规定自动更新算法。</text>
+<text x="32" y="463" class="small" text-anchor="start">发布时系统会尝试更新；本例展示手动交接。</text>
 </svg>

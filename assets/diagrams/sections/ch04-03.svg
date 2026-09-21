@@ -42,12 +42,11 @@
 <g id="ch04-03-comparison" data-box="342,266,586,83">
 <rect x="342" y="266" width="586" height="83" rx="6" fill="var(--diagram-secondary-soft,#eaf1fa)"/>
 <text x="635" y="299" text-anchor="middle" class="strong">获满意或卓越评级的可能性相当</text>
-<text x="635" y="331" text-anchor="middle" class="small">原文未给数值；不保证某个人的表现</text>
+<text x="635" y="331" text-anchor="middle" class="small">原文未给出数值</text>
 </g>
 <g id="ch04-03-valid-use" data-box="32,365,896,52">
 <rect x="32" y="365" width="896" height="52" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)"/>
 <text x="480" y="399" text-anchor="middle" class="">仍可用：审视当前岗位匹配与支持需求</text>
 </g>
-<text x="32" y="444" text-anchor="start" class="small">这是本章内部流动案例，不是关于所有绩效指标的普遍定律。</text>
-<text x="32" y="471" text-anchor="start" class="small">预测效力、个人偏见、跨组织标准均须审视；全答“是”也不证明公平。</text>
+<text x="32" y="471" text-anchor="start" class="small">预测效力、个人偏见、跨组织标准均须审视。</text>
 </svg>

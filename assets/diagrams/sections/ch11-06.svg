@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ch11-06-diagram" class="chapter-svg cg-ch11-06" role="img" aria-labelledby="ch11-06-title ch11-06-desc" viewBox="0 0 960 480" width="960" height="480">
+  <title id="ch11-06-title">测试规模与范围是两个维度</title>
+  <desc id="ch11-06-desc">横轴是测试范围，即验证的行为或代码路径，而非执行了多少代码；纵轴是规模，即运行资源与约束，并非代码行数。小型测试限单进程，不能访问磁盘或网络，也不能休眠或阻塞，隔离的内存文件系统例外；中型测试限单机但可跨进程；大型测试允许跨机器。着色格是本章示例：仅验证日期选择器一条路径的本机浏览器测试可以是窄范围、中型；服务器端点验证解析、请求校验和业务逻辑，用进程内替身替代所有进程外依赖后可以是广范围、小型。空白格不代表不可行，面积不表示数量。</desc>
+  <defs>
+    <marker id="ch11-06-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <style>
+    .cg-ch11-06#ch11-06-diagram text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:400;letter-spacing:0;fill:var(--diagram-ink,#242424)}
+    .cg-ch11-06#ch11-06-diagram .strong{font-weight:600}
+    .cg-ch11-06#ch11-06-diagram .secondary{font-size:20px;fill:var(--diagram-muted,#686868)}
+    .cg-ch11-06#ch11-06-diagram .grid{fill:none;stroke:var(--diagram-line,#b9c9c0);stroke-width:1.5}
+    .cg-ch11-06#ch11-06-diagram .axis{fill:none;stroke:var(--diagram-muted,#686868);stroke-width:2;marker-end:url(#ch11-06-arrow)}
+    .cg-ch11-06#ch11-06-diagram .browser{fill:var(--diagram-secondary-soft,#eaf1fa);stroke:var(--diagram-secondary,#2f6eac);stroke-width:2}
+    .cg-ch11-06#ch11-06-diagram .endpoint{fill:var(--diagram-primary-soft,#e5f4ee);stroke:var(--diagram-primary,#087f6d);stroke-width:2}
+  </style>
+  <rect width="960" height="480" fill="var(--diagram-bg,#fff)"/>
+<g transform="translate(68.6 0) scale(0.8571)">
+  <g id="ch11-06-dimensions">
+    <text class="strong" x="36" y="48">规模 size</text>
+    <text class="secondary" x="36" y="80">运行资源与约束</text>
+    <text class="strong" x="574" y="50" text-anchor="middle">范围 scope：验证哪些行为</text>
+    <text x="346" y="91" text-anchor="middle">窄：单元测试</text>
+    <text x="574" y="91" text-anchor="middle">中：集成测试</text>
+    <text x="802" y="91" text-anchor="middle">广：系统等测试</text>
+  </g>
+  <g id="ch11-06-size-labels">
+    <text class="strong" x="36" y="151">大型</text>
+    <text class="secondary" x="36" y="185">允许跨机器</text>
+    <text class="strong" x="36" y="249">中型</text>
+    <text class="secondary" x="36" y="283">仅限单机</text>
+    <text class="strong" x="36" y="342">小型</text>
+    <text class="secondary" x="36" y="371">
+      <tspan x="36">单进程</tspan>
+      <tspan x="36" dy="26">无磁盘或网络访问</tspan>
+    </text>
+  </g>
+  <path class="grid" d="M232 116 H916 V404 H232 Z M460 116 V404 M688 116 V404 M232 212 H916 M232 308 H916"/>
+  <path class="axis" d="M220 414 V112"/>
+  <path class="axis" d="M220 414 H922"/>
+  <g id="ch11-06-narrow-medium-example">
+    <rect class="browser" x="232" y="212" width="228" height="96" rx="4"/>
+    <text class="strong" x="346" y="247" text-anchor="middle">日期选择器</text>
+    <text class="secondary" x="346" y="281" text-anchor="middle">本机浏览器，单路径</text>
+  </g>
+  <g id="ch11-06-broad-small-example">
+    <rect class="endpoint" x="688" y="308" width="228" height="96" rx="4"/>
+    <text class="strong" x="802" y="343" text-anchor="middle">服务器端点</text>
+    <text class="secondary" x="802" y="377" text-anchor="middle">进程外依赖用替身</text>
+  </g>
+  <text class="strong" x="36" y="452">日期：只验证一条路径</text>
+  <text class="secondary" x="36" y="484">本机浏览器 → 中型 + 窄范围</text>
+  <text class="strong" x="500" y="452">端点：验证解析、校验、业务逻辑</text>
+  <text class="secondary" x="500" y="484">进程外依赖全用替身 → 小型 + 广范围</text>
+  <text class="secondary" x="36" y="519">小型还禁休眠与阻塞；隔离的内存文件系统例外。</text>
+  <text class="secondary" x="36" y="548">着色格为书中反例。</text>
+</g>
+</svg>

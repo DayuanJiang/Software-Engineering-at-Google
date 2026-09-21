@@ -34,5 +34,5 @@
 <text x="560" y="377" text-anchor="start" class="bad">失败</text>
 <text x="800" y="377" text-anchor="start" class="bad">失败</text>
 <text x="32" y="421" text-anchor="start" class="small">晨间测试另查 Good morning! 与 IMAGE_SUNSHINE，版本仍用 any()。</text>
-<text x="32" y="459" text-anchor="start" class="small">2.2 与 Other 是示意变动。这里只验证调用，不证明最终显示；仍优先状态测试。</text>
+<text x="32" y="459" text-anchor="start" class="small">这里只验证调用，不证明最终显示；仍优先状态测试。</text>
 </svg>

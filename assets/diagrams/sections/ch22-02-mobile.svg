@@ -67,5 +67,4 @@
   <text x="273" y="507" text-anchor="start" class="small">不复跑</text>
   <path d="M24 527L396 527" fill="none" stroke="var(--diagram-line,#b9c9c0)" stroke-width="2" />
   <text x="24" y="556" text-anchor="start" class="small">合测不等于合交；证据仍逐片保留。</text>
-  <text x="24" y="584" text-anchor="start" class="small">集合与结果是示例，不是提速测量。</text>
 </svg>

@@ -39,5 +39,5 @@
 <text x="504" y="341" class="small" text-anchor="start">构建分析语义，不是只更新该文件</text>
 </g>
 <text x="32" y="404" class="" text-anchor="start">语义图纳入该提交后，worker.cc 才能出现在 Send 的使用位置列表。</text>
-<text x="32" y="445" class="small" text-anchor="start">书中 Kythe 每日构建，期间可能错位；这是历史实现描述，不是当前服务的时效承诺。</text>
+<text x="32" y="445" class="small" text-anchor="start">书中 Kythe 每日构建，期间可能错位。</text>
 </svg>

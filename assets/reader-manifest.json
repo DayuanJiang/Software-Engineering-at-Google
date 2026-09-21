@@ -256,7 +256,9 @@
             "whyBetter": "保留同一技术对象和建议，直接比较变动的措辞，再把每个短语连接到具体互动空间；读者无需根据抽象原则自行猜测怎么说。",
             "limits": "引语采用本章现有中文译文。xyzzy 是原文占位模式，不是技术正确性的证明；礼貌措辞不保证建议被采纳，也不能替代对团队文化的了解。"
           }
-        },
+        }
+      ],
+      "retiredSectionGuides": [
         {
           "id": "ch02-04",
           "chapter": 2,
@@ -268,9 +270,9 @@
           "afterParagraph": "不要抹去自己的足迹，而要像照亮跑道一样，让后来者看清这些足迹！",
           "desktop": "assets/diagrams/sections/ch02-04.svg",
           "mobile": "assets/diagrams/sections/ch02-04-mobile.svg",
-          "enabled": true,
+          "enabled": false,
           "pedagogy": {
-            "action": "replace",
+            "action": "retire",
             "readerQuestion": "说明了故障原因之后，复盘还必须带来哪些不同的结果？",
             "expectedAnswer": "要说明学到了什么和据此改变什么，明确立即修复问题的行动及负责人、预防再次发生的行动，并实际落实，同时让记录便于现在和未来的人查阅；道歉或指责不能代替这些结果。",
             "visualEncoding": "同一示意原因分出立即修复与预防复发两条行动，两条连线均标成提出的行动并汇合到落实检查；事实与根因记录另有一条通向共享查阅的路径，区分改变系统和传递经验，不画成时间循环。",
@@ -278,7 +280,8 @@
             "beforeProblem": "旧图把事实、根因、行动、共享串成循环，最后从共享返回事实，暗示没有文本依据的固定流程；没有展示根因如何决定行动，也没有区分写下行动与落实行动。",
             "whyBetter": "具体的配置故障把原因、修复、预防一一对应，写下与落实被明确分开；共享记录独立成一路，显示文档可查与行动落地是互补要求。",
             "limits": "配置故障、A/B 负责人及措施是明确标注的教学示例，不是书中事故。箭头表示依据与责任关系，不是事故处理的强制时间顺序，也不保证措施一定杜绝复发。"
-          }
+          },
+          "removalReason": "示意事件并非书中案例；图中的“事实、原因、修复、预防、共享”与正文对无责复盘内容的列举重复，读过该节后看不到新的东西。"
         }
       ]
     },
@@ -535,29 +538,6 @@
           }
         },
         {
-          "id": "ch05-03",
-          "chapter": 5,
-          "title": "经理不是 Java 专家，怎么办？",
-          "summary": "用原书 Java 案例画出三方关系：受阻工程师、并非 Java 专家的经理、了解该问题的另一位工程师。经理的贡献是牵线建立技术求助关系，而不是自己掌握答案。",
-          "enabled": true,
-          "sourceSections": [
-            "### Remove Roadblocks  消除障碍"
-          ],
-          "afterParagraph": "很多时候，认识合适的人比知道正确答案更有价值。",
-          "desktop": "assets/diagrams/sections/ch05-03.svg",
-          "mobile": "assets/diagrams/sections/ch05-03-mobile.svg",
-          "pedagogy": {
-            "action": "replace",
-            "readerQuestion": "经理不是 Java 专家，怎样仍能帮助被 Java 代码卡住的工程师？",
-            "expectedAnswer": "原书经理把受阻工程师与另一位恰好理解问题的工程师联系起来。领导可以通过认识合适的人清除障碍，不必亲自知道所有技术答案。",
-            "visualEncoding": "三角关系图将经理放在牵线位置；两条带“介绍”标签的连线接到工程师和懂该问题的人，再用独立标注的技术求助关系连接这两位工程师。角色、知识所在位置与新增联系分开编码。",
-            "sourceEvidence": "Remove Roadblocks  消除障碍：an arcane bit of Java code / manager was not a Java expert / connect the engineer to another engineer who knew exactly what the problem was。",
-            "beforeProblem": "原图将目标、执行、校准串成通用循环，清障机制只藏在图外一句话里；回到目标框也容易把技术求助误读成必须重定目标。",
-            "whyBetter": "真实案例把经理改变的联系关系画出来，读者能区分技术知识由谁提供、联系由谁促成，不必把“服务团队”解释为领导替成员解决所有问题。",
-            "limits": "连线表示介绍与技术求助，不是汇报层级；不虚构 Java 问题细节、解决时长或效率提升。图示角色位置仅为排版，不代表职级。"
-          }
-        },
-        {
           "id": "ch05-04",
           "chapter": 5,
           "title": "不知怎么做，还是不知为何做？",
@@ -608,6 +588,30 @@
             "whyBetter": "停止在同一章重复呈现相同职责关系；保留原文件和定位信息，便于追溯退休决定。",
             "limits": "SVG 原样保留但 enabled=false；实际不再插入需要共享 reader/manifest 的集成方遵守该标志，本次不修改共享代码。"
           }
+        },
+        {
+          "id": "ch05-03",
+          "chapter": 5,
+          "title": "经理不是 Java 专家，怎么办？",
+          "summary": "用原书 Java 案例画出三方关系：受阻工程师、并非 Java 专家的经理、了解该问题的另一位工程师。经理的贡献是牵线建立技术求助关系，而不是自己掌握答案。",
+          "enabled": false,
+          "sourceSections": [
+            "### Remove Roadblocks  消除障碍"
+          ],
+          "afterParagraph": "很多时候，认识合适的人比知道正确答案更有价值。",
+          "desktop": "assets/diagrams/sections/ch05-03.svg",
+          "mobile": "assets/diagrams/sections/ch05-03-mobile.svg",
+          "pedagogy": {
+            "action": "retire",
+            "readerQuestion": "经理不是 Java 专家，怎样仍能帮助被 Java 代码卡住的工程师？",
+            "expectedAnswer": "原书经理把受阻工程师与另一位恰好理解问题的工程师联系起来。领导可以通过认识合适的人清除障碍，不必亲自知道所有技术答案。",
+            "visualEncoding": "三角关系图将经理放在牵线位置；两条带“介绍”标签的连线接到工程师和懂该问题的人，再用独立标注的技术求助关系连接这两位工程师。角色、知识所在位置与新增联系分开编码。",
+            "sourceEvidence": "Remove Roadblocks  消除障碍：an arcane bit of Java code / manager was not a Java expert / connect the engineer to another engineer who knew exactly what the problem was。",
+            "beforeProblem": "原图将目标、执行、校准串成通用循环，清障机制只藏在图外一句话里；回到目标框也容易把技术求助误读成必须重定目标。",
+            "whyBetter": "真实案例把经理改变的联系关系画出来，读者能区分技术知识由谁提供、联系由谁促成，不必把“服务团队”解释为领导替成员解决所有问题。",
+            "limits": "连线表示介绍与技术求助，不是汇报层级；不虚构 Java 问题细节、解决时长或效率提升。图示角色位置仅为排版，不代表职级。"
+          },
+          "removalReason": "三个方框加箭头只表达“经理牵线、懂问题的人帮忙”这一句话，正文一句已经说清，图形没有增加信息。"
         }
       ]
     },
@@ -1022,6 +1026,29 @@
             "whyBetter": "聚焦原表压缩过度、却真正涉及决策的自动变更场景。读者能够根据风险或疑问对象沿不同路径得到具体下一步，而不是再次阅读分类清单。",
             "limits": "只解释本章自动重构与大规模变更的流程，不取代其他变更类型的正文。低风险并非自动生成的必然属性；本地审查并非所有变更的强制第二关，图也不赋予任何额外批准权限。"
           }
+        },
+        {
+          "id": "ch09-05",
+          "chapter": 9,
+          "title": "三项批准，不等于三位审查者",
+          "summary": "用三种具体组合比较批准状态：合格的另一位审查者兼任三项、作者凭资格满足后两项、作者仅自审而缺少他人 LGTM。三项批准齐全且所有审查意见已处理，才满足本章的常规提交条件。",
+          "enabled": true,
+          "sourceSections": [
+            "## How Code Review Works at Google  谷歌如何开展代码审查"
+          ],
+          "afterParagraph": "而所有者往往也具备相应的 Readability 资格。",
+          "desktop": "assets/diagrams/sections/ch09-05.svg",
+          "mobile": "assets/diagrams/sections/ch09-05-mobile.svg",
+          "pedagogy": {
+            "action": "keep",
+            "readerQuestion": "作者已经是代码所有者且有语言资格，还需要谁批准？三项批准是否要找三个人？",
+            "expectedAnswer": "本章谷歌流程要求另一位工程师的 LGTM、相应代码所有者批准和相应语言 Readability 批准。作者以外的一位合格审查者可以兼任三项；作者可凭所有权和语言资格满足后两项，但自审不能提供他人的 LGTM。三项齐全仍须处理全部审查意见。",
+            "visualEncoding": "桌面矩阵的三列是批准要求，三行是人员资格组合；同一名字重复出现表示一人兼任，不是三人。第三行只把他人 LGTM 改为缺少，结果随之变成不可提交。移动版按同样的三个情境重排，并显式列出每项由甲或乙满足。底部另列意见处理条件。",
+            "sourceEvidence": "## How Code Review Works at Google  谷歌如何开展代码审查：'作者也可以兼任后两种角色'、'上述三个权限位可以由不同的角色组合来满足'；## Code Review Flow  代码审查流程：'处理所有审查意见'；### Keep Reviewers to a Minimum  尽量减少审查者人数：'可以由同一个人满足'。",
+            "beforeProblem": "曾作为章首总览图使用，但它讲的是读完相关小节后才能理解的具体机制，放在章首读者尚无上下文；现改为小节图，紧跟它所解释的段落。",
+            "whyBetter": "读者先读到书中的例子和规则，再看这张图把它们并排对照，能自己推出图中每个结论。",
+            "limits": "仅解释书中谷歌常规流程，不代表其他平台的自批准规则，也不声称批准证明代码无缺陷。示例假定对应目录及语言资格有效，不展开跨目录、多语言、例外流程或工具自动撤销批准的行为。"
+          }
         }
       ],
       "retiredSectionGuides": [
@@ -1267,6 +1294,30 @@
           "afterParagraph": "没过多久，团队之间就开始竞相提升等级。",
           "desktop": "assets/diagrams/sections/ch11-05.svg",
           "mobile": "assets/diagrams/sections/ch11-05-mobile.svg"
+        },
+        {
+          "id": "ch11-06",
+          "chapter": 11,
+          "title": "测试规模与范围是两个维度",
+          "summary": "对照两个书中反例：单机浏览器只验证日期选择器的一条路径，属于中型、窄范围；服务器端点验证解析、请求校验和业务逻辑，替换全部进程外依赖后可以是小型、广范围。",
+          "enabled": true,
+          "sourceSections": [
+            "### Test Size  测试规模",
+            "### Test Scope  测试范围"
+          ],
+          "afterParagraph": "即使只验证一条代码路径，通常也要运行整个浏览器。",
+          "desktop": "assets/diagrams/sections/ch11-06.svg",
+          "mobile": "assets/diagrams/sections/ch11-06-mobile.svg",
+          "pedagogy": {
+            "action": "keep",
+            "readerQuestion": "为什么只验证日期选择器一条路径的测试可以比验证整个服务器端点的测试规模更大？",
+            "expectedAnswer": "规模按运行资源与约束分类，范围按实际验证的行为分类。单机浏览器测试可以是中型且窄范围；用进程内替身替换所有进程外依赖并遵守小型约束的端点测试，可以是小型且广范围。",
+            "visualEncoding": "保留正交的规模行和范围列，只标出书中两个反例。颜色对应下方可见的运行条件与验证目标；空白格不是不可能，格子面积不是用例数量。",
+            "sourceEvidence": "### Test Scope  测试范围：'针对服务器端点的测试，可以覆盖其全部正常解析流程、请求验证和业务逻辑'；'即使只验证一条代码路径，通常也要运行整个浏览器'。### Test Size  测试规模及#### Small tests  小型测试：单进程、禁止网络磁盘和阻塞、脚注5的隔离内存文件系统例外。",
+            "beforeProblem": "曾作为章首总览图使用，但它讲的是读完相关小节后才能理解的具体机制，放在章首读者尚无上下文；现改为小节图，紧跟它所解释的段落。",
+            "whyBetter": "读者先读到书中的例子和规则，再看这张图把它们并排对照，能自己推出图中每个结论。",
+            "limits": "不是完整分类算法、测试配比或速度保证。只绘制书中两个例子，不表示其他组合不可行；规模还可能受时间和内存等约束影响。"
+          }
         }
       ],
       "retiredSectionGuides": [
@@ -1514,6 +1565,32 @@
             "beforeProblem": "原图只有锁定所有字段到分开测试的文字框，没有真实的参数变化和断言结果，读者无法检查为什么重构后的测试既更聚焦又未放过姓名错误。",
             "whyBetter": "一个无关变化与一个真实缺陷作为对照，展示两个测试的不同结果，解释 any() 放宽的范围以及仍保留的约束。",
             "limits": "版本2.2和错误姓名 Other 是基于书中代码构造的明确示意变动，不是生产数据。图仅讨论必要交互测试的断言范围，不证明 UI 最终显示正确；优先状态测试的原则仍然适用。"
+          }
+        },
+        {
+          "id": "ch13-06",
+          "chapter": 13,
+          "title": "同一权限检查：改状态、改响应、查调用",
+          "summary": "沿用例13-7至13-9，对照添加授权用户、预设 lookupUser 返回值与验证 lookupUser 调用，直接展示权限断言如何改变；同一个 mock 可以同时用于打桩和交互验证。",
+          "enabled": true,
+          "sourceSections": [
+            "## Techniques for Using Test Doubles 测试替身的使用技术",
+            "### Faking 使用伪实现",
+            "### Stubbing 打桩",
+            "### Interaction Testing 交互测试"
+          ],
+          "afterParagraph": "但应尽可能避免，因为过度使用很容易让测试变得脆弱。",
+          "desktop": "assets/diagrams/sections/ch13-06.svg",
+          "mobile": "assets/diagrams/sections/ch13-06-mobile.svg",
+          "pedagogy": {
+            "action": "keep",
+            "readerQuestion": "同样调用 userHasAccess，添加用户、预设 lookupUser 响应和验证 lookupUser 调用分别能说明什么？",
+            "expectedAnswer": "fake 执行添加用户的状态变化，权限断言由 false 变为 true；打桩把 lookupUser 的响应由 null 改为 USER，也使权限断言由 false 变为 true，但不证明实际添加或查询用户的实现。交互验证只检查 lookupUser 是否按参数调用，不检查权限返回值。mock 是可用于后两种技术的对象，不是与它们并列的互斥类别。优先使用可行的真实实现，不能使用时通常优先 fake。",
+            "visualEncoding": "同一权限检查的三条横向轨迹在手机上改为纵向分段。fake 轨迹将空授权集合变成含 u 的集合，并对齐 false/true 断言；打桩轨迹将 null/USER 响应对齐相同断言；交互轨迹把 verify 调用和未断言的返回值并列。同一 mock 的标注连接打桩与交互两种用途，而非划分对象分类树。",
+            "sourceEvidence": "## Techniques for Using Test Doubles 测试替身的使用技术；### Faking 使用伪实现，例13-7 addAuthorizedUser；### Stubbing 打桩，例13-8 thenReturn(null)/thenReturn(USER)；### Interaction Testing 交互测试，例13-9 verify(mockAuthorizationService).lookupUser(USER_ID)；### Mocking Frameworks 模拟框架；#### Prefer to perform interaction testing only for state-changing functions  尽量只对改变状态的函数进行交互测试，不改变状态的函数通常不需要额外验证交互。",
+            "beforeProblem": "曾作为章首总览图使用，但它讲的是读完相关小节后才能理解的具体机制，放在章首读者尚无上下文；现改为小节图，紧跟它所解释的段落。",
+            "whyBetter": "读者先读到书中的例子和规则，再看这张图把它们并排对照，能自己推出图中每个结论。",
+            "limits": "u 表示 USER_ID，USER 表示同一用户。图中是书中测试示意，不是可直接编译的完整代码；lookupUser 交互验证用于说明证据边界，不推荐对普通只读调用重复验证。例子不证明真实授权服务的正确性，也不把三种技术定义为通用互斥分类。"
           }
         }
       ],

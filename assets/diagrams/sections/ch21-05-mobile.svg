@@ -36,6 +36,6 @@
 <text x="310" y="439" class="strong danger" text-anchor="middle" data-owner="ch21-05m-shape-4">b</text>
 <text x="20" y="497" class="" text-anchor="start">项目仍要求：两处行为等效。</text>
 <text x="20" y="529" class="small" text-anchor="start">内侧变了，跨环境构建 / 发布出错。</text>
-<text x="20" y="558" class="small" text-anchor="start">原文：优化被推迟；具体行为未指明。</text>
+<text x="20" y="558" class="small" text-anchor="start">原文：优化被推迟。</text>
 <text x="20" y="587" class="small" text-anchor="start">曾经等效 ≠ 长期兼容承诺。</text>
 </svg>

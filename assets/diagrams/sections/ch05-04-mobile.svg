@@ -46,7 +46,7 @@
   <polyline points="43,366 43,415" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04m-arrow-warm)" />
   <polyline points="43,426 43,463" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04m-arrow-warm)" />
   <g id="ch05-04m-limits" data-box="24,522,372,76">
-    <text x="24" y="548" class="small" text-anchor="start">两种帮助可以同时需要，不是人格分类</text>
+    <text x="24" y="548" class="small" text-anchor="start">两种帮助可以同时需要</text>
     <text x="24" y="579" class="small" text-anchor="start">内在激励前提：薪酬不构成压力</text>
   </g>
 </svg>

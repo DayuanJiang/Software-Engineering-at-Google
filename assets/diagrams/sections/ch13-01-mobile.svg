@@ -29,5 +29,4 @@
 <text x="40" y="453" text-anchor="start" class="" data-fit="ch13-01m-region-4">chargeCreditCard(...) → true</text>
 <text x="40" y="490" text-anchor="start" class="" data-fit="ch13-01m-region-4">return true；1 次扣款</text>
 <text x="24" y="550" text-anchor="start" class="small">以上路径不能证明真实扣款成功。</text>
-<text x="24" y="581" text-anchor="start" class="small">0/1 次是执行轨迹，不是新增断言。</text>
 </svg>

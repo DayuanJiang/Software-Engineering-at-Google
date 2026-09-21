@@ -31,5 +31,4 @@
 <text x="78" y="472" class="" text-anchor="start" data-bounds="40 404 340 112">抛出异常</text>
 <text x="78" y="503" class="code small bad" text-anchor="start" data-bounds="40 404 340 112">DuplicateEntryError</text>
 <text x="24" y="557" class="small" text-anchor="start">返回值不是无条件保证。</text>
-<text x="24" y="584" class="small" text-anchor="start">删减对照为示意；不解释内部实现。</text>
 </svg>

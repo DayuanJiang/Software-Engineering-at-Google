@@ -56,7 +56,7 @@
   </g>
   <polyline points="24,498 12,498 12,377 20,377" class="connector" stroke="var(--diagram-secondary,#2f6eac)" data-connector="true" marker-end="url(#ch05-02m-arrow-secondary)" />
   <g id="ch05-02m-limits" data-box="24,543,372,54">
-    <text x="24" y="565" class="small" text-anchor="start">两个月仅是示例；指导须限期且尊重。</text>
+    <text x="24" y="565" class="small" text-anchor="start">指导须限期且尊重对方。</text>
     <text x="24" y="591" class="small" text-anchor="start">未达标不等于自动离职。</text>
   </g>
 </svg>

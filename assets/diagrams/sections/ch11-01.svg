@@ -32,5 +32,5 @@
 <text x="614" y="426" class="strong primary" text-anchor="start" data-region="606 389 298 58">本例通过，继续运行</text>
 <path d="M480 351V383" fill="none" stroke="var(--diagram-muted,#686868)" stroke-width="1.5" marker-end="url(#ch11-01-arrow)"/>
 <text x="499" y="376" class="small" text-anchor="start">定位本例缺陷并修复</text>
-<text x="32" y="473" class="small" text-anchor="start">示意缺陷的实际值为 3；修复后预期仍为 -3。本例通过不代表全部行为正确。</text>
+<text x="32" y="473" class="small" text-anchor="start">修复后预期仍为 -3；一个测试通过，不代表全部行为正确。</text>
 </svg>

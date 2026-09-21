@@ -40,6 +40,4 @@
 <text x="24" y="481" class="small" text-anchor="start">worker.cc 才能出现在使用处列表。</text>
 <path d="M24 501L396 501" class="line"/>
 <text x="24" y="534" class="small" text-anchor="start">书中 Kythe 每日构建，期间可能错位。</text>
-<text x="24" y="565" class="small" text-anchor="start">这是书中实现，不是当前服务承诺；</text>
-<text x="24" y="590" class="small" text-anchor="start">也不表示每次提交都会出现此现象。</text>
 </svg>

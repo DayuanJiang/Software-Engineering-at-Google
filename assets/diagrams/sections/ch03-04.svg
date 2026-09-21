@@ -49,6 +49,6 @@
 <text x="828.0" y="361" text-anchor="middle" class="strong">Readability</text>
 <text x="828.0" y="391" text-anchor="middle" class="small">批准已满足</text>
 </g>
-<text x="32" y="444" text-anchor="start" class="strong">两条路径都仍需代码审查；本图不代表其他批准齐备。</text>
-<text x="32" y="473" text-anchor="start" class="small">限本书描述的单体仓库；明确短期使用的代码可有豁免。</text>
+<text x="32" y="444" text-anchor="start" class="strong">两条路径都仍需代码审查。</text>
+<text x="32" y="473" text-anchor="start" class="small">明确短期使用的代码可有豁免。</text>
 </svg>

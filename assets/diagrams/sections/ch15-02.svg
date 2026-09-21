@@ -58,5 +58,5 @@
 <rect x="32" y="342" width="896" height="56" fill="var(--diagram-primary-soft,#e5f4ee)"/>
 <text x="52" y="379" class="strong" text-anchor="start">新证据改变计划：协助服务甲迁移，或与依赖方共同调整时间表。</text>
 <text x="32" y="430" class="" text-anchor="start">计划停服须预告并逐步延长；测试还需使用方提供充分覆盖。</text>
-<text x="32" y="458" class="" text-anchor="start">静态未找到不等于不存在运行依赖；这些证据也不是完全无遗漏的保证。</text>
+<text x="32" y="458" class="" text-anchor="start">静态未找到不等于不存在运行依赖。</text>
 </svg>

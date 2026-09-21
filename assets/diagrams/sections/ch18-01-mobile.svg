@@ -47,6 +47,6 @@
 <path class="edge" d="M164 500H244" stroke="var(--diagram-primary,#087f6d)" marker-end="url(#ch18-01m-primary-arrow)"/>
 <rect id="ch18-01m-box-10" x="246" y="474" width="150" height="52" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" stroke="var(--diagram-primary,#087f6d)" stroke-width="1.5"/>
 <text x="321" y="507" class="" text-anchor="middle" data-owner="ch18-01m-box-10">c.jar</text>
-<text x="24" y="558" class="small" text-anchor="start">箭头为执行／产物流，不是依赖边。</text>
+<text x="24" y="558" class="small" text-anchor="start">箭头为执行与产物流。</text>
 <text x="24" y="586" class="small" text-anchor="start">隔离不保证任意动作都具有确定性。</text>
 </svg>

@@ -55,5 +55,5 @@
 <path d="M24 501L396 501" class="line"/>
 <text x="24" y="532" class="" text-anchor="start">反例：HEAD 后来新增 h.cc</text>
 <text x="24" y="560" class="small" text-anchor="start">即使它含 OldApi，也不属于此工作区。</text>
-<text x="24" y="590" class="small" text-anchor="start">文本视图准确，不等于交叉引用同步。</text>
+<text x="24" y="590" class="small" text-anchor="start">文本视图准确，交叉引用可能尚未同步。</text>
 </svg>

@@ -37,5 +37,5 @@
 <text x="672" y="363" class="code green">A_LIMIT / B_LIMIT</text>
 <text x="150" y="419" class="strong red">同名、不同定义：冲突</text>
 <path class="arrow" d="M437 411H651V378"/>
-<text x="32" y="461" class="small">数值为示意；只为名称长度或项目一致而请求省略前缀，原文明确说会被拒绝。</text>
+<text x="32" y="461" class="small">只为名称长度或项目一致而请求省略前缀，原文明确说会被拒绝。</text>
 </svg>

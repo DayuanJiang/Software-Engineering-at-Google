@@ -52,7 +52,7 @@
   <polyline points="294,348 357,348" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04-arrow-warm)" />
   <polyline points="611,348 701,348" class="connector" stroke="var(--diagram-warm,#a56a1f)" data-connector="true" marker-end="url(#ch05-04-arrow-warm)" />
   <g id="ch05-04-limits" data-box="32,415,896,62">
-    <text x="32" y="441" class="small" text-anchor="start">两种帮助可以同时需要；这些是支持需求，不是给人贴固定标签。</text>
+    <text x="32" y="441" class="small" text-anchor="start">两种帮助可以同时需要。</text>
     <text x="32" y="470" class="small" text-anchor="start">内在激励的讨论前提：薪酬已足以让收入不构成压力。</text>
   </g>
 </svg>

@@ -41,5 +41,5 @@
 <path d="M615 363 H667" class="arrow"/>
 <text x="687" y="372" class="strong" text-anchor="start">可不再审一轮</text>
 <text x="32" y="435" class="small" text-anchor="start">处理意见不等于照单全收；FYI 不要求行动。</text>
-<text x="32" y="465" class="small" text-anchor="start">提交仍看全部批准与意见状态；不假设修改会自动撤销 LGTM。</text>
+<text x="32" y="465" class="small" text-anchor="start">提交仍看全部批准与意见状态。</text>
 </svg>

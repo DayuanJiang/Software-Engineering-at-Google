@@ -43,5 +43,5 @@
   <text x="920" y="343" text-anchor="end" class="small">收益与损失一起衡量</text>
   <rect x="32" y="374" width="896" height="60" rx="6" fill="var(--diagram-primary-soft,#e5f4ee)" id="ch06-01-metric" stroke="var(--diagram-primary,#087f6d)" stroke-width="2"/>
   <text x="480" y="412" text-anchor="middle" class="strong" data-box="ch06-01-metric">纳入同一参与度指标，决定是否发布；每月再平衡</text>
-  <text x="32" y="466" text-anchor="start" class="small">容量也需兼顾；箭头不是数值模型，没有给定权重或某次改动的上线结论</text>
+  <text x="32" y="466" text-anchor="start" class="small">容量也需兼顾。</text>
 </svg>

@@ -39,6 +39,6 @@
 <text x="728" y="340" class="strong" text-anchor="start">至少大型</text>
 <text x="728" y="373" class="small" text-anchor="start">跨机器，越过本机限制</text>
 <text x="32" y="411" class="small" text-anchor="start">小型还禁止磁盘/网络、休眠和阻塞；隔离的内存文件系统例外。</text>
-<text x="32" y="440" class="small" text-anchor="start">所有规模都应尽量封闭、自足；图示不保证速度或确定性。</text>
+<text x="32" y="440" class="small" text-anchor="start">所有规模都应尽量封闭、自足。</text>
 <text x="32" y="469" class="small" text-anchor="start">书中“大型”的多数描述对应谷歌内部“超大型”。</text>
 </svg>
