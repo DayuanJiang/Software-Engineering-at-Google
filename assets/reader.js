@@ -274,7 +274,7 @@
     scrim.type = "button"; scrim.className = "sidebar-scrim";
     scrim.setAttribute("aria-label", "收起章节目录");
     scrim.addEventListener("click", toggleMenu);
-    document.body.append(scrim);
+    (document.querySelector("main") || document.body).append(scrim);
     const aside = document.createElement("nav");
     aside.id = "reader-toc"; aside.className = "reader-toc";
     aside.setAttribute("aria-label", "本章目录");
