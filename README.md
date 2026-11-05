@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> 这个仓库已经归档，不再更新。《谷歌的软件工程》已经并入 [DayuanJiang/zh-books](https://github.com/DayuanJiang/zh-books/tree/main/books/swe-at-google)，以后的修订都在那里。
+>
+> 最新的在线版本：<https://dayuanjiang.github.io/zh-books/swe-at-google/>
+
 <div align="center">
 
 <img src="assets/images/swe_at_google.2.cover.jpg" alt="Software Engineering at Google 封面" width="150">
